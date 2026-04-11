@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPhO Кыргызстан</title>
+
+  <!-- ВОТ ЭТОТ ТЕГ -->
+  <meta name="google-site-verification" content="jUFtBGSCL53QOCdULZ5P_7WmeYq6JeiWpg4uPqoIz6I" />
+</head>
+<style>
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.12)}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:#111827;line-height:1.6;font-size:15px}
+:root{--accent:#1a56db;--accent2:#0e9f6e;--bg:#fff;--bg2:#f9fafb;--bg3:#f3f4f6;--text:#111827;--text2:#6b7280;--text3:#9ca3af;--border:#e5e7eb;--r:10px;--rl:16px}
+@media(prefers-color-scheme:dark){:root{--bg:#111827;--bg2:#1f2937;--bg3:#374151;--text:#f9fafb;--text2:#9ca3af;--text3:#6b7280;--border:#374151}body{background:var(--bg);color:var(--text)}}
+nav{display:flex;align-items:center;justify-content:space-between;padding:.875rem 2rem;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--text);cursor:pointer}
+.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+.nav-links{display:flex;gap:2px}
+.nl{padding:6px 16px;font-size:13px;font-weight:500;border:none;background:transparent;color:var(--text2);cursor:pointer;border-radius:var(--r);transition:all .15s}
+.nl:hover{background:var(--bg2);color:var(--text)}.nl.active{background:var(--bg3);color:var(--text)}
+.sec{display:none}.sec.active{display:block}
+.hero{padding:5rem 2rem 4rem;text-align:center;border-bottom:1px solid var(--border)}
+.hero-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--accent);background:rgba(26,86,219,.08);border:1px solid rgba(26,86,219,.2);border-radius:100px;padding:4px 16px;margin-bottom:1.25rem;animation:fadeUp .5s both}
+.hero h1{font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.15;margin-bottom:1rem;letter-spacing:-.02em;animation:fadeUp .6s .08s both}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:16px;color:var(--text2);max-width:520px;margin:0 auto 2.25rem;animation:fadeUp .6s .16s both}
+.hbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s .24s both}
+.btn-p{padding:11px 26px;background:var(--accent);color:#fff;border:none;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;transition:opacity .15s}
+.btn-p:hover{opacity:.85}
+.btn-o{padding:11px 26px;background:transparent;color:var(--text);border:1.5px solid var(--border);border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;transition:background .15s}
+.btn-o:hover{background:var(--bg2)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--border)}
+.stat{padding:1.5rem;text-align:center;border-right:1px solid var(--border)}.stat:last-child{border-right:none}
+.sn{font-size:28px;font-weight:800;color:var(--accent)}.sl{font-size:12px;color:var(--text2);margin-top:3px}
+.inner{padding:2.5rem 2rem;max-width:960px;margin:0 auto}
+.stitle{font-size:20px;font-weight:700;margin-bottom:1.25rem;letter-spacing:-.01em}
+hr.sep{border:none;border-top:1px solid var(--border);margin:2rem 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:2rem}
+.card{background:var(--bg);border:1px solid var(--border);border-radius:var(--rl);padding:1.25rem;cursor:pointer;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card h3{font-size:14px;font-weight:600;margin-bottom:.4rem}.card p{font-size:12px;color:var(--text2)}
+.badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:100px;margin-bottom:.6rem}
+.bb{background:rgba(26,86,219,.1);color:var(--accent)}.bt{background:rgba(14,159,110,.1);color:var(--accent2)}
+.bg2c{background:rgba(5,150,105,.1);color:#059669}.ba{background:rgba(245,158,11,.1);color:#b45309}
+.bgr{background:var(--bg3);color:var(--text2)}.bpu{background:rgba(144,97,249,.1);color:#7c3aed}
+.news{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:2.5rem}
+.nc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);padding:1.25rem;cursor:pointer;transition:border-color .15s,transform .15s}
+.nc:hover{border-color:var(--accent);transform:translateY(-2px)}
+.nc h3{font-size:14px;font-weight:600;line-height:1.4;margin-bottom:.4rem}.nc .meta{font-size:11px;color:var(--text3)}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:2rem}
+.step{text-align:center;padding:1.5rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl)}
+.snum2{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:14px;font-weight:800}
+.step h4{font-size:13px;font-weight:600;margin-bottom:3px}.step p{font-size:11px;color:var(--text2)}
+.tl{max-width:560px}
+.tlrow{display:flex;gap:.875rem;margin-bottom:.9rem}
+.tll{flex-shrink:0;width:100px;font-size:11px;color:var(--text3);padding-top:2px;text-align:right}
+.tlm{flex-shrink:0;display:flex;flex-direction:column;align-items:center}
+.tldot{width:11px;height:11px;border-radius:50%;border:2px solid var(--border);background:var(--bg);flex-shrink:0;margin-top:2px}
+.tldot.done{background:var(--accent2);border-color:var(--accent2)}
+.tldot.now{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,86,219,.18)}
+.tlline{width:1px;background:var(--border);flex:1;min-height:20px}
+.tlr h4{font-size:14px;font-weight:600;margin-bottom:1px}.tlr p{font-size:12px;color:var(--text2)}
+.rule{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;padding:1rem 1.25rem;margin-bottom:.75rem}
+.rule h4{font-size:14px;font-weight:600;margin-bottom:.35rem}.rule p{font-size:13px;color:var(--text2);line-height:1.6}
+.ytabs{display:flex;gap:4px;border-bottom:1px solid var(--border);margin-bottom:1.75rem}
+.ytab{padding:9px 22px;font-size:14px;font-weight:600;border:none;background:transparent;color:var(--text2);cursor:pointer;border-bottom:2.5px solid transparent;margin-bottom:-1px;transition:color .15s}
+.ytab:hover{color:var(--text)}.ytab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.yp{display:none}.yp.active{display:block}
+.yhero{padding:1.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.yhero h2{font-size:20px;font-weight:700;margin-bottom:3px}.yhero p{font-size:13px;color:var(--text2)}
+.ystats{display:flex;gap:2rem}.ys .yn{font-size:22px;font-weight:800;color:var(--accent)}.ys .yl{font-size:11px;color:var(--text2)}
+.slbl{font-size:11px;font-weight:700;color:var(--text2);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.75rem}
+.pdf-row{display:flex;align-items:center;justify-content:space-between;padding:.875rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:.5rem;transition:border-color .15s}
+.pdf-row:hover{border-color:var(--accent)}
+.pdf-info{display:flex;align-items:center;gap:10px}
+.pdf-icon{width:32px;height:32px;border-radius:8px;background:rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pdf-name{font-size:13px;font-weight:600}.pdf-sub{font-size:11px;color:var(--text2);margin-top:1px}
+.btn-dl{font-size:12px;padding:6px 14px;border:1.5px solid var(--border);border-radius:var(--r);background:transparent;color:var(--text2);cursor:pointer;font-weight:600;display:flex;align-items:center;gap:5px;transition:all .15s;text-decoration:none;white-space:nowrap}
+.btn-dl:hover{border-color:var(--accent);color:var(--accent)}
+.no-file{font-size:12px;color:var(--text3);font-style:italic}
+.tw{overflow-x:auto}
+.rt{width:100%;border-collapse:collapse;font-size:13px;min-width:500px}
+.rt th{text-align:left;padding:8px 12px;color:var(--text2);font-weight:600;border-bottom:2px solid var(--border);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.rt td{padding:9px 12px;border-bottom:1px solid var(--border)}
+.rt tbody tr:hover td{background:var(--bg2)}.rt tr:last-child td{border-bottom:none}
+.medal{width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+.medal-gold{background:#fef3c7;color:#92400e}.medal-silver{background:#f3f4f6;color:#374151}
+.medal-bronze{background:#fde8d8;color:#9a3412}.medal-plain{background:var(--bg3);color:var(--text2)}
+.status-gold{background:rgba(251,191,36,.15);color:#92400e;border:1px solid rgba(251,191,36,.4)}
+.status-silver{background:rgba(148,163,184,.12);color:#374151;border:1px solid rgba(148,163,184,.35)}
+.status-bronze{background:rgba(180,83,9,.1);color:#9a3412;border:1px solid rgba(180,83,9,.3)}
+.status-plain{background:var(--bg3);color:var(--text2);border:1px solid var(--border)}
+.sbadge{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:100px}
+.row-gold td{background:rgba(251,191,36,.04)}.row-silver td{background:rgba(148,163,184,.04)}.row-bronze td{background:rgba(180,83,9,.03)}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2rem 2rem}
+.fi{max-width:960px;margin:0 auto}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+.fc h4{font-size:13px;font-weight:700;margin-bottom:.875rem}
+.fc p,.fc a{font-size:13px;color:var(--text2);text-decoration:none;display:block;margin-bottom:.4rem;line-height:1.55;cursor:pointer}
+.fc a:hover{color:var(--accent)}
+.crow{display:flex;align-items:center;gap:9px;margin-bottom:.5rem}
+.ci{width:30px;height:30px;border-radius:8px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ct{font-size:13px;color:var(--text2)}
+.fbot{border-top:1px solid var(--border);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.fbot p{font-size:12px;color:var(--text3)}
+@media(max-width:640px){nav{padding:.75rem 1rem}.nl{padding:6px 10px;font-size:12px}.stats{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr;gap:1.5rem}.inner{padding:1.5rem 1rem}.hero{padding:3rem 1rem 2.5rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo" onclick="go('home')"><div class="logo-dot"></div>IPhO Кыргызстан</div>
+  <div class="nav-links">
+    <button class="nl active" id="nl-home" onclick="go('home')">Главная</button>
+    <button class="nl" id="nl-archive" onclick="go('archive')">Архив</button>
+    <button class="nl" id="nl-about" onclick="go('about')">Об олимпиаде</button>
+    <button class="nl" id="nl-dates" onclick="go('dates')">Даты и отбор</button>
+  </div>
+</nav>
+
+<div id="sec-home" class="sec active">
+  <div class="hero">
+    <canvas id="atom-canvas" width="220" height="220" style="display:block;margin:0 auto 1rem"></canvas>
+    <div class="hero-tag">КЫРГЫЗСТАН &nbsp;·&nbsp; ФИЗИКА &nbsp;·&nbsp; IPhO</div>
+    <h1>Национальная <span>физическая</span><br>олимпиада</h1>
+    <p class="hero-sub">Отбираем лучших школьников страны для участия в Международной физической олимпиаде. IV этап 2026 прошёл 4–6 апреля в Бишкеке.</p>
+    <div class="hbtns">
+      <button class="btn-p" onclick="go('archive')">Архив задач и результатов</button>
+      <button class="btn-o" onclick="go('dates')">Даты и отбор</button>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="sn">5</div><div class="sl">участников в сборной IPhO</div></div>
+    <div class="stat"><div class="sn">3</div><div class="sl">дня соревнований</div></div>
+    <div class="stat"><div class="sn">90</div><div class="sl">баллов максимум</div></div>
+    <div class="stat"><div class="sn">2026</div><div class="sl">год IPhO</div></div>
+  </div>
+  <div class="inner">
+    <p class="stitle">Последние новости</p>
+    <div class="news">
+      <div class="nc" onclick="go('archive')"><span class="badge bt">Результаты</span><h3>Итоги IV этапа 2026</h3><div class="meta">6 апреля 2026 · Бишкек</div></div>
+    </div>
+    <hr class="sep">
+    <p class="stitle">Как попасть в сборную</p>
+    <div class="steps">
+      <div class="step"><div class="snum2">1</div><h4>1 тур Национальной олимпиады (онлайн)</h4><p>Январь</p></div>
+      <div class="step"><div class="snum2">2</div><h4>2 тур Национальной олимпиады (онлайн)</h4><p>Февраль</p></div>
+      <div class="step"><div class="snum2">3</div><h4>3 тур Национальной олимпиады (офлайн)</h4><p>Март · Бишкек и Ош</p></div>
+      <div class="step"><div class="snum2">4</div><h4>4 тур — Национальный финал</h4><p>Апрель · Бишкек</p></div>
+    </div>
+  </div>
+  <footer>
+    <div class="fi">
+      <div class="fg">
+        <div class="fc"><h4>IPhO Кыргызстан</h4><p>Национальная программа подготовки школьников к Международной физической олимпиаде. Кыргызская Республика.</p></div>
+        <div class="fc"><h4>Навигация</h4><a onclick="go('home')">Главная</a><a onclick="go('archive')">Архив задач</a><a onclick="go('about')">Об олимпиаде</a><a onclick="go('dates')">Даты и отбор</a></div>
+        <div class="fc"><h4>Контакты</h4>
+          <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2L6 8M12 2H8M12 2V6"/><path d="M6 2.5H3a1 1 0 00-1 1v7a1 1 0 001 1h7a1 1 0 001-1V8"/></svg></div><div class="ct">t.me/ipho_kyrgyzstan</div></div>
+          <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="1" y="3" width="12" height="9" rx="1.5"/><path d="M1 4.5l6 4 6-4"/></svg></div><div class="ct">ipho.kg@gmail.com</div></div>
+          <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M7 1.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z"/><path d="M1 13c0-2 2.7-3.5 6-3.5S13 11 13 13"/></svg></div><div class="ct"></div></div>
+          <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v4l2.5 1.5"/></svg></div><div class="ct">Пн–Пт, 9:00–18:00</div></div>
+        </div>
+      </div>
+      <div class="fbot"><p>© 2026 Национальная физическая олимпиада Кыргызской Республики</p><p>Отбор на IPhO 2026 · Бишкек</p></div>
+    </div>
+  </footer>
+</div>
+
+<div id="sec-archive" class="sec">
+  <div class="inner">
+    <p class="stitle">Архив задач и результатов</p>
+    <div class="ytabs">
+      <button class="ytab" onclick="sy('y2024',this)">2024</button>
+      <button class="ytab" onclick="sy('y2025',this)">2025</button>
+      <button class="ytab active" onclick="sy('y2026',this)">2026</button>
+    </div>
+    <div id="y2024" class="yp">
+      <div class="yhero"><div><h2>IV этап 2024</h2><p>Бишкек · Национальный финал</p></div><div class="ystats"><div class="ys"><div class="yn">5</div><div class="yl">сборная</div></div><div class="ys"><div class="yn">2</div><div class="yl">дня</div></div></div></div>
+      <div id="pdfs2024"></div>
+      <div class="slbl" style="margin-top:1.5rem">Таблица результатов</div>
+      <div class="tw"><div id="t2024"></div></div>
+    </div>
+    <div id="y2025" class="yp">
+      <div class="yhero"><div><h2>IV этап 2025</h2><p>Бишкек · Национальный финал</p></div><div class="ystats"><div class="ys"><div class="yn">5</div><div class="yl">сборная</div></div><div class="ys"><div class="yn">2</div><div class="yl">дня</div></div></div></div>
+      <div id="pdfs2025"></div>
+      <div class="slbl" style="margin-top:1.5rem">Таблица результатов</div>
+      <div class="tw"><div id="t2025"></div></div>
+    </div>
+    <div id="y2026" class="yp active">
+      <div class="yhero"><div><h2>IV этап 2026</h2><p>Бишкек · 4–6 апреля 2026</p></div><div class="ystats"><div class="ys"><div class="yn">5</div><div class="yl">сборная</div></div><div class="ys"><div class="yn">3</div><div class="yl">дня</div></div></div></div>
+      <div id="pdfs2026"></div>
+      <div class="slbl" style="margin-top:1.5rem">Таблица результатов</div>
+      <div class="tw"><div id="t2026"></div></div>
+    </div>
+  </div>
+</div>
+
+<div id="sec-about" class="sec">
+  <div class="inner">
+    <p class="stitle">Об олимпиаде</p>
+    <div class="cards">
+      <div class="card"><div class="badge bb">Для кого</div><h3>Школьники 9–11 (12) классов</h3><p>Открыта для всех учащихся школ Кыргызстана.</p></div>
+      <div class="card"><div class="badge bt">Зачем участвовать</div><h3>Путь на IPhO</h3><p>Победители представляют страну на Международной олимпиаде и получают стипендии.</p></div>
+      <div class="card"><div class="badge bg2c">Что развивает</div><h3>Физическое мышление</h3><p>Нестандартные задачи, физические модели, математический аппарат.</p></div>
+      <div class="card"><div class="badge bpu">Результат</div><h3>Карьера в науке</h3><p>Участники поступают в ведущие университеты мира.</p></div>
+    </div>
+    <hr class="sep">
+    <p class="stitle">Формат Национальной Олимпиады</p>
+    <div class="cards">
+      <div class="card"><h3>Многоэтапный отбор</h3><p>Участники проходят несколько этапов, прежде чем попасть в сборную страны.</p></div>
+      <div class="card"><h3>Теоретический тур</h3><p>3 длинных задачи по разным разделам физики. Продолжительность — 5 часов. 3 дня.</p></div>
+      <div class="card"><h3>Международные старты</h3><p>Лучшие школьники представляют Кыргызстан на международных олимпиадах по физике.</p></div>
+    </div>
+  </div>
+</div>
+
+<div id="sec-dates" class="sec">
+  <div class="inner">
+    <p class="stitle">Календарь 2025–2026</p>
+    <div class="tl">
+      <div class="tlrow"><div class="tll">Январь 2025</div><div class="tlm"><div class="tldot done"></div><div class="tlline"></div></div><div class="tlr"><h4>I тур</h4><p>Онлайн</p></div></div>
+      <div class="tlrow"><div class="tll">Февраль 2025</div><div class="tlm"><div class="tldot done"></div><div class="tlline"></div></div><div class="tlr"><h4>II тур</h4><p>Онлайн</p></div></div>
+      <div class="tlrow"><div class="tll">Март 2026</div><div class="tlm"><div class="tldot done"></div><div class="tlline"></div></div><div class="tlr"><h4>III этап</h4><p>Офлайн</p></div></div>
+      <div class="tlrow"><div class="tll">4–6 апр 2026</div><div class="tlm"><div class="tldot now"></div><div class="tlline"></div></div><div class="tlr"><h4>IV этап — национальный финал</h4><p>Бишкек · Формирование сборной (Офлайн)</p></div></div>
+      <div class="tlrow"><div class="tll">Июль 2026</div><div class="tlm"><div class="tldot"></div></div><div class="tlr"><h4>IPhO 2026</h4><p>Международная олимпиада · 5 участников от КР</p></div></div>
+    </div>
+    <hr class="sep">
+    <p class="stitle">Правила отбора</p>
+    <div class="rule"><h4>Принцип нарастающего отбора</h4><p>Каждый этап отбирает лучших для следующего по набранным баллам, без учёта возраста.</p></div>
+    <div class="rule"><h4>Требования к участникам</h4><p>Гражданство или постоянное проживание в КР. Возраст не более 20 лет на день IPhO. Обучение в средней школе.</p></div>
+    <div class="rule"><h4>Формирование сборной</h4><p>Сборная формируется по наибольшему суммарному баллу за все дни.</p></div>
+  </div>
+</div>
+
+<script>
+const PDF_LINKS = {
+  '2026': [
+    { label: 'День 1 · Условия задач', url: 'assets/pdf/IPhO_2026_TST_Rus1.pdf' },
+    { label: 'День 1 · Решения',       url: 'assets/pdf/IPhO_2026_TST_Sol1.pdf' },
+    { label: 'День 2 · Условия задач', url: 'assets/pdf/IPhO_2026_TST_Rus2.pdf' },
+    { label: 'День 2 · Решения',       url: 'assets/pdf/IPhO_2026_TST_Sol2.pdf' },
+    { label: 'День 3 · Условия задач', url: 'assets/pdf/IPhO_2026_TST_Rus3.pdf' },
+    { label: 'День 3 · Решения',       url: 'assets/pdf/IPhO_2026_TST_Sol3.pdf' },
+  ],
+  '2025': [
+    { label: 'День 1 · Условия задач', url: 'assets/pdf/Prob1.pdf' },
+    { label: 'День 1 · Решения',       url: 'assets/pdf/Solu1.pdf' },
+    { label: 'День 2 · Условия задач', url: 'assets/pdf/Prob2.pdf' },
+    { label: 'День 2 · Решения',       url: 'assets/pdf/Solu2.pdf' },
+  ],
+  '2024': [
+    { label: 'День 1 · Условия задач', url: '' },
+    { label: 'День 1 · Решения',       url: 'assets/pdf/Sol1.pdf' },
+    { label: 'День 2 · Условия задач', url: '' },
+    { label: 'День 2 · Решения',       url: '' },
+  ],
+};
+
+const GOLD_COUNT = 5;
+const SILVER_COUNT = 3;
+
+const RESULTS = {
+  '2024': [
+    { name: 'Абдиев Аскар',          d1: '51.85',  d2: '28.4',   d3: '', status: 'IPhO/APhO/ISPhO' },
+    { name: 'Анаралы уулу Эмир',     d1: '51.85',  d2: '22.65',  d3: '', status: 'IPhO/APhO/ISPhO' },
+    { name: 'Баратали Бектур',       d1: '41.25',  d2: '29.3',   d3: '', status: 'IPhO/APhO/ISPhO' },
+    { name: 'Эмилбеков Айтегин',     d1: '33.725', d2: '26.675', d3: '', status: 'IPhO/APhO/ISPhO' },
+    { name: 'Турдукеев Атай',        d1: '28.5',   d2: '30.975', d3: '', status: 'IPhO/APhO/ISPhO' },
+    { name: 'Абылаев Ахмед',         d1: '19.125', d2: '27.7',   d3: '', status: 'APhO' },
+    { name: 'Мамытов Иса',           d1: '28.5',   d2: '20.5',   d3: '', status: 'APhO' },
+    { name: 'Озокеев Атай',          d1: '23.875', d2: '21.6',   d3: '', status: 'APhO' },
+    { name: 'Жусубалиев Сыймык',     d1: '21.5',   d2: '23.45',  d3: '', status: '' },
+    { name: 'Ашырова Эльдана',       d1: '22.175', d2: '17.9',   d3: '', status: '' },
+    { name: 'Бакытбеков Акбар',      d1: '17.875', d2: '19',     d3: '', status: 'EuPhO' },
+    { name: 'Омурбеков Памир',       d1: '26.875', d2: '13.8',   d3: '', status: 'EuPhO' },
+    { name: 'Раяпов Нурсултан',      d1: '19.45',  d2: '14',     d3: '', status: 'EuPhO' },
+    { name: 'Салиев Темирхан',       d1: '13.55',  d2: '15',     d3: '', status: 'EuPhO' },
+    { name: 'Туратов Умар',          d1: '15.175', d2: '15.625',    d3: '', status: '' },
+  ],
+  '2025': [
+    { name: 'Анаралы уулу Эмир',  d1: '37.4',  d2: '30.8',  d3: '', status: 'IPhO/APhO/ISPhO' },
+    { name: 'Абдиев Аскар',       d1: '44.5',  d2: '22.3',  d3: '', status: 'IPhO/APhO/ISPhO' },
+    { name: 'Темирхан Салиев',    d1: '36.1',  d2: '24',    d3: '', status: 'IPhO/APhO/ISPhO' },
+    { name: 'Эмилбеков Айтегин',  d1: '29.45', d2: '19.5',  d3: '', status: 'IPhO/APhO/ISPhO' },
+    { name: 'Баратали Бектур',    d1: '30.6',  d2: '18.35', d3: '', status: 'IPhO/APhO/ISPhP' },
+    { name: 'Абылаев Ахмед',      d1: '24.55', d2: '21.05', d3: '', status: 'APhO' },
+    { name: 'Бакытбеков Акбар',   d1: '25.6',  d2: '16.05', d3: '', status: 'APhO' },
+    { name: 'Мамытов Иса',        d1: '19.4',  d2: '5',     d3: '', status: 'APhO' },
+    { name: 'Эрмеков Алан',       d1: '16',    d2: '4.7',   d3: '', status: '' },
+    { name: 'Турдукеев Атай',     d1: '14.5',  d2: '6',     d3: '', status: '' },
+    { name: 'Касымов Марсель',    d1: '11.45', d2: '6.2',   d3: '', status: '' },
+    { name: 'Глинова Варвара',    d1: '8',     d2: '7.6',   d3: '', status: '' },
+    { name: 'Каримов Асылбек',    d1: '11.3',  d2: '3.7',   d3: '', status: '' },
+    { name: 'Туташбаев Умар',     d1: '12.5',  d2: '2.5',   d3: '', status: '' },
+    { name: 'Мырзабеков Нурбол',  d1: '6.2',   d2: '5',     d3: '', status: '' }
+  ],
+  '2026': [
+    { name: 'Аскар Абдиев',       d1: '16.4',  d2: '22.45', d3: '25',    status: 'IPhO/APhO' },
+    { name: 'Айтегин Эмилбеков',  d1: '18.2',  d2: '24.25', d3: '12.9',  status: 'IPhO/APhO' },
+    { name: 'Темирхан Салиев',    d1: '11.3',  d2: '19.85', d3: '12.55', status: 'IPhO/APhO' },
+    { name: 'Нурбол Мырзабеков',  d1: '12.85', d2: '12.45', d3: '15.25', status: 'IPhO/APhO' },
+    { name: 'Ахмел Абылаев',      d1: '11.05', d2: '18.85', d3: '6.45',  status: 'IPhO/APhO' },
+    { name: 'Истеми Тазабеков',   d1: '8.7',   d2: '16.15', d3: '8.25',  status: 'APhO' },
+    { name: 'Марсель Касымов',    d1: '12.2',  d2: '11.1',  d3: '9.7',   status: 'APhO' },
+    { name: 'Умар Туташбаев',     d1: '7.2',   d2: '13.55', d3: '7.15',  status: 'APhO' },
+    { name: 'Рашитов Бактыбек',   d1: '4.1',   d2: '6.1',   d3: '7.4',   status: 'BPhO' },
+    { name: 'Асанбаев Ариетбек',  d1: '5',     d2: '7.8',   d3: '3.8',   status: 'BPhO' },
+    { name: 'Ашырова Эльдана',    d1: '7.35',  d2: '7.2',   d3: '1.9',   status: 'BPhO' },
+    { name: 'Эрмеков Нурэл',      d1: '7.4',   d2: '6.9',   d3: '1.6',   status: 'BPhO' },
+    { name: 'Таисия Ри',          d1: '5.1',   d2: '5.5',   d3: '2.65',  status: 'Резерв' },
+    { name: 'Каримов Асылбек',    d1: '4.3',   d2: '3.1',   d3: '5.4',   status: 'Резерв' },
+    { name: 'Осмонов Чынгыз',     d1: '5.6',   d2: '4.95',  d3: '0.7',   status: 'Резерв' }
+  ]
+};
+
+function go(id){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nl').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  const b=document.getElementById('nl-'+id);
+  if(b) b.classList.add('active');
+  window.scrollTo(0,0);
+}
+function sy(id,btn){
+  document.querySelectorAll('.yp').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ytab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function renderPDFs(year){
+  const el=document.getElementById('pdfs'+year);
+  if(!el)return;
+  const list=PDF_LINKS[year]||[];
+  if(!list.length){el.innerHTML='';return;}
+  const ico='<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="1.3"><path d="M3 1h7l4 4v10H3V1z"/><path d="M10 1v4h4"/><path d="M5 9h6M5 11.5h4"/></svg>';
+  let h='<div class="slbl">Задачи и решения</div>';
+  list.forEach(f=>{
+    h+='<div class="pdf-row"><div class="pdf-info"><div class="pdf-icon">'+ico+'</div><div><div class="pdf-name">'+f.label+'</div><div class="pdf-sub">'+(f.url?'Доступно для скачивания':'Будет добавлено позже')+'</div></div></div>';
+    h+=f.url?'<a class="btn-dl" href="'+f.url+'" target="_blank"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6.5 1v8M4 7l2.5 2.5L9 7"/><path d="M1 10v1.5a1 1 0 001 1h9a1 1 0 001-1V10"/></svg> Скачать</a>':'<span class="no-file">Скоро</span>';
+    h+='</div>';
+  });
+  el.innerHTML=h;
+}
+
+function renderTable(year){
+  const data=RESULTS[year]||[];
+  const el=document.getElementById('t'+year);
+  if(!el)return;
+  if(!data.length){el.innerHTML='<p style="font-size:12px;color:var(--text3);padding:.5rem 0">Нет данных.</p>';return;}
+  const sorted=[...data].sort((a,b)=>{
+    const ta=(parseFloat(a.d1)||0)+(parseFloat(a.d2)||0)+(parseFloat(a.d3)||0);
+    const tb=(parseFloat(b.d1)||0)+(parseFloat(b.d2)||0)+(parseFloat(b.d3)||0);
+    return tb-ta;
+  });
+  const hasDay3=sorted.some(r=>r.d3&&r.d3!=='');
+  let h='<table class="rt"><thead><tr><th></th><th>Участник</th><th>День 1</th><th>День 2</th>'+(hasDay3?'<th>День 3</th>':'')+'<th>Итого</th><th>Статус</th></tr></thead><tbody>';
+  sorted.forEach((r,i)=>{
+    const tot=((parseFloat(r.d1)||0)+(parseFloat(r.d2)||0)+(parseFloat(r.d3)||0)).toFixed(2);
+    const tier=i<GOLD_COUNT?'gold':i<GOLD_COUNT+SILVER_COUNT?'silver':'bronze';
+    const bv=r.status?'<span class="sbadge status-'+tier+'">'+r.status+'</span>':'';
+    h+='<tr class="row-'+tier+'"><td><span class="medal medal-'+tier+'">'+(i+1)+'</span></td>';
+    h+='<td style="font-weight:600">'+(r.name||'—')+'</td>';
+    h+='<td>'+(r.d1||'—')+'</td><td>'+(r.d2||'—')+'</td>';
+    if(hasDay3) h+='<td>'+(r.d3||'—')+'</td>';
+    h+='<td style="font-weight:700;color:var(--accent)">'+tot+'</td><td>'+bv+'</td></tr>';
+  });
+  h+='</tbody></table>';
+  el.innerHTML=h;
+}
+
+['2024','2025','2026'].forEach(y=>{renderPDFs(y);renderTable(y);});
+</script>
+
+<script>
+(function(){
+  const cv=document.getElementById('atom-canvas');
+  if(!cv)return;
+  const ctx=cv.getContext('2d');
+  const W=220,H=220,CX=110,CY=110;
+  const ORBITS=[
+    {r:32,speed:0.012,color:'#3b82f6'},
+    {r:52,speed:0.007,color:'#22c55e'},
+    {r:72,speed:0.004,color:'#a78bfa'},
+  ];
+  const elec=ORBITS.map((o,i)=>({...o,angle:i*2.09}));
+  const waves=[];
+  let tick=0;
+  const WCOLS=['#ef4444','#22c55e','#3b82f6','#f59e0b','#a78bfa','#06b6d4','#f472b6'];
+  function spawnWave(){
+    const ang=Math.random()*Math.PI*2;
+    const orb=ORBITS[Math.floor(Math.random()*ORBITS.length)];
+    waves.push({ox:CX+Math.cos(ang)*orb.r,oy:CY+Math.sin(ang)*orb.r,dir:ang,color:WCOLS[Math.floor(Math.random()*WCOLS.length)],age:0,totalAge:160,headSpeed:0.38,segLen:42,freq:2.8+Math.random()*1.4,amp:7+Math.random()*4});
+  }
+  function drawWave(w){
+    if(w.age>w.totalAge)return false;
+    const alpha=w.age<20?w.age/20:1-(w.age-20)/(w.totalAge-20);
+    const headDist=w.age*w.headSpeed;
+    const tailDist=Math.max(0,headDist-w.segLen);
+    ctx.save();ctx.translate(w.ox,w.oy);ctx.rotate(w.dir);
+    ctx.beginPath();let started=false;
+    for(let s=0;s<=50;s++){
+      const t=s/50,x=tailDist+t*(headDist-tailDist);
+      const y=Math.sin(x*w.freq*0.22-w.age*0.09)*w.amp;
+      if(!started){ctx.moveTo(x,y);started=true;}else ctx.lineTo(x,y);
+    }
+    ctx.strokeStyle=w.color+Math.floor(alpha*190).toString(16).padStart(2,'0');
+    ctx.lineWidth=2.5;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();
+    const hy=Math.sin(headDist*w.freq*0.22-w.age*0.09)*w.amp;
+    ctx.beginPath();ctx.arc(headDist,hy,3,0,Math.PI*2);ctx.fillStyle=w.color+Math.floor(alpha*240).toString(16).padStart(2,'0');ctx.fill();
+    ctx.beginPath();ctx.arc(headDist,hy,6,0,Math.PI*2);ctx.fillStyle=w.color+Math.floor(alpha*45).toString(16).padStart(2,'0');ctx.fill();
+    ctx.restore();w.age++;return w.age<=w.totalAge;
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ORBITS.forEach(o=>{ctx.beginPath();ctx.arc(CX,CY,o.r,0,Math.PI*2);ctx.strokeStyle='rgba(148,163,184,0.18)';ctx.lineWidth=1;ctx.stroke();});
+    ctx.beginPath();ctx.arc(CX,CY,12,0,Math.PI*2);ctx.fillStyle='#3b82f6';ctx.fill();
+    ctx.beginPath();ctx.arc(CX,CY,7,0,Math.PI*2);ctx.fillStyle='#93c5fd';ctx.fill();
+    ctx.beginPath();ctx.arc(CX,CY,3.5,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();
+    elec.forEach(e=>{
+      e.angle+=e.speed;
+      const ex=CX+Math.cos(e.angle)*e.r,ey=CY+Math.sin(e.angle)*e.r;
+      ctx.beginPath();ctx.arc(ex,ey,5,0,Math.PI*2);ctx.fillStyle=e.color;ctx.fill();
+      ctx.beginPath();ctx.arc(ex,ey,9,0,Math.PI*2);ctx.fillStyle=e.color+'28';ctx.fill();
+    });
+    for(let i=waves.length-1;i>=0;i--){if(!drawWave(waves[i]))waves.splice(i,1);}
+    tick++;
+    if(tick%70===0)spawnWave();
+    if(tick%105===0)spawnWave();
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
