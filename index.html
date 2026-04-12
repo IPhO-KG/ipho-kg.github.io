@@ -106,7 +106,16 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .fc a:hover{color:var(--accent)}
 .crow{display:flex;align-items:center;gap:9px;margin-bottom:.5rem}
 .ci{width:30px;height:30px;border-radius:8px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ct{font-size:13px;color:var(--text2)}
+.ct {
+  font-size: 13px;
+  color: var(--text2);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ct:hover {
+  color: var(--accent);
+}
 .fbot{border-top:1px solid var(--border);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
 .fbot p{font-size:12px;color:var(--text3)}
 @media(max-width:640px){nav{padding:.75rem 1rem}.nl{padding:6px 10px;font-size:12px}.stats{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr;gap:1.5rem}.inner{padding:1.5rem 1rem}.hero{padding:3rem 1rem 2.5rem}}
@@ -160,11 +169,36 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
       <div class="fg">
         <div class="fc"><h4>IPhO Кыргызстан</h4><p>Национальная программа подготовки школьников к Международной физической олимпиаде. Кыргызская Республика.</p></div>
         <div class="fc"><h4>Навигация</h4><a onclick="go('home')">Главная</a><a onclick="go('archive')">Архив задач</a><a onclick="go('about')">Об олимпиаде</a><a onclick="go('dates')">Даты и отбор</a></div>
-        <h4>Контакты</h4>
+       <div class="fc">
+  <h4>Контакты</h4>
 
-<div class="contacts">
-  <a href="https://t.me/+9GGnjui6VT05Mzli" target="_blank">📢 Telegram</a>
-  <a href="https://www.instagram.com/ipho_kg?igsh=YWcxMGE1eXFuMXdu" target="_blank">📸 Instagram</a>
+  <div class="crow">
+    <div class="ci">
+      <!-- Telegram icon -->
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#229ED9" stroke-width="2">
+        <path d="M22 2L11 13"></path>
+        <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+      </svg>
+    </div>
+    <a href="https://t.me/+9GGnjui6VT05Mzli" target="_blank" class="ct">
+      Telegram
+    </a>
+  </div>
+
+  <div class="crow">
+    <div class="ci">
+      <!-- Instagram icon -->
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="2">
+        <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+        <circle cx="12" cy="12" r="4"></circle>
+        <circle cx="18" cy="6" r="1"></circle>
+      </svg>
+    </div>
+    <a href="https://www.instagram.com/ipho_kg" target="_blank" class="ct">
+      Instagram
+    </a>
+  </div>
+
 </div>
       </div>
       <div class="fbot"><p>© 2026 Национальная физическая олимпиада Кыргызской Республики</p><p>Отбор на IPhO 2026 · Бишкек</p></div>
