@@ -180,13 +180,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
       <button class="ytab" onclick="sy('y2025',this)">2025</button>
       <button class="ytab active" onclick="sy('y2026',this)">2026</button>
     </div>
-     <div id="y2022" class="yp">
+    <div id="y2022" class="yp">
       <div class="yhero"><div><h2>IV этап 2022</h2><p>Бишкек · Национальный финал</p></div><div class="ystats"><div class="ys"><div class="yn">5</div><div class="yl">сборная</div></div><div class="ys"><div class="yn">2</div><div class="yl">дня</div></div></div></div>
       <div id="pdfs2022"></div>
       <div class="slbl" style="margin-top:1.5rem">Таблица результатов</div>
       <div class="tw"><div id="t2022"></div></div>
     </div>
-     <div id="y2023" class="yp">
+    <div id="y2023" class="yp">
       <div class="yhero"><div><h2>IV этап 2023</h2><p>Бишкек · Национальный финал</p></div><div class="ystats"><div class="ys"><div class="yn">5</div><div class="yl">сборная</div></div><div class="ys"><div class="yn">2</div><div class="yl">дня</div></div></div></div>
       <div id="pdfs2023"></div>
       <div class="slbl" style="margin-top:1.5rem">Таблица результатов</div>
@@ -277,39 +277,39 @@ const PDF_LINKS = {
 };
 const GOLD_COUNT=5, SILVER_COUNT=3;
 const RESULTS = {
-   '2022': [
-    { name:'Сапарбек уулу Денис',         d1:'12.5',  d2:'11.4',   d3:'', status:'APhO/IPhO' },
-    { name:'Турдубаев Эрбол',    d1:'11.5',  d2:'8.8',  d3:'', status:'APhO/IPhO' },
-    { name:'Жусупбеков Нияз',      d1:'11.3',  d2:'4',   d3:'', status:'APhO/IPhO' },
-    { name:'Мартыненко Арсений',    d1:'12.3', d2:'1.0', d3:'1.5', status:'APhO/IPhO' },
-    { name:'Садыков Темирлан',       d1:'10.8',   d2:'2,8', d3:'', status:'APhO' },
-    { name:'Жамил уулу Алкелди',        d1:'6.9', d2:'5',   d3:'', status:'APhO' },
-    { name:'Турдукеев Атай',          d1:'6.0',   d2:'2.6',   d3:'0.5', status:'APhO/IPhO' },
-    { name:'Гартман Бекали',         d1:'7.5', d2:'0.5',   d3:'', status:'APhO' },
-    { name:'Жусубалиев Сыймык',    d1:'5.6',   d2:'1.2',  d3:'', status:'' },
-    { name:'Баратали Бектур',      d1:'5,3', d2:'1',   d3:'0.2', status:'' },
-    { name:'Ускенбаева Анель',     d1:'5.4', d2:'1',     d3:'', status:'EuPhO' },
-    { name:'Минкин Тимур',      d1:'5.6', d2:'0',   d3:'', status:'EuPhO' },
-    { name:'Токтобекова Бактыгуль',     d1:'1.6',  d2:'3',     d3:'', status:'EuPhO' },
-    { name:'Карташев Владимир',      d1:'2.5',  d2:'2',     d3:'', status:'EuPhO' },
-    { name:'Кадыр уулу Алинур',         d1:'2.4', d2:'1.6', d3:'', status:'' },
+  '2022': [
+    { name:'Сапарбек уулу Денис',  d1:'12.5', d2:'11.4', d3:'',    status:'APhO/IPhO' },
+    { name:'Турдубаев Эрбол',      d1:'11.5', d2:'8.8',  d3:'',    status:'APhO/IPhO' },
+    { name:'Жусупбеков Нияз',      d1:'11.3', d2:'4',    d3:'',    status:'APhO/IPhO' },
+    { name:'Мартыненко Арсений',   d1:'12.3', d2:'1.0',  d3:'1.5', status:'APhO/IPhO' },
+    { name:'Турдукеев Атай',       d1:'6.0',  d2:'2.6',  d3:'0.5', status:'APhO/IPhO' },
+    { name:'Садыков Темирлан',     d1:'10.8', d2:'2.8',  d3:'',    status:'APhO' },
+    { name:'Жамил уулу Алкелди',   d1:'6.9',  d2:'5',    d3:'',    status:'APhO' },
+    { name:'Гартман Бекали',       d1:'7.5',  d2:'0.5',  d3:'',    status:'APhO' },
+    { name:'Жусубалиев Сыймык',    d1:'5.6',  d2:'1.2',  d3:'',    status:'' },
+    { name:'Баратали Бектур',      d1:'5.3',  d2:'1',    d3:'0.2', status:'' },
+    { name:'Ускенбаева Анель',     d1:'5.4',  d2:'1',    d3:'',    status:'' },
+    { name:'Минкин Тимур',         d1:'5.6',  d2:'0',    d3:'',    status:'' },
+    { name:'Токтобекова Бактыгуль',d1:'1.6',  d2:'3',    d3:'',    status:'' },
+    { name:'Карташев Владимир',    d1:'2.5',  d2:'2',    d3:'',    status:'' },
+    { name:'Кадыр уулу Алинур',    d1:'2.4',  d2:'1.6',  d3:'',    status:'' },
   ],
-   '2023': [
-    { name:'Турдукеев Атай',         d1:'20',  d2:'28',   d3:'', status:'IPhO/APhO' },
-    { name:'Баратил Бектур',    d1:'19',  d2:'27.5',  d3:'', status:'IPhO/APhO' },
-    { name:'Жусубалиев Сыймык',      d1:'18',  d2:'27',   d3:'', status:'IPhO/APhO' },
-    { name:'Абдиев Аскар',    d1:'16', d2:'28', d3:'', status:'IPhO/APhO' },
-    { name:'Анаралы уулу Эмир',       d1:'20',   d2:'24', d3:'', status:'IPhO/APhO' },
-    { name:'Турдубаев Эрбол',        d1:'20', d2:'23.5',   d3:'', status:'' },
-    { name:'Сакиева Умут',          d1:'9',   d2:'17.5',   d3:'', status:'APhO' },
-    { name:'Чилдибаев Арстан',         d1:'16', d2:'14.5',   d3:'', status:'APhO' },
-    { name:'Озокеев Атай',    d1:'9',   d2:'17.5',  d3:'', status:'APhO' },
-    { name:'Жамил уулу Алкелди',      d1:'16', d2:'10',   d3:'', status:'' },
-    { name:'Ускенбаева Анель',     d1:'13', d2:'10.5',     d3:'', status:'EuPhO' },
-    { name:'Туратов Умар',      d1:'13', d2:'9.5',   d3:'', status:'EuPhO' },
-    { name:'Токтобекова Бактыгул',     d1:'9',  d2:'11.5',     d3:'', status:'EuPhO' },
-    { name:'Омурбеков Памир',      d1:'13',  d2:'7.5',     d3:'', status:'EuPhO' },
-    { name:'Бакытбеков Акбар',         d1:'15', d2:'5', d3:'', status:'' },
+  '2023': [
+    { name:'Турдукеев Атай',       d1:'20',   d2:'28',   d3:'', status:'IPhO/APhO' },
+    { name:'Баратали Бектур',      d1:'19',   d2:'27.5', d3:'', status:'IPhO/APhO' },
+    { name:'Жусубалиев Сыймык',    d1:'18',   d2:'27',   d3:'', status:'IPhO/APhO' },
+    { name:'Абдиев Аскар',         d1:'16',   d2:'28',   d3:'', status:'IPhO/APhO' },
+    { name:'Анаралы уулу Эмир',    d1:'20',   d2:'24',   d3:'', status:'IPhO/APhO' },
+    { name:'Турдубаев Эрбол',      d1:'20',   d2:'23.5', d3:'', status:'' },
+    { name:'Сакиева Умут',         d1:'9',    d2:'17.5', d3:'', status:'APhO/EuPhO' },
+    { name:'Чилдибаев Арстан',     d1:'16',   d2:'14.5', d3:'', status:'APhO/EuPhO' },
+    { name:'Озокеев Атай',         d1:'9',    d2:'17.5', d3:'', status:'APhO' },
+    { name:'Жамил уулу Алкелди',   d1:'16',   d2:'10',   d3:'', status:'' },
+    { name:'Ускенбаева Анель',     d1:'13',   d2:'10.5', d3:'', status:'EuPhO' },
+    { name:'Туратов Умар',         d1:'13',   d2:'9.5',  d3:'', status:'' },
+    { name:'Токтобекова Бактыгул', d1:'9',    d2:'11.5', d3:'', status:'EuPhO' },
+    { name:'Омурбеков Памир',      d1:'13',   d2:'7.5',  d3:'', status:'' },
+    { name:'Бакытбеков Акбар',     d1:'15',   d2:'5',    d3:'', status:'' },
   ],
   '2024': [
     { name:'Абдиев Аскар',         d1:'51.85',  d2:'28.4',   d3:'', status:'IPhO/APhO/ISPhO' },
@@ -417,12 +417,9 @@ function renderTable(year){
   h+='</tbody></table>';
   el.innerHTML=h;
 }
-['2024','2025','2026'].forEach(y=>{renderPDFs(y);renderTable(y);});
+['2022','2023','2024','2025','2026'].forEach(y=>{renderPDFs(y);renderTable(y);});
 </script>
 
-<script>
-
-</script>
 <script>
 (function(){
   const cv=document.getElementById('atom-canvas');
