@@ -126,14 +126,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .topic-block-title{font-size:15px;font-weight:750}
 .topic-block-count{font-size:11px;color:var(--text2)}
 .topic-task-grid{display:flex;gap:8px;flex-wrap:wrap;padding:1.15rem}
-.task-number-tile{width:43px;height:38px;border-radius:7px;border:1.5px solid var(--border);background:var(--bg);color:var(--text);font-size:13px;font-weight:750;cursor:pointer;transition:transform .15s,border-color .15s,background .15s,color .15s;position:relative}
-.task-number-tile:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent)}
-.task-number-tile.easy{border-color:rgba(14,159,110,.65);background:rgba(14,159,110,.06)}
-.task-number-tile.medium{border-color:rgba(245,158,11,.7);background:rgba(245,158,11,.07)}
-.task-number-tile.hard{border-color:rgba(239,68,68,.65);background:rgba(239,68,68,.06)}
-.catalog-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:1rem;font-size:11px;color:var(--text2)}
-.legend-item{display:flex;align-items:center;gap:6px}.legend-dot{width:9px;height:9px;border-radius:3px;border:1.5px solid}
-.legend-easy{border-color:#059669;background:rgba(14,159,110,.08)}.legend-medium{border-color:#b45309;background:rgba(245,158,11,.09)}.legend-hard{border-color:#dc2626;background:rgba(239,68,68,.08)}
+.task-number-tile{min-width:50px;height:45px;padding:4px 7px;border-radius:7px;border:1.5px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;transition:transform .15s,border-color .15s,background .15s,color .15s;position:relative;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}
+.task-number-tile:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent);background:var(--bg2)}
+.task-tile-number{font-size:13px;font-weight:800;line-height:1}
+.task-tile-stars{font-size:9px;line-height:1;letter-spacing:-1px;color:#d97706;white-space:nowrap}
+.catalog-legend{display:flex;gap:10px 16px;flex-wrap:wrap;margin-top:1rem;font-size:11px;color:var(--text2)}
+.legend-item{display:flex;align-items:center;gap:6px}
+.legend-stars,.difficulty-stars{color:#d97706;letter-spacing:1px;white-space:nowrap;font-weight:800}
+.difficulty-stars{display:inline-block;font-size:12px;padding:3px 9px;border-radius:100px;background:rgba(217,119,6,.09);border:1px solid rgba(217,119,6,.22)}
 .empty-problems{display:none;padding:2rem;text-align:center;color:var(--text2);border:1px dashed var(--border);border-radius:var(--rl)}
 .problem-detail[hidden],.problem-catalog-view[hidden]{display:none!important}
 .problem-back{display:inline-flex;align-items:center;gap:7px;border:none;background:transparent;color:var(--accent);font-size:13px;font-weight:700;cursor:pointer;padding:0;margin-bottom:1.1rem}
@@ -144,9 +144,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .problem-meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:.75rem}
 .topic-chip,.level-chip{display:inline-block;font-size:10px;font-weight:750;padding:3px 9px;border-radius:100px;white-space:nowrap}
 .topic-chip{background:rgba(26,86,219,.1);color:var(--accent)}
-.level-easy{background:rgba(14,159,110,.1);color:#059669}
-.level-medium{background:rgba(245,158,11,.12);color:#b45309}
-.level-hard{background:rgba(239,68,68,.1);color:#dc2626}
+.level-chip{padding:0;background:transparent}
 .problem-page-number{font-size:11px;font-weight:800;letter-spacing:.07em;color:var(--text3);text-transform:uppercase;margin-bottom:5px}
 .problem-page-title{font-size:clamp(23px,3.4vw,34px);font-weight:800;line-height:1.2;letter-spacing:-.02em}
 .problem-section{padding:1.65rem 1.8rem;border-bottom:1px solid var(--border)}
@@ -155,6 +153,18 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .problem-body{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.82;color:var(--text)}
 .problem-body p{margin-bottom:.85rem}.problem-body p:last-child{margin-bottom:0}
 .problem-figure{display:block;max-width:min(100%,640px);max-height:480px;object-fit:contain;margin:1.25rem auto 0;border-radius:10px}
+.problem-images{display:grid;gap:14px;margin-top:1.25rem}
+.problem-figure-wrap{margin:0;text-align:center}
+.problem-figure{margin:0 auto;border:1px solid var(--border);background:var(--bg2)}
+.problem-figure-caption{margin-top:.55rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:var(--text2)}
+.hint-progress{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:var(--text2);margin-bottom:.8rem}
+.hint-step{display:none;padding:1rem 1.05rem;margin-top:.75rem;border:1px solid rgba(245,158,11,.28);border-radius:var(--r);background:rgba(245,158,11,.055)}
+.hint-step.visible{display:block;animation:fadeUp .22s both}
+.hint-step:first-of-type{margin-top:0}
+.hint-step-label{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#b45309;margin-bottom:.45rem}
+.hint-step-text{font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.78}
+.hint-step-image{display:block;max-width:min(100%,560px);max-height:420px;object-fit:contain;margin:1rem auto 0;border:1px solid var(--border);border-radius:10px;background:var(--bg)}
+.hint-step-caption{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;color:var(--text2);text-align:center;margin-top:.45rem}
 .formula{font-family:Georgia,'Times New Roman',serif;font-size:1.03em;white-space:normal}
 .reveal-section{padding:0}
 .reveal-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.8rem;cursor:pointer;background:var(--bg2)}
@@ -311,10 +321,11 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 
       <div id="problem-catalog" class="problem-catalog"></div>
       <div id="empty-problems" class="empty-problems">В этом разделе пока нет задач.</div>
-      <div class="catalog-legend">
-        <span class="legend-item"><span class="legend-dot legend-easy"></span>Базовая</span>
-        <span class="legend-item"><span class="legend-dot legend-medium"></span>Средняя</span>
-        <span class="legend-item"><span class="legend-dot legend-hard"></span>Олимпиадная</span>
+      <div class="catalog-legend" aria-label="Шкала сложности задач">
+        <span class="legend-item"><span class="legend-stars">★</span>Тривиальная</span>
+        <span class="legend-item"><span class="legend-stars">★★</span>Нетривиальная</span>
+        <span class="legend-item"><span class="legend-stars">★★★</span>Олимпиадная</span>
+        <span class="legend-item"><span class="legend-stars">★★★★</span>Гроб</span>
       </div>
     </div>
 
@@ -334,7 +345,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
           <section class="problem-section">
             <h2>Условие</h2>
             <div class="problem-body" id="detail-statement"></div>
-            <img class="problem-figure" id="detail-image" alt="" hidden>
+            <div class="problem-images" id="detail-images" hidden></div>
           </section>
 
           <div class="answer-box" id="detail-answer-box" hidden>
@@ -343,9 +354,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
           </div>
 
           <section class="reveal-section">
-            <div class="reveal-heading" onclick="toggleDetailPanel('detail-hint',document.getElementById('detail-hint-btn'))">
-              <h2>Подсказка</h2>
-              <button class="reveal-btn" id="detail-hint-btn" aria-expanded="false" onclick="event.stopPropagation();toggleDetailPanel('detail-hint',this)">Показать</button>
+            <div class="reveal-heading" onclick="revealNextHint()">
+              <h2>Пошаговые подсказки</h2>
+              <button class="reveal-btn" id="detail-hint-btn" aria-expanded="false" onclick="event.stopPropagation();revealNextHint()">Открыть подсказку</button>
             </div>
             <div class="reveal-panel hint-panel" id="detail-hint"></div>
           </section>
@@ -535,68 +546,178 @@ const RESULTS = {
 };
 
 
+/* =====================================================================
+   ⬇⬇⬇  ДОБАВЛЯТЬ И РЕДАКТИРОВАТЬ ЗАДАЧИ НУЖНО НИЖЕ  ⬇⬇⬇
+   Для поиска нажми Cmd+F / Ctrl+F и введи: ДОБАВЛЯТЬ ЗАДАЧИ
+   ===================================================================== */
+
 const PRACTICE_TASKS = [
   {
     id: 1,
     topic: 'Механика',
-    level: 'Базовая',
-    levelClass: 'easy',
+    difficulty: 1,
     title: 'Скорость у подножия горки',
-    statement: 'Небольшое тело начинает скользить без начальной скорости с гладкой горки высотой <span class="formula">h = 1,25 м</span>. Сопротивлением воздуха пренебречь. Найдите скорость тела у подножия горки. Примите <span class="formula">g = 10 м/с²</span>.',
-    hint: 'Запишите закон сохранения механической энергии между верхней и нижней точками.',
-    solution: 'Потенциальная энергия полностью переходит в кинетическую: <span class="formula">mgh = mv²/2</span>. Поэтому <span class="formula">v = √(2gh) = √(2·10·1,25) = 5 м/с</span>.'
+    statement: `
+      Небольшое тело начинает скользить без начальной скорости с гладкой горки высотой
+      <span class="formula">h = 1,25 м</span>. Сопротивлением воздуха пренебречь.
+      Найдите скорость тела у подножия горки. Примите
+      <span class="formula">g = 10 м/с²</span>.
+    `,
+
+    // Один рисунок можно добавить так:
+    // image: 'assets/images/task1.png',
+    // imageAlt: 'Схема гладкой горки',
+    // imageCaption: 'Рис. 1. Тело скользит с высоты h',
+
+    hints: [
+      `Сравните механическую энергию тела в верхней и нижней точках.`,
+      `Вверху имеется потенциальная энергия <span class="formula">mgh</span>, а внизу — кинетическая <span class="formula">mv²/2</span>.`,
+      `Приравняйте энергии и выразите скорость: <span class="formula">mgh = mv²/2</span>.`
+    ],
+    solution: `Потенциальная энергия полностью переходит в кинетическую:
+      <span class="formula">mgh = mv²/2</span>. Поэтому
+      <span class="formula">v = √(2gh) = √(2·10·1,25) = 5 м/с</span>.`,
+    answer: `<span class="formula">5 м/с</span>`
   },
   {
     id: 2,
     topic: 'Электричество',
-    level: 'Базовая',
-    levelClass: 'easy',
+    difficulty: 1,
     title: 'Параллельное соединение',
-    statement: 'Резисторы сопротивлениями <span class="formula">R₁ = 6 Ом</span> и <span class="formula">R₂ = 3 Ом</span> соединены параллельно и подключены к источнику напряжения <span class="formula">U = 12 В</span>. Найдите общий ток в цепи.',
-    hint: 'Сначала найдите эквивалентное сопротивление параллельного соединения.',
-    solution: '<span class="formula">1/R = 1/6 + 1/3 = 1/2</span>, следовательно, <span class="formula">R = 2 Ом</span>. По закону Ома <span class="formula">I = U/R = 12/2 = 6 А</span>.'
+    statement: `Резисторы сопротивлениями <span class="formula">R₁ = 6 Ом</span> и
+      <span class="formula">R₂ = 3 Ом</span> соединены параллельно и подключены к источнику
+      напряжения <span class="formula">U = 12 В</span>. Найдите общий ток в цепи.`,
+    hints: [
+      `Сначала замените два параллельно соединённых резистора одним эквивалентным.`,
+      `Используйте <span class="formula">1/R = 1/R₁ + 1/R₂</span>.`,
+      `После нахождения <span class="formula">R</span> примените закон Ома <span class="formula">I = U/R</span>.`
+    ],
+    solution: `<span class="formula">1/R = 1/6 + 1/3 = 1/2</span>, следовательно,
+      <span class="formula">R = 2 Ом</span>. По закону Ома
+      <span class="formula">I = U/R = 12/2 = 6 А</span>.`,
+    answer: `<span class="formula">6 А</span>`
   },
   {
     id: 3,
     topic: 'Термодинамика',
-    level: 'Средняя',
-    levelClass: 'medium',
+    difficulty: 2,
     title: 'Нагревание одноатомного газа',
-    statement: 'Два моля одноатомного идеального газа нагрели при постоянном объёме на <span class="formula">40 К</span>. Найдите изменение внутренней энергии. Используйте <span class="formula">R = 8,31 Дж/(моль·К)</span>.',
-    hint: 'Для одноатомного идеального газа внутренняя энергия равна <span class="formula">U = 3nRT/2</span>.',
-    solution: '<span class="formula">ΔU = 3nRΔT/2 = 3·2·8,31·40/2 ≈ 997 Дж</span>. Округляя, получаем примерно <span class="formula">1,0 кДж</span>.'
+    statement: `Два моля одноатомного идеального газа нагрели при постоянном объёме на
+      <span class="formula">40 К</span>. Найдите изменение внутренней энергии. Используйте
+      <span class="formula">R = 8,31 Дж/(моль·К)</span>.`,
+    hints: [
+      `При постоянном объёме работа газа равна нулю, но для ответа достаточно формулы внутренней энергии.`,
+      `Для одноатомного идеального газа <span class="formula">U = 3nRT/2</span>.`,
+      `Для изменения температуры замените <span class="formula">T</span> на <span class="formula">ΔT</span>.`
+    ],
+    solution: `<span class="formula">ΔU = 3nRΔT/2 = 3·2·8,31·40/2 ≈ 997 Дж</span>.
+      Округляя, получаем примерно <span class="formula">1,0 кДж</span>.`,
+    answer: `<span class="formula">≈ 1,0 кДж</span>`
   },
   {
     id: 4,
     topic: 'Оптика',
-    level: 'Средняя',
-    levelClass: 'medium',
+    difficulty: 2,
     title: 'Изображение в собирающей линзе',
-    statement: 'Предмет расположен на расстоянии <span class="formula">d = 60 см</span> от собирающей линзы с фокусным расстоянием <span class="formula">f = 20 см</span>. Определите расстояние от линзы до изображения и линейное увеличение.',
-    hint: 'Используйте формулу тонкой линзы, а затем отношение расстояний для увеличения.',
-    solution: '<span class="formula">1/f = 1/d + 1/b</span>. Тогда <span class="formula">1/b = 1/20 − 1/60 = 1/30</span>, поэтому <span class="formula">b = 30 см</span>. Увеличение по модулю <span class="formula">|Γ| = b/d = 30/60 = 0,5</span>. Изображение действительное, перевёрнутое и уменьшенное в два раза.'
+    statement: `Предмет расположен на расстоянии <span class="formula">d = 60 см</span> от
+      собирающей линзы с фокусным расстоянием <span class="formula">f = 20 см</span>.
+      Определите расстояние от линзы до изображения и линейное увеличение.`,
+    hints: [
+      `Начните с формулы тонкой линзы.`,
+      `<span class="formula">1/f = 1/d + 1/b</span>. Выразите из неё расстояние <span class="formula">b</span>.`,
+      `После этого найдите увеличение по модулю: <span class="formula">|Γ| = b/d</span>.`
+    ],
+    solution: `<span class="formula">1/f = 1/d + 1/b</span>. Тогда
+      <span class="formula">1/b = 1/20 − 1/60 = 1/30</span>, поэтому
+      <span class="formula">b = 30 см</span>. Увеличение по модулю
+      <span class="formula">|Γ| = b/d = 30/60 = 0,5</span>. Изображение действительное,
+      перевёрнутое и уменьшенное в два раза.`,
+    answer: `<span class="formula">b = 30 см, |Γ| = 0,5</span>`
   },
   {
     id: 5,
     topic: 'Колебания',
-    level: 'Базовая',
-    levelClass: 'easy',
+    difficulty: 1,
     title: 'Период математического маятника',
-    statement: 'Найдите период малых колебаний математического маятника длиной <span class="formula">L = 1,0 м</span>. Примите <span class="formula">g = 9,8 м/с²</span>.',
-    hint: 'Период малых колебаний не зависит от массы груза.',
-    solution: '<span class="formula">T = 2π√(L/g) = 2π√(1/9,8) ≈ 2,01 с</span>.'
+    statement: `Найдите период малых колебаний математического маятника длиной
+      <span class="formula">L = 1,0 м</span>. Примите
+      <span class="formula">g = 9,8 м/с²</span>.`,
+    hints: [
+      `Период малых колебаний не зависит от массы груза.`,
+      `Используйте <span class="formula">T = 2π√(L/g)</span>.`
+    ],
+    solution: `<span class="formula">T = 2π√(L/g) = 2π√(1/9,8) ≈ 2,01 с</span>.`,
+    answer: `<span class="formula">≈ 2,01 с</span>`
   },
   {
     id: 6,
     topic: 'Механика',
-    level: 'Олимпиадная',
-    levelClass: 'hard',
+    difficulty: 3,
     title: 'Цилиндр скатывается с высоты',
-    statement: 'Сплошной однородный цилиндр без проскальзывания скатывается с высоты <span class="formula">h</span>. Найдите скорость его центра масс внизу. Момент инерции цилиндра относительно оси равен <span class="formula">I = mR²/2</span>.',
-    hint: 'Кинетическая энергия состоит из поступательной и вращательной частей. Используйте условие <span class="formula">v = ωR</span>.',
-    solution: '<span class="formula">mgh = mv²/2 + Iω²/2</span>. Подставляя <span class="formula">I = mR²/2</span> и <span class="formula">ω = v/R</span>, получаем <span class="formula">mgh = mv²/2 + mv²/4 = 3mv²/4</span>. Следовательно, <span class="formula">v = √(4gh/3)</span>.'
+    statement: `Сплошной однородный цилиндр без проскальзывания скатывается с высоты
+      <span class="formula">h</span>. Найдите скорость его центра масс внизу.
+      Момент инерции цилиндра относительно оси равен
+      <span class="formula">I = mR²/2</span>.`,
+
+    // Несколько рисунков можно добавить через массив images:
+    // images: [
+    //   { src: 'assets/images/task6-scheme.png', alt: 'Цилиндр на наклонной плоскости', caption: 'Схема задачи' },
+    //   { src: 'assets/images/task6-forces.png', alt: 'Силы, действующие на цилиндр', caption: 'Диаграмма сил' }
+    // ],
+
+    hints: [
+      `Запишите закон сохранения механической энергии между верхней и нижней точками.`,
+      `Кинетическая энергия состоит из поступательной и вращательной частей.`,
+      `Используйте <span class="formula">mgh = mv²/2 + Iω²/2</span> и условие качения <span class="formula">v = ωR</span>.`
+    ],
+    solution: `<span class="formula">mgh = mv²/2 + Iω²/2</span>. Подставляя
+      <span class="formula">I = mR²/2</span> и <span class="formula">ω = v/R</span>, получаем
+      <span class="formula">mgh = mv²/2 + mv²/4 = 3mv²/4</span>. Следовательно,
+      <span class="formula">v = √(4gh/3)</span>.`,
+    answer: `<span class="formula">v = √(4gh/3)</span>`
   }
 ];
+
+/* =====================================================================
+   ⬆⬆⬆  КОНЕЦ БАНКА ЗАДАЧ. НОВУЮ ЗАДАЧУ ВСТАВЛЯЙ ПЕРЕД ];  ⬆⬆⬆
+
+   ГОТОВЫЙ ШАБЛОН НОВОЙ ЗАДАЧИ:
+
+   {
+     id: 7,
+     topic: 'Механика',
+     difficulty: 2,
+     title: 'Название задачи',
+
+     statement: `Полное условие задачи`,
+
+     // Вариант A: один рисунок
+     image: 'assets/images/task7.png',
+     imageAlt: 'Описание рисунка для тех, кто его не видит',
+     imageCaption: 'Рис. 1. Подпись под рисунком',
+
+     // Вариант B: несколько рисунков — используй images вместо image
+     // images: [
+     //   { src: 'assets/images/task7-1.png', alt: 'Первый рисунок', caption: 'Рис. 1' },
+     //   { src: 'assets/images/task7-2.png', alt: 'Второй рисунок', caption: 'Рис. 2' }
+     // ],
+
+     // Подсказки открываются строго по одной, по порядку
+     hints: [
+       `Первая, самая мягкая подсказка`,
+       `Вторая подсказка — укажите подход или закон`,
+       {
+         text: `Третья подсказка — можно дать ключевое уравнение`,
+         image: 'assets/images/task7-hint3.png',
+         imageAlt: 'Рисунок к третьей подсказке',
+         caption: 'Схема для подсказки 3'
+       }
+     ],
+
+     solution: `Полное решение`,
+     answer: `Краткий ответ`
+   }
+   ===================================================================== */
 
 let activeProblemId = null;
 let activeProblemTopic = 'all';
@@ -625,7 +746,7 @@ function renderProblemCatalog(topic='all'){
         <span class="topic-block-count">${tasks.length} ${pluralTasks(tasks.length)}</span>
       </div>
       <div class="topic-task-grid">
-        ${tasks.map(p=>`<button class="task-number-tile ${p.levelClass}" onclick="openProblem(${p.id})" title="Задача ${p.id}: ${escapeAttribute(p.title)}" aria-label="Открыть задачу ${p.id}: ${escapeAttribute(p.title)}">${p.id}</button>`).join('')}
+        ${tasks.map(p=>`<button class="task-number-tile" onclick="openProblem(${p.id})" title="Задача ${p.id}: ${escapeAttribute(p.title)} · ${difficultyLabel(p.difficulty)}" aria-label="Открыть задачу ${p.id}: ${escapeAttribute(p.title)}. Сложность: ${difficultyLabel(p.difficulty)}"><span class="task-tile-number">${p.id}</span><span class="task-tile-stars" aria-hidden="true">${renderStars(p.difficulty)}</span></button>`).join('')}
       </div>
     </section>
   `).join('');
@@ -633,6 +754,25 @@ function renderProblemCatalog(topic='all'){
 
 function escapeAttribute(value){
   return String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function normalizeDifficulty(value){
+  const n=Math.round(Number(value)||1);
+  return Math.min(4,Math.max(1,n));
+}
+
+function renderStars(value){
+  return '★'.repeat(normalizeDifficulty(value));
+}
+
+function difficultyLabel(value){
+  const n=normalizeDifficulty(value);
+  return {
+    1:'1 звезда — тривиальная',
+    2:'2 звезды — нетривиальная',
+    3:'3 звезды — олимпиадная',
+    4:'4 звезды — гроб'
+  }[n];
 }
 
 function pluralTasks(n){
@@ -657,23 +797,16 @@ function openProblem(id,updateHash=true){
   document.getElementById('problem-detail').hidden=false;
   document.getElementById('detail-topic').textContent=p.topic;
   const level=document.getElementById('detail-level');
-  level.textContent=p.level;
-  level.className='level-chip level-'+p.levelClass;
+  level.innerHTML='<span class="difficulty-stars" aria-hidden="true">'+renderStars(p.difficulty)+'</span>';
+  level.className='level-chip';
+  level.setAttribute('aria-label','Сложность: '+difficultyLabel(p.difficulty));
+  level.title=difficultyLabel(p.difficulty);
   document.getElementById('detail-number').textContent='Задача '+p.id;
   document.getElementById('detail-title').textContent=p.title;
   document.getElementById('detail-statement').innerHTML=p.statement;
-  document.getElementById('detail-hint').innerHTML=p.hint||'Подсказка пока не добавлена.';
+  renderStepHints(p);
   document.getElementById('detail-solution').innerHTML=p.solution||'Решение пока не добавлено.';
-
-  const image=document.getElementById('detail-image');
-  if(p.image){
-    image.src=p.image;
-    image.alt=p.imageAlt||('Рисунок к задаче '+p.id);
-    image.hidden=false;
-  }else{
-    image.removeAttribute('src');
-    image.hidden=true;
-  }
+  renderProblemImages(p);
 
   const answerBox=document.getElementById('detail-answer-box');
   if(p.answer){
@@ -691,6 +824,123 @@ function openProblem(id,updateHash=true){
   window.scrollTo(0,0);
 }
 
+
+let currentHintSteps=[];
+let visibleHintCount=0;
+
+function renderProblemImages(problem){
+  const container=document.getElementById('detail-images');
+  if(!container)return;
+
+  let images=[];
+  if(Array.isArray(problem.images)){
+    images=problem.images;
+  }else if(problem.image){
+    images=[{
+      src:problem.image,
+      alt:problem.imageAlt||('Рисунок к задаче '+problem.id),
+      caption:problem.imageCaption||''
+    }];
+  }
+
+  images=images.filter(item=>item&&item.src);
+  if(!images.length){
+    container.innerHTML='';
+    container.hidden=true;
+    return;
+  }
+
+  container.innerHTML=images.map((item,index)=>{
+    const src=escapeAttribute(item.src);
+    const alt=escapeAttribute(item.alt||('Рисунок '+(index+1)+' к задаче '+problem.id));
+    const caption=item.caption?'<figcaption class="problem-figure-caption">'+escapeHtml(item.caption)+'</figcaption>':'';
+    return '<figure class="problem-figure-wrap"><img class="problem-figure" src="'+src+'" alt="'+alt+'" loading="lazy">'+caption+'</figure>';
+  }).join('');
+  container.hidden=false;
+}
+
+function normalizeHintStep(step,index){
+  if(typeof step==='string')return {text:step};
+  if(step&&typeof step==='object')return {
+    text:step.text||'',
+    image:step.image||'',
+    imageAlt:step.imageAlt||('Рисунок к подсказке '+(index+1)),
+    caption:step.caption||''
+  };
+  return {text:String(step||'')};
+}
+
+function renderStepHints(problem){
+  const raw=Array.isArray(problem.hints)?problem.hints:(problem.hint?[problem.hint]:[]);
+  currentHintSteps=raw.map(normalizeHintStep);
+  visibleHintCount=0;
+  const panel=document.getElementById('detail-hint');
+  const btn=document.getElementById('detail-hint-btn');
+  if(!panel||!btn)return;
+
+  if(!currentHintSteps.length){
+    panel.innerHTML='<div class="hint-progress">Подсказки пока не добавлены.</div>';
+    panel.classList.remove('open');
+    btn.disabled=true;
+    btn.textContent='Нет подсказок';
+    btn.setAttribute('aria-expanded','false');
+    return;
+  }
+
+  panel.innerHTML='<div class="hint-progress" id="hint-progress">Открыто 0 из '+currentHintSteps.length+'</div>'+currentHintSteps.map((step,index)=>{
+    const image=step.image?'<img class="hint-step-image" src="'+escapeAttribute(step.image)+'" alt="'+escapeAttribute(step.imageAlt)+'" loading="lazy">':'';
+    const caption=step.caption?'<div class="hint-step-caption">'+escapeHtml(step.caption)+'</div>':'';
+    return '<div class="hint-step" data-hint-index="'+index+'"><div class="hint-step-label">Подсказка '+(index+1)+'</div><div class="hint-step-text">'+step.text+'</div>'+image+caption+'</div>';
+  }).join('');
+
+  btn.disabled=false;
+  btn.textContent='Открыть подсказку 1 из '+currentHintSteps.length;
+  btn.setAttribute('aria-expanded','false');
+  panel.classList.remove('open');
+}
+
+function revealNextHint(){
+  const panel=document.getElementById('detail-hint');
+  const btn=document.getElementById('detail-hint-btn');
+  if(!panel||!btn||!currentHintSteps.length)return;
+
+  if(visibleHintCount>=currentHintSteps.length){
+    resetHintSteps();
+    return;
+  }
+
+  panel.classList.add('open');
+  const step=panel.querySelector('[data-hint-index="'+visibleHintCount+'"]');
+  if(step)step.classList.add('visible');
+  visibleHintCount++;
+  const progress=document.getElementById('hint-progress');
+  if(progress)progress.textContent='Открыто '+visibleHintCount+' из '+currentHintSteps.length;
+  btn.setAttribute('aria-expanded','true');
+  btn.textContent=visibleHintCount<currentHintSteps.length
+    ?'Открыть подсказку '+(visibleHintCount+1)+' из '+currentHintSteps.length
+    :'Скрыть подсказки';
+}
+
+function resetHintSteps(){
+  visibleHintCount=0;
+  const panel=document.getElementById('detail-hint');
+  const btn=document.getElementById('detail-hint-btn');
+  if(panel){
+    panel.classList.remove('open');
+    panel.querySelectorAll('.hint-step').forEach(step=>step.classList.remove('visible'));
+  }
+  const progress=document.getElementById('hint-progress');
+  if(progress)progress.textContent='Открыто 0 из '+currentHintSteps.length;
+  if(btn&&!btn.disabled){
+    btn.setAttribute('aria-expanded','false');
+    btn.textContent='Открыть подсказку 1 из '+currentHintSteps.length;
+  }
+}
+
+function escapeHtml(value){
+  return String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+}
+
 function closeProblem(updateHash=true){
   activeProblemId=null;
   document.getElementById('problem-detail').hidden=true;
@@ -705,7 +955,7 @@ function renderProblemSidebar(problem){
   document.getElementById('sidebar-topic').textContent=problem.topic;
   document.getElementById('sidebar-count').textContent=sameTopic.length+' '+pluralTasks(sameTopic.length);
   document.getElementById('sidebar-task-grid').innerHTML=sameTopic.map(p=>`
-    <button class="sidebar-task-btn ${Number(p.id)===Number(problem.id)?'active':''}" onclick="openProblem(${p.id})" title="${escapeAttribute(p.title)}">${p.id}</button>
+    <button class="sidebar-task-btn ${Number(p.id)===Number(problem.id)?'active':''}" onclick="openProblem(${p.id})" title="${escapeAttribute(p.title)} · ${difficultyLabel(p.difficulty)}" aria-label="Задача ${p.id}. ${difficultyLabel(p.difficulty)}">${p.id}</button>
   `).join('');
 }
 
@@ -736,11 +986,13 @@ function toggleDetailPanel(id,btn){
 }
 
 function resetDetailPanels(){
-  ['detail-hint','detail-solution'].forEach(id=>document.getElementById(id)?.classList.remove('open'));
-  ['detail-hint-btn','detail-solution-btn'].forEach(id=>{
-    const btn=document.getElementById(id);
-    if(btn){btn.setAttribute('aria-expanded','false');btn.textContent='Показать';}
-  });
+  resetHintSteps();
+  document.getElementById('detail-solution')?.classList.remove('open');
+  const solutionBtn=document.getElementById('detail-solution-btn');
+  if(solutionBtn){
+    solutionBtn.setAttribute('aria-expanded','false');
+    solutionBtn.textContent='Показать';
+  }
 }
 
 function handleProblemRoute(){
