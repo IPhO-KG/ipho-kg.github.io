@@ -138,14 +138,21 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .topic-block-title{font-size:15px;font-weight:750}
 .topic-block-count{font-size:11px;color:var(--text2)}
 .topic-task-grid{display:flex;gap:8px;flex-wrap:wrap;padding:1.15rem}
-.task-number-tile{min-width:50px;height:45px;padding:4px 7px;border-radius:7px;border:1.5px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;transition:transform .15s,border-color .15s,background .15s,color .15s;position:relative;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}
-.task-number-tile:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent);background:var(--bg2)}
+.task-number-tile{min-width:50px;height:45px;padding:4px 7px;border-radius:7px;border:1.5px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;transition:transform .15s,border-color .15s,background .15s,color .15s,box-shadow .15s;position:relative;display:inline-flex;align-items:center;justify-content:center}
+.task-number-tile:hover{transform:translateY(-2px);box-shadow:0 5px 14px rgba(17,24,39,.09)}
 .task-tile-number{font-size:13px;font-weight:800;line-height:1}
-.task-tile-stars{font-size:9px;line-height:1;letter-spacing:-1px;color:#d97706;white-space:nowrap}
+.task-tile-skull{position:absolute;right:3px;top:2px;font-size:11px;line-height:1;filter:grayscale(1) brightness(2.3)}
+.difficulty-1{--difficulty:#059669;--difficulty-bg:rgba(5,150,105,.10);--difficulty-border:rgba(5,150,105,.62)}
+.difficulty-2{--difficulty:#b45309;--difficulty-bg:rgba(245,158,11,.12);--difficulty-border:rgba(245,158,11,.72)}
+.difficulty-3{--difficulty:#dc2626;--difficulty-bg:rgba(239,68,68,.10);--difficulty-border:rgba(239,68,68,.68)}
+.difficulty-4{--difficulty:#991b1b;--difficulty-bg:rgba(127,29,29,.16);--difficulty-border:rgba(185,28,28,.92)}
+.task-number-tile.difficulty-1,.task-number-tile.difficulty-2,.task-number-tile.difficulty-3,.task-number-tile.difficulty-4{color:var(--difficulty);background:var(--difficulty-bg);border-color:var(--difficulty-border)}
+.task-number-tile.difficulty-1:hover,.task-number-tile.difficulty-2:hover,.task-number-tile.difficulty-3:hover,.task-number-tile.difficulty-4:hover{color:var(--difficulty);border-color:var(--difficulty)}
+.task-number-tile.difficulty-4{font-weight:900;background:linear-gradient(135deg,rgba(127,29,29,.22),rgba(239,68,68,.09))}
 .catalog-legend{display:flex;gap:10px 16px;flex-wrap:wrap;margin-top:1rem;font-size:11px;color:var(--text2)}
-.legend-item{display:flex;align-items:center;gap:6px}
-.legend-stars,.difficulty-stars{color:#d97706;letter-spacing:1px;white-space:nowrap;font-weight:800}
-.difficulty-stars{display:inline-block;font-size:12px;padding:3px 9px;border-radius:100px;background:rgba(217,119,6,.09);border:1px solid rgba(217,119,6,.22)}
+.legend-item{display:flex;align-items:center;gap:7px}
+.legend-color{width:22px;height:18px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;color:var(--difficulty);background:var(--difficulty-bg);border:1.5px solid var(--difficulty-border);font-size:11px;font-weight:900;line-height:1}
+.difficulty-chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;padding:4px 10px;border-radius:100px;color:var(--difficulty);background:var(--difficulty-bg);border:1px solid var(--difficulty-border)}
 .empty-problems{display:none;padding:2rem;text-align:center;color:var(--text2);border:1px dashed var(--border);border-radius:var(--rl)}
 .problem-detail[hidden],.problem-catalog-view[hidden]{display:none!important}
 .problem-back{display:inline-flex;align-items:center;gap:7px;border:none;background:transparent;color:var(--accent);font-size:13px;font-weight:700;cursor:pointer;padding:0;margin-bottom:1.1rem}
@@ -199,9 +206,11 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .sidebar-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:1rem;border-bottom:1px solid var(--border);background:var(--bg2)}
 .sidebar-topic{font-size:13px;font-weight:750}.sidebar-count{font-size:10px;color:var(--text2)}
 .sidebar-task-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:1rem}
-.sidebar-task-btn{aspect-ratio:1;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text2);font-size:11px;font-weight:750;cursor:pointer;transition:all .15s}
-.sidebar-task-btn:hover{border-color:var(--accent);color:var(--accent)}
-.sidebar-task-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.sidebar-task-btn{aspect-ratio:1;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text2);font-size:11px;font-weight:800;cursor:pointer;transition:all .15s;position:relative}
+.sidebar-task-btn.difficulty-1,.sidebar-task-btn.difficulty-2,.sidebar-task-btn.difficulty-3,.sidebar-task-btn.difficulty-4{color:var(--difficulty);background:var(--difficulty-bg);border-color:var(--difficulty-border)}
+.sidebar-task-btn:hover{transform:translateY(-1px);border-color:var(--difficulty)}
+.sidebar-task-btn.active{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--difficulty);border-color:var(--difficulty);color:var(--difficulty)}
+.sidebar-skull{position:absolute;right:1px;top:1px;font-size:8px;line-height:1}
 .sidebar-all{display:block;width:calc(100% - 2rem);margin:0 1rem 1rem;padding:8px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg2);color:var(--text2);font-size:11px;font-weight:700;cursor:pointer}
 .sidebar-all:hover{border-color:var(--accent);color:var(--accent)}
 @media(max-width:850px){.problem-page-layout{grid-template-columns:1fr}.problem-sidebar{position:static;order:-1}.sidebar-task-grid{grid-template-columns:repeat(auto-fill,minmax(36px,1fr))}}
@@ -333,11 +342,11 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 
       <div id="problem-catalog" class="problem-catalog"></div>
       <div id="empty-problems" class="empty-problems">В этом разделе пока нет задач.</div>
-      <div class="catalog-legend" aria-label="Шкала сложности задач">
-        <span class="legend-item"><span class="legend-stars">★</span>Тривиальная</span>
-        <span class="legend-item"><span class="legend-stars">★★</span>Нетривиальная</span>
-        <span class="legend-item"><span class="legend-stars">★★★</span>Олимпиадная</span>
-        <span class="legend-item"><span class="legend-stars">★★★★</span>Гроб</span>
+      <div class="catalog-legend" aria-label="Цветовая шкала сложности задач">
+        <span class="legend-item"><span class="legend-color difficulty-1"></span>Лёгкая</span>
+        <span class="legend-item"><span class="legend-color difficulty-2"></span>Средняя</span>
+        <span class="legend-item"><span class="legend-color difficulty-3"></span>Сложная</span>
+        <span class="legend-item"><span class="legend-color difficulty-4">☠</span>Гроб</span>
       </div>
     </div>
 
@@ -824,7 +833,7 @@ function renderProblemCatalog(topic='all'){
         <span class="topic-block-count">${tasks.length} ${pluralTasks(tasks.length)}</span>
       </div>
       <div class="topic-task-grid">
-        ${tasks.map((p,index)=>`<button class="task-number-tile" onclick="openProblem(${p.id})" title="Задача ${index+1}: ${escapeAttribute(p.title)} · ${difficultyLabel(p.difficulty)}" aria-label="Открыть задачу ${index+1}: ${escapeAttribute(p.title)}. Сложность: ${difficultyLabel(p.difficulty)}"><span class="task-tile-number">${index+1}</span><span class="task-tile-stars" aria-hidden="true">${renderStars(p.difficulty)}</span></button>`).join('')}
+        ${tasks.map((p,index)=>`<button class="task-number-tile ${difficultyClass(p.difficulty)}" onclick="openProblem(${p.id})" title="Задача ${index+1}: ${escapeAttribute(p.title)} · ${difficultyLabel(p.difficulty)}" aria-label="Открыть задачу ${index+1}: ${escapeAttribute(p.title)}. Сложность: ${difficultyLabel(p.difficulty)}"><span class="task-tile-number">${index+1}</span>${normalizeDifficulty(p.difficulty)===4?'<span class="task-tile-skull" aria-hidden="true">☠</span>':''}</button>`).join('')}
       </div>
     </section>
   `).join('');
@@ -839,17 +848,27 @@ function normalizeDifficulty(value){
   return Math.min(4,Math.max(1,n));
 }
 
-function renderStars(value){
-  return '★'.repeat(normalizeDifficulty(value));
+function difficultyClass(value){
+  return 'difficulty-'+normalizeDifficulty(value);
+}
+
+function difficultyShortLabel(value){
+  const n=normalizeDifficulty(value);
+  return {
+    1:'Лёгкая',
+    2:'Средняя',
+    3:'Сложная',
+    4:'☠ Гроб'
+  }[n];
 }
 
 function difficultyLabel(value){
   const n=normalizeDifficulty(value);
   return {
-    1:'1 звезда — тривиальная',
-    2:'2 звезды — нетривиальная',
-    3:'3 звезды — олимпиадная',
-    4:'4 звезды — гроб'
+    1:'Лёгкая задача — зелёный цвет',
+    2:'Средняя задача — оранжевый цвет',
+    3:'Сложная задача — красный цвет',
+    4:'Гроб — тёмно-красный цвет с черепом'
   }[n];
 }
 
@@ -922,8 +941,8 @@ function openProblem(id,updateHash=true){
   document.getElementById('problem-detail').hidden=false;
   document.getElementById('detail-topic').textContent=p.topic;
   const level=document.getElementById('detail-level');
-  level.innerHTML='<span class="difficulty-stars" aria-hidden="true">'+renderStars(p.difficulty)+'</span>';
-  level.className='level-chip';
+  level.textContent=difficultyShortLabel(p.difficulty);
+  level.className='level-chip difficulty-chip '+difficultyClass(p.difficulty);
   level.setAttribute('aria-label','Сложность: '+difficultyLabel(p.difficulty));
   level.title=difficultyLabel(p.difficulty);
   const topicNumber=getTopicProblemNumber(p);
@@ -1091,7 +1110,7 @@ function renderProblemSidebar(problem){
   document.getElementById('sidebar-topic').textContent=problem.topic;
   document.getElementById('sidebar-count').textContent=sameTopic.length+' '+pluralTasks(sameTopic.length);
   document.getElementById('sidebar-task-grid').innerHTML=sameTopic.map((p,index)=>`
-    <button class="sidebar-task-btn ${Number(p.id)===Number(problem.id)?'active':''}" onclick="openProblem(${p.id})" title="${escapeAttribute(p.title)} · ${difficultyLabel(p.difficulty)}" aria-label="Задача ${index+1}. ${difficultyLabel(p.difficulty)}">${index+1}</button>
+    <button class="sidebar-task-btn ${difficultyClass(p.difficulty)} ${Number(p.id)===Number(problem.id)?'active':''}" onclick="openProblem(${p.id})" title="${escapeAttribute(p.title)} · ${difficultyLabel(p.difficulty)}" aria-label="Задача ${index+1}. ${difficultyLabel(p.difficulty)}">${index+1}${normalizeDifficulty(p.difficulty)===4?'<span class="sidebar-skull" aria-hidden="true">☠</span>':''}</button>
   `).join('');
 }
 
