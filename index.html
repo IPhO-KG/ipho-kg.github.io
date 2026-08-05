@@ -128,6 +128,26 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .practice-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
 .practice-intro{max-width:720px;color:var(--text2);font-size:14px}
 .practice-count{font-size:12px;font-weight:700;color:var(--accent);background:rgba(26,86,219,.08);border:1px solid rgba(26,86,219,.18);padding:5px 12px;border-radius:100px;white-space:nowrap}
+.selection-view[hidden]{display:none!important}
+.selection-kicker{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:.7rem}
+.book-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.book-choice-card{appearance:none;width:100%;text-align:left;padding:1.6rem;border:1.5px solid var(--border);border-radius:var(--rl);background:var(--bg);color:var(--text);cursor:pointer;transition:transform .16s,border-color .16s,box-shadow .16s}
+.book-choice-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 10px 24px rgba(17,24,39,.08)}
+.book-choice-title{display:block;font-family:Georgia,'Times New Roman',serif;font-size:25px;font-weight:800;margin-bottom:.35rem}
+.book-choice-description{display:block;font-size:13px;color:var(--text2);line-height:1.55}
+.book-choice-footer{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border)}
+.book-choice-count{font-size:12px;font-weight:750;color:var(--accent)}
+.book-choice-arrow{font-size:18px;color:var(--accent)}
+.selection-toolbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.selection-title{font-family:Georgia,'Times New Roman',serif;font-size:28px;line-height:1.2}
+.selection-subtitle{font-size:13px;color:var(--text2);margin-top:.3rem}
+.topic-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.topic-choice-card{appearance:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;padding:1.25rem 1.35rem;border:1.5px solid var(--border);border-radius:var(--rl);background:var(--bg);color:var(--text);cursor:pointer;text-align:left;transition:transform .15s,border-color .15s,background .15s}
+.topic-choice-card:hover{transform:translateY(-2px);border-color:var(--accent);background:var(--bg2)}
+.topic-choice-name{font-size:16px;font-weight:750}
+.topic-choice-count{font-size:11px;color:var(--text2);white-space:nowrap}
+.task-selection-breadcrumb{font-size:12px;color:var(--text2);margin-bottom:.35rem}
+@media(max-width:640px){.book-choice-grid,.topic-choice-grid{grid-template-columns:1fr}.book-choice-card{padding:1.25rem}.selection-title{font-size:24px}}
 .filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:1.5rem}
 .filter-btn{padding:7px 13px;border:1px solid var(--border);border-radius:100px;background:var(--bg);color:var(--text2);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
 .filter-btn:hover{border-color:var(--accent);color:var(--accent)}
@@ -326,32 +346,69 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
       <div class="practice-head">
         <div>
           <p class="stitle" style="margin-bottom:.45rem">Банк задач</p>
-          <p class="practice-intro">Выберите раздел и номер задачи. После нажатия задача откроется на отдельной полной странице с условием, подсказкой и решением.</p>
+          <p class="practice-intro">Сначала выберите задачник, затем раздел физики и номер задачи.</p>
         </div>
-        <div class="practice-count" id="practice-count">0 задач</div>
       </div>
 
-      <div class="filters" aria-label="Фильтр задач по разделу">
-        <button class="filter-btn active" data-topic="all" onclick="filterProblems('all',this)">Все разделы</button>
-        <button class="filter-btn" data-topic="Механика" onclick="filterProblems('Механика',this)">Механика</button>
-        <button class="filter-btn" data-topic="Электричество" onclick="filterProblems('Электричество',this)">Электричество</button>
-        <button class="filter-btn" data-topic="Термодинамика" onclick="filterProblems('Термодинамика',this)">Термодинамика</button>
-        <button class="filter-btn" data-topic="Оптика" onclick="filterProblems('Оптика',this)">Оптика</button>
-        <button class="filter-btn" data-topic="Колебания" onclick="filterProblems('Колебания',this)">Колебания</button>
+      <div id="book-selection-view" class="selection-view">
+        <p class="selection-kicker">Шаг 1 · Выберите задачник</p>
+        <div class="book-choice-grid">
+          <button class="book-choice-card" onclick="selectProblemBook('Савченко')">
+            <span class="book-choice-title">Савченко</span>
+            <span class="book-choice-description">Задачи по механике, термодинамике, электричеству и оптике.</span>
+            <span class="book-choice-footer">
+              <span class="book-choice-count" data-book-count="Савченко">0 задач</span>
+              <span class="book-choice-arrow" aria-hidden="true">→</span>
+            </span>
+          </button>
+
+          <button class="book-choice-card" onclick="selectProblemBook('Овчинкин')">
+            <span class="book-choice-title">Овчинкин</span>
+            <span class="book-choice-description">Отдельный каталог задач с собственной нумерацией по каждому разделу.</span>
+            <span class="book-choice-footer">
+              <span class="book-choice-count" data-book-count="Овчинкин">0 задач</span>
+              <span class="book-choice-arrow" aria-hidden="true">→</span>
+            </span>
+          </button>
+        </div>
       </div>
 
-      <div id="problem-catalog" class="problem-catalog"></div>
-      <div id="empty-problems" class="empty-problems">В этом разделе пока нет задач.</div>
-      <div class="catalog-legend" aria-label="Цветовая шкала сложности задач">
-        <span class="legend-item"><span class="legend-color difficulty-1"></span>Лёгкая</span>
-        <span class="legend-item"><span class="legend-color difficulty-2"></span>Средняя</span>
-        <span class="legend-item"><span class="legend-color difficulty-3"></span>Сложная</span>
-        <span class="legend-item"><span class="legend-color difficulty-4">☠</span>Гроб</span>
+      <div id="topic-selection-view" class="selection-view" hidden>
+        <button class="problem-back" onclick="showBookSelection()">← К выбору задачника</button>
+        <div class="selection-toolbar">
+          <div>
+            <p class="selection-kicker">Шаг 2 · Выберите раздел</p>
+            <h2 class="selection-title" id="selected-book-title"></h2>
+            <p class="selection-subtitle">Нумерация задач начинается заново в каждом разделе.</p>
+          </div>
+        </div>
+        <div id="topic-choice-grid" class="topic-choice-grid"></div>
+      </div>
+
+      <div id="task-selection-view" class="selection-view" hidden>
+        <button class="problem-back" onclick="showTopicSelection()">← К разделам задачника</button>
+        <div class="practice-head">
+          <div>
+            <p class="task-selection-breadcrumb" id="task-selection-breadcrumb"></p>
+            <p class="stitle" id="task-selection-title" style="margin-bottom:.45rem"></p>
+            <p class="practice-intro">Выберите номер задачи. Цвет показывает уровень сложности.</p>
+          </div>
+          <div class="practice-count" id="practice-count">0 задач</div>
+        </div>
+
+        <div id="problem-catalog" class="problem-catalog"></div>
+        <div id="empty-problems" class="empty-problems">В этом разделе пока нет задач.</div>
+        <div class="catalog-legend" aria-label="Цветовая шкала сложности задач">
+          <span class="legend-item"><span class="legend-color difficulty-1"></span>Лёгкая</span>
+          <span class="legend-item"><span class="legend-color difficulty-2"></span>Средняя</span>
+          <span class="legend-item"><span class="legend-color difficulty-3"></span>Сложная</span>
+          <span class="legend-item"><span class="legend-color difficulty-4">☠</span>Гроб</span>
+        </div>
       </div>
     </div>
 
     <div id="problem-detail" class="problem-detail" hidden>
-      <button class="problem-back" onclick="closeProblem()">← Вернуться ко всем задачам</button>
+      <button class="problem-back" onclick="closeProblem()">← Вернуться к задачам раздела</button>
       <div class="problem-page-layout">
         <article class="problem-article">
           <header class="problem-article-header">
@@ -408,12 +465,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
             <span class="sidebar-count" id="sidebar-count"></span>
           </div>
           <div class="sidebar-task-grid" id="sidebar-task-grid"></div>
-          <button class="sidebar-all" onclick="closeProblem()">Посмотреть весь банк задач</button>
+          <button class="sidebar-all" onclick="closeProblem()">Вернуться к разделу</button>
         </aside>
       </div>
     </div>
   </div>
 </div>
+
 
 <div id="sec-about" class="sec">
   <div class="inner">
@@ -575,6 +633,7 @@ const RESULTS = {
 const PRACTICE_TASKS = [
   {
     id: 1,
+    book: 'Савченко',
     topic: 'Механика',
     difficulty: 1,
     title: 'Столкновения трёх бусинок',
@@ -767,11 +826,13 @@ const PRACTICE_TASKS = [
 
    ГОТОВЫЙ ШАБЛОН НОВОЙ ЗАДАЧИ:
 
-   Номер на странице считается автоматически и отдельно внутри каждого раздела.
-   Поле id остаётся техническим и должно быть уникальным для всего сайта.
+   Номер на странице считается автоматически и отдельно внутри каждого
+   задачника и раздела. Поле id остаётся техническим и должно быть
+   уникальным для всего сайта.
 
    {
      id: 7,
+     book: 'Савченко', // или 'Овчинкин'
      topic: 'Механика',
      difficulty: 2,
      title: 'Название задачи',
@@ -806,37 +867,125 @@ const PRACTICE_TASKS = [
    }
    ===================================================================== */
 
-let activeProblemId = null;
-let activeProblemTopic = 'all';
+const PROBLEM_BOOKS=['Савченко','Овчинкин'];
+const PROBLEM_TOPICS=['Механика','Термодинамика','Электричество','Оптика'];
 
-function renderProblemCatalog(topic='all'){
+let activeProblemId=null;
+let activeProblemBook=null;
+let activeProblemTopic=null;
+
+function problemBook(problem){
+  return problem.book||'Савченко';
+}
+
+function sameProblemId(a,b){
+  return String(a)===String(b);
+}
+
+function problemIdArgument(id){
+  return JSON.stringify(id);
+}
+
+function setProblemSelectionView(viewId){
+  ['book-selection-view','topic-selection-view','task-selection-view'].forEach(id=>{
+    const element=document.getElementById(id);
+    if(element)element.hidden=id!==viewId;
+  });
+}
+
+function renderBookCounts(){
+  document.querySelectorAll('[data-book-count]').forEach(element=>{
+    const book=element.getAttribute('data-book-count');
+    const total=PRACTICE_TASKS.filter(problem=>problemBook(problem)===book).length;
+    element.textContent=total+' '+pluralTasks(total);
+  });
+}
+
+function showBookSelection(){
+  activeProblemBook=null;
+  activeProblemTopic=null;
+  setProblemSelectionView('book-selection-view');
+  renderBookCounts();
+  window.scrollTo(0,0);
+}
+
+function selectProblemBook(book){
+  if(!PROBLEM_BOOKS.includes(book))return;
+  activeProblemBook=book;
+  activeProblemTopic=null;
+  showTopicSelection();
+}
+
+function showTopicSelection(){
+  if(!activeProblemBook){
+    showBookSelection();
+    return;
+  }
+
+  setProblemSelectionView('topic-selection-view');
+  const title=document.getElementById('selected-book-title');
+  if(title)title.textContent=activeProblemBook;
+
+  const grid=document.getElementById('topic-choice-grid');
+  if(grid){
+    grid.innerHTML=PROBLEM_TOPICS.map(topic=>{
+      const total=PRACTICE_TASKS.filter(problem=>problemBook(problem)===activeProblemBook&&problem.topic===topic).length;
+      return `<button class="topic-choice-card" onclick="selectProblemTopic('${escapeAttribute(topic)}')">
+        <span class="topic-choice-name">${topic}</span>
+        <span class="topic-choice-count">${total} ${pluralTasks(total)} →</span>
+      </button>`;
+    }).join('');
+  }
+
+  window.scrollTo(0,0);
+}
+
+function selectProblemTopic(topic){
+  if(!PROBLEM_TOPICS.includes(topic)||!activeProblemBook)return;
+  activeProblemTopic=topic;
+  showTaskSelection();
+}
+
+function showTaskSelection(){
+  if(!activeProblemBook){
+    showBookSelection();
+    return;
+  }
+  if(!activeProblemTopic){
+    showTopicSelection();
+    return;
+  }
+
+  setProblemSelectionView('task-selection-view');
+  const breadcrumb=document.getElementById('task-selection-breadcrumb');
+  const title=document.getElementById('task-selection-title');
+  if(breadcrumb)breadcrumb.textContent=activeProblemBook+' → '+activeProblemTopic;
+  if(title)title.textContent=activeProblemTopic;
+  renderProblemCatalog(activeProblemBook,activeProblemTopic);
+  window.scrollTo(0,0);
+}
+
+function renderProblemCatalog(book=activeProblemBook,topic=activeProblemTopic){
   const catalog=document.getElementById('problem-catalog');
   const empty=document.getElementById('empty-problems');
   const count=document.getElementById('practice-count');
-  if(!catalog)return;
+  if(!catalog||!book||!topic)return;
 
-  activeProblemTopic=topic;
-  const list=topic==='all'?PRACTICE_TASKS:PRACTICE_TASKS.filter(p=>p.topic===topic);
-  count.textContent=list.length+' '+pluralTasks(list.length);
-  empty.style.display=list.length?'none':'block';
+  const list=PRACTICE_TASKS.filter(problem=>problemBook(problem)===book&&problem.topic===topic);
+  if(count)count.textContent=list.length+' '+pluralTasks(list.length);
+  if(empty)empty.style.display=list.length?'none':'block';
 
-  const groups={};
-  list.forEach(p=>{
-    if(!groups[p.topic])groups[p.topic]=[];
-    groups[p.topic].push(p);
-  });
-
-  catalog.innerHTML=Object.entries(groups).map(([groupTopic,tasks])=>`
+  catalog.innerHTML=list.length?`
     <section class="topic-block">
       <div class="topic-block-head">
-        <h2 class="topic-block-title">${groupTopic}</h2>
-        <span class="topic-block-count">${tasks.length} ${pluralTasks(tasks.length)}</span>
+        <h2 class="topic-block-title">${book} · ${topic}</h2>
+        <span class="topic-block-count">${list.length} ${pluralTasks(list.length)}</span>
       </div>
       <div class="topic-task-grid">
-        ${tasks.map((p,index)=>`<button class="task-number-tile ${difficultyClass(p.difficulty)}" onclick="openProblem(${p.id})" title="Задача ${index+1}: ${escapeAttribute(p.title)} · ${difficultyLabel(p.difficulty)}" aria-label="Открыть задачу ${index+1}: ${escapeAttribute(p.title)}. Сложность: ${difficultyLabel(p.difficulty)}"><span class="task-tile-number">${index+1}</span>${normalizeDifficulty(p.difficulty)===4?'<span class="task-tile-skull" aria-hidden="true">☠</span>':''}</button>`).join('')}
+        ${list.map((problem,index)=>`<button class="task-number-tile ${difficultyClass(problem.difficulty)}" onclick='openProblem(${problemIdArgument(problem.id)})' title="Задача ${index+1}: ${escapeAttribute(problem.title)} · ${difficultyLabel(problem.difficulty)}" aria-label="Открыть задачу ${index+1}: ${escapeAttribute(problem.title)}. Сложность: ${difficultyLabel(problem.difficulty)}"><span class="task-tile-number">${index+1}</span>${normalizeDifficulty(problem.difficulty)===4?'<span class="task-tile-skull" aria-hidden="true">☠</span>':''}</button>`).join('')}
       </div>
     </section>
-  `).join('');
+  `:'';
 }
 
 function escapeAttribute(value){
@@ -879,15 +1028,9 @@ function pluralTasks(n){
   return 'задач';
 }
 
-function filterProblems(topic,btn){
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  if(btn)btn.classList.add('active');
-  renderProblemCatalog(topic);
-}
-
-function getTopicProblemNumber(problem){
-  const sameTopic=PRACTICE_TASKS.filter(p=>p.topic===problem.topic);
-  const index=sameTopic.findIndex(p=>Number(p.id)===Number(problem.id));
+function getBookTopicProblemNumber(problem){
+  const sameSection=PRACTICE_TASKS.filter(item=>problemBook(item)===problemBook(problem)&&item.topic===problem.topic);
+  const index=sameSection.findIndex(item=>sameProblemId(item.id,problem.id));
   return index>=0?index+1:1;
 }
 
@@ -933,19 +1076,22 @@ async function renderMath(elements){
 }
 
 function openProblem(id,updateHash=true){
-  const p=PRACTICE_TASKS.find(item=>Number(item.id)===Number(id));
+  const p=PRACTICE_TASKS.find(item=>sameProblemId(item.id,id));
   if(!p)return;
-  activeProblemId=Number(p.id);
+
+  activeProblemId=p.id;
+  activeProblemBook=problemBook(p);
+  activeProblemTopic=p.topic;
 
   document.getElementById('problem-catalog-view').hidden=true;
   document.getElementById('problem-detail').hidden=false;
-  document.getElementById('detail-topic').textContent=p.topic;
+  document.getElementById('detail-topic').textContent=activeProblemBook+' · '+p.topic;
   const level=document.getElementById('detail-level');
   level.textContent=difficultyShortLabel(p.difficulty);
   level.className='level-chip difficulty-chip '+difficultyClass(p.difficulty);
   level.setAttribute('aria-label','Сложность: '+difficultyLabel(p.difficulty));
   level.title=difficultyLabel(p.difficulty);
-  const topicNumber=getTopicProblemNumber(p);
+  const topicNumber=getBookTopicProblemNumber(p);
   document.getElementById('detail-number').textContent='Задача '+topicNumber;
   document.getElementById('detail-title').textContent=p.title;
   document.getElementById('detail-statement').innerHTML=p.statement;
@@ -971,8 +1117,8 @@ function openProblem(id,updateHash=true){
   resetDetailPanels();
   renderProblemSidebar(p);
   renderProblemNavigation(p);
-  document.title=p.topic+' · Задача '+topicNumber+': '+p.title+' — NPhO';
-  if(updateHash)history.pushState({problemId:p.id},'', '#task-'+p.id);
+  document.title=activeProblemBook+' · '+p.topic+' · Задача '+topicNumber+': '+p.title+' — NPhO';
+  if(updateHash)history.pushState({problemId:p.id},'', '#task-'+encodeURIComponent(String(p.id)));
   window.scrollTo(0,0);
 }
 
@@ -1100,25 +1246,34 @@ function closeProblem(updateHash=true){
   activeProblemId=null;
   document.getElementById('problem-detail').hidden=true;
   document.getElementById('problem-catalog-view').hidden=false;
+
+  if(activeProblemBook&&activeProblemTopic){
+    showTaskSelection();
+  }else{
+    showBookSelection();
+  }
+
   document.title='Национальная олимпиада по физике, Кыргызстан (NPhO)';
   if(updateHash)history.pushState({},'', '#problems');
   window.scrollTo(0,0);
 }
 
 function renderProblemSidebar(problem){
-  const sameTopic=PRACTICE_TASKS.filter(p=>p.topic===problem.topic);
-  document.getElementById('sidebar-topic').textContent=problem.topic;
-  document.getElementById('sidebar-count').textContent=sameTopic.length+' '+pluralTasks(sameTopic.length);
-  document.getElementById('sidebar-task-grid').innerHTML=sameTopic.map((p,index)=>`
-    <button class="sidebar-task-btn ${difficultyClass(p.difficulty)} ${Number(p.id)===Number(problem.id)?'active':''}" onclick="openProblem(${p.id})" title="${escapeAttribute(p.title)} · ${difficultyLabel(p.difficulty)}" aria-label="Задача ${index+1}. ${difficultyLabel(p.difficulty)}">${index+1}${normalizeDifficulty(p.difficulty)===4?'<span class="sidebar-skull" aria-hidden="true">☠</span>':''}</button>
+  const book=problemBook(problem);
+  const sameSection=PRACTICE_TASKS.filter(item=>problemBook(item)===book&&item.topic===problem.topic);
+  document.getElementById('sidebar-topic').textContent=book+' · '+problem.topic;
+  document.getElementById('sidebar-count').textContent=sameSection.length+' '+pluralTasks(sameSection.length);
+  document.getElementById('sidebar-task-grid').innerHTML=sameSection.map((item,index)=>`
+    <button class="sidebar-task-btn ${difficultyClass(item.difficulty)} ${sameProblemId(item.id,problem.id)?'active':''}" onclick='openProblem(${problemIdArgument(item.id)})' title="${escapeAttribute(item.title)} · ${difficultyLabel(item.difficulty)}" aria-label="Задача ${index+1}. ${difficultyLabel(item.difficulty)}">${index+1}${normalizeDifficulty(item.difficulty)===4?'<span class="sidebar-skull" aria-hidden="true">☠</span>':''}</button>
   `).join('');
 }
 
 function renderProblemNavigation(problem){
-  const sameTopic=PRACTICE_TASKS.filter(p=>p.topic===problem.topic);
-  const index=sameTopic.findIndex(p=>Number(p.id)===Number(problem.id));
-  const prev=sameTopic[index-1];
-  const next=sameTopic[index+1];
+  const book=problemBook(problem);
+  const sameSection=PRACTICE_TASKS.filter(item=>problemBook(item)===book&&item.topic===problem.topic);
+  const index=sameSection.findIndex(item=>sameProblemId(item.id,problem.id));
+  const prev=sameSection[index-1];
+  const next=sameSection[index+1];
   const prevBtn=document.getElementById('prev-problem');
   const nextBtn=document.getElementById('next-problem');
   prevBtn.disabled=!prev;
@@ -1128,11 +1283,12 @@ function renderProblemNavigation(problem){
 }
 
 function moveProblem(direction){
-  const current=PRACTICE_TASKS.find(p=>Number(p.id)===Number(activeProblemId));
+  const current=PRACTICE_TASKS.find(problem=>sameProblemId(problem.id,activeProblemId));
   if(!current)return;
-  const sameTopic=PRACTICE_TASKS.filter(p=>p.topic===current.topic);
-  const index=sameTopic.findIndex(p=>Number(p.id)===Number(activeProblemId));
-  const target=sameTopic[index+direction];
+  const book=problemBook(current);
+  const sameSection=PRACTICE_TASKS.filter(problem=>problemBook(problem)===book&&problem.topic===current.topic);
+  const index=sameSection.findIndex(problem=>sameProblemId(problem.id,activeProblemId));
+  const target=sameSection[index+direction];
   if(target)openProblem(target.id);
 }
 
@@ -1156,13 +1312,15 @@ function resetDetailPanels(){
 }
 
 function handleProblemRoute(){
-  const match=location.hash.match(/^#task-(\d+)$/);
+  const match=location.hash.match(/^#task-(.+)$/);
   if(match){
     go('problems',false);
-    openProblem(Number(match[1]),false);
+    openProblem(decodeURIComponent(match[1]),false);
   }else if(location.hash==='#problems'){
     go('problems',false);
-    closeProblem(false);
+    document.getElementById('problem-detail').hidden=true;
+    document.getElementById('problem-catalog-view').hidden=false;
+    showBookSelection();
   }else if(document.getElementById('sec-problems')?.classList.contains('active')){
     go('home',false);
   }
@@ -1175,16 +1333,20 @@ function go(id,updateHash=true){
   if(section)section.classList.add('active');
   const b=document.getElementById('nl-'+id);
   if(b)b.classList.add('active');
-  if(updateHash){
-    if(id==='problems'){
-      closeProblem(false);
-      history.pushState({},'', '#problems');
-    }else if(location.hash){
-      history.pushState({},'', location.pathname+location.search);
-    }
+
+  if(id==='problems'&&updateHash){
+    activeProblemId=null;
+    document.getElementById('problem-detail').hidden=true;
+    document.getElementById('problem-catalog-view').hidden=false;
+    showBookSelection();
+    history.pushState({},'', '#problems');
+  }else if(updateHash&&location.hash){
+    history.pushState({},'', location.pathname+location.search);
   }
+
   window.scrollTo(0,0);
 }
+
 function sy(id,btn){
   document.querySelectorAll('.yp').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.ytab').forEach(t=>t.classList.remove('active'));
@@ -1231,7 +1393,8 @@ function renderTable(year){
   el.innerHTML=h;
 }
 ['2022','2023','2024','2025','2026'].forEach(y=>{renderPDFs(y);renderTable(y);});
-renderProblemCatalog();
+renderBookCounts();
+showBookSelection();
 window.addEventListener('popstate',handleProblemRoute);
 handleProblemRoute();
 </script>
@@ -1433,3 +1596,4 @@ handleProblemRoute();
 </script>
 </body>
 </html>
+
