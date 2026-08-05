@@ -872,14 +872,42 @@ function getTopicProblemNumber(problem){
   return index>=0?index+1:1;
 }
 
-function renderMath(elements){
-  const nodes=(elements||[]).filter(Boolean);
-  if(!nodes.length||!window.MathJax?.typesetPromise)return;
-  try{
-    window.MathJax.typesetClear?.(nodes);
-    window.MathJax.typesetPromise(nodes).catch(error=>{
-      console.error('Ошибка отображения LaTeX:',error);
+let mathJaxReadyPromise=null;
+
+function waitForMathJax(){
+  if(window.MathJax?.startup?.promise){
+    return window.MathJax.startup.promise;
+  }
+
+  if(!mathJaxReadyPromise){
+    mathJaxReadyPromise=new Promise((resolve,reject)=>{
+      const started=Date.now();
+      const check=()=>{
+        if(window.MathJax?.startup?.promise){
+          window.MathJax.startup.promise.then(resolve).catch(reject);
+          return;
+        }
+        if(Date.now()-started>15000){
+          reject(new Error('MathJax не загрузился за 15 секунд'));
+          return;
+        }
+        setTimeout(check,50);
+      };
+      check();
     });
+  }
+
+  return mathJaxReadyPromise;
+}
+
+async function renderMath(elements){
+  const nodes=(elements||[]).filter(Boolean);
+  if(!nodes.length)return;
+
+  try{
+    await waitForMathJax();
+    window.MathJax.typesetClear?.(nodes);
+    await window.MathJax.typesetPromise(nodes);
   }catch(error){
     console.error('Ошибка отображения LaTeX:',error);
   }
