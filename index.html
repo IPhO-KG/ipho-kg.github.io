@@ -553,31 +553,240 @@ const RESULTS = {
 
 const PRACTICE_TASKS = [
   {
-    id: 1,
-    topic: 'Механика',
-    difficulty: 1,
-    title: 'Скорость у подножия горки',
-    statement: `
-      Небольшое тело начинает скользить без начальной скорости с гладкой горки высотой
-      <span class="formula">h = 1,25 м</span>. Сопротивлением воздуха пренебречь.
-      Найдите скорость тела у подножия горки. Примите
-      <span class="formula">g = 10 м/с²</span>.
-    `,
+   hints: [
+  `
+    Рассмотрите движение центра масс системы. Найдите его скорость
+    через начальный импульс всех трёх бусинок.
+  `,
 
-    // Один рисунок можно добавить так:
-    // image: 'assets/images/task1.png',
-    // imageAlt: 'Схема гладкой горки',
-    // imageCaption: 'Рис. 1. Тело скользит с высоты h',
+  `
+    Начальный импульс имеет только средняя бусинка, поэтому
 
-    hints: [
-      `Сравните механическую энергию тела в верхней и нижней точках.`,
-      `Вверху имеется потенциальная энергия <span class="formula">mgh</span>, а внизу — кинетическая <span class="formula">mv²/2</span>.`,
-      `Приравняйте энергии и выразите скорость: <span class="formula">mgh = mv²/2</span>.`
-    ],
-    solution: `Потенциальная энергия полностью переходит в кинетическую:
-      <span class="formula">mgh = mv²/2</span>. Поэтому
-      <span class="formula">v = √(2gh) = √(2·10·1,25) = 5 м/с</span>.`,
-    answer: `<span class="formula">5 м/с</span>`
+    <span class="formula">
+      v<sub>c</sub> =
+      m<sub>2</sub>v /
+      (m<sub>1</sub> + m<sub>2</sub> + m<sub>3</sub>)
+    </span>.
+
+    Используйте условия
+    <span class="formula">m<sub>2</sub> ≪ m<sub>1</sub></span>
+    и
+    <span class="formula">m<sub>2</sub> ≪ m<sub>3</sub></span>.
+  `,
+
+  `
+    Скорость центра масс очень мала:
+
+    <span class="formula">v<sub>c</sub> ≈ 0</span>.
+
+    В момент максимальных скоростей крайних бусинок средняя бусинка
+    практически покоится, а крайние бусинки движутся в противоположных
+    направлениях.
+  `,
+
+  `
+    Из закона сохранения импульса для крайних бусинок получите:
+
+    <span class="formula">
+      m<sub>1</sub>v<sub>1</sub>
+      =
+      m<sub>3</sub>v<sub>3</sub>
+    </span>.
+  `,
+
+  `
+    Поскольку все столкновения абсолютно упругие, полная кинетическая
+    энергия сохраняется. В рассматриваемый момент запишите:
+
+    <span class="formula">
+      m<sub>2</sub>v² / 2
+      =
+      m<sub>1</sub>v<sub>1</sub>² / 2
+      +
+      m<sub>3</sub>v<sub>3</sub>² / 2
+    </span>.
+  `,
+
+  `
+    Выразите одну из скоростей через другую:
+
+    <span class="formula">
+      v<sub>3</sub>
+      =
+      (m<sub>1</sub>/m<sub>3</sub>)v<sub>1</sub>
+    </span>,
+
+    а затем подставьте это выражение в закон сохранения энергии.
+  `
+],
+
+solution: `
+  <p>
+    Начальный импульс системы создаётся только средней бусинкой.
+    Поэтому скорость центра масс равна
+  </p>
+
+  <p style="text-align:center; margin:1rem 0;">
+    <span class="formula">
+      v<sub>c</sub>
+      =
+      m<sub>2</sub>v /
+      (m<sub>1</sub> + m<sub>2</sub> + m<sub>3</sub>).
+    </span>
+  </p>
+
+  <p>
+    По условию
+    <span class="formula">m<sub>2</sub> ≪ m<sub>1</sub></span>
+    и
+    <span class="formula">m<sub>2</sub> ≪ m<sub>3</sub></span>.
+    Следовательно, скорость центра масс очень мала:
+  </p>
+
+  <p style="text-align:center; margin:1rem 0;">
+    <span class="formula">
+      v<sub>c</sub> ≈ 0.
+    </span>
+  </p>
+
+  <p>
+    Рассмотрим момент, когда скорости крайних бусинок достигают
+    максимальных значений. В этот момент средняя бусинка практически
+    покоится, а крайние бусинки движутся в противоположных направлениях.
+  </p>
+
+  <p>
+    Поскольку суммарный импульс в системе центра масс приблизительно
+    равен нулю, модули импульсов крайних бусинок равны:
+  </p>
+
+  <p style="text-align:center; margin:1rem 0;">
+    <span class="formula">
+      m<sub>1</sub>v<sub>1</sub>
+      =
+      m<sub>3</sub>v<sub>3</sub>.
+    </span>
+  </p>
+
+  <p>
+    Отсюда выразим скорость правой бусинки:
+  </p>
+
+  <p style="text-align:center; margin:1rem 0;">
+    <span class="formula">
+      v<sub>3</sub>
+      =
+      (m<sub>1</sub>/m<sub>3</sub>)v<sub>1</sub>.
+    </span>
+  </p>
+
+  <p>
+    Столкновения абсолютно упругие, поэтому кинетическая энергия
+    сохраняется. Первоначально вся энергия принадлежит средней бусинке:
+  </p>
+
+  <p style="text-align:center; margin:1rem 0;">
+    <span class="formula">
+      m<sub>2</sub>v² / 2
+      =
+      m<sub>1</sub>v<sub>1</sub>² / 2
+      +
+      m<sub>3</sub>v<sub>3</sub>² / 2.
+    </span>
+  </p>
+
+  <p>
+    Подставим
+    <span class="formula">
+      v<sub>3</sub> =
+      (m<sub>1</sub>/m<sub>3</sub>)v<sub>1</sub>
+    </span>:
+  </p>
+
+  <p style="text-align:center; margin:1rem 0;">
+    <span class="formula">
+      m<sub>2</sub>v²
+      =
+      m<sub>1</sub>v<sub>1</sub>²
+      +
+      (m<sub>1</sub>²/m<sub>3</sub>)v<sub>1</sub>².
+    </span>
+  </p>
+
+  <p>
+    Вынесем общий множитель:
+  </p>
+
+  <p style="text-align:center; margin:1rem 0;">
+    <span class="formula">
+      m<sub>2</sub>v²
+      =
+      [m<sub>1</sub>(m<sub>1</sub> + m<sub>3</sub>)
+      /m<sub>3</sub>]v<sub>1</sub>².
+    </span>
+  </p>
+
+  <p>
+    Поэтому максимальная скорость левой бусинки равна
+  </p>
+
+  <p style="text-align:center; margin:1.2rem 0;">
+    <span class="formula">
+      v<sub>1,max</sub>
+      =
+      v√[m<sub>2</sub>m<sub>3</sub> /
+      (m<sub>1</sub>(m<sub>1</sub> + m<sub>3</sub>))].
+    </span>
+  </p>
+
+  <p>
+    Теперь используем соотношение импульсов
+    <span class="formula">
+      m<sub>1</sub>v<sub>1</sub>
+      =
+      m<sub>3</sub>v<sub>3</sub>
+    </span>.
+    Получаем максимальную скорость правой бусинки:
+  </p>
+
+  <p style="text-align:center; margin:1.2rem 0;">
+    <span class="formula">
+      v<sub>3,max</sub>
+      =
+      v√[m<sub>2</sub>m<sub>1</sub> /
+      (m<sub>3</sub>(m<sub>1</sub> + m<sub>3</sub>))].
+    </span>
+  </p>
+
+  <p>
+    Крайние бусинки движутся в противоположных направлениях:
+    бусинка
+    <span class="formula">m<sub>1</sub></span>
+    — влево, а бусинка
+    <span class="formula">m<sub>3</sub></span>
+    — вправо.
+  </p>
+`,
+
+answer: `
+  <p style="text-align:center;">
+    <span class="formula">
+      v<sub>1,max</sub>
+      =
+      v√[m<sub>2</sub>m<sub>3</sub> /
+      (m<sub>1</sub>(m<sub>1</sub> + m<sub>3</sub>))]
+    </span>
+  </p>
+
+  <p style="text-align:center; margin-top:.8rem;">
+    <span class="formula">
+      v<sub>3,max</sub>
+      =
+      v√[m<sub>2</sub>m<sub>1</sub> /
+      (m<sub>3</sub>(m<sub>1</sub> + m<sub>3</sub>))]
+    </span>
+  </p>
+`
   },
   {
     id: 2,
