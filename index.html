@@ -553,6 +553,38 @@ const RESULTS = {
 
 const PRACTICE_TASKS = [
   {
+    id: 1,
+  topic: 'Механика',
+  difficulty: 1,
+  title: 'Столкновения трёх бусинок',
+
+  statement: `
+    <p>
+      Бусинки масс
+      <span class="formula">
+        m<sub>1</sub>, m<sub>2</sub>, m<sub>3</sub>
+      </span>
+      могут скользить вдоль горизонтальной спицы без трения, причём
+      <span class="formula">
+        m<sub>1</sub> ≫ m<sub>2</sub>
+      </span>
+      и
+      <span class="formula">
+        m<sub>3</sub> ≫ m<sub>2</sub>.
+      </span>
+    </p>
+
+    <p>
+      Определите максимальные скорости крайних бусинок, если вначале
+      они покоились, а средняя бусинка имела скорость
+      <span class="formula">v</span>.
+      Удары считать абсолютно упругими.
+    </p>
+  `,
+
+  image: 'assets/images/task1.png',
+  imageAlt: 'Три бусинки на горизонтальной спице',
+  imageCaption: 'Средняя бусинка движется вправо со скоростью v',
    hints: [
   `
     Рассмотрите движение центра масс системы. Найдите его скорость
