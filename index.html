@@ -3,6 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
 <title>Национальная олимпиада по физике, Кыргызстан (NPhO)</title>
 <meta name="description" content="Национальная физическая олимпиада Кыргызстана. Задачи, решения и информация об олимпиаде.">
 <meta name="google-site-verification" content="SyxztxKSBm8W-PTQ3tYS_m2zo_RvEGYlv08fUyaxAxk"/>
@@ -554,348 +566,190 @@ const RESULTS = {
 const PRACTICE_TASKS = [
   {
     id: 1,
-  topic: 'Механика',
-  difficulty: 1,
-  title: 'Столкновения трёх бусинок',
-
-  statement: `
-    <p>
-      Бусинки масс
-      <span class="formula">
-        m<sub>1</sub>, m<sub>2</sub>, m<sub>3</sub>
-      </span>
-      могут скользить вдоль горизонтальной спицы без трения, причём
-      <span class="formula">
-        m<sub>1</sub> ≫ m<sub>2</sub>
-      </span>
-      и
-      <span class="formula">
-        m<sub>3</sub> ≫ m<sub>2</sub>.
-      </span>
-    </p>
-
-    <p>
-      Определите максимальные скорости крайних бусинок, если вначале
-      они покоились, а средняя бусинка имела скорость
-      <span class="formula">v</span>.
-      Удары считать абсолютно упругими.
-    </p>
-  `,
-
-  image: 'assets/assets/images/task1.png',
-  imageAlt: 'Три бусинки на горизонтальной спице',
-  imageCaption: 'Средняя бусинка движется вправо со скоростью v',
-   hints: [
-  `
-    Рассмотрите движение центра масс системы. Найдите его скорость
-    через начальный импульс всех трёх бусинок.
-  `,
-
-  `
-    Начальный импульс имеет только средняя бусинка, поэтому
-
-    <span class="formula">
-      v<sub>c</sub> =
-      m<sub>2</sub>v /
-      (m<sub>1</sub> + m<sub>2</sub> + m<sub>3</sub>)
-    </span>.
-
-    Используйте условия
-    <span class="formula">m<sub>2</sub> ≪ m<sub>1</sub></span>
-    и
-    <span class="formula">m<sub>2</sub> ≪ m<sub>3</sub></span>.
-  `,
-
-  `
-    Скорость центра масс очень мала:
-
-    <span class="formula">v<sub>c</sub> ≈ 0</span>.
-
-    В момент максимальных скоростей крайних бусинок средняя бусинка
-    практически покоится, а крайние бусинки движутся в противоположных
-    направлениях.
-  `,
-
-  `
-    Из закона сохранения импульса для крайних бусинок получите:
-
-    <span class="formula">
-      m<sub>1</sub>v<sub>1</sub>
-      =
-      m<sub>3</sub>v<sub>3</sub>
-    </span>.
-  `,
-
-  `
-    Поскольку все столкновения абсолютно упругие, полная кинетическая
-    энергия сохраняется. В рассматриваемый момент запишите:
-
-    <span class="formula">
-      m<sub>2</sub>v² / 2
-      =
-      m<sub>1</sub>v<sub>1</sub>² / 2
-      +
-      m<sub>3</sub>v<sub>3</sub>² / 2
-    </span>.
-  `,
-
-  `
-    Выразите одну из скоростей через другую:
-
-    <span class="formula">
-      v<sub>3</sub>
-      =
-      (m<sub>1</sub>/m<sub>3</sub>)v<sub>1</sub>
-    </span>,
-
-    а затем подставьте это выражение в закон сохранения энергии.
-  `
-],
-
-solution: `
-  <p>
-    Начальный импульс системы создаётся только средней бусинкой.
-    Поэтому скорость центра масс равна
-  </p>
-
-  <p style="text-align:center; margin:1rem 0;">
-    <span class="formula">
-      v<sub>c</sub>
-      =
-      m<sub>2</sub>v /
-      (m<sub>1</sub> + m<sub>2</sub> + m<sub>3</sub>).
-    </span>
-  </p>
-
-  <p>
-    По условию
-    <span class="formula">m<sub>2</sub> ≪ m<sub>1</sub></span>
-    и
-    <span class="formula">m<sub>2</sub> ≪ m<sub>3</sub></span>.
-    Следовательно, скорость центра масс очень мала:
-  </p>
-
-  <p style="text-align:center; margin:1rem 0;">
-    <span class="formula">
-      v<sub>c</sub> ≈ 0.
-    </span>
-  </p>
-
-  <p>
-    Рассмотрим момент, когда скорости крайних бусинок достигают
-    максимальных значений. В этот момент средняя бусинка практически
-    покоится, а крайние бусинки движутся в противоположных направлениях.
-  </p>
-
-  <p>
-    Поскольку суммарный импульс в системе центра масс приблизительно
-    равен нулю, модули импульсов крайних бусинок равны:
-  </p>
-
-  <p style="text-align:center; margin:1rem 0;">
-    <span class="formula">
-      m<sub>1</sub>v<sub>1</sub>
-      =
-      m<sub>3</sub>v<sub>3</sub>.
-    </span>
-  </p>
-
-  <p>
-    Отсюда выразим скорость правой бусинки:
-  </p>
-
-  <p style="text-align:center; margin:1rem 0;">
-    <span class="formula">
-      v<sub>3</sub>
-      =
-      (m<sub>1</sub>/m<sub>3</sub>)v<sub>1</sub>.
-    </span>
-  </p>
-
-  <p>
-    Столкновения абсолютно упругие, поэтому кинетическая энергия
-    сохраняется. Первоначально вся энергия принадлежит средней бусинке:
-  </p>
-
-  <p style="text-align:center; margin:1rem 0;">
-    <span class="formula">
-      m<sub>2</sub>v² / 2
-      =
-      m<sub>1</sub>v<sub>1</sub>² / 2
-      +
-      m<sub>3</sub>v<sub>3</sub>² / 2.
-    </span>
-  </p>
-
-  <p>
-    Подставим
-    <span class="formula">
-      v<sub>3</sub> =
-      (m<sub>1</sub>/m<sub>3</sub>)v<sub>1</sub>
-    </span>:
-  </p>
-
-  <p style="text-align:center; margin:1rem 0;">
-    <span class="formula">
-      m<sub>2</sub>v²
-      =
-      m<sub>1</sub>v<sub>1</sub>²
-      +
-      (m<sub>1</sub>²/m<sub>3</sub>)v<sub>1</sub>².
-    </span>
-  </p>
-
-  <p>
-    Вынесем общий множитель:
-  </p>
-
-  <p style="text-align:center; margin:1rem 0;">
-    <span class="formula">
-      m<sub>2</sub>v²
-      =
-      [m<sub>1</sub>(m<sub>1</sub> + m<sub>3</sub>)
-      /m<sub>3</sub>]v<sub>1</sub>².
-    </span>
-  </p>
-
-  <p>
-    Поэтому максимальная скорость левой бусинки равна
-  </p>
-
-  <p style="text-align:center; margin:1.2rem 0;">
-    <span class="formula">
-      v<sub>1,max</sub>
-      =
-      v√[m<sub>2</sub>m<sub>3</sub> /
-      (m<sub>1</sub>(m<sub>1</sub> + m<sub>3</sub>))].
-    </span>
-  </p>
-
-  <p>
-    Теперь используем соотношение импульсов
-    <span class="formula">
-      m<sub>1</sub>v<sub>1</sub>
-      =
-      m<sub>3</sub>v<sub>3</sub>
-    </span>.
-    Получаем максимальную скорость правой бусинки:
-  </p>
-
-  <p style="text-align:center; margin:1.2rem 0;">
-    <span class="formula">
-      v<sub>3,max</sub>
-      =
-      v√[m<sub>2</sub>m<sub>1</sub> /
-      (m<sub>3</sub>(m<sub>1</sub> + m<sub>3</sub>))].
-    </span>
-  </p>
-
-  <p>
-    Крайние бусинки движутся в противоположных направлениях:
-    бусинка
-    <span class="formula">m<sub>1</sub></span>
-    — влево, а бусинка
-    <span class="formula">m<sub>3</sub></span>
-    — вправо.
-  </p>
-`,
-  },
-  {
-    id: 2,
-    topic: 'Электричество',
-    difficulty: 1,
-    title: 'Параллельное соединение',
-    statement: `Резисторы сопротивлениями <span class="formula">R₁ = 6 Ом</span> и
-      <span class="formula">R₂ = 3 Ом</span> соединены параллельно и подключены к источнику
-      напряжения <span class="formula">U = 12 В</span>. Найдите общий ток в цепи.`,
-    hints: [
-      `Сначала замените два параллельно соединённых резистора одним эквивалентным.`,
-      `Используйте <span class="formula">1/R = 1/R₁ + 1/R₂</span>.`,
-      `После нахождения <span class="formula">R</span> примените закон Ома <span class="formula">I = U/R</span>.`
-    ],
-    solution: `<span class="formula">1/R = 1/6 + 1/3 = 1/2</span>, следовательно,
-      <span class="formula">R = 2 Ом</span>. По закону Ома
-      <span class="formula">I = U/R = 12/2 = 6 А</span>.`,
-    answer: `<span class="formula">6 А</span>`
-  },
-  {
-    id: 3,
-    topic: 'Термодинамика',
-    difficulty: 2,
-    title: 'Нагревание одноатомного газа',
-    statement: `Два моля одноатомного идеального газа нагрели при постоянном объёме на
-      <span class="formula">40 К</span>. Найдите изменение внутренней энергии. Используйте
-      <span class="formula">R = 8,31 Дж/(моль·К)</span>.`,
-    hints: [
-      `При постоянном объёме работа газа равна нулю, но для ответа достаточно формулы внутренней энергии.`,
-      `Для одноатомного идеального газа <span class="formula">U = 3nRT/2</span>.`,
-      `Для изменения температуры замените <span class="formula">T</span> на <span class="formula">ΔT</span>.`
-    ],
-    solution: `<span class="formula">ΔU = 3nRΔT/2 = 3·2·8,31·40/2 ≈ 997 Дж</span>.
-      Округляя, получаем примерно <span class="formula">1,0 кДж</span>.`,
-    answer: `<span class="formula">≈ 1,0 кДж</span>`
-  },
-  {
-    id: 4,
-    topic: 'Оптика',
-    difficulty: 2,
-    title: 'Изображение в собирающей линзе',
-    statement: `Предмет расположен на расстоянии <span class="formula">d = 60 см</span> от
-      собирающей линзы с фокусным расстоянием <span class="formula">f = 20 см</span>.
-      Определите расстояние от линзы до изображения и линейное увеличение.`,
-    hints: [
-      `Начните с формулы тонкой линзы.`,
-      `<span class="formula">1/f = 1/d + 1/b</span>. Выразите из неё расстояние <span class="formula">b</span>.`,
-      `После этого найдите увеличение по модулю: <span class="formula">|Γ| = b/d</span>.`
-    ],
-    solution: `<span class="formula">1/f = 1/d + 1/b</span>. Тогда
-      <span class="formula">1/b = 1/20 − 1/60 = 1/30</span>, поэтому
-      <span class="formula">b = 30 см</span>. Увеличение по модулю
-      <span class="formula">|Γ| = b/d = 30/60 = 0,5</span>. Изображение действительное,
-      перевёрнутое и уменьшенное в два раза.`,
-    answer: `<span class="formula">b = 30 см, |Γ| = 0,5</span>`
-  },
-  {
-    id: 5,
-    topic: 'Колебания',
-    difficulty: 1,
-    title: 'Период математического маятника',
-    statement: `Найдите период малых колебаний математического маятника длиной
-      <span class="formula">L = 1,0 м</span>. Примите
-      <span class="formula">g = 9,8 м/с²</span>.`,
-    hints: [
-      `Период малых колебаний не зависит от массы груза.`,
-      `Используйте <span class="formula">T = 2π√(L/g)</span>.`
-    ],
-    solution: `<span class="formula">T = 2π√(L/g) = 2π√(1/9,8) ≈ 2,01 с</span>.`,
-    answer: `<span class="formula">≈ 2,01 с</span>`
-  },
-  {
-    id: 6,
     topic: 'Механика',
-    difficulty: 3,
-    title: 'Цилиндр скатывается с высоты',
-    statement: `Сплошной однородный цилиндр без проскальзывания скатывается с высоты
-      <span class="formula">h</span>. Найдите скорость его центра масс внизу.
-      Момент инерции цилиндра относительно оси равен
-      <span class="formula">I = mR²/2</span>.`,
+    difficulty: 1,
+    title: 'Столкновения трёх бусинок',
 
-    // Несколько рисунков можно добавить через массив images:
-    // images: [
-    //   { src: 'assets/images/task6-scheme.png', alt: 'Цилиндр на наклонной плоскости', caption: 'Схема задачи' },
-    //   { src: 'assets/images/task6-forces.png', alt: 'Силы, действующие на цилиндр', caption: 'Диаграмма сил' }
-    // ],
+    statement: String.raw`
+      <p>
+        Бусинки масс \(m_1, m_2, m_3\) могут скользить вдоль горизонтальной
+        спицы без трения, причём \(m_1 \gg m_2\) и \(m_3 \gg m_2\).
+      </p>
+
+      <p>
+        Определите максимальные скорости крайних бусинок, если вначале
+        они покоились, а средняя бусинка имела скорость \(v\).
+        Удары считать абсолютно упругими.
+      </p>
+    `,
+
+    image: 'assets/assets/images/task1.png',
+    imageAlt: 'Три бусинки на горизонтальной спице',
+    imageCaption: 'Средняя бусинка движется вправо со скоростью v',
 
     hints: [
-      `Запишите закон сохранения механической энергии между верхней и нижней точками.`,
-      `Кинетическая энергия состоит из поступательной и вращательной частей.`,
-      `Используйте <span class="formula">mgh = mv²/2 + Iω²/2</span> и условие качения <span class="formula">v = ωR</span>.`
+      String.raw`
+        Рассмотрите движение центра масс системы. Найдите его скорость
+        через начальный импульс всех трёх бусинок.
+      `,
+
+      String.raw`
+        Начальный импульс имеет только средняя бусинка, поэтому
+
+        \[
+          v_c = \frac{m_2v}{m_1+m_2+m_3}.
+        \]
+
+        Используйте условия \(m_2 \ll m_1\) и \(m_2 \ll m_3\).
+      `,
+
+      String.raw`
+        Скорость центра масс очень мала:
+
+        \[
+          v_c \approx 0.
+        \]
+
+        В момент максимальных скоростей крайних бусинок средняя бусинка
+        практически покоится, а крайние бусинки движутся в противоположных
+        направлениях.
+      `,
+
+      String.raw`
+        Из закона сохранения импульса для крайних бусинок получите:
+
+        \[
+          m_1v_1 = m_3v_3.
+        \]
+      `,
+
+      String.raw`
+        Поскольку все столкновения абсолютно упругие, полная кинетическая
+        энергия сохраняется. В рассматриваемый момент запишите:
+
+        \[
+          \frac{m_2v^2}{2}
+          =
+          \frac{m_1v_1^2}{2}
+          +
+          \frac{m_3v_3^2}{2}.
+        \]
+      `,
+
+      String.raw`
+        Выразите одну из скоростей через другую:
+
+        \[
+          v_3 = \frac{m_1}{m_3}v_1,
+        \]
+
+        а затем подставьте это выражение в закон сохранения энергии.
+      `
     ],
-    solution: `<span class="formula">mgh = mv²/2 + Iω²/2</span>. Подставляя
-      <span class="formula">I = mR²/2</span> и <span class="formula">ω = v/R</span>, получаем
-      <span class="formula">mgh = mv²/2 + mv²/4 = 3mv²/4</span>. Следовательно,
-      <span class="formula">v = √(4gh/3)</span>.`,
-    answer: `<span class="formula">v = √(4gh/3)</span>`
+
+    solution: String.raw`
+      <p>
+        Начальный импульс системы создаётся только средней бусинкой.
+        Поэтому скорость центра масс равна
+      </p>
+
+      \[
+        v_c = \frac{m_2v}{m_1+m_2+m_3}.
+      \]
+
+      <p>
+        По условию \(m_2 \ll m_1\) и \(m_2 \ll m_3\).
+        Следовательно, скорость центра масс очень мала:
+      </p>
+
+      \[
+        v_c \approx 0.
+      \]
+
+      <p>
+        Рассмотрим момент, когда скорости крайних бусинок достигают
+        максимальных значений. В этот момент средняя бусинка практически
+        покоится, а крайние бусинки движутся в противоположных направлениях.
+      </p>
+
+      <p>
+        Поскольку суммарный импульс в системе центра масс приблизительно
+        равен нулю, модули импульсов крайних бусинок равны:
+      </p>
+
+      \[
+        m_1v_1 = m_3v_3.
+      \]
+
+      <p>
+        Отсюда выразим скорость правой бусинки:
+      </p>
+
+      \[
+        v_3 = \frac{m_1}{m_3}v_1.
+      \]
+
+      <p>
+        Столкновения абсолютно упругие, поэтому кинетическая энергия
+        сохраняется. Первоначально вся энергия принадлежит средней бусинке:
+      </p>
+
+      \[
+        \frac{m_2v^2}{2}
+        =
+        \frac{m_1v_1^2}{2}
+        +
+        \frac{m_3v_3^2}{2}.
+      \]
+
+      <p>
+        Подставим \(v_3 = \frac{m_1}{m_3}v_1\):
+      </p>
+
+      \[
+        m_2v^2
+        =
+        m_1v_1^2
+        +
+        \frac{m_1^2}{m_3}v_1^2.
+      \]
+
+      <p>
+        Вынесем общий множитель:
+      </p>
+
+      \[
+        m_2v^2
+        =
+        \frac{m_1(m_1+m_3)}{m_3}v_1^2.
+      \]
+
+      <p>
+        Поэтому максимальная скорость левой бусинки равна
+      </p>
+
+      \[
+        v_{1,\max}
+        =
+        v\sqrt{\frac{m_2m_3}{m_1(m_1+m_3)}}.
+      \]
+
+      <p>
+        Теперь используем соотношение импульсов \(m_1v_1=m_3v_3\).
+        Получаем максимальную скорость правой бусинки:
+      </p>
+
+      \[
+        v_{3,\max}
+        =
+        v\sqrt{\frac{m_2m_1}{m_3(m_1+m_3)}}.
+      \]
+
+      <p>
+        Крайние бусинки движутся в противоположных направлениях:
+        бусинка \(m_1\) — влево, а бусинка \(m_3\) — вправо.
+      </p>
+    `
   }
 ];
 
@@ -903,6 +757,9 @@ solution: `
    ⬆⬆⬆  КОНЕЦ БАНКА ЗАДАЧ. НОВУЮ ЗАДАЧУ ВСТАВЛЯЙ ПЕРЕД ];  ⬆⬆⬆
 
    ГОТОВЫЙ ШАБЛОН НОВОЙ ЗАДАЧИ:
+
+   Номер на странице считается автоматически и отдельно внутри каждого раздела.
+   Поле id остаётся техническим и должно быть уникальным для всего сайта.
 
    {
      id: 7,
@@ -967,7 +824,7 @@ function renderProblemCatalog(topic='all'){
         <span class="topic-block-count">${tasks.length} ${pluralTasks(tasks.length)}</span>
       </div>
       <div class="topic-task-grid">
-        ${tasks.map(p=>`<button class="task-number-tile" onclick="openProblem(${p.id})" title="Задача ${p.id}: ${escapeAttribute(p.title)} · ${difficultyLabel(p.difficulty)}" aria-label="Открыть задачу ${p.id}: ${escapeAttribute(p.title)}. Сложность: ${difficultyLabel(p.difficulty)}"><span class="task-tile-number">${p.id}</span><span class="task-tile-stars" aria-hidden="true">${renderStars(p.difficulty)}</span></button>`).join('')}
+        ${tasks.map((p,index)=>`<button class="task-number-tile" onclick="openProblem(${p.id})" title="Задача ${index+1}: ${escapeAttribute(p.title)} · ${difficultyLabel(p.difficulty)}" aria-label="Открыть задачу ${index+1}: ${escapeAttribute(p.title)}. Сложность: ${difficultyLabel(p.difficulty)}"><span class="task-tile-number">${index+1}</span><span class="task-tile-stars" aria-hidden="true">${renderStars(p.difficulty)}</span></button>`).join('')}
       </div>
     </section>
   `).join('');
@@ -1009,6 +866,25 @@ function filterProblems(topic,btn){
   renderProblemCatalog(topic);
 }
 
+function getTopicProblemNumber(problem){
+  const sameTopic=PRACTICE_TASKS.filter(p=>p.topic===problem.topic);
+  const index=sameTopic.findIndex(p=>Number(p.id)===Number(problem.id));
+  return index>=0?index+1:1;
+}
+
+function renderMath(elements){
+  const nodes=(elements||[]).filter(Boolean);
+  if(!nodes.length||!window.MathJax?.typesetPromise)return;
+  try{
+    window.MathJax.typesetClear?.(nodes);
+    window.MathJax.typesetPromise(nodes).catch(error=>{
+      console.error('Ошибка отображения LaTeX:',error);
+    });
+  }catch(error){
+    console.error('Ошибка отображения LaTeX:',error);
+  }
+}
+
 function openProblem(id,updateHash=true){
   const p=PRACTICE_TASKS.find(item=>Number(item.id)===Number(id));
   if(!p)return;
@@ -1022,7 +898,8 @@ function openProblem(id,updateHash=true){
   level.className='level-chip';
   level.setAttribute('aria-label','Сложность: '+difficultyLabel(p.difficulty));
   level.title=difficultyLabel(p.difficulty);
-  document.getElementById('detail-number').textContent='Задача '+p.id;
+  const topicNumber=getTopicProblemNumber(p);
+  document.getElementById('detail-number').textContent='Задача '+topicNumber;
   document.getElementById('detail-title').textContent=p.title;
   document.getElementById('detail-statement').innerHTML=p.statement;
   renderStepHints(p);
@@ -1037,10 +914,17 @@ function openProblem(id,updateHash=true){
     answerBox.hidden=true;
   }
 
+  requestAnimationFrame(()=>{
+    renderMath([
+      document.getElementById('detail-statement'),
+      p.answer?document.getElementById('detail-answer'):null
+    ]);
+  });
+
   resetDetailPanels();
   renderProblemSidebar(p);
   renderProblemNavigation(p);
-  document.title='Задача '+p.id+': '+p.title+' — NPhO';
+  document.title=p.topic+' · Задача '+topicNumber+': '+p.title+' — NPhO';
   if(updateHash)history.pushState({problemId:p.id},'', '#task-'+p.id);
   window.scrollTo(0,0);
 }
@@ -1132,7 +1016,10 @@ function revealNextHint(){
 
   panel.classList.add('open');
   const step=panel.querySelector('[data-hint-index="'+visibleHintCount+'"]');
-  if(step)step.classList.add('visible');
+  if(step){
+    step.classList.add('visible');
+    requestAnimationFrame(()=>renderMath([step]));
+  }
   visibleHintCount++;
   const progress=document.getElementById('hint-progress');
   if(progress)progress.textContent='Открыто '+visibleHintCount+' из '+currentHintSteps.length;
@@ -1175,26 +1062,30 @@ function renderProblemSidebar(problem){
   const sameTopic=PRACTICE_TASKS.filter(p=>p.topic===problem.topic);
   document.getElementById('sidebar-topic').textContent=problem.topic;
   document.getElementById('sidebar-count').textContent=sameTopic.length+' '+pluralTasks(sameTopic.length);
-  document.getElementById('sidebar-task-grid').innerHTML=sameTopic.map(p=>`
-    <button class="sidebar-task-btn ${Number(p.id)===Number(problem.id)?'active':''}" onclick="openProblem(${p.id})" title="${escapeAttribute(p.title)} · ${difficultyLabel(p.difficulty)}" aria-label="Задача ${p.id}. ${difficultyLabel(p.difficulty)}">${p.id}</button>
+  document.getElementById('sidebar-task-grid').innerHTML=sameTopic.map((p,index)=>`
+    <button class="sidebar-task-btn ${Number(p.id)===Number(problem.id)?'active':''}" onclick="openProblem(${p.id})" title="${escapeAttribute(p.title)} · ${difficultyLabel(p.difficulty)}" aria-label="Задача ${index+1}. ${difficultyLabel(p.difficulty)}">${index+1}</button>
   `).join('');
 }
 
 function renderProblemNavigation(problem){
-  const index=PRACTICE_TASKS.findIndex(p=>Number(p.id)===Number(problem.id));
-  const prev=PRACTICE_TASKS[index-1];
-  const next=PRACTICE_TASKS[index+1];
+  const sameTopic=PRACTICE_TASKS.filter(p=>p.topic===problem.topic);
+  const index=sameTopic.findIndex(p=>Number(p.id)===Number(problem.id));
+  const prev=sameTopic[index-1];
+  const next=sameTopic[index+1];
   const prevBtn=document.getElementById('prev-problem');
   const nextBtn=document.getElementById('next-problem');
   prevBtn.disabled=!prev;
   nextBtn.disabled=!next;
-  document.getElementById('prev-problem-title').textContent=prev?('№'+prev.id+' · '+prev.title):'Начало списка';
-  document.getElementById('next-problem-title').textContent=next?('№'+next.id+' · '+next.title):'Конец списка';
+  document.getElementById('prev-problem-title').textContent=prev?('№'+index+' · '+prev.title):'Начало раздела';
+  document.getElementById('next-problem-title').textContent=next?('№'+(index+2)+' · '+next.title):'Конец раздела';
 }
 
 function moveProblem(direction){
-  const index=PRACTICE_TASKS.findIndex(p=>Number(p.id)===Number(activeProblemId));
-  const target=PRACTICE_TASKS[index+direction];
+  const current=PRACTICE_TASKS.find(p=>Number(p.id)===Number(activeProblemId));
+  if(!current)return;
+  const sameTopic=PRACTICE_TASKS.filter(p=>p.topic===current.topic);
+  const index=sameTopic.findIndex(p=>Number(p.id)===Number(activeProblemId));
+  const target=sameTopic[index+direction];
   if(target)openProblem(target.id);
 }
 
@@ -1204,6 +1095,7 @@ function toggleDetailPanel(id,btn){
   const open=panel.classList.toggle('open');
   btn.setAttribute('aria-expanded',open?'true':'false');
   btn.textContent=open?'Скрыть':'Показать';
+  if(open)requestAnimationFrame(()=>renderMath([panel]));
 }
 
 function resetDetailPanels(){
