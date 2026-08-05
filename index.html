@@ -19,7 +19,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 nav{display:flex;align-items:center;justify-content:space-between;padding:.875rem 2rem;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100}
 .logo{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--text);cursor:pointer}
 .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
-.nav-links{display:flex;gap:2px}
+.nav-links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}.nav-links::-webkit-scrollbar{display:none}
 .nl{padding:6px 16px;font-size:13px;font-weight:500;border:none;background:transparent;color:var(--text2);cursor:pointer;border-radius:var(--r);transition:all .15s}
 .nl:hover{background:var(--bg2);color:var(--text)}.nl.active{background:var(--bg3);color:var(--text)}
 .sec{display:none}.sec.active{display:block}
@@ -110,6 +110,80 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .fbot{border-top:1px solid var(--border);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
 .fbot p{font-size:12px;color:var(--text3)}
 @media(max-width:640px){nav{padding:.75rem 1rem}.nl{padding:6px 10px;font-size:12px}.stats{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr;gap:1.5rem}.inner{padding:1.5rem 1rem}.hero{padding:3rem 1rem 2.5rem}}
+
+/* Банк задач: каталог и отдельная страница каждой задачи */
+.problems-inner{max-width:1240px}
+.practice-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.practice-intro{max-width:720px;color:var(--text2);font-size:14px}
+.practice-count{font-size:12px;font-weight:700;color:var(--accent);background:rgba(26,86,219,.08);border:1px solid rgba(26,86,219,.18);padding:5px 12px;border-radius:100px;white-space:nowrap}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:1.5rem}
+.filter-btn{padding:7px 13px;border:1px solid var(--border);border-radius:100px;background:var(--bg);color:var(--text2);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
+.filter-btn:hover{border-color:var(--accent);color:var(--accent)}
+.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.problem-catalog{display:grid;gap:14px}
+.topic-block{border:1px solid var(--border);border-radius:var(--rl);background:var(--bg);overflow:hidden}
+.topic-block-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.15rem;background:var(--bg2);border-bottom:1px solid var(--border)}
+.topic-block-title{font-size:15px;font-weight:750}
+.topic-block-count{font-size:11px;color:var(--text2)}
+.topic-task-grid{display:flex;gap:8px;flex-wrap:wrap;padding:1.15rem}
+.task-number-tile{width:43px;height:38px;border-radius:7px;border:1.5px solid var(--border);background:var(--bg);color:var(--text);font-size:13px;font-weight:750;cursor:pointer;transition:transform .15s,border-color .15s,background .15s,color .15s;position:relative}
+.task-number-tile:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent)}
+.task-number-tile.easy{border-color:rgba(14,159,110,.65);background:rgba(14,159,110,.06)}
+.task-number-tile.medium{border-color:rgba(245,158,11,.7);background:rgba(245,158,11,.07)}
+.task-number-tile.hard{border-color:rgba(239,68,68,.65);background:rgba(239,68,68,.06)}
+.catalog-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:1rem;font-size:11px;color:var(--text2)}
+.legend-item{display:flex;align-items:center;gap:6px}.legend-dot{width:9px;height:9px;border-radius:3px;border:1.5px solid}
+.legend-easy{border-color:#059669;background:rgba(14,159,110,.08)}.legend-medium{border-color:#b45309;background:rgba(245,158,11,.09)}.legend-hard{border-color:#dc2626;background:rgba(239,68,68,.08)}
+.empty-problems{display:none;padding:2rem;text-align:center;color:var(--text2);border:1px dashed var(--border);border-radius:var(--rl)}
+.problem-detail[hidden],.problem-catalog-view[hidden]{display:none!important}
+.problem-back{display:inline-flex;align-items:center;gap:7px;border:none;background:transparent;color:var(--accent);font-size:13px;font-weight:700;cursor:pointer;padding:0;margin-bottom:1.1rem}
+.problem-back:hover{text-decoration:underline}
+.problem-page-layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:22px;align-items:start}
+.problem-article{border:1px solid var(--border);border-radius:var(--rl);background:var(--bg);overflow:hidden;min-width:0}
+.problem-article-header{padding:1.7rem 1.8rem 1.35rem;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.problem-meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:.75rem}
+.topic-chip,.level-chip{display:inline-block;font-size:10px;font-weight:750;padding:3px 9px;border-radius:100px;white-space:nowrap}
+.topic-chip{background:rgba(26,86,219,.1);color:var(--accent)}
+.level-easy{background:rgba(14,159,110,.1);color:#059669}
+.level-medium{background:rgba(245,158,11,.12);color:#b45309}
+.level-hard{background:rgba(239,68,68,.1);color:#dc2626}
+.problem-page-number{font-size:11px;font-weight:800;letter-spacing:.07em;color:var(--text3);text-transform:uppercase;margin-bottom:5px}
+.problem-page-title{font-size:clamp(23px,3.4vw,34px);font-weight:800;line-height:1.2;letter-spacing:-.02em}
+.problem-section{padding:1.65rem 1.8rem;border-bottom:1px solid var(--border)}
+.problem-section:last-child{border-bottom:none}
+.problem-section h2{font-family:Georgia,'Times New Roman',serif;font-size:24px;font-weight:700;margin-bottom:.8rem}
+.problem-body{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.82;color:var(--text)}
+.problem-body p{margin-bottom:.85rem}.problem-body p:last-child{margin-bottom:0}
+.problem-figure{display:block;max-width:min(100%,640px);max-height:480px;object-fit:contain;margin:1.25rem auto 0;border-radius:10px}
+.formula{font-family:Georgia,'Times New Roman',serif;font-size:1.03em;white-space:normal}
+.reveal-section{padding:0}
+.reveal-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.8rem;cursor:pointer;background:var(--bg2)}
+.reveal-heading h2{font-family:Georgia,'Times New Roman',serif;font-size:22px;margin:0}
+.reveal-btn{padding:7px 13px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text2);font-size:12px;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap}
+.reveal-btn:hover,.reveal-btn[aria-expanded="true"]{border-color:var(--accent);color:var(--accent);background:rgba(26,86,219,.06)}
+.reveal-panel{display:none;padding:1.45rem 1.8rem;border-top:1px solid var(--border);font-size:16px;line-height:1.78;font-family:Georgia,'Times New Roman',serif}
+.reveal-panel.open{display:block;animation:fadeUp .22s both}
+.hint-panel{background:rgba(245,158,11,.045)}
+.solution-panel{background:rgba(14,159,110,.035)}
+.answer-box{padding:1.15rem 1.8rem;border-bottom:1px solid var(--border);background:rgba(26,86,219,.035)}
+.answer-label{font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem}
+.answer-text{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.65}
+.problem-page-nav{display:flex;align-items:stretch;justify-content:space-between;gap:10px;padding:1.1rem 1.8rem;background:var(--bg2)}
+.problem-nav-btn{display:flex;flex-direction:column;gap:2px;min-width:0;max-width:48%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text);cursor:pointer;text-align:left;font-size:12px;transition:border-color .15s,color .15s}
+.problem-nav-btn:hover{border-color:var(--accent);color:var(--accent)}
+.problem-nav-btn.next{text-align:right;margin-left:auto}.problem-nav-btn:disabled{opacity:.35;cursor:default;border-color:var(--border);color:var(--text2)}
+.problem-nav-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em}.problem-nav-title{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.problem-sidebar{position:sticky;top:76px;border:1px solid var(--border);border-radius:var(--rl);background:var(--bg);overflow:hidden}
+.sidebar-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:1rem;border-bottom:1px solid var(--border);background:var(--bg2)}
+.sidebar-topic{font-size:13px;font-weight:750}.sidebar-count{font-size:10px;color:var(--text2)}
+.sidebar-task-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:1rem}
+.sidebar-task-btn{aspect-ratio:1;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text2);font-size:11px;font-weight:750;cursor:pointer;transition:all .15s}
+.sidebar-task-btn:hover{border-color:var(--accent);color:var(--accent)}
+.sidebar-task-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.sidebar-all{display:block;width:calc(100% - 2rem);margin:0 1rem 1rem;padding:8px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg2);color:var(--text2);font-size:11px;font-weight:700;cursor:pointer}
+.sidebar-all:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:850px){.problem-page-layout{grid-template-columns:1fr}.problem-sidebar{position:static;order:-1}.sidebar-task-grid{grid-template-columns:repeat(auto-fill,minmax(36px,1fr))}}
+@media(max-width:640px){.practice-head{align-items:flex-start}.problems-inner{padding:1.25rem .8rem}.problem-article-header,.problem-section{padding:1.25rem 1.1rem}.reveal-heading{padding:1rem 1.1rem}.reveal-panel{padding:1.15rem 1.1rem}.problem-page-nav{padding:1rem 1.1rem}.problem-body{font-size:16px}.problem-section h2{font-size:22px}.problem-page-title{font-size:25px}.task-number-tile{width:40px;height:36px}}
 </style>
 </head>
 <body>
@@ -119,6 +193,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
   <div class="nav-links">
     <button class="nl active" id="nl-home" onclick="go('home')">Главная</button>
     <button class="nl" id="nl-archive" onclick="go('archive')">Архив</button>
+    <button class="nl" id="nl-problems" onclick="go('problems')">Задачи</button>
     <button class="nl" id="nl-about" onclick="go('about')">Об олимпиаде</button>
     <button class="nl" id="nl-dates" onclick="go('dates')">Даты и отбор</button>
   </div>
@@ -159,7 +234,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
     <div class="fi">
       <div class="fg">
         <div class="fc"><h4>IPhO Кыргызстан</h4><p>Национальная программа подготовки школьников к Международной физической олимпиаде. Кыргызская Республика.</p></div>
-        <div class="fc"><h4>Навигация</h4><a onclick="go('home')">Главная</a><a onclick="go('archive')">Архив задач</a><a onclick="go('about')">Об олимпиаде</a><a onclick="go('dates')">Даты и отбор</a></div>
+        <div class="fc"><h4>Навигация</h4><a onclick="go('home')">Главная</a><a onclick="go('archive')">Архив задач</a><a onclick="go('problems')">Тренировочные задачи</a><a onclick="go('about')">Об олимпиаде</a><a onclick="go('dates')">Даты и отбор</a></div>
         <div class="fc"><h4>Контакты</h4>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#229ED9" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></div><a href="https://t.me/+9GGnjui6VT05Mzli" target="_blank" class="ct">Telegram</a></div>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1"/></svg></div><a href="https://www.instagram.com/ipho_kg" target="_blank" class="ct">Instagram</a></div>
@@ -209,6 +284,101 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
       <div id="pdfs2026"></div>
       <div class="slbl" style="margin-top:1.5rem">Таблица результатов</div>
       <div class="tw"><div id="t2026"></div></div>
+    </div>
+  </div>
+</div>
+
+
+<div id="sec-problems" class="sec">
+  <div class="inner problems-inner">
+    <div id="problem-catalog-view" class="problem-catalog-view">
+      <div class="practice-head">
+        <div>
+          <p class="stitle" style="margin-bottom:.45rem">Банк задач</p>
+          <p class="practice-intro">Выберите раздел и номер задачи. После нажатия задача откроется на отдельной полной странице с условием, подсказкой и решением.</p>
+        </div>
+        <div class="practice-count" id="practice-count">0 задач</div>
+      </div>
+
+      <div class="filters" aria-label="Фильтр задач по разделу">
+        <button class="filter-btn active" data-topic="all" onclick="filterProblems('all',this)">Все разделы</button>
+        <button class="filter-btn" data-topic="Механика" onclick="filterProblems('Механика',this)">Механика</button>
+        <button class="filter-btn" data-topic="Электричество" onclick="filterProblems('Электричество',this)">Электричество</button>
+        <button class="filter-btn" data-topic="Термодинамика" onclick="filterProblems('Термодинамика',this)">Термодинамика</button>
+        <button class="filter-btn" data-topic="Оптика" onclick="filterProblems('Оптика',this)">Оптика</button>
+        <button class="filter-btn" data-topic="Колебания" onclick="filterProblems('Колебания',this)">Колебания</button>
+      </div>
+
+      <div id="problem-catalog" class="problem-catalog"></div>
+      <div id="empty-problems" class="empty-problems">В этом разделе пока нет задач.</div>
+      <div class="catalog-legend">
+        <span class="legend-item"><span class="legend-dot legend-easy"></span>Базовая</span>
+        <span class="legend-item"><span class="legend-dot legend-medium"></span>Средняя</span>
+        <span class="legend-item"><span class="legend-dot legend-hard"></span>Олимпиадная</span>
+      </div>
+    </div>
+
+    <div id="problem-detail" class="problem-detail" hidden>
+      <button class="problem-back" onclick="closeProblem()">← Вернуться ко всем задачам</button>
+      <div class="problem-page-layout">
+        <article class="problem-article">
+          <header class="problem-article-header">
+            <div class="problem-meta">
+              <span class="topic-chip" id="detail-topic"></span>
+              <span class="level-chip" id="detail-level"></span>
+            </div>
+            <div class="problem-page-number" id="detail-number"></div>
+            <h1 class="problem-page-title" id="detail-title"></h1>
+          </header>
+
+          <section class="problem-section">
+            <h2>Условие</h2>
+            <div class="problem-body" id="detail-statement"></div>
+            <img class="problem-figure" id="detail-image" alt="" hidden>
+          </section>
+
+          <div class="answer-box" id="detail-answer-box" hidden>
+            <div class="answer-label">Ответ</div>
+            <div class="answer-text" id="detail-answer"></div>
+          </div>
+
+          <section class="reveal-section">
+            <div class="reveal-heading" onclick="toggleDetailPanel('detail-hint',document.getElementById('detail-hint-btn'))">
+              <h2>Подсказка</h2>
+              <button class="reveal-btn" id="detail-hint-btn" aria-expanded="false" onclick="event.stopPropagation();toggleDetailPanel('detail-hint',this)">Показать</button>
+            </div>
+            <div class="reveal-panel hint-panel" id="detail-hint"></div>
+          </section>
+
+          <section class="reveal-section">
+            <div class="reveal-heading" onclick="toggleDetailPanel('detail-solution',document.getElementById('detail-solution-btn'))">
+              <h2>Решение</h2>
+              <button class="reveal-btn" id="detail-solution-btn" aria-expanded="false" onclick="event.stopPropagation();toggleDetailPanel('detail-solution',this)">Показать</button>
+            </div>
+            <div class="reveal-panel solution-panel" id="detail-solution"></div>
+          </section>
+
+          <nav class="problem-page-nav" aria-label="Переход между задачами">
+            <button class="problem-nav-btn" id="prev-problem" onclick="moveProblem(-1)">
+              <span class="problem-nav-label">← Предыдущая</span>
+              <span class="problem-nav-title" id="prev-problem-title"></span>
+            </button>
+            <button class="problem-nav-btn next" id="next-problem" onclick="moveProblem(1)">
+              <span class="problem-nav-label">Следующая →</span>
+              <span class="problem-nav-title" id="next-problem-title"></span>
+            </button>
+          </nav>
+        </article>
+
+        <aside class="problem-sidebar">
+          <div class="sidebar-head">
+            <span class="sidebar-topic" id="sidebar-topic"></span>
+            <span class="sidebar-count" id="sidebar-count"></span>
+          </div>
+          <div class="sidebar-task-grid" id="sidebar-task-grid"></div>
+          <button class="sidebar-all" onclick="closeProblem()">Посмотреть весь банк задач</button>
+        </aside>
+      </div>
     </div>
   </div>
 </div>
@@ -364,12 +534,243 @@ const RESULTS = {
   ]
 };
 
-function go(id){
+
+const PRACTICE_TASKS = [
+  {
+    id: 1,
+    topic: 'Механика',
+    level: 'Базовая',
+    levelClass: 'easy',
+    title: 'Скорость у подножия горки',
+    statement: 'Небольшое тело начинает скользить без начальной скорости с гладкой горки высотой <span class="formula">h = 1,25 м</span>. Сопротивлением воздуха пренебречь. Найдите скорость тела у подножия горки. Примите <span class="formula">g = 10 м/с²</span>.',
+    hint: 'Запишите закон сохранения механической энергии между верхней и нижней точками.',
+    solution: 'Потенциальная энергия полностью переходит в кинетическую: <span class="formula">mgh = mv²/2</span>. Поэтому <span class="formula">v = √(2gh) = √(2·10·1,25) = 5 м/с</span>.'
+  },
+  {
+    id: 2,
+    topic: 'Электричество',
+    level: 'Базовая',
+    levelClass: 'easy',
+    title: 'Параллельное соединение',
+    statement: 'Резисторы сопротивлениями <span class="formula">R₁ = 6 Ом</span> и <span class="formula">R₂ = 3 Ом</span> соединены параллельно и подключены к источнику напряжения <span class="formula">U = 12 В</span>. Найдите общий ток в цепи.',
+    hint: 'Сначала найдите эквивалентное сопротивление параллельного соединения.',
+    solution: '<span class="formula">1/R = 1/6 + 1/3 = 1/2</span>, следовательно, <span class="formula">R = 2 Ом</span>. По закону Ома <span class="formula">I = U/R = 12/2 = 6 А</span>.'
+  },
+  {
+    id: 3,
+    topic: 'Термодинамика',
+    level: 'Средняя',
+    levelClass: 'medium',
+    title: 'Нагревание одноатомного газа',
+    statement: 'Два моля одноатомного идеального газа нагрели при постоянном объёме на <span class="formula">40 К</span>. Найдите изменение внутренней энергии. Используйте <span class="formula">R = 8,31 Дж/(моль·К)</span>.',
+    hint: 'Для одноатомного идеального газа внутренняя энергия равна <span class="formula">U = 3nRT/2</span>.',
+    solution: '<span class="formula">ΔU = 3nRΔT/2 = 3·2·8,31·40/2 ≈ 997 Дж</span>. Округляя, получаем примерно <span class="formula">1,0 кДж</span>.'
+  },
+  {
+    id: 4,
+    topic: 'Оптика',
+    level: 'Средняя',
+    levelClass: 'medium',
+    title: 'Изображение в собирающей линзе',
+    statement: 'Предмет расположен на расстоянии <span class="formula">d = 60 см</span> от собирающей линзы с фокусным расстоянием <span class="formula">f = 20 см</span>. Определите расстояние от линзы до изображения и линейное увеличение.',
+    hint: 'Используйте формулу тонкой линзы, а затем отношение расстояний для увеличения.',
+    solution: '<span class="formula">1/f = 1/d + 1/b</span>. Тогда <span class="formula">1/b = 1/20 − 1/60 = 1/30</span>, поэтому <span class="formula">b = 30 см</span>. Увеличение по модулю <span class="formula">|Γ| = b/d = 30/60 = 0,5</span>. Изображение действительное, перевёрнутое и уменьшенное в два раза.'
+  },
+  {
+    id: 5,
+    topic: 'Колебания',
+    level: 'Базовая',
+    levelClass: 'easy',
+    title: 'Период математического маятника',
+    statement: 'Найдите период малых колебаний математического маятника длиной <span class="formula">L = 1,0 м</span>. Примите <span class="formula">g = 9,8 м/с²</span>.',
+    hint: 'Период малых колебаний не зависит от массы груза.',
+    solution: '<span class="formula">T = 2π√(L/g) = 2π√(1/9,8) ≈ 2,01 с</span>.'
+  },
+  {
+    id: 6,
+    topic: 'Механика',
+    level: 'Олимпиадная',
+    levelClass: 'hard',
+    title: 'Цилиндр скатывается с высоты',
+    statement: 'Сплошной однородный цилиндр без проскальзывания скатывается с высоты <span class="formula">h</span>. Найдите скорость его центра масс внизу. Момент инерции цилиндра относительно оси равен <span class="formula">I = mR²/2</span>.',
+    hint: 'Кинетическая энергия состоит из поступательной и вращательной частей. Используйте условие <span class="formula">v = ωR</span>.',
+    solution: '<span class="formula">mgh = mv²/2 + Iω²/2</span>. Подставляя <span class="formula">I = mR²/2</span> и <span class="formula">ω = v/R</span>, получаем <span class="formula">mgh = mv²/2 + mv²/4 = 3mv²/4</span>. Следовательно, <span class="formula">v = √(4gh/3)</span>.'
+  }
+];
+
+let activeProblemId = null;
+let activeProblemTopic = 'all';
+
+function renderProblemCatalog(topic='all'){
+  const catalog=document.getElementById('problem-catalog');
+  const empty=document.getElementById('empty-problems');
+  const count=document.getElementById('practice-count');
+  if(!catalog)return;
+
+  activeProblemTopic=topic;
+  const list=topic==='all'?PRACTICE_TASKS:PRACTICE_TASKS.filter(p=>p.topic===topic);
+  count.textContent=list.length+' '+pluralTasks(list.length);
+  empty.style.display=list.length?'none':'block';
+
+  const groups={};
+  list.forEach(p=>{
+    if(!groups[p.topic])groups[p.topic]=[];
+    groups[p.topic].push(p);
+  });
+
+  catalog.innerHTML=Object.entries(groups).map(([groupTopic,tasks])=>`
+    <section class="topic-block">
+      <div class="topic-block-head">
+        <h2 class="topic-block-title">${groupTopic}</h2>
+        <span class="topic-block-count">${tasks.length} ${pluralTasks(tasks.length)}</span>
+      </div>
+      <div class="topic-task-grid">
+        ${tasks.map(p=>`<button class="task-number-tile ${p.levelClass}" onclick="openProblem(${p.id})" title="Задача ${p.id}: ${escapeAttribute(p.title)}" aria-label="Открыть задачу ${p.id}: ${escapeAttribute(p.title)}">${p.id}</button>`).join('')}
+      </div>
+    </section>
+  `).join('');
+}
+
+function escapeAttribute(value){
+  return String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function pluralTasks(n){
+  const n10=n%10,n100=n%100;
+  if(n10===1&&n100!==11)return 'задача';
+  if(n10>=2&&n10<=4&&(n100<12||n100>14))return 'задачи';
+  return 'задач';
+}
+
+function filterProblems(topic,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  renderProblemCatalog(topic);
+}
+
+function openProblem(id,updateHash=true){
+  const p=PRACTICE_TASKS.find(item=>Number(item.id)===Number(id));
+  if(!p)return;
+  activeProblemId=Number(p.id);
+
+  document.getElementById('problem-catalog-view').hidden=true;
+  document.getElementById('problem-detail').hidden=false;
+  document.getElementById('detail-topic').textContent=p.topic;
+  const level=document.getElementById('detail-level');
+  level.textContent=p.level;
+  level.className='level-chip level-'+p.levelClass;
+  document.getElementById('detail-number').textContent='Задача '+p.id;
+  document.getElementById('detail-title').textContent=p.title;
+  document.getElementById('detail-statement').innerHTML=p.statement;
+  document.getElementById('detail-hint').innerHTML=p.hint||'Подсказка пока не добавлена.';
+  document.getElementById('detail-solution').innerHTML=p.solution||'Решение пока не добавлено.';
+
+  const image=document.getElementById('detail-image');
+  if(p.image){
+    image.src=p.image;
+    image.alt=p.imageAlt||('Рисунок к задаче '+p.id);
+    image.hidden=false;
+  }else{
+    image.removeAttribute('src');
+    image.hidden=true;
+  }
+
+  const answerBox=document.getElementById('detail-answer-box');
+  if(p.answer){
+    document.getElementById('detail-answer').innerHTML=p.answer;
+    answerBox.hidden=false;
+  }else{
+    answerBox.hidden=true;
+  }
+
+  resetDetailPanels();
+  renderProblemSidebar(p);
+  renderProblemNavigation(p);
+  document.title='Задача '+p.id+': '+p.title+' — NPhO';
+  if(updateHash)history.pushState({problemId:p.id},'', '#task-'+p.id);
+  window.scrollTo(0,0);
+}
+
+function closeProblem(updateHash=true){
+  activeProblemId=null;
+  document.getElementById('problem-detail').hidden=true;
+  document.getElementById('problem-catalog-view').hidden=false;
+  document.title='Национальная олимпиада по физике, Кыргызстан (NPhO)';
+  if(updateHash)history.pushState({},'', '#problems');
+  window.scrollTo(0,0);
+}
+
+function renderProblemSidebar(problem){
+  const sameTopic=PRACTICE_TASKS.filter(p=>p.topic===problem.topic);
+  document.getElementById('sidebar-topic').textContent=problem.topic;
+  document.getElementById('sidebar-count').textContent=sameTopic.length+' '+pluralTasks(sameTopic.length);
+  document.getElementById('sidebar-task-grid').innerHTML=sameTopic.map(p=>`
+    <button class="sidebar-task-btn ${Number(p.id)===Number(problem.id)?'active':''}" onclick="openProblem(${p.id})" title="${escapeAttribute(p.title)}">${p.id}</button>
+  `).join('');
+}
+
+function renderProblemNavigation(problem){
+  const index=PRACTICE_TASKS.findIndex(p=>Number(p.id)===Number(problem.id));
+  const prev=PRACTICE_TASKS[index-1];
+  const next=PRACTICE_TASKS[index+1];
+  const prevBtn=document.getElementById('prev-problem');
+  const nextBtn=document.getElementById('next-problem');
+  prevBtn.disabled=!prev;
+  nextBtn.disabled=!next;
+  document.getElementById('prev-problem-title').textContent=prev?('№'+prev.id+' · '+prev.title):'Начало списка';
+  document.getElementById('next-problem-title').textContent=next?('№'+next.id+' · '+next.title):'Конец списка';
+}
+
+function moveProblem(direction){
+  const index=PRACTICE_TASKS.findIndex(p=>Number(p.id)===Number(activeProblemId));
+  const target=PRACTICE_TASKS[index+direction];
+  if(target)openProblem(target.id);
+}
+
+function toggleDetailPanel(id,btn){
+  const panel=document.getElementById(id);
+  if(!panel||!btn)return;
+  const open=panel.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open?'true':'false');
+  btn.textContent=open?'Скрыть':'Показать';
+}
+
+function resetDetailPanels(){
+  ['detail-hint','detail-solution'].forEach(id=>document.getElementById(id)?.classList.remove('open'));
+  ['detail-hint-btn','detail-solution-btn'].forEach(id=>{
+    const btn=document.getElementById(id);
+    if(btn){btn.setAttribute('aria-expanded','false');btn.textContent='Показать';}
+  });
+}
+
+function handleProblemRoute(){
+  const match=location.hash.match(/^#task-(\d+)$/);
+  if(match){
+    go('problems',false);
+    openProblem(Number(match[1]),false);
+  }else if(location.hash==='#problems'){
+    go('problems',false);
+    closeProblem(false);
+  }else if(document.getElementById('sec-problems')?.classList.contains('active')){
+    go('home',false);
+  }
+}
+
+function go(id,updateHash=true){
   document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.nl').forEach(b=>b.classList.remove('active'));
-  document.getElementById('sec-'+id).classList.add('active');
+  const section=document.getElementById('sec-'+id);
+  if(section)section.classList.add('active');
   const b=document.getElementById('nl-'+id);
-  if(b) b.classList.add('active');
+  if(b)b.classList.add('active');
+  if(updateHash){
+    if(id==='problems'){
+      closeProblem(false);
+      history.pushState({},'', '#problems');
+    }else if(location.hash){
+      history.pushState({},'', location.pathname+location.search);
+    }
+  }
   window.scrollTo(0,0);
 }
 function sy(id,btn){
@@ -418,6 +819,9 @@ function renderTable(year){
   el.innerHTML=h;
 }
 ['2022','2023','2024','2025','2026'].forEach(y=>{renderPDFs(y);renderTable(y);});
+renderProblemCatalog();
+window.addEventListener('popstate',handleProblemRoute);
+handleProblemRoute();
 </script>
 
 <script>
