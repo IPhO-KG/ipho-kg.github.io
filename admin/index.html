@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Редактор задач — NPhO</title>
+  <script>
+    window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},svg:{fontCache:"global"},startup:{typeset:false}};
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
+  <style>
+    :root{--bg:#f7f8fa;--card:#fff;--text:#172033;--muted:#667085;--line:#e4e7ec;--blue:#155eef;--blue2:#eff4ff;--green:#067647;--red:#b42318;--shadow:0 12px 35px rgba(16,24,40,.08);--r:12px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px}
+    button,input,textarea,select{font:inherit}button{cursor:pointer}.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 22px;background:rgba(255,255,255,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}.brand-mark{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--blue);color:#fff;font-weight:900}.brand strong{display:block}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:1px}.top-actions{display:flex;align-items:center;gap:8px}.admin-email{color:var(--muted);font-size:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:8px 13px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text);font-weight:700;text-decoration:none}.btn:hover{border-color:#98a2b3}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.danger{color:var(--red)}.btn:disabled{opacity:.55;cursor:not-allowed}
+    .layout{display:grid;grid-template-columns:290px minmax(0,1fr);gap:18px;max-width:1500px;margin:0 auto;padding:18px}.sidebar,.editor{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 1px 2px rgba(16,24,40,.03)}.sidebar{position:sticky;top:79px;height:calc(100vh - 97px);overflow:hidden;display:flex;flex-direction:column}.sidebar-head{padding:15px;border-bottom:1px solid var(--line)}.sidebar-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.sidebar-title strong{font-size:15px}.search{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg);outline:none}.search:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue2)}.filters{display:flex;gap:5px;margin-top:8px}.filter{padding:5px 8px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--muted);font-size:11px}.filter.active{border-color:var(--blue);background:var(--blue2);color:var(--blue)}
+    .task-list{overflow:auto;padding:8px}.task-item{width:100%;padding:10px;border:1px solid transparent;border-radius:9px;background:transparent;text-align:left}.task-item:hover{background:var(--bg)}.task-item.active{background:var(--blue2);border-color:#b2ccff}.task-item strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.task-meta{display:flex;gap:6px;align-items:center;margin-top:4px;color:var(--muted);font-size:10px}.badge{padding:2px 6px;border-radius:999px;background:#f2f4f7}.badge.published{background:#ecfdf3;color:var(--green)}.empty{padding:30px 16px;color:var(--muted);text-align:center}
+    .editor{min-width:0;overflow:hidden}.editor-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;border-bottom:1px solid var(--line)}.editor-head h1{margin:0;font-size:20px}.editor-head p{margin:4px 0 0;color:var(--muted);font-size:12px}.status{min-height:19px;color:var(--muted);font-size:12px}.status.ok{color:var(--green)}.status.error{color:var(--red)}
+    .form{padding:20px}.grid{display:grid;grid-template-columns:1.2fr 1fr 180px;gap:12px}.field{display:grid;gap:6px}.field label,.section-label{font-size:12px;font-weight:800;color:#344054}.control{width:100%;min-height:40px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--text);outline:none}.control:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue2)}.title-field{margin-top:12px}.title-field .control{font-size:17px;font-weight:700}
+    .stars{display:flex;align-items:center;gap:3px;height:40px}.star{padding:3px;border:0;background:transparent;color:#d0d5dd;font-size:22px;line-height:1}.star.on{color:#f79009}.star:hover{transform:scale(1.08)}
+    .section{margin-top:20px;border:1px solid var(--line);border-radius:10px;overflow:hidden}.section-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;background:#f9fafb;border-bottom:1px solid var(--line)}.section-top small{color:var(--muted)}.tools{display:flex;gap:4px;flex-wrap:wrap}.tool{padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:#fff;font-family:Georgia,serif;font-size:12px}.tool:hover{border-color:var(--blue);color:var(--blue)}
+    .split{display:grid;grid-template-columns:1fr 1fr;min-height:260px}.source{width:100%;min-height:260px;padding:15px;border:0;border-right:1px solid var(--line);outline:0;resize:vertical;font-family:"SFMono-Regular",Consolas,monospace;font-size:13px;line-height:1.65}.preview{min-width:0;padding:16px;overflow:auto;background:#fff;font-family:Georgia,"Times New Roman",serif;font-size:16px;line-height:1.72}.preview h1,.preview h2,.preview h3{line-height:1.25}.preview p{margin:.45em 0}.preview blockquote{margin:1em 0;padding:10px 13px;border-left:3px solid var(--blue);background:var(--blue2)}.preview code{padding:1px 4px;border-radius:4px;background:#f2f4f7;font-size:.88em}.preview mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden}
+    .hint-list,.image-list{display:grid;gap:10px;padding:12px}.hint{display:grid;grid-template-columns:34px 1fr 34px;gap:8px;align-items:start}.hint-num{display:grid;place-items:center;height:34px;border-radius:8px;background:var(--blue2);color:var(--blue);font-weight:900}.hint textarea{min-height:84px;resize:vertical}.icon-btn{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--muted)}.icon-btn:hover{color:var(--red);border-color:#fecdca}.upload{padding:16px;border:1px dashed #98a2b3;border-radius:9px;background:#f9fafb;text-align:center}.upload input{display:none}.image-card{display:grid;grid-template-columns:100px 1fr 34px;gap:10px;align-items:start;padding:10px;border:1px solid var(--line);border-radius:9px}.image-card img{width:100px;height:80px;object-fit:contain;border-radius:7px;background:var(--bg)}.image-fields{display:grid;gap:7px}.image-fields input{min-height:34px;padding:7px 9px}
+    .form-actions{position:sticky;bottom:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px -20px -20px;padding:13px 20px;border-top:1px solid var(--line);background:rgba(255,255,255,.96);backdrop-filter:blur(10px)}.action-group{display:flex;gap:8px;flex-wrap:wrap}.help{color:var(--muted);font-size:11px}.mobile-tasks{display:none}
+    @media(max-width:980px){.layout{grid-template-columns:1fr}.sidebar{position:static;height:auto;max-height:320px}.grid{grid-template-columns:1fr 1fr}.grid .field:last-child{grid-column:1/-1}.split{grid-template-columns:1fr}.source{border-right:0;border-bottom:1px solid var(--line)}.preview{min-height:220px}}
+    @media(max-width:600px){.top{padding:10px 12px}.admin-email{display:none}.layout{padding:10px}.form{padding:14px}.editor-head{padding:15px}.grid{grid-template-columns:1fr}.grid .field:last-child{grid-column:auto}.form-actions{margin:18px -14px -14px;padding:11px 14px}.help{display:none}.btn{padding:8px 10px}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/#problems"><span class="brand-mark">N</span><span><strong>NPhO</strong><small>Редактор задач</small></span></a>
+    <div class="top-actions"><span class="admin-email" id="admin-email">Проверяем доступ…</span><a class="btn" href="/#problems">Открыть сайт</a><a class="btn" href="/cdn-cgi/access/logout">Выйти</a></div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <div class="sidebar-title"><strong>Задачи</strong><button class="btn primary" type="button" onclick="newProblem()">＋ Новая</button></div>
+        <input class="search" id="search" placeholder="Поиск…" oninput="renderList()">
+        <div class="filters"><button class="filter active" data-filter="all" onclick="setFilter('all',this)">Все</button><button class="filter" data-filter="draft" onclick="setFilter('draft',this)">Черновики</button><button class="filter" data-filter="published" onclick="setFilter('published',this)">Опубликованные</button></div>
+      </div>
+      <div class="task-list" id="task-list"><div class="empty">Загрузка…</div></div>
+    </aside>
+
+    <section class="editor">
+      <div class="editor-head"><div><h1 id="editor-title">Новая задача</h1><p>LaTeX внутри текста: <code>$F=ma$</code>, отдельная формула: <code>$$E=mc^2$$</code></p></div><div class="status" id="status"></div></div>
+      <form class="form" onsubmit="event.preventDefault();saveProblem(draft.status)">
+        <div class="grid">
+          <div class="field"><label for="book">Задачник</label><input class="control" id="book" list="book-options" data-field="book"><datalist id="book-options"><option>Савченко</option><option>Овчинкин</option><option>Сборник NPhO</option><option>Авторские задачи</option></datalist></div>
+          <div class="field"><label for="topic">Раздел</label><input class="control" id="topic" list="topic-options" data-field="topic"><datalist id="topic-options"><option>Механика</option><option>Термодинамика</option><option>Электричество</option><option>Оптика</option><option>Колебания и волны</option><option>Современная физика</option></datalist></div>
+          <div class="field"><label>Сложность</label><div class="stars" id="stars"></div></div>
+        </div>
+        <div class="field title-field"><label for="title">Название</label><input class="control" id="title" data-field="title" placeholder="Например: Клин и два бруска"></div>
+
+        <section class="section">
+          <div class="section-top"><span class="section-label">Условие задачи</span><div class="tools"><button class="tool" type="button" onclick="insertLatex('\\frac{a}{b}',6)">a/b</button><button class="tool" type="button" onclick="insertLatex('\\sqrt{x}',6)">√</button><button class="tool" type="button" onclick="insertLatex('\\vec{v}',5)">v⃗</button><button class="tool" type="button" onclick="insertLatex('$$\\n\\n$$',3)">Формула</button></div></div>
+          <div class="split"><textarea class="source latex-source" id="statement" data-field="statement" placeholder="Введите условие. Например: Тело массы $m$ движется…"></textarea><div class="preview" id="statement-preview"></div></div>
+        </section>
+
+        <section class="section">
+          <div class="section-top"><span class="section-label">Пошаговые подсказки</span><button class="btn" type="button" onclick="addHint()">＋ Подсказка</button></div>
+          <div class="hint-list" id="hint-list"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-top"><span class="section-label">Рисунки</span><small>PNG/JPG/WebP/GIF до 1,5 МБ</small></div>
+          <div class="image-list"><label class="upload" id="upload-label"><input type="file" id="image-upload" accept="image/png,image/jpeg,image/webp,image/gif" onchange="uploadImage(this.files[0]);this.value=''">Нажмите, чтобы загрузить рисунок</label><div id="image-list"></div></div>
+        </section>
+
+        <section class="section">
+          <div class="section-top"><span class="section-label">Полное решение</span><div class="tools"><button class="tool" type="button" onclick="solutionTemplate()">Шаблон решения</button><button class="tool" type="button" onclick="insertLatex('\\boxed{x}',7)">Ответ в рамке</button></div></div>
+          <div class="split"><textarea class="source latex-source" id="solution" data-field="solution" placeholder="## Идея решения&#10;&#10;Запишите ход решения…"></textarea><div class="preview" id="solution-preview"></div></div>
+        </section>
+
+        <section class="section">
+          <div class="section-top"><span class="section-label">Краткий ответ</span></div>
+          <div class="split" style="min-height:160px"><textarea class="source latex-source" style="min-height:160px" id="answer" data-field="answer" placeholder="$\\boxed{x=...}$"></textarea><div class="preview" id="answer-preview"></div></div>
+        </section>
+
+        <div class="form-actions"><div class="action-group"><button class="btn" id="save-draft" type="button" onclick="saveProblem('draft')">Сохранить черновик</button><button class="btn primary" id="publish" type="button" onclick="saveProblem('published')">Опубликовать на сайте</button><button class="btn danger" id="archive" type="button" onclick="archiveProblem()" hidden>В архив</button></div><span class="help">⌘/Ctrl + S — сохранить</span></div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const API='/admin/api';
+    let problems=[];
+    let filter='all';
+    let dirty=false;
+    let saving=false;
+    let activeTextarea=null;
+    let draft=blankProblem();
+
+    function blankProblem(){return{id:null,slug:'',book:'Савченко',topic:'Механика',difficulty:2,title:'',statement:'',solution:'',answer:'',hints:[],images:[],status:'draft'}}
+    function uid(prefix){return (crypto.randomUUID?crypto.randomUUID():prefix+'-'+Date.now()+'-'+Math.random().toString(36).slice(2))}
+    function escapeHtml(value){return String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}
+    function setStatus(text,tone=''){const el=document.getElementById('status');el.textContent=text;el.className='status '+tone}
+    function setDirty(value=true){dirty=value;if(value)setStatus('Есть несохранённые изменения')}
+
+    function renderRich(source){
+      const tokens=[];let safe=escapeHtml(String(source||'').replace(/\r\n/g,'\n'));
+      const hold=(math,display)=>{const id=tokens.length;tokens.push(display?'<div>\\['+math.trim()+'\\]</div>':'<span>\\('+math.trim()+'\\)</span>');return 'NPHOMATH'+id+'X'};
+      safe=safe.replace(/\$\$([\s\S]*?)\$\$/g,(_,m)=>hold(m,true)).replace(/\\\[([\s\S]*?)\\\]/g,(_,m)=>hold(m,true)).replace(/\\\(([\s\S]*?)\\\)/g,(_,m)=>hold(m,false)).replace(/(^|[^\\$])\$([^\n$]+?)\$/g,(_,p,m)=>p+hold(m,false));
+      const inline=value=>value.replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/\*([^*]+)\*/g,'<em>$1</em>');
+      let html=safe.split(/\n{2,}/).map(x=>x.trim()).filter(Boolean).map(block=>{const lines=block.split('\n');if(/^###\s+/.test(block))return'<h3>'+inline(block.replace(/^###\s+/,''))+'</h3>';if(/^##\s+/.test(block))return'<h2>'+inline(block.replace(/^##\s+/,''))+'</h2>';if(/^#\s+/.test(block))return'<h1>'+inline(block.replace(/^#\s+/,''))+'</h1>';if(lines.every(line=>/^[-*]\s+/.test(line)))return'<ul>'+lines.map(line=>'<li>'+inline(line.replace(/^[-*]\s+/,''))+'</li>').join('')+'</ul>';if(block.startsWith('&gt; '))return'<blockquote>'+inline(block.replace(/^&gt;\s?/,''))+'</blockquote>';return'<p>'+inline(block).replace(/\n/g,'<br>')+'</p>'}).join('');
+      return html.replace(/NPHOMATH(\d+)X/g,(_,id)=>tokens[Number(id)]||'');
+    }
+
+    let typesetTimer;
+    function renderPreviews(){
+      ['statement','solution','answer'].forEach(name=>{document.getElementById(name+'-preview').innerHTML=renderRich(draft[name])||'<span style="color:#98a2b3">Предпросмотр появится здесь.</span>'});
+      clearTimeout(typesetTimer);typesetTimer=setTimeout(()=>{if(window.MathJax?.typesetPromise){MathJax.typesetClear?.();MathJax.typesetPromise(document.querySelectorAll('.preview')).catch(()=>{})}},120);
+    }
+
+    function renderStars(){document.getElementById('stars').innerHTML=[1,2,3,4].map(n=>'<button type="button" class="star '+(n<=draft.difficulty?'on':'')+'" onclick="setDifficulty('+n+')" title="'+n+' звезды">★</button>').join('')}
+    function setDifficulty(value){draft.difficulty=value;renderStars();setDirty()}
+
+    function fillForm(){
+      ['book','topic','title','statement','solution','answer'].forEach(name=>document.getElementById(name).value=draft[name]||'');
+      document.getElementById('editor-title').textContent=draft.id?'Редактирование задачи':'Новая задача';
+      document.getElementById('archive').hidden=!draft.id;renderStars();renderHints();renderImages();renderPreviews();
+    }
+
+    function renderHints(){const root=document.getElementById('hint-list');root.innerHTML=draft.hints.length?draft.hints.map((hint,index)=>'<div class="hint"><span class="hint-num">'+(index+1)+'</span><textarea class="control latex-source" onfocus="activeTextarea=this" oninput="updateHint(\''+hint.id+'\',this.value)" placeholder="Подсказка '+(index+1)+'">'+escapeHtml(hint.content)+'</textarea><button class="icon-btn" type="button" onclick="removeHint(\''+hint.id+'\')">×</button></div>').join(''):'<div class="empty">Подсказок пока нет.</div>'}
+    function addHint(){draft.hints.push({id:uid('hint'),content:''});renderHints();setDirty()}
+    function updateHint(id,value){const item=draft.hints.find(x=>x.id===id);if(item)item.content=value;setDirty()}
+    function removeHint(id){draft.hints=draft.hints.filter(x=>x.id!==id);renderHints();setDirty()}
+
+    function renderImages(){const root=document.getElementById('image-list');root.innerHTML=draft.images.map(image=>'<div class="image-card"><img src="'+escapeHtml(image.url)+'" alt=""><div class="image-fields"><input class="control" value="'+escapeHtml(image.alt||'')+'" placeholder="Описание изображения" oninput="updateImage(\''+image.id+'\',\'alt\',this.value)"><input class="control" value="'+escapeHtml(image.caption||'')+'" placeholder="Подпись под рисунком" oninput="updateImage(\''+image.id+'\',\'caption\',this.value)"></div><button class="icon-btn" type="button" onclick="removeImage(\''+image.id+'\')">×</button></div>').join('')}
+    function updateImage(id,key,value){const item=draft.images.find(x=>x.id===id);if(item)item[key]=value;setDirty()}
+    function removeImage(id){draft.images=draft.images.filter(x=>x.id!==id);renderImages();setDirty()}
+    async function uploadImage(file){if(!file)return;setStatus('Загружаю рисунок…');const body=new FormData();body.append('file',file);try{const response=await fetch(API+'/uploads',{method:'POST',body});const data=await response.json();if(!response.ok)throw new Error(data.error||'Ошибка загрузки');draft.images.push({id:uid('image'),url:data.url,alt:draft.title||'Рисунок к задаче',caption:''});renderImages();setDirty();setStatus('Рисунок добавлен.','ok')}catch(error){setStatus(error.message,'error')}}
+
+    function renderList(){const query=document.getElementById('search').value.trim().toLowerCase();const visible=problems.filter(item=>(filter==='all'||item.status===filter)&&(!query||(item.title+' '+item.book+' '+item.topic).toLowerCase().includes(query)));document.getElementById('task-list').innerHTML=visible.length?visible.map(item=>'<button class="task-item '+(item.id===draft.id?'active':'')+'" onclick="selectProblem('+item.id+')"><strong>'+escapeHtml(item.title)+'</strong><span class="task-meta"><span class="badge '+item.status+'">'+(item.status==='published'?'Опубликована':'Черновик')+'</span><span>'+escapeHtml(item.book)+' · '+escapeHtml(item.topic)+'</span></span></button>').join(''):'<div class="empty">Задач не найдено.</div>'}
+    function setFilter(value,button){filter=value;document.querySelectorAll('.filter').forEach(el=>el.classList.remove('active'));button.classList.add('active');renderList()}
+    function selectProblem(id){if(dirty&&!confirm('Отменить несохранённые изменения?'))return;const item=problems.find(x=>x.id===id);if(!item)return;draft=JSON.parse(JSON.stringify(item));dirty=false;fillForm();renderList();setStatus(draft.status==='published'?'Задача опубликована.':'Черновик')}
+    function newProblem(){if(dirty&&!confirm('Отменить несохранённые изменения?'))return;draft=blankProblem();dirty=false;fillForm();renderList();setStatus('Новая задача')}
+
+    async function loadProblems(){try{const response=await fetch(API+'/problems',{cache:'no-store'});const data=await response.json();if(!response.ok)throw new Error(data.error||'Нет доступа');problems=Array.isArray(data.problems)?data.problems:[];document.getElementById('admin-email').textContent=data.admin?.email||'Администратор';renderList();setStatus('Редактор готов.','ok')}catch(error){setStatus(error.message,'error');document.getElementById('task-list').innerHTML='<div class="empty">'+escapeHtml(error.message)+'</div>'}}
+
+    async function saveProblem(status){if(saving)return;if(!draft.title.trim()||!draft.statement.trim()){setStatus('Введите название и условие задачи.','error');return}saving=true;document.getElementById('save-draft').disabled=true;document.getElementById('publish').disabled=true;setStatus(status==='published'?'Публикуем…':'Сохраняем…');try{const response=await fetch(draft.id?API+'/problems/'+draft.id:API+'/problems',{method:draft.id?'PATCH':'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...draft,status})});const data=await response.json();if(!response.ok||!data.problem)throw new Error(data.error||'Не удалось сохранить');draft=data.problem;const index=problems.findIndex(x=>x.id===draft.id);if(index>=0)problems[index]=draft;else problems.unshift(draft);dirty=false;fillForm();renderList();setStatus(status==='published'?'Задача опубликована на сайте.':'Черновик сохранён.','ok')}catch(error){setStatus(error.message,'error')}finally{saving=false;document.getElementById('save-draft').disabled=false;document.getElementById('publish').disabled=false}}
+    async function archiveProblem(){if(!draft.id||!confirm('Убрать задачу в архив?'))return;try{const response=await fetch(API+'/problems/'+draft.id,{method:'DELETE'});const data=await response.json();if(!response.ok)throw new Error(data.error||'Не удалось архивировать');problems=problems.filter(x=>x.id!==draft.id);draft=blankProblem();dirty=false;fillForm();renderList();setStatus('Задача перемещена в архив.','ok')}catch(error){setStatus(error.message,'error')}}
+
+    function insertLatex(text,offset=0){const area=activeTextarea||document.getElementById('statement');const start=area.selectionStart??area.value.length;const end=area.selectionEnd??start;area.setRangeText(text,start,end,'end');area.focus();area.selectionStart=area.selectionEnd=start+offset;const field=area.dataset.field;if(field){draft[field]=area.value;renderPreviews()}else area.dispatchEvent(new Event('input',{bubbles:true}));setDirty()}
+    function solutionTemplate(){if(draft.solution.trim()&&!confirm('Заменить текущее решение шаблоном?'))return;draft.solution='## Идея решения\n\nКратко сформулируйте главный физический переход.\n\n## 1. Обозначения\n\nЗапишем необходимые величины.\n\n## 2. Физический закон\n\n$$\nE_1=E_2.\n$$\n\n## 3. Ответ\n\n$$\n\\boxed{x=\\ldots}\n$$';document.getElementById('solution').value=draft.solution;renderPreviews();setDirty()}
+
+    document.querySelectorAll('[data-field]').forEach(element=>element.addEventListener('input',()=>{draft[element.dataset.field]=element.value;setDirty();if(['statement','solution','answer'].includes(element.dataset.field))renderPreviews()}));
+    document.querySelectorAll('.latex-source').forEach(element=>element.addEventListener('focus',()=>activeTextarea=element));
+    document.addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='s'){event.preventDefault();saveProblem(draft.status)}});
+    window.addEventListener('beforeunload',event=>{if(dirty){event.preventDefault();event.returnValue=''}});
+    fillForm();loadProblems();
+  </script>
+</body>
+</html>
