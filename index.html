@@ -32,7 +32,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:.875re
 .logo{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--text);cursor:pointer}
 .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
 .nav-links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}.nav-links::-webkit-scrollbar{display:none}
-.nl{padding:6px 16px;font-size:13px;font-weight:500;border:none;background:transparent;color:var(--text2);cursor:pointer;border-radius:var(--r);transition:all .15s}
+.nl{display:inline-flex;align-items:center;padding:6px 16px;font-size:13px;font-weight:500;border:none;background:transparent;color:var(--text2);cursor:pointer;border-radius:var(--r);transition:all .15s;text-decoration:none;white-space:nowrap}
 .nl:hover{background:var(--bg2);color:var(--text)}.nl.active{background:var(--bg3);color:var(--text)}
 .sec{display:none}.sec.active{display:block}
 .hero{padding:5rem 2rem 4rem;text-align:center;border-bottom:1px solid var(--border)}
@@ -233,6 +233,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .sidebar-skull{position:absolute;right:1px;top:1px;font-size:8px;line-height:1}
 .sidebar-all{display:block;width:calc(100% - 2rem);margin:0 1rem 1rem;padding:8px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg2);color:var(--text2);font-size:11px;font-weight:700;cursor:pointer}
 .sidebar-all:hover{border-color:var(--accent);color:var(--accent)}
+.problem-sync-status{min-height:1.25rem;margin-top:.45rem;font-size:11px;color:var(--text3)}
+.problem-sync-status.ok{color:var(--accent2)}
+.problem-sync-status.fallback{color:#b45309}
+.problem-admin-button{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text);font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;transition:border-color .15s,color .15s,background .15s}
+.problem-admin-button:hover{border-color:var(--accent);color:var(--accent);background:var(--bg2)}
+.problem-admin-button span{font-size:15px;line-height:1;color:var(--accent)}
 @media(max-width:850px){.problem-page-layout{grid-template-columns:1fr}.problem-sidebar{position:static;order:-1}.sidebar-task-grid{grid-template-columns:repeat(auto-fill,minmax(36px,1fr))}}
 @media(max-width:640px){.practice-head{align-items:flex-start}.problems-inner{padding:1.25rem .8rem}.problem-article-header,.problem-section{padding:1.25rem 1.1rem}.reveal-heading{padding:1rem 1.1rem}.reveal-panel{padding:1.15rem 1.1rem}.problem-page-nav{padding:1rem 1.1rem}.problem-body{font-size:16px}.problem-section h2{font-size:22px}.problem-page-title{font-size:25px}.task-number-tile{width:40px;height:36px}}
 </style>
@@ -347,11 +353,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
         <div>
           <p class="stitle" style="margin-bottom:.45rem">Банк задач</p>
           <p class="practice-intro">Сначала выберите задачник, затем раздел физики и номер задачи.</p>
+          <p class="problem-sync-status" id="problem-sync-status" aria-live="polite">Загружаем опубликованные задачи…</p>
         </div>
+        <a class="problem-admin-button" href="/admin/" title="Доступно редакторам после входа"><span>＋</span> Добавить задачу</a>
       </div>
 
       <div id="book-selection-view" class="selection-view">
-        <div class="book-choice-grid">
+        <div class="book-choice-grid" id="book-choice-grid">
           <button class="book-choice-card" onclick="selectProblemBook('Савченко')">
             <span class="book-choice-title">Савченко</span>
             <span class="book-choice-description">Задачи по механике, термодинамике, электричеству и оптике.</span>
@@ -628,7 +636,7 @@ const RESULTS = {
    Для поиска нажми Cmd+F / Ctrl+F и введи: ДОБАВЛЯТЬ ЗАДАЧИ
    ===================================================================== */
 
-const PRACTICE_TASKS = [
+let PRACTICE_TASKS = [
   {
     id: 1,
     book: 'Савченко',
@@ -865,8 +873,133 @@ const PRACTICE_TASKS = [
    }
    ===================================================================== */
 
-const PROBLEM_BOOKS=['Савченко','Овчинкин'];
-const PROBLEM_TOPICS=['Механика','Термодинамика','Электричество','Оптика'];
+let PROBLEM_BOOKS=['Савченко','Овчинкин'];
+let PROBLEM_TOPICS=['Механика','Термодинамика','Электричество','Оптика'];
+
+const NPHO_EDITOR_ORIGIN=location.origin;
+
+function remoteInlineFormat(value){
+  return value
+    .replace(/`([^`]+)`/g,'<code>$1</code>')
+    .replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
+    .replace(/__([^_]+)__/g,'<strong>$1</strong>')
+    .replace(/\*([^*]+)\*/g,'<em>$1</em>');
+}
+
+function latexSourceToHtml(source){
+  const raw=String(source||'').replace(/\r\n/g,'\n');
+  if(!raw.trim())return '';
+
+  const tokenPrefix='NPHOREMOTEMATH';
+  const tokens=[];
+  let safe=escapeHtml(raw);
+  const protect=(content,display)=>{
+    const index=tokens.length;
+    tokens.push(display
+      ?'<div class="math-display">\\['+content.trim()+'\\]</div>'
+      :'<span class="math-inline">\\('+content.trim()+'\\)</span>');
+    return tokenPrefix+index+'X';
+  };
+
+  safe=safe
+    .replace(/\$\$([\s\S]*?)\$\$/g,(_,math)=>protect(math,true))
+    .replace(/\\\[([\s\S]*?)\\\]/g,(_,math)=>protect(math,true))
+    .replace(/\\\(([\s\S]*?)\\\)/g,(_,math)=>protect(math,false))
+    .replace(/(^|[^\\$])\$([^\n$]+?)\$/g,(_,prefix,math)=>prefix+protect(math,false));
+
+  const html=safe.split(/\n{2,}/).map(block=>block.trim()).filter(Boolean).map(block=>{
+    if(block.startsWith(tokenPrefix)&&new RegExp('^'+tokenPrefix+'\\d+X$').test(block))return block;
+    if(/^###\s+/.test(block))return '<h3>'+remoteInlineFormat(block.replace(/^###\s+/,''))+'</h3>';
+    if(/^##\s+/.test(block))return '<h2>'+remoteInlineFormat(block.replace(/^##\s+/,''))+'</h2>';
+    if(/^#\s+/.test(block))return '<h1>'+remoteInlineFormat(block.replace(/^#\s+/,''))+'</h1>';
+    const lines=block.split('\n');
+    if(lines.every(line=>/^[-*]\s+/.test(line))){
+      return '<ul>'+lines.map(line=>'<li>'+remoteInlineFormat(line.replace(/^[-*]\s+/,''))+'</li>').join('')+'</ul>';
+    }
+    if(lines.every(line=>/^\d+[.)]\s+/.test(line))){
+      return '<ol>'+lines.map(line=>'<li>'+remoteInlineFormat(line.replace(/^\d+[.)]\s+/,''))+'</li>').join('')+'</ol>';
+    }
+    if(block.startsWith('&gt; ')){
+      return '<blockquote>'+remoteInlineFormat(block.replace(/^&gt;\s?/,'').replace(/\n&gt;\s?/g,'<br>'))+'</blockquote>';
+    }
+    return '<p>'+remoteInlineFormat(block).replace(/\n/g,'<br>')+'</p>';
+  }).join('');
+
+  return html.replace(new RegExp(tokenPrefix+'(\\d+)X','g'),(_,index)=>tokens[Number(index)]||'');
+}
+
+function remoteMediaUrl(value){
+  if(!value)return '';
+  try{
+    const url=new URL(String(value),NPHO_EDITOR_ORIGIN);
+    return url.protocol==='https:'||url.protocol==='http:'?url.href:'';
+  }catch{
+    return '';
+  }
+}
+
+function remoteProblemToPractice(problem){
+  return {
+    id:'remote-'+problem.id,
+    book:String(problem.book||'Савченко'),
+    topic:String(problem.topic||'Механика'),
+    difficulty:normalizeDifficulty(problem.difficulty),
+    title:String(problem.title||'Без названия'),
+    statement:latexSourceToHtml(problem.statement),
+    solution:latexSourceToHtml(problem.solution),
+    answer:latexSourceToHtml(problem.answer),
+    hints:Array.isArray(problem.hints)?problem.hints.map((hint,index)=>({
+      text:latexSourceToHtml(hint.content),
+      image:remoteMediaUrl(hint.imageUrl),
+      imageAlt:hint.imageCaption||('Рисунок к подсказке '+(index+1)),
+      caption:hint.imageCaption||''
+    })):[],
+    images:Array.isArray(problem.images)?problem.images.map((image,index)=>({
+      src:remoteMediaUrl(image.url),
+      alt:image.alt||('Рисунок '+(index+1)+' к задаче'),
+      caption:image.caption||''
+    })).filter(image=>image.src):[]
+  };
+}
+
+function problemMergeKey(problem){
+  return [problemBook(problem),problem.topic,problem.title].map(value=>String(value||'').trim().toLowerCase()).join('|');
+}
+
+function updateProblemTaxonomy(){
+  PRACTICE_TASKS.forEach(problem=>{
+    const book=problemBook(problem);
+    if(book&&!PROBLEM_BOOKS.includes(book))PROBLEM_BOOKS.push(book);
+    if(problem.topic&&!PROBLEM_TOPICS.includes(problem.topic))PROBLEM_TOPICS.push(problem.topic);
+  });
+}
+
+async function loadPublishedProblems(){
+  const status=document.getElementById('problem-sync-status');
+  try{
+    const response=await fetch('/api/problems',{cache:'no-store',headers:{Accept:'application/json'}});
+    if(!response.ok)throw new Error('HTTP '+response.status);
+    const payload=await response.json();
+    const remote=Array.isArray(payload.problems)?payload.problems.map(remoteProblemToPractice):[];
+    const merged=new Map(PRACTICE_TASKS.map(problem=>[problemMergeKey(problem),problem]));
+    remote.forEach(problem=>merged.set(problemMergeKey(problem),problem));
+    PRACTICE_TASKS=Array.from(merged.values());
+    updateProblemTaxonomy();
+    renderBookChoices();
+    renderBookCounts();
+    if(status){
+      status.textContent='Каталог синхронизирован · '+PRACTICE_TASKS.length+' '+pluralTasks(PRACTICE_TASKS.length);
+      status.className='problem-sync-status ok';
+    }
+    if(location.hash.startsWith('#task-'))handleProblemRoute();
+  }catch(error){
+    console.warn('Не удалось синхронизировать банк задач:',error);
+    if(status){
+      status.textContent='Показаны сохранённые на сайте задачи.';
+      status.className='problem-sync-status fallback';
+    }
+  }
+}
 
 let activeProblemId=null;
 let activeProblemBook=null;
@@ -882,6 +1015,29 @@ function sameProblemId(a,b){
 
 function problemIdArgument(id){
   return JSON.stringify(id);
+}
+
+function renderBookChoices(){
+  const grid=document.getElementById('book-choice-grid');
+  if(!grid)return;
+  const descriptions={
+    'Савченко':'Задачи по механике, термодинамике, электричеству и оптике.',
+    'Овчинкин':'Отдельный каталог задач с собственной нумерацией по каждому разделу.',
+    'Сборник NPhO':'Официальные и тренировочные задачи Национальной физической олимпиады.',
+    'Авторские задачи':'Авторские подборки преподавателей и тренеров сборной.'
+  };
+  grid.innerHTML=PROBLEM_BOOKS.map(book=>{
+    const total=PRACTICE_TASKS.filter(problem=>problemBook(problem)===book).length;
+    const description=descriptions[book]||'Задачи и решения, опубликованные редакцией NPhO.';
+    return `<button class="book-choice-card" onclick='selectProblemBook(${problemIdArgument(book)})'>
+      <span class="book-choice-title">${escapeHtml(book)}</span>
+      <span class="book-choice-description">${escapeHtml(description)}</span>
+      <span class="book-choice-footer">
+        <span class="book-choice-count" data-book-count="${escapeAttribute(book)}">${total} ${pluralTasks(total)}</span>
+        <span class="book-choice-arrow" aria-hidden="true">→</span>
+      </span>
+    </button>`;
+  }).join('');
 }
 
 function setProblemSelectionView(viewId){
@@ -976,7 +1132,7 @@ function renderProblemCatalog(book=activeProblemBook,topic=activeProblemTopic){
   catalog.innerHTML=list.length?`
     <section class="topic-block">
       <div class="topic-block-head">
-        <h2 class="topic-block-title">${book} · ${topic}</h2>
+        <h2 class="topic-block-title">${escapeHtml(book)} · ${escapeHtml(topic)}</h2>
         <span class="topic-block-count">${list.length} ${pluralTasks(list.length)}</span>
       </div>
       <div class="topic-task-grid">
@@ -1391,10 +1547,14 @@ function renderTable(year){
   el.innerHTML=h;
 }
 ['2022','2023','2024','2025','2026'].forEach(y=>{renderPDFs(y);renderTable(y);});
+updateProblemTaxonomy();
+renderBookChoices();
 renderBookCounts();
 showBookSelection();
 window.addEventListener('popstate',handleProblemRoute);
+window.addEventListener('pageshow',event=>{if(event.persisted)loadPublishedProblems();});
 handleProblemRoute();
+loadPublishedProblems();
 </script>
 
 <script>
