@@ -211,9 +211,10 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
 .problem-article{border:1px solid var(--border);border-radius:var(--rl);background:var(--bg);overflow:hidden;min-width:0}
 .problem-article-header{padding:1.7rem 1.8rem 1.35rem;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--bg2),var(--bg))}
 .problem-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:.75rem;min-width:0}
-.topic-chip,.level-chip{display:inline-block;font-size:10px;font-weight:750;padding:3px 9px;border-radius:100px;white-space:nowrap}
-.topic-chip{max-width:100%;background:rgba(26,86,219,.1);color:var(--accent);line-height:1.35;overflow-wrap:anywhere;white-space:normal}
-.level-chip{padding:0;background:transparent}
+.topic-chip,.level-chip{box-sizing:border-box;border-radius:100px;font-size:11px;font-weight:750}
+.topic-chip{min-height:27px;max-width:100%;display:inline-flex;align-items:center;padding:5px 11px;background:rgba(26,86,219,.1);color:var(--accent);line-height:1.15;overflow-wrap:anywhere;white-space:normal}
+.level-chip{background:transparent}
+.level-chip.difficulty-chip{min-height:27px;display:inline-flex;align-items:center;justify-content:center;padding:5px 11px;background:var(--difficulty-bg);line-height:1.15;white-space:nowrap}
 .problem-page-number{font-size:11px;font-weight:800;letter-spacing:.07em;color:var(--text3);text-transform:uppercase;margin-bottom:5px}
 .problem-page-title{font-size:clamp(23px,3.4vw,34px);font-weight:800;line-height:1.2;letter-spacing:-.02em}
 .problem-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
@@ -256,8 +257,9 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
 .problem-nav-btn.next{text-align:right;margin-left:auto}.problem-nav-btn:disabled{opacity:.35;cursor:default;border-color:var(--border);color:var(--text2)}
 .problem-nav-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em}.problem-nav-title{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .problem-sidebar{position:sticky;top:76px;border:1px solid var(--border);border-radius:var(--rl);background:var(--bg);overflow:hidden}
-.sidebar-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:1rem;border-bottom:1px solid var(--border);background:var(--bg2)}
-.sidebar-topic{font-size:13px;font-weight:750}.sidebar-count{font-size:10px;color:var(--text2)}
+.sidebar-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:.9rem;padding:1rem;border-bottom:1px solid var(--border);background:var(--bg2)}
+.sidebar-topic{min-width:0;font-size:13px;font-weight:750;line-height:1.5;overflow-wrap:anywhere}
+.sidebar-count{align-self:start;padding-top:2px;color:var(--text2);font-size:10px;line-height:1.4;white-space:nowrap}
 .sidebar-task-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:1rem}
 .sidebar-task-btn{aspect-ratio:1;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text2);font-size:11px;font-weight:800;cursor:pointer;transition:all .15s;position:relative}
 .sidebar-task-btn.difficulty-1,.sidebar-task-btn.difficulty-2,.sidebar-task-btn.difficulty-3,.sidebar-task-btn.difficulty-4{color:var(--difficulty);background:var(--difficulty-bg);border-color:var(--difficulty-border)}
@@ -1766,6 +1768,7 @@ loadPublishedProblems();
   if(!cv)return;
   const ctx=cv.getContext('2d');
   const W=220,H=220,CX=110,CY=110;
+  const OUTER_R=106;
 
   const LEVELS=[
     {r:28, color:'#60a5fa', speed:0.011},
@@ -1774,9 +1777,12 @@ loadPublishedProblems();
   ];
 
   const electrons=[
-    {level:0, angle:0,            moving:false, targetLevel:null, progress:0, emitWave:false},
-    {level:1, angle:Math.PI*0.72, moving:false, targetLevel:null, progress:0, emitWave:false},
-    {level:2, angle:Math.PI*1.48, moving:false, targetLevel:null, progress:0, emitWave:false},
+    {level:0, angle:0,            busy:false, waiting:false, transition:null},
+    {level:0, angle:Math.PI,      busy:false, waiting:false, transition:null},
+    {level:1, angle:Math.PI*0.32, busy:false, waiting:false, transition:null},
+    {level:1, angle:Math.PI*1.32, busy:false, waiting:false, transition:null},
+    {level:2, angle:Math.PI*0.72, busy:false, waiting:false, transition:null},
+    {level:2, angle:Math.PI*1.72, busy:false, waiting:false, transition:null},
   ];
 
   const WCOLS=['#f87171','#34d399','#60a5fa','#fbbf24','#c084fc','#22d3ee','#fb923c','#e879f9'];
@@ -1785,102 +1791,123 @@ loadPublishedProblems();
   const trails=electrons.map(()=>[]);
   let tick=0;
 
+  function randomWaveColor(){return WCOLS[Math.floor(Math.random()*WCOLS.length)]}
+  function positionAt(e,radius){return{x:CX+Math.cos(e.angle)*radius,y:CY+Math.sin(e.angle)*radius}}
+  function currentRadius(e){
+    if(!e.transition)return LEVELS[e.level].r;
+    const {from,to,progress}=e.transition;
+    const t=Math.min(progress,1);
+    const ease=t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+    return LEVELS[from].r+(LEVELS[to].r-LEVELS[from].r)*ease;
+  }
+  function currentAngularSpeed(e){
+    if(!e.transition)return LEVELS[e.level].speed;
+    const {from,to,progress}=e.transition;
+    return LEVELS[from].speed+(LEVELS[to].speed-LEVELS[from].speed)*Math.min(progress,1);
+  }
+
   function triggerTransition(e){
-    if(e.moving)return;
+    if(e.busy)return;
     const canDown=e.level>0,canUp=e.level<LEVELS.length-1;
     if(!canDown&&!canUp)return;
-    let emit;
-    if(canDown&&canUp) emit=Math.random()<0.5;
-    else emit=canDown;
-    if(emit){
-      e.targetLevel=e.level-1;e.moving=true;e.progress=0;e.emitWave=true;
-    } else {
-      e.targetLevel=e.level+1;e.moving=true;e.progress=0;e.emitWave=false;
-      spawnIncoming(e);
-    }
+    const emit=canDown&&(!canUp||Math.random()<0.5);
+    if(emit)beginTransition(e,e.level-1,'emit',randomWaveColor());
+    else spawnIncoming(e);
   }
 
   function spawnIncoming(e){
-    const ex=CX+Math.cos(e.angle)*LEVELS[e.level].r;
-    const ey=CY+Math.sin(e.angle)*LEVELS[e.level].r;
-    const toAngle=Math.atan2(ey-CY,ex-CX);
-    const fromAngle=toAngle+Math.PI;
-    const startDist=108;
-    const col=WCOLS[Math.floor(Math.random()*WCOLS.length)];
-    const headSpeed=0.30;
-    const stopAt=startDist-5;
-    const totalAge=Math.ceil((stopAt+65)/headSpeed);
+    if(e.busy||e.level>=LEVELS.length-1)return;
+    e.busy=true;
+    e.waiting=true;
+    const radius=LEVELS[e.level].r;
+    const distance=OUTER_R-radius;
+    const plannedFrames=Math.max(1,Math.ceil(distance/0.72));
+    const hitAngle=e.angle+LEVELS[e.level].speed*plannedFrames;
+    const start={x:CX+Math.cos(hitAngle)*OUTER_R,y:CY+Math.sin(hitAngle)*OUTER_R};
     waves.push({
       type:'incoming',
-      ox:CX+Math.cos(fromAngle)*startDist,
-      oy:CY+Math.sin(fromAngle)*startDist,
-      dir:toAngle,color:col,
-      age:0,totalAge,headSpeed,segLen:42,
-      freq:2.6+Math.random()*2,amp:4+Math.random()*3,
-      done:false,startDist,stopAt,
+      electron:e,
+      ox:start.x,oy:start.y,
+      dir:hitAngle+Math.PI,
+      color:randomWaveColor(),
+      traveled:0,distance,speed:distance/plannedFrames,segLen:42,hitAngle,
+      frequency:0.34+Math.random()*0.08,phase:Math.random()*Math.PI*2,amp:4.5,
     });
   }
 
-  function spawnEmit(e){
-    const ex=CX+Math.cos(e.angle)*LEVELS[e.level].r;
-    const ey=CY+Math.sin(e.angle)*LEVELS[e.level].r;
-    const col=WCOLS[Math.floor(Math.random()*WCOLS.length)];
+  function spawnOutgoing(e,color){
+    const radius=LEVELS[e.level].r;
+    const start=positionAt(e,radius);
     waves.push({
-      type:'emit',ox:ex,oy:ey,
-      dir:Math.atan2(ey-CY,ex-CX),color:col,
-      age:0,totalAge:155,headSpeed:0.36,segLen:44,
-      freq:2.4+Math.random()*2.2,amp:4+Math.random()*3.5,
+      type:'outgoing',electron:null,
+      ox:start.x,oy:start.y,
+      dir:e.angle,color,
+      traveled:0,distance:OUTER_R-radius,speed:0.78,segLen:44,
+      frequency:0.34+Math.random()*0.08,phase:Math.random()*Math.PI*2,amp:4.5,
     });
-    pulses.push({x:ex,y:ey,maxR:22,color:col,age:0,totalAge:28});
+    pulses.push({x:start.x,y:start.y,maxR:22,color,age:0,totalAge:28});
   }
 
-  function spawnAbsorbPulse(e){
-    const lv=LEVELS[Math.min((e.targetLevel!==null?e.targetLevel:e.level),LEVELS.length-1)];
-    const ex=CX+Math.cos(e.angle)*lv.r;
-    const ey=CY+Math.sin(e.angle)*lv.r;
-    pulses.push({x:ex,y:ey,maxR:18,color:lv.color,age:0,totalAge:24});
+  function beginTransition(e,targetLevel,kind,color){
+    if(targetLevel<0||targetLevel>=LEVELS.length)return;
+    e.busy=true;
+    e.waiting=false;
+    e.transition={from:e.level,to:targetLevel,progress:0,kind,color};
+  }
+
+  function absorbPhoton(w){
+    const e=w.electron;
+    if(!e||!e.waiting)return;
+    e.angle=w.hitAngle;
+    const hit=positionAt(e,LEVELS[e.level].r);
+    pulses.push({x:hit.x,y:hit.y,maxR:19,color:w.color,age:0,totalAge:25});
+    beginTransition(e,e.level+1,'absorb',w.color);
+  }
+
+  function finishTransition(e){
+    const transition=e.transition;
+    if(!transition)return;
+    e.level=transition.to;
+    e.transition=null;
+    e.busy=false;
+    if(transition.kind==='emit')spawnOutgoing(e,transition.color);
   }
 
   function drawWave(w){
-    if(w.age>w.totalAge)return false;
-    const headDist=w.age*w.headSpeed;
+    const headDist=Math.min(w.traveled,w.distance);
     const tailDist=Math.max(0,headDist-w.segLen);
-    let alpha;
-    if(w.type==='incoming'){
-      const riseEnd=w.startDist*0.22;
-      const fadeStart=w.stopAt-35;
-      const fadeEnd=w.stopAt;
-      if(headDist<riseEnd) alpha=headDist/riseEnd;
-      else if(headDist>=fadeStart) alpha=1-Math.min((headDist-fadeStart)/(fadeEnd-fadeStart),1);
-      else alpha=1;
-      if(!w.done&&headDist>=w.stopAt) w.done=true;
-    } else {
-      alpha=w.age<22?w.age/22:1-(w.age-22)/(w.totalAge-22);
-    }
-    alpha=Math.max(0,Math.min(1,alpha));
+    const fadeIn=Math.min(1,Math.max(headDist,1)/12);
+    const remaining=w.distance-headDist;
+    const fadeOut=w.type==='outgoing'?Math.min(1,Math.max(remaining,0)/22):1;
+    const alpha=Math.max(0,Math.min(1,fadeIn*fadeOut));
     ctx.save();
     ctx.translate(w.ox,w.oy);
     ctx.rotate(w.dir);
     ctx.beginPath();
-    let started=false;
-    for(let s=0;s<=58;s++){
-      const t=s/58;
+    for(let s=0;s<=64;s++){
+      const t=s/64;
       const x=tailDist+t*(headDist-tailDist);
       const env=Math.sin(t*Math.PI);
-      const y=Math.sin(x*w.freq*0.185-w.age*0.08)*w.amp*env;
-      if(!started){ctx.moveTo(x,y);started=true;}
+      const y=Math.sin(x*w.frequency-w.phase)*w.amp*env;
+      if(s===0)ctx.moveTo(x,y);
       else ctx.lineTo(x,y);
     }
     ctx.strokeStyle=w.color+Math.floor(alpha*205).toString(16).padStart(2,'0');
     ctx.lineWidth=1.8;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();
-    const hy=Math.sin(headDist*w.freq*0.185-w.age*0.08)*w.amp;
-    ctx.beginPath();ctx.arc(headDist,hy,2.4,0,Math.PI*2);
+    /* The photon marker uses the exact endpoint of the wave path. */
+    ctx.beginPath();ctx.arc(headDist,0,2.6,0,Math.PI*2);
     ctx.fillStyle=w.color+Math.floor(alpha*250).toString(16).padStart(2,'0');ctx.fill();
-    ctx.beginPath();ctx.arc(headDist,hy,5,0,Math.PI*2);
+    ctx.beginPath();ctx.arc(headDist,0,5.5,0,Math.PI*2);
     ctx.fillStyle=w.color+Math.floor(alpha*50).toString(16).padStart(2,'0');ctx.fill();
     ctx.restore();
-    w.age++;
-    return w.age<=w.totalAge;
+
+    w.phase+=0.16;
+    if(headDist>=w.distance){
+      if(w.type==='incoming')absorbPhoton(w);
+      return false;
+    }
+    w.traveled=Math.min(w.distance,w.traveled+w.speed);
+    return true;
   }
 
   function drawPulse(p){
@@ -1909,23 +1936,11 @@ loadPublishedProblems();
     for(let i=pulses.length-1;i>=0;i--){if(!drawPulse(pulses[i]))pulses.splice(i,1);}
     for(let i=waves.length-1;i>=0;i--){if(!drawWave(waves[i]))waves.splice(i,1);}
     electrons.forEach((e,ei)=>{
-      e.angle+=LEVELS[Math.min(e.level,LEVELS.length-1)].speed;
-      let drawR;
-      if(e.moving&&e.targetLevel!==null){
-        e.progress+=0.022;
-        const fromR=LEVELS[e.level].r,toR=LEVELS[e.targetLevel].r;
-        const t=Math.min(e.progress,1);
-        const ease=t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
-        drawR=fromR+(toR-fromR)*ease;
-        if(e.progress>=1){
-          if(e.emitWave){e.level=e.targetLevel;spawnEmit(e);e.emitWave=false;}
-          else{spawnAbsorbPulse(e);e.level=e.targetLevel;}
-          e.moving=false;e.targetLevel=null;e.progress=0;
-        }
-      } else {
-        drawR=LEVELS[e.level].r;
-      }
-      const col=LEVELS[Math.min(e.level,LEVELS.length-1)].color;
+      e.angle+=currentAngularSpeed(e);
+      if(e.transition)e.transition.progress=Math.min(1,e.transition.progress+0.022);
+      const drawR=currentRadius(e);
+      const colorLevel=e.transition?e.transition.to:e.level;
+      const col=LEVELS[colorLevel].color;
       const ex=CX+Math.cos(e.angle)*drawR;
       const ey=CY+Math.sin(e.angle)*drawR;
       const tr=trails[ei];
@@ -1940,14 +1955,15 @@ loadPublishedProblems();
       ctx.beginPath();ctx.arc(ex,ey,6.5,0,Math.PI*2);ctx.fillStyle=col+'2c';ctx.fill();
       ctx.beginPath();ctx.arc(ex,ey,3.5,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
       ctx.beginPath();ctx.arc(ex-0.8,ey-0.8,1.2,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,0.65)';ctx.fill();
+      if(e.transition&&e.transition.progress>=1)finishTransition(e);
     });
     tick++;
     if(tick%125===0){
-      const free=electrons.filter(e=>!e.moving);
+      const free=electrons.filter(e=>!e.busy);
       if(free.length>0)triggerTransition(free[Math.floor(Math.random()*free.length)]);
     }
     if(tick%210===0){
-      const free=electrons.filter(e=>!e.moving);
+      const free=electrons.filter(e=>!e.busy);
       if(free.length>1)triggerTransition(free[Math.floor(Math.random()*free.length)]);
     }
     requestAnimationFrame(draw);
