@@ -471,11 +471,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
             <div class="problem-images" id="detail-images" hidden></div>
           </section>
 
-          <div class="answer-box" id="detail-answer-box" hidden>
-            <div class="answer-label">Ответ</div>
-            <div class="answer-text" id="detail-answer"></div>
-          </div>
-
           <section class="reveal-section">
             <div class="reveal-heading" onclick="revealNextHint()">
               <h2>Пошаговые подсказки</h2>
@@ -491,6 +486,11 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
             </div>
             <div class="reveal-panel solution-panel" id="detail-solution"></div>
           </section>
+
+          <div class="answer-box" id="detail-answer-box" hidden>
+            <div class="answer-label">Ответ</div>
+            <div class="answer-text" id="detail-answer"></div>
+          </div>
 
           <nav class="problem-page-nav" aria-label="Переход между задачами">
             <button class="problem-nav-btn" id="prev-problem" onclick="moveProblem(-1)">
