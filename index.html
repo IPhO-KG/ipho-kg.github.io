@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
+  try {
+    const savedTheme = localStorage.getItem('npho-theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+  } catch {}
+</script>
+<script>
   window.MathJax = {
     tex: {
       inlineMath: [['\\(', '\\)']],
@@ -25,15 +31,21 @@
 @keyframes pulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.12)}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:#111827;line-height:1.6;font-size:15px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
 :root{--accent:#1a56db;--accent2:#0e9f6e;--bg:#fff;--bg2:#f9fafb;--bg3:#f3f4f6;--text:#111827;--text2:#6b7280;--text3:#9ca3af;--border:#e5e7eb;--r:10px;--rl:16px}
-@media(prefers-color-scheme:dark){:root{--bg:#111827;--bg2:#1f2937;--bg3:#374151;--text:#f9fafb;--text2:#9ca3af;--text3:#6b7280;--border:#374151}body{background:var(--bg);color:var(--text)}}
+html[data-theme="dark"]{color-scheme:dark;--bg:#111827;--bg2:#1f2937;--bg3:#374151;--text:#f9fafb;--text2:#b6c0cf;--text3:#7f8a9b;--border:#374151}
+html[data-theme="light"]{color-scheme:light}
+@media(prefers-color-scheme:dark){html:not([data-theme]){color-scheme:dark;--bg:#111827;--bg2:#1f2937;--bg3:#374151;--text:#f9fafb;--text2:#b6c0cf;--text3:#7f8a9b;--border:#374151}}
 nav{display:flex;align-items:center;justify-content:space-between;padding:.875rem 2rem;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100}
-.logo{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--text);cursor:pointer}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;font-size:15px;font-weight:700;color:var(--text);cursor:pointer}
 .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+.nav-right{display:flex;align-items:center;gap:8px;min-width:0}
 .nav-links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}.nav-links::-webkit-scrollbar{display:none}
 .nl{display:inline-flex;align-items:center;padding:6px 16px;font-size:13px;font-weight:500;border:none;background:transparent;color:var(--text2);cursor:pointer;border-radius:var(--r);transition:all .15s;text-decoration:none;white-space:nowrap}
 .nl:hover{background:var(--bg2);color:var(--text)}.nl.active{background:var(--bg3);color:var(--text)}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:34px;flex-shrink:0;padding:6px 11px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text2);font-size:12px;font-weight:650;cursor:pointer;white-space:nowrap;transition:border-color .15s,color .15s,background .15s}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent);background:var(--bg2)}
+.theme-icon{width:16px;text-align:center;font-size:15px;line-height:1}
 .sec{display:none}.sec.active{display:block}
 .hero{padding:5rem 2rem 4rem;text-align:center;border-bottom:1px solid var(--border)}
 .hero-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--accent);background:rgba(26,86,219,.08);border:1px solid rgba(26,86,219,.2);border-radius:100px;padding:4px 16px;margin-bottom:1.25rem;animation:fadeUp .5s both}
@@ -121,7 +133,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .ct:hover{color:var(--accent)}
 .fbot{border-top:1px solid var(--border);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
 .fbot p{font-size:12px;color:var(--text3)}
-@media(max-width:640px){nav{padding:.75rem 1rem}.nl{padding:6px 10px;font-size:12px}.stats{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr;gap:1.5rem}.inner{padding:1.5rem 1rem}.hero{padding:3rem 1rem 2.5rem}}
+@media(max-width:640px){nav{padding:.75rem 1rem}.nav-right{gap:4px}.nl{padding:6px 10px;font-size:12px}.theme-toggle{width:34px;padding:6px}.theme-label{display:none}.stats{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr;gap:1.5rem}.inner{padding:1.5rem 1rem}.hero{padding:3rem 1rem 2.5rem}}
 
 /* Банк задач: каталог и отдельная страница каждой задачи */
 .problems-inner{max-width:1240px}
@@ -147,6 +159,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .topic-choice-name{font-size:16px;font-weight:750}
 .topic-choice-count{font-size:11px;color:var(--text2);white-space:nowrap}
 .task-selection-breadcrumb{font-size:12px;color:var(--text2);margin-bottom:.35rem}
+.catalog-search{position:relative;max-width:430px;margin:0 0 1rem}
+.catalog-search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:15px;pointer-events:none}
+.catalog-search-input{width:100%;height:40px;padding:8px 38px 8px 36px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text);font-size:13px;outline:none;transition:border-color .15s,box-shadow .15s}
+.catalog-search-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,86,219,.1)}
+.catalog-search-input::placeholder{color:var(--text3)}
+.catalog-search-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:26px;height:26px;border:0;border-radius:6px;background:transparent;color:var(--text3);font-size:16px;cursor:pointer}
+.catalog-search-clear:hover{background:var(--bg2);color:var(--text)}
 @media(max-width:640px){.book-choice-grid,.topic-choice-grid{grid-template-columns:1fr}.book-choice-card{padding:1.25rem}.selection-title{font-size:24px}}
 .filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:1.5rem}
 .filter-btn{padding:7px 13px;border:1px solid var(--border);border-radius:100px;background:var(--bg);color:var(--text2);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
@@ -156,9 +175,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .topic-block{border:1px solid var(--border);border-radius:var(--rl);background:var(--bg);overflow:hidden}
 .topic-block-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.15rem;background:var(--bg2);border-bottom:1px solid var(--border)}
 .topic-block-title{font-size:15px;font-weight:750}
+.topic-block-path{font-size:10px;font-weight:750;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-bottom:2px}
 .topic-block-count{font-size:11px;color:var(--text2)}
 .topic-task-grid{display:flex;gap:8px;flex-wrap:wrap;padding:1.15rem}
-.task-number-tile{min-width:50px;height:45px;padding:4px 7px;border-radius:7px;border:1.5px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;transition:transform .15s,border-color .15s,background .15s,color .15s,box-shadow .15s;position:relative;display:inline-flex;align-items:center;justify-content:center}
+.task-number-tile{min-width:58px;height:45px;padding:4px 9px;border-radius:7px;border:1.5px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;transition:transform .15s,border-color .15s,background .15s,color .15s,box-shadow .15s;position:relative;display:inline-flex;align-items:center;justify-content:center}
 .task-number-tile:hover{transform:translateY(-2px);box-shadow:0 5px 14px rgba(17,24,39,.09)}
 .task-tile-number{font-size:13px;font-weight:800;line-height:1}
 .task-tile-skull{position:absolute;right:3px;top:2px;font-size:11px;line-height:1;filter:grayscale(1) brightness(2.3)}
@@ -186,6 +206,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .level-chip{padding:0;background:transparent}
 .problem-page-number{font-size:11px;font-weight:800;letter-spacing:.07em;color:var(--text3);text-transform:uppercase;margin-bottom:5px}
 .problem-page-title{font-size:clamp(23px,3.4vw,34px);font-weight:800;line-height:1.2;letter-spacing:-.02em}
+.problem-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.copy-problem-link{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text2);font-size:11px;font-weight:700;cursor:pointer;transition:border-color .15s,color .15s,background .15s}
+.copy-problem-link:hover{border-color:var(--accent);color:var(--accent);background:var(--bg2)}
 .problem-section{padding:1.65rem 1.8rem;border-bottom:1px solid var(--border)}
 .problem-section:last-child{border-bottom:none}
 .problem-section h2{font-family:Georgia,'Times New Roman',serif;font-size:24px;font-weight:700;margin-bottom:.8rem}
@@ -196,6 +219,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .problem-figure-wrap{margin:0;text-align:center}
 .problem-figure{margin:0 auto;border:1px solid var(--border);background:var(--bg2)}
 .problem-figure-caption{margin-top:.55rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:var(--text2)}
+.embedded-problem-figure{margin:1.25rem auto}
 .hint-progress{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:var(--text2);margin-bottom:.8rem}
 .hint-step{display:none;padding:1rem 1.05rem;margin-top:.75rem;border:1px solid rgba(245,158,11,.28);border-radius:var(--r);background:rgba(245,158,11,.055)}
 .hint-step.visible{display:block;animation:fadeUp .22s both}
@@ -240,19 +264,25 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .problem-admin-button:hover{border-color:var(--accent);color:var(--accent);background:var(--bg2)}
 .problem-admin-button span{font-size:15px;line-height:1;color:var(--accent)}
 @media(max-width:850px){.problem-page-layout{grid-template-columns:1fr}.problem-sidebar{position:static;order:-1}.sidebar-task-grid{grid-template-columns:repeat(auto-fill,minmax(36px,1fr))}}
-@media(max-width:640px){.practice-head{align-items:flex-start}.problems-inner{padding:1.25rem .8rem}.problem-article-header,.problem-section{padding:1.25rem 1.1rem}.reveal-heading{padding:1rem 1.1rem}.reveal-panel{padding:1.15rem 1.1rem}.problem-page-nav{padding:1rem 1.1rem}.problem-body{font-size:16px}.problem-section h2{font-size:22px}.problem-page-title{font-size:25px}.task-number-tile{width:40px;height:36px}}
+@media(max-width:640px){.practice-head{align-items:flex-start}.problems-inner{padding:1.25rem .8rem}.problem-article-header,.problem-section{padding:1.25rem 1.1rem}.reveal-heading{padding:1rem 1.1rem}.reveal-panel{padding:1.15rem 1.1rem}.problem-page-nav{padding:1rem 1.1rem}.problem-body{font-size:16px}.problem-section h2{font-size:22px}.problem-page-title{font-size:25px}.problem-title-row{display:block}.copy-problem-link{margin-top:.8rem}.task-number-tile{min-width:50px;height:38px}}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="logo" onclick="go('home')"><div class="logo-dot"></div>NPhO</div>
-  <div class="nav-links">
-    <button class="nl active" id="nl-home" onclick="go('home')">Главная</button>
-    <button class="nl" id="nl-archive" onclick="go('archive')">Архив</button>
-    <button class="nl" id="nl-problems" onclick="go('problems')">Задачи</button>
-    <button class="nl" id="nl-about" onclick="go('about')">Об олимпиаде</button>
-    <button class="nl" id="nl-dates" onclick="go('dates')">Даты и отбор</button>
+  <div class="nav-right">
+    <div class="nav-links">
+      <button class="nl active" id="nl-home" onclick="go('home')">Главная</button>
+      <button class="nl" id="nl-archive" onclick="go('archive')">Архив</button>
+      <button class="nl" id="nl-problems" onclick="go('problems')">Задачи</button>
+      <button class="nl" id="nl-about" onclick="go('about')">Об олимпиаде</button>
+      <button class="nl" id="nl-dates" onclick="go('dates')">Даты и отбор</button>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Переключить цветовую тему" title="Переключить цветовую тему">
+      <span class="theme-icon" id="theme-icon" aria-hidden="true">☾</span>
+      <span class="theme-label" id="theme-label">Тёмная</span>
+    </button>
   </div>
 </nav>
 
@@ -402,6 +432,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
           <div class="practice-count" id="practice-count">0 задач</div>
         </div>
 
+        <div class="catalog-search">
+          <span class="catalog-search-icon" aria-hidden="true">⌕</span>
+          <input class="catalog-search-input" id="problem-search" type="search" placeholder="Поиск по номеру, названию или главе" oninput="renderProblemCatalog()" autocomplete="off">
+          <button class="catalog-search-clear" type="button" onclick="clearProblemSearch()" aria-label="Очистить поиск" title="Очистить">×</button>
+        </div>
+
         <div id="problem-catalog" class="problem-catalog"></div>
         <div id="empty-problems" class="empty-problems">В этом разделе пока нет задач.</div>
         <div class="catalog-legend" aria-label="Цветовая шкала сложности задач">
@@ -423,7 +459,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
               <span class="level-chip" id="detail-level"></span>
             </div>
             <div class="problem-page-number" id="detail-number"></div>
-            <h1 class="problem-page-title" id="detail-title"></h1>
+            <div class="problem-title-row">
+              <h1 class="problem-page-title" id="detail-title"></h1>
+              <button class="copy-problem-link" id="copy-problem-link" type="button" onclick="copyProblemLink()" title="Скопировать ссылку на задачу">⧉ Скопировать ссылку</button>
+            </div>
           </header>
 
           <section class="problem-section">
@@ -639,8 +678,13 @@ const RESULTS = {
 let PRACTICE_TASKS = [
   {
     id: 1,
+    slug: 'savchenko-mechanics-1-1',
     book: 'Савченко',
     topic: 'Механика',
+    chapter: 'Глава 1. Кинематика и динамика',
+    chapterOrder: 1,
+    problemNumber: '1.1',
+    sortOrder: 1,
     difficulty: 1,
     title: 'Столкновения трёх бусинок',
 
@@ -656,10 +700,6 @@ let PRACTICE_TASKS = [
         Удары считать абсолютно упругими.
       </p>
     `,
-
-    image: 'assets/assets/images/task1.png',
-    imageAlt: 'Три бусинки на горизонтальной спице',
-    imageCaption: 'Средняя бусинка движется вправо со скоростью v',
 
     hints: [
       String.raw`
@@ -840,6 +880,10 @@ let PRACTICE_TASKS = [
      id: 7,
      book: 'Савченко', // или 'Овчинкин'
      topic: 'Механика',
+     chapter: 'Глава 1. Кинематика',
+     chapterOrder: 1,
+     problemNumber: '1.7',
+     sortOrder: 7,
      difficulty: 2,
      title: 'Название задачи',
 
@@ -886,12 +930,32 @@ function remoteInlineFormat(value){
     .replace(/\*([^*]+)\*/g,'<em>$1</em>');
 }
 
-function latexSourceToHtml(source){
-  const raw=String(source||'').replace(/\r\n/g,'\n');
+function imageMarkerIds(source){
+  return [...String(source||'').matchAll(/\[\[image:([A-Za-z0-9_-]+)\]\]/g)].map(match=>match[1]);
+}
+
+function problemImageHtml(image,index=0){
+  const src=image?.src||remoteMediaUrl(image?.url);
+  if(!src)return '';
+  const alt=escapeAttribute(image.alt||('Рисунок '+(index+1)+' к решению'));
+  const caption=image.caption?'<figcaption class="problem-figure-caption">'+escapeHtml(image.caption)+'</figcaption>':'';
+  return '<figure class="problem-figure-wrap embedded-problem-figure"><img class="problem-figure" src="'+escapeAttribute(src)+'" alt="'+alt+'" loading="lazy">'+caption+'</figure>';
+}
+
+function latexSourceToHtml(source,images=[]){
+  let raw=String(source||'').replace(/\r\n/g,'\n');
   if(!raw.trim())return '';
 
   const tokenPrefix='NPHOREMOTEMATH';
   const tokens=[];
+  const imageTokenPrefix='NPHOREMOTEIMAGE';
+  const imageTokens=[];
+  raw=raw.replace(/\[\[image:([A-Za-z0-9_-]+)\]\]/g,(_,id)=>{
+    const image=images.find(item=>String(item.id)===id);
+    const index=imageTokens.length;
+    imageTokens.push(image?problemImageHtml(image,index):'');
+    return imageTokenPrefix+index+'X';
+  });
   let safe=escapeHtml(raw);
   const protect=(content,display)=>{
     const index=tokens.length;
@@ -909,6 +973,7 @@ function latexSourceToHtml(source){
 
   const html=safe.split(/\n{2,}/).map(block=>block.trim()).filter(Boolean).map(block=>{
     if(block.startsWith(tokenPrefix)&&new RegExp('^'+tokenPrefix+'\\d+X$').test(block))return block;
+    if(block.startsWith(imageTokenPrefix)&&new RegExp('^'+imageTokenPrefix+'\\d+X$').test(block))return block;
     if(/^###\s+/.test(block))return '<h3>'+remoteInlineFormat(block.replace(/^###\s+/,''))+'</h3>';
     if(/^##\s+/.test(block))return '<h2>'+remoteInlineFormat(block.replace(/^##\s+/,''))+'</h2>';
     if(/^#\s+/.test(block))return '<h1>'+remoteInlineFormat(block.replace(/^#\s+/,''))+'</h1>';
@@ -925,7 +990,9 @@ function latexSourceToHtml(source){
     return '<p>'+remoteInlineFormat(block).replace(/\n/g,'<br>')+'</p>';
   }).join('');
 
-  return html.replace(new RegExp(tokenPrefix+'(\\d+)X','g'),(_,index)=>tokens[Number(index)]||'');
+  return html
+    .replace(new RegExp(tokenPrefix+'(\\d+)X','g'),(_,index)=>tokens[Number(index)]||'')
+    .replace(new RegExp(imageTokenPrefix+'(\\d+)X','g'),(_,index)=>imageTokens[Number(index)]||'');
 }
 
 function remoteMediaUrl(value){
@@ -939,26 +1006,39 @@ function remoteMediaUrl(value){
 }
 
 function remoteProblemToPractice(problem){
+  const images=Array.isArray(problem.images)?problem.images.map((image,index)=>({
+    id:String(image.id||''),
+    src:remoteMediaUrl(image.url),
+    alt:image.alt||('Рисунок '+(index+1)+' к задаче'),
+    caption:image.caption||''
+  })).filter(image=>image.src):[];
+  const embeddedImageIds=[...new Set([
+    ...imageMarkerIds(problem.statement),
+    ...imageMarkerIds(problem.solution),
+    ...imageMarkerIds(problem.answer)
+  ])];
   return {
     id:'remote-'+problem.id,
+    slug:String(problem.slug||''),
     book:String(problem.book||'Савченко'),
     topic:String(problem.topic||'Механика'),
+    chapter:String(problem.chapter||'Без главы'),
+    chapterOrder:positiveCatalogInteger(problem.chapterOrder,1),
+    problemNumber:String(problem.problemNumber||''),
+    sortOrder:positiveCatalogInteger(problem.sortOrder,1),
     difficulty:normalizeDifficulty(problem.difficulty),
     title:String(problem.title||'Без названия'),
-    statement:latexSourceToHtml(problem.statement),
-    solution:latexSourceToHtml(problem.solution),
-    answer:latexSourceToHtml(problem.answer),
+    statement:latexSourceToHtml(problem.statement,images),
+    solution:latexSourceToHtml(problem.solution,images),
+    answer:latexSourceToHtml(problem.answer,images),
     hints:Array.isArray(problem.hints)?problem.hints.map((hint,index)=>({
       text:latexSourceToHtml(hint.content),
       image:remoteMediaUrl(hint.imageUrl),
       imageAlt:hint.imageCaption||('Рисунок к подсказке '+(index+1)),
       caption:hint.imageCaption||''
     })):[],
-    images:Array.isArray(problem.images)?problem.images.map((image,index)=>({
-      src:remoteMediaUrl(image.url),
-      alt:image.alt||('Рисунок '+(index+1)+' к задаче'),
-      caption:image.caption||''
-    })).filter(image=>image.src):[]
+    images,
+    embeddedImageIds
   };
 }
 
@@ -991,7 +1071,7 @@ async function loadPublishedProblems(){
       status.textContent='Каталог синхронизирован · '+PRACTICE_TASKS.length+' '+pluralTasks(PRACTICE_TASKS.length);
       status.className='problem-sync-status ok';
     }
-    if(location.hash.startsWith('#task-'))handleProblemRoute();
+    if(/^#(?:problem|task)-/.test(location.hash))handleProblemRoute();
   }catch(error){
     console.warn('Не удалось синхронизировать банк задач:',error);
     if(status){
@@ -1009,8 +1089,49 @@ function problemBook(problem){
   return problem.book||'Савченко';
 }
 
+function problemChapter(problem){
+  return String(problem.chapter||'Без главы');
+}
+
+function positiveCatalogInteger(value,fallback=1){
+  const number=Math.round(Number(value));
+  return Number.isFinite(number)?Math.min(99999,Math.max(1,number)):fallback;
+}
+
+function naturalCatalogCompare(a,b){
+  return String(a||'').localeCompare(String(b||''),'ru',{numeric:true,sensitivity:'base'});
+}
+
+function sortedSectionProblems(book,topic){
+  const list=PRACTICE_TASKS.filter(problem=>problemBook(problem)===book&&problem.topic===topic).slice();
+  const chapterOrders=new Map();
+  list.forEach(problem=>{
+    const chapter=problemChapter(problem);
+    const order=positiveCatalogInteger(problem.chapterOrder);
+    chapterOrders.set(chapter,chapterOrders.has(chapter)?Math.min(chapterOrders.get(chapter),order):order);
+  });
+  return list.sort((a,b)=>chapterOrders.get(problemChapter(a))-chapterOrders.get(problemChapter(b))
+    ||naturalCatalogCompare(problemChapter(a),problemChapter(b))
+    ||positiveCatalogInteger(a.sortOrder)-positiveCatalogInteger(b.sortOrder)
+    ||naturalCatalogCompare(a.problemNumber,b.problemNumber)
+    ||naturalCatalogCompare(a.id,b.id));
+}
+
+function problemDisplayNumber(problem,fallback){
+  return String(problem.problemNumber||'').trim()||String(fallback||1);
+}
+
 function sameProblemId(a,b){
   return String(a)===String(b);
+}
+
+function problemRouteToken(problem){
+  return String(problem.slug||problem.id);
+}
+
+function findProblemByRouteToken(token){
+  const decoded=String(token||'');
+  return PRACTICE_TASKS.find(problem=>problem.slug===decoded||sameProblemId(problem.id,decoded));
 }
 
 function problemIdArgument(id){
@@ -1096,8 +1217,18 @@ function showTopicSelection(){
 
 function selectProblemTopic(topic){
   if(!PROBLEM_TOPICS.includes(topic)||!activeProblemBook)return;
+  const search=document.getElementById('problem-search');
+  if(search&&activeProblemTopic!==topic)search.value='';
   activeProblemTopic=topic;
   showTaskSelection();
+}
+
+function clearProblemSearch(){
+  const search=document.getElementById('problem-search');
+  if(!search)return;
+  search.value='';
+  renderProblemCatalog();
+  search.focus();
 }
 
 function showTaskSelection(){
@@ -1125,21 +1256,37 @@ function renderProblemCatalog(book=activeProblemBook,topic=activeProblemTopic){
   const count=document.getElementById('practice-count');
   if(!catalog||!book||!topic)return;
 
-  const list=PRACTICE_TASKS.filter(problem=>problemBook(problem)===book&&problem.topic===topic);
-  if(count)count.textContent=list.length+' '+pluralTasks(list.length);
+  const allList=sortedSectionProblems(book,topic);
+  const query=String(document.getElementById('problem-search')?.value||'').trim().toLowerCase();
+  const list=query?allList.filter(problem=>[
+    problemDisplayNumber(problem,''),problem.title,problemChapter(problem),difficultyShortLabel(problem.difficulty)
+  ].join(' ').toLowerCase().includes(query)):allList;
+  if(count)count.textContent=query?list.length+' из '+allList.length:list.length+' '+pluralTasks(list.length);
   if(empty)empty.style.display=list.length?'none':'block';
+  if(empty)empty.textContent=query?'По вашему запросу ничего не найдено.':'В этом разделе пока нет задач.';
 
-  catalog.innerHTML=list.length?`
-    <section class="topic-block">
+  const fallbackNumbers=new Map(allList.map((problem,index)=>[String(problem.id),index+1]));
+  const chapters=new Map();
+  list.forEach(problem=>{
+    const chapter=problemChapter(problem);
+    if(!chapters.has(chapter))chapters.set(chapter,[]);
+    chapters.get(chapter).push(problem);
+  });
+
+  catalog.innerHTML=list.length?[...chapters].map(([chapter,problems])=>`
+    <section class="topic-block chapter-block">
       <div class="topic-block-head">
-        <h2 class="topic-block-title">${escapeHtml(book)} · ${escapeHtml(topic)}</h2>
-        <span class="topic-block-count">${list.length} ${pluralTasks(list.length)}</span>
+        <div><div class="topic-block-path">${escapeHtml(book)} · ${escapeHtml(topic)}</div><h2 class="topic-block-title">${escapeHtml(chapter)}</h2></div>
+        <span class="topic-block-count">${problems.length} ${pluralTasks(problems.length)}</span>
       </div>
       <div class="topic-task-grid">
-        ${list.map((problem,index)=>`<button class="task-number-tile ${difficultyClass(problem.difficulty)}" onclick='openProblem(${problemIdArgument(problem.id)})' title="Задача ${index+1}: ${escapeAttribute(problem.title)} · ${difficultyLabel(problem.difficulty)}" aria-label="Открыть задачу ${index+1}: ${escapeAttribute(problem.title)}. Сложность: ${difficultyLabel(problem.difficulty)}"><span class="task-tile-number">${index+1}</span>${normalizeDifficulty(problem.difficulty)===4?'<span class="task-tile-skull" aria-hidden="true">☠</span>':''}</button>`).join('')}
+        ${problems.map(problem=>{
+          const number=problemDisplayNumber(problem,fallbackNumbers.get(String(problem.id)));
+          return `<button class="task-number-tile ${difficultyClass(problem.difficulty)}" onclick='openProblem(${problemIdArgument(problem.id)})' title="Задача ${escapeAttribute(number)}: ${escapeAttribute(problem.title)} · ${difficultyLabel(problem.difficulty)}" aria-label="Открыть задачу ${escapeAttribute(number)}: ${escapeAttribute(problem.title)}. Сложность: ${difficultyLabel(problem.difficulty)}"><span class="task-tile-number">${escapeHtml(number)}</span>${normalizeDifficulty(problem.difficulty)===4?'<span class="task-tile-skull" aria-hidden="true">☠</span>':''}</button>`;
+        }).join('')}
       </div>
     </section>
-  `:'';
+  `).join(''):'';
 }
 
 function escapeAttribute(value){
@@ -1183,9 +1330,9 @@ function pluralTasks(n){
 }
 
 function getBookTopicProblemNumber(problem){
-  const sameSection=PRACTICE_TASKS.filter(item=>problemBook(item)===problemBook(problem)&&item.topic===problem.topic);
+  const sameSection=sortedSectionProblems(problemBook(problem),problem.topic);
   const index=sameSection.findIndex(item=>sameProblemId(item.id,problem.id));
-  return index>=0?index+1:1;
+  return problemDisplayNumber(problem,index>=0?index+1:1);
 }
 
 let mathJaxReadyPromise=null;
@@ -1239,7 +1386,7 @@ function openProblem(id,updateHash=true){
 
   document.getElementById('problem-catalog-view').hidden=true;
   document.getElementById('problem-detail').hidden=false;
-  document.getElementById('detail-topic').textContent=activeProblemBook+' · '+p.topic;
+  document.getElementById('detail-topic').textContent=activeProblemBook+' · '+p.topic+' · '+problemChapter(p);
   const level=document.getElementById('detail-level');
   level.textContent=difficultyShortLabel(p.difficulty);
   level.className='level-chip difficulty-chip '+difficultyClass(p.difficulty);
@@ -1272,7 +1419,7 @@ function openProblem(id,updateHash=true){
   renderProblemSidebar(p);
   renderProblemNavigation(p);
   document.title=activeProblemBook+' · '+p.topic+' · Задача '+topicNumber+': '+p.title+' — NPhO';
-  if(updateHash)history.pushState({problemId:p.id},'', '#task-'+encodeURIComponent(String(p.id)));
+  if(updateHash)history.pushState({problemId:p.id},'', '#problem-'+encodeURIComponent(problemRouteToken(p)));
   window.scrollTo(0,0);
 }
 
@@ -1295,7 +1442,8 @@ function renderProblemImages(problem){
     }];
   }
 
-  images=images.filter(item=>item&&item.src);
+  const embeddedIds=new Set(Array.isArray(problem.embeddedImageIds)?problem.embeddedImageIds.map(String):[]);
+  images=images.filter(item=>item&&item.src&&!embeddedIds.has(String(item.id||'')));
   if(!images.length){
     container.innerHTML='';
     container.hidden=true;
@@ -1414,17 +1562,17 @@ function closeProblem(updateHash=true){
 
 function renderProblemSidebar(problem){
   const book=problemBook(problem);
-  const sameSection=PRACTICE_TASKS.filter(item=>problemBook(item)===book&&item.topic===problem.topic);
-  document.getElementById('sidebar-topic').textContent=book+' · '+problem.topic;
+  const sameSection=sortedSectionProblems(book,problem.topic).filter(item=>problemChapter(item)===problemChapter(problem));
+  document.getElementById('sidebar-topic').textContent=problemChapter(problem);
   document.getElementById('sidebar-count').textContent=sameSection.length+' '+pluralTasks(sameSection.length);
   document.getElementById('sidebar-task-grid').innerHTML=sameSection.map((item,index)=>`
-    <button class="sidebar-task-btn ${difficultyClass(item.difficulty)} ${sameProblemId(item.id,problem.id)?'active':''}" onclick='openProblem(${problemIdArgument(item.id)})' title="${escapeAttribute(item.title)} · ${difficultyLabel(item.difficulty)}" aria-label="Задача ${index+1}. ${difficultyLabel(item.difficulty)}">${index+1}${normalizeDifficulty(item.difficulty)===4?'<span class="sidebar-skull" aria-hidden="true">☠</span>':''}</button>
+    <button class="sidebar-task-btn ${difficultyClass(item.difficulty)} ${sameProblemId(item.id,problem.id)?'active':''}" onclick='openProblem(${problemIdArgument(item.id)})' title="${escapeAttribute(item.title)} · ${difficultyLabel(item.difficulty)}" aria-label="Задача ${escapeAttribute(problemDisplayNumber(item,index+1))}. ${difficultyLabel(item.difficulty)}">${escapeHtml(problemDisplayNumber(item,index+1))}${normalizeDifficulty(item.difficulty)===4?'<span class="sidebar-skull" aria-hidden="true">☠</span>':''}</button>
   `).join('');
 }
 
 function renderProblemNavigation(problem){
   const book=problemBook(problem);
-  const sameSection=PRACTICE_TASKS.filter(item=>problemBook(item)===book&&item.topic===problem.topic);
+  const sameSection=sortedSectionProblems(book,problem.topic);
   const index=sameSection.findIndex(item=>sameProblemId(item.id,problem.id));
   const prev=sameSection[index-1];
   const next=sameSection[index+1];
@@ -1432,15 +1580,15 @@ function renderProblemNavigation(problem){
   const nextBtn=document.getElementById('next-problem');
   prevBtn.disabled=!prev;
   nextBtn.disabled=!next;
-  document.getElementById('prev-problem-title').textContent=prev?('№'+index+' · '+prev.title):'Начало раздела';
-  document.getElementById('next-problem-title').textContent=next?('№'+(index+2)+' · '+next.title):'Конец раздела';
+  document.getElementById('prev-problem-title').textContent=prev?('№'+problemDisplayNumber(prev,index)+' · '+prev.title):'Начало раздела';
+  document.getElementById('next-problem-title').textContent=next?('№'+problemDisplayNumber(next,index+2)+' · '+next.title):'Конец раздела';
 }
 
 function moveProblem(direction){
   const current=PRACTICE_TASKS.find(problem=>sameProblemId(problem.id,activeProblemId));
   if(!current)return;
   const book=problemBook(current);
-  const sameSection=PRACTICE_TASKS.filter(problem=>problemBook(problem)===book&&problem.topic===current.topic);
+  const sameSection=sortedSectionProblems(book,current.topic);
   const index=sameSection.findIndex(problem=>sameProblemId(problem.id,activeProblemId));
   const target=sameSection[index+direction];
   if(target)openProblem(target.id);
@@ -1466,10 +1614,14 @@ function resetDetailPanels(){
 }
 
 function handleProblemRoute(){
-  const match=location.hash.match(/^#task-(.+)$/);
+  const match=location.hash.match(/^#(?:problem|task)-(.+)$/);
   if(match){
     go('problems',false);
-    openProblem(decodeURIComponent(match[1]),false);
+    const problem=findProblemByRouteToken(decodeURIComponent(match[1]));
+    if(problem){
+      if(location.hash.startsWith('#task-'))history.replaceState({problemId:problem.id},'','#problem-'+encodeURIComponent(problemRouteToken(problem)));
+      openProblem(problem.id,false);
+    }
   }else if(location.hash==='#problems'){
     go('problems',false);
     document.getElementById('problem-detail').hidden=true;
@@ -1478,6 +1630,43 @@ function handleProblemRoute(){
   }else if(document.getElementById('sec-problems')?.classList.contains('active')){
     go('home',false);
   }
+}
+
+async function copyProblemLink(){
+  const button=document.getElementById('copy-problem-link');
+  const url=location.href;
+  try{
+    await navigator.clipboard.writeText(url);
+    if(button){button.textContent='✓ Ссылка скопирована';setTimeout(()=>button.textContent='⧉ Скопировать ссылку',1800)}
+  }catch{
+    window.prompt('Скопируйте ссылку на задачу:',url);
+  }
+}
+
+function resolvedTheme(){
+  if(document.documentElement.dataset.theme)return document.documentElement.dataset.theme;
+  return window.matchMedia?.('(prefers-color-scheme: dark)').matches?'dark':'light';
+}
+
+function updateThemeToggle(){
+  const dark=resolvedTheme()==='dark';
+  const icon=document.getElementById('theme-icon');
+  const label=document.getElementById('theme-label');
+  const button=document.getElementById('theme-toggle');
+  if(icon)icon.textContent=dark?'☀':'☾';
+  if(label)label.textContent=dark?'Светлая':'Тёмная';
+  if(button){
+    const action=dark?'Включить светлую тему':'Включить тёмную тему';
+    button.setAttribute('aria-label',action);
+    button.title=action;
+  }
+}
+
+function toggleTheme(){
+  const next=resolvedTheme()==='dark'?'light':'dark';
+  document.documentElement.dataset.theme=next;
+  try{localStorage.setItem('npho-theme',next)}catch{}
+  updateThemeToggle();
 }
 
 function go(id,updateHash=true){
@@ -1551,8 +1740,10 @@ updateProblemTaxonomy();
 renderBookChoices();
 renderBookCounts();
 showBookSelection();
+window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change',()=>{if(!document.documentElement.dataset.theme)updateThemeToggle()});
 window.addEventListener('popstate',handleProblemRoute);
-window.addEventListener('pageshow',event=>{if(event.persisted)loadPublishedProblems();});
+window.addEventListener('pageshow',event=>{if(event.persisted)loadPublishedProblems();updateThemeToggle();});
+updateThemeToggle();
 handleProblemRoute();
 loadPublishedProblems();
 </script>
