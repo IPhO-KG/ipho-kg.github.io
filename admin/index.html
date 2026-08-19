@@ -231,6 +231,18 @@
     }
     .title-row { margin-top: 9px; }
     .title-input { min-height: 39px; font-size: 15px; font-weight: 750; }
+    .slug-row { margin-top: 9px; }
+    .slug-control {
+      min-width: 0; min-height: 37px; display: grid; grid-template-columns: auto minmax(0,1fr) auto;
+      align-items: center; overflow: hidden; border: 1px solid var(--line); border-radius: 7px; background: var(--surface);
+    }
+    .slug-control:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,86,219,.09); }
+    .slug-prefix { align-self: stretch; display: flex; align-items: center; padding: 0 0 0 10px; color: var(--faint); font-size: 11px; white-space: nowrap; }
+    .slug-input { min-width: 0; height: 35px; padding: 7px 8px 7px 2px; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 12px; }
+    .slug-generate { align-self: stretch; padding: 0 11px; border: 0; border-left: 1px solid var(--line); background: var(--surface-2); color: var(--accent); font-size: 10px; font-weight: 800; white-space: nowrap; }
+    .slug-generate:hover { background: var(--accent-soft); }
+    .field-help { min-width: 0; overflow: hidden; color: var(--faint); font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+    .field-help code { color: var(--muted); font: inherit; }
     .difficulty-control { display: flex; height: 35px; padding: 3px; border: 1px solid var(--line); border-radius: 7px; }
     .difficulty-btn {
       width: 32px; border: 0; border-radius: 5px; background: transparent;
@@ -423,6 +435,8 @@
       .metadata-grid { grid-template-columns: 1fr 1fr; }
       .primary-metadata-grid .difficulty-field { grid-column: 1 / -1; }
       .catalog-metadata-grid { grid-template-columns: 1fr 1fr; }
+      .slug-control { grid-template-columns: auto minmax(0,1fr); }
+      .slug-generate { grid-column: 1 / -1; min-height: 31px; border-top: 1px solid var(--line); border-left: 0; }
       .modal-backdrop { padding: 8px; }
       .modal-card { max-height: calc(100vh - 16px); }
       .structure-controls { grid-template-columns: 1fr; }
@@ -492,6 +506,15 @@
           <div class="field"><label for="sortOrder">Порядок задачи</label><input class="control" id="sortOrder" data-field="sortOrder" type="number" min="1" step="1" inputmode="numeric"></div>
         </div>
         <div class="field title-row"><label for="title">Название задачи</label><input class="control title-input" id="title" data-field="title" placeholder="Например: Клин и два бруска"></div>
+        <div class="field slug-row">
+          <label for="slug">Адрес задачи</label>
+          <div class="slug-control">
+            <span class="slug-prefix">#problem-</span>
+            <input class="slug-input" id="slug" data-field="slug" maxlength="120" autocomplete="off" spellcheck="false" placeholder="ovchinkin-1-1" onblur="normalizeSlugField()">
+            <button class="slug-generate" type="button" onclick="generateProblemSlug()">Создать из номера</button>
+          </div>
+          <span class="field-help">Итоговая ссылка: <code id="slug-preview-value">—</code>. После смены старый адрес перестанет работать.</span>
+        </div>
       </div>
 
       <nav class="editor-tabs" aria-label="Разделы задачи">
@@ -596,6 +619,8 @@
     let draft = blankProblem(), previewTimer, toastTimer, localBackupTimer;
     let solutionCursor = { start: 0, end: 0 };
     let structureWorking = [], structureDirty = false, draggedTaskId = null;
+    const DEFAULT_BOOKS=['Савченко','Овчинкин','Сборник NPhO','Авторские задачи'];
+    const DEFAULT_TOPICS=['Механика','Термодинамика','Электричество','Оптика','Колебания и волны','Современная физика'];
 
     function blankProblem(){return{id:null,slug:'',book:'Савченко',topic:'Механика',chapter:'Глава 1',chapterOrder:1,problemNumber:'',sortOrder:1,difficulty:2,title:'',statement:'',solution:'',answer:'',hints:[],images:[],status:'draft'}}
     function normalizeProblem(problem){return{...blankProblem(),...problem,chapter:problem?.chapter||'Без главы',chapterOrder:Number(problem?.chapterOrder)||1,problemNumber:String(problem?.problemNumber||''),sortOrder:Number(problem?.sortOrder)||1,hints:Array.isArray(problem?.hints)?problem.hints:[],images:Array.isArray(problem?.images)?problem.images:[]}}
@@ -604,6 +629,15 @@
     function escapeAttribute(value){return escapeHtml(value).replace(/`/g,'&#96;')}
     function inlineArgument(value){return escapeAttribute(JSON.stringify(String(value)))}
     function pluralTasks(n){const n10=n%10,n100=n%100;if(n10===1&&n100!==11)return'задача';if(n10>=2&&n10<=4&&(n100<12||n100>14))return'задачи';return'задач'}
+    function normalizeSlug(value){return String(value||'').toLowerCase().trim().replace(/\s+/g,'-').replace(/[^a-zа-яё0-9-]/gi,'').replace(/-+/g,'-').replace(/^-+|-+$/g,'').slice(0,120)}
+    function transliterateSlug(value){
+      const map={'а':'a','б':'b','в':'v','г':'g','д':'d','е':'e','ё':'yo','ж':'zh','з':'z','и':'i','й':'y','к':'k','л':'l','м':'m','н':'n','ң':'n','о':'o','ө':'o','п':'p','р':'r','с':'s','т':'t','у':'u','ү':'u','ф':'f','х':'kh','ц':'ts','ч':'ch','ш':'sh','щ':'shch','ъ':'','ы':'y','ь':'','э':'e','ю':'yu','я':'ya'};
+      return normalizeSlug([...String(value||'').toLowerCase()].map(char=>map[char]??char).join(''));
+    }
+    function suggestedProblemSlug(withFallback=true){return transliterateSlug([draft.book,draft.problemNumber].filter(Boolean).join('-'))||transliterateSlug(draft.title)||(withFallback?'task-'+Date.now().toString(36):'')}
+    function updateSlugPreview(){const slug=normalizeSlug(draft.slug)||suggestedProblemSlug(false),preview=document.getElementById('slug-preview-value');if(!preview)return;const origin=location.origin&&location.origin!=='null'?location.origin:'https://npho.edu.kg';preview.textContent=slug?origin+'/#problem-'+slug:'будет создан после заполнения номера или названия'}
+    function normalizeSlugField(){const input=document.getElementById('slug'),value=normalizeSlug(input.value),changed=value!==draft.slug;input.value=value;draft.slug=value;if(changed)setDirty();updateSlugPreview()}
+    function generateProblemSlug(){const value=suggestedProblemSlug();draft.slug=value;document.getElementById('slug').value=value;setDirty();updateSlugPreview();showToast('Адрес создан из задачника и номера')}
 
     function showToast(text,tone=''){const el=document.getElementById('toast');el.textContent=text;el.className='toast visible'+(tone?' '+tone:'');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),2800)}
     function setSaveState(text,tone=''){document.getElementById('save-state-text').textContent=text;document.getElementById('save-state').className='save-state'+(tone?' '+tone:'')}
@@ -663,7 +697,7 @@
     function renderDifficulty(){document.getElementById('difficulty-control').innerHTML=[1,2,3,4].map(level=>'<button class="difficulty-btn '+(level===Number(draft.difficulty)?'active':'')+'" data-level="'+level+'" type="button" onclick="setDifficulty('+level+')" title="'+difficultyName(level)+'">'+level+'</button>').join('')}
     function setDifficulty(value){draft.difficulty=value;renderDifficulty();setDirty();schedulePreview()}
     function showEditorTab(name,button){activeTab=name;localStorage.setItem('npho-editor-tab',name);document.querySelectorAll('.editor-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.tab===name));document.querySelectorAll('.tab-panel').forEach(panel=>panel.classList.toggle('active',panel.id==='tab-'+name));button?.blur();const area=document.querySelector('#tab-'+name+' .latex-source');if(area)activeTextarea=area}
-    function fillForm(){['book','topic','chapter','chapterOrder','problemNumber','sortOrder','title','statement','solution','answer'].forEach(name=>document.getElementById(name).value=draft[name]??'');solutionCursor={start:String(draft.solution||'').length,end:String(draft.solution||'').length};renderChapterOptions();renderDifficulty();renderHints();renderImages();renderDocumentPreview();updateDocumentHeading();document.getElementById('archive-task').hidden=!draft.id;document.getElementById('history-button').disabled=!draft.id;const tab=document.querySelector('.editor-tab[data-tab="'+activeTab+'"]')||document.querySelector('.editor-tab');showEditorTab(tab.dataset.tab,tab)}
+    function fillForm(){['book','topic','chapter','chapterOrder','problemNumber','sortOrder','title','slug','statement','solution','answer'].forEach(name=>document.getElementById(name).value=draft[name]??'');solutionCursor={start:String(draft.solution||'').length,end:String(draft.solution||'').length};renderChapterOptions();renderDifficulty();renderHints();renderImages();renderDocumentPreview();updateDocumentHeading();updateSlugPreview();document.getElementById('archive-task').hidden=!draft.id;document.getElementById('history-button').disabled=!draft.id;const tab=document.querySelector('.editor-tab[data-tab="'+activeTab+'"]')||document.querySelector('.editor-tab');showEditorTab(tab.dataset.tab,tab)}
 
     function renderChapterOptions(){
       const names=[...new Set(problems.filter(item=>item.book===draft.book&&item.topic===draft.topic).map(item=>item.chapter).filter(Boolean))];
@@ -718,18 +752,20 @@
     }
     function populateStructureScopes(preferredBook,preferredTopic){
       const bookSelect=document.getElementById('structure-book');
-      const books=[...new Set(structureWorking.map(item=>item.book).filter(Boolean))].sort(catalogNaturalCompare);
+      const books=[...new Set([...DEFAULT_BOOKS,preferredBook,...structureWorking.map(item=>item.book)].filter(Boolean))].sort(catalogNaturalCompare);
       bookSelect.innerHTML=books.map(book=>'<option value="'+escapeAttribute(book)+'">'+escapeHtml(book)+'</option>').join('');
       if(books.includes(preferredBook))bookSelect.value=preferredBook;
       const topicSelect=document.getElementById('structure-topic');
-      const topics=[...new Set(structureWorking.filter(item=>item.book===bookSelect.value).map(item=>item.topic).filter(Boolean))].sort(catalogNaturalCompare);
+      const topics=[...new Set([...DEFAULT_TOPICS,preferredTopic,...structureWorking.filter(item=>item.book===bookSelect.value).map(item=>item.topic)].filter(Boolean))].sort(catalogNaturalCompare);
       topicSelect.innerHTML=topics.map(topic=>'<option value="'+escapeAttribute(topic)+'">'+escapeHtml(topic)+'</option>').join('');
       if(topics.includes(preferredTopic))topicSelect.value=preferredTopic;
     }
     function changeStructureScope(){
       const book=document.getElementById('structure-book').value,topicSelect=document.getElementById('structure-topic');
-      const topics=[...new Set(structureWorking.filter(item=>item.book===book).map(item=>item.topic).filter(Boolean))].sort(catalogNaturalCompare);
-      if(!topics.includes(topicSelect.value)){topicSelect.innerHTML=topics.map(topic=>'<option value="'+escapeAttribute(topic)+'">'+escapeHtml(topic)+'</option>').join('')}
+      const currentTopic=topicSelect.value;
+      const topics=[...new Set([...DEFAULT_TOPICS,...structureWorking.filter(item=>item.book===book).map(item=>item.topic)].filter(Boolean))].sort(catalogNaturalCompare);
+      topicSelect.innerHTML=topics.map(topic=>'<option value="'+escapeAttribute(topic)+'">'+escapeHtml(topic)+'</option>').join('');
+      if(topics.includes(currentTopic))topicSelect.value=currentTopic;
       renderStructureBoard();
     }
     function structureScope(){return{book:document.getElementById('structure-book').value,topic:document.getElementById('structure-topic').value}}
@@ -773,7 +809,7 @@
       const updates=structureWorking.filter(item=>{const original=problems.find(problem=>problem.id===item.id);return original&&(original.chapter!==item.chapter||Number(original.chapterOrder)!==Number(item.chapterOrder)||Number(original.sortOrder)!==Number(item.sortOrder))}).map(item=>({id:item.id,chapter:item.chapter,chapterOrder:item.chapterOrder,sortOrder:item.sortOrder}));
       if(!updates.length){structureDirty=false;document.getElementById('structure-modal').hidden=true;showToast('Структура не изменилась');return}
       const button=document.getElementById('save-structure');button.disabled=true;button.textContent='Сохраняем…';
-      try{const response=await fetch(API+'/catalog',{method:'PATCH',headers:{'content-type':'application/json'},body:JSON.stringify({updates})});const data=await response.json();if(!response.ok)throw new Error(data.error||'Не удалось сохранить структуру');(data.problems||[]).map(normalizeProblem).forEach(updated=>{const index=problems.findIndex(item=>item.id===updated.id);if(index>=0)problems[index]=updated;if(draft.id===updated.id)draft=updated});structureDirty=false;document.getElementById('structure-modal').hidden=true;fillForm();renderList();showToast('Структура каталога сохранена')}
+      try{const response=await fetch(API+'/catalog',{method:'PATCH',headers:{'content-type':'application/json'},body:JSON.stringify({updates})});const data=await response.json();if(response.status===404)throw new Error('Worker не обновлён: разверните новый worker.js');if(!response.ok)throw new Error(data.error||'Не удалось сохранить структуру');(data.problems||[]).map(normalizeProblem).forEach(updated=>{const index=problems.findIndex(item=>item.id===updated.id);if(index>=0)problems[index]=updated;if(draft.id===updated.id)draft=updated});structureDirty=false;document.getElementById('structure-modal').hidden=true;fillForm();renderList();showToast('Структура каталога сохранена')}
       catch(error){showToast(error.message,'error')}
       finally{button.disabled=false;button.textContent='Сохранить структуру'}
     }
@@ -798,8 +834,11 @@
     async function saveProblem(status){
       if(saving)return;if(!draft.title.trim()||!draft.statement.trim()){showToast('Введите название и условие задачи','error');return}
       if(status==='published'&&!String(draft.problemNumber||'').trim()){showToast('Укажите номер задачи перед публикацией','error');return}
+      draft.slug=normalizeSlug(draft.slug)||suggestedProblemSlug();document.getElementById('slug').value=draft.slug;updateSlugPreview();
       const duplicate=problems.find(item=>item.id!==draft.id&&item.status!=='archived'&&item.book===draft.book&&item.topic===draft.topic&&String(item.problemNumber||'').trim().toLowerCase()===String(draft.problemNumber||'').trim().toLowerCase());
       if(duplicate&&String(draft.problemNumber||'').trim()){showToast('Номер '+draft.problemNumber+' уже используется в этом разделе','error');return}
+      const duplicateSlug=problems.find(item=>item.id!==draft.id&&item.status!=='archived'&&normalizeSlug(item.slug)===draft.slug);
+      if(duplicateSlug){showToast('Адрес #problem-'+draft.slug+' уже используется','error');return}
       saving=true;document.getElementById('save-draft').disabled=true;document.getElementById('publish').disabled=true;setSaveState(status==='published'?'Публикуем…':'Сохраняем…','saving');
       const backupKeyBefore=localBackupKey();
       try{const response=await fetch(draft.id?API+'/problems/'+draft.id:API+'/problems',{method:draft.id?'PATCH':'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...draft,status})});const data=await response.json();if(!response.ok||!data.problem)throw new Error(data.error||'Не удалось сохранить');draft=normalizeProblem(data.problem);const index=problems.findIndex(problem=>problem.id===draft.id);if(index>=0)problems[index]=draft;else problems.unshift(draft);clearLocalBackup(backupKeyBefore);clearLocalBackup(draft);dirty=false;fillForm();renderList();setSaveState(status==='published'?'Опубликовано':'Черновик сохранён');showToast(status==='published'?'Задача опубликована на сайте':'Черновик сохранён')}
@@ -816,7 +855,7 @@
     function setupSplitter(id,side){const splitter=document.getElementById(id);splitter.addEventListener('pointerdown',event=>{if(window.innerWidth<=900)return;event.preventDefault();splitter.classList.add('dragging');splitter.setPointerCapture(event.pointerId);const move=e=>{if(side==='left'){const width=Math.min(390,Math.max(210,e.clientX));document.documentElement.style.setProperty('--explorer-width',width+'px');localStorage.setItem('npho-explorer-width',width)}else{const width=Math.min(window.innerWidth*.62,Math.max(350,window.innerWidth-e.clientX));document.documentElement.style.setProperty('--preview-width',width+'px');localStorage.setItem('npho-preview-width',width)}};const up=()=>{splitter.classList.remove('dragging');splitter.removeEventListener('pointermove',move);splitter.removeEventListener('pointerup',up)};splitter.addEventListener('pointermove',move);splitter.addEventListener('pointerup',up)})}
     function restorePreferences(){const left=Number(localStorage.getItem('npho-explorer-width')),right=Number(localStorage.getItem('npho-preview-width'));if(left)document.documentElement.style.setProperty('--explorer-width',left+'px');if(right)document.documentElement.style.setProperty('--preview-width',right+'px');changeZoom(0)}
 
-    document.querySelectorAll('[data-field]').forEach(element=>element.addEventListener('input',()=>{const field=element.dataset.field;draft[field]=['chapterOrder','sortOrder'].includes(field)?Math.max(1,Number(element.value)||1):element.value;if(field==='book'||field==='topic')renderChapterOptions();setDirty();schedulePreview()}));
+    document.querySelectorAll('[data-field]').forEach(element=>element.addEventListener('input',()=>{const field=element.dataset.field;draft[field]=['chapterOrder','sortOrder'].includes(field)?Math.max(1,Number(element.value)||1):element.value;if(field==='book'||field==='topic')renderChapterOptions();if(['book','problemNumber','title','slug'].includes(field))updateSlugPreview();setDirty();schedulePreview()}));
     document.querySelectorAll('.latex-source').forEach(element=>element.addEventListener('focus',()=>activeTextarea=element));
     const solutionArea=document.getElementById('solution');
     ['click','keyup','select','input'].forEach(type=>solutionArea.addEventListener(type,rememberSolutionCursor));
