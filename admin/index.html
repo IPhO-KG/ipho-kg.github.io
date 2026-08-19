@@ -5,151 +5,828 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Редактор задач — NPhO</title>
   <script>
-    window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},svg:{fontCache:"global"},startup:{typeset:false}};
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]]
+      },
+      svg: { fontCache: "global" },
+      startup: { typeset: false }
+    };
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
   <style>
-    :root{--bg:#f7f8fa;--card:#fff;--text:#172033;--muted:#667085;--line:#e4e7ec;--blue:#155eef;--blue2:#eff4ff;--green:#067647;--red:#b42318;--shadow:0 12px 35px rgba(16,24,40,.08);--r:12px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px}
-    button,input,textarea,select{font:inherit}button{cursor:pointer}.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 22px;background:rgba(255,255,255,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
-    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}.brand-mark{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--blue);color:#fff;font-weight:900}.brand strong{display:block}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:1px}.top-actions{display:flex;align-items:center;gap:8px}.admin-email{color:var(--muted);font-size:12px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:8px 13px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text);font-weight:700;text-decoration:none}.btn:hover{border-color:#98a2b3}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.danger{color:var(--red)}.btn:disabled{opacity:.55;cursor:not-allowed}
-    .layout{display:grid;grid-template-columns:290px minmax(0,1fr);gap:18px;max-width:1500px;margin:0 auto;padding:18px}.sidebar,.editor{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 1px 2px rgba(16,24,40,.03)}.sidebar{position:sticky;top:79px;height:calc(100vh - 97px);overflow:hidden;display:flex;flex-direction:column}.sidebar-head{padding:15px;border-bottom:1px solid var(--line)}.sidebar-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.sidebar-title strong{font-size:15px}.search{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg);outline:none}.search:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue2)}.filters{display:flex;gap:5px;margin-top:8px}.filter{padding:5px 8px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--muted);font-size:11px}.filter.active{border-color:var(--blue);background:var(--blue2);color:var(--blue)}
-    .task-list{overflow:auto;padding:8px}.task-item{width:100%;padding:10px;border:1px solid transparent;border-radius:9px;background:transparent;text-align:left}.task-item:hover{background:var(--bg)}.task-item.active{background:var(--blue2);border-color:#b2ccff}.task-item strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.task-meta{display:flex;gap:6px;align-items:center;margin-top:4px;color:var(--muted);font-size:10px}.badge{padding:2px 6px;border-radius:999px;background:#f2f4f7}.badge.published{background:#ecfdf3;color:var(--green)}.empty{padding:30px 16px;color:var(--muted);text-align:center}
-    .editor{min-width:0;overflow:hidden}.editor-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;border-bottom:1px solid var(--line)}.editor-head h1{margin:0;font-size:20px}.editor-head p{margin:4px 0 0;color:var(--muted);font-size:12px}.status{min-height:19px;color:var(--muted);font-size:12px}.status.ok{color:var(--green)}.status.error{color:var(--red)}
-    .form{padding:20px}.grid{display:grid;grid-template-columns:1.2fr 1fr 180px;gap:12px}.field{display:grid;gap:6px}.field label,.section-label{font-size:12px;font-weight:800;color:#344054}.control{width:100%;min-height:40px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--text);outline:none}.control:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue2)}.title-field{margin-top:12px}.title-field .control{font-size:17px;font-weight:700}
-    .stars{display:flex;align-items:center;gap:3px;height:40px}.star{padding:3px;border:0;background:transparent;color:#d0d5dd;font-size:22px;line-height:1}.star.on{color:#f79009}.star:hover{transform:scale(1.08)}
-    .section{margin-top:20px;border:1px solid var(--line);border-radius:10px;overflow:hidden}.section-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;background:#f9fafb;border-bottom:1px solid var(--line)}.section-top small{color:var(--muted)}.tools{display:flex;gap:4px;flex-wrap:wrap}.tool{padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:#fff;font-family:Georgia,serif;font-size:12px}.tool:hover{border-color:var(--blue);color:var(--blue)}
-    .split{display:grid;grid-template-columns:1fr 1fr;min-height:260px}.source{width:100%;min-height:260px;padding:15px;border:0;border-right:1px solid var(--line);outline:0;resize:vertical;font-family:"SFMono-Regular",Consolas,monospace;font-size:13px;line-height:1.65}.preview{min-width:0;padding:16px;overflow:auto;background:#fff;font-family:Georgia,"Times New Roman",serif;font-size:16px;line-height:1.72}.preview h1,.preview h2,.preview h3{line-height:1.25}.preview p{margin:.45em 0}.preview blockquote{margin:1em 0;padding:10px 13px;border-left:3px solid var(--blue);background:var(--blue2)}.preview code{padding:1px 4px;border-radius:4px;background:#f2f4f7;font-size:.88em}.preview mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden}
-    .hint-list,.image-list{display:grid;gap:10px;padding:12px}.hint{display:grid;grid-template-columns:34px 1fr 34px;gap:8px;align-items:start}.hint-num{display:grid;place-items:center;height:34px;border-radius:8px;background:var(--blue2);color:var(--blue);font-weight:900}.hint textarea{min-height:84px;resize:vertical}.icon-btn{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--muted)}.icon-btn:hover{color:var(--red);border-color:#fecdca}.upload{padding:16px;border:1px dashed #98a2b3;border-radius:9px;background:#f9fafb;text-align:center}.upload input{display:none}.image-card{display:grid;grid-template-columns:100px 1fr 34px;gap:10px;align-items:start;padding:10px;border:1px solid var(--line);border-radius:9px}.image-card img{width:100px;height:80px;object-fit:contain;border-radius:7px;background:var(--bg)}.image-fields{display:grid;gap:7px}.image-fields input{min-height:34px;padding:7px 9px}
-    .form-actions{position:sticky;bottom:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px -20px -20px;padding:13px 20px;border-top:1px solid var(--line);background:rgba(255,255,255,.96);backdrop-filter:blur(10px)}.action-group{display:flex;gap:8px;flex-wrap:wrap}.help{color:var(--muted);font-size:11px}.mobile-tasks{display:none}
-    @media(max-width:980px){.layout{grid-template-columns:1fr}.sidebar{position:static;height:auto;max-height:320px}.grid{grid-template-columns:1fr 1fr}.grid .field:last-child{grid-column:1/-1}.split{grid-template-columns:1fr}.source{border-right:0;border-bottom:1px solid var(--line)}.preview{min-height:220px}}
-    @media(max-width:600px){.top{padding:10px 12px}.admin-email{display:none}.layout{padding:10px}.form{padding:14px}.editor-head{padding:15px}.grid{grid-template-columns:1fr}.grid .field:last-child{grid-column:auto}.form-actions{margin:18px -14px -14px;padding:11px 14px}.help{display:none}.btn{padding:8px 10px}}
+    :root {
+      --accent: #1a56db;
+      --accent-hover: #1648b8;
+      --accent-soft: #eef4ff;
+      --green: #0e9f6e;
+      --green-hover: #087f59;
+      --red: #c2413b;
+      --amber: #b45309;
+      --ink: #172033;
+      --muted: #667085;
+      --faint: #98a2b3;
+      --line: #dfe4ec;
+      --line-strong: #cbd3df;
+      --surface: #ffffff;
+      --surface-2: #f8fafc;
+      --surface-3: #f2f5f9;
+      --preview-bg: #e9edf3;
+      --shadow: 0 16px 42px rgba(17, 24, 39, .10);
+      --explorer-width: 286px;
+      --preview-width: 43vw;
+      --topbar-height: 62px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: var(--surface-3);
+      color: var(--ink);
+      font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+
+    .topbar {
+      position: relative;
+      z-index: 50;
+      height: var(--topbar-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 0 16px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(14px);
+    }
+    .brand-area, .top-actions, .save-state, .brand-copy { display: flex; align-items: center; }
+    .brand-area { min-width: 0; gap: 13px; }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--ink);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: -.03em;
+      box-shadow: 0 5px 13px rgba(26,86,219,.22);
+    }
+    .brand-copy { align-items: flex-start; flex-direction: column; line-height: 1.15; }
+    .brand-copy strong { font-size: 14px; }
+    .brand-copy small { margin-top: 3px; color: var(--muted); font-size: 10px; }
+    .top-divider { width: 1px; height: 28px; background: var(--line); }
+    .document-heading { min-width: 0; }
+    .document-heading strong {
+      display: block;
+      max-width: 360px;
+      overflow: hidden;
+      color: var(--ink);
+      font-size: 13px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .document-heading span { display: block; margin-top: 2px; color: var(--faint); font-size: 10px; }
+    .top-actions { flex-shrink: 0; gap: 8px; }
+    .save-state { gap: 7px; margin-right: 4px; color: var(--muted); font-size: 11px; white-space: nowrap; }
+    .state-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+    .save-state.dirty .state-dot { background: #f59e0b; }
+    .save-state.saving .state-dot { background: var(--accent); animation: pulse 1s infinite; }
+    .save-state.error { color: var(--red); }
+    .save-state.error .state-dot { background: var(--red); }
+    @keyframes pulse { 50% { opacity: .35; } }
+
+    .btn {
+      min-height: 35px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 750;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: border-color .15s, background .15s, color .15s, transform .15s;
+    }
+    .btn:hover { border-color: #aab4c3; background: var(--surface-2); }
+    .btn:active { transform: translateY(1px); }
+    .btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+    .btn.primary { border-color: var(--accent); background: var(--accent); color: #fff; }
+    .btn.primary:hover { border-color: var(--accent-hover); background: var(--accent-hover); }
+    .btn.publish { border-color: var(--green); background: var(--green); color: #fff; }
+    .btn.publish:hover { border-color: var(--green-hover); background: var(--green-hover); }
+    .btn.danger { color: var(--red); }
+    .btn.icon-only { width: 35px; padding: 0; font-size: 16px; }
+
+    .workspace {
+      height: calc(100vh - var(--topbar-height));
+      display: grid;
+      grid-template-columns: var(--explorer-width) 5px minmax(430px, 1fr) 5px minmax(390px, var(--preview-width));
+      overflow: hidden;
+    }
+    .splitter {
+      position: relative;
+      z-index: 5;
+      background: var(--line);
+      cursor: col-resize;
+      transition: background .15s;
+    }
+    .splitter:hover, .splitter.dragging { background: var(--accent); }
+    .splitter::after { content: ""; position: absolute; inset: 0 -3px; }
+
+    .explorer, .editor-pane, .preview-pane { min-width: 0; min-height: 0; }
+    .explorer { display: flex; flex-direction: column; background: var(--surface-2); }
+    .pane-head {
+      min-height: 49px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .pane-head strong { font-size: 12px; letter-spacing: .01em; }
+    .pane-head-meta { color: var(--faint); font-size: 10px; }
+    .new-task-btn {
+      width: 29px;
+      height: 29px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(26,86,219,.22);
+      border-radius: 7px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1;
+    }
+    .new-task-btn:hover { border-color: var(--accent); }
+    .explorer-tools { padding: 10px; border-bottom: 1px solid var(--line); }
+    .search-wrap { position: relative; }
+    .search-icon { position: absolute; left: 10px; top: 50%; color: var(--faint); transform: translateY(-50%); pointer-events: none; }
+    .search {
+      width: 100%; height: 35px; padding: 7px 10px 7px 31px;
+      border: 1px solid var(--line); border-radius: 7px; outline: none;
+      background: var(--surface); color: var(--ink); font-size: 12px;
+    }
+    .search:focus, .control:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,86,219,.09); }
+    .filters { display: flex; gap: 4px; margin-top: 8px; }
+    .filter {
+      flex: 1; min-width: 0; padding: 5px 6px; border: 1px solid transparent;
+      border-radius: 6px; background: transparent; color: var(--muted); font-size: 10px; font-weight: 700;
+    }
+    .filter:hover { background: var(--surface-3); }
+    .filter.active { border-color: var(--line); background: var(--surface); color: var(--accent); }
+    .task-list { flex: 1; overflow: auto; padding: 7px; }
+    .task-item {
+      width: 100%; display: grid; grid-template-columns: 42px minmax(0,1fr); gap: 8px;
+      padding: 9px; border: 1px solid transparent; border-radius: 7px;
+      background: transparent; color: var(--ink); text-align: left;
+    }
+    .task-item:hover { background: #fff; }
+    .task-item.active { border-color: #b8cdf8; background: var(--accent-soft); }
+    .task-file-icon {
+      width: 41px; min-height: 29px; padding: 0 3px; display: grid; place-items: center;
+      border: 1px solid var(--line); border-radius: 5px; background: #fff; color: var(--accent);
+      font-family: Georgia, serif; font-size: 11px; font-weight: 800;
+    }
+    .task-item-copy { min-width: 0; }
+    .task-item strong { display: block; overflow: hidden; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+    .task-meta { display: flex; align-items: center; gap: 5px; margin-top: 4px; color: var(--faint); font-size: 9px; }
+    .status-badge { width: 6px; height: 6px; flex: 0 0 auto; border-radius: 50%; background: #f59e0b; }
+    .status-badge.published { background: var(--green); }
+    .task-meta-path { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .empty { padding: 34px 15px; color: var(--faint); font-size: 11px; text-align: center; }
+    .explorer-foot { padding: 9px 12px; border-top: 1px solid var(--line); color: var(--faint); font-size: 9px; }
+
+    .editor-pane { display: flex; flex-direction: column; background: var(--surface); }
+    .metadata { padding: 13px 16px 12px; border-bottom: 1px solid var(--line); background: var(--surface); }
+    .metadata-grid { display: grid; grid-template-columns: 1fr 1fr auto; gap: 9px; }
+    .catalog-metadata-grid { grid-template-columns: minmax(170px,1.5fr) minmax(90px,.65fr) minmax(90px,.65fr) minmax(90px,.65fr); margin-top: 9px; }
+    .field { display: grid; gap: 4px; min-width: 0; }
+    .field label { color: var(--muted); font-size: 9px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .control {
+      width: 100%; min-height: 35px; padding: 7px 9px; border: 1px solid var(--line);
+      border-radius: 7px; outline: none; background: var(--surface); color: var(--ink); font-size: 12px;
+    }
+    .title-row { margin-top: 9px; }
+    .title-input { min-height: 39px; font-size: 15px; font-weight: 750; }
+    .difficulty-control { display: flex; height: 35px; padding: 3px; border: 1px solid var(--line); border-radius: 7px; }
+    .difficulty-btn {
+      width: 32px; border: 0; border-radius: 5px; background: transparent;
+      color: var(--faint); font-size: 11px; font-weight: 800;
+    }
+    .difficulty-btn:hover { background: var(--surface-3); }
+    .difficulty-btn.active { background: var(--accent-soft); color: var(--accent); }
+    .difficulty-btn[data-level="4"].active { background: #feeceb; color: var(--red); }
+
+    .editor-tabs {
+      display: flex; align-items: stretch; gap: 2px; min-height: 43px; padding: 0 10px;
+      border-bottom: 1px solid var(--line); background: var(--surface-2); overflow-x: auto;
+    }
+    .editor-tab {
+      position: relative; display: inline-flex; align-items: center; gap: 6px; padding: 0 11px;
+      border: 0; background: transparent; color: var(--muted); font-size: 11px; font-weight: 750; white-space: nowrap;
+    }
+    .editor-tab::after { content: ""; position: absolute; right: 8px; bottom: -1px; left: 8px; height: 2px; background: transparent; }
+    .editor-tab:hover { color: var(--ink); }
+    .editor-tab.active { color: var(--accent); }
+    .editor-tab.active::after { background: var(--accent); }
+    .tab-count { min-width: 17px; height: 17px; display: grid; place-items: center; padding: 0 4px; border-radius: 99px; background: var(--surface-3); color: var(--muted); font-size: 9px; }
+    .editor-tab.active .tab-count { background: var(--accent-soft); color: var(--accent); }
+
+    .editor-body { min-height: 0; flex: 1; position: relative; }
+    .tab-panel { position: absolute; inset: 0; display: none; flex-direction: column; min-height: 0; }
+    .tab-panel.active { display: flex; }
+    .editor-toolbar {
+      min-height: 39px; display: flex; align-items: center; gap: 4px; padding: 5px 10px;
+      border-bottom: 1px solid var(--line); background: var(--surface);
+    }
+    .tool {
+      min-width: 28px; height: 27px; padding: 0 7px; border: 1px solid transparent;
+      border-radius: 5px; background: transparent; color: var(--muted);
+      font-family: Georgia, serif; font-size: 11px; font-weight: 700;
+    }
+    .tool:hover { border-color: var(--line); background: var(--surface-2); color: var(--accent); }
+    .toolbar-separator { width: 1px; height: 18px; margin: 0 3px; background: var(--line); }
+    .toolbar-note { margin-left: auto; color: var(--faint); font-size: 9px; }
+    .source-editor {
+      width: 100%; min-height: 0; flex: 1; padding: 18px 20px 80px; border: 0; outline: 0; resize: none;
+      background: var(--surface); color: #273248; font: 13px/1.75 "SFMono-Regular", Consolas, "Liberation Mono", monospace; tab-size: 2;
+    }
+    .source-editor::placeholder { color: #b0b8c5; }
+
+    .panel-scroll { min-height: 0; flex: 1; overflow: auto; padding: 14px 15px 90px; background: var(--surface-2); }
+    .panel-intro { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .panel-intro-copy strong { display: block; font-size: 12px; }
+    .panel-intro-copy span { display: block; margin-top: 2px; color: var(--muted); font-size: 10px; }
+    .hint-list { display: grid; gap: 9px; }
+    .hint-card {
+      display: grid; grid-template-columns: 28px minmax(0,1fr) auto; gap: 9px;
+      padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
+    }
+    .hint-number { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 6px; background: #fff7e8; color: var(--amber); font-size: 10px; font-weight: 900; }
+    .hint-textarea { min-height: 98px; resize: vertical; font: 12px/1.65 "SFMono-Regular", Consolas, monospace; }
+    .hint-actions { display: flex; flex-direction: column; gap: 4px; }
+    .mini-btn { width: 27px; height: 27px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 5px; background: #fff; color: var(--muted); font-size: 11px; }
+    .mini-btn:hover { border-color: var(--line-strong); color: var(--accent); }
+    .mini-btn.delete:hover { border-color: #f2b8b5; color: var(--red); }
+
+    .upload-zone {
+      display: grid; place-items: center; min-height: 112px; padding: 18px;
+      border: 1.5px dashed #b7c0cd; border-radius: 8px; background: var(--surface);
+      color: var(--muted); text-align: center; cursor: pointer;
+    }
+    .upload-zone:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+    .upload-zone.dragging { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+    .upload-zone input { display: none; }
+    .upload-zone strong { display: block; color: inherit; font-size: 12px; }
+    .upload-zone span span { display: block; margin-top: 4px; font-size: 9px; }
+    .image-list { display: grid; gap: 9px; margin-top: 10px; }
+    .image-card { display: grid; grid-template-columns: 108px minmax(0,1fr) auto; gap: 10px; padding: 9px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+    .image-card img { width: 108px; height: 82px; object-fit: contain; border-radius: 6px; background: var(--surface-3); }
+    .image-fields { display: grid; align-content: start; gap: 6px; }
+    .image-fields .control { min-height: 34px; }
+    .image-actions { display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
+    .image-insert { min-height: 29px; padding: 5px 9px; color: var(--accent); }
+
+    .preview-pane { display: flex; flex-direction: column; background: var(--preview-bg); }
+    .preview-head {
+      min-height: 49px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 12px;
+      border-bottom: 1px solid #d5dbe4; background: #f7f9fc;
+    }
+    .preview-title { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; }
+    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(14,159,110,.10); }
+    .zoom-controls { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: #fff; }
+    .zoom-btn { width: 27px; height: 27px; border: 0; background: transparent; color: var(--muted); }
+    .zoom-btn:hover { background: var(--surface-3); color: var(--ink); }
+    .zoom-value { min-width: 44px; color: var(--muted); font-size: 9px; text-align: center; }
+    .preview-scroll { flex: 1; min-height: 0; overflow: auto; padding: 24px; }
+    .paper-wrap { width: 100%; display: flex; justify-content: center; transform-origin: top center; }
+    .paper {
+      width: min(100%, 790px); min-height: 1020px; padding: 52px 56px 72px;
+      background: #fff; box-shadow: var(--shadow); color: #1c2434; font-family: Georgia, "Times New Roman", serif;
+    }
+    .paper-header { padding-bottom: 22px; border-bottom: 1px solid #e2e6ec; }
+    .paper-kicker { margin-bottom: 9px; color: #8a94a4; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .preview-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .preview-chip { padding: 3px 8px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 8px; font-weight: 800; }
+    .preview-chip.level { background: #f4f5f7; color: #5d6675; }
+    .paper h1 { margin: 0; font-size: 28px; line-height: 1.2; letter-spacing: -.015em; }
+    .paper-section { padding: 24px 0 4px; }
+    .paper-section + .paper-section { margin-top: 18px; border-top: 1px solid #eceff3; }
+    .paper-section h2 { margin: 0 0 12px; font-size: 18px; line-height: 1.2; }
+    .rich-preview { font-size: 15px; line-height: 1.75; }
+    .rich-preview p { margin: .7em 0; }
+    .rich-preview h1, .rich-preview h2, .rich-preview h3 { margin: 1.1em 0 .5em; line-height: 1.25; }
+    .rich-preview ul, .rich-preview ol { padding-left: 1.5em; }
+    .rich-preview blockquote { margin: 1em 0; padding: 8px 13px; border-left: 3px solid var(--accent); background: var(--accent-soft); }
+    .rich-preview code { padding: 1px 4px; border-radius: 4px; background: #f2f4f7; font-size: .88em; }
+    .rich-preview mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; }
+    .preview-empty { color: #a1a9b6; font-style: italic; }
+    .preview-images { display: grid; gap: 14px; margin-top: 18px; }
+    .preview-figure { margin: 0; text-align: center; }
+    .preview-figure img { max-width: 100%; max-height: 380px; object-fit: contain; }
+    .preview-figure figcaption { margin-top: 6px; color: #7e8796; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 9px; }
+    .preview-hints { display: grid; gap: 8px; }
+    .preview-hint { display: grid; grid-template-columns: 23px minmax(0,1fr); gap: 9px; padding: 9px 10px; border: 1px solid #f0d8ad; border-radius: 6px; background: #fffaf0; }
+    .preview-hint-number { width: 23px; height: 23px; display: grid; place-items: center; border-radius: 50%; background: #f8e5bd; color: var(--amber); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 8px; font-weight: 900; }
+    .preview-answer { padding: 13px 15px; border-left: 3px solid var(--accent); background: var(--accent-soft); }
+
+    .mobile-pane-toggle { display: none; }
+    .toast {
+      position: fixed; right: 16px; bottom: 16px; z-index: 100; max-width: 360px; padding: 10px 13px;
+      border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,.98);
+      box-shadow: 0 12px 30px rgba(17,24,39,.15); color: var(--ink); font-size: 11px;
+      opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity .18s, transform .18s;
+    }
+    .toast.visible { opacity: 1; transform: translateY(0); }
+    .toast.error { border-color: #f0b8b5; color: var(--red); }
+
+    .modal-backdrop { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 22px; background: rgba(15,23,42,.48); backdrop-filter: blur(3px); }
+    .modal-backdrop[hidden] { display: none; }
+    .modal-card { width: min(920px,100%); max-height: min(820px,calc(100vh - 44px)); display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); box-shadow: 0 24px 70px rgba(15,23,42,.25); }
+    .modal-card.history-card { width: min(650px,100%); }
+    .modal-head, .modal-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 16px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+    .modal-head-copy { display: grid; gap: 2px; }
+    .modal-head-copy strong { font-size: 13px; }
+    .modal-head-copy span { color: var(--faint); font-size: 10px; }
+    .modal-foot { justify-content: flex-end; border-top: 1px solid var(--line); border-bottom: 0; }
+    .modal-body { overflow: auto; padding: 14px 16px 18px; }
+    .structure-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    .structure-note { margin-bottom: 12px; padding: 9px 11px; border: 1px solid #cbdaf9; border-radius: 7px; background: var(--accent-soft); color: #3b5f9e; font-size: 10px; }
+    .structure-board { display: grid; gap: 10px; }
+    .structure-chapter { overflow: hidden; border: 1px solid var(--line); border-radius: 9px; background: #fff; }
+    .structure-chapter.drag-over { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    .structure-chapter-head { display: grid; grid-template-columns: auto minmax(0,1fr) auto; gap: 8px; align-items: center; padding: 9px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+    .drag-handle { color: var(--faint); font-size: 15px; cursor: grab; user-select: none; }
+    .structure-chapter-name { min-height: 31px; font-weight: 750; }
+    .structure-actions, .structure-task-actions { display: flex; gap: 4px; }
+    .structure-task-list { min-height: 44px; display: grid; gap: 5px; padding: 8px; }
+    .structure-task { display: grid; grid-template-columns: auto 54px minmax(0,1fr) auto; gap: 8px; align-items: center; padding: 7px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); cursor: grab; }
+    .structure-task:hover { border-color: var(--line-strong); }
+    .structure-task-number { color: var(--accent); font-family: Georgia,serif; font-size: 11px; font-weight: 800; }
+    .structure-task-title { overflow: hidden; font-size: 11px; font-weight: 650; text-overflow: ellipsis; white-space: nowrap; }
+    .structure-empty { padding: 18px; color: var(--faint); font-size: 11px; text-align: center; }
+    .version-list { display: grid; gap: 7px; }
+    .version-row { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 12px; align-items: center; padding: 10px 11px; border: 1px solid var(--line); border-radius: 8px; }
+    .version-copy { min-width: 0; display: grid; gap: 3px; }
+    .version-copy strong { overflow: hidden; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+    .version-copy span { color: var(--faint); font-size: 9px; }
+    .badge-current { padding: 4px 8px; border-radius: 99px; background: #e7f7ef; color: var(--green); font-size: 9px; font-weight: 800; }
+
+    @media (max-width: 1180px) {
+      :root { --explorer-width: 245px; --preview-width: 39vw; }
+      .paper { padding: 42px 38px 60px; }
+      .document-heading { display: none; }
+    }
+    @media (max-width: 900px) {
+      body { overflow: auto; }
+      .topbar { position: sticky; top: 0; }
+      .top-divider, .save-state, .open-site-label { display: none; }
+      .workspace { height: auto; min-height: calc(100vh - var(--topbar-height)); grid-template-columns: 250px minmax(0,1fr); overflow: visible; }
+      .splitter { display: none; }
+      .explorer { position: sticky; top: var(--topbar-height); height: calc(100vh - var(--topbar-height)); }
+      .editor-pane, .preview-pane { grid-column: 2; min-height: calc(100vh - var(--topbar-height)); }
+      .preview-pane { display: none; }
+      body.mobile-preview .editor-pane { display: none; }
+      body.mobile-preview .preview-pane { display: flex; }
+      .mobile-pane-toggle { display: inline-flex; }
+      .preview-scroll { min-height: calc(100vh - 111px); }
+    }
+    @media (max-width: 650px) {
+      .brand-copy small, .top-actions .btn:not(.publish):not(.mobile-pane-toggle) { display: none; }
+      .topbar { padding: 0 9px; }
+      .workspace { grid-template-columns: 1fr; }
+      .explorer { display: none; }
+      .editor-pane, .preview-pane { grid-column: 1; }
+      .metadata-grid { grid-template-columns: 1fr 1fr; }
+      .primary-metadata-grid .difficulty-field { grid-column: 1 / -1; }
+      .catalog-metadata-grid { grid-template-columns: 1fr 1fr; }
+      .modal-backdrop { padding: 8px; }
+      .modal-card { max-height: calc(100vh - 16px); }
+      .structure-controls { grid-template-columns: 1fr; }
+      .structure-task { grid-template-columns: auto 46px minmax(0,1fr); }
+      .structure-task-actions { grid-column: 2 / -1; justify-content: flex-end; }
+      .paper { min-height: 0; padding: 32px 24px 48px; }
+      .preview-scroll { padding: 12px; }
+    }
   </style>
 </head>
 <body>
-  <header class="top">
-    <a class="brand" href="/#problems"><span class="brand-mark">N</span><span><strong>NPhO</strong><small>Редактор задач</small></span></a>
-    <div class="top-actions"><span class="admin-email" id="admin-email">Проверяем доступ…</span><a class="btn" href="/#problems">Открыть сайт</a><a class="btn" href="/cdn-cgi/access/logout">Выйти</a></div>
+  <header class="topbar">
+    <div class="brand-area">
+      <a class="brand" href="/#problems">
+        <span class="brand-mark">N</span>
+        <span class="brand-copy"><strong>NPhO</strong><small>Редактор задач</small></span>
+      </a>
+      <span class="top-divider"></span>
+      <div class="document-heading">
+        <strong id="top-document-title">Новая задача</strong>
+        <span id="admin-email">Проверяем доступ…</span>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div class="save-state" id="save-state"><span class="state-dot"></span><span id="save-state-text">Сохранено</span></div>
+      <button class="btn mobile-pane-toggle" type="button" onclick="toggleMobilePreview()" id="mobile-preview-toggle">Предпросмотр</button>
+      <button class="btn" type="button" onclick="openCatalogManager()">Структура</button>
+      <button class="btn" type="button" onclick="openVersionHistory()" id="history-button">История</button>
+      <a class="btn" href="/#problems" target="_blank" rel="noopener"><span class="open-site-label">Открыть сайт</span> ↗</a>
+      <button class="btn" id="save-draft" type="button" onclick="saveProblem('draft')">Сохранить</button>
+      <button class="btn publish" id="publish" type="button" onclick="saveProblem('published')">Опубликовать</button>
+      <button class="btn danger icon-only" id="archive-task" type="button" onclick="archiveProblem()" title="Переместить в архив" aria-label="Переместить задачу в архив" hidden>⋯</button>
+    </div>
   </header>
 
-  <main class="layout">
-    <aside class="sidebar">
-      <div class="sidebar-head">
-        <div class="sidebar-title"><strong>Задачи</strong><button class="btn primary" type="button" onclick="newProblem()">＋ Новая</button></div>
-        <input class="search" id="search" placeholder="Поиск…" oninput="renderList()">
-        <div class="filters"><button class="filter active" data-filter="all" onclick="setFilter('all',this)">Все</button><button class="filter" data-filter="draft" onclick="setFilter('draft',this)">Черновики</button><button class="filter" data-filter="published" onclick="setFilter('published',this)">Опубликованные</button></div>
+  <main class="workspace" id="workspace">
+    <aside class="explorer">
+      <div class="pane-head">
+        <div><strong>Задачи</strong><div class="pane-head-meta" id="task-count">0 задач</div></div>
+        <button class="new-task-btn" type="button" onclick="newProblem()" title="Новая задача" aria-label="Создать новую задачу">＋</button>
+      </div>
+      <div class="explorer-tools">
+        <div class="search-wrap"><span class="search-icon">⌕</span><input class="search" id="search" placeholder="Поиск по задачам…" oninput="renderList()"></div>
+        <div class="filters">
+          <button class="filter active" onclick="setFilter('all',this)">Все</button>
+          <button class="filter" onclick="setFilter('draft',this)">Черновики</button>
+          <button class="filter" onclick="setFilter('published',this)">Опубликованные</button>
+        </div>
       </div>
       <div class="task-list" id="task-list"><div class="empty">Загрузка…</div></div>
+      <div class="explorer-foot">Выберите задачу или создайте новую</div>
     </aside>
 
-    <section class="editor">
-      <div class="editor-head"><div><h1 id="editor-title">Новая задача</h1><p>LaTeX внутри текста: <code>$F=ma$</code>, отдельная формула: <code>$$E=mc^2$$</code></p></div><div class="status" id="status"></div></div>
-      <form class="form" onsubmit="event.preventDefault();saveProblem(draft.status)">
-        <div class="grid">
+    <div class="splitter" id="splitter-left" role="separator" aria-label="Изменить ширину списка задач"></div>
+
+    <section class="editor-pane">
+      <div class="metadata">
+        <div class="metadata-grid primary-metadata-grid">
           <div class="field"><label for="book">Задачник</label><input class="control" id="book" list="book-options" data-field="book"><datalist id="book-options"><option>Савченко</option><option>Овчинкин</option><option>Сборник NPhO</option><option>Авторские задачи</option></datalist></div>
           <div class="field"><label for="topic">Раздел</label><input class="control" id="topic" list="topic-options" data-field="topic"><datalist id="topic-options"><option>Механика</option><option>Термодинамика</option><option>Электричество</option><option>Оптика</option><option>Колебания и волны</option><option>Современная физика</option></datalist></div>
-          <div class="field"><label>Сложность</label><div class="stars" id="stars"></div></div>
+          <div class="field difficulty-field"><label>Сложность</label><div class="difficulty-control" id="difficulty-control"></div></div>
         </div>
-        <div class="field title-field"><label for="title">Название</label><input class="control" id="title" data-field="title" placeholder="Например: Клин и два бруска"></div>
+        <div class="metadata-grid catalog-metadata-grid">
+          <div class="field"><label for="chapter">Глава</label><input class="control" id="chapter" list="chapter-options" data-field="chapter" placeholder="Глава 1. Кинематика"><datalist id="chapter-options"></datalist></div>
+          <div class="field"><label for="problemNumber">Номер задачи</label><input class="control" id="problemNumber" data-field="problemNumber" placeholder="1.1" maxlength="30"></div>
+          <div class="field"><label for="chapterOrder">Порядок главы</label><input class="control" id="chapterOrder" data-field="chapterOrder" type="number" min="1" step="1" inputmode="numeric"></div>
+          <div class="field"><label for="sortOrder">Порядок задачи</label><input class="control" id="sortOrder" data-field="sortOrder" type="number" min="1" step="1" inputmode="numeric"></div>
+        </div>
+        <div class="field title-row"><label for="title">Название задачи</label><input class="control title-input" id="title" data-field="title" placeholder="Например: Клин и два бруска"></div>
+      </div>
 
-        <section class="section">
-          <div class="section-top"><span class="section-label">Условие задачи</span><div class="tools"><button class="tool" type="button" onclick="insertLatex('\\frac{a}{b}',6)">a/b</button><button class="tool" type="button" onclick="insertLatex('\\sqrt{x}',6)">√</button><button class="tool" type="button" onclick="insertLatex('\\vec{v}',5)">v⃗</button><button class="tool" type="button" onclick="insertLatex('$$\\n\\n$$',3)">Формула</button></div></div>
-          <div class="split"><textarea class="source latex-source" id="statement" data-field="statement" placeholder="Введите условие. Например: Тело массы $m$ движется…"></textarea><div class="preview" id="statement-preview"></div></div>
+      <nav class="editor-tabs" aria-label="Разделы задачи">
+        <button class="editor-tab active" type="button" data-tab="statement" onclick="showEditorTab('statement',this)">Условие</button>
+        <button class="editor-tab" type="button" data-tab="hints" onclick="showEditorTab('hints',this)">Подсказки <span class="tab-count" id="hints-count">0</span></button>
+        <button class="editor-tab" type="button" data-tab="solution" onclick="showEditorTab('solution',this)">Решение</button>
+        <button class="editor-tab" type="button" data-tab="answer" onclick="showEditorTab('answer',this)">Ответ</button>
+        <button class="editor-tab" type="button" data-tab="images" onclick="showEditorTab('images',this)">Рисунки <span class="tab-count" id="images-count">0</span></button>
+      </nav>
+
+      <div class="editor-body">
+        <section class="tab-panel active" id="tab-statement">
+          <div class="editor-toolbar">
+            <button class="tool" type="button" onclick="insertLatex('**текст**',2)" title="Жирный текст"><b>B</b></button>
+            <button class="tool" type="button" onclick="insertLatex('*текст*',1)" title="Курсив"><i>I</i></button>
+            <span class="toolbar-separator"></span>
+            <button class="tool" type="button" onclick="insertLatex('\\frac{a}{b}',6)">a/b</button>
+            <button class="tool" type="button" onclick="insertLatex('\\sqrt{x}',6)">√</button>
+            <button class="tool" type="button" onclick="insertLatex('\\vec{v}',5)">v⃗</button>
+            <button class="tool" type="button" onclick="insertLatex('$$\n\n$$',3)">Формула</button>
+            <span class="toolbar-note">LaTeX и простой Markdown</span>
+          </div>
+          <textarea class="source-editor latex-source" id="statement" data-field="statement" placeholder="Введите условие задачи. Формулы внутри строки: $F=ma$&#10;&#10;Отдельная формула:&#10;$$&#10;E=mc^2&#10;$$"></textarea>
         </section>
 
-        <section class="section">
-          <div class="section-top"><span class="section-label">Пошаговые подсказки</span><button class="btn" type="button" onclick="addHint()">＋ Подсказка</button></div>
-          <div class="hint-list" id="hint-list"></div>
+        <section class="tab-panel" id="tab-hints">
+          <div class="panel-scroll">
+            <div class="panel-intro"><div class="panel-intro-copy"><strong>Пошаговые подсказки</strong><span>От самой мягкой к ключевой идее решения</span></div><button class="btn primary" type="button" onclick="addHint()">＋ Добавить</button></div>
+            <div class="hint-list" id="hint-list"></div>
+          </div>
         </section>
 
-        <section class="section">
-          <div class="section-top"><span class="section-label">Рисунки</span><small>PNG/JPG/WebP/GIF до 1,5 МБ</small></div>
-          <div class="image-list"><label class="upload" id="upload-label"><input type="file" id="image-upload" accept="image/png,image/jpeg,image/webp,image/gif" onchange="uploadImage(this.files[0]);this.value=''">Нажмите, чтобы загрузить рисунок</label><div id="image-list"></div></div>
+        <section class="tab-panel" id="tab-solution">
+          <div class="editor-toolbar">
+            <button class="tool" type="button" onclick="insertLatex('## Идея решения\n\n',17)">H2</button>
+            <button class="tool" type="button" onclick="insertLatex('\\frac{a}{b}',6)">a/b</button>
+            <button class="tool" type="button" onclick="insertLatex('\\boxed{x}',7)">□x</button>
+            <span class="toolbar-separator"></span><button class="tool" type="button" onclick="solutionTemplate()">Шаблон</button>
+            <span class="toolbar-note">Полный разбор задачи</span>
+          </div>
+          <textarea class="source-editor latex-source" id="solution" data-field="solution" placeholder="## Идея решения&#10;&#10;Опишите физическую модель и ход решения…"></textarea>
         </section>
 
-        <section class="section">
-          <div class="section-top"><span class="section-label">Полное решение</span><div class="tools"><button class="tool" type="button" onclick="solutionTemplate()">Шаблон решения</button><button class="tool" type="button" onclick="insertLatex('\\boxed{x}',7)">Ответ в рамке</button></div></div>
-          <div class="split"><textarea class="source latex-source" id="solution" data-field="solution" placeholder="## Идея решения&#10;&#10;Запишите ход решения…"></textarea><div class="preview" id="solution-preview"></div></div>
+        <section class="tab-panel" id="tab-answer">
+          <div class="editor-toolbar"><button class="tool" type="button" onclick="insertLatex('\\boxed{x}',7)">□x</button><button class="tool" type="button" onclick="insertLatex('\\frac{a}{b}',6)">a/b</button><span class="toolbar-note">Краткий итог без повторения решения</span></div>
+          <textarea class="source-editor latex-source" id="answer" data-field="answer" placeholder="$\\boxed{x=...}$"></textarea>
         </section>
 
-        <section class="section">
-          <div class="section-top"><span class="section-label">Краткий ответ</span></div>
-          <div class="split" style="min-height:160px"><textarea class="source latex-source" style="min-height:160px" id="answer" data-field="answer" placeholder="$\\boxed{x=...}$"></textarea><div class="preview" id="answer-preview"></div></div>
+        <section class="tab-panel" id="tab-images">
+          <div class="panel-scroll">
+            <div class="panel-intro"><div class="panel-intro-copy"><strong>Рисунки к условию</strong><span>Добавьте подпись и понятное описание</span></div></div>
+            <label class="upload-zone" id="upload-zone"><input type="file" accept="image/png,image/jpeg,image/webp,image/gif" onchange="uploadImage(this.files[0]);this.value=''"><span><strong>Нажмите или перетащите рисунок сюда</strong><span>PNG, JPG, WebP или GIF до 1,5 МБ</span></span></label>
+            <div class="image-list" id="image-list"></div>
+          </div>
         </section>
-
-        <div class="form-actions"><div class="action-group"><button class="btn" id="save-draft" type="button" onclick="saveProblem('draft')">Сохранить черновик</button><button class="btn primary" id="publish" type="button" onclick="saveProblem('published')">Опубликовать на сайте</button><button class="btn danger" id="archive" type="button" onclick="archiveProblem()" hidden>В архив</button></div><span class="help">⌘/Ctrl + S — сохранить</span></div>
-      </form>
+      </div>
     </section>
+
+    <div class="splitter" id="splitter-right" role="separator" aria-label="Изменить ширину предпросмотра"></div>
+
+    <aside class="preview-pane">
+      <div class="preview-head"><div class="preview-title"><span class="live-dot"></span>Живой предпросмотр</div><div class="zoom-controls"><button class="zoom-btn" type="button" onclick="changeZoom(-10)">−</button><span class="zoom-value" id="zoom-value">100%</span><button class="zoom-btn" type="button" onclick="changeZoom(10)">＋</button></div></div>
+      <div class="preview-scroll"><div class="paper-wrap" id="paper-wrap"><article class="paper" id="document-preview"></article></div></div>
+    </aside>
   </main>
 
+  <div class="modal-backdrop" id="structure-modal" hidden onclick="if(event.target===this)closeCatalogManager()">
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="structure-title">
+      <header class="modal-head">
+        <div class="modal-head-copy"><strong id="structure-title">Структура каталога</strong><span>Главы и порядок задач</span></div>
+        <button class="mini-btn" type="button" onclick="closeCatalogManager()" aria-label="Закрыть">×</button>
+      </header>
+      <div class="modal-body">
+        <div class="structure-controls">
+          <div class="field"><label for="structure-book">Задачник</label><select class="control" id="structure-book" onchange="changeStructureScope()"></select></div>
+          <div class="field"><label for="structure-topic">Раздел</label><select class="control" id="structure-topic" onchange="changeStructureScope()"></select></div>
+        </div>
+        <div class="structure-note">Перетаскивайте задачи между главами. Название главы меняется сразу для всех задач внутри неё.</div>
+        <div class="structure-board" id="structure-board"></div>
+      </div>
+      <footer class="modal-foot"><button class="btn" type="button" onclick="closeCatalogManager()">Отмена</button><button class="btn primary" type="button" onclick="saveCatalogStructure()" id="save-structure">Сохранить структуру</button></footer>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="history-modal" hidden onclick="if(event.target===this)closeVersionHistory()">
+    <section class="modal-card history-card" role="dialog" aria-modal="true" aria-labelledby="history-title">
+      <header class="modal-head">
+        <div class="modal-head-copy"><strong id="history-title">История версий</strong><span id="history-subtitle">Сохранённые редакции задачи</span></div>
+        <button class="mini-btn" type="button" onclick="closeVersionHistory()" aria-label="Закрыть">×</button>
+      </header>
+      <div class="modal-body"><div class="version-list" id="version-list"><div class="structure-empty">Загрузка…</div></div></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
   <script>
-    const API='/admin/api';
-    let problems=[];
-    let filter='all';
-    let dirty=false;
-    let saving=false;
-    let activeTextarea=null;
-    let draft=blankProblem();
+    const API = '/admin/api';
+    let problems = [], filter = 'all', dirty = false, saving = false, activeTextarea = null;
+    let activeTab = localStorage.getItem('npho-editor-tab') || 'statement';
+    let previewZoom = Number(localStorage.getItem('npho-preview-zoom')) || 100;
+    let draft = blankProblem(), previewTimer, toastTimer, localBackupTimer;
+    let solutionCursor = { start: 0, end: 0 };
+    let structureWorking = [], structureDirty = false, draggedTaskId = null;
 
-    function blankProblem(){return{id:null,slug:'',book:'Савченко',topic:'Механика',difficulty:2,title:'',statement:'',solution:'',answer:'',hints:[],images:[],status:'draft'}}
-    function uid(prefix){return (crypto.randomUUID?crypto.randomUUID():prefix+'-'+Date.now()+'-'+Math.random().toString(36).slice(2))}
+    function blankProblem(){return{id:null,slug:'',book:'Савченко',topic:'Механика',chapter:'Глава 1',chapterOrder:1,problemNumber:'',sortOrder:1,difficulty:2,title:'',statement:'',solution:'',answer:'',hints:[],images:[],status:'draft'}}
+    function normalizeProblem(problem){return{...blankProblem(),...problem,chapter:problem?.chapter||'Без главы',chapterOrder:Number(problem?.chapterOrder)||1,problemNumber:String(problem?.problemNumber||''),sortOrder:Number(problem?.sortOrder)||1,hints:Array.isArray(problem?.hints)?problem.hints:[],images:Array.isArray(problem?.images)?problem.images:[]}}
+    function uid(prefix){return crypto.randomUUID?crypto.randomUUID():prefix+'-'+Date.now()+'-'+Math.random().toString(36).slice(2)}
     function escapeHtml(value){return String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}
-    function setStatus(text,tone=''){const el=document.getElementById('status');el.textContent=text;el.className='status '+tone}
-    function setDirty(value=true){dirty=value;if(value)setStatus('Есть несохранённые изменения')}
+    function escapeAttribute(value){return escapeHtml(value).replace(/`/g,'&#96;')}
+    function inlineArgument(value){return escapeAttribute(JSON.stringify(String(value)))}
+    function pluralTasks(n){const n10=n%10,n100=n%100;if(n10===1&&n100!==11)return'задача';if(n10>=2&&n10<=4&&(n100<12||n100>14))return'задачи';return'задач'}
 
-    function renderRich(source){
-      const tokens=[];let safe=escapeHtml(String(source||'').replace(/\r\n/g,'\n'));
-      const hold=(math,display)=>{const id=tokens.length;tokens.push(display?'<div>\\['+math.trim()+'\\]</div>':'<span>\\('+math.trim()+'\\)</span>');return 'NPHOMATH'+id+'X'};
+    function showToast(text,tone=''){const el=document.getElementById('toast');el.textContent=text;el.className='toast visible'+(tone?' '+tone:'');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),2800)}
+    function setSaveState(text,tone=''){document.getElementById('save-state-text').textContent=text;document.getElementById('save-state').className='save-state'+(tone?' '+tone:'')}
+    function setDirty(value=true){dirty=value;if(value){setSaveState('Есть изменения','dirty');scheduleLocalBackup()}updateDocumentHeading()}
+    function updateDocumentHeading(){document.getElementById('top-document-title').textContent=draft.title.trim()||'Новая задача'}
+    function localBackupKey(problem=draft){return'npho-editor-backup-'+(problem.id||'new')}
+    function scheduleLocalBackup(){clearTimeout(localBackupTimer);localBackupTimer=setTimeout(saveLocalBackup,650)}
+    function saveLocalBackup(){
+      try{localStorage.setItem(localBackupKey(),JSON.stringify({savedAt:new Date().toISOString(),draft}));if(dirty)setSaveState('Автосохранено локально','dirty')}
+      catch{setSaveState('Не удалось сохранить копию','error')}
+    }
+    function clearLocalBackup(keyOrProblem=draft){const key=typeof keyOrProblem==='string'?keyOrProblem:localBackupKey(keyOrProblem);localStorage.removeItem(key)}
+    function restoreLocalBackup(problem){
+      try{
+        const raw=localStorage.getItem(localBackupKey(problem));if(!raw)return normalizeProblem(problem);
+        const backup=JSON.parse(raw),serverTime=Date.parse(problem.updatedAt||0),backupTime=Date.parse(backup.savedAt||0);
+        if(!backup.draft||problem.id&&backupTime<=serverTime)return normalizeProblem(problem);
+        if(confirm('Найдена локальная несохранённая версия этой задачи. Восстановить её?'))return normalizeProblem(backup.draft);
+        clearLocalBackup(problem);return normalizeProblem(problem);
+      }catch{return normalizeProblem(problem)}
+    }
+
+    function renderRich(source,images=[]){
+      const tokens=[],imageTokens=[];
+      let raw=String(source||'').replace(/\r\n/g,'\n');
+      raw=raw.replace(/\[\[image:([A-Za-z0-9_-]+)\]\]/g,(_,id)=>{
+        const image=images.find(item=>String(item.id)===id);
+        if(!image)return'';
+        const index=imageTokens.length;
+        imageTokens.push('<figure class="preview-figure embedded-preview-figure"><img src="'+escapeAttribute(image.url)+'" alt="'+escapeAttribute(image.alt||'Рисунок к решению')+'">'+(image.caption?'<figcaption>'+escapeHtml(image.caption)+'</figcaption>':'')+'</figure>');
+        return'NPHOIMAGE'+index+'X';
+      });
+      let safe=escapeHtml(raw);
+      const hold=(math,display)=>{const id=tokens.length;tokens.push(display?'<div>\\['+math.trim()+'\\]</div>':'<span>\\('+math.trim()+'\\)</span>');return'NPHOMATH'+id+'X'};
       safe=safe.replace(/\$\$([\s\S]*?)\$\$/g,(_,m)=>hold(m,true)).replace(/\\\[([\s\S]*?)\\\]/g,(_,m)=>hold(m,true)).replace(/\\\(([\s\S]*?)\\\)/g,(_,m)=>hold(m,false)).replace(/(^|[^\\$])\$([^\n$]+?)\$/g,(_,p,m)=>p+hold(m,false));
-      const inline=value=>value.replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/\*([^*]+)\*/g,'<em>$1</em>');
-      let html=safe.split(/\n{2,}/).map(x=>x.trim()).filter(Boolean).map(block=>{const lines=block.split('\n');if(/^###\s+/.test(block))return'<h3>'+inline(block.replace(/^###\s+/,''))+'</h3>';if(/^##\s+/.test(block))return'<h2>'+inline(block.replace(/^##\s+/,''))+'</h2>';if(/^#\s+/.test(block))return'<h1>'+inline(block.replace(/^#\s+/,''))+'</h1>';if(lines.every(line=>/^[-*]\s+/.test(line)))return'<ul>'+lines.map(line=>'<li>'+inline(line.replace(/^[-*]\s+/,''))+'</li>').join('')+'</ul>';if(block.startsWith('&gt; '))return'<blockquote>'+inline(block.replace(/^&gt;\s?/,''))+'</blockquote>';return'<p>'+inline(block).replace(/\n/g,'<br>')+'</p>'}).join('');
-      return html.replace(/NPHOMATH(\d+)X/g,(_,id)=>tokens[Number(id)]||'');
+      const inline=value=>value.replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/__([^_]+)__/g,'<strong>$1</strong>').replace(/\*([^*]+)\*/g,'<em>$1</em>');
+      const html=safe.split(/\n{2,}/).map(x=>x.trim()).filter(Boolean).map(block=>{if(/^NPHOMATH\d+X$/.test(block)||/^NPHOIMAGE\d+X$/.test(block))return block;if(/^###\s+/.test(block))return'<h3>'+inline(block.replace(/^###\s+/,''))+'</h3>';if(/^##\s+/.test(block))return'<h2>'+inline(block.replace(/^##\s+/,''))+'</h2>';if(/^#\s+/.test(block))return'<h1>'+inline(block.replace(/^#\s+/,''))+'</h1>';const lines=block.split('\n');if(lines.every(line=>/^[-*]\s+/.test(line)))return'<ul>'+lines.map(line=>'<li>'+inline(line.replace(/^[-*]\s+/,''))+'</li>').join('')+'</ul>';if(lines.every(line=>/^\d+[.)]\s+/.test(line)))return'<ol>'+lines.map(line=>'<li>'+inline(line.replace(/^\d+[.)]\s+/,''))+'</li>').join('')+'</ol>';if(block.startsWith('&gt; '))return'<blockquote>'+inline(block.replace(/^&gt;\s?/,'').replace(/\n&gt;\s?/g,'<br>'))+'</blockquote>';return'<p>'+inline(block).replace(/\n/g,'<br>')+'</p>'}).join('');
+      return html
+        .replace(/NPHOMATH(\d+)X/g,(_,id)=>tokens[Number(id)]||'')
+        .replace(/NPHOIMAGE(\d+)X/g,(_,id)=>imageTokens[Number(id)]||'');
     }
 
-    let typesetTimer;
-    function renderPreviews(){
-      ['statement','solution','answer'].forEach(name=>{document.getElementById(name+'-preview').innerHTML=renderRich(draft[name])||'<span style="color:#98a2b3">Предпросмотр появится здесь.</span>'});
-      clearTimeout(typesetTimer);typesetTimer=setTimeout(()=>{if(window.MathJax?.typesetPromise){MathJax.typesetClear?.();MathJax.typesetPromise(document.querySelectorAll('.preview')).catch(()=>{})}},120);
+    function difficultyName(level){return({1:'Лёгкая',2:'Средняя',3:'Сложная',4:'Гроб'})[Number(level)]||'Средняя'}
+    function imageMarkerIds(source){return new Set([...String(source||'').matchAll(/\[\[image:([A-Za-z0-9_-]+)\]\]/g)].map(match=>match[1]))}
+    function previewImages(){const embedded=imageMarkerIds(draft.solution);const images=draft.images.filter(image=>!embedded.has(String(image.id)));if(!images.length)return'';return'<div class="preview-images">'+images.map(image=>'<figure class="preview-figure"><img src="'+escapeAttribute(image.url)+'" alt="'+escapeAttribute(image.alt||'Рисунок к задаче')+'">'+(image.caption?'<figcaption>'+escapeHtml(image.caption)+'</figcaption>':'')+'</figure>').join('')+'</div>'}
+    function previewHints(){const hints=draft.hints.filter(hint=>hint.content.trim());if(!hints.length)return'';return'<section class="paper-section"><h2>Пошаговые подсказки</h2><div class="preview-hints">'+hints.map((hint,index)=>'<div class="preview-hint"><span class="preview-hint-number">'+(index+1)+'</span><div class="rich-preview">'+renderRich(hint.content)+'</div></div>').join('')+'</div></section>'}
+    function renderDocumentPreview(){
+      const root=document.getElementById('document-preview');
+      const statement=draft.statement.trim()?renderRich(draft.statement):'<p class="preview-empty">Условие появится здесь по мере ввода.</p>';
+      const solution=draft.solution.trim()?'<section class="paper-section"><h2>Решение</h2><div class="rich-preview">'+renderRich(draft.solution,draft.images)+'</div></section>':'';
+      const answer=draft.answer.trim()?'<section class="paper-section"><h2>Ответ</h2><div class="preview-answer rich-preview">'+renderRich(draft.answer)+'</div></section>':'';
+      root.innerHTML='<header class="paper-header"><div class="paper-kicker">'+escapeHtml(draft.problemNumber?'Задача '+draft.problemNumber:'NPhO · банк задач')+'</div><div class="preview-chips"><span class="preview-chip">'+escapeHtml(draft.book||'Задачник')+' · '+escapeHtml(draft.topic||'Раздел')+' · '+escapeHtml(draft.chapter||'Без главы')+'</span><span class="preview-chip level">'+difficultyName(draft.difficulty)+'</span></div><h1>'+escapeHtml(draft.title.trim()||'Название задачи')+'</h1></header><section class="paper-section"><h2>Условие</h2><div class="rich-preview">'+statement+'</div>'+previewImages()+'</section>'+previewHints()+solution+answer;
+      if(window.MathJax?.typesetPromise){window.MathJax.typesetClear?.([root]);window.MathJax.typesetPromise([root]).catch(()=>{})}
+    }
+    function schedulePreview(){clearTimeout(previewTimer);previewTimer=setTimeout(renderDocumentPreview,110)}
+
+    function renderDifficulty(){document.getElementById('difficulty-control').innerHTML=[1,2,3,4].map(level=>'<button class="difficulty-btn '+(level===Number(draft.difficulty)?'active':'')+'" data-level="'+level+'" type="button" onclick="setDifficulty('+level+')" title="'+difficultyName(level)+'">'+level+'</button>').join('')}
+    function setDifficulty(value){draft.difficulty=value;renderDifficulty();setDirty();schedulePreview()}
+    function showEditorTab(name,button){activeTab=name;localStorage.setItem('npho-editor-tab',name);document.querySelectorAll('.editor-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.tab===name));document.querySelectorAll('.tab-panel').forEach(panel=>panel.classList.toggle('active',panel.id==='tab-'+name));button?.blur();const area=document.querySelector('#tab-'+name+' .latex-source');if(area)activeTextarea=area}
+    function fillForm(){['book','topic','chapter','chapterOrder','problemNumber','sortOrder','title','statement','solution','answer'].forEach(name=>document.getElementById(name).value=draft[name]??'');solutionCursor={start:String(draft.solution||'').length,end:String(draft.solution||'').length};renderChapterOptions();renderDifficulty();renderHints();renderImages();renderDocumentPreview();updateDocumentHeading();document.getElementById('archive-task').hidden=!draft.id;document.getElementById('history-button').disabled=!draft.id;const tab=document.querySelector('.editor-tab[data-tab="'+activeTab+'"]')||document.querySelector('.editor-tab');showEditorTab(tab.dataset.tab,tab)}
+
+    function renderChapterOptions(){
+      const names=[...new Set(problems.filter(item=>item.book===draft.book&&item.topic===draft.topic).map(item=>item.chapter).filter(Boolean))];
+      document.getElementById('chapter-options').innerHTML=names.map(name=>'<option value="'+escapeAttribute(name)+'"></option>').join('');
     }
 
-    function renderStars(){document.getElementById('stars').innerHTML=[1,2,3,4].map(n=>'<button type="button" class="star '+(n<=draft.difficulty?'on':'')+'" onclick="setDifficulty('+n+')" title="'+n+' звезды">★</button>').join('')}
-    function setDifficulty(value){draft.difficulty=value;renderStars();setDirty()}
+    function renderHints(){
+      const root=document.getElementById('hint-list');document.getElementById('hints-count').textContent=draft.hints.length;
+      if(!draft.hints.length){root.innerHTML='<div class="empty">Подсказок пока нет. Начните с небольшого направления мысли.</div>';return}
+      root.innerHTML=draft.hints.map((hint,index)=>'<div class="hint-card"><span class="hint-number">'+(index+1)+'</span><textarea class="control hint-textarea latex-source" onfocus="activeTextarea=this" oninput="updateHint('+inlineArgument(hint.id)+',this.value)" placeholder="Подсказка '+(index+1)+'">'+escapeHtml(hint.content)+'</textarea><div class="hint-actions"><button class="mini-btn" type="button" onclick="moveHint('+index+',-1)" '+(index===0?'disabled':'')+'>↑</button><button class="mini-btn" type="button" onclick="moveHint('+index+',1)" '+(index===draft.hints.length-1?'disabled':'')+'>↓</button><button class="mini-btn delete" type="button" onclick="removeHint('+inlineArgument(hint.id)+')">×</button></div></div>').join('');
+    }
+    function addHint(){draft.hints.push({id:uid('hint'),content:''});renderHints();setDirty();schedulePreview();requestAnimationFrame(()=>document.querySelector('#hint-list .hint-card:last-child textarea')?.focus())}
+    function updateHint(id,value){const item=draft.hints.find(hint=>hint.id===id);if(item)item.content=value;setDirty();schedulePreview()}
+    function removeHint(id){draft.hints=draft.hints.filter(hint=>hint.id!==id);renderHints();setDirty();schedulePreview()}
+    function moveHint(index,direction){const target=index+direction;if(target<0||target>=draft.hints.length)return;[draft.hints[index],draft.hints[target]]=[draft.hints[target],draft.hints[index]];renderHints();setDirty();schedulePreview()}
 
-    function fillForm(){
-      ['book','topic','title','statement','solution','answer'].forEach(name=>document.getElementById(name).value=draft[name]||'');
-      document.getElementById('editor-title').textContent=draft.id?'Редактирование задачи':'Новая задача';
-      document.getElementById('archive').hidden=!draft.id;renderStars();renderHints();renderImages();renderPreviews();
+    function renderImages(){
+      const root=document.getElementById('image-list');document.getElementById('images-count').textContent=draft.images.length;
+      root.innerHTML=draft.images.map(image=>'<div class="image-card"><img src="'+escapeAttribute(image.url)+'" alt=""><div class="image-fields"><input class="control" value="'+escapeAttribute(image.alt||'')+'" placeholder="Описание изображения" oninput="updateImage('+inlineArgument(image.id)+',\'alt\',this.value)"><input class="control" value="'+escapeAttribute(image.caption||'')+'" placeholder="Подпись под рисунком" oninput="updateImage('+inlineArgument(image.id)+',\'caption\',this.value)"></div><div class="image-actions"><button class="btn image-insert" type="button" onclick="insertImageIntoSolution('+inlineArgument(image.id)+')">В решение</button><button class="mini-btn delete" type="button" onclick="removeImage('+inlineArgument(image.id)+')" title="Удалить рисунок">×</button></div></div>').join('');
+    }
+    function updateImage(id,key,value){const item=draft.images.find(image=>image.id===id);if(item)item[key]=value;setDirty();schedulePreview()}
+    function removeImage(id){draft.images=draft.images.filter(image=>String(image.id)!==String(id));draft.solution=String(draft.solution||'').split('[[image:'+id+']]').join('').replace(/\n{3,}/g,'\n\n');document.getElementById('solution').value=draft.solution;solutionCursor={start:draft.solution.length,end:draft.solution.length};renderImages();setDirty();schedulePreview()}
+    function rememberSolutionCursor(){const area=document.getElementById('solution');solutionCursor={start:area.selectionStart??area.value.length,end:area.selectionEnd??area.value.length}}
+    function insertImageIntoSolution(id){
+      const image=draft.images.find(item=>String(item.id)===String(id));
+      if(!image)return;
+      const area=document.getElementById('solution');
+      const start=Math.min(solutionCursor.start,area.value.length);
+      const end=Math.min(solutionCursor.end,area.value.length);
+      const marker='[[image:'+image.id+']]';
+      const before=start>0&&!area.value.slice(0,start).endsWith('\n\n')?'\n\n':'';
+      const after=end<area.value.length&&!area.value.slice(end).startsWith('\n\n')?'\n\n':'';
+      const insertion=before+marker+after;
+      area.setRangeText(insertion,start,end,'end');
+      draft.solution=area.value;
+      const caret=start+insertion.length;
+      solutionCursor={start:caret,end:caret};
+      setDirty();renderImages();renderDocumentPreview();
+      showEditorTab('solution',document.querySelector('.editor-tab[data-tab="solution"]'));
+      requestAnimationFrame(()=>{area.focus();area.setSelectionRange(caret,caret)});
+      showToast('Рисунок вставлен в решение');
+    }
+    async function uploadImage(file){if(!file)return;setSaveState('Загружаем рисунок','saving');const body=new FormData();body.append('file',file);try{const response=await fetch(API+'/uploads',{method:'POST',body});const data=await response.json();if(!response.ok)throw new Error(data.error||'Ошибка загрузки');draft.images.push({id:uid('image'),url:data.url,alt:draft.title||'Рисунок к задаче',caption:''});renderImages();setDirty();renderDocumentPreview();showToast('Рисунок добавлен')}catch(error){setSaveState('Ошибка загрузки','error');showToast(error.message,'error')}}
+
+    function renderList(){const query=document.getElementById('search').value.trim().toLowerCase();const visible=problems.filter(item=>(filter==='all'||item.status===filter)&&(!query||(item.title+' '+item.book+' '+item.topic+' '+item.chapter+' '+item.problemNumber).toLowerCase().includes(query)));document.getElementById('task-count').textContent=problems.length+' '+pluralTasks(problems.length);document.getElementById('task-list').innerHTML=visible.length?visible.map(item=>'<button class="task-item '+(item.id===draft.id?'active':'')+'" onclick="selectProblem('+item.id+')"><span class="task-file-icon">'+escapeHtml(item.problemNumber||'T')+'</span><span class="task-item-copy"><strong>'+escapeHtml(item.title)+'</strong><span class="task-meta"><span class="status-badge '+(item.status==='published'?'published':'')+'"></span><span class="task-meta-path">'+escapeHtml(item.book)+' · '+escapeHtml(item.topic)+' · '+escapeHtml(item.chapter||'Без главы')+'</span></span></span></button>').join(''):'<div class="empty">Задач не найдено.</div>'}
+
+    function catalogNaturalCompare(a,b){return String(a||'').localeCompare(String(b||''),'ru',{numeric:true,sensitivity:'base'})}
+    function openCatalogManager(){
+      if(dirty){showToast('Сначала сохраните текущую задачу','error');return}
+      structureWorking=problems.map(item=>normalizeProblem(JSON.parse(JSON.stringify(item))));structureDirty=false;
+      populateStructureScopes(draft.book,draft.topic);renderStructureBoard();document.getElementById('structure-modal').hidden=false;
+    }
+    function populateStructureScopes(preferredBook,preferredTopic){
+      const bookSelect=document.getElementById('structure-book');
+      const books=[...new Set(structureWorking.map(item=>item.book).filter(Boolean))].sort(catalogNaturalCompare);
+      bookSelect.innerHTML=books.map(book=>'<option value="'+escapeAttribute(book)+'">'+escapeHtml(book)+'</option>').join('');
+      if(books.includes(preferredBook))bookSelect.value=preferredBook;
+      const topicSelect=document.getElementById('structure-topic');
+      const topics=[...new Set(structureWorking.filter(item=>item.book===bookSelect.value).map(item=>item.topic).filter(Boolean))].sort(catalogNaturalCompare);
+      topicSelect.innerHTML=topics.map(topic=>'<option value="'+escapeAttribute(topic)+'">'+escapeHtml(topic)+'</option>').join('');
+      if(topics.includes(preferredTopic))topicSelect.value=preferredTopic;
+    }
+    function changeStructureScope(){
+      const book=document.getElementById('structure-book').value,topicSelect=document.getElementById('structure-topic');
+      const topics=[...new Set(structureWorking.filter(item=>item.book===book).map(item=>item.topic).filter(Boolean))].sort(catalogNaturalCompare);
+      if(!topics.includes(topicSelect.value)){topicSelect.innerHTML=topics.map(topic=>'<option value="'+escapeAttribute(topic)+'">'+escapeHtml(topic)+'</option>').join('')}
+      renderStructureBoard();
+    }
+    function structureScope(){return{book:document.getElementById('structure-book').value,topic:document.getElementById('structure-topic').value}}
+    function scopedStructureItems(){const scope=structureScope();return structureWorking.filter(item=>item.book===scope.book&&item.topic===scope.topic)}
+    function groupedStructureItems(){
+      const groups=new Map();scopedStructureItems().forEach(item=>{const name=item.chapter||'Без главы';if(!groups.has(name))groups.set(name,[]);groups.get(name).push(item)});
+      return [...groups].map(([name,tasks])=>({name,order:Math.min(...tasks.map(task=>Number(task.chapterOrder)||1)),tasks:tasks.sort((a,b)=>(Number(a.sortOrder)||1)-(Number(b.sortOrder)||1)||catalogNaturalCompare(a.problemNumber,b.problemNumber)||a.id-b.id)})).sort((a,b)=>a.order-b.order||catalogNaturalCompare(a.name,b.name));
+    }
+    function renderStructureBoard(){
+      const root=document.getElementById('structure-board'),groups=groupedStructureItems();
+      if(!groups.length){root.innerHTML='<div class="structure-empty">В этом разделе пока нет задач. Новая глава появится после сохранения первой задачи.</div>';return}
+      root.innerHTML=groups.map((group,index)=>'<section class="structure-chapter" ondragover="event.preventDefault();this.classList.add(\'drag-over\')" ondragleave="this.classList.remove(\'drag-over\')" ondrop="dropTaskIntoChapter(event,'+inlineArgument(group.name)+')"><div class="structure-chapter-head"><span class="drag-handle" aria-hidden="true">⠿</span><input class="control structure-chapter-name" value="'+escapeAttribute(group.name)+'" onchange="renameStructureChapter('+inlineArgument(group.name)+',this.value)"><div class="structure-actions"><button class="mini-btn" type="button" onclick="moveStructureChapter('+inlineArgument(group.name)+',-1)" '+(index===0?'disabled':'')+' title="Выше">↑</button><button class="mini-btn" type="button" onclick="moveStructureChapter('+inlineArgument(group.name)+',1)" '+(index===groups.length-1?'disabled':'')+' title="Ниже">↓</button></div></div><div class="structure-task-list">'+group.tasks.map((task,taskIndex)=>'<div class="structure-task" draggable="true" ondragstart="startTaskDrag(event,'+task.id+')"><span class="drag-handle" aria-hidden="true">⋮⋮</span><span class="structure-task-number">'+escapeHtml(task.problemNumber||'—')+'</span><span class="structure-task-title">'+escapeHtml(task.title)+'</span><div class="structure-task-actions"><button class="mini-btn" type="button" onclick="moveStructureTask('+task.id+',-1)" '+(taskIndex===0?'disabled':'')+' title="Выше">↑</button><button class="mini-btn" type="button" onclick="moveStructureTask('+task.id+',1)" '+(taskIndex===group.tasks.length-1?'disabled':'')+' title="Ниже">↓</button></div></div>').join('')+'</div></section>').join('');
+    }
+    function markStructureDirty(){structureDirty=true;document.getElementById('save-structure').textContent='Сохранить изменения'}
+    function renameStructureChapter(oldName,value){
+      const newName=String(value||'').trim();if(!newName){renderStructureBoard();return}
+      const scope=structureScope(),already=scopedStructureItems().some(item=>item.chapter===newName&&item.chapter!==oldName);
+      if(already&&!confirm('Глава «'+newName+'» уже существует. Объединить главы?')){renderStructureBoard();return}
+      structureWorking.forEach(item=>{if(item.book===scope.book&&item.topic===scope.topic&&item.chapter===oldName)item.chapter=newName});markStructureDirty();normalizeStructureOrders();renderStructureBoard();
+    }
+    function normalizeStructureOrders(){
+      groupedStructureItems().forEach((group,chapterIndex)=>group.tasks.forEach((task,taskIndex)=>{task.chapterOrder=chapterIndex+1;task.sortOrder=taskIndex+1}));
+    }
+    function moveStructureChapter(name,direction){
+      const groups=groupedStructureItems(),index=groups.findIndex(group=>group.name===name),target=index+direction;if(index<0||target<0||target>=groups.length)return;
+      [groups[index],groups[target]]=[groups[target],groups[index]];groups.forEach((group,chapterIndex)=>group.tasks.forEach(task=>task.chapterOrder=chapterIndex+1));markStructureDirty();renderStructureBoard();
+    }
+    function moveStructureTask(id,direction){
+      const task=structureWorking.find(item=>item.id===id);if(!task)return;const group=groupedStructureItems().find(item=>item.name===task.chapter);if(!group)return;
+      const index=group.tasks.findIndex(item=>item.id===id),target=index+direction;if(target<0||target>=group.tasks.length)return;
+      [group.tasks[index],group.tasks[target]]=[group.tasks[target],group.tasks[index]];group.tasks.forEach((item,taskIndex)=>item.sortOrder=taskIndex+1);markStructureDirty();renderStructureBoard();
+    }
+    function startTaskDrag(event,id){draggedTaskId=id;event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('text/plain',String(id))}
+    function dropTaskIntoChapter(event,chapter){
+      event.preventDefault();event.currentTarget.classList.remove('drag-over');const id=draggedTaskId||Number(event.dataTransfer.getData('text/plain')),task=structureWorking.find(item=>item.id===Number(id));if(!task)return;
+      const targetTasks=groupedStructureItems().find(group=>group.name===chapter)?.tasks||[],chapterOrder=targetTasks[0]?.chapterOrder||1;
+      task.chapter=chapter;task.chapterOrder=chapterOrder;task.sortOrder=targetTasks.filter(item=>item.id!==task.id).length+1;draggedTaskId=null;markStructureDirty();normalizeStructureOrders();renderStructureBoard();
+    }
+    function closeCatalogManager(){if(structureDirty&&!confirm('Закрыть без сохранения структуры?'))return;structureDirty=false;document.getElementById('structure-modal').hidden=true}
+    async function saveCatalogStructure(){
+      const updates=structureWorking.filter(item=>{const original=problems.find(problem=>problem.id===item.id);return original&&(original.chapter!==item.chapter||Number(original.chapterOrder)!==Number(item.chapterOrder)||Number(original.sortOrder)!==Number(item.sortOrder))}).map(item=>({id:item.id,chapter:item.chapter,chapterOrder:item.chapterOrder,sortOrder:item.sortOrder}));
+      if(!updates.length){structureDirty=false;document.getElementById('structure-modal').hidden=true;showToast('Структура не изменилась');return}
+      const button=document.getElementById('save-structure');button.disabled=true;button.textContent='Сохраняем…';
+      try{const response=await fetch(API+'/catalog',{method:'PATCH',headers:{'content-type':'application/json'},body:JSON.stringify({updates})});const data=await response.json();if(!response.ok)throw new Error(data.error||'Не удалось сохранить структуру');(data.problems||[]).map(normalizeProblem).forEach(updated=>{const index=problems.findIndex(item=>item.id===updated.id);if(index>=0)problems[index]=updated;if(draft.id===updated.id)draft=updated});structureDirty=false;document.getElementById('structure-modal').hidden=true;fillForm();renderList();showToast('Структура каталога сохранена')}
+      catch(error){showToast(error.message,'error')}
+      finally{button.disabled=false;button.textContent='Сохранить структуру'}
     }
 
-    function renderHints(){const root=document.getElementById('hint-list');root.innerHTML=draft.hints.length?draft.hints.map((hint,index)=>'<div class="hint"><span class="hint-num">'+(index+1)+'</span><textarea class="control latex-source" onfocus="activeTextarea=this" oninput="updateHint(\''+hint.id+'\',this.value)" placeholder="Подсказка '+(index+1)+'">'+escapeHtml(hint.content)+'</textarea><button class="icon-btn" type="button" onclick="removeHint(\''+hint.id+'\')">×</button></div>').join(''):'<div class="empty">Подсказок пока нет.</div>'}
-    function addHint(){draft.hints.push({id:uid('hint'),content:''});renderHints();setDirty()}
-    function updateHint(id,value){const item=draft.hints.find(x=>x.id===id);if(item)item.content=value;setDirty()}
-    function removeHint(id){draft.hints=draft.hints.filter(x=>x.id!==id);renderHints();setDirty()}
+    async function openVersionHistory(){
+      if(!draft.id){showToast('Сначала сохраните задачу','error');return}if(dirty){showToast('Сначала сохраните текущие изменения','error');return}document.getElementById('history-modal').hidden=false;document.getElementById('history-subtitle').textContent=(draft.problemNumber?'Задача '+draft.problemNumber+' · ':'')+draft.title;const root=document.getElementById('version-list');root.innerHTML='<div class="structure-empty">Загрузка…</div>';
+      try{const response=await fetch(API+'/problems/'+draft.id+'/versions',{cache:'no-store'}),data=await response.json();if(!response.ok)throw new Error(data.error||'Не удалось загрузить историю');const versions=Array.isArray(data.versions)?data.versions:[];root.innerHTML=versions.length?versions.map((version,index)=>'<div class="version-row"><div class="version-copy"><strong>'+escapeHtml((version.problemNumber?version.problemNumber+' · ':'')+version.title)+'</strong><span>'+escapeHtml(new Date(version.createdAt).toLocaleString('ru-RU'))+' · '+escapeHtml(version.savedBy||'Редактор')+' · '+(version.status==='published'?'опубликовано':'черновик')+'</span></div>'+(index===0?'<span class="badge-current">Текущая</span>':'<button class="btn" type="button" onclick="restoreVersion('+version.id+')">Восстановить</button>')+'</div>').join(''):'<div class="structure-empty">История появится после первого сохранения.</div>'}
+      catch(error){root.innerHTML='<div class="structure-empty">'+escapeHtml(error.message)+'</div>'}
+    }
+    function closeVersionHistory(){document.getElementById('history-modal').hidden=true}
+    async function restoreVersion(versionId){
+      if(!confirm('Восстановить эту версию задачи? Текущая версия останется в истории.'))return;
+      try{const response=await fetch(API+'/problems/'+draft.id+'/versions/'+versionId+'/restore',{method:'POST'}),data=await response.json();if(!response.ok||!data.problem)throw new Error(data.error||'Не удалось восстановить версию');draft=normalizeProblem(data.problem);const index=problems.findIndex(item=>item.id===draft.id);if(index>=0)problems[index]=draft;clearLocalBackup(draft);dirty=false;closeVersionHistory();fillForm();renderList();setSaveState('Версия восстановлена');showToast('Предыдущая версия восстановлена')}
+      catch(error){showToast(error.message,'error')}
+    }
 
-    function renderImages(){const root=document.getElementById('image-list');root.innerHTML=draft.images.map(image=>'<div class="image-card"><img src="'+escapeHtml(image.url)+'" alt=""><div class="image-fields"><input class="control" value="'+escapeHtml(image.alt||'')+'" placeholder="Описание изображения" oninput="updateImage(\''+image.id+'\',\'alt\',this.value)"><input class="control" value="'+escapeHtml(image.caption||'')+'" placeholder="Подпись под рисунком" oninput="updateImage(\''+image.id+'\',\'caption\',this.value)"></div><button class="icon-btn" type="button" onclick="removeImage(\''+image.id+'\')">×</button></div>').join('')}
-    function updateImage(id,key,value){const item=draft.images.find(x=>x.id===id);if(item)item[key]=value;setDirty()}
-    function removeImage(id){draft.images=draft.images.filter(x=>x.id!==id);renderImages();setDirty()}
-    async function uploadImage(file){if(!file)return;setStatus('Загружаю рисунок…');const body=new FormData();body.append('file',file);try{const response=await fetch(API+'/uploads',{method:'POST',body});const data=await response.json();if(!response.ok)throw new Error(data.error||'Ошибка загрузки');draft.images.push({id:uid('image'),url:data.url,alt:draft.title||'Рисунок к задаче',caption:''});renderImages();setDirty();setStatus('Рисунок добавлен.','ok')}catch(error){setStatus(error.message,'error')}}
-
-    function renderList(){const query=document.getElementById('search').value.trim().toLowerCase();const visible=problems.filter(item=>(filter==='all'||item.status===filter)&&(!query||(item.title+' '+item.book+' '+item.topic).toLowerCase().includes(query)));document.getElementById('task-list').innerHTML=visible.length?visible.map(item=>'<button class="task-item '+(item.id===draft.id?'active':'')+'" onclick="selectProblem('+item.id+')"><strong>'+escapeHtml(item.title)+'</strong><span class="task-meta"><span class="badge '+item.status+'">'+(item.status==='published'?'Опубликована':'Черновик')+'</span><span>'+escapeHtml(item.book)+' · '+escapeHtml(item.topic)+'</span></span></button>').join(''):'<div class="empty">Задач не найдено.</div>'}
     function setFilter(value,button){filter=value;document.querySelectorAll('.filter').forEach(el=>el.classList.remove('active'));button.classList.add('active');renderList()}
-    function selectProblem(id){if(dirty&&!confirm('Отменить несохранённые изменения?'))return;const item=problems.find(x=>x.id===id);if(!item)return;draft=JSON.parse(JSON.stringify(item));dirty=false;fillForm();renderList();setStatus(draft.status==='published'?'Задача опубликована.':'Черновик')}
-    function newProblem(){if(dirty&&!confirm('Отменить несохранённые изменения?'))return;draft=blankProblem();dirty=false;fillForm();renderList();setStatus('Новая задача')}
+    function selectProblem(id){if(dirty){saveLocalBackup();if(!confirm('Перейти к другой задаче? Локальная копия текущих изменений сохранена.'))return}const item=problems.find(problem=>problem.id===id);if(!item)return;draft=restoreLocalBackup(JSON.parse(JSON.stringify(item)));dirty=JSON.stringify(draft)!==JSON.stringify(normalizeProblem(item));fillForm();renderList();setSaveState(dirty?'Восстановлена локальная копия':draft.status==='published'?'Опубликовано':'Черновик сохранён')}
+    function newProblem(){if(dirty){saveLocalBackup();if(!confirm('Создать новую задачу? Локальная копия текущих изменений сохранена.'))return}draft=restoreLocalBackup(blankProblem());dirty=Boolean(draft.title||draft.statement);fillForm();renderList();setSaveState(dirty?'Восстановлена локальная копия':'Новая задача');showEditorTab('statement',document.querySelector('.editor-tab[data-tab="statement"]'));document.getElementById('title').focus()}
+    async function loadProblems(){try{const response=await fetch(API+'/problems',{cache:'no-store'});const data=await response.json();if(!response.ok)throw new Error(data.error||'Нет доступа');problems=Array.isArray(data.problems)?data.problems.map(normalizeProblem):[];document.getElementById('admin-email').textContent=data.admin?.email||'Администратор';if(!draft.id&&!draft.title&&!draft.statement){draft=restoreLocalBackup(blankProblem());dirty=Boolean(draft.title||draft.statement);fillForm()}renderChapterOptions();renderList();setSaveState(dirty?'Восстановлена локальная копия':'Редактор готов')}catch(error){setSaveState('Нет соединения','error');document.getElementById('task-list').innerHTML='<div class="empty">'+escapeHtml(error.message)+'</div>';showToast(error.message,'error')}}
 
-    async function loadProblems(){try{const response=await fetch(API+'/problems',{cache:'no-store'});const data=await response.json();if(!response.ok)throw new Error(data.error||'Нет доступа');problems=Array.isArray(data.problems)?data.problems:[];document.getElementById('admin-email').textContent=data.admin?.email||'Администратор';renderList();setStatus('Редактор готов.','ok')}catch(error){setStatus(error.message,'error');document.getElementById('task-list').innerHTML='<div class="empty">'+escapeHtml(error.message)+'</div>'}}
+    async function saveProblem(status){
+      if(saving)return;if(!draft.title.trim()||!draft.statement.trim()){showToast('Введите название и условие задачи','error');return}
+      if(status==='published'&&!String(draft.problemNumber||'').trim()){showToast('Укажите номер задачи перед публикацией','error');return}
+      const duplicate=problems.find(item=>item.id!==draft.id&&item.status!=='archived'&&item.book===draft.book&&item.topic===draft.topic&&String(item.problemNumber||'').trim().toLowerCase()===String(draft.problemNumber||'').trim().toLowerCase());
+      if(duplicate&&String(draft.problemNumber||'').trim()){showToast('Номер '+draft.problemNumber+' уже используется в этом разделе','error');return}
+      saving=true;document.getElementById('save-draft').disabled=true;document.getElementById('publish').disabled=true;setSaveState(status==='published'?'Публикуем…':'Сохраняем…','saving');
+      const backupKeyBefore=localBackupKey();
+      try{const response=await fetch(draft.id?API+'/problems/'+draft.id:API+'/problems',{method:draft.id?'PATCH':'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...draft,status})});const data=await response.json();if(!response.ok||!data.problem)throw new Error(data.error||'Не удалось сохранить');draft=normalizeProblem(data.problem);const index=problems.findIndex(problem=>problem.id===draft.id);if(index>=0)problems[index]=draft;else problems.unshift(draft);clearLocalBackup(backupKeyBefore);clearLocalBackup(draft);dirty=false;fillForm();renderList();setSaveState(status==='published'?'Опубликовано':'Черновик сохранён');showToast(status==='published'?'Задача опубликована на сайте':'Черновик сохранён')}
+      catch(error){setSaveState('Ошибка сохранения','error');showToast(error.message,'error')}
+      finally{saving=false;document.getElementById('save-draft').disabled=false;document.getElementById('publish').disabled=false}
+    }
+    async function archiveProblem(){if(!draft.id||!confirm('Убрать задачу в архив?'))return;try{const response=await fetch(API+'/problems/'+draft.id,{method:'DELETE'});const data=await response.json();if(!response.ok)throw new Error(data.error||'Не удалось архивировать');clearLocalBackup(draft);problems=problems.filter(problem=>problem.id!==draft.id);draft=blankProblem();dirty=false;fillForm();renderList();setSaveState('Задача архивирована');showToast('Задача перемещена в архив')}catch(error){setSaveState('Ошибка архивации','error');showToast(error.message,'error')}}
 
-    async function saveProblem(status){if(saving)return;if(!draft.title.trim()||!draft.statement.trim()){setStatus('Введите название и условие задачи.','error');return}saving=true;document.getElementById('save-draft').disabled=true;document.getElementById('publish').disabled=true;setStatus(status==='published'?'Публикуем…':'Сохраняем…');try{const response=await fetch(draft.id?API+'/problems/'+draft.id:API+'/problems',{method:draft.id?'PATCH':'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...draft,status})});const data=await response.json();if(!response.ok||!data.problem)throw new Error(data.error||'Не удалось сохранить');draft=data.problem;const index=problems.findIndex(x=>x.id===draft.id);if(index>=0)problems[index]=draft;else problems.unshift(draft);dirty=false;fillForm();renderList();setStatus(status==='published'?'Задача опубликована на сайте.':'Черновик сохранён.','ok')}catch(error){setStatus(error.message,'error')}finally{saving=false;document.getElementById('save-draft').disabled=false;document.getElementById('publish').disabled=false}}
-    async function archiveProblem(){if(!draft.id||!confirm('Убрать задачу в архив?'))return;try{const response=await fetch(API+'/problems/'+draft.id,{method:'DELETE'});const data=await response.json();if(!response.ok)throw new Error(data.error||'Не удалось архивировать');problems=problems.filter(x=>x.id!==draft.id);draft=blankProblem();dirty=false;fillForm();renderList();setStatus('Задача перемещена в архив.','ok')}catch(error){setStatus(error.message,'error')}}
+    function insertLatex(text,offset=0){const area=activeTextarea||document.querySelector('.tab-panel.active .latex-source')||document.getElementById('statement');const start=area.selectionStart??area.value.length,end=area.selectionEnd??start;area.setRangeText(text,start,end,'end');area.focus();area.selectionStart=area.selectionEnd=start+offset;const field=area.dataset.field;if(field){draft[field]=area.value;schedulePreview()}else area.dispatchEvent(new Event('input',{bubbles:true}));setDirty()}
+    function solutionTemplate(){if(draft.solution.trim()&&!confirm('Заменить текущее решение шаблоном?'))return;draft.solution='## Идея решения\n\nКратко сформулируйте главный физический переход.\n\n## 1. Обозначения\n\nЗапишем необходимые величины.\n\n## 2. Физический закон\n\n$$\nE_1=E_2.\n$$\n\n## 3. Ответ\n\n$$\n\\boxed{x=\\ldots}\n$$';document.getElementById('solution').value=draft.solution;setDirty();renderDocumentPreview()}
+    function changeZoom(delta){previewZoom=Math.min(130,Math.max(70,previewZoom+delta));localStorage.setItem('npho-preview-zoom',previewZoom);document.getElementById('zoom-value').textContent=previewZoom+'%';const wrap=document.getElementById('paper-wrap');wrap.style.transform='scale('+(previewZoom/100)+')';wrap.style.marginBottom=((previewZoom/100-1)*document.getElementById('document-preview').offsetHeight)+'px'}
+    function toggleMobilePreview(){document.body.classList.toggle('mobile-preview');document.getElementById('mobile-preview-toggle').textContent=document.body.classList.contains('mobile-preview')?'Редактор':'Предпросмотр'}
 
-    function insertLatex(text,offset=0){const area=activeTextarea||document.getElementById('statement');const start=area.selectionStart??area.value.length;const end=area.selectionEnd??start;area.setRangeText(text,start,end,'end');area.focus();area.selectionStart=area.selectionEnd=start+offset;const field=area.dataset.field;if(field){draft[field]=area.value;renderPreviews()}else area.dispatchEvent(new Event('input',{bubbles:true}));setDirty()}
-    function solutionTemplate(){if(draft.solution.trim()&&!confirm('Заменить текущее решение шаблоном?'))return;draft.solution='## Идея решения\n\nКратко сформулируйте главный физический переход.\n\n## 1. Обозначения\n\nЗапишем необходимые величины.\n\n## 2. Физический закон\n\n$$\nE_1=E_2.\n$$\n\n## 3. Ответ\n\n$$\n\\boxed{x=\\ldots}\n$$';document.getElementById('solution').value=draft.solution;renderPreviews();setDirty()}
+    function setupSplitter(id,side){const splitter=document.getElementById(id);splitter.addEventListener('pointerdown',event=>{if(window.innerWidth<=900)return;event.preventDefault();splitter.classList.add('dragging');splitter.setPointerCapture(event.pointerId);const move=e=>{if(side==='left'){const width=Math.min(390,Math.max(210,e.clientX));document.documentElement.style.setProperty('--explorer-width',width+'px');localStorage.setItem('npho-explorer-width',width)}else{const width=Math.min(window.innerWidth*.62,Math.max(350,window.innerWidth-e.clientX));document.documentElement.style.setProperty('--preview-width',width+'px');localStorage.setItem('npho-preview-width',width)}};const up=()=>{splitter.classList.remove('dragging');splitter.removeEventListener('pointermove',move);splitter.removeEventListener('pointerup',up)};splitter.addEventListener('pointermove',move);splitter.addEventListener('pointerup',up)})}
+    function restorePreferences(){const left=Number(localStorage.getItem('npho-explorer-width')),right=Number(localStorage.getItem('npho-preview-width'));if(left)document.documentElement.style.setProperty('--explorer-width',left+'px');if(right)document.documentElement.style.setProperty('--preview-width',right+'px');changeZoom(0)}
 
-    document.querySelectorAll('[data-field]').forEach(element=>element.addEventListener('input',()=>{draft[element.dataset.field]=element.value;setDirty();if(['statement','solution','answer'].includes(element.dataset.field))renderPreviews()}));
+    document.querySelectorAll('[data-field]').forEach(element=>element.addEventListener('input',()=>{const field=element.dataset.field;draft[field]=['chapterOrder','sortOrder'].includes(field)?Math.max(1,Number(element.value)||1):element.value;if(field==='book'||field==='topic')renderChapterOptions();setDirty();schedulePreview()}));
     document.querySelectorAll('.latex-source').forEach(element=>element.addEventListener('focus',()=>activeTextarea=element));
-    document.addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='s'){event.preventDefault();saveProblem(draft.status)}});
-    window.addEventListener('beforeunload',event=>{if(dirty){event.preventDefault();event.returnValue=''}});
-    fillForm();loadProblems();
+    const solutionArea=document.getElementById('solution');
+    ['click','keyup','select','input'].forEach(type=>solutionArea.addEventListener(type,rememberSolutionCursor));
+    const uploadZone=document.getElementById('upload-zone');
+    ['dragenter','dragover'].forEach(type=>uploadZone.addEventListener(type,event=>{event.preventDefault();uploadZone.classList.add('dragging')}));
+    ['dragleave','drop'].forEach(type=>uploadZone.addEventListener(type,event=>{event.preventDefault();uploadZone.classList.remove('dragging')}));
+    uploadZone.addEventListener('drop',event=>uploadImage(event.dataTransfer.files[0]));
+    document.addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='s'){event.preventDefault();saveProblem(draft.status)}if(event.key==='Escape'){if(!document.getElementById('history-modal').hidden)closeVersionHistory();else if(!document.getElementById('structure-modal').hidden)closeCatalogManager()}});
+    window.addEventListener('beforeunload',event=>{if(dirty)saveLocalBackup();if(dirty||structureDirty){event.preventDefault();event.returnValue=''}});
+    setupSplitter('splitter-left','left');setupSplitter('splitter-right','right');fillForm();restorePreferences();loadProblems();
   </script>
 </body>
 </html>
