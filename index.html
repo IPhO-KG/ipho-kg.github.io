@@ -32,10 +32,10 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
-:root{--accent:#1a56db;--accent2:#0e9f6e;--bg:#fff;--bg2:#f9fafb;--bg3:#f3f4f6;--text:#111827;--text2:#6b7280;--text3:#9ca3af;--border:#e5e7eb;--r:10px;--rl:16px}
-html[data-theme="dark"]{color-scheme:dark;--bg:#111827;--bg2:#1f2937;--bg3:#374151;--text:#f9fafb;--text2:#b6c0cf;--text3:#7f8a9b;--border:#374151}
+:root{--accent:#2f5ea8;--accent2:#267b68;--accent-rgb:47,94,168;--accent2-rgb:38,123,104;--bg:#f4f6f9;--bg2:#edf1f6;--bg3:#e3e9f1;--text:#192334;--text2:#5f6b7a;--text3:#647182;--border:#d6dde7;--r:10px;--rl:16px}
+html[data-theme="dark"]{color-scheme:dark;--accent:#4f83ee;--accent2:#2fb58d;--accent-rgb:79,131,238;--accent2-rgb:47,181,141;--bg:#111827;--bg2:#1f2937;--bg3:#374151;--text:#f9fafb;--text2:#b6c0cf;--text3:#7f8a9b;--border:#374151}
 html[data-theme="light"]{color-scheme:light}
-@media(prefers-color-scheme:dark){html:not([data-theme]){color-scheme:dark;--bg:#111827;--bg2:#1f2937;--bg3:#374151;--text:#f9fafb;--text2:#b6c0cf;--text3:#7f8a9b;--border:#374151}}
+@media(prefers-color-scheme:dark){html:not([data-theme]){color-scheme:dark;--accent:#4f83ee;--accent2:#2fb58d;--accent-rgb:79,131,238;--accent2-rgb:47,181,141;--bg:#111827;--bg2:#1f2937;--bg3:#374151;--text:#f9fafb;--text2:#b6c0cf;--text3:#7f8a9b;--border:#374151}}
 nav{display:flex;align-items:center;justify-content:space-between;padding:.875rem 2rem;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100}
 .logo{display:flex;align-items:center;gap:10px;flex-shrink:0;font-size:15px;font-weight:700;color:var(--text);cursor:pointer}
 .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
@@ -48,7 +48,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:.875re
 .theme-icon{width:16px;text-align:center;font-size:15px;line-height:1}
 .sec{display:none}.sec.active{display:block}
 .hero{padding:5rem 2rem 4rem;text-align:center;border-bottom:1px solid var(--border)}
-.hero-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--accent);background:rgba(26,86,219,.08);border:1px solid rgba(26,86,219,.2);border-radius:100px;padding:4px 16px;margin-bottom:1.25rem;animation:fadeUp .5s both}
 .hero h1{font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.15;margin-bottom:1rem;letter-spacing:-.02em;animation:fadeUp .6s .08s both}
 .hero h1 span{color:var(--accent)}
 .hero-sub{font-size:16px;color:var(--text2);max-width:520px;margin:0 auto 2.25rem;animation:fadeUp .6s .16s both}
@@ -63,7 +62,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:.875re
 .home-section-head{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:2rem;align-items:start;margin-bottom:1.8rem}
 .home-section-head h2{font-size:clamp(25px,3vw,34px);line-height:1.18;letter-spacing:-.025em}
 .home-section-head p{max-width:650px;color:var(--text2);font-size:15px;line-height:1.7}
-.home-section-actions{display:flex;justify-content:center;gap:10px;margin-top:1.5rem;flex-wrap:wrap}
 .home-calendar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem;margin-top:1.8rem}
 .calendar-column{min-width:0}
 .calendar-column-title{display:flex;align-items:center;gap:9px;margin-bottom:1.2rem;font-size:14px;font-weight:800}
@@ -75,9 +73,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:.875re
 .home-calendar-grid .calendar-copy p{font-size:12px}
 .home-calendar .change-notice{margin:0}
 @media(max-width:760px){.home-section-head,.home-calendar-grid{grid-template-columns:1fr;gap:1.3rem}.home-calendar-grid{gap:2rem}.home-section{padding:2.7rem 0}}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--border)}
-.stat{padding:1.5rem;text-align:center;border-right:1px solid var(--border)}.stat:last-child{border-right:none}
-.sn{font-size:28px;font-weight:800;color:var(--accent)}.sl{font-size:12px;color:var(--text2);margin-top:3px}
 .inner{padding:2.5rem 2rem;max-width:960px;margin:0 auto}
 .stitle{font-size:20px;font-weight:700;margin-bottom:1.25rem;letter-spacing:-.01em}
 hr.sep{border:none;border-top:1px solid var(--border);margin:2rem 0}
@@ -86,24 +81,16 @@ hr.sep{border:none;border-top:1px solid var(--border);margin:2rem 0}
 .card:hover{border-color:var(--accent);transform:translateY(-2px)}
 .card h3{font-size:14px;font-weight:600;margin-bottom:.4rem}.card p{font-size:12px;color:var(--text2)}
 .badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:100px;margin-bottom:.6rem}
-.bb{background:rgba(26,86,219,.1);color:var(--accent)}.bt{background:rgba(14,159,110,.1);color:var(--accent2)}
+.bb{background:rgba(var(--accent-rgb),.1);color:var(--accent)}.bt{background:rgba(var(--accent2-rgb),.1);color:var(--accent2)}
 .bg2c{background:rgba(5,150,105,.1);color:#059669}.ba{background:rgba(245,158,11,.1);color:#b45309}
 .bgr{background:var(--bg3);color:var(--text2)}.bpu{background:rgba(144,97,249,.1);color:#7c3aed}
-.news{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:2.5rem}
-.nc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);padding:1.25rem;cursor:pointer;transition:border-color .15s,transform .15s}
-.nc:hover{border-color:var(--accent);transform:translateY(-2px)}
-.nc h3{font-size:14px;font-weight:600;line-height:1.4;margin-bottom:.4rem}.nc .meta{font-size:11px;color:var(--text3)}
-.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:2rem}
-.step{text-align:center;padding:1.5rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl)}
-.snum2{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:14px;font-weight:800}
-.step h4{font-size:13px;font-weight:600;margin-bottom:3px}.step p{font-size:11px;color:var(--text2)}
 .tl{max-width:560px}
 .tlrow{display:flex;gap:.875rem;margin-bottom:.9rem}
 .tll{flex-shrink:0;width:100px;font-size:11px;color:var(--text3);padding-top:2px;text-align:right}
 .tlm{flex-shrink:0;display:flex;flex-direction:column;align-items:center}
 .tldot{width:11px;height:11px;border-radius:50%;border:2px solid var(--border);background:var(--bg);flex-shrink:0;margin-top:2px}
 .tldot.done{background:var(--accent2);border-color:var(--accent2)}
-.tldot.now{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,86,219,.18)}
+.tldot.now{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 3px rgba(var(--accent-rgb),.18)}
 .tldot.intl{background:#f59e0b;border-color:#f59e0b}
 .tlline{width:1px;background:var(--border);flex:1;min-height:20px}
 .tlr h4{font-size:14px;font-weight:600;margin-bottom:1px}.tlr p{font-size:12px;color:var(--text2)}
@@ -160,24 +147,22 @@ html[data-theme="dark"] .status-bronze{background:rgba(251,146,60,.16);color:#fd
 .about-story-copy strong{color:var(--text)}
 .about-points{display:grid;border-top:1px solid var(--border)}
 .about-point{display:grid;grid-template-columns:42px minmax(0,1fr);gap:14px;padding:1.15rem 0;border-bottom:1px solid var(--border)}
-.about-point-number{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:rgba(26,86,219,.1);color:var(--accent);font-size:12px;font-weight:850}
+.about-point-number{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:rgba(var(--accent-rgb),.1);color:var(--accent);font-size:12px;font-weight:850}
 .about-point h3{font-size:15px;margin-bottom:.2rem}.about-point p{font-size:13px;color:var(--text2)}
 .participate-block{padding:3rem 0;border-bottom:1px solid var(--border)}
 .reason-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.5rem;margin-top:1.5rem;border-top:1px solid var(--border)}
 .reason-item{position:relative;padding:1rem 0 1rem 28px;border-bottom:1px solid var(--border);font-size:14px;color:var(--text2)}
 .reason-item::before{content:'✓';position:absolute;left:0;color:var(--accent2);font-weight:900}
 .about-selection-block{padding:3rem 0;border-bottom:1px solid var(--border)}
-.about-selection-copy{max-width:790px;margin:.85rem 0 1.4rem;color:var(--text2);font-size:15px;line-height:1.72}
-.about-selection-details{max-width:790px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg2)}
-.about-selection-details summary{padding:1rem 1.1rem;cursor:pointer;font-size:13px;font-weight:800}
-.about-selection-details-body{display:grid;gap:.85rem;padding:0 1.1rem 1.1rem;color:var(--text2);font-size:13px;line-height:1.7}
-.about-selection-details-body .change-note{padding-top:.85rem;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
+.about-selection-copy{max-width:790px;margin:.85rem 0 1.3rem;color:var(--text2);font-size:15px;line-height:1.72}
+.team-selection-list{max-width:880px;border-top:1px solid var(--border)}
+.team-selection-row{display:grid;grid-template-columns:76px 128px minmax(0,1fr);gap:1.1rem;align-items:start;padding:1.15rem 0;border-bottom:1px solid var(--border)}
+.team-selection-code{color:var(--accent);font-size:14px;font-weight:900}
+.team-selection-count{color:var(--text);font-size:13px;font-weight:800}
+.team-selection-text{color:var(--text2);font-size:13px;line-height:1.62}
+.team-selection-note{max-width:880px;margin-top:1rem;color:var(--text3);font-size:12px;line-height:1.65}
 .pathway-block{padding:3rem 0}
-.pathway-copy{max-width:760px;margin:.85rem 0 1.3rem;color:var(--text2);font-size:15px;line-height:1.72}
-.international-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem}
-.international-chip{padding:7px 12px;border:1px solid rgba(26,86,219,.25);border-radius:100px;background:rgba(26,86,219,.07);color:var(--accent);font-size:12px;font-weight:800}
-.olympiad-guide{margin:1.5rem 0 1.7rem;border-top:1px solid var(--border)}
-.olympiad-guide-title{padding:1.25rem 0 .8rem;font-size:16px}
+.olympiad-guide{margin:.9rem 0 1.7rem;border-top:1px solid var(--border)}
 .olympiad-row{display:grid;grid-template-columns:90px minmax(0,.9fr) minmax(0,1.5fr);gap:1.2rem;padding:1rem 0;border-bottom:1px solid var(--border);align-items:start}
 .olympiad-code{color:var(--accent);font-size:14px;font-weight:900}.olympiad-name{font-size:13px;font-weight:750}.olympiad-description{color:var(--text2);font-size:13px;line-height:1.6}
 .about-actions{display:flex;gap:10px;flex-wrap:wrap}
@@ -192,7 +177,7 @@ html[data-theme="dark"] .status-bronze{background:rgba(251,146,60,.16);color:#fd
 .calendar-event{display:grid;grid-template-columns:120px 24px minmax(0,1fr);gap:12px;min-height:78px}
 .calendar-date{padding-top:1px;color:var(--text3);font-size:12px;font-weight:700;text-align:right}
 .calendar-track{display:flex;flex-direction:column;align-items:center}.calendar-dot{width:13px;height:13px;flex:0 0 auto;margin-top:3px;border:2px solid var(--accent2);border-radius:50%;background:var(--bg)}
-.calendar-event.current .calendar-dot{border-color:var(--accent);background:var(--accent);box-shadow:0 0 0 4px rgba(26,86,219,.12)}
+.calendar-event.current .calendar-dot{border-color:var(--accent);background:var(--accent);box-shadow:0 0 0 4px rgba(var(--accent-rgb),.12)}
 .calendar-event.international .calendar-dot{border-color:#f59e0b;background:#f59e0b}
 .calendar-line{width:1px;flex:1;background:var(--border)}.calendar-event:last-child .calendar-line{display:none}
 .calendar-copy{padding-bottom:1.15rem}.calendar-copy h3{font-size:15px;line-height:1.35;margin-bottom:.2rem}.calendar-copy p{font-size:13px;color:var(--text2);line-height:1.55}
@@ -212,14 +197,12 @@ html[data-theme="dark"] .status-bronze{background:rgba(251,146,60,.16);color:#fd
 .tree-branch.national .tree-stage::before{border-color:var(--accent2)}
 .tree-stage:not(:last-child)::after{content:'';position:absolute;left:8px;top:16px;bottom:0;width:1px;background:var(--border)}
 .tree-note{margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--border);color:var(--text2);font-size:11px;line-height:1.55}
-.tree-merge{position:relative;width:min(620px,90%);margin:0 auto;padding:1.25rem 1.5rem;border:1.5px solid var(--accent);border-radius:var(--rl);background:linear-gradient(135deg,rgba(26,86,219,.1),rgba(14,159,110,.07));text-align:center}
+.tree-merge{position:relative;width:min(620px,90%);margin:0 auto;padding:1.25rem 1.5rem;border:1.5px solid var(--accent);border-radius:var(--rl);background:linear-gradient(135deg,rgba(var(--accent-rgb),.1),rgba(var(--accent2-rgb),.07));text-align:center}
 .tree-merge::before{content:'';position:absolute;left:50%;top:-24px;width:1px;height:24px;background:var(--border)}
 .tree-merge h3{font-size:18px;margin-bottom:.25rem}.tree-merge p{font-size:12px;color:var(--text2)}
-.tree-after{position:relative;max-width:620px;margin:40px auto 0;padding:1rem;border-top:1px solid var(--border);color:var(--text2);font-size:13px;text-align:center}
-.tree-after::before{content:'↓';position:absolute;top:-31px;left:50%;transform:translateX(-50%);color:var(--accent);font-size:20px;font-weight:900}
 .selection-details{max-width:900px;margin:1.5rem auto 0;border:1px solid var(--border);border-radius:var(--r);background:var(--bg2)}
 .selection-details summary{padding:1rem 1.1rem;cursor:pointer;font-size:13px;font-weight:800}.selection-details p{padding:0 1.1rem 1.1rem;color:var(--text2);font-size:13px;line-height:1.7;white-space:pre-line}
-@media(max-width:700px){.about-story,.selection-head{grid-template-columns:1fr;gap:1.3rem}.reason-list{grid-template-columns:1fr}.olympiad-row{grid-template-columns:68px minmax(0,1fr)}.olympiad-description{grid-column:2}.calendar-head{display:block}.calendar-head p{margin-top:.7rem}.change-notice{display:block}.change-notice strong{display:block;margin-bottom:.35rem}.calendar-event{grid-template-columns:78px 18px minmax(0,1fr);gap:8px}.calendar-date{font-size:10px}.tree-branches{grid-template-columns:1fr;gap:28px;padding-bottom:28px}.tree-branches::before{display:none}.tree-branch::after{left:50%;bottom:-29px;height:29px}.tree-merge::before{top:-29px;height:29px}.about-title{font-size:32px}.about-lead{font-size:16px}}
+@media(max-width:700px){.about-story,.selection-head{grid-template-columns:1fr;gap:1.3rem}.reason-list{grid-template-columns:1fr}.olympiad-row{grid-template-columns:68px minmax(0,1fr)}.olympiad-description{grid-column:2}.team-selection-row{grid-template-columns:64px minmax(0,1fr);gap:.65rem 1rem}.team-selection-text{grid-column:2}.calendar-head{display:block}.calendar-head p{margin-top:.7rem}.change-notice{display:block}.change-notice strong{display:block;margin-bottom:.35rem}.calendar-event{grid-template-columns:78px 18px minmax(0,1fr);gap:8px}.calendar-date{font-size:10px}.tree-branches{grid-template-columns:1fr;gap:28px;padding-bottom:28px}.tree-branches::before{display:none}.tree-branch::after{left:50%;bottom:-29px;height:29px}.tree-merge::before{top:-29px;height:29px}.about-title{font-size:32px}.about-lead{font-size:16px}}
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2rem 2rem}
 .fi{max-width:960px;margin:0 auto}
 .fg{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
@@ -230,15 +213,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .ci{width:30px;height:30px;border-radius:8px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ct{font-size:13px;color:var(--text2);text-decoration:none;cursor:pointer}
 .ct:hover{color:var(--accent)}
-.fbot{border-top:1px solid var(--border);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.fbot{border-top:1px solid var(--border);padding-top:1.25rem}
 .fbot p{font-size:12px;color:var(--text3)}
-@media(max-width:640px){nav{padding:.75rem 1rem}.nav-right{gap:4px}.nl{padding:6px 10px;font-size:12px}.theme-toggle{width:34px;padding:6px}.theme-label{display:none}.stats{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr;gap:1.5rem}.inner{padding:1.5rem 1rem}.hero{padding:3rem 1rem 2.5rem}}
+@media(max-width:640px){nav{padding:.75rem 1rem}.nav-right{gap:4px}.nl{padding:6px 10px;font-size:12px}.theme-toggle{width:34px;padding:6px}.theme-label{display:none}.fg{grid-template-columns:1fr;gap:1.5rem}.inner{padding:1.5rem 1rem}.hero{padding:3rem 1rem 2.5rem}}
 
 /* Банк задач: каталог и отдельная страница каждой задачи */
 .problems-inner{max-width:1240px}
 .practice-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
 .practice-intro{max-width:720px;color:var(--text2);font-size:14px}
-.practice-count{font-size:12px;font-weight:700;color:var(--accent);background:rgba(26,86,219,.08);border:1px solid rgba(26,86,219,.18);padding:5px 12px;border-radius:100px;white-space:nowrap}
+.practice-count{font-size:12px;font-weight:700;color:var(--accent);background:rgba(var(--accent-rgb),.08);border:1px solid rgba(var(--accent-rgb),.18);padding:5px 12px;border-radius:100px;white-space:nowrap}
 .selection-view[hidden]{display:none!important}
 .selection-kicker{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:.7rem}
 .book-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
@@ -261,7 +244,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2re
 .catalog-search{position:relative;max-width:430px;margin:0 0 1rem}
 .catalog-search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:15px;pointer-events:none}
 .catalog-search-input{width:100%;height:40px;padding:8px 38px 8px 36px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text);font-size:13px;outline:none;transition:border-color .15s,box-shadow .15s}
-.catalog-search-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,86,219,.1)}
+.catalog-search-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(var(--accent-rgb),.1)}
 .catalog-search-input::placeholder{color:var(--text3)}
 .catalog-search-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:26px;height:26px;border:0;border-radius:6px;background:transparent;color:var(--text3);font-size:16px;cursor:pointer}
 .catalog-search-clear:hover{background:var(--bg2);color:var(--text)}
@@ -311,7 +294,7 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
 .problem-article-header{padding:1.7rem 1.8rem 1.35rem;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--bg2),var(--bg))}
 .problem-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:.75rem;min-width:0}
 .topic-chip,.level-chip{box-sizing:border-box;border-radius:100px;font-size:11px;font-weight:750}
-.topic-chip{min-height:27px;max-width:100%;display:inline-flex;align-items:center;padding:5px 11px;background:rgba(26,86,219,.1);color:var(--accent);line-height:1.15;overflow-wrap:anywhere;white-space:normal}
+.topic-chip{min-height:27px;max-width:100%;display:inline-flex;align-items:center;padding:5px 11px;background:rgba(var(--accent-rgb),.1);color:var(--accent);line-height:1.15;overflow-wrap:anywhere;white-space:normal}
 .level-chip{background:transparent}
 .level-chip.difficulty-chip{min-height:27px;display:inline-flex;align-items:center;justify-content:center;padding:5px 11px;background:var(--difficulty-bg);line-height:1.15;white-space:nowrap}
 .problem-page-number{font-size:11px;font-weight:800;letter-spacing:.07em;color:var(--text3);text-transform:uppercase;margin-bottom:5px}
@@ -343,12 +326,12 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
 .reveal-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.8rem;cursor:pointer;background:var(--bg2)}
 .reveal-heading h2{font-family:Georgia,'Times New Roman',serif;font-size:22px;margin:0}
 .reveal-btn{padding:7px 13px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text2);font-size:12px;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap}
-.reveal-btn:hover,.reveal-btn[aria-expanded="true"]{border-color:var(--accent);color:var(--accent);background:rgba(26,86,219,.06)}
+.reveal-btn:hover,.reveal-btn[aria-expanded="true"]{border-color:var(--accent);color:var(--accent);background:rgba(var(--accent-rgb),.06)}
 .reveal-panel{display:none;padding:1.45rem 1.8rem;border-top:1px solid var(--border);font-size:16px;line-height:1.78;font-family:Georgia,'Times New Roman',serif}
 .reveal-panel.open{display:block;animation:fadeUp .22s both}
 .hint-panel{background:rgba(245,158,11,.045)}
-.solution-panel{background:rgba(14,159,110,.035)}
-.answer-panel{background:rgba(26,86,219,.035)}
+.solution-panel{background:rgba(var(--accent2-rgb),.035)}
+.answer-panel{background:rgba(var(--accent-rgb),.035)}
 .answer-text{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.65}
 .problem-page-nav{position:static;z-index:auto;display:flex;align-items:stretch;justify-content:space-between;gap:10px;padding:1.1rem 1.8rem;border-bottom:0;background:var(--bg2)}
 .problem-nav-btn{display:flex;flex-direction:column;gap:2px;min-width:0;max-width:48%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text);cursor:pointer;text-align:left;font-size:12px;transition:border-color .15s,color .15s}
@@ -384,8 +367,8 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
   <div class="nav-right">
     <div class="nav-links">
       <button class="nl active" id="nl-home" onclick="go('home')">Главная</button>
-      <button class="nl" id="nl-problems" onclick="go('problems')">Задачи</button>
-      <button class="nl" id="nl-archive" onclick="go('archive')">Архив</button>
+      <button class="nl" id="nl-problems" onclick="go('problems')">Банк задач</button>
+      <button class="nl" id="nl-archive" onclick="go('archive')">Результаты</button>
       <button class="nl" id="nl-about" onclick="go('about')">Об олимпиаде</button>
     </div>
     <button class="theme-toggle" id="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Переключить цветовую тему" title="Переключить цветовую тему">
@@ -398,12 +381,11 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
 <div id="sec-home" class="sec active">
   <div class="hero">
     <canvas id="atom-canvas" width="220" height="220" style="display:block;margin:0 auto 1rem"></canvas>
-    <div class="hero-tag">КЫРГЫЗСТАН &nbsp;·&nbsp; ФИЗИКА &nbsp;·&nbsp; IPhO</div>
     <h1>Национальная <span>физическая</span><br>олимпиада</h1>
     <p class="hero-sub">Задачи, решения и понятный путь от национального отбора к международным олимпиадам по физике.</p>
     <div class="hbtns">
-      <button class="btn-p" onclick="go('problems')">Решать задачи</button>
-      <button class="btn-o" onclick="go('archive')">Архив и результаты</button>
+      <button class="btn-p" onclick="go('problems')">Банк задач</button>
+      <button class="btn-o" onclick="go('archive')">Результаты</button>
     </div>
   </div>
   <main class="inner home-inner">
@@ -413,21 +395,21 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
   <footer>
     <div class="fi">
       <div class="fg">
-        <div class="fc"><h4>IPhO Кыргызстан</h4><p>Национальная программа подготовки школьников к Международной физической олимпиаде. Кыргызская Республика.</p></div>
-        <div class="fc"><h4>Навигация</h4><a onclick="go('home')">Главная</a><a onclick="go('problems')">Тренировочные задачи</a><a onclick="go('archive')">Архив задач</a><a onclick="go('about')">Об олимпиаде</a><a onclick="openHomeSection('home-calendar-content')">Календарь</a></div>
+        <div class="fc"><h4>Национальная олимпиада по физике</h4><p>Отбор, задачи и результаты участников из Кыргызстана.</p></div>
+        <div class="fc"><h4>Навигация</h4><a onclick="go('home')">Главная</a><a onclick="go('problems')">Банк задач</a><a onclick="go('archive')">Результаты</a><a onclick="go('about')">Об олимпиаде</a></div>
         <div class="fc"><h4>Контакты</h4>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#229ED9" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></div><a href="https://t.me/+9GGnjui6VT05Mzli" target="_blank" class="ct">Telegram</a></div>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1"/></svg></div><a href="https://www.instagram.com/ipho_kg" target="_blank" class="ct">Instagram</a></div>
         </div>
       </div>
-      <div class="fbot"><p>© 2026 Национальная физическая олимпиада Кыргызской Республики</p><p>Отбор на IPhO 2026 · Бишкек</p></div>
+      <div class="fbot"><p>© 2026 Национальная олимпиада по физике Кыргызской Республики</p></div>
     </div>
   </footer>
 </div>
 
 <div id="sec-archive" class="sec">
   <div class="inner">
-    <p class="stitle">Архив задач и результатов</p>
+    <p class="stitle">Результаты</p>
     <div class="ytabs" id="archive-year-tabs"></div>
     <div id="archive-year-panels"></div>
   </div>
@@ -723,8 +705,8 @@ const DEFAULT_SITE_CONTENT = {
       'Сравнить свой уровень с сильными школьниками со всего Кыргызстана в едином рейтинге.',
       'Стать частью сообщества участников и тренеров, которые всерьёз занимаются олимпиадной физикой.'
     ],
-    pathTitle: 'От национального финала — к международным олимпиадам',
-    pathText: 'IV этап становится общей точкой отбора для дальнейшей подготовки и формирования международных команд. Конкретный состав и распределение участников по олимпиадам определяются результатами отбора и решениями организаторов.',
+    pathTitle: 'Международные олимпиады',
+    pathText: '',
     international: ['APhO','EuPhO','BPO','ISPhO','IPhO'],
     internationalDetails: [
       {code:'IPhO',name:'Международная физическая олимпиада',text:'Главная мировая олимпиада по физике для школьных национальных команд. Пять участников от страны проходят два пятичасовых тура — теоретический и экспериментальный. Для многих это вершина школьной олимпиадной физики.'},
@@ -757,9 +739,14 @@ const DEFAULT_SITE_CONTENT = {
     nationalNote: 'Общереспубликанский рейтинг даёт дополнительный маршрут к общему финальному отбору.',
     finalTitle: 'IV этап Национальной олимпиады',
     finalText: 'Топ-участники Национальной олимпиады + сильнейшие участники Республиканской олимпиады',
-    afterText: 'Дальнейшая подготовка · сборы · формирование команд на международные олимпиады',
-    rulesTitle: 'Что важно знать об отборе',
-    rulesText: 'На IV этапе результаты участников используются для дальнейшей подготовки и формирования международных команд. Точные квоты, возрастные категории, формат туров и окончательный порядок отбора определяются актуальными документами организаторов на соответствующий учебный год.'
+    afterText: '',
+    rulesTitle: 'Как формируются международные команды',
+    rulesText: 'По итогам IV этапа составляется общий рейтинг участников. На его основе формируются команды Кыргызстана на международные олимпиады.',
+    teamRules: [
+      {code:'IPhO',count:'5 участников',text:'Первые пять участников в итоговом рейтинге формируют команду на Международную физическую олимпиаду.'},
+      {code:'APhO',count:'8 участников',text:'Первые восемь участников в итоговом рейтинге формируют команду на Азиатскую физическую олимпиаду.'},
+      {code:'Другие',count:'По решению организаторов',text:'Составы на EuPhO, BPO, ISPhO и другие международные олимпиады определяются организаторами отдельно.'}
+    ]
   },
   results: JSON.parse(JSON.stringify(RESULTS))
 };
@@ -773,11 +760,21 @@ function mergeSiteContent(base,override){
   Object.keys(override).forEach(key=>{result[key]=mergeSiteContent(result[key],override[key])});
   return result;
 }
+function migrateSiteContent(content){
+  const a=content?.about||{};
+  const s=content?.selection||{};
+  if(a.pathTitle==='От национального финала — к международным олимпиадам')a.pathTitle='Международные олимпиады';
+  if(a.pathText==='IV этап становится общей точкой отбора для дальнейшей подготовки и формирования международных команд. Конкретный состав и распределение участников по олимпиадам определяются результатами отбора и решениями организаторов.')a.pathText='';
+  if(s.rulesTitle==='Что важно знать об отборе')s.rulesTitle='Как формируются международные команды';
+  if(s.rulesText==='На IV этапе результаты участников используются для дальнейшей подготовки и формирования международных команд. Точные квоты, возрастные категории, формат туров и окончательный порядок отбора определяются актуальными документами организаторов на соответствующий учебный год.')s.rulesText='По итогам IV этапа составляется общий рейтинг участников. На его основе формируются команды Кыргызстана на международные олимпиады.';
+  if(s.afterText==='Дальнейшая подготовка · сборы · формирование команд на международные олимпиады')s.afterText='';
+  return content;
+}
 function safeSiteUrl(value){try{const url=new URL(String(value||''),location.origin);return url.protocol==='https:'||url.protocol==='http:'?url.href:''}catch{return''}}
 function renderSelectionTree(selection){
   const s=selection||{};
   const stages=(items)=>(items||[]).map(item=>'<div class="tree-stage">'+escapeHtml(item)+'</div>').join('');
-  return '<div class="selection-tree"><div class="tree-branches"><article class="tree-branch republican"><h3 class="tree-branch-label">'+escapeHtml(s.republicanTitle||'Республиканская олимпиада')+'</h3><div class="tree-stages">'+stages(s.republicanStages)+'</div><p class="tree-note">'+escapeHtml(s.republicanNote||'')+'</p></article><article class="tree-branch national"><h3 class="tree-branch-label">'+escapeHtml(s.nationalTitle||'Национальная олимпиада')+'</h3><div class="tree-stages">'+stages(s.nationalStages)+'</div><p class="tree-note">'+escapeHtml(s.nationalNote||'')+'</p></article></div><article class="tree-merge"><h3>'+escapeHtml(s.finalTitle||'IV этап Национальной олимпиады')+'</h3><p>'+escapeHtml(s.finalText||'')+'</p></article><p class="tree-after">'+escapeHtml(s.afterText||'')+'</p></div>';
+  return '<div class="selection-tree"><div class="tree-branches"><article class="tree-branch republican"><h3 class="tree-branch-label">'+escapeHtml(s.republicanTitle||'Республиканская олимпиада')+'</h3><div class="tree-stages">'+stages(s.republicanStages)+'</div><p class="tree-note">'+escapeHtml(s.republicanNote||'')+'</p></article><article class="tree-branch national"><h3 class="tree-branch-label">'+escapeHtml(s.nationalTitle||'Национальная олимпиада')+'</h3><div class="tree-stages">'+stages(s.nationalStages)+'</div><p class="tree-note">'+escapeHtml(s.nationalNote||'')+'</p></article></div><article class="tree-merge"><h3>'+escapeHtml(s.finalTitle||'IV этап Национальной олимпиады')+'</h3><p>'+escapeHtml(s.finalText||'')+'</p></article></div>';
 }
 function renderCalendarEvent(item){
   const kind=['current','international'].includes(item.kind)?item.kind:'';
@@ -790,7 +787,7 @@ function renderHomeContent(){
   const calendarRoot=document.getElementById('home-calendar-content');
   const s=SITE_CONTENT.selection||{};
   if(selectionRoot){
-    selectionRoot.innerHTML='<header class="home-section-head"><div><p class="eyebrow">Два маршрута · один финал</p><h2 id="home-selection-title">'+escapeHtml(s.title||'Как устроен отбор')+'</h2></div><p>'+escapeHtml(s.intro||'')+'</p></header>'+renderSelectionTree(s)+'<div class="home-section-actions"><button class="btn-o" onclick="go(\'about\')">Подробнее об олимпиаде</button></div>';
+    selectionRoot.innerHTML='<header class="home-section-head"><div><p class="eyebrow">Два маршрута · один финал</p><h2 id="home-selection-title">'+escapeHtml(s.title||'Как устроен отбор')+'</h2></div><p>'+escapeHtml(s.intro||'')+'</p></header>'+renderSelectionTree(s);
   }
   if(calendarRoot){
     const events=SITE_CONTENT.calendar||[];
@@ -803,9 +800,9 @@ function renderAboutContent(){
   const root=document.getElementById('about-content');if(!root)return;const a=SITE_CONTENT.about||{},s=SITE_CONTENT.selection||{};
   const benefits=(a.benefits||[]).map((item,index)=>'<div class="about-point"><span class="about-point-number">'+String(index+1).padStart(2,'0')+'</span><div><h3>'+escapeHtml(item.title||'')+'</h3><p>'+escapeHtml(item.text||'')+'</p></div></div>').join('');
   const reasons=(a.reasons||[]).map(item=>'<div class="reason-item">'+escapeHtml(item)+'</div>').join('');
-  const international=(a.international||[]).map(item=>'<span class="international-chip">'+escapeHtml(item)+'</span>').join('');
   const guide=(a.internationalDetails||[]).map(item=>'<div class="olympiad-row"><span class="olympiad-code">'+escapeHtml(item.code||'')+'</span><span class="olympiad-name">'+escapeHtml(item.name||'')+'</span><p class="olympiad-description">'+escapeHtml(item.text||'')+'</p></div>').join('');
-  root.innerHTML='<header class="about-hero"><p class="eyebrow">'+escapeHtml(a.kicker||'Об олимпиаде')+'</p><h1 class="about-title">'+escapeHtml(a.title||'Национальная олимпиада по физике')+'</h1><p class="about-lead">'+escapeHtml(a.intro||'')+'</p></header><section class="about-story"><div><p class="eyebrow">Почему появилась NPhO</p><h2>'+escapeHtml(a.originTitle||'Почему появилась олимпиада')+'</h2></div><div><p class="about-story-copy">'+escapeHtml(a.originText||'')+'</p><h3 style="margin:1.7rem 0 .55rem;font-size:15px">'+escapeHtml(a.benefitTitle||'Что меняется')+'</h3><div class="about-points">'+benefits+'</div></div></section><section class="participate-block"><p class="eyebrow">Для участника</p><h2>'+escapeHtml(a.participateTitle||'Зачем участвовать')+'</h2><div class="reason-list">'+reasons+'</div></section><section class="about-selection-block"><p class="eyebrow">Отбор и сборная</p><h2>Как формируется сборная</h2><p class="about-selection-copy">'+escapeHtml(s.rulesText||'')+'</p><details class="about-selection-details"><summary>'+escapeHtml(s.rulesTitle||'Что важно знать об отборе')+'</summary><div class="about-selection-details-body"><p><strong>IV этап.</strong> '+escapeHtml(s.finalText||'')+'</p><p><strong>После финала.</strong> '+escapeHtml(s.afterText||'')+'</p><p class="change-note">'+escapeHtml(SITE_CONTENT.notice||'')+'</p></div></details><div class="about-actions" style="margin-top:1rem"><button class="btn-o" onclick="openHomeSection(\'home-selection-content\')">Посмотреть дерево отбора</button></div></section><section class="pathway-block"><p class="eyebrow">После финала</p><h2>'+escapeHtml(a.pathTitle||'Куда ведёт отбор')+'</h2><p class="pathway-copy">'+escapeHtml(a.pathText||'')+'</p><div class="international-row">'+international+'</div><div class="olympiad-guide"><h3 class="olympiad-guide-title">Чем отличаются международные олимпиады</h3>'+guide+'</div><div class="about-actions"><button class="btn-p" onclick="go(\'problems\')">Перейти к задачам</button><button class="btn-o" onclick="go(\'archive\')">Открыть архив</button></div></section>';
+  const teamRules=(s.teamRules||[]).map(item=>'<div class="team-selection-row"><span class="team-selection-code">'+escapeHtml(item.code||'')+'</span><span class="team-selection-count">'+escapeHtml(item.count||'')+'</span><p class="team-selection-text">'+escapeHtml(item.text||'')+'</p></div>').join('');
+  root.innerHTML='<header class="about-hero"><p class="eyebrow">'+escapeHtml(a.kicker||'Об олимпиаде')+'</p><h1 class="about-title">'+escapeHtml(a.title||'Национальная олимпиада по физике')+'</h1><p class="about-lead">'+escapeHtml(a.intro||'')+'</p></header><section class="about-story"><div><p class="eyebrow">Почему появилась NPhO</p><h2>'+escapeHtml(a.originTitle||'Почему появилась олимпиада')+'</h2></div><div><p class="about-story-copy">'+escapeHtml(a.originText||'')+'</p><h3 style="margin:1.7rem 0 .55rem;font-size:15px">'+escapeHtml(a.benefitTitle||'Что меняется')+'</h3><div class="about-points">'+benefits+'</div></div></section><section class="participate-block"><p class="eyebrow">Для участника</p><h2>'+escapeHtml(a.participateTitle||'Зачем участвовать')+'</h2><div class="reason-list">'+reasons+'</div></section><section class="about-selection-block"><p class="eyebrow">Итоги IV этапа</p><h2>'+escapeHtml(s.rulesTitle||'Как формируются международные команды')+'</h2><p class="about-selection-copy">'+escapeHtml(s.rulesText||'')+'</p><div class="team-selection-list">'+teamRules+'</div><p class="team-selection-note">'+escapeHtml(SITE_CONTENT.notice||'')+'</p></section><section class="pathway-block"><p class="eyebrow">Международный уровень</p><h2>'+escapeHtml(a.pathTitle||'Международные олимпиады')+'</h2><div class="olympiad-guide">'+guide+'</div><div class="about-actions"><button class="btn-p" onclick="go(\'problems\')">Банк задач</button><button class="btn-o" onclick="go(\'archive\')">Результаты</button></div></section>';
 }
 let ACTIVE_ARCHIVE_YEAR='2026';
 function renderArchivePanels(){
@@ -824,7 +821,7 @@ function renderSiteContent(){
   renderHomeContent();renderAboutContent();renderArchivePanels();
 }
 async function loadSiteContent(){
-  try{const response=await fetch('/api/site-content',{cache:'no-store',headers:{Accept:'application/json'}});if(!response.ok)throw new Error('HTTP '+response.status);const payload=await response.json();if(payload.content&&Object.keys(payload.content).length)SITE_CONTENT=mergeSiteContent(DEFAULT_SITE_CONTENT,payload.content)}catch(error){console.warn('Не удалось загрузить контент сайта:',error)}
+  try{const response=await fetch('/api/site-content',{cache:'no-store',headers:{Accept:'application/json'}});if(!response.ok)throw new Error('HTTP '+response.status);const payload=await response.json();if(payload.content&&Object.keys(payload.content).length)SITE_CONTENT=migrateSiteContent(mergeSiteContent(DEFAULT_SITE_CONTENT,payload.content))}catch(error){console.warn('Не удалось загрузить контент сайта:',error)}
   renderSiteContent();window.NPHO_SITE_CONTENT=SITE_CONTENT;return SITE_CONTENT;
 }
 window.NPHO_CONTENT_READY=loadSiteContent();
@@ -1936,10 +1933,38 @@ loadPublishedProblems();
   const OUTER_R=106;
 
   const LEVELS=[
-    {r:28, color:'#60a5fa', speed:0.011},
-    {r:46, color:'#34d399', speed:0.007},
-    {r:65, color:'#c084fc', speed:0.004},
+    {r:28, color:'', speed:0.011},
+    {r:46, color:'', speed:0.007},
+    {r:65, color:'', speed:0.004},
   ];
+
+  const CANVAS_PALETTES={
+    light:{
+      levels:['#5879a6','#3f8a76','#846d9c'],
+      waves:['#b86666','#3f8a76','#5879a6','#b18a4e','#846d9c','#4c8790','#b87753','#9d688a'],
+      nucleus:'#5276a8',nucleusCore:'#abc1dc',nucleusCenter:'#f4f7fb',highlight:'rgba(255,255,255,0.72)'
+    },
+    dark:{
+      levels:['#60a5fa','#34d399','#c084fc'],
+      waves:['#f87171','#34d399','#60a5fa','#fbbf24','#c084fc','#22d3ee','#fb923c','#e879f9'],
+      nucleus:'#3b82f6',nucleusCore:'#93c5fd',nucleusCenter:'#ffffff',highlight:'rgba(255,255,255,0.65)'
+    }
+  };
+  const WCOLS=[];
+  let canvasPalette;
+  function currentCanvasTheme(){
+    const explicit=document.documentElement.dataset.theme;
+    if(explicit==='light'||explicit==='dark')return explicit;
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches?'dark':'light';
+  }
+  function syncCanvasPalette(){
+    canvasPalette=CANVAS_PALETTES[currentCanvasTheme()];
+    LEVELS.forEach((level,index)=>{level.color=canvasPalette.levels[index]});
+    WCOLS.splice(0,WCOLS.length,...canvasPalette.waves);
+  }
+  syncCanvasPalette();
+  new MutationObserver(syncCanvasPalette).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+  window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change',syncCanvasPalette);
 
   const electrons=[
     {level:0, angle:0,            busy:false, waiting:false, transition:null},
@@ -1950,7 +1975,6 @@ loadPublishedProblems();
     {level:2, angle:Math.PI*1.72, busy:false, waiting:false, transition:null},
   ];
 
-  const WCOLS=['#f87171','#34d399','#60a5fa','#fbbf24','#c084fc','#22d3ee','#fb923c','#e879f9'];
   const waves=[];
   const pulses=[];
   const trails=electrons.map(()=>[]);
@@ -2093,11 +2117,11 @@ loadPublishedProblems();
       ctx.beginPath();ctx.arc(CX,CY,lv.r,0,Math.PI*2);
       ctx.strokeStyle=lv.color+'1a';ctx.lineWidth=1;ctx.stroke();
     });
-    ctx.beginPath();ctx.arc(CX,CY,14,0,Math.PI*2);ctx.fillStyle='#3b82f60a';ctx.fill();
-    ctx.beginPath();ctx.arc(CX,CY,10,0,Math.PI*2);ctx.fillStyle='#3b82f614';ctx.fill();
-    ctx.beginPath();ctx.arc(CX,CY,7,0,Math.PI*2);ctx.fillStyle='#3b82f6';ctx.fill();
-    ctx.beginPath();ctx.arc(CX,CY,4,0,Math.PI*2);ctx.fillStyle='#93c5fd';ctx.fill();
-    ctx.beginPath();ctx.arc(CX,CY,1.5,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();
+    ctx.beginPath();ctx.arc(CX,CY,14,0,Math.PI*2);ctx.fillStyle=canvasPalette.nucleus+'0a';ctx.fill();
+    ctx.beginPath();ctx.arc(CX,CY,10,0,Math.PI*2);ctx.fillStyle=canvasPalette.nucleus+'14';ctx.fill();
+    ctx.beginPath();ctx.arc(CX,CY,7,0,Math.PI*2);ctx.fillStyle=canvasPalette.nucleus;ctx.fill();
+    ctx.beginPath();ctx.arc(CX,CY,4,0,Math.PI*2);ctx.fillStyle=canvasPalette.nucleusCore;ctx.fill();
+    ctx.beginPath();ctx.arc(CX,CY,1.5,0,Math.PI*2);ctx.fillStyle=canvasPalette.nucleusCenter;ctx.fill();
     for(let i=pulses.length-1;i>=0;i--){if(!drawPulse(pulses[i]))pulses.splice(i,1);}
     for(let i=waves.length-1;i>=0;i--){if(!drawWave(waves[i]))waves.splice(i,1);}
     electrons.forEach((e,ei)=>{
@@ -2119,7 +2143,7 @@ loadPublishedProblems();
       ctx.beginPath();ctx.arc(ex,ey,10,0,Math.PI*2);ctx.fillStyle=col+'0f';ctx.fill();
       ctx.beginPath();ctx.arc(ex,ey,6.5,0,Math.PI*2);ctx.fillStyle=col+'2c';ctx.fill();
       ctx.beginPath();ctx.arc(ex,ey,3.5,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
-      ctx.beginPath();ctx.arc(ex-0.8,ey-0.8,1.2,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,0.65)';ctx.fill();
+      ctx.beginPath();ctx.arc(ex-0.8,ey-0.8,1.2,0,Math.PI*2);ctx.fillStyle=canvasPalette.highlight;ctx.fill();
       if(e.transition&&e.transition.progress>=1)finishTransition(e);
     });
     tick++;
