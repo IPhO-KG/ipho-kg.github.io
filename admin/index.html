@@ -407,6 +407,32 @@
     .version-copy span { color: var(--faint); font-size: 9px; }
     .badge-current { padding: 4px 8px; border-radius: 99px; background: #e7f7ef; color: var(--green); font-size: 9px; font-weight: 800; }
 
+    .modal-card.content-card { width: min(1180px,100%); height: min(900px,calc(100vh - 44px)); }
+    .content-tabs { display: flex; gap: 4px; padding: 9px 16px 0; border-bottom: 1px solid var(--line); background: var(--surface-2); overflow-x: auto; }
+    .content-tab { padding: 8px 12px 10px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--muted); font-size: 11px; font-weight: 800; white-space: nowrap; }
+    .content-tab.active { border-bottom-color: var(--accent); color: var(--accent); }
+    .content-panel { display: none; }
+    .content-panel.active { display: block; }
+    .content-form { display: grid; gap: 15px; }
+    .content-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 11px; }
+    .content-grid .wide { grid-column: 1 / -1; }
+    .content-textarea { min-height: 92px; resize: vertical; line-height: 1.55; }
+    .content-section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 3px; padding-top: 13px; border-top: 1px solid var(--line); }
+    .content-section-head:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    .content-section-head strong { font-size: 12px; }
+    .content-section-head span { display: block; margin-top: 2px; color: var(--muted); font-size: 10px; }
+    .content-rows { display: grid; gap: 8px; }
+    .content-row { display: grid; grid-template-columns: minmax(115px,.7fr) minmax(160px,1fr) minmax(220px,1.7fr) auto; gap: 7px; align-items: start; padding: 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+    .content-row.calendar-row { grid-template-columns: minmax(120px,.7fr) minmax(190px,1.3fr) minmax(130px,.7fr) auto; }
+    .content-row .calendar-wide { grid-column: 1 / -1; }
+    .content-row.benefit-row { grid-template-columns: minmax(150px,.8fr) minmax(260px,2fr) auto; }
+    .content-row.archive-row { grid-template-columns: minmax(190px,1.5fr) repeat(3,minmax(65px,.5fr)) minmax(135px,1fr) auto; }
+    .content-row-actions { display: flex; gap: 4px; }
+    .content-helper { padding: 9px 11px; border: 1px solid #cbdaf9; border-radius: 7px; background: var(--accent-soft); color: #3b5f9e; font-size: 10px; }
+    .content-loading { display: grid; place-items: center; min-height: 280px; color: var(--muted); }
+    .archive-toolbar { display: flex; align-items: end; gap: 8px; }
+    .archive-toolbar .field { min-width: 150px; }
+
     @media (max-width: 1180px) {
       :root { --explorer-width: 245px; --preview-width: 39vw; }
       .paper { padding: 42px 38px 60px; }
@@ -440,6 +466,10 @@
       .modal-backdrop { padding: 8px; }
       .modal-card { max-height: calc(100vh - 16px); }
       .structure-controls { grid-template-columns: 1fr; }
+      .content-grid { grid-template-columns: 1fr; }
+      .content-grid .wide { grid-column: auto; }
+      .content-row,.content-row.benefit-row,.content-row.archive-row { grid-template-columns: 1fr; }
+      .content-row-actions { justify-content: flex-end; }
       .structure-task { grid-template-columns: auto 46px minmax(0,1fr); }
       .structure-task-actions { grid-column: 2 / -1; justify-content: flex-end; }
       .paper { min-height: 0; padding: 32px 24px 48px; }
@@ -464,6 +494,7 @@
       <div class="save-state" id="save-state"><span class="state-dot"></span><span id="save-state-text">Сохранено</span></div>
       <button class="btn mobile-pane-toggle" type="button" onclick="toggleMobilePreview()" id="mobile-preview-toggle">Предпросмотр</button>
       <button class="btn" type="button" onclick="openCatalogManager()">Структура</button>
+      <button class="btn" type="button" onclick="openContentEditor()">Контент сайта</button>
       <button class="btn" type="button" onclick="openVersionHistory()" id="history-button">История</button>
       <a class="btn" href="/#problems" target="_blank" rel="noopener"><span class="open-site-label">Открыть сайт</span> ↗</a>
       <button class="btn" id="save-draft" type="button" onclick="saveProblem('draft')">Сохранить</button>
@@ -495,12 +526,12 @@
     <section class="editor-pane">
       <div class="metadata">
         <div class="metadata-grid primary-metadata-grid">
-          <div class="field"><label for="book">Задачник</label><input class="control" id="book" list="book-options" data-field="book"><datalist id="book-options"><option>Савченко</option><option>Овчинкин</option><option>Сборник NPhO</option><option>Авторские задачи</option></datalist></div>
-          <div class="field"><label for="topic">Раздел</label><input class="control" id="topic" list="topic-options" data-field="topic"><datalist id="topic-options"><option>Механика</option><option>Термодинамика</option><option>Электричество</option><option>Оптика</option><option>Колебания и волны</option><option>Современная физика</option></datalist></div>
+          <div class="field"><label for="book">Задачник</label><select class="control taxonomy-select" id="book" data-field="book"></select></div>
+          <div class="field"><label for="topic">Раздел</label><select class="control taxonomy-select" id="topic" data-field="topic"></select></div>
           <div class="field difficulty-field"><label>Сложность</label><div class="difficulty-control" id="difficulty-control"></div></div>
         </div>
         <div class="metadata-grid catalog-metadata-grid">
-          <div class="field"><label for="chapter">Глава</label><input class="control" id="chapter" list="chapter-options" data-field="chapter" placeholder="Глава 1. Кинематика"><datalist id="chapter-options"></datalist></div>
+          <div class="field"><label for="chapter">Глава</label><select class="control taxonomy-select" id="chapter" data-field="chapter"></select></div>
           <div class="field"><label for="problemNumber">Номер задачи</label><input class="control" id="problemNumber" data-field="problemNumber" placeholder="1.1" maxlength="30"></div>
           <div class="field"><label for="chapterOrder">Порядок главы</label><input class="control" id="chapterOrder" data-field="chapterOrder" type="number" min="1" step="1" inputmode="numeric"></div>
           <div class="field"><label for="sortOrder">Порядок задачи</label><input class="control" id="sortOrder" data-field="sortOrder" type="number" min="1" step="1" inputmode="numeric"></div>
@@ -522,6 +553,7 @@
         <button class="editor-tab" type="button" data-tab="hints" onclick="showEditorTab('hints',this)">Подсказки <span class="tab-count" id="hints-count">0</span></button>
         <button class="editor-tab" type="button" data-tab="solution" onclick="showEditorTab('solution',this)">Решение</button>
         <button class="editor-tab" type="button" data-tab="answer" onclick="showEditorTab('answer',this)">Ответ</button>
+        <button class="editor-tab" type="button" data-tab="author-comment" onclick="showEditorTab('author-comment',this)">Комментарий автора</button>
         <button class="editor-tab" type="button" data-tab="images" onclick="showEditorTab('images',this)">Рисунки <span class="tab-count" id="images-count">0</span></button>
       </nav>
 
@@ -561,6 +593,11 @@
         <section class="tab-panel" id="tab-answer">
           <div class="editor-toolbar"><button class="tool" type="button" onclick="insertLatex('\\boxed{x}',7)">□x</button><button class="tool" type="button" onclick="insertLatex('\\frac{a}{b}',6)">a/b</button><span class="toolbar-note">Краткий итог без повторения решения</span></div>
           <textarea class="source-editor latex-source" id="answer" data-field="answer" placeholder="$\\boxed{x=...}$"></textarea>
+        </section>
+
+        <section class="tab-panel" id="tab-author-comment">
+          <div class="editor-toolbar"><button class="tool" type="button" onclick="insertLatex('**текст**',2)"><b>B</b></button><button class="tool" type="button" onclick="insertLatex('\\frac{a}{b}',6)">a/b</button><span class="toolbar-note">Необязательные мысли, советы или уточнения — появятся после ответа</span></div>
+          <textarea class="source-editor latex-source" id="authorComment" data-field="authorComment" placeholder="Например: Мне нравится эта задача за короткую идею…"></textarea>
         </section>
 
         <section class="tab-panel" id="tab-images">
@@ -609,6 +646,23 @@
     </section>
   </div>
 
+  <div class="modal-backdrop" id="content-modal" hidden onclick="if(event.target===this)closeContentEditor()">
+    <section class="modal-card content-card" role="dialog" aria-modal="true" aria-labelledby="content-title">
+      <header class="modal-head">
+        <div class="modal-head-copy"><strong id="content-title">Контент сайта</strong><span>Тексты, календарь, схема отбора и архив — без изменения дизайна</span></div>
+        <button class="mini-btn" type="button" onclick="closeContentEditor()" aria-label="Закрыть">×</button>
+      </header>
+      <nav class="content-tabs" aria-label="Разделы контента">
+        <button class="content-tab active" type="button" data-content-tab="about" onclick="showContentTab('about',this)">Об олимпиаде</button>
+        <button class="content-tab" type="button" data-content-tab="calendar" onclick="showContentTab('calendar',this)">Календарь</button>
+        <button class="content-tab" type="button" data-content-tab="selection" onclick="showContentTab('selection',this)">Древо отбора</button>
+        <button class="content-tab" type="button" data-content-tab="archive" onclick="showContentTab('archive',this)">Архив</button>
+      </nav>
+      <div class="modal-body" id="content-editor-body"><div class="content-loading">Загружаем текущий контент…</div></div>
+      <footer class="modal-foot"><button class="btn" type="button" onclick="closeContentEditor()">Закрыть</button><button class="btn primary" type="button" onclick="saveSiteContent()" id="save-site-content">Сохранить на сайте</button></footer>
+    </section>
+  </div>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -619,10 +673,11 @@
     let draft = blankProblem(), previewTimer, toastTimer, localBackupTimer;
     let solutionCursor = { start: 0, end: 0 };
     let structureWorking = [], structureDirty = false, draggedTaskId = null;
+    let siteContent = null, siteContentDirty = false, activeContentTab = 'about', activeArchiveYear = '2026';
     const DEFAULT_BOOKS=['Савченко','Овчинкин','Сборник NPhO','Авторские задачи'];
     const DEFAULT_TOPICS=['Механика','Термодинамика','Электричество','Оптика','Колебания и волны','Современная физика'];
 
-    function blankProblem(){return{id:null,slug:'',book:'Савченко',topic:'Механика',chapter:'Глава 1',chapterOrder:1,problemNumber:'',sortOrder:1,difficulty:2,title:'',statement:'',solution:'',answer:'',hints:[],images:[],status:'draft'}}
+    function blankProblem(){return{id:null,slug:'',book:'Савченко',topic:'Механика',chapter:'Глава 1',chapterOrder:1,problemNumber:'',sortOrder:1,difficulty:2,title:'',statement:'',solution:'',answer:'',authorComment:'',hints:[],images:[],status:'draft'}}
     function normalizeProblem(problem){return{...blankProblem(),...problem,chapter:problem?.chapter||'Без главы',chapterOrder:Number(problem?.chapterOrder)||1,problemNumber:String(problem?.problemNumber||''),sortOrder:Number(problem?.sortOrder)||1,hints:Array.isArray(problem?.hints)?problem.hints:[],images:Array.isArray(problem?.images)?problem.images:[]}}
     function uid(prefix){return crypto.randomUUID?crypto.randomUUID():prefix+'-'+Date.now()+'-'+Math.random().toString(36).slice(2)}
     function escapeHtml(value){return String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}
@@ -674,7 +729,7 @@
       const hold=(math,display)=>{const id=tokens.length;tokens.push(display?'<div>\\['+math.trim()+'\\]</div>':'<span>\\('+math.trim()+'\\)</span>');return'NPHOMATH'+id+'X'};
       safe=safe.replace(/\$\$([\s\S]*?)\$\$/g,(_,m)=>hold(m,true)).replace(/\\\[([\s\S]*?)\\\]/g,(_,m)=>hold(m,true)).replace(/\\\(([\s\S]*?)\\\)/g,(_,m)=>hold(m,false)).replace(/(^|[^\\$])\$([^\n$]+?)\$/g,(_,p,m)=>p+hold(m,false));
       const inline=value=>value.replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/__([^_]+)__/g,'<strong>$1</strong>').replace(/\*([^*]+)\*/g,'<em>$1</em>');
-      const html=safe.split(/\n{2,}/).map(x=>x.trim()).filter(Boolean).map(block=>{if(/^NPHOMATH\d+X$/.test(block)||/^NPHOIMAGE\d+X$/.test(block))return block;if(/^###\s+/.test(block))return'<h3>'+inline(block.replace(/^###\s+/,''))+'</h3>';if(/^##\s+/.test(block))return'<h2>'+inline(block.replace(/^##\s+/,''))+'</h2>';if(/^#\s+/.test(block))return'<h1>'+inline(block.replace(/^#\s+/,''))+'</h1>';const lines=block.split('\n');if(lines.every(line=>/^[-*]\s+/.test(line)))return'<ul>'+lines.map(line=>'<li>'+inline(line.replace(/^[-*]\s+/,''))+'</li>').join('')+'</ul>';if(lines.every(line=>/^\d+[.)]\s+/.test(line)))return'<ol>'+lines.map(line=>'<li>'+inline(line.replace(/^\d+[.)]\s+/,''))+'</li>').join('')+'</ol>';if(block.startsWith('&gt; '))return'<blockquote>'+inline(block.replace(/^&gt;\s?/,'').replace(/\n&gt;\s?/g,'<br>'))+'</blockquote>';return'<p>'+inline(block).replace(/\n/g,'<br>')+'</p>'}).join('');
+      const html=safe.split(/\n{2,}/).map(x=>x.trim()).filter(Boolean).map(block=>{if(/^NPHOMATH\d+X$/.test(block)||/^NPHOIMAGE\d+X$/.test(block))return block;if(/^###\s+/.test(block))return'<h3>'+inline(block.replace(/^###\s+/,''))+'</h3>';if(/^##\s+/.test(block))return'<h2>'+inline(block.replace(/^##\s+/,''))+'</h2>';if(/^#\s+/.test(block))return'<h1>'+inline(block.replace(/^#\s+/,''))+'</h1>';const lines=block.split('\n');if(lines.every(line=>/^[-*]\s+/.test(line)))return'<ul>'+lines.map(line=>'<li>'+inline(line.replace(/^[-*]\s+/,''))+'</li>').join('')+'</ul>';if(lines.every(line=>/^\d+[.)]\s+/.test(line)))return'<ol>'+lines.map(line=>{const match=line.match(/^(\d+)[.)]\s+(.*)$/);return'<li value="'+Number(match[1])+'">'+inline(match[2])+'</li>'}).join('')+'</ol>';if(block.startsWith('&gt; '))return'<blockquote>'+inline(block.replace(/^&gt;\s?/,'').replace(/\n&gt;\s?/g,'<br>'))+'</blockquote>';return'<p>'+inline(block).replace(/\n/g,'<br>')+'</p>'}).join('');
       return html
         .replace(/NPHOMATH(\d+)X/g,(_,id)=>tokens[Number(id)]||'')
         .replace(/NPHOIMAGE(\d+)X/g,(_,id)=>imageTokens[Number(id)]||'');
@@ -689,7 +744,8 @@
       const statement=draft.statement.trim()?renderRich(draft.statement):'<p class="preview-empty">Условие появится здесь по мере ввода.</p>';
       const solution=draft.solution.trim()?'<section class="paper-section"><h2>Решение</h2><div class="rich-preview">'+renderRich(draft.solution,draft.images)+'</div></section>':'';
       const answer=draft.answer.trim()?'<section class="paper-section"><h2>Ответ</h2><div class="preview-answer rich-preview">'+renderRich(draft.answer)+'</div></section>':'';
-      root.innerHTML='<header class="paper-header"><div class="paper-kicker">'+escapeHtml(draft.problemNumber?'Задача '+draft.problemNumber:'NPhO · банк задач')+'</div><div class="preview-chips"><span class="preview-chip">'+escapeHtml(draft.book||'Задачник')+' · '+escapeHtml(draft.topic||'Раздел')+' · '+escapeHtml(draft.chapter||'Без главы')+'</span><span class="preview-chip level">'+difficultyName(draft.difficulty)+'</span></div><h1>'+escapeHtml(draft.title.trim()||'Название задачи')+'</h1></header><section class="paper-section"><h2>Условие</h2><div class="rich-preview">'+statement+'</div>'+previewImages()+'</section>'+previewHints()+solution+answer;
+      const authorComment=draft.authorComment.trim()?'<section class="paper-section"><h2>Комментарий автора</h2><div class="rich-preview">'+renderRich(draft.authorComment)+'</div></section>':'';
+      root.innerHTML='<header class="paper-header"><div class="paper-kicker">'+escapeHtml(draft.problemNumber?'Задача '+draft.problemNumber:'NPhO · банк задач')+'</div><div class="preview-chips"><span class="preview-chip">'+escapeHtml(draft.book||'Задачник')+' · '+escapeHtml(draft.topic||'Раздел')+' · '+escapeHtml(draft.chapter||'Без главы')+'</span><span class="preview-chip level">'+difficultyName(draft.difficulty)+'</span></div><h1>'+escapeHtml(draft.title.trim()||'Название задачи')+'</h1></header><section class="paper-section"><h2>Условие</h2><div class="rich-preview">'+statement+'</div>'+previewImages()+'</section>'+previewHints()+solution+answer+authorComment;
       if(window.MathJax?.typesetPromise){window.MathJax.typesetClear?.([root]);window.MathJax.typesetPromise([root]).catch(()=>{})}
     }
     function schedulePreview(){clearTimeout(previewTimer);previewTimer=setTimeout(renderDocumentPreview,110)}
@@ -697,11 +753,28 @@
     function renderDifficulty(){document.getElementById('difficulty-control').innerHTML=[1,2,3,4].map(level=>'<button class="difficulty-btn '+(level===Number(draft.difficulty)?'active':'')+'" data-level="'+level+'" type="button" onclick="setDifficulty('+level+')" title="'+difficultyName(level)+'">'+level+'</button>').join('')}
     function setDifficulty(value){draft.difficulty=value;renderDifficulty();setDirty();schedulePreview()}
     function showEditorTab(name,button){activeTab=name;localStorage.setItem('npho-editor-tab',name);document.querySelectorAll('.editor-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.tab===name));document.querySelectorAll('.tab-panel').forEach(panel=>panel.classList.toggle('active',panel.id==='tab-'+name));button?.blur();const area=document.querySelector('#tab-'+name+' .latex-source');if(area)activeTextarea=area}
-    function fillForm(){['book','topic','chapter','chapterOrder','problemNumber','sortOrder','title','slug','statement','solution','answer'].forEach(name=>document.getElementById(name).value=draft[name]??'');solutionCursor={start:String(draft.solution||'').length,end:String(draft.solution||'').length};renderChapterOptions();renderDifficulty();renderHints();renderImages();renderDocumentPreview();updateDocumentHeading();updateSlugPreview();document.getElementById('archive-task').hidden=!draft.id;document.getElementById('history-button').disabled=!draft.id;const tab=document.querySelector('.editor-tab[data-tab="'+activeTab+'"]')||document.querySelector('.editor-tab');showEditorTab(tab.dataset.tab,tab)}
+    function fillForm(){renderTaxonomyControls();['chapterOrder','problemNumber','sortOrder','title','slug','statement','solution','answer','authorComment'].forEach(name=>document.getElementById(name).value=draft[name]??'');solutionCursor={start:String(draft.solution||'').length,end:String(draft.solution||'').length};renderDifficulty();renderHints();renderImages();renderDocumentPreview();updateDocumentHeading();updateSlugPreview();document.getElementById('archive-task').hidden=!draft.id;document.getElementById('history-button').disabled=!draft.id;const tab=document.querySelector('.editor-tab[data-tab="'+activeTab+'"]')||document.querySelector('.editor-tab');showEditorTab(tab.dataset.tab,tab)}
 
-    function renderChapterOptions(){
-      const names=[...new Set(problems.filter(item=>item.book===draft.book&&item.topic===draft.topic).map(item=>item.chapter).filter(Boolean))];
-      document.getElementById('chapter-options').innerHTML=names.map(name=>'<option value="'+escapeAttribute(name)+'"></option>').join('');
+    function taxonomyValues(defaults,field,filterFn=()=>true,current=''){
+      return [...new Set([...defaults,...problems.filter(filterFn).map(item=>item[field]),current].map(value=>String(value||'').trim()).filter(Boolean))].sort(catalogNaturalCompare);
+    }
+    function taxonomySelectHtml(values,current){return values.map(value=>'<option value="'+escapeAttribute(value)+'" '+(value===current?'selected':'')+'>'+escapeHtml(value)+'</option>').join('')+'<option value="__new__">＋ Новое название…</option>'}
+    function renderTaxonomyControls(){
+      const books=taxonomyValues(DEFAULT_BOOKS,'book',()=>true,draft.book);document.getElementById('book').innerHTML=taxonomySelectHtml(books,draft.book);
+      const topics=taxonomyValues(DEFAULT_TOPICS,'topic',item=>item.book===draft.book,draft.topic);document.getElementById('topic').innerHTML=taxonomySelectHtml(topics,draft.topic);
+      const chapters=taxonomyValues([],'chapter',item=>item.book===draft.book&&item.topic===draft.topic,draft.chapter);document.getElementById('chapter').innerHTML=taxonomySelectHtml(chapters.length?chapters:['Без главы'],draft.chapter);
+    }
+    function renderChapterOptions(){renderTaxonomyControls()}
+    function changeTaxonomy(select){
+      const field=select.dataset.field,previous=draft[field];let value=select.value;
+      if(value==='__new__'){
+        value=prompt(field==='book'?'Название задачника':field==='topic'?'Название раздела':'Название главы',previous||'')?.trim()||'';
+        if(!value){renderTaxonomyControls();return}
+      }
+      draft[field]=value;
+      renderTaxonomyControls();
+      if(['book','problemNumber','title'].includes(field))updateSlugPreview();
+      setDirty();schedulePreview();
     }
 
     function renderHints(){
@@ -814,6 +887,84 @@
       finally{button.disabled=false;button.textContent='Сохранить структуру'}
     }
 
+    function cloneJson(value){return JSON.parse(JSON.stringify(value||{}))}
+    function ensureEditableContent(value){
+      const content=value&&typeof value==='object'?cloneJson(value):{};
+      content.about=content.about&&typeof content.about==='object'?content.about:{};
+      content.about.benefits=Array.isArray(content.about.benefits)?content.about.benefits:[];
+      content.about.reasons=Array.isArray(content.about.reasons)?content.about.reasons:[];
+      content.about.international=Array.isArray(content.about.international)?content.about.international:[];
+      content.about.internationalDetails=Array.isArray(content.about.internationalDetails)?content.about.internationalDetails:[];
+      content.calendar=Array.isArray(content.calendar)?content.calendar:[];
+      content.selection=content.selection&&typeof content.selection==='object'?content.selection:{};
+      content.selection.republicanStages=Array.isArray(content.selection.republicanStages)?content.selection.republicanStages:[];
+      content.selection.nationalStages=Array.isArray(content.selection.nationalStages)?content.selection.nationalStages:[];
+      content.results=content.results&&typeof content.results==='object'?content.results:{};
+      return content;
+    }
+    async function readPublicSiteContent(){
+      return await new Promise((resolve,reject)=>{
+        const frame=document.createElement('iframe');frame.hidden=true;frame.src='/?content-editor='+Date.now();
+        const timer=setTimeout(()=>{frame.remove();reject(new Error('Главная страница не ответила'))},12000);
+        frame.onload=async()=>{try{await frame.contentWindow.NPHO_CONTENT_READY;const value=frame.contentWindow.NPHO_SITE_CONTENT;if(!value)throw new Error('Контент сайта недоступен');clearTimeout(timer);frame.remove();resolve(cloneJson(value))}catch(error){clearTimeout(timer);frame.remove();reject(error)}};
+        document.body.appendChild(frame);
+      });
+    }
+    async function openContentEditor(){
+      const modal=document.getElementById('content-modal');modal.hidden=false;siteContentDirty=false;document.getElementById('content-editor-body').innerHTML='<div class="content-loading">Загружаем текущий контент…</div>';
+      try{siteContent=ensureEditableContent(await readPublicSiteContent());const years=Object.keys(siteContent.results).sort();if(!years.includes(activeArchiveYear))activeArchiveYear=years.at(-1)||String(new Date().getFullYear());renderContentEditor();markSiteContentDirty(false)}
+      catch(error){try{const response=await fetch(API+'/site-content',{cache:'no-store'}),data=await response.json();if(!response.ok)throw new Error(data.error||'Не удалось загрузить контент');siteContent=ensureEditableContent(data.content);renderContentEditor();markSiteContentDirty(false);showToast('Загружены только сохранённые данные: обновите index.html вместе с админкой')}catch(inner){document.getElementById('content-editor-body').innerHTML='<div class="content-loading">'+escapeHtml(inner.message)+'</div>';showToast(inner.message,'error')}}
+    }
+    function closeContentEditor(){if(siteContentDirty&&!confirm('Закрыть редактор контента без сохранения?'))return;siteContentDirty=false;document.getElementById('content-modal').hidden=true}
+    function markSiteContentDirty(value=true){siteContentDirty=value;const button=document.getElementById('save-site-content');if(button)button.textContent=value?'Сохранить изменения':'Сохранено'}
+    function showContentTab(name,button){activeContentTab=name;document.querySelectorAll('.content-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.contentTab===name));document.querySelectorAll('.content-panel').forEach(panel=>panel.classList.toggle('active',panel.id==='content-panel-'+name));button?.blur()}
+    function contentInput(id,label,value,path,wide=false,textarea=false,help=''){
+      return '<div class="field '+(wide?'wide':'')+'"><label for="'+id+'">'+escapeHtml(label)+'</label>'+(textarea?'<textarea class="control content-textarea" id="'+id+'" oninput="setSiteContentValue('+inlineArgument(path)+',this.value)">'+escapeHtml(value||'')+'</textarea>':'<input class="control" id="'+id+'" value="'+escapeAttribute(value||'')+'" oninput="setSiteContentValue('+inlineArgument(path)+',this.value)">')+(help?'<span class="field-help">'+escapeHtml(help)+'</span>':'')+'</div>';
+    }
+    function setSiteContentValue(path,value){const parts=String(path).split('.');let target=siteContent;parts.slice(0,-1).forEach(part=>{if(!target[part]||typeof target[part]!=='object')target[part]={};target=target[part]});target[parts.at(-1)]=value;markSiteContentDirty()}
+    function lines(value){return String(value||'').split('\n').map(item=>item.trim()).filter(Boolean)}
+    function setSiteContentLines(path,value){const parts=String(path).split('.');let target=siteContent;parts.slice(0,-1).forEach(part=>{if(!target[part]||typeof target[part]!=='object')target[part]={};target=target[part]});target[parts.at(-1)]=lines(value);markSiteContentDirty()}
+    function renderContentEditor(){
+      const a=siteContent.about,s=siteContent.selection;
+      document.getElementById('content-editor-body').innerHTML='<section class="content-panel" id="content-panel-about"><div class="content-form"><div class="content-helper">Здесь меняется смысл страницы «Об олимпиаде». Вёрстка, цвета и адаптивность останутся целыми.</div><div class="content-grid">'
+        +contentInput('ca-kicker','Надзаголовок',a.kicker,'about.kicker')+contentInput('ca-title','Главный заголовок',a.title,'about.title')+contentInput('ca-intro','Вводный абзац',a.intro,'about.intro',true,true)
+        +contentInput('ca-origin-title','Заголовок истории',a.originTitle,'about.originTitle')+contentInput('ca-benefit-title','Заголовок преимуществ',a.benefitTitle,'about.benefitTitle')+contentInput('ca-origin','Почему появилась олимпиада',a.originText,'about.originText',true,true)
+        +'</div><div class="content-section-head"><div><strong>Что меняется для участника</strong><span>Короткие смысловые пункты</span></div><button class="btn" type="button" onclick="addBenefitRow()">＋ Пункт</button></div><div class="content-rows" id="content-benefits"></div><div class="content-grid">'
+        +contentInput('ca-participate','Заголовок «зачем участвовать»',a.participateTitle,'about.participateTitle')+contentInput('ca-path-title','Заголовок пути дальше',a.pathTitle,'about.pathTitle')
+        +'<div class="field wide"><label for="ca-reasons">Причины участвовать — по одной на строке</label><textarea class="control content-textarea" id="ca-reasons" oninput="setSiteContentLines(\'about.reasons\',this.value)">'+escapeHtml(a.reasons.join('\n'))+'</textarea></div>'
+        +contentInput('ca-path','Текст про международный путь',a.pathText,'about.pathText',true,true)
+        +'<div class="field wide"><label for="ca-international">Олимпиады — через запятую</label><input class="control" id="ca-international" value="'+escapeAttribute(a.international.join(', '))+'" oninput="siteContent.about.international=this.value.split(\',\').map(value=>value.trim()).filter(Boolean);markSiteContentDirty()"></div></div><div class="content-section-head"><div><strong>Что означают сокращения</strong><span>Название и короткое объяснение каждой международной олимпиады</span></div><button class="btn" type="button" onclick="addOlympiadInfoRow()">＋ Олимпиада</button></div><div class="content-rows" id="content-olympiad-info"></div></div></section>'
+        +'<section class="content-panel" id="content-panel-calendar"><div class="content-form">'+contentInput('cc-notice','Предупреждение об изменениях',siteContent.notice,'notice',true,true)+'<div class="content-section-head"><div><strong>События календаря</strong><span>Этапы NPhO и международные олимпиады</span></div><button class="btn" type="button" onclick="addCalendarRow()">＋ Событие</button></div><div class="content-rows" id="content-calendar-rows"></div></div></section>'
+        +'<section class="content-panel" id="content-panel-selection"><div class="content-form"><div class="content-helper">Две ветки будут автоматически сведены в единый IV этап. Каждый этап вводите с новой строки.</div><div class="content-grid">'
+        +contentInput('cs-title','Заголовок схемы',s.title,'selection.title')+contentInput('cs-intro','Краткое пояснение',s.intro,'selection.intro')+contentInput('cs-rtitle','Республиканская ветка',s.republicanTitle,'selection.republicanTitle')+contentInput('cs-ntitle','Национальная ветка',s.nationalTitle,'selection.nationalTitle')
+        +'<div class="field"><label for="cs-rstages">Этапы республиканской ветки</label><textarea class="control content-textarea" id="cs-rstages" oninput="setSiteContentLines(\'selection.republicanStages\',this.value)">'+escapeHtml(s.republicanStages.join('\n'))+'</textarea></div><div class="field"><label for="cs-nstages">Этапы Национальной олимпиады</label><textarea class="control content-textarea" id="cs-nstages" oninput="setSiteContentLines(\'selection.nationalStages\',this.value)">'+escapeHtml(s.nationalStages.join('\n'))+'</textarea></div>'
+        +contentInput('cs-rnote','Примечание к республиканской ветке',s.republicanNote,'selection.republicanNote',false,true)+contentInput('cs-nnote','Примечание к национальной ветке',s.nationalNote,'selection.nationalNote',false,true)+contentInput('cs-final-title','Общий финал',s.finalTitle,'selection.finalTitle')+contentInput('cs-rules-title','Заголовок правил',s.rulesTitle,'selection.rulesTitle')+contentInput('cs-final-text','Кто встречается в финале',s.finalText,'selection.finalText',true,true)+contentInput('cs-after','Что происходит дальше',s.afterText,'selection.afterText',true,true)+contentInput('cs-rules','Краткие правила отбора',s.rulesText,'selection.rulesText',true,true)+'</div></div></section>'
+        +'<section class="content-panel" id="content-panel-archive"><div class="content-form"><div class="content-helper">Строки можно добавлять и удалять. Итог и место сайт пересчитает автоматически по баллам.</div><div class="archive-toolbar"><div class="field"><label for="content-archive-year">Год</label><select class="control" id="content-archive-year" onchange="activeArchiveYear=this.value;renderArchiveRows()"></select></div><button class="btn" type="button" onclick="addArchiveYear()">＋ Год</button><button class="btn primary" type="button" onclick="addArchiveRow()">＋ Участник</button></div><div class="content-rows" id="content-archive-rows"></div></div></section>';
+      renderBenefitRows();renderOlympiadInfoRows();renderCalendarRows();renderArchiveYears();const tab=document.querySelector('.content-tab[data-content-tab="'+activeContentTab+'"]')||document.querySelector('.content-tab');showContentTab(tab.dataset.contentTab,tab);
+    }
+    function renderBenefitRows(){const root=document.getElementById('content-benefits');if(!root)return;root.innerHTML=siteContent.about.benefits.length?siteContent.about.benefits.map((item,index)=>'<div class="content-row benefit-row"><input class="control" value="'+escapeAttribute(item.title||'')+'" placeholder="Заголовок" oninput="siteContent.about.benefits['+index+'].title=this.value;markSiteContentDirty()"><textarea class="control content-textarea" placeholder="Пояснение" oninput="siteContent.about.benefits['+index+'].text=this.value;markSiteContentDirty()">'+escapeHtml(item.text||'')+'</textarea><div class="content-row-actions"><button class="mini-btn" type="button" onclick="moveBenefitRow('+index+',-1)">↑</button><button class="mini-btn" type="button" onclick="moveBenefitRow('+index+',1)">↓</button><button class="mini-btn delete" type="button" onclick="removeBenefitRow('+index+')">×</button></div></div>').join(''):'<div class="structure-empty">Пунктов пока нет.</div>'}
+    function addBenefitRow(){siteContent.about.benefits.push({title:'',text:''});markSiteContentDirty();renderBenefitRows()}
+    function removeBenefitRow(index){siteContent.about.benefits.splice(index,1);markSiteContentDirty();renderBenefitRows()}
+    function moveBenefitRow(index,direction){const target=index+direction;if(target<0||target>=siteContent.about.benefits.length)return;[siteContent.about.benefits[index],siteContent.about.benefits[target]]=[siteContent.about.benefits[target],siteContent.about.benefits[index]];markSiteContentDirty();renderBenefitRows()}
+    function renderOlympiadInfoRows(){const root=document.getElementById('content-olympiad-info');if(!root)return;root.innerHTML=siteContent.about.internationalDetails.length?siteContent.about.internationalDetails.map((item,index)=>'<div class="content-row"><input class="control" value="'+escapeAttribute(item.code||'')+'" placeholder="IPhO" oninput="updateOlympiadInfoRow('+index+',\'code\',this.value)"><input class="control" value="'+escapeAttribute(item.name||'')+'" placeholder="Полное название" oninput="updateOlympiadInfoRow('+index+',\'name\',this.value)"><textarea class="control content-textarea" placeholder="Что это за олимпиада" oninput="updateOlympiadInfoRow('+index+',\'text\',this.value)">'+escapeHtml(item.text||'')+'</textarea><div class="content-row-actions"><button class="mini-btn" type="button" onclick="moveOlympiadInfoRow('+index+',-1)">↑</button><button class="mini-btn" type="button" onclick="moveOlympiadInfoRow('+index+',1)">↓</button><button class="mini-btn delete" type="button" onclick="removeOlympiadInfoRow('+index+')">×</button></div></div>').join(''):'<div class="structure-empty">Справочник пока пуст.</div>'}
+    function updateOlympiadInfoRow(index,key,value){siteContent.about.internationalDetails[index][key]=value;markSiteContentDirty()}
+    function addOlympiadInfoRow(){siteContent.about.internationalDetails.push({code:'',name:'',text:''});markSiteContentDirty();renderOlympiadInfoRows()}
+    function removeOlympiadInfoRow(index){siteContent.about.internationalDetails.splice(index,1);markSiteContentDirty();renderOlympiadInfoRows()}
+    function moveOlympiadInfoRow(index,direction){const rows=siteContent.about.internationalDetails,target=index+direction;if(target<0||target>=rows.length)return;[rows[index],rows[target]]=[rows[target],rows[index]];markSiteContentDirty();renderOlympiadInfoRows()}
+    function renderCalendarRows(){const root=document.getElementById('content-calendar-rows');if(!root)return;root.innerHTML=siteContent.calendar.length?siteContent.calendar.map((item,index)=>'<div class="content-row calendar-row"><input class="control" value="'+escapeAttribute(item.date||'')+'" placeholder="Дата" oninput="updateCalendarRow('+index+',\'date\',this.value)"><input class="control" value="'+escapeAttribute(item.title||'')+'" placeholder="Событие" oninput="updateCalendarRow('+index+',\'title\',this.value)"><select class="control" onchange="updateCalendarRow('+index+',\'kind\',this.value)"><option value="stage" '+(item.kind==='stage'?'selected':'')+'>Этап NPhO</option><option value="current" '+(item.kind==='current'?'selected':'')+'>Текущий этап</option><option value="international" '+(item.kind==='international'?'selected':'')+'>Международная</option></select><div class="content-row-actions"><button class="mini-btn" type="button" onclick="moveCalendarRow('+index+',-1)">↑</button><button class="mini-btn" type="button" onclick="moveCalendarRow('+index+',1)">↓</button><button class="mini-btn delete" type="button" onclick="removeCalendarRow('+index+')">×</button></div><textarea class="control content-textarea calendar-wide" placeholder="Место и пояснение" oninput="updateCalendarRow('+index+',\'details\',this.value)">'+escapeHtml(item.details||'')+'</textarea><input class="control calendar-wide" value="'+escapeAttribute(item.url||'')+'" placeholder="Официальная ссылка (необязательно)" oninput="updateCalendarRow('+index+',\'url\',this.value)"></div>').join(''):'<div class="structure-empty">Событий пока нет.</div>'}
+    function updateCalendarRow(index,key,value){siteContent.calendar[index][key]=value;markSiteContentDirty()}
+    function addCalendarRow(){siteContent.calendar.push({date:'',title:'',details:'',kind:'stage',url:''});markSiteContentDirty();renderCalendarRows()}
+    function removeCalendarRow(index){siteContent.calendar.splice(index,1);markSiteContentDirty();renderCalendarRows()}
+    function moveCalendarRow(index,direction){const target=index+direction;if(target<0||target>=siteContent.calendar.length)return;[siteContent.calendar[index],siteContent.calendar[target]]=[siteContent.calendar[target],siteContent.calendar[index]];markSiteContentDirty();renderCalendarRows()}
+    function renderArchiveYears(){const years=Object.keys(siteContent.results).sort();if(!years.includes(activeArchiveYear)){activeArchiveYear=years.at(-1)||String(new Date().getFullYear());if(!siteContent.results[activeArchiveYear])siteContent.results[activeArchiveYear]=[]}const select=document.getElementById('content-archive-year');if(select)select.innerHTML=Object.keys(siteContent.results).sort().map(year=>'<option value="'+year+'" '+(year===activeArchiveYear?'selected':'')+'>'+year+'</option>').join('');renderArchiveRows()}
+    function renderArchiveRows(){const root=document.getElementById('content-archive-rows');if(!root)return;const rows=siteContent.results[activeArchiveYear]||[];root.innerHTML=rows.length?rows.map((row,index)=>'<div class="content-row archive-row"><input class="control" value="'+escapeAttribute(row.name||'')+'" placeholder="Участник" oninput="updateArchiveRow('+index+',\'name\',this.value)"><input class="control" value="'+escapeAttribute(row.d1||'')+'" placeholder="День 1" oninput="updateArchiveRow('+index+',\'d1\',this.value)"><input class="control" value="'+escapeAttribute(row.d2||'')+'" placeholder="День 2" oninput="updateArchiveRow('+index+',\'d2\',this.value)"><input class="control" value="'+escapeAttribute(row.d3||'')+'" placeholder="День 3" oninput="updateArchiveRow('+index+',\'d3\',this.value)"><input class="control" value="'+escapeAttribute(row.status||'')+'" placeholder="IPhO/APhO/EuPhO" oninput="updateArchiveRow('+index+',\'status\',this.value)"><div class="content-row-actions"><button class="mini-btn" type="button" onclick="moveArchiveRow('+index+',-1)">↑</button><button class="mini-btn" type="button" onclick="moveArchiveRow('+index+',1)">↓</button><button class="mini-btn delete" type="button" onclick="removeArchiveRow('+index+')">×</button></div></div>').join(''):'<div class="structure-empty">Участников за '+escapeHtml(activeArchiveYear)+' год пока нет.</div>'}
+    function updateArchiveRow(index,key,value){siteContent.results[activeArchiveYear][index][key]=value;markSiteContentDirty()}
+    function addArchiveRow(){siteContent.results[activeArchiveYear]=siteContent.results[activeArchiveYear]||[];siteContent.results[activeArchiveYear].push({name:'',d1:'',d2:'',d3:'',status:''});markSiteContentDirty();renderArchiveRows()}
+    function removeArchiveRow(index){siteContent.results[activeArchiveYear].splice(index,1);markSiteContentDirty();renderArchiveRows()}
+    function moveArchiveRow(index,direction){const rows=siteContent.results[activeArchiveYear],target=index+direction;if(target<0||target>=rows.length)return;[rows[index],rows[target]]=[rows[target],rows[index]];markSiteContentDirty();renderArchiveRows()}
+    function addArchiveYear(){const year=prompt('Год архива',String(new Date().getFullYear()))?.trim();if(!/^\d{4}$/.test(year||'')){if(year)showToast('Введите год четырьмя цифрами','error');return}if(!siteContent.results[year])siteContent.results[year]=[];activeArchiveYear=year;markSiteContentDirty();renderArchiveYears()}
+    async function saveSiteContent(){if(!siteContent||!siteContentDirty)return;const button=document.getElementById('save-site-content');button.disabled=true;button.textContent='Сохраняем…';try{const response=await fetch(API+'/site-content',{method:'PUT',headers:{'content-type':'application/json'},body:JSON.stringify({content:siteContent})}),data=await response.json();if(response.status===404)throw new Error('Worker не обновлён: разверните новый worker.js');if(!response.ok)throw new Error(data.error||'Не удалось сохранить контент');siteContent=ensureEditableContent(data.content);markSiteContentDirty(false);showToast('Контент сайта сохранён')}catch(error){showToast(error.message,'error');markSiteContentDirty(true)}finally{button.disabled=false;if(siteContentDirty)button.textContent='Сохранить изменения'}}
+
     async function openVersionHistory(){
       if(!draft.id){showToast('Сначала сохраните задачу','error');return}if(dirty){showToast('Сначала сохраните текущие изменения','error');return}document.getElementById('history-modal').hidden=false;document.getElementById('history-subtitle').textContent=(draft.problemNumber?'Задача '+draft.problemNumber+' · ':'')+draft.title;const root=document.getElementById('version-list');root.innerHTML='<div class="structure-empty">Загрузка…</div>';
       try{const response=await fetch(API+'/problems/'+draft.id+'/versions',{cache:'no-store'}),data=await response.json();if(!response.ok)throw new Error(data.error||'Не удалось загрузить историю');const versions=Array.isArray(data.versions)?data.versions:[];root.innerHTML=versions.length?versions.map((version,index)=>'<div class="version-row"><div class="version-copy"><strong>'+escapeHtml((version.problemNumber?version.problemNumber+' · ':'')+version.title)+'</strong><span>'+escapeHtml(new Date(version.createdAt).toLocaleString('ru-RU'))+' · '+escapeHtml(version.savedBy||'Редактор')+' · '+(version.status==='published'?'опубликовано':'черновик')+'</span></div>'+(index===0?'<span class="badge-current">Текущая</span>':'<button class="btn" type="button" onclick="restoreVersion('+version.id+')">Восстановить</button>')+'</div>').join(''):'<div class="structure-empty">История появится после первого сохранения.</div>'}
@@ -855,7 +1006,8 @@
     function setupSplitter(id,side){const splitter=document.getElementById(id);splitter.addEventListener('pointerdown',event=>{if(window.innerWidth<=900)return;event.preventDefault();splitter.classList.add('dragging');splitter.setPointerCapture(event.pointerId);const move=e=>{if(side==='left'){const width=Math.min(390,Math.max(210,e.clientX));document.documentElement.style.setProperty('--explorer-width',width+'px');localStorage.setItem('npho-explorer-width',width)}else{const width=Math.min(window.innerWidth*.62,Math.max(350,window.innerWidth-e.clientX));document.documentElement.style.setProperty('--preview-width',width+'px');localStorage.setItem('npho-preview-width',width)}};const up=()=>{splitter.classList.remove('dragging');splitter.removeEventListener('pointermove',move);splitter.removeEventListener('pointerup',up)};splitter.addEventListener('pointermove',move);splitter.addEventListener('pointerup',up)})}
     function restorePreferences(){const left=Number(localStorage.getItem('npho-explorer-width')),right=Number(localStorage.getItem('npho-preview-width'));if(left)document.documentElement.style.setProperty('--explorer-width',left+'px');if(right)document.documentElement.style.setProperty('--preview-width',right+'px');changeZoom(0)}
 
-    document.querySelectorAll('[data-field]').forEach(element=>element.addEventListener('input',()=>{const field=element.dataset.field;draft[field]=['chapterOrder','sortOrder'].includes(field)?Math.max(1,Number(element.value)||1):element.value;if(field==='book'||field==='topic')renderChapterOptions();if(['book','problemNumber','title','slug'].includes(field))updateSlugPreview();setDirty();schedulePreview()}));
+    document.querySelectorAll('[data-field]:not(.taxonomy-select)').forEach(element=>element.addEventListener('input',()=>{const field=element.dataset.field;draft[field]=['chapterOrder','sortOrder'].includes(field)?Math.max(1,Number(element.value)||1):element.value;if(['book','problemNumber','title','slug'].includes(field))updateSlugPreview();setDirty();schedulePreview()}));
+    document.querySelectorAll('.taxonomy-select').forEach(element=>element.addEventListener('change',()=>changeTaxonomy(element)));
     document.querySelectorAll('.latex-source').forEach(element=>element.addEventListener('focus',()=>activeTextarea=element));
     const solutionArea=document.getElementById('solution');
     ['click','keyup','select','input'].forEach(type=>solutionArea.addEventListener(type,rememberSolutionCursor));
@@ -863,8 +1015,8 @@
     ['dragenter','dragover'].forEach(type=>uploadZone.addEventListener(type,event=>{event.preventDefault();uploadZone.classList.add('dragging')}));
     ['dragleave','drop'].forEach(type=>uploadZone.addEventListener(type,event=>{event.preventDefault();uploadZone.classList.remove('dragging')}));
     uploadZone.addEventListener('drop',event=>uploadImage(event.dataTransfer.files[0]));
-    document.addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='s'){event.preventDefault();saveProblem(draft.status)}if(event.key==='Escape'){if(!document.getElementById('history-modal').hidden)closeVersionHistory();else if(!document.getElementById('structure-modal').hidden)closeCatalogManager()}});
-    window.addEventListener('beforeunload',event=>{if(dirty)saveLocalBackup();if(dirty||structureDirty){event.preventDefault();event.returnValue=''}});
+    document.addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='s'){event.preventDefault();if(!document.getElementById('content-modal').hidden)saveSiteContent();else saveProblem(draft.status)}if(event.key==='Escape'){if(!document.getElementById('content-modal').hidden)closeContentEditor();else if(!document.getElementById('history-modal').hidden)closeVersionHistory();else if(!document.getElementById('structure-modal').hidden)closeCatalogManager()}});
+    window.addEventListener('beforeunload',event=>{if(dirty)saveLocalBackup();if(dirty||structureDirty||siteContentDirty){event.preventDefault();event.returnValue=''}});
     setupSplitter('splitter-left','left');setupSplitter('splitter-right','right');fillForm();restorePreferences();loadProblems();
   </script>
 </body>
