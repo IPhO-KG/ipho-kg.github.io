@@ -306,6 +306,9 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
 .problem-section h2{font-family:Georgia,'Times New Roman',serif;font-size:24px;font-weight:700;margin-bottom:.8rem}
 .problem-body{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.82;color:var(--text)}
 .problem-body p{margin-bottom:.85rem}.problem-body p:last-child{margin-bottom:0}
+.manual-numbered-list{display:grid;gap:.45em;margin:.85em 0;padding:0;list-style:none}
+.manual-numbered-list>li{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:.55em;align-items:start}
+.manual-list-marker{font-weight:650;font-variant-numeric:tabular-nums}
 .problem-figure{display:block;max-width:min(100%,640px);max-height:480px;object-fit:contain;margin:1.25rem auto 0;border-radius:10px}
 .problem-images{display:grid;gap:14px;margin-top:1.25rem}
 .problem-figure-wrap{margin:0;text-align:center}
@@ -825,6 +828,10 @@ async function loadSiteContent(){
 }
 window.NPHO_CONTENT_READY=loadSiteContent();
 
+
+/* Задачи загружаются из редактора через API. */
+let PRACTICE_TASKS = [];
+
 let PROBLEM_BOOKS=['Савченко','Овчинкин'];
 let PROBLEM_TOPICS=['Механика','Термодинамика','Электричество','Оптика'];
 
@@ -848,6 +855,18 @@ function problemImageHtml(image,index=0){
   const alt=escapeAttribute(image.alt||('Рисунок '+(index+1)+' к решению'));
   const caption=image.caption?'<figcaption class="problem-figure-caption">'+escapeHtml(image.caption)+'</figcaption>':'';
   return '<figure class="problem-figure-wrap embedded-problem-figure"><img class="problem-figure" src="'+escapeAttribute(src)+'" alt="'+alt+'" loading="lazy">'+caption+'</figure>';
+}
+
+function renderManualNumberedList(lines,inlineFormatter){
+  if(!lines.length||!/^\s*\d+[.)](?:\s|$)/.test(lines[0]))return '';
+  const items=[];
+  lines.forEach(line=>{
+    const match=line.match(/^\s*(\d+)([.)])(?:\s+(.*))?$/);
+    if(match){items.push({number:match[1],punctuation:match[2],lines:[match[3]||'']});return}
+    if(items.length)items.at(-1).lines.push(line.trim());
+  });
+  if(!items.length)return '';
+  return '<ol class="manual-numbered-list">'+items.map(item=>'<li value="'+Number(item.number)+'"><span class="manual-list-marker" aria-hidden="true">'+item.number+item.punctuation+'</span><span>'+inlineFormatter(item.lines.filter(Boolean).join('<br>'))+'</span></li>').join('')+'</ol>';
 }
 
 function latexSourceToHtml(source,images=[]){
@@ -889,9 +908,8 @@ function latexSourceToHtml(source,images=[]){
     if(lines.every(line=>/^[-*]\s+/.test(line))){
       return '<ul>'+lines.map(line=>'<li>'+remoteInlineFormat(line.replace(/^[-*]\s+/,''))+'</li>').join('')+'</ul>';
     }
-    if(lines.every(line=>/^\d+[.)]\s+/.test(line))){
-      return '<ol>'+lines.map(line=>{const match=line.match(/^(\d+)[.)]\s+(.*)$/);return '<li value="'+Number(match[1])+'">'+remoteInlineFormat(match[2])+'</li>'}).join('')+'</ol>';
-    }
+    const numberedList=renderManualNumberedList(lines,remoteInlineFormat);
+    if(numberedList)return numberedList;
     if(block.startsWith('&gt; ')){
       return '<blockquote>'+remoteInlineFormat(block.replace(/^&gt;\s?/,'').replace(/\n&gt;\s?/g,'<br>'))+'</blockquote>';
     }
