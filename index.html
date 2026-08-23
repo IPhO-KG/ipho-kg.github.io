@@ -57,6 +57,24 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:.875re
 .btn-p:hover{opacity:.85}
 .btn-o{padding:11px 26px;background:transparent;color:var(--text);border:1.5px solid var(--border);border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;transition:background .15s}
 .btn-o:hover{background:var(--bg2)}
+.home-inner{max-width:1080px;padding-top:0}
+.home-section{padding:3.4rem 0;border-bottom:1px solid var(--border);scroll-margin-top:72px}
+.home-section:last-child{border-bottom:none}
+.home-section-head{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:2rem;align-items:start;margin-bottom:1.8rem}
+.home-section-head h2{font-size:clamp(25px,3vw,34px);line-height:1.18;letter-spacing:-.025em}
+.home-section-head p{max-width:650px;color:var(--text2);font-size:15px;line-height:1.7}
+.home-section-actions{display:flex;justify-content:center;gap:10px;margin-top:1.5rem;flex-wrap:wrap}
+.home-calendar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem;margin-top:1.8rem}
+.calendar-column{min-width:0}
+.calendar-column-title{display:flex;align-items:center;gap:9px;margin-bottom:1.2rem;font-size:14px;font-weight:800}
+.calendar-column-title::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent2)}
+.calendar-column.international .calendar-column-title::before{background:#f59e0b}
+.home-calendar-grid .calendar-event{grid-template-columns:100px 20px minmax(0,1fr);gap:9px;min-height:82px}
+.home-calendar-grid .calendar-date{font-size:11px}
+.home-calendar-grid .calendar-copy h3{font-size:14px}
+.home-calendar-grid .calendar-copy p{font-size:12px}
+.home-calendar .change-notice{margin:0}
+@media(max-width:760px){.home-section-head,.home-calendar-grid{grid-template-columns:1fr;gap:1.3rem}.home-calendar-grid{gap:2rem}.home-section{padding:2.7rem 0}}
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--border)}
 .stat{padding:1.5rem;text-align:center;border-right:1px solid var(--border)}.stat:last-child{border-right:none}
 .sn{font-size:28px;font-weight:800;color:var(--accent)}.sl{font-size:12px;color:var(--text2);margin-top:3px}
@@ -137,7 +155,7 @@ html[data-theme="dark"] .status-bronze{background:rgba(251,146,60,.16);color:#fd
 .about-title{max-width:830px;font-size:clamp(31px,5vw,54px);line-height:1.08;letter-spacing:-.035em;margin-bottom:1rem}
 .about-lead{max-width:780px;font-size:18px;line-height:1.7;color:var(--text2)}
 .about-story{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:3rem;padding:3rem 0;border-bottom:1px solid var(--border)}
-.about-story h2,.participate-block h2,.pathway-block h2,.selection-head h2{font-size:clamp(23px,3vw,31px);line-height:1.2;letter-spacing:-.02em}
+.about-story h2,.participate-block h2,.pathway-block h2,.about-selection-block h2,.selection-head h2{font-size:clamp(23px,3vw,31px);line-height:1.2;letter-spacing:-.02em}
 .about-story-copy{font-size:16px;line-height:1.78;color:var(--text2)}
 .about-story-copy strong{color:var(--text)}
 .about-points{display:grid;border-top:1px solid var(--border)}
@@ -148,6 +166,12 @@ html[data-theme="dark"] .status-bronze{background:rgba(251,146,60,.16);color:#fd
 .reason-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.5rem;margin-top:1.5rem;border-top:1px solid var(--border)}
 .reason-item{position:relative;padding:1rem 0 1rem 28px;border-bottom:1px solid var(--border);font-size:14px;color:var(--text2)}
 .reason-item::before{content:'✓';position:absolute;left:0;color:var(--accent2);font-weight:900}
+.about-selection-block{padding:3rem 0;border-bottom:1px solid var(--border)}
+.about-selection-copy{max-width:790px;margin:.85rem 0 1.4rem;color:var(--text2);font-size:15px;line-height:1.72}
+.about-selection-details{max-width:790px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg2)}
+.about-selection-details summary{padding:1rem 1.1rem;cursor:pointer;font-size:13px;font-weight:800}
+.about-selection-details-body{display:grid;gap:.85rem;padding:0 1.1rem 1.1rem;color:var(--text2);font-size:13px;line-height:1.7}
+.about-selection-details-body .change-note{padding-top:.85rem;border-top:1px solid var(--border);font-size:12px;color:var(--text3)}
 .pathway-block{padding:3rem 0}
 .pathway-copy{max-width:760px;margin:.85rem 0 1.3rem;color:var(--text2);font-size:15px;line-height:1.72}
 .international-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem}
@@ -360,10 +384,9 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
   <div class="nav-right">
     <div class="nav-links">
       <button class="nl active" id="nl-home" onclick="go('home')">Главная</button>
-      <button class="nl" id="nl-archive" onclick="go('archive')">Архив</button>
       <button class="nl" id="nl-problems" onclick="go('problems')">Задачи</button>
+      <button class="nl" id="nl-archive" onclick="go('archive')">Архив</button>
       <button class="nl" id="nl-about" onclick="go('about')">Об олимпиаде</button>
-      <button class="nl" id="nl-dates" onclick="go('dates')">Календарь</button>
     </div>
     <button class="theme-toggle" id="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Переключить цветовую тему" title="Переключить цветовую тему">
       <span class="theme-icon" id="theme-icon" aria-hidden="true">☾</span>
@@ -377,37 +400,21 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
     <canvas id="atom-canvas" width="220" height="220" style="display:block;margin:0 auto 1rem"></canvas>
     <div class="hero-tag">КЫРГЫЗСТАН &nbsp;·&nbsp; ФИЗИКА &nbsp;·&nbsp; IPhO</div>
     <h1>Национальная <span>физическая</span><br>олимпиада</h1>
-    <p class="hero-sub">Отбираем лучших школьников страны для участия в Международной физической олимпиаде. IV этап 2026 прошёл 4–6 апреля в Бишкеке.</p>
+    <p class="hero-sub">Задачи, решения и понятный путь от национального отбора к международным олимпиадам по физике.</p>
     <div class="hbtns">
-      <button class="btn-p" onclick="go('archive')">Архив задач и результатов</button>
-      <button class="btn-o" onclick="go('dates')">Календарь и отбор</button>
+      <button class="btn-p" onclick="go('problems')">Решать задачи</button>
+      <button class="btn-o" onclick="go('archive')">Архив и результаты</button>
     </div>
   </div>
-  <div class="stats">
-    <div class="stat"><div class="sn">5</div><div class="sl">участников в сборной IPhO</div></div>
-    <div class="stat"><div class="sn">3</div><div class="sl">дня соревнований</div></div>
-    <div class="stat"><div class="sn">90</div><div class="sl">баллов максимум</div></div>
-    <div class="stat"><div class="sn">2026</div><div class="sl">год IPhO</div></div>
-  </div>
-  <div class="inner">
-    <p class="stitle">Последние новости</p>
-    <div class="news">
-      <div class="nc" onclick="go('archive')"><span class="badge bt">Результаты</span><h3>Итоги IV этапа 2026</h3><div class="meta">6 апреля 2026 · Бишкек</div></div>
-    </div>
-    <hr class="sep">
-    <p class="stitle">Как попасть в сборную</p>
-    <div class="steps">
-      <div class="step"><div class="snum2">1</div><h4>1 тур Национальной олимпиады (онлайн)</h4><p>Январь</p></div>
-      <div class="step"><div class="snum2">2</div><h4>2 тур Национальной олимпиады (онлайн)</h4><p>Февраль</p></div>
-      <div class="step"><div class="snum2">3</div><h4>3 тур Национальной олимпиады (офлайн)</h4><p>Март · Бишкек и Ош</p></div>
-      <div class="step"><div class="snum2">4</div><h4>4 тур — Национальный финал</h4><p>Апрель · Бишкек</p></div>
-    </div>
-  </div>
+  <main class="inner home-inner">
+    <section class="home-section home-selection" id="home-selection-content" aria-labelledby="home-selection-title"></section>
+    <section class="home-section home-calendar" id="home-calendar-content" aria-labelledby="home-calendar-title"></section>
+  </main>
   <footer>
     <div class="fi">
       <div class="fg">
         <div class="fc"><h4>IPhO Кыргызстан</h4><p>Национальная программа подготовки школьников к Международной физической олимпиаде. Кыргызская Республика.</p></div>
-        <div class="fc"><h4>Навигация</h4><a onclick="go('home')">Главная</a><a onclick="go('archive')">Архив задач</a><a onclick="go('problems')">Тренировочные задачи</a><a onclick="go('about')">Об олимпиаде</a><a onclick="go('dates')">Календарь</a></div>
+        <div class="fc"><h4>Навигация</h4><a onclick="go('home')">Главная</a><a onclick="go('problems')">Тренировочные задачи</a><a onclick="go('archive')">Архив задач</a><a onclick="go('about')">Об олимпиаде</a><a onclick="openHomeSection('home-calendar-content')">Календарь</a></div>
         <div class="fc"><h4>Контакты</h4>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#229ED9" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></div><a href="https://t.me/+9GGnjui6VT05Mzli" target="_blank" class="ct">Telegram</a></div>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1"/></svg></div><a href="https://www.instagram.com/ipho_kg" target="_blank" class="ct">Instagram</a></div>
@@ -584,10 +591,6 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
   <div class="inner about-inner" id="about-content"></div>
 </div>
 
-<div id="sec-dates" class="sec">
-  <div class="inner calendar-inner" id="calendar-content"></div>
-</div>
-
 <script>
 const PDF_LINKS = {
   '2026': [
@@ -690,10 +693,10 @@ let RESULTS = {
     { name:'Истеми Тазабеков',  d1:'8.7',   d2:'16.15', d3:'8.25',  status:'APhO' },
     { name:'Марсель Касымов',   d1:'12.2',  d2:'11.1',  d3:'9.7',   status:'APhO' },
     { name:'Умар Туташбаев',    d1:'7.2',   d2:'13.55', d3:'7.15',  status:'APhO' },
-    { name:'Рашитов Бактыбек',  d1:'4.1',   d2:'6.1',   d3:'7.4',   status:'BPhO' },
-    { name:'Асанбаев Ариетбек', d1:'5',     d2:'7.8',   d3:'3.8',   status:'BPhO' },
-    { name:'Ашырова Эльдана',   d1:'7.35',  d2:'7.2',   d3:'1.9',   status:'BPhO' },
-    { name:'Эрмеков Нурэл',     d1:'7.4',   d2:'6.9',   d3:'1.6',   status:'BPhO' },
+    { name:'Рашитов Бактыбек',  d1:'4.1',   d2:'6.1',   d3:'7.4',   status:'BPO' },
+    { name:'Асанбаев Ариетбек', d1:'5',     d2:'7.8',   d3:'3.8',   status:'BPO' },
+    { name:'Ашырова Эльдана',   d1:'7.35',  d2:'7.2',   d3:'1.9',   status:'BPO' },
+    { name:'Эрмеков Нурэл',     d1:'7.4',   d2:'6.9',   d3:'1.6',   status:'BPO' },
     { name:'Таисия Ри',         d1:'5.1',   d2:'5.5',   d3:'2.65',  status:'Резерв' },
     { name:'Каримов Асылбек',   d1:'4.3',   d2:'3.1',   d3:'5.4',   status:'Резерв' },
     { name:'Осмонов Чынгыз',    d1:'5.6',   d2:'4.95',  d3:'0.7',   status:'Резерв' },
@@ -703,32 +706,32 @@ let RESULTS = {
 const DEFAULT_SITE_CONTENT = {
   about: {
     kicker: 'Национальная олимпиада по физике',
-    title: 'Ещё один честный путь для сильных школьников',
-    intro: 'NPhO собирает участников со всего Кыргызстана в общем рейтинге и даёт возможность проявить себя независимо от того, сколько сильных ребят оказалось в одном районе или городе.',
-    originTitle: 'Почему появилась Национальная олимпиада',
-    originText: 'В традиционной республиканской системе участник идёт через районный или городской, затем областной и республиканский этапы. На каждом переходе действует ограниченная квота. Поэтому несколько очень сильных школьников из одного места могут конкурировать за небольшое число путёвок, хотя по уровню они способны бороться дальше. Национальная олимпиада создаёт параллельную ветку: первые два тура проходят онлайн, после чего лучшие по общему рейтингу встречаются на очных этапах.',
+    title: 'Путь от национального отбора к международной физике',
+    intro: 'Национальная олимпиада по физике объединяет школьников со всего Кыргызстана и служит одним из путей отбора и подготовки участников к международным олимпиадам.',
+    originTitle: 'Зачем появился дополнительный маршрут отбора',
+    originText: 'В Республиканской олимпиаде участник последовательно проходит районный, затем областной или городской этап и республиканский финал. Из-за ограниченных квот на каждом переходе путь к дальнейшему отбору может оказаться слишком узким: сильный результат не всегда позволяет пройти дальше, если на одном этапе собралось много сильных участников. Национальная олимпиада была создана как дополнительный общереспубликанский маршрут. Первые два этапа проходят онлайн, III этап — очно в Бишкеке и Оше, а на IV этапе лучшие участники Национальной и Республиканской олимпиад встречаются в общем отборе.',
     benefitTitle: 'Что меняется для участника',
     benefits: [
-      {title:'Параллельный маршрут',text:'Можно пройти отбор через Национальную олимпиаду, даже если путь через район или область оказался слишком узким.'},
-      {title:'Общий рейтинг',text:'Результат сравнивается с работами участников из разных регионов, а не только с ближайшими соперниками.'},
-      {title:'Одна точка встречи',text:'Сильнейшие из Национальной и Республиканской олимпиад сходятся на IV этапе Национальной олимпиады.'}
+      {title:'Дополнительный путь к финалу',text:'Результат Национальной олимпиады даёт ещё одну возможность попасть на общий финальный отбор.'},
+      {title:'Единый рейтинг по стране',text:'Работы сравниваются в общем зачёте, независимо от места обучения участника.'},
+      {title:'Общий финальный этап',text:'Сильнейшие участники Национальной и Республиканской олимпиад встречаются на IV этапе.'}
     ],
     participateTitle: 'Зачем участвовать',
     reasons: [
-      'Проверить себя на задачах, где важна физическая идея, а не только знакомая формула.',
-      'Получить второй маршрут к финальному отбору и учебно-тренировочным сборам.',
-      'Увидеть своё место в общем рейтинге сильных школьников страны.',
-      'Познакомиться с участниками и тренерами олимпиадного сообщества Кыргызстана.'
+      'Проверить физическое мышление на задачах, где сначала нужно увидеть идею, а уже затем выбрать формулы.',
+      'Получить дополнительную возможность пройти к финальному отбору и дальнейшей подготовке.',
+      'Сравнить свой уровень с сильными школьниками со всего Кыргызстана в едином рейтинге.',
+      'Стать частью сообщества участников и тренеров, которые всерьёз занимаются олимпиадной физикой.'
     ],
-    pathTitle: 'Куда ведёт отбор',
-    pathText: 'IV этап помогает определить участников дальнейшей подготовки и международных команд. Конкретный состав и распределение по олимпиадам зависят от результатов отбора и решений организаторов.',
+    pathTitle: 'От национального финала — к международным олимпиадам',
+    pathText: 'IV этап становится общей точкой отбора для дальнейшей подготовки и формирования международных команд. Конкретный состав и распределение участников по олимпиадам определяются результатами отбора и решениями организаторов.',
     international: ['APhO','EuPhO','BPO','ISPhO','IPhO'],
     internationalDetails: [
-      {code:'IPhO',name:'Международная физическая олимпиада',text:'Главная всемирная олимпиада по физике для школьных национальных команд. В программе — теоретический и экспериментальный туры.'},
-      {code:'APhO',name:'Азиатская физическая олимпиада',text:'Международная олимпиада стран Азии и Океании. По уровню и формату близка к IPhO и также проверяет теорию и эксперимент.'},
-      {code:'EuPhO',name:'Европейская физическая олимпиада',text:'Международный европейский старт с задачами по теории и эксперименту.'},
-      {code:'BPO',name:'Балканская физическая олимпиада',text:'Региональная международная олимпиада, объединяющая школьников балканских стран и приглашённые команды.'},
-      {code:'ISPhO',name:'International Scientific Physics Olympiad',text:'Международная научная олимпиада по физике. Формат и условия участия уточняются организаторами каждого сезона.'}
+      {code:'IPhO',name:'Международная физическая олимпиада',text:'Главная мировая олимпиада по физике для школьных национальных команд. Пять участников от страны проходят два пятичасовых тура — теоретический и экспериментальный. Для многих это вершина школьной олимпиадной физики.'},
+      {code:'APhO',name:'Азиатская физическая олимпиада',text:'Крупнейшая олимпиада для стран Азии и Океании: в команде может быть до восьми участников. Формат близок к IPhO — пять часов теории и пять часов эксперимента, но это самостоятельный и очень серьёзный международный старт.'},
+      {code:'EuPhO',name:'Европейская физическая олимпиада',text:'Европейская олимпиада с приглашёнными командами из других регионов. Её задачи известны короткими условиями и требуют самостоятельно построить модель: меньше подсказок, больше физического мышления и смелых идей.'},
+      {code:'BPO',name:'Балканская физическая олимпиада',text:'Региональная международная олимпиада стран Балканского физического союза и приглашённых команд. Более компактный масштаб делает её хорошей возможностью получить первый опыт выступления за страну и почувствовать международную конкуренцию.'},
+      {code:'ISPhO',name:'International Scientific Physics Olympiad',text:'Международная научная олимпиада, соединяющая теоретическую и экспериментальную физику с более современными моделями. В 2026 году она проходит онлайн, поэтому участники из разных стран могут соревноваться в едином научном формате.'}
     ]
   },
   notice: 'Информация может изменяться. Даты, места проведения, формат туров и условия отбора уточняются организаторами на каждый учебный год. Перед участием рекомендуем сверяться с актуальными приказами Министерства просвещения Кыргызской Республики.',
@@ -745,18 +748,18 @@ const DEFAULT_SITE_CONTENT = {
   ],
   selection: {
     title: 'Как устроен отбор',
-    intro: 'Это не одна длинная лестница, а две параллельные ветки. Они дают участникам разные способы дойти до общего финального отбора.',
+    intro: 'К общему финалу ведут два маршрута: Республиканская и Национальная олимпиады. На IV этапе их сильнейшие участники встречаются в едином отборе.',
     republicanTitle: 'Республиканская олимпиада',
-    republicanStages: ['Районный / городской этап','Областной / городской этап','Республиканский этап','Лучшие результаты этапа'],
-    republicanNote: 'Квоты между этапами ограничены, поэтому конкуренция внутри сильного района или города особенно высокая.',
+    republicanStages: ['Районный этап','Областной / городской этап','Республиканский этап','Лучшие по итогам этапа'],
+    republicanNote: 'Между этапами действуют квоты, поэтому пройти весь путь через Республиканскую олимпиаду непросто.',
     nationalTitle: 'Национальная олимпиада',
-    nationalStages: ['I этап · онлайн','II этап · онлайн','III этап · очно в Бишкеке и Оше','Лучшие по общему рейтингу'],
-    nationalNote: 'Параллельный общенациональный маршрут позволяет сравнить участников из разных регионов в едином рейтинге.',
+    nationalStages: ['I этап · онлайн','II этап · онлайн','III этап · очно в Бишкеке и Оше','Лучшие по итогам III этапа'],
+    nationalNote: 'Общереспубликанский рейтинг даёт дополнительный маршрут к общему финальному отбору.',
     finalTitle: 'IV этап Национальной олимпиады',
     finalText: 'Топ-участники Национальной олимпиады + сильнейшие участники Республиканской олимпиады',
     afterText: 'Дальнейшая подготовка · сборы · формирование команд на международные олимпиады',
-    rulesTitle: 'Кто проходит в IV этап',
-    rulesText: 'Состав финала формируется из лучших результатов двух веток. Точные квоты, возрастные категории, формат туров и порядок формирования международных команд определяются актуальными документами организаторов на соответствующий учебный год.'
+    rulesTitle: 'Что важно знать об отборе',
+    rulesText: 'На IV этапе результаты участников используются для дальнейшей подготовки и формирования международных команд. Точные квоты, возрастные категории, формат туров и окончательный порядок отбора определяются актуальными документами организаторов на соответствующий учебный год.'
   },
   results: JSON.parse(JSON.stringify(RESULTS))
 };
@@ -771,19 +774,38 @@ function mergeSiteContent(base,override){
   return result;
 }
 function safeSiteUrl(value){try{const url=new URL(String(value||''),location.origin);return url.protocol==='https:'||url.protocol==='http:'?url.href:''}catch{return''}}
+function renderSelectionTree(selection){
+  const s=selection||{};
+  const stages=(items)=>(items||[]).map(item=>'<div class="tree-stage">'+escapeHtml(item)+'</div>').join('');
+  return '<div class="selection-tree"><div class="tree-branches"><article class="tree-branch republican"><h3 class="tree-branch-label">'+escapeHtml(s.republicanTitle||'Республиканская олимпиада')+'</h3><div class="tree-stages">'+stages(s.republicanStages)+'</div><p class="tree-note">'+escapeHtml(s.republicanNote||'')+'</p></article><article class="tree-branch national"><h3 class="tree-branch-label">'+escapeHtml(s.nationalTitle||'Национальная олимпиада')+'</h3><div class="tree-stages">'+stages(s.nationalStages)+'</div><p class="tree-note">'+escapeHtml(s.nationalNote||'')+'</p></article></div><article class="tree-merge"><h3>'+escapeHtml(s.finalTitle||'IV этап Национальной олимпиады')+'</h3><p>'+escapeHtml(s.finalText||'')+'</p></article><p class="tree-after">'+escapeHtml(s.afterText||'')+'</p></div>';
+}
+function renderCalendarEvent(item){
+  const kind=['current','international'].includes(item.kind)?item.kind:'';
+  const url=safeSiteUrl(item.url);
+  const title=url?'<a href="'+escapeAttribute(url)+'" target="_blank" rel="noopener">'+escapeHtml(item.title||'')+' ↗</a>':escapeHtml(item.title||'');
+  return '<div class="calendar-event '+kind+'"><div class="calendar-date">'+escapeHtml(item.date||'')+'</div><div class="calendar-track"><span class="calendar-dot"></span><span class="calendar-line"></span></div><div class="calendar-copy"><h3>'+title+'</h3><p>'+escapeHtml(item.details||'')+'</p></div></div>';
+}
+function renderHomeContent(){
+  const selectionRoot=document.getElementById('home-selection-content');
+  const calendarRoot=document.getElementById('home-calendar-content');
+  const s=SITE_CONTENT.selection||{};
+  if(selectionRoot){
+    selectionRoot.innerHTML='<header class="home-section-head"><div><p class="eyebrow">Два маршрута · один финал</p><h2 id="home-selection-title">'+escapeHtml(s.title||'Как устроен отбор')+'</h2></div><p>'+escapeHtml(s.intro||'')+'</p></header>'+renderSelectionTree(s)+'<div class="home-section-actions"><button class="btn-o" onclick="go(\'about\')">Подробнее об олимпиаде</button></div>';
+  }
+  if(calendarRoot){
+    const events=SITE_CONTENT.calendar||[];
+    const stages=events.filter(item=>item.kind!=='international');
+    const international=events.filter(item=>item.kind==='international');
+    calendarRoot.innerHTML='<header class="home-section-head"><div><p class="eyebrow">Сезон 2025–2026</p><h2 id="home-calendar-title">Календарь сезона</h2></div><p>Этапы Национальной олимпиады и международные старты сборной в одном месте. Названия международных олимпиад ведут на их официальные страницы.</p></header><div class="change-notice"><strong>Важно</strong><span>'+escapeHtml(SITE_CONTENT.notice||'')+'</span></div><div class="home-calendar-grid"><section class="calendar-column"><h3 class="calendar-column-title">Этапы NPhO</h3><div class="calendar-list">'+stages.map(renderCalendarEvent).join('')+'</div></section><section class="calendar-column international"><h3 class="calendar-column-title">Международные старты</h3><div class="calendar-list">'+international.map(renderCalendarEvent).join('')+'</div></section></div>';
+  }
+}
 function renderAboutContent(){
-  const root=document.getElementById('about-content');if(!root)return;const a=SITE_CONTENT.about||{};
+  const root=document.getElementById('about-content');if(!root)return;const a=SITE_CONTENT.about||{},s=SITE_CONTENT.selection||{};
   const benefits=(a.benefits||[]).map((item,index)=>'<div class="about-point"><span class="about-point-number">'+String(index+1).padStart(2,'0')+'</span><div><h3>'+escapeHtml(item.title||'')+'</h3><p>'+escapeHtml(item.text||'')+'</p></div></div>').join('');
   const reasons=(a.reasons||[]).map(item=>'<div class="reason-item">'+escapeHtml(item)+'</div>').join('');
   const international=(a.international||[]).map(item=>'<span class="international-chip">'+escapeHtml(item)+'</span>').join('');
   const guide=(a.internationalDetails||[]).map(item=>'<div class="olympiad-row"><span class="olympiad-code">'+escapeHtml(item.code||'')+'</span><span class="olympiad-name">'+escapeHtml(item.name||'')+'</span><p class="olympiad-description">'+escapeHtml(item.text||'')+'</p></div>').join('');
-  root.innerHTML='<header class="about-hero"><p class="eyebrow">'+escapeHtml(a.kicker||'Об олимпиаде')+'</p><h1 class="about-title">'+escapeHtml(a.title||'Национальная олимпиада по физике')+'</h1><p class="about-lead">'+escapeHtml(a.intro||'')+'</p></header><section class="about-story"><div><p class="eyebrow">Зачем нужна отдельная ветка</p><h2>'+escapeHtml(a.originTitle||'Почему появилась олимпиада')+'</h2></div><div><p class="about-story-copy">'+escapeHtml(a.originText||'')+'</p><h3 style="margin:1.7rem 0 .55rem;font-size:15px">'+escapeHtml(a.benefitTitle||'Что меняется')+'</h3><div class="about-points">'+benefits+'</div></div></section><section class="participate-block"><p class="eyebrow">Для участника</p><h2>'+escapeHtml(a.participateTitle||'Зачем участвовать')+'</h2><div class="reason-list">'+reasons+'</div></section><section class="pathway-block"><p class="eyebrow">После финала</p><h2>'+escapeHtml(a.pathTitle||'Куда ведёт отбор')+'</h2><p class="pathway-copy">'+escapeHtml(a.pathText||'')+'</p><div class="international-row">'+international+'</div><div class="olympiad-guide"><h3 class="olympiad-guide-title">Что означают сокращения</h3>'+guide+'</div><div class="about-actions"><button class="btn-p" onclick="go(\'dates\')">Посмотреть схему отбора</button><button class="btn-o" onclick="go(\'archive\')">Открыть архив</button></div></section>';
-}
-function renderCalendarContent(){
-  const root=document.getElementById('calendar-content');if(!root)return;const s=SITE_CONTENT.selection||{};
-  const events=(SITE_CONTENT.calendar||[]).map(item=>{const kind=['current','international'].includes(item.kind)?item.kind:'';const url=safeSiteUrl(item.url);const title=url?'<a href="'+escapeAttribute(url)+'" target="_blank" rel="noopener">'+escapeHtml(item.title||'')+' ↗</a>':escapeHtml(item.title||'');return '<div class="calendar-event '+kind+'"><div class="calendar-date">'+escapeHtml(item.date||'')+'</div><div class="calendar-track"><span class="calendar-dot"></span><span class="calendar-line"></span></div><div class="calendar-copy"><h3>'+title+(item.kind==='international'?'<span class="event-type">Международная</span>':'')+'</h3><p>'+escapeHtml(item.details||'')+'</p></div></div>'}).join('');
-  const stages=(items)=>items.map(item=>'<div class="tree-stage">'+escapeHtml(item)+'</div>').join('');
-  root.innerHTML='<header class="calendar-head"><div><p class="eyebrow">Сезон 2025–2026</p><h1>Календарь</h1></div><p>Краткие даты этапов и международных стартов. Официальные страницы открываются по нажатию на название олимпиады.</p></header><div class="change-notice"><strong>Важно</strong><span>'+escapeHtml(SITE_CONTENT.notice||'')+'</span></div><div class="calendar-layout"><section><h2 class="stitle">Основные даты</h2><div class="calendar-list">'+events+'</div></section><section class="selection-area"><header class="selection-head"><h2>'+escapeHtml(s.title||'Как устроен отбор')+'</h2><p>'+escapeHtml(s.intro||'')+'</p></header><div class="selection-tree"><div class="tree-branches"><article class="tree-branch republican"><h3 class="tree-branch-label">'+escapeHtml(s.republicanTitle||'Республиканская олимпиада')+'</h3><div class="tree-stages">'+stages(s.republicanStages||[])+'</div><p class="tree-note">'+escapeHtml(s.republicanNote||'')+'</p></article><article class="tree-branch national"><h3 class="tree-branch-label">'+escapeHtml(s.nationalTitle||'Национальная олимпиада')+'</h3><div class="tree-stages">'+stages(s.nationalStages||[])+'</div><p class="tree-note">'+escapeHtml(s.nationalNote||'')+'</p></article></div><article class="tree-merge"><h3>'+escapeHtml(s.finalTitle||'IV этап')+'</h3><p>'+escapeHtml(s.finalText||'')+'</p></article><p class="tree-after">'+escapeHtml(s.afterText||'')+'</p></div><details class="selection-details"><summary>'+escapeHtml(s.rulesTitle||'Кто проходит в IV этап')+'</summary><p>'+escapeHtml(s.rulesText||'')+'</p></details></section></div>';
+  root.innerHTML='<header class="about-hero"><p class="eyebrow">'+escapeHtml(a.kicker||'Об олимпиаде')+'</p><h1 class="about-title">'+escapeHtml(a.title||'Национальная олимпиада по физике')+'</h1><p class="about-lead">'+escapeHtml(a.intro||'')+'</p></header><section class="about-story"><div><p class="eyebrow">Почему появилась NPhO</p><h2>'+escapeHtml(a.originTitle||'Почему появилась олимпиада')+'</h2></div><div><p class="about-story-copy">'+escapeHtml(a.originText||'')+'</p><h3 style="margin:1.7rem 0 .55rem;font-size:15px">'+escapeHtml(a.benefitTitle||'Что меняется')+'</h3><div class="about-points">'+benefits+'</div></div></section><section class="participate-block"><p class="eyebrow">Для участника</p><h2>'+escapeHtml(a.participateTitle||'Зачем участвовать')+'</h2><div class="reason-list">'+reasons+'</div></section><section class="about-selection-block"><p class="eyebrow">Отбор и сборная</p><h2>Как формируется сборная</h2><p class="about-selection-copy">'+escapeHtml(s.rulesText||'')+'</p><details class="about-selection-details"><summary>'+escapeHtml(s.rulesTitle||'Что важно знать об отборе')+'</summary><div class="about-selection-details-body"><p><strong>IV этап.</strong> '+escapeHtml(s.finalText||'')+'</p><p><strong>После финала.</strong> '+escapeHtml(s.afterText||'')+'</p><p class="change-note">'+escapeHtml(SITE_CONTENT.notice||'')+'</p></div></details><div class="about-actions" style="margin-top:1rem"><button class="btn-o" onclick="openHomeSection(\'home-selection-content\')">Посмотреть дерево отбора</button></div></section><section class="pathway-block"><p class="eyebrow">После финала</p><h2>'+escapeHtml(a.pathTitle||'Куда ведёт отбор')+'</h2><p class="pathway-copy">'+escapeHtml(a.pathText||'')+'</p><div class="international-row">'+international+'</div><div class="olympiad-guide"><h3 class="olympiad-guide-title">Чем отличаются международные олимпиады</h3>'+guide+'</div><div class="about-actions"><button class="btn-p" onclick="go(\'problems\')">Перейти к задачам</button><button class="btn-o" onclick="go(\'archive\')">Открыть архив</button></div></section>';
 }
 let ACTIVE_ARCHIVE_YEAR='2026';
 function renderArchivePanels(){
@@ -794,9 +816,12 @@ function renderArchivePanels(){
   years.forEach(year=>{renderPDFs(year);renderTable(year)});
 }
 function renderSiteContent(){
+  if(SITE_CONTENT.results&&typeof SITE_CONTENT.results==='object'){
+    Object.values(SITE_CONTENT.results).flat().forEach(row=>{row.status=String(row.status||'').replace(/\bBPhO\b/g,'BPO')});
+    RESULTS=JSON.parse(JSON.stringify(SITE_CONTENT.results));
+  }
   window.NPHO_SITE_CONTENT=SITE_CONTENT;
-  if(SITE_CONTENT.results&&typeof SITE_CONTENT.results==='object')RESULTS=JSON.parse(JSON.stringify(SITE_CONTENT.results));
-  renderAboutContent();renderCalendarContent();renderArchivePanels();
+  renderHomeContent();renderAboutContent();renderArchivePanels();
 }
 async function loadSiteContent(){
   try{const response=await fetch('/api/site-content',{cache:'no-store',headers:{Accept:'application/json'}});if(!response.ok)throw new Error('HTTP '+response.status);const payload=await response.json();if(payload.content&&Object.keys(payload.content).length)SITE_CONTENT=mergeSiteContent(DEFAULT_SITE_CONTENT,payload.content)}catch(error){console.warn('Не удалось загрузить контент сайта:',error)}
@@ -1816,7 +1841,13 @@ function toggleTheme(){
   updateThemeToggle();
 }
 
+function openHomeSection(sectionId){
+  go('home');
+  requestAnimationFrame(()=>document.getElementById(sectionId)?.scrollIntoView({behavior:'smooth',block:'start'}));
+}
+
 function go(id,updateHash=true){
+  if(id==='dates')id='home';
   document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.nl').forEach(b=>b.classList.remove('active'));
   const section=document.getElementById('sec-'+id);
