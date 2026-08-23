@@ -352,6 +352,9 @@
     .rich-preview p { margin: .7em 0; }
     .rich-preview h1, .rich-preview h2, .rich-preview h3 { margin: 1.1em 0 .5em; line-height: 1.25; }
     .rich-preview ul, .rich-preview ol { padding-left: 1.5em; }
+    .rich-preview .manual-numbered-list { display: grid; gap: .45em; margin: .7em 0; padding: 0; list-style: none; }
+    .rich-preview .manual-numbered-list > li { display: grid; grid-template-columns: max-content minmax(0,1fr); gap: .55em; align-items: start; }
+    .manual-list-marker { font-weight: 650; font-variant-numeric: tabular-nums; }
     .rich-preview blockquote { margin: 1em 0; padding: 8px 13px; border-left: 3px solid var(--accent); background: var(--accent-soft); }
     .rich-preview code { padding: 1px 4px; border-radius: 4px; background: #f2f4f7; font-size: .88em; }
     .rich-preview mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; }
@@ -715,6 +718,14 @@
       }catch{return normalizeProblem(problem)}
     }
 
+    function renderManualNumberedList(lines,inlineFormatter){
+      if(!lines.length||!/^\s*\d+[.)](?:\s|$)/.test(lines[0]))return'';
+      const items=[];
+      lines.forEach(line=>{const match=line.match(/^\s*(\d+)([.)])(?:\s+(.*))?$/);if(match){items.push({number:match[1],punctuation:match[2],lines:[match[3]||'']});return}if(items.length)items.at(-1).lines.push(line.trim())});
+      if(!items.length)return'';
+      return'<ol class="manual-numbered-list">'+items.map(item=>'<li value="'+Number(item.number)+'"><span class="manual-list-marker" aria-hidden="true">'+item.number+item.punctuation+'</span><span>'+inlineFormatter(item.lines.filter(Boolean).join('<br>'))+'</span></li>').join('')+'</ol>';
+    }
+
     function renderRich(source,images=[]){
       const tokens=[],imageTokens=[];
       let raw=String(source||'').replace(/\r\n/g,'\n');
@@ -729,7 +740,7 @@
       const hold=(math,display)=>{const id=tokens.length;tokens.push(display?'<div>\\['+math.trim()+'\\]</div>':'<span>\\('+math.trim()+'\\)</span>');return'NPHOMATH'+id+'X'};
       safe=safe.replace(/\$\$([\s\S]*?)\$\$/g,(_,m)=>hold(m,true)).replace(/\\\[([\s\S]*?)\\\]/g,(_,m)=>hold(m,true)).replace(/\\\(([\s\S]*?)\\\)/g,(_,m)=>hold(m,false)).replace(/(^|[^\\$])\$([^\n$]+?)\$/g,(_,p,m)=>p+hold(m,false));
       const inline=value=>value.replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/__([^_]+)__/g,'<strong>$1</strong>').replace(/\*([^*]+)\*/g,'<em>$1</em>');
-      const html=safe.split(/\n{2,}/).map(x=>x.trim()).filter(Boolean).map(block=>{if(/^NPHOMATH\d+X$/.test(block)||/^NPHOIMAGE\d+X$/.test(block))return block;if(/^###\s+/.test(block))return'<h3>'+inline(block.replace(/^###\s+/,''))+'</h3>';if(/^##\s+/.test(block))return'<h2>'+inline(block.replace(/^##\s+/,''))+'</h2>';if(/^#\s+/.test(block))return'<h1>'+inline(block.replace(/^#\s+/,''))+'</h1>';const lines=block.split('\n');if(lines.every(line=>/^[-*]\s+/.test(line)))return'<ul>'+lines.map(line=>'<li>'+inline(line.replace(/^[-*]\s+/,''))+'</li>').join('')+'</ul>';if(lines.every(line=>/^\d+[.)]\s+/.test(line)))return'<ol>'+lines.map(line=>{const match=line.match(/^(\d+)[.)]\s+(.*)$/);return'<li value="'+Number(match[1])+'">'+inline(match[2])+'</li>'}).join('')+'</ol>';if(block.startsWith('&gt; '))return'<blockquote>'+inline(block.replace(/^&gt;\s?/,'').replace(/\n&gt;\s?/g,'<br>'))+'</blockquote>';return'<p>'+inline(block).replace(/\n/g,'<br>')+'</p>'}).join('');
+      const html=safe.split(/\n{2,}/).map(x=>x.trim()).filter(Boolean).map(block=>{if(/^NPHOMATH\d+X$/.test(block)||/^NPHOIMAGE\d+X$/.test(block))return block;if(/^###\s+/.test(block))return'<h3>'+inline(block.replace(/^###\s+/,''))+'</h3>';if(/^##\s+/.test(block))return'<h2>'+inline(block.replace(/^##\s+/,''))+'</h2>';if(/^#\s+/.test(block))return'<h1>'+inline(block.replace(/^#\s+/,''))+'</h1>';const lines=block.split('\n');if(lines.every(line=>/^[-*]\s+/.test(line)))return'<ul>'+lines.map(line=>'<li>'+inline(line.replace(/^[-*]\s+/,''))+'</li>').join('')+'</ul>';const numberedList=renderManualNumberedList(lines,inline);if(numberedList)return numberedList;if(block.startsWith('&gt; '))return'<blockquote>'+inline(block.replace(/^&gt;\s?/,'').replace(/\n&gt;\s?/g,'<br>'))+'</blockquote>';return'<p>'+inline(block).replace(/\n/g,'<br>')+'</p>'}).join('');
       return html
         .replace(/NPHOMATH(\d+)X/g,(_,id)=>tokens[Number(id)]||'')
         .replace(/NPHOIMAGE(\d+)X/g,(_,id)=>imageTokens[Number(id)]||'');
