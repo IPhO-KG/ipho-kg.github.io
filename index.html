@@ -37,7 +37,7 @@ html[data-theme="dark"]{color-scheme:dark;--accent:#4f83ee;--accent2:#2fb58d;--a
 html[data-theme="light"]{color-scheme:light}
 @media(prefers-color-scheme:dark){html:not([data-theme]){color-scheme:dark;--accent:#4f83ee;--accent2:#2fb58d;--accent-rgb:79,131,238;--accent2-rgb:47,181,141;--bg:#111827;--bg2:#1f2937;--bg3:#374151;--text:#f9fafb;--text2:#b6c0cf;--text3:#7f8a9b;--border:#374151;--nav-bg:rgba(17,24,39,.86);--shadow-xs:0 1px 2px rgba(0,0,0,.16),0 6px 18px rgba(0,0,0,.11);--shadow-sm:0 2px 5px rgba(0,0,0,.2),0 16px 38px rgba(0,0,0,.16);--shadow-accent:0 14px 34px rgba(var(--accent-rgb),.13)}}
 nav{display:flex;align-items:center;justify-content:space-between;isolation:isolate;overflow:hidden;padding:.875rem 2rem;border-bottom:1px solid var(--border);background:var(--nav-bg);-webkit-backdrop-filter:blur(15px) saturate(1.15);backdrop-filter:blur(15px) saturate(1.15);box-shadow:0 4px 18px rgba(22,32,51,.025);position:sticky;top:0;z-index:100}
-nav::before{content:'';position:absolute;z-index:-1;inset:-1px 0;background-image:url('assets/kyrgyz-ornament-tile.png');background-position:center;background-size:auto 60px;background-repeat:repeat-x;opacity:.042;pointer-events:none;filter:saturate(.62)}
+nav::before{content:'';position:absolute;z-index:-1;inset:-1px 0;background-image:url('assets/kyrgyz-ornament-tile.png?v=116');background-position:center;background-size:auto 60px;background-repeat:repeat-x;opacity:.12;pointer-events:none;filter:saturate(.62)}
 nav>*{position:relative;z-index:1}
 .logo{display:flex;align-items:center;gap:10px;flex-shrink:0;font-size:15px;font-weight:700;color:var(--text);cursor:pointer}
 .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
@@ -383,9 +383,9 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
 .change-notice{box-shadow:var(--shadow-xs)}
 .problem-article-header{background:linear-gradient(180deg,var(--bg2),var(--bg))}
 .topic-block-head,.sidebar-head{background:var(--bg2);background:linear-gradient(180deg,var(--bg2),color-mix(in srgb,var(--bg2) 82%,var(--bg3)))}
-html[data-theme="dark"] nav::before{opacity:.058;filter:brightness(1.22) saturate(.68)}
-@media(prefers-color-scheme:dark){html:not([data-theme]) nav::before{opacity:.058;filter:brightness(1.22) saturate(.68)}}
-@media(max-width:640px){nav::before{background-size:auto 54px;opacity:.038}}
+html[data-theme="dark"] nav::before{opacity:.12;filter:brightness(1.22) saturate(.68)}
+@media(prefers-color-scheme:dark){html:not([data-theme]) nav::before{opacity:.12;filter:brightness(1.22) saturate(.68)}}
+@media(max-width:640px){nav::before{background-size:auto 54px;opacity:.10}}
 </style>
 </head>
 <body>
