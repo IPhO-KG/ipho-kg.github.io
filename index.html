@@ -3,24 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
-  try {
-    const savedTheme = localStorage.getItem('npho-theme');
-    if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
-  } catch {}
-</script>
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['\\(', '\\)']],
-      displayMath: [['\\[', '\\]']]
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
 <title>Национальная олимпиада по физике, Кыргызстан (NPhO)</title>
 <meta name="description" content="Национальная физическая олимпиада Кыргызстана. Задачи, решения и информация об олимпиаде.">
 <meta name="google-site-verification" content="SyxztxKSBm8W-PTQ3tYS_m2zo_RvEGYlv08fUyaxAxk"/>
@@ -31,53 +13,29 @@
 @keyframes pulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.12)}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:radial-gradient(circle at 8% 0,rgba(var(--accent-rgb),.025),transparent 46rem),radial-gradient(circle at 94% 10%,rgba(var(--accent2-rgb),.016),transparent 42rem),var(--bg);color:var(--text);line-height:1.6;font-size:15px}
-:root{--accent:#2b63b7;--accent2:#138267;--accent-rgb:43,99,183;--accent2-rgb:19,130,103;--bg:#fdfdfc;--bg2:#f6f7f8;--bg3:#eceff3;--text:#162033;--text2:#4e5a6c;--text3:#697587;--border:#d6dce5;--nav-bg:rgba(253,253,252,.88);--shadow-xs:0 1px 2px rgba(22,32,51,.045),0 5px 16px rgba(22,32,51,.035);--shadow-sm:0 2px 4px rgba(22,32,51,.045),0 13px 34px rgba(22,32,51,.06);--shadow-accent:0 12px 30px rgba(var(--accent-rgb),.13);--r:10px;--rl:16px}
-html[data-theme="dark"]{color-scheme:dark;--accent:#4f83ee;--accent2:#2fb58d;--accent-rgb:79,131,238;--accent2-rgb:47,181,141;--bg:#111827;--bg2:#1f2937;--bg3:#374151;--text:#f9fafb;--text2:#b6c0cf;--text3:#7f8a9b;--border:#374151;--nav-bg:rgba(17,24,39,.86);--shadow-xs:0 1px 2px rgba(0,0,0,.16),0 6px 18px rgba(0,0,0,.11);--shadow-sm:0 2px 5px rgba(0,0,0,.2),0 16px 38px rgba(0,0,0,.16);--shadow-accent:0 14px 34px rgba(var(--accent-rgb),.13)}
-html[data-theme="light"]{color-scheme:light}
-@media(prefers-color-scheme:dark){html:not([data-theme]){color-scheme:dark;--accent:#4f83ee;--accent2:#2fb58d;--accent-rgb:79,131,238;--accent2-rgb:47,181,141;--bg:#111827;--bg2:#1f2937;--bg3:#374151;--text:#f9fafb;--text2:#b6c0cf;--text3:#7f8a9b;--border:#374151;--nav-bg:rgba(17,24,39,.86);--shadow-xs:0 1px 2px rgba(0,0,0,.16),0 6px 18px rgba(0,0,0,.11);--shadow-sm:0 2px 5px rgba(0,0,0,.2),0 16px 38px rgba(0,0,0,.16);--shadow-accent:0 14px 34px rgba(var(--accent-rgb),.13)}}
-nav{display:flex;align-items:center;justify-content:space-between;isolation:isolate;overflow:hidden;padding:.875rem 2rem;border-bottom:1px solid var(--border);background:var(--nav-bg);-webkit-backdrop-filter:blur(15px) saturate(1.15);backdrop-filter:blur(15px) saturate(1.15);box-shadow:0 4px 18px rgba(22,32,51,.025);position:sticky;top:0;z-index:100}
-nav::before{content:'';position:absolute;z-index:-1;inset:-1px 0;background-image:url('assets/kyrgyz-ornament-tile.png?v=116');background-position:center;background-size:auto 60px;background-repeat:repeat-x;opacity:.12;pointer-events:none;filter:saturate(.62)}
-nav>*{position:relative;z-index:1}
-.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;font-size:15px;font-weight:700;color:var(--text);cursor:pointer}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:#111827;line-height:1.6;font-size:15px}
+:root{--accent:#1a56db;--accent2:#0e9f6e;--bg:#fff;--bg2:#f9fafb;--bg3:#f3f4f6;--text:#111827;--text2:#6b7280;--text3:#9ca3af;--border:#e5e7eb;--r:10px;--rl:16px}
+@media(prefers-color-scheme:dark){:root{--bg:#111827;--bg2:#1f2937;--bg3:#374151;--text:#f9fafb;--text2:#9ca3af;--text3:#6b7280;--border:#374151}body{background:var(--bg);color:var(--text)}}
+nav{display:flex;align-items:center;justify-content:space-between;padding:.875rem 2rem;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--text);cursor:pointer}
 .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
-.nav-right{display:flex;align-items:center;gap:8px;min-width:0}
 .nav-links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}.nav-links::-webkit-scrollbar{display:none}
-.nl{display:inline-flex;align-items:center;padding:6px 16px;font-size:13px;font-weight:500;border:none;background:transparent;color:var(--text2);cursor:pointer;border-radius:var(--r);transition:all .15s;text-decoration:none;white-space:nowrap}
+.nl{padding:6px 16px;font-size:13px;font-weight:500;border:none;background:transparent;color:var(--text2);cursor:pointer;border-radius:var(--r);transition:all .15s}
 .nl:hover{background:var(--bg2);color:var(--text)}.nl.active{background:var(--bg3);color:var(--text)}
-.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:34px;flex-shrink:0;padding:6px 11px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text2);font-size:12px;font-weight:650;cursor:pointer;white-space:nowrap;transition:border-color .15s,color .15s,background .15s}
-.theme-toggle:hover{border-color:var(--accent);color:var(--accent);background:var(--bg2)}
-.theme-icon{width:16px;text-align:center;font-size:15px;line-height:1}
 .sec{display:none}.sec.active{display:block}
-.hero{position:relative;isolation:isolate;overflow:hidden;padding:5rem 2rem 4rem;text-align:center;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 82% 68% at 50% -14%,rgba(var(--accent-rgb),.045),transparent 78%),linear-gradient(180deg,rgba(var(--accent-rgb),.012),transparent 74%)}
-.hero>*{position:relative;z-index:1}
-.hero #atom-canvas{filter:drop-shadow(0 15px 24px rgba(var(--accent-rgb),.13))}
+.hero{padding:5rem 2rem 4rem;text-align:center;border-bottom:1px solid var(--border)}
+.hero-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--accent);background:rgba(26,86,219,.08);border:1px solid rgba(26,86,219,.2);border-radius:100px;padding:4px 16px;margin-bottom:1.25rem;animation:fadeUp .5s both}
 .hero h1{font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.15;margin-bottom:1rem;letter-spacing:-.02em;animation:fadeUp .6s .08s both}
 .hero h1 span{color:var(--accent)}
 .hero-sub{font-size:16px;color:var(--text2);max-width:520px;margin:0 auto 2.25rem;animation:fadeUp .6s .16s both}
 .hbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s .24s both}
-.btn-p{padding:11px 26px;background:var(--accent);background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 76%,var(--accent2)));box-shadow:0 8px 20px rgba(var(--accent-rgb),.18),inset 0 1px 0 rgba(255,255,255,.18);color:#fff;border:none;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;transition:transform .15s,box-shadow .15s,filter .15s}
-.btn-p:hover{transform:translateY(-1px);box-shadow:0 11px 25px rgba(var(--accent-rgb),.23),inset 0 1px 0 rgba(255,255,255,.18);filter:saturate(1.06)}
-.btn-o{padding:11px 26px;background:var(--nav-bg);box-shadow:var(--shadow-xs);color:var(--text);border:1.5px solid var(--border);border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;transition:background .15s,transform .15s,box-shadow .15s}
-.btn-o:hover{background:var(--bg2);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
-.home-inner{max-width:1080px;padding-top:0}
-.home-section{padding:3.4rem 0;border-bottom:1px solid var(--border);scroll-margin-top:72px}
-.home-section:last-child{border-bottom:none}
-.home-section-head{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:2rem;align-items:start;margin-bottom:1.8rem}
-.home-section-head.compact{display:block;margin-bottom:1.35rem}
-.home-section-head h2{font-size:clamp(25px,3vw,34px);line-height:1.18;letter-spacing:-.025em}
-.home-section-head p{max-width:650px;color:var(--text2);font-size:15px;line-height:1.7}
-.home-calendar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem;margin-top:1.8rem}
-.calendar-column{min-width:0}
-.calendar-column-title{display:flex;align-items:center;gap:9px;margin-bottom:1.2rem;font-size:14px;font-weight:800}
-.calendar-column-title::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent2)}
-.calendar-column.international .calendar-column-title::before{background:#f59e0b}
-.home-calendar-grid .calendar-event{grid-template-columns:100px 20px minmax(0,1fr);gap:9px;min-height:82px}
-.home-calendar-grid .calendar-date{font-size:11px}
-.home-calendar-grid .calendar-copy h3{font-size:14px}
-.home-calendar-grid .calendar-copy p{font-size:12px}
-.home-calendar .change-notice{margin:0}
-@media(max-width:760px){.home-section-head,.home-calendar-grid{grid-template-columns:1fr;gap:1.3rem}.home-calendar-grid{gap:2rem}.home-section{padding:2.7rem 0}}
+.btn-p{padding:11px 26px;background:var(--accent);color:#fff;border:none;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;transition:opacity .15s}
+.btn-p:hover{opacity:.85}
+.btn-o{padding:11px 26px;background:transparent;color:var(--text);border:1.5px solid var(--border);border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;transition:background .15s}
+.btn-o:hover{background:var(--bg2)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--border)}
+.stat{padding:1.5rem;text-align:center;border-right:1px solid var(--border)}.stat:last-child{border-right:none}
+.sn{font-size:28px;font-weight:800;color:var(--accent)}.sl{font-size:12px;color:var(--text2);margin-top:3px}
 .inner{padding:2.5rem 2rem;max-width:960px;margin:0 auto}
 .stitle{font-size:20px;font-weight:700;margin-bottom:1.25rem;letter-spacing:-.01em}
 hr.sep{border:none;border-top:1px solid var(--border);margin:2rem 0}
@@ -86,16 +44,24 @@ hr.sep{border:none;border-top:1px solid var(--border);margin:2rem 0}
 .card:hover{border-color:var(--accent);transform:translateY(-2px)}
 .card h3{font-size:14px;font-weight:600;margin-bottom:.4rem}.card p{font-size:12px;color:var(--text2)}
 .badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:100px;margin-bottom:.6rem}
-.bb{background:rgba(var(--accent-rgb),.1);color:var(--accent)}.bt{background:rgba(var(--accent2-rgb),.1);color:var(--accent2)}
+.bb{background:rgba(26,86,219,.1);color:var(--accent)}.bt{background:rgba(14,159,110,.1);color:var(--accent2)}
 .bg2c{background:rgba(5,150,105,.1);color:#059669}.ba{background:rgba(245,158,11,.1);color:#b45309}
 .bgr{background:var(--bg3);color:var(--text2)}.bpu{background:rgba(144,97,249,.1);color:#7c3aed}
+.news{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:2.5rem}
+.nc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);padding:1.25rem;cursor:pointer;transition:border-color .15s,transform .15s}
+.nc:hover{border-color:var(--accent);transform:translateY(-2px)}
+.nc h3{font-size:14px;font-weight:600;line-height:1.4;margin-bottom:.4rem}.nc .meta{font-size:11px;color:var(--text3)}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:2rem}
+.step{text-align:center;padding:1.5rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl)}
+.snum2{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:14px;font-weight:800}
+.step h4{font-size:13px;font-weight:600;margin-bottom:3px}.step p{font-size:11px;color:var(--text2)}
 .tl{max-width:560px}
 .tlrow{display:flex;gap:.875rem;margin-bottom:.9rem}
 .tll{flex-shrink:0;width:100px;font-size:11px;color:var(--text3);padding-top:2px;text-align:right}
 .tlm{flex-shrink:0;display:flex;flex-direction:column;align-items:center}
 .tldot{width:11px;height:11px;border-radius:50%;border:2px solid var(--border);background:var(--bg);flex-shrink:0;margin-top:2px}
 .tldot.done{background:var(--accent2);border-color:var(--accent2)}
-.tldot.now{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 3px rgba(var(--accent-rgb),.18)}
+.tldot.now{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,86,219,.18)}
 .tldot.intl{background:#f59e0b;border-color:#f59e0b}
 .tlline{width:1px;background:var(--border);flex:1;min-height:20px}
 .tlr h4{font-size:14px;font-weight:600;margin-bottom:1px}.tlr p{font-size:12px;color:var(--text2)}
@@ -106,13 +72,9 @@ hr.sep{border:none;border-top:1px solid var(--border);margin:2rem 0}
 .ytab{padding:9px 22px;font-size:14px;font-weight:600;border:none;background:transparent;color:var(--text2);cursor:pointer;border-bottom:2.5px solid transparent;margin-bottom:-1px;transition:color .15s}
 .ytab:hover{color:var(--text)}.ytab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .yp{display:none}.yp.active{display:block}
-.yhero{display:grid;grid-template-columns:minmax(190px,.75fr) minmax(0,1.25fr);gap:2rem;align-items:center;padding:1.2rem 1.3rem;margin-bottom:1.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl)}
-.yhero-kicker{display:block;margin-bottom:.28rem;color:var(--text3);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-.yhero h2{font-size:20px;font-weight:750;line-height:1.25}
-.yhero-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));margin:0}
-.yhero-fact{min-width:0;padding:.15rem 1rem;border-left:1px solid var(--border)}
-.yhero-fact dt{margin-bottom:.25rem;color:var(--text3);font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-.yhero-fact dd{overflow-wrap:anywhere;color:var(--text);font-size:13px;font-weight:700;line-height:1.4}
+.yhero{padding:1.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.yhero h2{font-size:20px;font-weight:700;margin-bottom:3px}.yhero p{font-size:13px;color:var(--text2)}
+.ystats{display:flex;gap:2rem}.ys .yn{font-size:22px;font-weight:800;color:var(--accent)}.ys .yl{font-size:11px;color:var(--text2)}
 .slbl{font-size:11px;font-weight:700;color:var(--text2);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.75rem}
 .pdf-row{display:flex;align-items:center;justify-content:space-between;padding:.875rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:.5rem;transition:border-color .15s}
 .pdf-row:hover{border-color:var(--accent)}
@@ -135,87 +97,7 @@ hr.sep{border:none;border-top:1px solid var(--border);margin:2rem 0}
 .status-bronze{background:rgba(180,83,9,.1);color:#9a3412;border:1px solid rgba(180,83,9,.3)}
 .sbadge{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:100px}
 .row-gold td{background:rgba(251,191,36,.04)}.row-silver td{background:rgba(148,163,184,.04)}.row-bronze td{background:rgba(180,83,9,.03)}
-html[data-theme="dark"] .status-gold{background:rgba(251,191,36,.19);color:#fde68a;border-color:rgba(253,230,138,.5)}
-html[data-theme="dark"] .status-silver{background:rgba(203,213,225,.16);color:#e5e7eb;border-color:rgba(226,232,240,.42)}
-html[data-theme="dark"] .status-bronze{background:rgba(251,146,60,.16);color:#fdba74;border-color:rgba(253,186,116,.44)}
-@media(prefers-color-scheme:dark){
-  html:not([data-theme]) .status-gold{background:rgba(251,191,36,.19);color:#fde68a;border-color:rgba(253,230,138,.5)}
-  html:not([data-theme]) .status-silver{background:rgba(203,213,225,.16);color:#e5e7eb;border-color:rgba(226,232,240,.42)}
-  html:not([data-theme]) .status-bronze{background:rgba(251,146,60,.16);color:#fdba74;border-color:rgba(253,186,116,.44)}
-}
-
-/* Об олимпиаде: спокойная справочная страница */
-.about-inner,.calendar-inner{max-width:1080px}
-.about-inner{max-width:1040px}
-.about-hero{max-width:850px;padding:.75rem 0 2.6rem;border-bottom:1px solid var(--border)}
-.eyebrow{font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
-.about-hero .eyebrow{color:var(--text3);margin-bottom:.65rem}
-.about-title{max-width:780px;font-size:clamp(30px,4vw,44px);line-height:1.12;letter-spacing:-.03em;margin-bottom:1rem}
-.about-lead{max-width:820px;font-size:17px;line-height:1.76;color:var(--text2)}
-.about-document{max-width:960px}
-.about-section{display:grid;grid-template-columns:220px minmax(0,1fr);gap:3rem;padding:2.75rem 0;border-bottom:1px solid var(--border)}
-.about-section:last-child{border-bottom:0;padding-bottom:.75rem}
-.about-section-label{margin-bottom:.6rem;color:var(--text3);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-.about-section h2,.selection-head h2{font-size:clamp(23px,3vw,29px);line-height:1.22;letter-spacing:-.02em}
-.about-copy{display:grid;gap:.85rem;font-size:16px;line-height:1.78;color:var(--text2)}
-.about-subtitle{margin:1.65rem 0 .9rem;font-size:14px;font-weight:800}
-.about-facts{display:grid;overflow:hidden;border:1px solid var(--border);border-radius:var(--r);background:var(--bg2);box-shadow:var(--shadow-sm)}
-.about-fact{display:grid;grid-template-columns:160px minmax(0,1fr);gap:1.2rem;align-items:start;padding:1rem 1.1rem;border-bottom:1px solid var(--border)}
-.about-fact:last-child{border-bottom:0}
-.about-fact dt{font-size:13px;font-weight:800;color:var(--text)}
-.about-fact dd{font-size:14px;line-height:1.65;color:var(--text2)}
-.about-selection-copy{margin:0 0 1.2rem;color:var(--text2);font-size:15px;line-height:1.72}
-.team-selection-list{overflow:hidden;border:1px solid var(--border);border-radius:var(--r);background:var(--bg2)}
-.team-selection-row{display:grid;grid-template-columns:76px 150px minmax(0,1fr);gap:1.1rem;align-items:start;padding:1rem 1.1rem;border-bottom:1px solid var(--border)}
-.team-selection-row:last-child{border-bottom:0}
-.team-selection-code{color:var(--accent);font-size:14px;font-weight:900}
-.team-selection-count{color:var(--text);font-size:13px;font-weight:800}
-.team-selection-text{color:var(--text2);font-size:13px;line-height:1.62}
-.about-notice{margin-top:1.15rem;padding:.85rem 1rem;border-left:2px solid var(--border);color:var(--text3);font-size:12px;line-height:1.65}
-.olympiad-intro{margin-bottom:1.65rem;color:var(--text2);font-size:15px;line-height:1.72}
-.olympiad-guide{display:grid;overflow:hidden;border:1px solid var(--border);border-radius:var(--r);background:var(--bg2);box-shadow:var(--shadow-sm)}
-.olympiad-row{display:grid;grid-template-columns:72px minmax(0,1fr);gap:1.2rem;align-items:start;padding:1rem 1.1rem;border-bottom:1px solid var(--border)}
-.olympiad-row:last-child{border-bottom:0}
-.olympiad-code{padding-top:1px;color:var(--accent);font-size:14px;font-weight:900}
-.olympiad-name{display:block;margin-bottom:.3rem;font-size:14px;font-weight:800}
-.olympiad-description{color:var(--text2);font-size:14px;line-height:1.68}
-/* Календарь и дерево отбора */
-.calendar-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:1.4rem}
-.calendar-head h1{font-size:clamp(29px,4vw,42px);line-height:1.12;letter-spacing:-.03em}.calendar-head p{max-width:600px;color:var(--text2)}
-.change-notice{display:flex;gap:12px;padding:1rem 1.1rem;margin-bottom:2rem;border:1px solid rgba(245,158,11,.32);border-radius:var(--r);background:rgba(245,158,11,.07);color:var(--text2);font-size:12px;line-height:1.62}
-.change-notice strong{color:#b45309;white-space:nowrap}
-.calendar-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem}
-.calendar-list{max-width:780px}
-.calendar-event{display:grid;grid-template-columns:120px 24px minmax(0,1fr);gap:12px;min-height:78px}
-.calendar-date{padding-top:1px;color:var(--text3);font-size:12px;font-weight:700;text-align:right}
-.calendar-track{display:flex;flex-direction:column;align-items:center}.calendar-dot{width:13px;height:13px;flex:0 0 auto;margin-top:3px;border:2px solid var(--accent2);border-radius:50%;background:var(--bg)}
-.calendar-event.current .calendar-dot{border-color:var(--accent);background:var(--accent);box-shadow:0 0 0 4px rgba(var(--accent-rgb),.12)}
-.calendar-event.international .calendar-dot{border-color:#f59e0b;background:#f59e0b}
-.calendar-line{width:1px;flex:1;background:var(--border)}.calendar-event:last-child .calendar-line{display:none}
-.calendar-copy{padding-bottom:1.15rem}.calendar-copy h3{font-size:15px;line-height:1.35;margin-bottom:.2rem}.calendar-copy p{font-size:13px;color:var(--text2);line-height:1.55}
-.calendar-copy a{color:inherit;text-decoration:none}.calendar-copy a:hover{color:var(--accent);text-decoration:underline}
-.event-type{display:inline-block;margin-left:6px;padding:1px 7px;border:1px solid rgba(245,158,11,.35);border-radius:100px;background:rgba(245,158,11,.1);color:#b45309;font-size:9px;font-weight:800;vertical-align:middle}
-.selection-area{padding-top:2.7rem;margin-top:.5rem;border-top:1px solid var(--border)}
-.selection-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:2rem;align-items:start;margin-bottom:1.8rem}.selection-head p{color:var(--text2);line-height:1.7}
-.selection-tree{max-width:900px;margin:0 auto}
-.tree-branches{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px;padding-bottom:46px}
-.tree-branches::before{content:'';position:absolute;left:25%;right:25%;bottom:22px;height:1px;background:var(--border)}
-.tree-branch{position:relative;padding:1.25rem;border:1px solid var(--border);border-radius:var(--rl);background:var(--bg2)}
-.tree-branch::after{content:'';position:absolute;left:50%;bottom:-24px;width:1px;height:24px;background:var(--border)}
-.tree-branch-label{display:flex;align-items:center;gap:8px;margin-bottom:1rem;font-size:14px;font-weight:800}.tree-branch-label::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent)}
-.tree-branch.national .tree-branch-label::before{background:var(--accent2)}
-.tree-stages{display:grid}.tree-stage{position:relative;padding:0 0 .85rem 24px;color:var(--text);font-size:13px;line-height:1.45}.tree-stage:last-child{padding-bottom:0}
-.tree-stage::before{content:'';position:absolute;left:4px;top:5px;width:7px;height:7px;border:2px solid var(--accent);border-radius:50%;background:var(--bg2)}
-.tree-branch.national .tree-stage::before{border-color:var(--accent2)}
-.tree-stage:not(:last-child)::after{content:'';position:absolute;left:8px;top:16px;bottom:0;width:1px;background:var(--border)}
-.tree-note{margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--border);color:var(--text2);font-size:11px;line-height:1.55}
-.tree-merge{position:relative;width:min(620px,90%);margin:0 auto;padding:1.25rem 1.5rem;border:1.5px solid var(--accent);border-radius:var(--rl);background:linear-gradient(135deg,rgba(var(--accent-rgb),.1),rgba(var(--accent2-rgb),.07));text-align:center}
-.tree-merge::before{content:'';position:absolute;left:50%;top:-24px;width:1px;height:24px;background:var(--border)}
-.tree-merge h3{font-size:18px;margin-bottom:.25rem}.tree-merge p{font-size:12px;color:var(--text2)}
-.selection-details{max-width:900px;margin:1.5rem auto 0;border:1px solid var(--border);border-radius:var(--r);background:var(--bg2)}
-.selection-details summary{padding:1rem 1.1rem;cursor:pointer;font-size:13px;font-weight:800}.selection-details p{padding:0 1.1rem 1.1rem;color:var(--text2);font-size:13px;line-height:1.7;white-space:pre-line}
-@media(max-width:700px){.about-section,.selection-head{grid-template-columns:1fr;gap:1.25rem}.about-section{padding:2.2rem 0}.about-fact{grid-template-columns:1fr;gap:.2rem}.olympiad-row{grid-template-columns:58px minmax(0,1fr);gap:.9rem}.team-selection-row{grid-template-columns:64px minmax(0,1fr);gap:.55rem 1rem}.team-selection-text{grid-column:2}.calendar-head{display:block}.calendar-head p{margin-top:.7rem}.change-notice{display:block}.change-notice strong{display:block;margin-bottom:.35rem}.calendar-event{grid-template-columns:78px 18px minmax(0,1fr);gap:8px}.calendar-date{font-size:10px}.tree-branches{grid-template-columns:1fr;gap:28px;padding-bottom:28px}.tree-branches::before{display:none}.tree-branch::after{left:50%;bottom:-29px;height:29px}.tree-merge::before{top:-29px;height:29px}.about-title{font-size:32px}.about-lead{font-size:16px}}
-footer{position:relative;isolation:isolate;overflow:hidden;background:var(--bg2);background:linear-gradient(180deg,var(--bg2),color-mix(in srgb,var(--bg2) 80%,var(--bg3)));border-top:1px solid var(--border);padding:3rem 2rem 2rem}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2rem 2rem}
 .fi{max-width:960px;margin:0 auto}
 .fg{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
 .fc h4{font-size:13px;font-weight:700;margin-bottom:.875rem}
@@ -225,40 +107,15 @@ footer{position:relative;isolation:isolate;overflow:hidden;background:var(--bg2)
 .ci{width:30px;height:30px;border-radius:8px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ct{font-size:13px;color:var(--text2);text-decoration:none;cursor:pointer}
 .ct:hover{color:var(--accent)}
-.fbot{border-top:1px solid var(--border);padding-top:1.25rem}
+.fbot{border-top:1px solid var(--border);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
 .fbot p{font-size:12px;color:var(--text3)}
-@media(max-width:640px){body{overflow-x:hidden}nav{padding:.7rem .75rem;gap:.55rem}.logo{gap:7px;font-size:14px}.logo-dot{width:9px;height:9px}.nav-right{flex:1;justify-content:flex-end;gap:3px;min-width:0}.nav-links{min-width:0;max-width:100%;overscroll-behavior-inline:contain}.nl{padding:6px 8px;font-size:11px}.theme-toggle{width:34px;padding:6px}.theme-label{display:none}.fg{grid-template-columns:1fr;gap:1.5rem}.inner{padding:1.5rem 1rem}.hero{padding:2.7rem 1rem 2.5rem}.hero #atom-canvas{width:min(200px,68vw);height:auto}.hbtns .btn-p,.hbtns .btn-o{min-width:132px}.ytabs{overflow-x:auto;scrollbar-width:none}.ytabs::-webkit-scrollbar{display:none}.ytab{flex:0 0 auto;padding-inline:16px}.yhero{grid-template-columns:1fr;gap:1rem;padding:1.1rem}.yhero-facts{grid-template-columns:repeat(auto-fit,minmax(105px,1fr))}.yhero-fact:first-child{padding-left:0;border-left:0}.pdf-row{align-items:flex-start;gap:.8rem}.pdf-info{min-width:0}.pdf-name,.pdf-sub{overflow-wrap:anywhere}.btn-dl{flex-shrink:0}}
+@media(max-width:640px){nav{padding:.75rem 1rem}.nl{padding:6px 10px;font-size:12px}.stats{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr;gap:1.5rem}.inner{padding:1.5rem 1rem}.hero{padding:3rem 1rem 2.5rem}}
 
 /* Банк задач: каталог и отдельная страница каждой задачи */
 .problems-inner{max-width:1240px}
 .practice-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
 .practice-intro{max-width:720px;color:var(--text2);font-size:14px}
-.practice-count{font-size:12px;font-weight:700;color:var(--accent);background:rgba(var(--accent-rgb),.08);border:1px solid rgba(var(--accent-rgb),.18);padding:5px 12px;border-radius:100px;white-space:nowrap}
-.selection-view[hidden]{display:none!important}
-.selection-kicker{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:.7rem}
-.book-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.book-choice-card{appearance:none;width:100%;text-align:left;padding:1.6rem;border:1.5px solid var(--border);border-radius:var(--rl);background:var(--bg);color:var(--text);cursor:pointer;transition:transform .16s,border-color .16s,box-shadow .16s}
-.book-choice-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 10px 24px rgba(17,24,39,.08)}
-.book-choice-title{display:block;font-family:Georgia,'Times New Roman',serif;font-size:25px;font-weight:800;margin-bottom:.35rem}
-.book-choice-description{display:block;font-size:13px;color:var(--text2);line-height:1.55}
-.book-choice-footer{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border)}
-.book-choice-count{font-size:12px;font-weight:750;color:var(--accent)}
-.book-choice-arrow{font-size:18px;color:var(--accent)}
-.selection-toolbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.2rem;flex-wrap:wrap}
-.selection-title{font-family:Georgia,'Times New Roman',serif;font-size:28px;line-height:1.2}
-.topic-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.topic-choice-card{appearance:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;padding:1.25rem 1.35rem;border:1.5px solid var(--border);border-radius:var(--rl);background:var(--bg);color:var(--text);cursor:pointer;text-align:left;transition:transform .15s,border-color .15s,background .15s}
-.topic-choice-card:hover{transform:translateY(-2px);border-color:var(--accent);background:var(--bg2)}
-.topic-choice-name{font-size:16px;font-weight:750}
-.topic-choice-count{font-size:11px;color:var(--text2);white-space:nowrap}
-.catalog-search{position:relative;max-width:430px;margin:0 0 1rem}
-.catalog-search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:15px;pointer-events:none}
-.catalog-search-input{width:100%;height:40px;padding:8px 38px 8px 36px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text);font-size:13px;outline:none;transition:border-color .15s,box-shadow .15s}
-.catalog-search-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(var(--accent-rgb),.1)}
-.catalog-search-input::placeholder{color:var(--text3)}
-.catalog-search-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:26px;height:26px;border:0;border-radius:6px;background:transparent;color:var(--text3);font-size:16px;cursor:pointer}
-.catalog-search-clear:hover{background:var(--bg2);color:var(--text)}
-@media(max-width:640px){.book-choice-grid,.topic-choice-grid{grid-template-columns:1fr}.book-choice-card{padding:1.25rem}.selection-title{font-size:24px}}
+.practice-count{font-size:12px;font-weight:700;color:var(--accent);background:rgba(26,86,219,.08);border:1px solid rgba(26,86,219,.18);padding:5px 12px;border-radius:100px;white-space:nowrap}
 .filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:1.5rem}
 .filter-btn{padding:7px 13px;border:1px solid var(--border);border-radius:100px;background:var(--bg);color:var(--text2);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
 .filter-btn:hover{border-color:var(--accent);color:var(--accent)}
@@ -269,31 +126,14 @@ footer{position:relative;isolation:isolate;overflow:hidden;background:var(--bg2)
 .topic-block-title{font-size:15px;font-weight:750}
 .topic-block-count{font-size:11px;color:var(--text2)}
 .topic-task-grid{display:flex;gap:8px;flex-wrap:wrap;padding:1.15rem}
-.task-number-tile{min-width:58px;height:45px;padding:4px 9px;border-radius:7px;border:1.5px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;transition:transform .15s,border-color .15s,background .15s,color .15s,box-shadow .15s;position:relative;display:inline-flex;align-items:center;justify-content:center}
-.task-number-tile:hover{transform:translateY(-2px);box-shadow:0 5px 14px rgba(17,24,39,.09)}
-.task-tile-number{font-size:13px;font-weight:800;line-height:1}
-.task-tile-skull{position:absolute;right:3px;top:2px;font-size:11px;line-height:1;filter:grayscale(1) brightness(2.3)}
-.difficulty-1{--difficulty:#059669;--difficulty-bg:rgba(5,150,105,.10);--difficulty-border:rgba(5,150,105,.62)}
-.difficulty-2{--difficulty:#b45309;--difficulty-bg:rgba(245,158,11,.12);--difficulty-border:rgba(245,158,11,.72)}
-.difficulty-3{--difficulty:#dc2626;--difficulty-bg:rgba(239,68,68,.10);--difficulty-border:rgba(239,68,68,.68)}
-.difficulty-4{--difficulty:#991b1b;--difficulty-bg:rgba(127,29,29,.16);--difficulty-border:rgba(185,28,28,.92)}
-html[data-theme="dark"] .difficulty-1{--difficulty:#34d399;--difficulty-bg:rgba(52,211,153,.12);--difficulty-border:rgba(52,211,153,.58)}
-html[data-theme="dark"] .difficulty-2{--difficulty:#fbbf24;--difficulty-bg:rgba(251,191,36,.12);--difficulty-border:rgba(251,191,36,.58)}
-html[data-theme="dark"] .difficulty-3{--difficulty:#fb7185;--difficulty-bg:rgba(251,113,133,.12);--difficulty-border:rgba(251,113,133,.58)}
-html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(248,113,113,.14);--difficulty-border:rgba(248,113,113,.68)}
-@media(prefers-color-scheme:dark){
-  html:not([data-theme]) .difficulty-1{--difficulty:#34d399;--difficulty-bg:rgba(52,211,153,.12);--difficulty-border:rgba(52,211,153,.58)}
-  html:not([data-theme]) .difficulty-2{--difficulty:#fbbf24;--difficulty-bg:rgba(251,191,36,.12);--difficulty-border:rgba(251,191,36,.58)}
-  html:not([data-theme]) .difficulty-3{--difficulty:#fb7185;--difficulty-bg:rgba(251,113,133,.12);--difficulty-border:rgba(251,113,133,.58)}
-  html:not([data-theme]) .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(248,113,113,.14);--difficulty-border:rgba(248,113,113,.68)}
-}
-.task-number-tile.difficulty-1,.task-number-tile.difficulty-2,.task-number-tile.difficulty-3,.task-number-tile.difficulty-4{color:var(--difficulty);background:var(--difficulty-bg);border-color:var(--difficulty-border)}
-.task-number-tile.difficulty-1:hover,.task-number-tile.difficulty-2:hover,.task-number-tile.difficulty-3:hover,.task-number-tile.difficulty-4:hover{color:var(--difficulty);border-color:var(--difficulty)}
-.task-number-tile.difficulty-4{font-weight:900;background:linear-gradient(135deg,rgba(127,29,29,.22),rgba(239,68,68,.09))}
-.catalog-legend{display:flex;gap:10px 16px;flex-wrap:wrap;margin-top:1rem;font-size:11px;color:var(--text2)}
-.legend-item{display:flex;align-items:center;gap:7px}
-.legend-color{width:22px;height:18px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;color:var(--difficulty);background:var(--difficulty-bg);border:1.5px solid var(--difficulty-border);font-size:11px;font-weight:900;line-height:1}
-.difficulty-chip{min-height:27px;display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:5px 11px;border:1px solid var(--difficulty-border);border-radius:100px;background:var(--difficulty-bg);color:var(--difficulty);font-size:11px;font-weight:800;line-height:1.15;white-space:nowrap}
+.task-number-tile{width:43px;height:38px;border-radius:7px;border:1.5px solid var(--border);background:var(--bg);color:var(--text);font-size:13px;font-weight:750;cursor:pointer;transition:transform .15s,border-color .15s,background .15s,color .15s;position:relative}
+.task-number-tile:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent)}
+.task-number-tile.easy{border-color:rgba(14,159,110,.65);background:rgba(14,159,110,.06)}
+.task-number-tile.medium{border-color:rgba(245,158,11,.7);background:rgba(245,158,11,.07)}
+.task-number-tile.hard{border-color:rgba(239,68,68,.65);background:rgba(239,68,68,.06)}
+.catalog-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:1rem;font-size:11px;color:var(--text2)}
+.legend-item{display:flex;align-items:center;gap:6px}.legend-dot{width:9px;height:9px;border-radius:3px;border:1.5px solid}
+.legend-easy{border-color:#059669;background:rgba(14,159,110,.08)}.legend-medium{border-color:#b45309;background:rgba(245,158,11,.09)}.legend-hard{border-color:#dc2626;background:rgba(239,68,68,.08)}
 .empty-problems{display:none;padding:2rem;text-align:center;color:var(--text2);border:1px dashed var(--border);border-radius:var(--rl)}
 .problem-detail[hidden],.problem-catalog-view[hidden]{display:none!important}
 .problem-back{display:inline-flex;align-items:center;gap:7px;border:none;background:transparent;color:var(--accent);font-size:13px;font-weight:700;cursor:pointer;padding:0;margin-bottom:1.1rem}
@@ -301,145 +141,150 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
 .problem-page-layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:22px;align-items:start}
 .problem-article{border:1px solid var(--border);border-radius:var(--rl);background:var(--bg);overflow:hidden;min-width:0}
 .problem-article-header{padding:1.7rem 1.8rem 1.35rem;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--bg2),var(--bg))}
-.problem-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:.75rem;min-width:0}
-.topic-chip,.level-chip{box-sizing:border-box;border-radius:100px;font-size:11px;font-weight:750}
-.topic-chip{min-height:27px;max-width:100%;display:inline-flex;align-items:center;padding:5px 11px;background:rgba(var(--accent-rgb),.1);color:var(--accent);line-height:1.15;overflow-wrap:anywhere;white-space:normal}
-.level-chip{background:transparent}
-.level-chip.difficulty-chip{min-height:27px;display:inline-flex;align-items:center;justify-content:center;padding:5px 11px;background:var(--difficulty-bg);line-height:1.15;white-space:nowrap}
+.problem-meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:.75rem}
+.topic-chip,.level-chip{display:inline-block;font-size:10px;font-weight:750;padding:3px 9px;border-radius:100px;white-space:nowrap}
+.topic-chip{background:rgba(26,86,219,.1);color:var(--accent)}
+.level-easy{background:rgba(14,159,110,.1);color:#059669}
+.level-medium{background:rgba(245,158,11,.12);color:#b45309}
+.level-hard{background:rgba(239,68,68,.1);color:#dc2626}
+.problem-page-number{font-size:11px;font-weight:800;letter-spacing:.07em;color:var(--text3);text-transform:uppercase;margin-bottom:5px}
 .problem-page-title{font-size:clamp(23px,3.4vw,34px);font-weight:800;line-height:1.2;letter-spacing:-.02em}
-.problem-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
-.copy-problem-link{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text2);font-size:11px;font-weight:700;cursor:pointer;transition:border-color .15s,color .15s,background .15s}
-.copy-problem-link:hover{border-color:var(--accent);color:var(--accent);background:var(--bg2)}
 .problem-section{padding:1.65rem 1.8rem;border-bottom:1px solid var(--border)}
 .problem-section:last-child{border-bottom:none}
 .problem-section h2{font-family:Georgia,'Times New Roman',serif;font-size:24px;font-weight:700;margin-bottom:.8rem}
 .problem-body{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.82;color:var(--text)}
 .problem-body p{margin-bottom:.85rem}.problem-body p:last-child{margin-bottom:0}
-.manual-numbered-list{display:grid;gap:.45em;margin:.85em 0;padding:0;list-style:none}
-.manual-numbered-list>li{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:.55em;align-items:start}
-.manual-list-marker{font-weight:650;font-variant-numeric:tabular-nums}
 .problem-figure{display:block;max-width:min(100%,640px);max-height:480px;object-fit:contain;margin:1.25rem auto 0;border-radius:10px}
-.problem-images{display:grid;gap:14px;margin-top:1.25rem}
-.problem-figure-wrap{margin:0;text-align:center}
-.problem-figure{margin:0 auto;border:1px solid var(--border);background:var(--bg2)}
-.problem-figure-caption{margin-top:.55rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:var(--text2)}
-.embedded-problem-figure{margin:1.25rem auto}
-.hint-progress{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:var(--text2);margin-bottom:.8rem}
-.hint-step{display:none;padding:1rem 1.05rem;margin-top:.75rem;border:1px solid rgba(245,158,11,.28);border-radius:var(--r);background:rgba(245,158,11,.055)}
-.hint-step.visible{display:block;animation:fadeUp .22s both}
-.hint-step:first-of-type{margin-top:0}
-.hint-step-label{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#b45309;margin-bottom:.45rem}
-.hint-step-text{font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.78}
-.hint-step-image{display:block;max-width:min(100%,560px);max-height:420px;object-fit:contain;margin:1rem auto 0;border:1px solid var(--border);border-radius:10px;background:var(--bg)}
-.hint-step-caption{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;color:var(--text2);text-align:center;margin-top:.45rem}
 .formula{font-family:Georgia,'Times New Roman',serif;font-size:1.03em;white-space:normal}
-.reveal-section{padding:0;border-bottom:1px solid color-mix(in srgb,var(--border) 72%,transparent)}
-.reveal-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.05rem 1.8rem;cursor:pointer;background:color-mix(in srgb,var(--bg) 93%,var(--bg2));transition:background .15s}
-.reveal-heading:hover{background:color-mix(in srgb,var(--bg) 87%,var(--bg2))}
-.reveal-heading:has(.reveal-btn[aria-expanded="true"]){background:color-mix(in srgb,var(--bg) 95%,var(--accent))}
-.reveal-heading h2{font-family:Georgia,'Times New Roman',serif;font-size:21px;margin:0}
+.reveal-section{padding:0}
+.reveal-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.8rem;cursor:pointer;background:var(--bg2)}
+.reveal-heading h2{font-family:Georgia,'Times New Roman',serif;font-size:22px;margin:0}
 .reveal-btn{padding:7px 13px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text2);font-size:12px;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap}
-.reveal-btn:hover,.reveal-btn[aria-expanded="true"]{border-color:var(--accent);color:var(--accent);background:rgba(var(--accent-rgb),.06)}
-.reveal-panel{display:none;padding:1.45rem 1.8rem;border-top:1px solid color-mix(in srgb,var(--border) 72%,transparent);background:var(--bg);font-size:16px;line-height:1.78;font-family:Georgia,'Times New Roman',serif}
+.reveal-btn:hover,.reveal-btn[aria-expanded="true"]{border-color:var(--accent);color:var(--accent);background:rgba(26,86,219,.06)}
+.reveal-panel{display:none;padding:1.45rem 1.8rem;border-top:1px solid var(--border);font-size:16px;line-height:1.78;font-family:Georgia,'Times New Roman',serif}
 .reveal-panel.open{display:block;animation:fadeUp .22s both}
-.hint-panel{background:color-mix(in srgb,var(--bg) 97%,#f59e0b)}
-.solution-panel{background:color-mix(in srgb,var(--bg) 97%,var(--accent))}
-.answer-panel{background:color-mix(in srgb,var(--bg) 95%,var(--accent))}
+.hint-panel{background:rgba(245,158,11,.045)}
+.solution-panel{background:rgba(14,159,110,.035)}
+.answer-box{padding:1.15rem 1.8rem;border-bottom:1px solid var(--border);background:rgba(26,86,219,.035)}
+.answer-label{font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem}
 .answer-text{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.65}
-.problem-body mjx-container[display="true"],.reveal-panel mjx-container[display="true"],.answer-text mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
-.problem-body table,.reveal-panel table,.answer-text table{display:block;max-width:100%;overflow-x:auto}
-.problem-page-nav{position:static;z-index:auto;display:flex;align-items:stretch;justify-content:space-between;gap:10px;padding:1.1rem 1.8rem;border-bottom:0;background:color-mix(in srgb,var(--bg) 90%,var(--bg2))}
+.problem-page-nav{display:flex;align-items:stretch;justify-content:space-between;gap:10px;padding:1.1rem 1.8rem;background:var(--bg2)}
 .problem-nav-btn{display:flex;flex-direction:column;gap:2px;min-width:0;max-width:48%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text);cursor:pointer;text-align:left;font-size:12px;transition:border-color .15s,color .15s}
 .problem-nav-btn:hover{border-color:var(--accent);color:var(--accent)}
 .problem-nav-btn.next{text-align:right;margin-left:auto}.problem-nav-btn:disabled{opacity:.35;cursor:default;border-color:var(--border);color:var(--text2)}
 .problem-nav-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em}.problem-nav-title{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .problem-sidebar{position:sticky;top:76px;border:1px solid var(--border);border-radius:var(--rl);background:var(--bg);overflow:hidden}
-.sidebar-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:.9rem;padding:1rem;border-bottom:1px solid var(--border);background:var(--bg2)}
-.sidebar-topic{min-width:0;font-size:13px;font-weight:750;line-height:1.5;overflow-wrap:anywhere}
-.sidebar-count{align-self:start;padding-top:2px;color:var(--text2);font-size:10px;line-height:1.4;white-space:nowrap}
+.sidebar-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:1rem;border-bottom:1px solid var(--border);background:var(--bg2)}
+.sidebar-topic{font-size:13px;font-weight:750}.sidebar-count{font-size:10px;color:var(--text2)}
 .sidebar-task-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:1rem}
-.sidebar-task-btn{aspect-ratio:1;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text2);font-size:11px;font-weight:800;cursor:pointer;transition:all .15s;position:relative}
-.sidebar-task-btn.difficulty-1,.sidebar-task-btn.difficulty-2,.sidebar-task-btn.difficulty-3,.sidebar-task-btn.difficulty-4{color:var(--difficulty);background:var(--difficulty-bg);border-color:var(--difficulty-border)}
-.sidebar-task-btn:hover{transform:translateY(-1px);border-color:var(--difficulty)}
-.sidebar-task-btn.active{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--difficulty);border-color:var(--difficulty);color:var(--difficulty)}
-.sidebar-skull{position:absolute;right:1px;top:1px;font-size:8px;line-height:1}
+.sidebar-task-btn{aspect-ratio:1;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text2);font-size:11px;font-weight:750;cursor:pointer;transition:all .15s}
+.sidebar-task-btn:hover{border-color:var(--accent);color:var(--accent)}
+.sidebar-task-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
 .sidebar-all{display:block;width:calc(100% - 2rem);margin:0 1rem 1rem;padding:8px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg2);color:var(--text2);font-size:11px;font-weight:700;cursor:pointer}
 .sidebar-all:hover{border-color:var(--accent);color:var(--accent)}
-.problem-sync-status{min-height:1.25rem;margin-top:.45rem;font-size:11px;color:var(--text3)}
-.problem-sync-status.ok{color:var(--accent2)}
-.problem-sync-status.fallback{color:#b45309}
-.problem-admin-button{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);color:var(--text);font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;transition:border-color .15s,color .15s,background .15s}
-.problem-admin-button:hover{border-color:var(--accent);color:var(--accent);background:var(--bg2)}
-.problem-admin-button span{font-size:15px;line-height:1;color:var(--accent)}
-@media(max-width:850px){.problem-page-layout{grid-template-columns:1fr}.problem-sidebar{position:static;order:-1}.sidebar-task-grid{display:flex;gap:7px;overflow-x:auto;padding:.85rem;scrollbar-width:thin}.sidebar-task-btn{flex:0 0 38px;width:38px;height:38px;aspect-ratio:auto}.sidebar-all{margin:.15rem .85rem .85rem;width:calc(100% - 1.7rem)}}
-@media(max-width:640px){.practice-head{align-items:flex-start}.practice-head>div{min-width:0}.problem-admin-button{padding:8px 12px}.problems-inner{padding:1.25rem .8rem}.selection-toolbar{align-items:flex-start}.catalog-search{max-width:none}.topic-block-head{align-items:flex-start}.topic-task-grid{gap:7px;padding:1rem}.problem-article-header,.problem-section{padding:1.25rem 1.1rem}.problem-meta{align-items:flex-start;flex-wrap:wrap}.topic-chip{max-width:100%;overflow-wrap:anywhere}.reveal-heading{padding:.95rem 1.1rem;align-items:flex-start}.reveal-heading h2{font-size:20px;line-height:1.25}.reveal-btn{flex-shrink:0;padding:7px 10px;font-size:11px}.reveal-panel{padding:1.15rem 1.1rem}.problem-page-nav{padding:1rem 1.1rem;gap:.65rem}.problem-nav-btn{min-width:0;max-width:calc(50% - .35rem);padding:9px 10px}.problem-body{font-size:16px;overflow-wrap:anywhere}.problem-section h2{font-size:22px}.problem-page-title{font-size:25px;overflow-wrap:anywhere}.problem-title-row{display:flex;flex-direction:column;align-items:stretch}.copy-problem-link{align-self:flex-start;margin-top:.2rem}.task-number-tile{min-width:50px;height:38px}}
-@media(max-width:430px){.logo{font-size:13px}.nl{padding-inline:7px}.problem-admin-button{width:100%;justify-content:center}.practice-head{display:grid}.reveal-heading{display:grid;gap:.75rem}.reveal-btn{justify-self:start}.problem-page-nav{flex-direction:column}.problem-nav-btn,.problem-nav-btn.next{width:100%;max-width:none;margin-left:0;text-align:left}.calendar-event,.home-calendar-grid .calendar-event{grid-template-columns:72px 18px minmax(0,1fr)}}
-
-/* Единая глубина поверхностей и национальный мотив */
-.card,.pdf-row{box-shadow:var(--shadow-xs)}
-.yhero,.team-selection-list,.selection-details,.tree-branch,.book-choice-card,.topic-choice-card,.topic-block,.problem-article,.problem-sidebar{box-shadow:var(--shadow-sm)}
-.yhero,.tree-branch,.book-choice-card,.topic-choice-card{background:linear-gradient(145deg,var(--bg),var(--bg2))}
-.tree-merge{box-shadow:var(--shadow-accent),inset 0 1px 0 rgba(255,255,255,.22)}
-.change-notice{box-shadow:var(--shadow-xs)}
-.problem-article-header{background:linear-gradient(180deg,var(--bg2),var(--bg))}
-.topic-block-head,.sidebar-head{background:var(--bg2);background:linear-gradient(180deg,var(--bg2),color-mix(in srgb,var(--bg2) 82%,var(--bg3)))}
-html[data-theme="dark"] nav::before{opacity:.12;filter:brightness(1.22) saturate(.68)}
-@media(prefers-color-scheme:dark){html:not([data-theme]) nav::before{opacity:.12;filter:brightness(1.22) saturate(.68)}}
-@media(max-width:640px){nav::before{background-size:auto 54px;opacity:.10}}
+@media(max-width:850px){.problem-page-layout{grid-template-columns:1fr}.problem-sidebar{position:static;order:-1}.sidebar-task-grid{grid-template-columns:repeat(auto-fill,minmax(36px,1fr))}}
+@media(max-width:640px){.practice-head{align-items:flex-start}.problems-inner{padding:1.25rem .8rem}.problem-article-header,.problem-section{padding:1.25rem 1.1rem}.reveal-heading{padding:1rem 1.1rem}.reveal-panel{padding:1.15rem 1.1rem}.problem-page-nav{padding:1rem 1.1rem}.problem-body{font-size:16px}.problem-section h2{font-size:22px}.problem-page-title{font-size:25px}.task-number-tile{width:40px;height:36px}}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="logo" onclick="go('home')"><div class="logo-dot"></div>NPhO</div>
-  <div class="nav-right">
-    <div class="nav-links">
-      <button class="nl active" id="nl-home" onclick="go('home')">Главная</button>
-      <button class="nl" id="nl-problems" onclick="go('problems')">Банк задач</button>
-      <button class="nl" id="nl-archive" onclick="go('archive')">Результаты</button>
-      <button class="nl" id="nl-about" onclick="go('about')">Об олимпиаде</button>
-    </div>
-    <button class="theme-toggle" id="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Переключить цветовую тему" title="Переключить цветовую тему">
-      <span class="theme-icon" id="theme-icon" aria-hidden="true">☾</span>
-      <span class="theme-label" id="theme-label">Тёмная</span>
-    </button>
+  <div class="nav-links">
+    <button class="nl active" id="nl-home" onclick="go('home')">Главная</button>
+    <button class="nl" id="nl-archive" onclick="go('archive')">Архив</button>
+    <button class="nl" id="nl-problems" onclick="go('problems')">Задачи</button>
+    <button class="nl" id="nl-about" onclick="go('about')">Об олимпиаде</button>
+    <button class="nl" id="nl-dates" onclick="go('dates')">Даты и отбор</button>
   </div>
 </nav>
 
 <div id="sec-home" class="sec active">
   <div class="hero">
     <canvas id="atom-canvas" width="220" height="220" style="display:block;margin:0 auto 1rem"></canvas>
+    <div class="hero-tag">КЫРГЫЗСТАН &nbsp;·&nbsp; ФИЗИКА &nbsp;·&nbsp; IPhO</div>
     <h1>Национальная <span>физическая</span><br>олимпиада</h1>
-    <p class="hero-sub">Задачи, решения и понятный путь от национального отбора к международным олимпиадам по физике.</p>
+    <p class="hero-sub">Отбираем лучших школьников страны для участия в Международной физической олимпиаде. IV этап 2026 прошёл 4–6 апреля в Бишкеке.</p>
     <div class="hbtns">
-      <button class="btn-p" onclick="go('problems')">Банк задач</button>
-      <button class="btn-o" onclick="go('archive')">Результаты</button>
+      <button class="btn-p" onclick="go('archive')">Архив задач и результатов</button>
+      <button class="btn-o" onclick="go('dates')">Даты и отбор</button>
     </div>
   </div>
-  <main class="inner home-inner">
-    <section class="home-section home-selection" id="home-selection-content" aria-labelledby="home-selection-title"></section>
-    <section class="home-section home-calendar" id="home-calendar-content" aria-labelledby="home-calendar-title"></section>
-  </main>
+  <div class="stats">
+    <div class="stat"><div class="sn">5</div><div class="sl">участников в сборной IPhO</div></div>
+    <div class="stat"><div class="sn">3</div><div class="sl">дня соревнований</div></div>
+    <div class="stat"><div class="sn">90</div><div class="sl">баллов максимум</div></div>
+    <div class="stat"><div class="sn">2026</div><div class="sl">год IPhO</div></div>
+  </div>
+  <div class="inner">
+    <p class="stitle">Последние новости</p>
+    <div class="news">
+      <div class="nc" onclick="go('archive')"><span class="badge bt">Результаты</span><h3>Итоги IV этапа 2026</h3><div class="meta">6 апреля 2026 · Бишкек</div></div>
+    </div>
+    <hr class="sep">
+    <p class="stitle">Как попасть в сборную</p>
+    <div class="steps">
+      <div class="step"><div class="snum2">1</div><h4>1 тур Национальной олимпиады (онлайн)</h4><p>Январь</p></div>
+      <div class="step"><div class="snum2">2</div><h4>2 тур Национальной олимпиады (онлайн)</h4><p>Февраль</p></div>
+      <div class="step"><div class="snum2">3</div><h4>3 тур Национальной олимпиады (офлайн)</h4><p>Март · Бишкек и Ош</p></div>
+      <div class="step"><div class="snum2">4</div><h4>4 тур — Национальный финал</h4><p>Апрель · Бишкек</p></div>
+    </div>
+  </div>
   <footer>
     <div class="fi">
       <div class="fg">
-        <div class="fc"><h4>Национальная олимпиада по физике</h4><p>Отбор, задачи и результаты участников из Кыргызстана.</p></div>
-        <div class="fc"><h4>Навигация</h4><a onclick="go('home')">Главная</a><a onclick="go('problems')">Банк задач</a><a onclick="go('archive')">Результаты</a><a onclick="go('about')">Об олимпиаде</a></div>
+        <div class="fc"><h4>IPhO Кыргызстан</h4><p>Национальная программа подготовки школьников к Международной физической олимпиаде. Кыргызская Республика.</p></div>
+        <div class="fc"><h4>Навигация</h4><a onclick="go('home')">Главная</a><a onclick="go('archive')">Архив задач</a><a onclick="go('problems')">Тренировочные задачи</a><a onclick="go('about')">Об олимпиаде</a><a onclick="go('dates')">Даты и отбор</a></div>
         <div class="fc"><h4>Контакты</h4>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#229ED9" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></div><a href="https://t.me/+9GGnjui6VT05Mzli" target="_blank" class="ct">Telegram</a></div>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1"/></svg></div><a href="https://www.instagram.com/ipho_kg" target="_blank" class="ct">Instagram</a></div>
         </div>
       </div>
-      <div class="fbot"><p>© 2026 Национальная олимпиада по физике Кыргызской Республики</p></div>
+      <div class="fbot"><p>© 2026 Национальная физическая олимпиада Кыргызской Республики</p><p>Отбор на IPhO 2026 · Бишкек</p></div>
     </div>
   </footer>
 </div>
 
 <div id="sec-archive" class="sec">
   <div class="inner">
-    <p class="stitle">Результаты</p>
-    <div class="ytabs" id="archive-year-tabs"></div>
-    <div id="archive-year-panels"></div>
+    <p class="stitle">Архив задач и результатов</p>
+    <div class="ytabs">
+      <button class="ytab" onclick="sy('y2022',this)">2022</button>
+      <button class="ytab" onclick="sy('y2023',this)">2023</button>
+      <button class="ytab" onclick="sy('y2024',this)">2024</button>
+      <button class="ytab" onclick="sy('y2025',this)">2025</button>
+      <button class="ytab active" onclick="sy('y2026',this)">2026</button>
+    </div>
+    <div id="y2022" class="yp">
+      <div class="yhero"><div><h2>IV этап 2022</h2><p>Бишкек · Национальный финал</p></div><div class="ystats"><div class="ys"><div class="yn">5</div><div class="yl">сборная</div></div><div class="ys"><div class="yn">2</div><div class="yl">дня</div></div></div></div>
+      <div id="pdfs2022"></div>
+      <div class="slbl" style="margin-top:1.5rem">Таблица результатов</div>
+      <div class="tw"><div id="t2022"></div></div>
+    </div>
+    <div id="y2023" class="yp">
+      <div class="yhero"><div><h2>IV этап 2023</h2><p>Бишкек · Национальный финал</p></div><div class="ystats"><div class="ys"><div class="yn">5</div><div class="yl">сборная</div></div><div class="ys"><div class="yn">2</div><div class="yl">дня</div></div></div></div>
+      <div id="pdfs2023"></div>
+      <div class="slbl" style="margin-top:1.5rem">Таблица результатов</div>
+      <div class="tw"><div id="t2023"></div></div>
+    </div>
+    <div id="y2024" class="yp">
+      <div class="yhero"><div><h2>IV этап 2024</h2><p>Бишкек · Национальный финал</p></div><div class="ystats"><div class="ys"><div class="yn">5</div><div class="yl">сборная</div></div><div class="ys"><div class="yn">2</div><div class="yl">дня</div></div></div></div>
+      <div id="pdfs2024"></div>
+      <div class="slbl" style="margin-top:1.5rem">Таблица результатов</div>
+      <div class="tw"><div id="t2024"></div></div>
+    </div>
+    <div id="y2025" class="yp">
+      <div class="yhero"><div><h2>IV этап 2025</h2><p>Бишкек · Национальный финал</p></div><div class="ystats"><div class="ys"><div class="yn">5</div><div class="yl">сборная</div></div><div class="ys"><div class="yn">2</div><div class="yl">дня</div></div></div></div>
+      <div id="pdfs2025"></div>
+      <div class="slbl" style="margin-top:1.5rem">Таблица результатов</div>
+      <div class="tw"><div id="t2025"></div></div>
+    </div>
+    <div id="y2026" class="yp active">
+      <div class="yhero"><div><h2>IV этап 2026</h2><p>Бишкек · 4–6 апреля 2026</p></div><div class="ystats"><div class="ys"><div class="yn">5</div><div class="yl">сборная</div></div><div class="ys"><div class="yn">3</div><div class="yl">дня</div></div></div></div>
+      <div id="pdfs2026"></div>
+      <div class="slbl" style="margin-top:1.5rem">Таблица результатов</div>
+      <div class="tw"><div id="t2026"></div></div>
+    </div>
   </div>
 </div>
 
@@ -450,72 +295,31 @@ html[data-theme="dark"] nav::before{opacity:.12;filter:brightness(1.22) saturate
       <div class="practice-head">
         <div>
           <p class="stitle" style="margin-bottom:.45rem">Банк задач</p>
-          <p class="practice-intro">Сначала выберите задачник, затем раздел физики и номер задачи.</p>
-          <p class="problem-sync-status" id="problem-sync-status" aria-live="polite">Загружаем опубликованные задачи…</p>
+          <p class="practice-intro">Выберите раздел и номер задачи. После нажатия задача откроется на отдельной полной странице с условием, подсказкой и решением.</p>
         </div>
-        <a class="problem-admin-button" href="/admin/" title="Доступно редакторам после входа"><span>＋</span> Добавить задачу</a>
+        <div class="practice-count" id="practice-count">0 задач</div>
       </div>
 
-      <div id="book-selection-view" class="selection-view">
-        <div class="book-choice-grid" id="book-choice-grid">
-          <button class="book-choice-card" onclick="selectProblemBook('Савченко')">
-            <span class="book-choice-title">Савченко</span>
-            <span class="book-choice-description">Задачи по механике, термодинамике, электричеству и оптике.</span>
-            <span class="book-choice-footer">
-              <span class="book-choice-count" data-book-count="Савченко">0 задач</span>
-              <span class="book-choice-arrow" aria-hidden="true">→</span>
-            </span>
-          </button>
-
-          <button class="book-choice-card" onclick="selectProblemBook('Овчинкин')">
-            <span class="book-choice-title">Овчинкин</span>
-            <span class="book-choice-description">Отдельный каталог задач с собственной нумерацией по каждому разделу.</span>
-            <span class="book-choice-footer">
-              <span class="book-choice-count" data-book-count="Овчинкин">0 задач</span>
-              <span class="book-choice-arrow" aria-hidden="true">→</span>
-            </span>
-          </button>
-        </div>
+      <div class="filters" aria-label="Фильтр задач по разделу">
+        <button class="filter-btn active" data-topic="all" onclick="filterProblems('all',this)">Все разделы</button>
+        <button class="filter-btn" data-topic="Механика" onclick="filterProblems('Механика',this)">Механика</button>
+        <button class="filter-btn" data-topic="Электричество" onclick="filterProblems('Электричество',this)">Электричество</button>
+        <button class="filter-btn" data-topic="Термодинамика" onclick="filterProblems('Термодинамика',this)">Термодинамика</button>
+        <button class="filter-btn" data-topic="Оптика" onclick="filterProblems('Оптика',this)">Оптика</button>
+        <button class="filter-btn" data-topic="Колебания" onclick="filterProblems('Колебания',this)">Колебания</button>
       </div>
 
-      <div id="topic-selection-view" class="selection-view" hidden>
-        <button class="problem-back" onclick="showBookSelection()">← К выбору задачника</button>
-        <div class="selection-toolbar">
-          <div>
-            <h2 class="selection-title" id="selected-book-title"></h2>
-          </div>
-        </div>
-        <div id="topic-choice-grid" class="topic-choice-grid"></div>
-      </div>
-
-      <div id="task-selection-view" class="selection-view" hidden>
-        <button class="problem-back" onclick="showTopicSelection()">← К разделам задачника</button>
-        <div class="practice-head">
-          <div>
-            <p class="stitle" id="task-selection-title" style="margin-bottom:0"></p>
-          </div>
-          <div class="practice-count" id="practice-count">0 задач</div>
-        </div>
-
-        <div class="catalog-search">
-          <span class="catalog-search-icon" aria-hidden="true">⌕</span>
-          <input class="catalog-search-input" id="problem-search" type="search" placeholder="Поиск по номеру или главе" oninput="renderProblemCatalog()" autocomplete="off">
-          <button class="catalog-search-clear" type="button" onclick="clearProblemSearch()" aria-label="Очистить поиск" title="Очистить">×</button>
-        </div>
-
-        <div id="problem-catalog" class="problem-catalog"></div>
-        <div id="empty-problems" class="empty-problems">В этом разделе пока нет задач.</div>
-        <div class="catalog-legend" aria-label="Цветовая шкала сложности задач">
-          <span class="legend-item"><span class="legend-color difficulty-1"></span>Лёгкая</span>
-          <span class="legend-item"><span class="legend-color difficulty-2"></span>Средняя</span>
-          <span class="legend-item"><span class="legend-color difficulty-3"></span>Сложная</span>
-          <span class="legend-item"><span class="legend-color difficulty-4">☠</span>Гроб</span>
-        </div>
+      <div id="problem-catalog" class="problem-catalog"></div>
+      <div id="empty-problems" class="empty-problems">В этом разделе пока нет задач.</div>
+      <div class="catalog-legend">
+        <span class="legend-item"><span class="legend-dot legend-easy"></span>Базовая</span>
+        <span class="legend-item"><span class="legend-dot legend-medium"></span>Средняя</span>
+        <span class="legend-item"><span class="legend-dot legend-hard"></span>Олимпиадная</span>
       </div>
     </div>
 
     <div id="problem-detail" class="problem-detail" hidden>
-      <button class="problem-back" onclick="closeProblem()">← Вернуться к задачам раздела</button>
+      <button class="problem-back" onclick="closeProblem()">← Вернуться ко всем задачам</button>
       <div class="problem-page-layout">
         <article class="problem-article">
           <header class="problem-article-header">
@@ -523,22 +327,25 @@ html[data-theme="dark"] nav::before{opacity:.12;filter:brightness(1.22) saturate
               <span class="topic-chip" id="detail-topic"></span>
               <span class="level-chip" id="detail-level"></span>
             </div>
-            <div class="problem-title-row">
-              <h1 class="problem-page-title" id="detail-title"></h1>
-              <button class="copy-problem-link" id="copy-problem-link" type="button" onclick="copyProblemLink()" title="Скопировать ссылку на задачу">⧉ Скопировать ссылку</button>
-            </div>
+            <div class="problem-page-number" id="detail-number"></div>
+            <h1 class="problem-page-title" id="detail-title"></h1>
           </header>
 
           <section class="problem-section">
             <h2>Условие</h2>
             <div class="problem-body" id="detail-statement"></div>
-            <div class="problem-images" id="detail-images" hidden></div>
+            <img class="problem-figure" id="detail-image" alt="" hidden>
           </section>
 
+          <div class="answer-box" id="detail-answer-box" hidden>
+            <div class="answer-label">Ответ</div>
+            <div class="answer-text" id="detail-answer"></div>
+          </div>
+
           <section class="reveal-section">
-            <div class="reveal-heading" onclick="revealNextHint()">
-              <h2>Пошаговые подсказки</h2>
-              <button class="reveal-btn" id="detail-hint-btn" aria-expanded="false" onclick="event.stopPropagation();revealNextHint()">Открыть подсказку</button>
+            <div class="reveal-heading" onclick="toggleDetailPanel('detail-hint',document.getElementById('detail-hint-btn'))">
+              <h2>Подсказка</h2>
+              <button class="reveal-btn" id="detail-hint-btn" aria-expanded="false" onclick="event.stopPropagation();toggleDetailPanel('detail-hint',this)">Показать</button>
             </div>
             <div class="reveal-panel hint-panel" id="detail-hint"></div>
           </section>
@@ -549,22 +356,6 @@ html[data-theme="dark"] nav::before{opacity:.12;filter:brightness(1.22) saturate
               <button class="reveal-btn" id="detail-solution-btn" aria-expanded="false" onclick="event.stopPropagation();toggleDetailPanel('detail-solution',this)">Показать</button>
             </div>
             <div class="reveal-panel solution-panel" id="detail-solution"></div>
-          </section>
-
-          <section class="reveal-section" id="detail-answer-section" hidden>
-            <div class="reveal-heading" onclick="toggleDetailPanel('detail-answer',document.getElementById('detail-answer-btn'))">
-              <h2>Ответ</h2>
-              <button class="reveal-btn" id="detail-answer-btn" aria-expanded="false" onclick="event.stopPropagation();toggleDetailPanel('detail-answer',this)">Показать</button>
-            </div>
-            <div class="reveal-panel answer-panel answer-text" id="detail-answer"></div>
-          </section>
-
-          <section class="reveal-section" id="detail-comment-section" hidden>
-            <div class="reveal-heading" onclick="toggleDetailPanel('detail-comment',document.getElementById('detail-comment-btn'))">
-              <h2>Комментарий автора</h2>
-              <button class="reveal-btn" id="detail-comment-btn" aria-expanded="false" onclick="event.stopPropagation();toggleDetailPanel('detail-comment',this)">Показать</button>
-            </div>
-            <div class="reveal-panel" id="detail-comment"></div>
           </section>
 
           <nav class="problem-page-nav" aria-label="Переход между задачами">
@@ -585,16 +376,50 @@ html[data-theme="dark"] nav::before{opacity:.12;filter:brightness(1.22) saturate
             <span class="sidebar-count" id="sidebar-count"></span>
           </div>
           <div class="sidebar-task-grid" id="sidebar-task-grid"></div>
-          <button class="sidebar-all" onclick="closeProblem()">Вернуться к разделу</button>
+          <button class="sidebar-all" onclick="closeProblem()">Посмотреть весь банк задач</button>
         </aside>
       </div>
     </div>
   </div>
 </div>
 
-
 <div id="sec-about" class="sec">
-  <div class="inner about-inner" id="about-content"></div>
+  <div class="inner">
+    <p class="stitle">Об олимпиаде</p>
+    <div class="cards">
+      <div class="card"><div class="badge bb">Для кого</div><h3>Школьники 9–11 (12) классов</h3><p>Открыта для всех учащихся школ Кыргызстана.</p></div>
+      <div class="card"><div class="badge bt">Зачем участвовать</div><h3>Путь на IPhO</h3><p>Победители представляют страну на Международной олимпиаде и получают стипендии.</p></div>
+      <div class="card"><div class="badge bg2c">Что развивает</div><h3>Физическое мышление</h3><p>Нестандартные задачи, физические модели, математический аппарат.</p></div>
+      <div class="card"><div class="badge bpu">Результат</div><h3>Карьера в науке</h3><p>Участники поступают в ведущие университеты мира.</p></div>
+    </div>
+    <hr class="sep">
+    <p class="stitle">Формат Национальной Олимпиады</p>
+    <div class="cards">
+      <div class="card"><h3>Многоэтапный отбор</h3><p>Участники проходят несколько этапов, прежде чем попасть в сборную страны.</p></div>
+      <div class="card"><h3>Теоретический тур</h3><p>3 длинных задачи по разным разделам физики. Продолжительность — 5 часов. 3 дня.</p></div>
+      <div class="card"><h3>Международные старты</h3><p>Лучшие школьники представляют Кыргызстан на международных олимпиадах по физике.</p></div>
+    </div>
+  </div>
+</div>
+
+<div id="sec-dates" class="sec">
+  <div class="inner">
+    <p class="stitle">Календарь 2025–2026</p>
+    <div class="tl">
+      <div class="tlrow"><div class="tll">Январь 2025</div><div class="tlm"><div class="tldot done"></div><div class="tlline"></div></div><div class="tlr"><h4>I тур</h4><p>Онлайн</p></div></div>
+      <div class="tlrow"><div class="tll">Февраль 2025</div><div class="tlm"><div class="tldot done"></div><div class="tlline"></div></div><div class="tlr"><h4>II тур</h4><p>Онлайн</p></div></div>
+      <div class="tlrow"><div class="tll">Март 2026</div><div class="tlm"><div class="tldot done"></div><div class="tlline"></div></div><div class="tlr"><h4>III этап</h4><p>Офлайн</p></div></div>
+      <div class="tlrow"><div class="tll">4–6 апр 2026</div><div class="tlm"><div class="tldot now"></div><div class="tlline"></div></div><div class="tlr"><h4>IV этап — национальный финал</h4><p>Бишкек · Формирование сборной (Офлайн)</p></div></div>
+      <div class="tlrow"><div class="tll">Май 2026</div><div class="tlm"><div class="tldot intl"></div><div class="tlline"></div></div><div class="tlr"><h4>APhO 2026 <span class="tl-badge">Международная</span></h4><p>Азиатская физическая олимпиада · 8 участников от КР</p></div></div>
+      <div class="tlrow"><div class="tll">Июнь 2026</div><div class="tlm"><div class="tldot intl"></div><div class="tlline"></div></div><div class="tlr"><h4>ISPhO / BPhO 2026 <span class="tl-badge">Международная</span></h4><p>Балканская и Международная научная олимпиады</p></div></div>
+      <div class="tlrow"><div class="tll">Июль 2026</div><div class="tlm"><div class="tldot intl"></div></div><div class="tlr"><h4>IPhO 2026 <span class="tl-badge">Международная</span></h4><p>Международная физическая олимпиада · 5 участников от КР</p></div></div>
+    </div>
+    <hr class="sep">
+    <p class="stitle">Правила отбора</p>
+    <div class="rule"><h4>Принцип нарастающего отбора</h4><p>Каждый этап отбирает лучших для следующего по набранным баллам, без учёта возраста.</p></div>
+    <div class="rule"><h4>Требования к участникам</h4><p>Гражданство или постоянное проживание в КР. Возраст не более 20 лет на день IPhO. Обучение в средней школе.</p></div>
+    <div class="rule"><h4>Формирование сборной</h4><p>Сборная формируется по наибольшему суммарному баллу за все дни.</p></div>
+  </div>
 </div>
 
 <script>
@@ -621,7 +446,7 @@ const PDF_LINKS = {
   ],
 };
 const GOLD_COUNT=5, SILVER_COUNT=3;
-let RESULTS = {
+const RESULTS = {
   '2022': [
     { name:'Сапарбек уулу Денис',  d1:'12.5', d2:'11.4', d3:'',    status:'APhO/IPhO' },
     { name:'Турдубаев Эрбол',      d1:'11.5', d2:'8.8',  d3:'',    status:'APhO/IPhO' },
@@ -691,606 +516,123 @@ let RESULTS = {
     { name:'Мырзабеков Нурбол',  d1:'6.2',   d2:'5',     d3:'', status:'' },
   ],
   '2026': [
-    { name:'Аскар Абдиев',      d1:'16.4',  d2:'22.45', d3:'25',    status:'IPhO/APhO/EuPhO' },
-    { name:'Айтегин Эмилбеков', d1:'18.2',  d2:'24.25', d3:'12.9',  status:'IPhO/APhO/EuPhO' },
+    { name:'Аскар Абдиев',      d1:'16.4',  d2:'22.45', d3:'25',    status:'IPhO/APhO' },
+    { name:'Айтегин Эмилбеков', d1:'18.2',  d2:'24.25', d3:'12.9',  status:'IPhO/APhO' },
     { name:'Темирхан Салиев',   d1:'11.3',  d2:'19.85', d3:'12.55', status:'IPhO/APhO' },
     { name:'Нурбол Мырзабеков', d1:'12.85', d2:'12.45', d3:'15.25', status:'IPhO/APhO' },
-    { name:'Ахмед Абылаев',     d1:'11.05', d2:'18.85', d3:'6.45',  status:'IPhO/APhO' },
+    { name:'Ахмел Абылаев',     d1:'11.05', d2:'18.85', d3:'6.45',  status:'IPhO/APhO' },
     { name:'Истеми Тазабеков',  d1:'8.7',   d2:'16.15', d3:'8.25',  status:'APhO' },
     { name:'Марсель Касымов',   d1:'12.2',  d2:'11.1',  d3:'9.7',   status:'APhO' },
     { name:'Умар Туташбаев',    d1:'7.2',   d2:'13.55', d3:'7.15',  status:'APhO' },
-    { name:'Рашитов Бактыбек',  d1:'4.1',   d2:'6.1',   d3:'7.4',   status:'BPO' },
-    { name:'Асанбаев Ариетбек', d1:'5',     d2:'7.8',   d3:'3.8',   status:'BPO' },
-    { name:'Ашырова Эльдана',   d1:'7.35',  d2:'7.2',   d3:'1.9',   status:'BPO' },
-    { name:'Эрмеков Нурэл',     d1:'7.4',   d2:'6.9',   d3:'1.6',   status:'BPO' },
+    { name:'Рашитов Бактыбек',  d1:'4.1',   d2:'6.1',   d3:'7.4',   status:'BPhO' },
+    { name:'Асанбаев Ариетбек', d1:'5',     d2:'7.8',   d3:'3.8',   status:'BPhO' },
+    { name:'Ашырова Эльдана',   d1:'7.35',  d2:'7.2',   d3:'1.9',   status:'BPhO' },
+    { name:'Эрмеков Нурэл',     d1:'7.4',   d2:'6.9',   d3:'1.6',   status:'BPhO' },
     { name:'Таисия Ри',         d1:'5.1',   d2:'5.5',   d3:'2.65',  status:'Резерв' },
     { name:'Каримов Асылбек',   d1:'4.3',   d2:'3.1',   d3:'5.4',   status:'Резерв' },
     { name:'Осмонов Чынгыз',    d1:'5.6',   d2:'4.95',  d3:'0.7',   status:'Резерв' },
   ]
 };
 
-const DEFAULT_SITE_CONTENT = {
-  contentVersion: 3,
-  about: {
-    kicker: 'Об олимпиаде',
-    title: 'Национальная олимпиада по физике',
-    intro: 'Национальная олимпиада по физике (NPhO) — соревнование национального уровня и дополнительный путь к заключительному отбору. Участники из всех регионов решают задачи на общих условиях, а их результаты сравниваются в едином рейтинге страны.',
-    originTitle: 'Два пути к заключительному отбору',
-    originText: 'В Кыргызстане к заключительному отбору ведут два параллельных пути. Через Республиканскую олимпиаду участник проходит районный, затем областной или городской и республиканский этапы. На каждом переходе действует территориальная квота, поэтому проход дальше зависит не только от результата, но и от конкуренции внутри района, области или города.\n\nNPhO создаёт второй, национальный путь. На первых двух онлайн-этапах участники из всех регионов решают одинаковые задачи и попадают в единый рейтинг: место обучения и региональная квота не влияют на отбор. Лучшие проходят на очный III этап в Бишкеке и Оше. На IV этапе оба пути объединяются, и участники NPhO и Республиканской олимпиады соревнуются в общем рейтинге.',
-    benefitTitle: 'Принципы отбора в NPhO',
-    benefits: [
-      {title:'Единый рейтинг',text:'Все участники NPhO решают задачи на общих условиях, и их результаты сравниваются по стране.'},
-      {title:'Независимость от региона',text:'Проход на следующий этап определяется набранными баллами, а не квотой района, области или города.'},
-      {title:'Общий IV этап',text:'Лучшие участники NPhO встречаются с сильнейшими участниками Республиканской олимпиады в общем заключительном отборе.'}
-    ],
-    pathTitle: 'Международные олимпиады',
-    pathText: 'Кыргызстан формирует команды для нескольких международных соревнований. Их регламенты, размер команд и характер задач различаются.',
-    international: ['APhO','EuPhO','BPO','ISPhO','IPhO'],
-    internationalDetails: [
-      {code:'IPhO',name:'Международная физическая олимпиада',text:'Всемирная олимпиада для национальных команд школьников и наиболее престижное международное соревнование этого уровня. В программу входят отдельные теоретический и экспериментальный туры; команда страны состоит не более чем из пяти участников.'},
-      {code:'APhO',name:'Азиатская физическая олимпиада',text:'Региональная олимпиада для стран Азии и Океании. Формат близок к IPhO, но команда может включать до восьми участников; теоретический и экспериментальный туры отличаются высокой сложностью и плотностью работы.'},
-      {code:'EuPhO',name:'Европейская физическая олимпиада',text:'Европейская олимпиада с участием европейских и приглашённых команд. Она включает теоретический и экспериментальный туры; короткие условия обычно требуют самостоятельно выбрать модель и ключевую физическую идею.'},
-      {code:'BPO',name:'Балканская физическая олимпиада',text:'Региональная олимпиада стран Балканского физического союза и приглашённых команд. Более компактный формат даёт участникам опыт решения задач в международной среде.'},
-      {code:'ISPhO',name:'International Scientific Physics Olympiad',text:'Международная научная физическая олимпиада для национальных делегаций. Задания охватывают теоретическую и экспериментальную физику и требуют уверенной работы с моделями и анализом данных.'}
-    ]
+
+const PRACTICE_TASKS = [
+  {
+    id: 1,
+    topic: 'Механика',
+    level: 'Базовая',
+    levelClass: 'easy',
+    title: 'Скорость у подножия горки',
+    statement: 'Небольшое тело начинает скользить без начальной скорости с гладкой горки высотой <span class="formula">h = 1,25 м</span>. Сопротивлением воздуха пренебречь. Найдите скорость тела у подножия горки. Примите <span class="formula">g = 10 м/с²</span>.',
+    hint: 'Запишите закон сохранения механической энергии между верхней и нижней точками.',
+    solution: 'Потенциальная энергия полностью переходит в кинетическую: <span class="formula">mgh = mv²/2</span>. Поэтому <span class="formula">v = √(2gh) = √(2·10·1,25) = 5 м/с</span>.'
   },
-  notice: 'Информация может изменяться. Даты, места проведения, формат туров и условия отбора уточняются организаторами на каждый учебный год. Перед участием рекомендуем сверяться с актуальными приказами Министерства просвещения Кыргызской Республики.',
-  calendar: [
-    {date:'Январь 2026',title:'I этап NPhO',details:'Онлайн · прокторинг и единый рейтинг',kind:'stage',url:''},
-    {date:'Февраль 2026',title:'II этап NPhO',details:'Онлайн · следующий этап национальной ветки',kind:'stage',url:''},
-    {date:'Март 2026',title:'III этап NPhO',details:'Один очный день · Бишкек и Ош',kind:'stage',url:''},
-    {date:'4–6 апреля 2026',title:'IV этап — национальный финал',details:'Три дня · Бишкек · две ветки отбора сходятся вместе',kind:'current',url:''},
-    {date:'17–25 мая 2026',title:'APhO 2026',details:'Бусан, Республика Корея',kind:'international',url:'https://apho2026.kr/'},
-    {date:'12–16 июня 2026',title:'EuPhO 2026',details:'Гётеборг, Швеция',kind:'international',url:'https://eupho26.se/'},
-    {date:'21–30 июня 2026',title:'ISPhO 2026',details:'Онлайн',kind:'international',url:'https://ispho.mipt.ru/'},
-    {date:'27–30 июня 2026',title:'BPO 2026',details:'Стамбул, Турция',kind:'international',url:'https://balkanphysicalunion.info/blog/2026/03/23/bpo8-welcome/'},
-    {date:'4–12 июля 2026',title:'IPhO 2026',details:'Букараманга, Колумбия',kind:'international',url:'https://ipho2026.com/'}
-  ],
-  selection: {
-    title: 'Как устроен отбор',
-    intro: 'К общему финалу ведут два маршрута: Республиканская и Национальная олимпиады. На IV этапе их сильнейшие участники встречаются в едином отборе.',
-    republicanTitle: 'Республиканская олимпиада',
-    republicanStages: ['Районный этап','Областной / городской этап','Республиканский этап','Лучшие по итогам этапа'],
-    republicanNote: 'Между этапами действуют квоты, поэтому пройти весь путь через Республиканскую олимпиаду непросто.',
-    nationalTitle: 'Национальная олимпиада',
-    nationalStages: ['I этап · онлайн','II этап · онлайн','III этап · очно в Бишкеке и Оше','Лучшие по итогам III этапа'],
-    nationalNote: 'Единый национальный рейтинг даёт дополнительный маршрут к общему финальному отбору.',
-    finalTitle: 'IV этап Национальной олимпиады',
-    finalText: 'Топ-участники Национальной олимпиады + сильнейшие участники Республиканской олимпиады',
-    afterText: '',
-    rulesTitle: 'Формирование международных команд',
-    rulesText: 'После IV этапа составляется итоговый рейтинг. На его основе и с учётом решений организаторов определяются составы команд Кыргызстана.',
-    teamRules: [
-      {code:'IPhO',count:'5 участников',text:'Пять первых участников итогового рейтинга входят в состав команды на IPhO.'},
-      {code:'APhO',count:'8 участников',text:'Восемь первых участников итогового рейтинга входят в состав команды на APhO.'},
-      {code:'EuPhO, BPO, ISPhO',count:'По решению организаторов',text:'Составы определяются отдельно с учётом результатов отбора, регламентов и доступных квот.'}
-    ]
+  {
+    id: 2,
+    topic: 'Электричество',
+    level: 'Базовая',
+    levelClass: 'easy',
+    title: 'Параллельное соединение',
+    statement: 'Резисторы сопротивлениями <span class="formula">R₁ = 6 Ом</span> и <span class="formula">R₂ = 3 Ом</span> соединены параллельно и подключены к источнику напряжения <span class="formula">U = 12 В</span>. Найдите общий ток в цепи.',
+    hint: 'Сначала найдите эквивалентное сопротивление параллельного соединения.',
+    solution: '<span class="formula">1/R = 1/6 + 1/3 = 1/2</span>, следовательно, <span class="formula">R = 2 Ом</span>. По закону Ома <span class="formula">I = U/R = 12/2 = 6 А</span>.'
   },
-  results: JSON.parse(JSON.stringify(RESULTS))
-};
-let SITE_CONTENT = JSON.parse(JSON.stringify(DEFAULT_SITE_CONTENT));
-window.NPHO_SITE_CONTENT = SITE_CONTENT;
-
-function mergeSiteContent(base,override){
-  if(Array.isArray(override))return JSON.parse(JSON.stringify(override));
-  if(!override||typeof override!=='object')return override===undefined?base:override;
-  const result={...(base&&typeof base==='object'?base:{})};
-  Object.keys(override).forEach(key=>{result[key]=mergeSiteContent(result[key],override[key])});
-  return result;
-}
-function migrateSiteContent(content,savedVersion=3){
-  if(Number(savedVersion)<2){
-    content.about=JSON.parse(JSON.stringify(DEFAULT_SITE_CONTENT.about));
-    content.selection.rulesTitle=DEFAULT_SITE_CONTENT.selection.rulesTitle;
-    content.selection.rulesText=DEFAULT_SITE_CONTENT.selection.rulesText;
-    content.selection.teamRules=JSON.parse(JSON.stringify(DEFAULT_SITE_CONTENT.selection.teamRules));
+  {
+    id: 3,
+    topic: 'Термодинамика',
+    level: 'Средняя',
+    levelClass: 'medium',
+    title: 'Нагревание одноатомного газа',
+    statement: 'Два моля одноатомного идеального газа нагрели при постоянном объёме на <span class="formula">40 К</span>. Найдите изменение внутренней энергии. Используйте <span class="formula">R = 8,31 Дж/(моль·К)</span>.',
+    hint: 'Для одноатомного идеального газа внутренняя энергия равна <span class="formula">U = 3nRT/2</span>.',
+    solution: '<span class="formula">ΔU = 3nRΔT/2 = 3·2·8,31·40/2 ≈ 997 Дж</span>. Округляя, получаем примерно <span class="formula">1,0 кДж</span>.'
+  },
+  {
+    id: 4,
+    topic: 'Оптика',
+    level: 'Средняя',
+    levelClass: 'medium',
+    title: 'Изображение в собирающей линзе',
+    statement: 'Предмет расположен на расстоянии <span class="formula">d = 60 см</span> от собирающей линзы с фокусным расстоянием <span class="formula">f = 20 см</span>. Определите расстояние от линзы до изображения и линейное увеличение.',
+    hint: 'Используйте формулу тонкой линзы, а затем отношение расстояний для увеличения.',
+    solution: '<span class="formula">1/f = 1/d + 1/b</span>. Тогда <span class="formula">1/b = 1/20 − 1/60 = 1/30</span>, поэтому <span class="formula">b = 30 см</span>. Увеличение по модулю <span class="formula">|Γ| = b/d = 30/60 = 0,5</span>. Изображение действительное, перевёрнутое и уменьшенное в два раза.'
+  },
+  {
+    id: 5,
+    topic: 'Колебания',
+    level: 'Базовая',
+    levelClass: 'easy',
+    title: 'Период математического маятника',
+    statement: 'Найдите период малых колебаний математического маятника длиной <span class="formula">L = 1,0 м</span>. Примите <span class="formula">g = 9,8 м/с²</span>.',
+    hint: 'Период малых колебаний не зависит от массы груза.',
+    solution: '<span class="formula">T = 2π√(L/g) = 2π√(1/9,8) ≈ 2,01 с</span>.'
+  },
+  {
+    id: 6,
+    topic: 'Механика',
+    level: 'Олимпиадная',
+    levelClass: 'hard',
+    title: 'Цилиндр скатывается с высоты',
+    statement: 'Сплошной однородный цилиндр без проскальзывания скатывается с высоты <span class="formula">h</span>. Найдите скорость его центра масс внизу. Момент инерции цилиндра относительно оси равен <span class="formula">I = mR²/2</span>.',
+    hint: 'Кинетическая энергия состоит из поступательной и вращательной частей. Используйте условие <span class="formula">v = ωR</span>.',
+    solution: '<span class="formula">mgh = mv²/2 + Iω²/2</span>. Подставляя <span class="formula">I = mR²/2</span> и <span class="formula">ω = v/R</span>, получаем <span class="formula">mgh = mv²/2 + mv²/4 = 3mv²/4</span>. Следовательно, <span class="formula">v = √(4gh/3)</span>.'
   }
-  if(Number(savedVersion)<3){
-    content.about.intro=DEFAULT_SITE_CONTENT.about.intro;
-    content.about.originTitle=DEFAULT_SITE_CONTENT.about.originTitle;
-    content.about.originText=DEFAULT_SITE_CONTENT.about.originText;
-    content.about.benefitTitle=DEFAULT_SITE_CONTENT.about.benefitTitle;
-    content.about.benefits=JSON.parse(JSON.stringify(DEFAULT_SITE_CONTENT.about.benefits));
-  }
-  const a=content?.about||{};
-  const s=content?.selection||{};
-  if(a.pathTitle==='От национального финала — к международным олимпиадам')a.pathTitle='Международные олимпиады';
-  if(a.pathText==='IV этап становится общей точкой отбора для дальнейшей подготовки и формирования международных команд. Конкретный состав и распределение участников по олимпиадам определяются результатами отбора и решениями организаторов.')a.pathText='';
-  if(s.rulesTitle==='Что важно знать об отборе')s.rulesTitle='Как формируются международные команды';
-  if(s.rulesText==='На IV этапе результаты участников используются для дальнейшей подготовки и формирования международных команд. Точные квоты, возрастные категории, формат туров и окончательный порядок отбора определяются актуальными документами организаторов на соответствующий учебный год.')s.rulesText='По итогам IV этапа составляется общий рейтинг участников. На его основе формируются команды Кыргызстана на международные олимпиады.';
-  if(s.afterText==='Дальнейшая подготовка · сборы · формирование команд на международные олимпиады')s.afterText='';
-  content.contentVersion=3;
-  return content;
-}
-function safeSiteUrl(value){try{const url=new URL(String(value||''),location.origin);return url.protocol==='https:'||url.protocol==='http:'?url.href:''}catch{return''}}
-function renderSelectionTree(selection){
-  const s=selection||{};
-  const stages=(items)=>(items||[]).map(item=>'<div class="tree-stage">'+escapeHtml(item)+'</div>').join('');
-  return '<div class="selection-tree"><div class="tree-branches"><article class="tree-branch republican"><h3 class="tree-branch-label">'+escapeHtml(s.republicanTitle||'Республиканская олимпиада')+'</h3><div class="tree-stages">'+stages(s.republicanStages)+'</div><p class="tree-note">'+escapeHtml(s.republicanNote||'')+'</p></article><article class="tree-branch national"><h3 class="tree-branch-label">'+escapeHtml(s.nationalTitle||'Национальная олимпиада')+'</h3><div class="tree-stages">'+stages(s.nationalStages)+'</div><p class="tree-note">'+escapeHtml(s.nationalNote||'')+'</p></article></div><article class="tree-merge"><h3>'+escapeHtml(s.finalTitle||'IV этап Национальной олимпиады')+'</h3><p>'+escapeHtml(s.finalText||'')+'</p></article></div>';
-}
-function renderCalendarEvent(item){
-  const kind=['current','international'].includes(item.kind)?item.kind:'';
-  const url=safeSiteUrl(item.url);
-  const title=url?'<a href="'+escapeAttribute(url)+'" target="_blank" rel="noopener">'+escapeHtml(item.title||'')+' ↗</a>':escapeHtml(item.title||'');
-  return '<div class="calendar-event '+kind+'"><div class="calendar-date">'+escapeHtml(item.date||'')+'</div><div class="calendar-track"><span class="calendar-dot"></span><span class="calendar-line"></span></div><div class="calendar-copy"><h3>'+title+'</h3><p>'+escapeHtml(item.details||'')+'</p></div></div>';
-}
-function renderHomeContent(){
-  const selectionRoot=document.getElementById('home-selection-content');
-  const calendarRoot=document.getElementById('home-calendar-content');
-  const s=SITE_CONTENT.selection||{};
-  if(selectionRoot){
-    selectionRoot.innerHTML='<header class="home-section-head"><div><p class="eyebrow">Два маршрута · один финал</p><h2 id="home-selection-title">'+escapeHtml(s.title||'Как устроен отбор')+'</h2></div><p>'+escapeHtml(s.intro||'')+'</p></header>'+renderSelectionTree(s);
-  }
-  if(calendarRoot){
-    const events=SITE_CONTENT.calendar||[];
-    const stages=events.filter(item=>item.kind!=='international');
-    const international=events.filter(item=>item.kind==='international');
-    calendarRoot.innerHTML='<header class="home-section-head compact"><div><p class="eyebrow">Сезон 2025–2026</p><h2 id="home-calendar-title">Календарь сезона</h2></div></header><div class="change-notice"><strong>Важно</strong><span>'+escapeHtml(SITE_CONTENT.notice||'')+'</span></div><div class="home-calendar-grid"><section class="calendar-column"><h3 class="calendar-column-title">Этапы NPhO</h3><div class="calendar-list">'+stages.map(renderCalendarEvent).join('')+'</div></section><section class="calendar-column international"><h3 class="calendar-column-title">Международные старты</h3><div class="calendar-list">'+international.map(renderCalendarEvent).join('')+'</div></section></div>';
-  }
-}
-function renderAboutContent(){
-  const root=document.getElementById('about-content');if(!root)return;const a=SITE_CONTENT.about||{},s=SITE_CONTENT.selection||{};
-  const originCopy=String(a.originText||'').split(/\n\s*\n/).map(item=>item.trim()).filter(Boolean).map(item=>'<p>'+escapeHtml(item)+'</p>').join('');
-  const benefits=(a.benefits||[]).map(item=>'<div class="about-fact"><dt>'+escapeHtml(item.title||'')+'</dt><dd>'+escapeHtml(item.text||'')+'</dd></div>').join('');
-  const guide=(a.internationalDetails||[]).map(item=>'<div class="olympiad-row"><span class="olympiad-code">'+escapeHtml(item.code||'')+'</span><div><span class="olympiad-name">'+escapeHtml(item.name||'')+'</span><p class="olympiad-description">'+escapeHtml(item.text||'')+'</p></div></div>').join('');
-  const teamRules=(s.teamRules||[]).map(item=>'<div class="team-selection-row"><span class="team-selection-code">'+escapeHtml(item.code||'')+'</span><span class="team-selection-count">'+escapeHtml(item.count||'')+'</span><p class="team-selection-text">'+escapeHtml(item.text||'')+'</p></div>').join('');
-  const notice=SITE_CONTENT.notice?'<p class="about-notice">'+escapeHtml(SITE_CONTENT.notice)+'</p>':'';
-  const pathIntro=a.pathText?'<p class="olympiad-intro">'+escapeHtml(a.pathText)+'</p>':'';
-  root.innerHTML='<header class="about-hero"><p class="eyebrow">'+escapeHtml(a.kicker||'Об олимпиаде')+'</p><h1 class="about-title">'+escapeHtml(a.title||'Национальная олимпиада по физике')+'</h1><p class="about-lead">'+escapeHtml(a.intro||'')+'</p></header><div class="about-document"><section class="about-section"><div><p class="about-section-label">Система отбора</p><h2>'+escapeHtml(a.originTitle||'Два пути к заключительному отбору')+'</h2></div><div><div class="about-copy">'+originCopy+'</div><h3 class="about-subtitle">'+escapeHtml(a.benefitTitle||'Принципы отбора в NPhO')+'</h3><dl class="about-facts">'+benefits+'</dl></div></section><section class="about-section"><div><p class="about-section-label">Состав команд</p><h2>'+escapeHtml(s.rulesTitle||'Формирование международных команд')+'</h2></div><div><p class="about-selection-copy">'+escapeHtml(s.rulesText||'')+'</p><div class="team-selection-list">'+teamRules+'</div>'+notice+'</div></section><section class="about-section"><div><p class="about-section-label">Международный уровень</p><h2>'+escapeHtml(a.pathTitle||'Международные олимпиады')+'</h2></div><div>'+pathIntro+'<div class="olympiad-guide">'+guide+'</div></div></section></div>';
-}
-let ACTIVE_ARCHIVE_YEAR='2026';
-function renderArchivePanels(){
-  const tabs=document.getElementById('archive-year-tabs'),panels=document.getElementById('archive-year-panels');if(!tabs||!panels)return;
-  const years=Object.keys(RESULTS).filter(year=>/^\d{4}$/.test(year)).sort();if(!years.includes(ACTIVE_ARCHIVE_YEAR))ACTIVE_ARCHIVE_YEAR=years.at(-1)||'';
-  tabs.innerHTML=years.map(year=>'<button class="ytab '+(year===ACTIVE_ARCHIVE_YEAR?'active':'')+'" onclick="sy(\'y'+year+'\',this)">'+year+'</button>').join('');
-  panels.innerHTML=years.map(year=>{const days=(RESULTS[year]||[]).some(row=>String(row.d3||'').trim())?3:2;const dateFact=year==='2026'?'<div class="yhero-fact"><dt>Даты</dt><dd>4–6 апреля 2026</dd></div>':'';return '<div id="y'+year+'" class="yp '+(year===ACTIVE_ARCHIVE_YEAR?'active':'')+'"><div class="yhero"><div><span class="yhero-kicker">Заключительный этап</span><h2>IV этап '+year+'</h2></div><dl class="yhero-facts">'+dateFact+'<div class="yhero-fact"><dt>Место</dt><dd>Бишкек</dd></div><div class="yhero-fact"><dt>Продолжительность</dt><dd>'+days+' дня</dd></div></dl></div><div id="pdfs'+year+'"></div><div class="slbl" style="margin-top:1.5rem">Таблица результатов</div><div class="tw"><div id="t'+year+'"></div></div></div>'}).join('');
-  years.forEach(year=>{renderPDFs(year);renderTable(year)});
-}
-function renderSiteContent(){
-  if(SITE_CONTENT.results&&typeof SITE_CONTENT.results==='object'){
-    Object.values(SITE_CONTENT.results).flat().forEach(row=>{row.status=String(row.status||'').replace(/\bBPhO\b/g,'BPO')});
-    RESULTS=JSON.parse(JSON.stringify(SITE_CONTENT.results));
-  }
-  window.NPHO_SITE_CONTENT=SITE_CONTENT;
-  renderHomeContent();renderAboutContent();renderArchivePanels();
-}
-async function loadSiteContent(){
-  try{const response=await fetch('/api/site-content',{cache:'no-store',headers:{Accept:'application/json'}});if(!response.ok)throw new Error('HTTP '+response.status);const payload=await response.json();if(payload.content&&Object.keys(payload.content).length){const savedVersion=Number(payload.content.contentVersion)||0;SITE_CONTENT=migrateSiteContent(mergeSiteContent(DEFAULT_SITE_CONTENT,payload.content),savedVersion)}}catch(error){console.warn('Не удалось загрузить контент сайта:',error)}
-  renderSiteContent();window.NPHO_SITE_CONTENT=SITE_CONTENT;return SITE_CONTENT;
-}
-window.NPHO_CONTENT_READY=loadSiteContent();
+];
 
+let activeProblemId = null;
+let activeProblemTopic = 'all';
 
-/* Задачи загружаются из редактора через API. */
-let PRACTICE_TASKS = [];
-
-let PROBLEM_BOOKS=['Савченко','Овчинкин'];
-let PROBLEM_TOPICS=['Механика','Термодинамика','Электричество','Оптика'];
-
-const NPHO_EDITOR_ORIGIN=location.origin;
-
-function remoteInlineFormat(value){
-  return value
-    .replace(/`([^`]+)`/g,'<code>$1</code>')
-    .replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
-    .replace(/__([^_]+)__/g,'<strong>$1</strong>')
-    .replace(/\*([^*]+)\*/g,'<em>$1</em>');
-}
-
-function imageMarkerIds(source){
-  return [...String(source||'').matchAll(/\[\[image:([A-Za-z0-9_-]+)\]\]/g)].map(match=>match[1]);
-}
-
-function problemImageHtml(image,index=0){
-  const src=image?.src||remoteMediaUrl(image?.url);
-  if(!src)return '';
-  const alt=escapeAttribute(image.alt||('Рисунок '+(index+1)+' к решению'));
-  const caption=image.caption?'<figcaption class="problem-figure-caption">'+escapeHtml(image.caption)+'</figcaption>':'';
-  return '<figure class="problem-figure-wrap embedded-problem-figure"><img class="problem-figure" src="'+escapeAttribute(src)+'" alt="'+alt+'" loading="lazy">'+caption+'</figure>';
-}
-
-function renderManualNumberedList(lines,inlineFormatter){
-  if(!lines.length||!/^\s*\d+[.)](?:\s|$)/.test(lines[0]))return '';
-  const items=[];
-  lines.forEach(line=>{
-    const match=line.match(/^\s*(\d+)([.)])(?:\s+(.*))?$/);
-    if(match){items.push({number:match[1],punctuation:match[2],lines:[match[3]||'']});return}
-    if(items.length)items.at(-1).lines.push(line.trim());
-  });
-  if(!items.length)return '';
-  return '<ol class="manual-numbered-list">'+items.map(item=>'<li value="'+Number(item.number)+'"><span class="manual-list-marker" aria-hidden="true">'+item.number+item.punctuation+'</span><span>'+inlineFormatter(item.lines.filter(Boolean).join('<br>'))+'</span></li>').join('')+'</ol>';
-}
-
-function latexSourceToHtml(source,images=[]){
-  let raw=String(source||'').replace(/\r\n/g,'\n');
-  if(!raw.trim())return '';
-
-  const tokenPrefix='NPHOREMOTEMATH';
-  const tokens=[];
-  const imageTokenPrefix='NPHOREMOTEIMAGE';
-  const imageTokens=[];
-  raw=raw.replace(/\[\[image:([A-Za-z0-9_-]+)\]\]/g,(_,id)=>{
-    const image=images.find(item=>String(item.id)===id);
-    const index=imageTokens.length;
-    imageTokens.push(image?problemImageHtml(image,index):'');
-    return imageTokenPrefix+index+'X';
-  });
-  let safe=escapeHtml(raw);
-  const protect=(content,display)=>{
-    const index=tokens.length;
-    tokens.push(display
-      ?'<div class="math-display">\\['+content.trim()+'\\]</div>'
-      :'<span class="math-inline">\\('+content.trim()+'\\)</span>');
-    return tokenPrefix+index+'X';
-  };
-
-  safe=safe
-    .replace(/\$\$([\s\S]*?)\$\$/g,(_,math)=>protect(math,true))
-    .replace(/\\\[([\s\S]*?)\\\]/g,(_,math)=>protect(math,true))
-    .replace(/\\\(([\s\S]*?)\\\)/g,(_,math)=>protect(math,false))
-    .replace(/(^|[^\\$])\$([^\n$]+?)\$/g,(_,prefix,math)=>prefix+protect(math,false));
-
-  const html=safe.split(/\n{2,}/).map(block=>block.trim()).filter(Boolean).map(block=>{
-    if(block.startsWith(tokenPrefix)&&new RegExp('^'+tokenPrefix+'\\d+X$').test(block))return block;
-    if(block.startsWith(imageTokenPrefix)&&new RegExp('^'+imageTokenPrefix+'\\d+X$').test(block))return block;
-    if(/^###\s+/.test(block))return '<h3>'+remoteInlineFormat(block.replace(/^###\s+/,''))+'</h3>';
-    if(/^##\s+/.test(block))return '<h2>'+remoteInlineFormat(block.replace(/^##\s+/,''))+'</h2>';
-    if(/^#\s+/.test(block))return '<h1>'+remoteInlineFormat(block.replace(/^#\s+/,''))+'</h1>';
-    const lines=block.split('\n');
-    if(lines.every(line=>/^[-*]\s+/.test(line))){
-      return '<ul>'+lines.map(line=>'<li>'+remoteInlineFormat(line.replace(/^[-*]\s+/,''))+'</li>').join('')+'</ul>';
-    }
-    const numberedList=renderManualNumberedList(lines,remoteInlineFormat);
-    if(numberedList)return numberedList;
-    if(block.startsWith('&gt; ')){
-      return '<blockquote>'+remoteInlineFormat(block.replace(/^&gt;\s?/,'').replace(/\n&gt;\s?/g,'<br>'))+'</blockquote>';
-    }
-    return '<p>'+remoteInlineFormat(block).replace(/\n/g,'<br>')+'</p>';
-  }).join('');
-
-  return html
-    .replace(new RegExp(tokenPrefix+'(\\d+)X','g'),(_,index)=>tokens[Number(index)]||'')
-    .replace(new RegExp(imageTokenPrefix+'(\\d+)X','g'),(_,index)=>imageTokens[Number(index)]||'');
-}
-
-function remoteMediaUrl(value){
-  if(!value)return '';
-  try{
-    const url=new URL(String(value),NPHO_EDITOR_ORIGIN);
-    return url.protocol==='https:'||url.protocol==='http:'?url.href:'';
-  }catch{
-    return '';
-  }
-}
-
-function remoteProblemToPractice(problem){
-  const images=Array.isArray(problem.images)?problem.images.map((image,index)=>({
-    id:String(image.id||''),
-    src:remoteMediaUrl(image.url),
-    alt:image.alt||('Рисунок '+(index+1)+' к задаче'),
-    caption:image.caption||''
-  })).filter(image=>image.src):[];
-  const embeddedImageIds=[...new Set([
-    ...imageMarkerIds(problem.statement),
-    ...imageMarkerIds(problem.solution),
-    ...imageMarkerIds(problem.answer),
-    ...imageMarkerIds(problem.authorComment)
-  ])];
-  return {
-    id:'remote-'+problem.id,
-    slug:String(problem.slug||''),
-    book:String(problem.book||'Савченко'),
-    topic:String(problem.topic||'Механика'),
-    chapter:String(problem.chapter||'Без главы'),
-    chapterOrder:positiveCatalogInteger(problem.chapterOrder,1),
-    problemNumber:String(problem.problemNumber||''),
-    sortOrder:positiveCatalogInteger(problem.sortOrder,1),
-    difficulty:normalizeDifficulty(problem.difficulty),
-    title:String(problem.problemNumber||problem.title||'Задача'),
-    statement:latexSourceToHtml(problem.statement,images),
-    solution:latexSourceToHtml(problem.solution,images),
-    answer:latexSourceToHtml(problem.answer,images),
-    authorComment:latexSourceToHtml(problem.authorComment,images),
-    hints:Array.isArray(problem.hints)?problem.hints.map((hint,index)=>({
-      text:latexSourceToHtml(hint.content),
-      image:remoteMediaUrl(hint.imageUrl),
-      imageAlt:hint.imageCaption||('Рисунок к подсказке '+(index+1)),
-      caption:hint.imageCaption||''
-    })):[],
-    images,
-    embeddedImageIds
-  };
-}
-
-function problemMergeKey(problem){
-  return [problemBook(problem),problem.topic,problem.problemNumber||problem.title].map(value=>String(value||'').trim().toLowerCase()).join('|');
-}
-
-function updateProblemTaxonomy(){
-  PRACTICE_TASKS.forEach(problem=>{
-    const book=problemBook(problem);
-    if(book&&!PROBLEM_BOOKS.includes(book))PROBLEM_BOOKS.push(book);
-    if(problem.topic&&!PROBLEM_TOPICS.includes(problem.topic))PROBLEM_TOPICS.push(problem.topic);
-  });
-}
-
-async function loadPublishedProblems(){
-  const status=document.getElementById('problem-sync-status');
-  try{
-    const response=await fetch('/api/problems',{cache:'no-store',headers:{Accept:'application/json'}});
-    if(!response.ok)throw new Error('HTTP '+response.status);
-    const payload=await response.json();
-    const remote=Array.isArray(payload.problems)?payload.problems.map(remoteProblemToPractice):[];
-    const merged=new Map(PRACTICE_TASKS.map(problem=>[problemMergeKey(problem),problem]));
-    remote.forEach(problem=>merged.set(problemMergeKey(problem),problem));
-    PRACTICE_TASKS=Array.from(merged.values());
-    updateProblemTaxonomy();
-    renderBookChoices();
-    renderBookCounts();
-    if(status){
-      status.textContent='';
-      status.hidden=true;
-    }
-    if(/^#(?:problem|task)-/.test(location.hash))handleProblemRoute();
-  }catch(error){
-    console.warn('Не удалось синхронизировать банк задач:',error);
-    if(status){
-      status.hidden=false;
-      status.textContent='Показаны сохранённые на сайте задачи.';
-      status.className='problem-sync-status ok';
-    }
-  }
-}
-
-let activeProblemId=null;
-let activeProblemBook=null;
-let activeProblemTopic=null;
-
-function problemBook(problem){
-  return problem.book||'Савченко';
-}
-
-function problemChapter(problem){
-  return String(problem.chapter||'Без главы');
-}
-
-function positiveCatalogInteger(value,fallback=1){
-  const number=Math.round(Number(value));
-  return Number.isFinite(number)?Math.min(99999,Math.max(1,number)):fallback;
-}
-
-function naturalCatalogCompare(a,b){
-  return String(a||'').localeCompare(String(b||''),'ru',{numeric:true,sensitivity:'base'});
-}
-
-function sortedSectionProblems(book,topic){
-  const list=PRACTICE_TASKS.filter(problem=>problemBook(problem)===book&&problem.topic===topic).slice();
-  const chapterOrders=new Map();
-  list.forEach(problem=>{
-    const chapter=problemChapter(problem);
-    const order=positiveCatalogInteger(problem.chapterOrder);
-    chapterOrders.set(chapter,chapterOrders.has(chapter)?Math.min(chapterOrders.get(chapter),order):order);
-  });
-  return list.sort((a,b)=>chapterOrders.get(problemChapter(a))-chapterOrders.get(problemChapter(b))
-    ||naturalCatalogCompare(problemChapter(a),problemChapter(b))
-    ||positiveCatalogInteger(a.sortOrder)-positiveCatalogInteger(b.sortOrder)
-    ||naturalCatalogCompare(a.problemNumber,b.problemNumber)
-    ||naturalCatalogCompare(a.id,b.id));
-}
-
-function problemDisplayNumber(problem,fallback){
-  return String(problem.problemNumber||'').trim()||String(fallback||1);
-}
-
-function sameProblemId(a,b){
-  return String(a)===String(b);
-}
-
-function problemRouteToken(problem){
-  return String(problem.slug||problem.id);
-}
-
-function findProblemByRouteToken(token){
-  const decoded=String(token||'');
-  return PRACTICE_TASKS.find(problem=>problem.slug===decoded||sameProblemId(problem.id,decoded));
-}
-
-function problemIdArgument(id){
-  return JSON.stringify(id);
-}
-
-function availableProblemBooks(){
-  return PROBLEM_BOOKS.filter(book=>PRACTICE_TASKS.some(problem=>problemBook(problem)===book));
-}
-
-function availableProblemTopics(book){
-  return PROBLEM_TOPICS.filter(topic=>PRACTICE_TASKS.some(problem=>problemBook(problem)===book&&problem.topic===topic));
-}
-
-function renderBookChoices(){
-  const grid=document.getElementById('book-choice-grid');
-  if(!grid)return;
-  const descriptions={
-    'Савченко':'Задачи по механике, термодинамике, электричеству и оптике.',
-    'Овчинкин':'Отдельный каталог задач с собственной нумерацией по каждому разделу.',
-    'Сборник NPhO':'Официальные и тренировочные задачи Национальной физической олимпиады.',
-    'Авторские задачи':'Авторские подборки преподавателей и тренеров сборной.'
-  };
-  grid.innerHTML=availableProblemBooks().map(book=>{
-    const total=PRACTICE_TASKS.filter(problem=>problemBook(problem)===book).length;
-    const description=descriptions[book]||'Задачи и решения, опубликованные редакцией NPhO.';
-    return `<button class="book-choice-card" onclick='selectProblemBook(${problemIdArgument(book)})'>
-      <span class="book-choice-title">${escapeHtml(book)}</span>
-      <span class="book-choice-description">${escapeHtml(description)}</span>
-      <span class="book-choice-footer">
-        <span class="book-choice-count" data-book-count="${escapeAttribute(book)}">${total} ${pluralTasks(total)}</span>
-        <span class="book-choice-arrow" aria-hidden="true">→</span>
-      </span>
-    </button>`;
-  }).join('');
-}
-
-function setProblemSelectionView(viewId){
-  ['book-selection-view','topic-selection-view','task-selection-view'].forEach(id=>{
-    const element=document.getElementById(id);
-    if(element)element.hidden=id!==viewId;
-  });
-}
-
-function renderBookCounts(){
-  document.querySelectorAll('[data-book-count]').forEach(element=>{
-    const book=element.getAttribute('data-book-count');
-    const total=PRACTICE_TASKS.filter(problem=>problemBook(problem)===book).length;
-    element.textContent=total+' '+pluralTasks(total);
-  });
-}
-
-function showBookSelection(){
-  activeProblemBook=null;
-  activeProblemTopic=null;
-  setProblemSelectionView('book-selection-view');
-  renderBookCounts();
-  window.scrollTo(0,0);
-}
-
-function selectProblemBook(book){
-  if(!availableProblemBooks().includes(book))return;
-  activeProblemBook=book;
-  activeProblemTopic=null;
-  showTopicSelection();
-}
-
-function showTopicSelection(){
-  if(!activeProblemBook){
-    showBookSelection();
-    return;
-  }
-  if(!availableProblemBooks().includes(activeProblemBook)){
-    showBookSelection();
-    return;
-  }
-
-  setProblemSelectionView('topic-selection-view');
-  const title=document.getElementById('selected-book-title');
-  if(title)title.textContent=activeProblemBook;
-
-  const grid=document.getElementById('topic-choice-grid');
-  if(grid){
-    grid.innerHTML=availableProblemTopics(activeProblemBook).map(topic=>{
-      const total=PRACTICE_TASKS.filter(problem=>problemBook(problem)===activeProblemBook&&problem.topic===topic).length;
-      return `<button class="topic-choice-card" onclick='selectProblemTopic(${problemIdArgument(topic)})'>
-        <span class="topic-choice-name">${escapeHtml(topic)}</span>
-        <span class="topic-choice-count">${total} ${pluralTasks(total)} →</span>
-      </button>`;
-    }).join('');
-  }
-
-  window.scrollTo(0,0);
-}
-
-function selectProblemTopic(topic){
-  if(!activeProblemBook||!availableProblemTopics(activeProblemBook).includes(topic))return;
-  const search=document.getElementById('problem-search');
-  if(search&&activeProblemTopic!==topic)search.value='';
-  activeProblemTopic=topic;
-  showTaskSelection();
-}
-
-function clearProblemSearch(){
-  const search=document.getElementById('problem-search');
-  if(!search)return;
-  search.value='';
-  renderProblemCatalog();
-  search.focus();
-}
-
-function showTaskSelection(){
-  if(!activeProblemBook){
-    showBookSelection();
-    return;
-  }
-  if(!activeProblemTopic){
-    showTopicSelection();
-    return;
-  }
-
-  setProblemSelectionView('task-selection-view');
-  const title=document.getElementById('task-selection-title');
-  if(title)title.textContent=activeProblemTopic;
-  renderProblemCatalog(activeProblemBook,activeProblemTopic);
-  window.scrollTo(0,0);
-}
-
-function renderProblemCatalog(book=activeProblemBook,topic=activeProblemTopic){
+function renderProblemCatalog(topic='all'){
   const catalog=document.getElementById('problem-catalog');
   const empty=document.getElementById('empty-problems');
   const count=document.getElementById('practice-count');
-  if(!catalog||!book||!topic)return;
+  if(!catalog)return;
 
-  const allList=sortedSectionProblems(book,topic);
-  const query=String(document.getElementById('problem-search')?.value||'').trim().toLowerCase();
-  const list=query?allList.filter(problem=>[
-    problemDisplayNumber(problem,''),problemChapter(problem),difficultyShortLabel(problem.difficulty)
-  ].join(' ').toLowerCase().includes(query)):allList;
-  if(count)count.textContent=query?list.length+' из '+allList.length:list.length+' '+pluralTasks(list.length);
-  if(empty)empty.style.display=list.length?'none':'block';
-  if(empty)empty.textContent=query?'По вашему запросу ничего не найдено.':'В этом разделе пока нет задач.';
+  activeProblemTopic=topic;
+  const list=topic==='all'?PRACTICE_TASKS:PRACTICE_TASKS.filter(p=>p.topic===topic);
+  count.textContent=list.length+' '+pluralTasks(list.length);
+  empty.style.display=list.length?'none':'block';
 
-  const fallbackNumbers=new Map(allList.map((problem,index)=>[String(problem.id),index+1]));
-  const chapters=new Map();
-  list.forEach(problem=>{
-    const chapter=problemChapter(problem);
-    if(!chapters.has(chapter))chapters.set(chapter,[]);
-    chapters.get(chapter).push(problem);
+  const groups={};
+  list.forEach(p=>{
+    if(!groups[p.topic])groups[p.topic]=[];
+    groups[p.topic].push(p);
   });
 
-  catalog.innerHTML=list.length?[...chapters].map(([chapter,problems])=>`
-    <section class="topic-block chapter-block">
+  catalog.innerHTML=Object.entries(groups).map(([groupTopic,tasks])=>`
+    <section class="topic-block">
       <div class="topic-block-head">
-        <h2 class="topic-block-title">${escapeHtml(chapter)}</h2>
-        <span class="topic-block-count">${problems.length} ${pluralTasks(problems.length)}</span>
+        <h2 class="topic-block-title">${groupTopic}</h2>
+        <span class="topic-block-count">${tasks.length} ${pluralTasks(tasks.length)}</span>
       </div>
       <div class="topic-task-grid">
-        ${problems.map(problem=>{
-          const number=problemDisplayNumber(problem,fallbackNumbers.get(String(problem.id)));
-          return `<button class="task-number-tile ${difficultyClass(problem.difficulty)}" onclick='openProblem(${problemIdArgument(problem.id)})' title="Задача ${escapeAttribute(number)} · ${difficultyLabel(problem.difficulty)}" aria-label="Открыть задачу ${escapeAttribute(number)}. Сложность: ${difficultyLabel(problem.difficulty)}"><span class="task-tile-number">${escapeHtml(number)}</span>${normalizeDifficulty(problem.difficulty)===4?'<span class="task-tile-skull" aria-hidden="true">☠</span>':''}</button>`;
-        }).join('')}
+        ${tasks.map(p=>`<button class="task-number-tile ${p.levelClass}" onclick="openProblem(${p.id})" title="Задача ${p.id}: ${escapeAttribute(p.title)}" aria-label="Открыть задачу ${p.id}: ${escapeAttribute(p.title)}">${p.id}</button>`).join('')}
       </div>
     </section>
-  `).join(''):'';
+  `).join('');
 }
 
 function escapeAttribute(value){
   return String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-function normalizeDifficulty(value){
-  const n=Math.round(Number(value)||1);
-  return Math.min(4,Math.max(1,n));
-}
-
-function difficultyClass(value){
-  return 'difficulty-'+normalizeDifficulty(value);
-}
-
-function difficultyShortLabel(value){
-  const n=normalizeDifficulty(value);
-  return {
-    1:'Лёгкая',
-    2:'Средняя',
-    3:'Сложная',
-    4:'☠ Гроб'
-  }[n];
-}
-
-function difficultyLabel(value){
-  const n=normalizeDifficulty(value);
-  return {
-    1:'Лёгкая задача — зелёный цвет',
-    2:'Средняя задача — оранжевый цвет',
-    3:'Сложная задача — красный цвет',
-    4:'Гроб — тёмно-красный цвет с черепом'
-  }[n];
 }
 
 function pluralTasks(n){
@@ -1300,278 +642,88 @@ function pluralTasks(n){
   return 'задач';
 }
 
-function getBookTopicProblemNumber(problem){
-  const sameSection=sortedSectionProblems(problemBook(problem),problem.topic);
-  const index=sameSection.findIndex(item=>sameProblemId(item.id,problem.id));
-  return problemDisplayNumber(problem,index>=0?index+1:1);
-}
-
-let mathJaxReadyPromise=null;
-
-function waitForMathJax(){
-  if(window.MathJax?.startup?.promise){
-    return window.MathJax.startup.promise;
-  }
-
-  if(!mathJaxReadyPromise){
-    mathJaxReadyPromise=new Promise((resolve,reject)=>{
-      const started=Date.now();
-      const check=()=>{
-        if(window.MathJax?.startup?.promise){
-          window.MathJax.startup.promise.then(resolve).catch(reject);
-          return;
-        }
-        if(Date.now()-started>15000){
-          reject(new Error('MathJax не загрузился за 15 секунд'));
-          return;
-        }
-        setTimeout(check,50);
-      };
-      check();
-    });
-  }
-
-  return mathJaxReadyPromise;
-}
-
-async function renderMath(elements){
-  const nodes=(elements||[]).filter(Boolean);
-  if(!nodes.length)return;
-
-  try{
-    await waitForMathJax();
-    window.MathJax.typesetClear?.(nodes);
-    await window.MathJax.typesetPromise(nodes);
-  }catch(error){
-    console.error('Ошибка отображения LaTeX:',error);
-  }
+function filterProblems(topic,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  renderProblemCatalog(topic);
 }
 
 function openProblem(id,updateHash=true){
-  const p=PRACTICE_TASKS.find(item=>sameProblemId(item.id,id));
+  const p=PRACTICE_TASKS.find(item=>Number(item.id)===Number(id));
   if(!p)return;
-
-  activeProblemId=p.id;
-  activeProblemBook=problemBook(p);
-  activeProblemTopic=p.topic;
+  activeProblemId=Number(p.id);
 
   document.getElementById('problem-catalog-view').hidden=true;
   document.getElementById('problem-detail').hidden=false;
-  document.getElementById('detail-topic').textContent=activeProblemBook+' · '+p.topic+' · '+problemChapter(p);
+  document.getElementById('detail-topic').textContent=p.topic;
   const level=document.getElementById('detail-level');
-  level.textContent=difficultyShortLabel(p.difficulty);
-  level.className='level-chip difficulty-chip '+difficultyClass(p.difficulty);
-  level.setAttribute('aria-label','Сложность: '+difficultyLabel(p.difficulty));
-  level.title=difficultyLabel(p.difficulty);
-  const topicNumber=getBookTopicProblemNumber(p);
-  document.getElementById('detail-title').textContent='Задача '+topicNumber;
+  level.textContent=p.level;
+  level.className='level-chip level-'+p.levelClass;
+  document.getElementById('detail-number').textContent='Задача '+p.id;
+  document.getElementById('detail-title').textContent=p.title;
   document.getElementById('detail-statement').innerHTML=p.statement;
-  renderStepHints(p);
+  document.getElementById('detail-hint').innerHTML=p.hint||'Подсказка пока не добавлена.';
   document.getElementById('detail-solution').innerHTML=p.solution||'Решение пока не добавлено.';
-  renderProblemImages(p);
 
-  const answerSection=document.getElementById('detail-answer-section');
+  const image=document.getElementById('detail-image');
+  if(p.image){
+    image.src=p.image;
+    image.alt=p.imageAlt||('Рисунок к задаче '+p.id);
+    image.hidden=false;
+  }else{
+    image.removeAttribute('src');
+    image.hidden=true;
+  }
+
+  const answerBox=document.getElementById('detail-answer-box');
   if(p.answer){
     document.getElementById('detail-answer').innerHTML=p.answer;
-    answerSection.hidden=false;
+    answerBox.hidden=false;
   }else{
-    document.getElementById('detail-answer').innerHTML='';
-    answerSection.hidden=true;
+    answerBox.hidden=true;
   }
-
-  const commentSection=document.getElementById('detail-comment-section');
-  if(p.authorComment){
-    document.getElementById('detail-comment').innerHTML=p.authorComment;
-    commentSection.hidden=false;
-  }else{
-    document.getElementById('detail-comment').innerHTML='';
-    commentSection.hidden=true;
-  }
-
-  requestAnimationFrame(()=>{
-    renderMath([
-      document.getElementById('detail-statement'),
-      p.answer?document.getElementById('detail-answer'):null,
-      p.authorComment?document.getElementById('detail-comment'):null
-    ]);
-  });
 
   resetDetailPanels();
   renderProblemSidebar(p);
   renderProblemNavigation(p);
-  document.title=activeProblemBook+' · '+p.topic+' · Задача '+topicNumber+' — NPhO';
-  if(updateHash)history.pushState({problemId:p.id},'', '#problem-'+encodeURIComponent(problemRouteToken(p)));
+  document.title='Задача '+p.id+': '+p.title+' — NPhO';
+  if(updateHash)history.pushState({problemId:p.id},'', '#task-'+p.id);
   window.scrollTo(0,0);
-}
-
-
-let currentHintSteps=[];
-let visibleHintCount=0;
-
-function renderProblemImages(problem){
-  const container=document.getElementById('detail-images');
-  if(!container)return;
-
-  let images=[];
-  if(Array.isArray(problem.images)){
-    images=problem.images;
-  }else if(problem.image){
-    images=[{
-      src:problem.image,
-      alt:problem.imageAlt||('Рисунок к задаче '+problem.id),
-      caption:problem.imageCaption||''
-    }];
-  }
-
-  const embeddedIds=new Set(Array.isArray(problem.embeddedImageIds)?problem.embeddedImageIds.map(String):[]);
-  images=images.filter(item=>item&&item.src&&!embeddedIds.has(String(item.id||'')));
-  if(!images.length){
-    container.innerHTML='';
-    container.hidden=true;
-    return;
-  }
-
-  container.innerHTML=images.map((item,index)=>{
-    const src=escapeAttribute(item.src);
-    const alt=escapeAttribute(item.alt||('Рисунок '+(index+1)+' к задаче '+problem.id));
-    const caption=item.caption?'<figcaption class="problem-figure-caption">'+escapeHtml(item.caption)+'</figcaption>':'';
-    return '<figure class="problem-figure-wrap"><img class="problem-figure" src="'+src+'" alt="'+alt+'" loading="lazy">'+caption+'</figure>';
-  }).join('');
-  container.hidden=false;
-}
-
-function normalizeHintStep(step,index){
-  if(typeof step==='string')return {text:step};
-  if(step&&typeof step==='object')return {
-    text:step.text||'',
-    image:step.image||'',
-    imageAlt:step.imageAlt||('Рисунок к подсказке '+(index+1)),
-    caption:step.caption||''
-  };
-  return {text:String(step||'')};
-}
-
-function renderStepHints(problem){
-  const raw=Array.isArray(problem.hints)?problem.hints:(problem.hint?[problem.hint]:[]);
-  currentHintSteps=raw.map(normalizeHintStep);
-  visibleHintCount=0;
-  const panel=document.getElementById('detail-hint');
-  const btn=document.getElementById('detail-hint-btn');
-  if(!panel||!btn)return;
-
-  if(!currentHintSteps.length){
-    panel.innerHTML='<div class="hint-progress">Подсказки пока не добавлены.</div>';
-    panel.classList.remove('open');
-    btn.disabled=true;
-    btn.textContent='Нет подсказок';
-    btn.setAttribute('aria-expanded','false');
-    return;
-  }
-
-  panel.innerHTML='<div class="hint-progress" id="hint-progress">Открыто 0 из '+currentHintSteps.length+'</div>'+currentHintSteps.map((step,index)=>{
-    const image=step.image?'<img class="hint-step-image" src="'+escapeAttribute(step.image)+'" alt="'+escapeAttribute(step.imageAlt)+'" loading="lazy">':'';
-    const caption=step.caption?'<div class="hint-step-caption">'+escapeHtml(step.caption)+'</div>':'';
-    return '<div class="hint-step" data-hint-index="'+index+'"><div class="hint-step-label">Подсказка '+(index+1)+'</div><div class="hint-step-text">'+step.text+'</div>'+image+caption+'</div>';
-  }).join('');
-
-  btn.disabled=false;
-  btn.textContent='Открыть подсказку 1 из '+currentHintSteps.length;
-  btn.setAttribute('aria-expanded','false');
-  panel.classList.remove('open');
-}
-
-function revealNextHint(){
-  const panel=document.getElementById('detail-hint');
-  const btn=document.getElementById('detail-hint-btn');
-  if(!panel||!btn||!currentHintSteps.length)return;
-
-  if(visibleHintCount>=currentHintSteps.length){
-    resetHintSteps();
-    return;
-  }
-
-  panel.classList.add('open');
-  const step=panel.querySelector('[data-hint-index="'+visibleHintCount+'"]');
-  if(step){
-    step.classList.add('visible');
-    requestAnimationFrame(()=>renderMath([step]));
-  }
-  visibleHintCount++;
-  const progress=document.getElementById('hint-progress');
-  if(progress)progress.textContent='Открыто '+visibleHintCount+' из '+currentHintSteps.length;
-  btn.setAttribute('aria-expanded','true');
-  btn.textContent=visibleHintCount<currentHintSteps.length
-    ?'Открыть подсказку '+(visibleHintCount+1)+' из '+currentHintSteps.length
-    :'Скрыть подсказки';
-}
-
-function resetHintSteps(){
-  visibleHintCount=0;
-  const panel=document.getElementById('detail-hint');
-  const btn=document.getElementById('detail-hint-btn');
-  if(panel){
-    panel.classList.remove('open');
-    panel.querySelectorAll('.hint-step').forEach(step=>step.classList.remove('visible'));
-  }
-  const progress=document.getElementById('hint-progress');
-  if(progress)progress.textContent='Открыто 0 из '+currentHintSteps.length;
-  if(btn&&!btn.disabled){
-    btn.setAttribute('aria-expanded','false');
-    btn.textContent='Открыть подсказку 1 из '+currentHintSteps.length;
-  }
-}
-
-function escapeHtml(value){
-  return String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
 }
 
 function closeProblem(updateHash=true){
   activeProblemId=null;
   document.getElementById('problem-detail').hidden=true;
   document.getElementById('problem-catalog-view').hidden=false;
-
-  if(activeProblemBook&&activeProblemTopic){
-    showTaskSelection();
-  }else{
-    showBookSelection();
-  }
-
   document.title='Национальная олимпиада по физике, Кыргызстан (NPhO)';
   if(updateHash)history.pushState({},'', '#problems');
   window.scrollTo(0,0);
 }
 
 function renderProblemSidebar(problem){
-  const book=problemBook(problem);
-  const sameSection=sortedSectionProblems(book,problem.topic).filter(item=>problemChapter(item)===problemChapter(problem));
-  document.getElementById('sidebar-topic').textContent=problemChapter(problem);
-  document.getElementById('sidebar-count').textContent=sameSection.length+' '+pluralTasks(sameSection.length);
-  document.getElementById('sidebar-task-grid').innerHTML=sameSection.map((item,index)=>`
-    <button class="sidebar-task-btn ${difficultyClass(item.difficulty)} ${sameProblemId(item.id,problem.id)?'active':''}" onclick='openProblem(${problemIdArgument(item.id)})' title="Задача ${escapeAttribute(problemDisplayNumber(item,index+1))} · ${difficultyLabel(item.difficulty)}" aria-label="Задача ${escapeAttribute(problemDisplayNumber(item,index+1))}. ${difficultyLabel(item.difficulty)}">${escapeHtml(problemDisplayNumber(item,index+1))}${normalizeDifficulty(item.difficulty)===4?'<span class="sidebar-skull" aria-hidden="true">☠</span>':''}</button>
+  const sameTopic=PRACTICE_TASKS.filter(p=>p.topic===problem.topic);
+  document.getElementById('sidebar-topic').textContent=problem.topic;
+  document.getElementById('sidebar-count').textContent=sameTopic.length+' '+pluralTasks(sameTopic.length);
+  document.getElementById('sidebar-task-grid').innerHTML=sameTopic.map(p=>`
+    <button class="sidebar-task-btn ${Number(p.id)===Number(problem.id)?'active':''}" onclick="openProblem(${p.id})" title="${escapeAttribute(p.title)}">${p.id}</button>
   `).join('');
 }
 
 function renderProblemNavigation(problem){
-  const book=problemBook(problem);
-  const sameSection=sortedSectionProblems(book,problem.topic);
-  const index=sameSection.findIndex(item=>sameProblemId(item.id,problem.id));
-  const prev=sameSection[index-1];
-  const next=sameSection[index+1];
+  const index=PRACTICE_TASKS.findIndex(p=>Number(p.id)===Number(problem.id));
+  const prev=PRACTICE_TASKS[index-1];
+  const next=PRACTICE_TASKS[index+1];
   const prevBtn=document.getElementById('prev-problem');
   const nextBtn=document.getElementById('next-problem');
   prevBtn.disabled=!prev;
   nextBtn.disabled=!next;
-  document.getElementById('prev-problem-title').textContent=prev?('Задача '+problemDisplayNumber(prev,index)):'Начало раздела';
-  document.getElementById('next-problem-title').textContent=next?('Задача '+problemDisplayNumber(next,index+2)):'Конец раздела';
+  document.getElementById('prev-problem-title').textContent=prev?('№'+prev.id+' · '+prev.title):'Начало списка';
+  document.getElementById('next-problem-title').textContent=next?('№'+next.id+' · '+next.title):'Конец списка';
 }
 
 function moveProblem(direction){
-  const current=PRACTICE_TASKS.find(problem=>sameProblemId(problem.id,activeProblemId));
-  if(!current)return;
-  const book=problemBook(current);
-  const sameSection=sortedSectionProblems(book,current.topic);
-  const index=sameSection.findIndex(problem=>sameProblemId(problem.id,activeProblemId));
-  const target=sameSection[index+direction];
+  const index=PRACTICE_TASKS.findIndex(p=>Number(p.id)===Number(activeProblemId));
+  const target=PRACTICE_TASKS[index+direction];
   if(target)openProblem(target.id);
 }
 
@@ -1581,107 +733,51 @@ function toggleDetailPanel(id,btn){
   const open=panel.classList.toggle('open');
   btn.setAttribute('aria-expanded',open?'true':'false');
   btn.textContent=open?'Скрыть':'Показать';
-  if(open)requestAnimationFrame(()=>renderMath([panel]));
 }
 
 function resetDetailPanels(){
-  resetHintSteps();
-  ['solution','answer','comment'].forEach(name=>{
-    document.getElementById('detail-'+name)?.classList.remove('open');
-    const button=document.getElementById('detail-'+name+'-btn');
-    if(button){button.setAttribute('aria-expanded','false');button.textContent='Показать'}
+  ['detail-hint','detail-solution'].forEach(id=>document.getElementById(id)?.classList.remove('open'));
+  ['detail-hint-btn','detail-solution-btn'].forEach(id=>{
+    const btn=document.getElementById(id);
+    if(btn){btn.setAttribute('aria-expanded','false');btn.textContent='Показать';}
   });
 }
 
 function handleProblemRoute(){
-  const match=location.hash.match(/^#(?:problem|task)-(.+)$/);
+  const match=location.hash.match(/^#task-(\d+)$/);
   if(match){
     go('problems',false);
-    const problem=findProblemByRouteToken(decodeURIComponent(match[1]));
-    if(problem){
-      if(location.hash.startsWith('#task-'))history.replaceState({problemId:problem.id},'','#problem-'+encodeURIComponent(problemRouteToken(problem)));
-      openProblem(problem.id,false);
-    }
+    openProblem(Number(match[1]),false);
   }else if(location.hash==='#problems'){
     go('problems',false);
-    document.getElementById('problem-detail').hidden=true;
-    document.getElementById('problem-catalog-view').hidden=false;
-    showBookSelection();
+    closeProblem(false);
   }else if(document.getElementById('sec-problems')?.classList.contains('active')){
     go('home',false);
   }
 }
 
-async function copyProblemLink(){
-  const button=document.getElementById('copy-problem-link');
-  const url=location.href;
-  try{
-    await navigator.clipboard.writeText(url);
-    if(button){button.textContent='✓ Ссылка скопирована';setTimeout(()=>button.textContent='⧉ Скопировать ссылку',1800)}
-  }catch{
-    window.prompt('Скопируйте ссылку на задачу:',url);
-  }
-}
-
-function resolvedTheme(){
-  if(document.documentElement.dataset.theme)return document.documentElement.dataset.theme;
-  return window.matchMedia?.('(prefers-color-scheme: dark)').matches?'dark':'light';
-}
-
-function updateThemeToggle(){
-  const dark=resolvedTheme()==='dark';
-  const icon=document.getElementById('theme-icon');
-  const label=document.getElementById('theme-label');
-  const button=document.getElementById('theme-toggle');
-  if(icon)icon.textContent=dark?'☀':'☾';
-  if(label)label.textContent=dark?'Светлая':'Тёмная';
-  if(button){
-    const action=dark?'Включить светлую тему':'Включить тёмную тему';
-    button.setAttribute('aria-label',action);
-    button.title=action;
-  }
-}
-
-function toggleTheme(){
-  const next=resolvedTheme()==='dark'?'light':'dark';
-  document.documentElement.dataset.theme=next;
-  try{localStorage.setItem('npho-theme',next)}catch{}
-  updateThemeToggle();
-}
-
-function openHomeSection(sectionId){
-  go('home');
-  requestAnimationFrame(()=>document.getElementById(sectionId)?.scrollIntoView({behavior:'smooth',block:'start'}));
-}
-
 function go(id,updateHash=true){
-  if(id==='dates')id='home';
   document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.nl').forEach(b=>b.classList.remove('active'));
   const section=document.getElementById('sec-'+id);
   if(section)section.classList.add('active');
   const b=document.getElementById('nl-'+id);
   if(b)b.classList.add('active');
-
-  if(id==='problems'&&updateHash){
-    activeProblemId=null;
-    document.getElementById('problem-detail').hidden=true;
-    document.getElementById('problem-catalog-view').hidden=false;
-    showBookSelection();
-    history.pushState({},'', '#problems');
-  }else if(updateHash&&location.hash){
-    history.pushState({},'', location.pathname+location.search);
+  if(updateHash){
+    if(id==='problems'){
+      closeProblem(false);
+      history.pushState({},'', '#problems');
+    }else if(location.hash){
+      history.pushState({},'', location.pathname+location.search);
+    }
   }
-
   window.scrollTo(0,0);
 }
-
 function sy(id,btn){
   document.querySelectorAll('.yp').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.ytab').forEach(t=>t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
-  ACTIVE_ARCHIVE_YEAR=id.replace(/^y/,'');
 }
 function renderPDFs(year){
   const el=document.getElementById('pdfs'+year);
@@ -1712,27 +808,20 @@ function renderTable(year){
   sorted.forEach((r,i)=>{
     const tot=((parseFloat(r.d1)||0)+(parseFloat(r.d2)||0)+(parseFloat(r.d3)||0)).toFixed(2);
     const tier=i<GOLD_COUNT?'gold':i<GOLD_COUNT+SILVER_COUNT?'silver':'bronze';
-    const bv=r.status?'<span class="sbadge status-'+tier+'">'+escapeHtml(r.status)+'</span>':'';
+    const bv=r.status?'<span class="sbadge status-'+tier+'">'+r.status+'</span>':'';
     h+='<tr class="row-'+tier+'"><td><span class="medal medal-'+tier+'">'+(i+1)+'</span></td>';
-    h+='<td style="font-weight:600">'+escapeHtml(r.name||'—')+'</td>';
-    h+='<td>'+escapeHtml(r.d1||'—')+'</td><td>'+escapeHtml(r.d2||'—')+'</td>';
-    if(hasDay3) h+='<td>'+escapeHtml(r.d3||'—')+'</td>';
+    h+='<td style="font-weight:600">'+(r.name||'—')+'</td>';
+    h+='<td>'+(r.d1||'—')+'</td><td>'+(r.d2||'—')+'</td>';
+    if(hasDay3) h+='<td>'+(r.d3||'—')+'</td>';
     h+='<td style="font-weight:700;color:var(--accent)">'+tot+'</td><td>'+bv+'</td></tr>';
   });
   h+='</tbody></table>';
   el.innerHTML=h;
 }
-renderSiteContent();
-updateProblemTaxonomy();
-renderBookChoices();
-renderBookCounts();
-showBookSelection();
-window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change',()=>{if(!document.documentElement.dataset.theme)updateThemeToggle()});
+['2022','2023','2024','2025','2026'].forEach(y=>{renderPDFs(y);renderTable(y);});
+renderProblemCatalog();
 window.addEventListener('popstate',handleProblemRoute);
-window.addEventListener('pageshow',event=>{if(event.persisted)loadPublishedProblems();updateThemeToggle();});
-updateThemeToggle();
 handleProblemRoute();
-loadPublishedProblems();
 </script>
 
 <script>
@@ -1741,175 +830,121 @@ loadPublishedProblems();
   if(!cv)return;
   const ctx=cv.getContext('2d');
   const W=220,H=220,CX=110,CY=110;
-  const OUTER_R=106;
 
   const LEVELS=[
-    {r:28, color:'', speed:0.011},
-    {r:46, color:'', speed:0.007},
-    {r:65, color:'', speed:0.004},
+    {r:28, color:'#60a5fa', speed:0.011},
+    {r:46, color:'#34d399', speed:0.007},
+    {r:65, color:'#c084fc', speed:0.004},
   ];
-  const TRANSITION_RADIAL_SPEED=0.4;
-
-  const CANVAS_PALETTES={
-    light:{
-      levels:['#3f72b8','#16836a','#8663a6'],
-      waves:['#cf5d68','#16836a','#3f72b8','#bc8435','#8663a6','#2d8491','#c56b45','#a95684'],
-      nucleus:'#356eb4',nucleusCore:'#9dbce2',nucleusCenter:'#ffffff',highlight:'rgba(255,255,255,0.78)'
-    },
-    dark:{
-      levels:['#60a5fa','#34d399','#c084fc'],
-      waves:['#f87171','#34d399','#60a5fa','#fbbf24','#c084fc','#22d3ee','#fb923c','#e879f9'],
-      nucleus:'#3b82f6',nucleusCore:'#93c5fd',nucleusCenter:'#ffffff',highlight:'rgba(255,255,255,0.65)'
-    }
-  };
-  const WCOLS=[];
-  let canvasPalette;
-  function currentCanvasTheme(){
-    const explicit=document.documentElement.dataset.theme;
-    if(explicit==='light'||explicit==='dark')return explicit;
-    return window.matchMedia?.('(prefers-color-scheme: dark)').matches?'dark':'light';
-  }
-  function syncCanvasPalette(){
-    canvasPalette=CANVAS_PALETTES[currentCanvasTheme()];
-    LEVELS.forEach((level,index)=>{level.color=canvasPalette.levels[index]});
-    WCOLS.splice(0,WCOLS.length,...canvasPalette.waves);
-  }
-  syncCanvasPalette();
-  new MutationObserver(syncCanvasPalette).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-  window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change',syncCanvasPalette);
 
   const electrons=[
-    {level:0, angle:0,            busy:false, waiting:false, transition:null},
-    {level:0, angle:Math.PI,      busy:false, waiting:false, transition:null},
-    {level:1, angle:Math.PI*0.32, busy:false, waiting:false, transition:null},
-    {level:1, angle:Math.PI*1.32, busy:false, waiting:false, transition:null},
-    {level:2, angle:Math.PI*0.72, busy:false, waiting:false, transition:null},
-    {level:2, angle:Math.PI*1.72, busy:false, waiting:false, transition:null},
+    {level:0, angle:0,            moving:false, targetLevel:null, progress:0, emitWave:false},
+    {level:1, angle:Math.PI*0.72, moving:false, targetLevel:null, progress:0, emitWave:false},
+    {level:2, angle:Math.PI*1.48, moving:false, targetLevel:null, progress:0, emitWave:false},
   ];
 
+  const WCOLS=['#f87171','#34d399','#60a5fa','#fbbf24','#c084fc','#22d3ee','#fb923c','#e879f9'];
   const waves=[];
   const pulses=[];
   const trails=electrons.map(()=>[]);
   let tick=0;
 
-  function randomWaveColor(){return WCOLS[Math.floor(Math.random()*WCOLS.length)]}
-  function positionAt(e,radius){return{x:CX+Math.cos(e.angle)*radius,y:CY+Math.sin(e.angle)*radius}}
-  function currentRadius(e){
-    if(!e.transition)return LEVELS[e.level].r;
-    const {from,to,progress}=e.transition;
-    const t=Math.min(progress,1);
-    const ease=t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
-    return LEVELS[from].r+(LEVELS[to].r-LEVELS[from].r)*ease;
-  }
-  function currentAngularSpeed(e){
-    if(!e.transition)return LEVELS[e.level].speed;
-    const {from,to,progress}=e.transition;
-    return LEVELS[from].speed+(LEVELS[to].speed-LEVELS[from].speed)*Math.min(progress,1);
-  }
-
   function triggerTransition(e){
-    if(e.busy)return;
+    if(e.moving)return;
     const canDown=e.level>0,canUp=e.level<LEVELS.length-1;
     if(!canDown&&!canUp)return;
-    const emit=canDown&&(!canUp||Math.random()<0.5);
-    if(emit)beginTransition(e,e.level-1,'emit',randomWaveColor());
-    else spawnIncoming(e);
+    let emit;
+    if(canDown&&canUp) emit=Math.random()<0.5;
+    else emit=canDown;
+    if(emit){
+      e.targetLevel=e.level-1;e.moving=true;e.progress=0;e.emitWave=true;
+    } else {
+      e.targetLevel=e.level+1;e.moving=true;e.progress=0;e.emitWave=false;
+      spawnIncoming(e);
+    }
   }
 
   function spawnIncoming(e){
-    if(e.busy||e.level>=LEVELS.length-1)return;
-    e.busy=true;
-    e.waiting=true;
-    const radius=LEVELS[e.level].r;
-    const distance=OUTER_R-radius;
-    const plannedFrames=Math.max(1,Math.ceil(distance/0.72));
-    const hitAngle=e.angle+LEVELS[e.level].speed*plannedFrames;
-    const start={x:CX+Math.cos(hitAngle)*OUTER_R,y:CY+Math.sin(hitAngle)*OUTER_R};
+    const ex=CX+Math.cos(e.angle)*LEVELS[e.level].r;
+    const ey=CY+Math.sin(e.angle)*LEVELS[e.level].r;
+    const toAngle=Math.atan2(ey-CY,ex-CX);
+    const fromAngle=toAngle+Math.PI;
+    const startDist=108;
+    const col=WCOLS[Math.floor(Math.random()*WCOLS.length)];
+    const headSpeed=0.30;
+    const stopAt=startDist-5;
+    const totalAge=Math.ceil((stopAt+65)/headSpeed);
     waves.push({
       type:'incoming',
-      electron:e,
-      ox:start.x,oy:start.y,
-      dir:hitAngle+Math.PI,
-      color:randomWaveColor(),
-      traveled:0,distance,speed:distance/plannedFrames,segLen:42,hitAngle,
-      frequency:0.34+Math.random()*0.08,phase:Math.random()*Math.PI*2,amp:4.5,
+      ox:CX+Math.cos(fromAngle)*startDist,
+      oy:CY+Math.sin(fromAngle)*startDist,
+      dir:toAngle,color:col,
+      age:0,totalAge,headSpeed,segLen:42,
+      freq:2.6+Math.random()*2,amp:4+Math.random()*3,
+      done:false,startDist,stopAt,
     });
   }
 
-  function spawnOutgoing(e,color){
-    const radius=LEVELS[e.level].r;
-    const start=positionAt(e,radius);
+  function spawnEmit(e){
+    const ex=CX+Math.cos(e.angle)*LEVELS[e.level].r;
+    const ey=CY+Math.sin(e.angle)*LEVELS[e.level].r;
+    const col=WCOLS[Math.floor(Math.random()*WCOLS.length)];
     waves.push({
-      type:'outgoing',electron:null,
-      ox:start.x,oy:start.y,
-      dir:e.angle,color,
-      traveled:0,distance:OUTER_R-radius,speed:0.78,segLen:44,
-      frequency:0.34+Math.random()*0.08,phase:Math.random()*Math.PI*2,amp:4.5,
+      type:'emit',ox:ex,oy:ey,
+      dir:Math.atan2(ey-CY,ex-CX),color:col,
+      age:0,totalAge:155,headSpeed:0.36,segLen:44,
+      freq:2.4+Math.random()*2.2,amp:4+Math.random()*3.5,
     });
-    pulses.push({x:start.x,y:start.y,maxR:22,color,age:0,totalAge:28});
+    pulses.push({x:ex,y:ey,maxR:22,color:col,age:0,totalAge:28});
   }
 
-  function beginTransition(e,targetLevel,kind,color){
-    if(targetLevel<0||targetLevel>=LEVELS.length)return;
-    e.busy=true;
-    e.waiting=false;
-    const radialDistance=Math.abs(LEVELS[targetLevel].r-LEVELS[e.level].r)||1;
-    e.transition={from:e.level,to:targetLevel,progress:0,progressStep:TRANSITION_RADIAL_SPEED/radialDistance,kind,color,leadFrames:kind==='emit'?10:0};
-    if(kind==='emit')spawnOutgoing(e,color);
-  }
-
-  function absorbPhoton(w){
-    const e=w.electron;
-    if(!e||!e.waiting)return;
-    e.angle=w.hitAngle;
-    const hit=positionAt(e,LEVELS[e.level].r);
-    pulses.push({x:hit.x,y:hit.y,maxR:19,color:w.color,age:0,totalAge:25});
-    beginTransition(e,e.level+1,'absorb',w.color);
-  }
-
-  function finishTransition(e){
-    const transition=e.transition;
-    if(!transition)return;
-    e.level=transition.to;
-    e.transition=null;
-    e.busy=false;
+  function spawnAbsorbPulse(e){
+    const lv=LEVELS[Math.min((e.targetLevel!==null?e.targetLevel:e.level),LEVELS.length-1)];
+    const ex=CX+Math.cos(e.angle)*lv.r;
+    const ey=CY+Math.sin(e.angle)*lv.r;
+    pulses.push({x:ex,y:ey,maxR:18,color:lv.color,age:0,totalAge:24});
   }
 
   function drawWave(w){
-    const headDist=Math.min(w.traveled,w.distance);
+    if(w.age>w.totalAge)return false;
+    const headDist=w.age*w.headSpeed;
     const tailDist=Math.max(0,headDist-w.segLen);
-    const fadeIn=Math.min(1,Math.max(headDist,1)/12);
-    const remaining=w.distance-headDist;
-    const fadeOut=w.type==='outgoing'?Math.min(1,Math.max(remaining,0)/22):1;
-    const alpha=Math.max(0,Math.min(1,fadeIn*fadeOut));
+    let alpha;
+    if(w.type==='incoming'){
+      const riseEnd=w.startDist*0.22;
+      const fadeStart=w.stopAt-35;
+      const fadeEnd=w.stopAt;
+      if(headDist<riseEnd) alpha=headDist/riseEnd;
+      else if(headDist>=fadeStart) alpha=1-Math.min((headDist-fadeStart)/(fadeEnd-fadeStart),1);
+      else alpha=1;
+      if(!w.done&&headDist>=w.stopAt) w.done=true;
+    } else {
+      alpha=w.age<22?w.age/22:1-(w.age-22)/(w.totalAge-22);
+    }
+    alpha=Math.max(0,Math.min(1,alpha));
     ctx.save();
     ctx.translate(w.ox,w.oy);
     ctx.rotate(w.dir);
     ctx.beginPath();
-    for(let s=0;s<=64;s++){
-      const t=s/64;
+    let started=false;
+    for(let s=0;s<=58;s++){
+      const t=s/58;
       const x=tailDist+t*(headDist-tailDist);
       const env=Math.sin(t*Math.PI);
-      const y=Math.sin(x*w.frequency-w.phase)*w.amp*env;
-      if(s===0)ctx.moveTo(x,y);
+      const y=Math.sin(x*w.freq*0.185-w.age*0.08)*w.amp*env;
+      if(!started){ctx.moveTo(x,y);started=true;}
       else ctx.lineTo(x,y);
     }
     ctx.strokeStyle=w.color+Math.floor(alpha*205).toString(16).padStart(2,'0');
     ctx.lineWidth=1.8;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();
-    /* The photon marker uses the exact endpoint of the wave path. */
-    ctx.beginPath();ctx.arc(headDist,0,2.6,0,Math.PI*2);
+    const hy=Math.sin(headDist*w.freq*0.185-w.age*0.08)*w.amp;
+    ctx.beginPath();ctx.arc(headDist,hy,2.4,0,Math.PI*2);
     ctx.fillStyle=w.color+Math.floor(alpha*250).toString(16).padStart(2,'0');ctx.fill();
-    ctx.beginPath();ctx.arc(headDist,0,5.5,0,Math.PI*2);
+    ctx.beginPath();ctx.arc(headDist,hy,5,0,Math.PI*2);
     ctx.fillStyle=w.color+Math.floor(alpha*50).toString(16).padStart(2,'0');ctx.fill();
     ctx.restore();
-
-    w.phase+=0.16;
-    if(headDist>=w.distance){
-      if(w.type==='incoming')absorbPhoton(w);
-      return false;
-    }
-    w.traveled=Math.min(w.distance,w.traveled+w.speed);
-    return true;
+    w.age++;
+    return w.age<=w.totalAge;
   }
 
   function drawPulse(p){
@@ -1930,22 +965,31 @@ loadPublishedProblems();
       ctx.beginPath();ctx.arc(CX,CY,lv.r,0,Math.PI*2);
       ctx.strokeStyle=lv.color+'1a';ctx.lineWidth=1;ctx.stroke();
     });
-    ctx.beginPath();ctx.arc(CX,CY,14,0,Math.PI*2);ctx.fillStyle=canvasPalette.nucleus+'0a';ctx.fill();
-    ctx.beginPath();ctx.arc(CX,CY,10,0,Math.PI*2);ctx.fillStyle=canvasPalette.nucleus+'14';ctx.fill();
-    ctx.beginPath();ctx.arc(CX,CY,7,0,Math.PI*2);ctx.fillStyle=canvasPalette.nucleus;ctx.fill();
-    ctx.beginPath();ctx.arc(CX,CY,4,0,Math.PI*2);ctx.fillStyle=canvasPalette.nucleusCore;ctx.fill();
-    ctx.beginPath();ctx.arc(CX,CY,1.5,0,Math.PI*2);ctx.fillStyle=canvasPalette.nucleusCenter;ctx.fill();
+    ctx.beginPath();ctx.arc(CX,CY,14,0,Math.PI*2);ctx.fillStyle='#3b82f60a';ctx.fill();
+    ctx.beginPath();ctx.arc(CX,CY,10,0,Math.PI*2);ctx.fillStyle='#3b82f614';ctx.fill();
+    ctx.beginPath();ctx.arc(CX,CY,7,0,Math.PI*2);ctx.fillStyle='#3b82f6';ctx.fill();
+    ctx.beginPath();ctx.arc(CX,CY,4,0,Math.PI*2);ctx.fillStyle='#93c5fd';ctx.fill();
+    ctx.beginPath();ctx.arc(CX,CY,1.5,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();
     for(let i=pulses.length-1;i>=0;i--){if(!drawPulse(pulses[i]))pulses.splice(i,1);}
     for(let i=waves.length-1;i>=0;i--){if(!drawWave(waves[i]))waves.splice(i,1);}
     electrons.forEach((e,ei)=>{
-      e.angle+=currentAngularSpeed(e);
-      if(e.transition){
-        if(e.transition.leadFrames>0)e.transition.leadFrames--;
-        else e.transition.progress=Math.min(1,e.transition.progress+e.transition.progressStep);
+      e.angle+=LEVELS[Math.min(e.level,LEVELS.length-1)].speed;
+      let drawR;
+      if(e.moving&&e.targetLevel!==null){
+        e.progress+=0.022;
+        const fromR=LEVELS[e.level].r,toR=LEVELS[e.targetLevel].r;
+        const t=Math.min(e.progress,1);
+        const ease=t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+        drawR=fromR+(toR-fromR)*ease;
+        if(e.progress>=1){
+          if(e.emitWave){e.level=e.targetLevel;spawnEmit(e);e.emitWave=false;}
+          else{spawnAbsorbPulse(e);e.level=e.targetLevel;}
+          e.moving=false;e.targetLevel=null;e.progress=0;
+        }
+      } else {
+        drawR=LEVELS[e.level].r;
       }
-      const drawR=currentRadius(e);
-      const colorLevel=e.transition?e.transition.to:e.level;
-      const col=LEVELS[colorLevel].color;
+      const col=LEVELS[Math.min(e.level,LEVELS.length-1)].color;
       const ex=CX+Math.cos(e.angle)*drawR;
       const ey=CY+Math.sin(e.angle)*drawR;
       const tr=trails[ei];
@@ -1959,16 +1003,15 @@ loadPublishedProblems();
       ctx.beginPath();ctx.arc(ex,ey,10,0,Math.PI*2);ctx.fillStyle=col+'0f';ctx.fill();
       ctx.beginPath();ctx.arc(ex,ey,6.5,0,Math.PI*2);ctx.fillStyle=col+'2c';ctx.fill();
       ctx.beginPath();ctx.arc(ex,ey,3.5,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
-      ctx.beginPath();ctx.arc(ex-0.8,ey-0.8,1.2,0,Math.PI*2);ctx.fillStyle=canvasPalette.highlight;ctx.fill();
-      if(e.transition&&e.transition.progress>=1)finishTransition(e);
+      ctx.beginPath();ctx.arc(ex-0.8,ey-0.8,1.2,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,0.65)';ctx.fill();
     });
     tick++;
     if(tick%125===0){
-      const free=electrons.filter(e=>!e.busy);
+      const free=electrons.filter(e=>!e.moving);
       if(free.length>0)triggerTransition(free[Math.floor(Math.random()*free.length)]);
     }
     if(tick%210===0){
-      const free=electrons.filter(e=>!e.busy);
+      const free=electrons.filter(e=>!e.moving);
       if(free.length>1)triggerTransition(free[Math.floor(Math.random()*free.length)]);
     }
     requestAnimationFrame(draw);
