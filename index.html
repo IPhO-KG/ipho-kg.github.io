@@ -329,17 +329,15 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
 .problem-figure-caption{margin-top:.55rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:var(--text2)}
 .embedded-problem-figure{margin:1.25rem auto}
 .hint-progress{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:var(--text2);margin-bottom:.8rem}
-.hint-step{display:none;padding:1rem 1.05rem;margin-top:.75rem;border:1px solid rgba(245,158,11,.28);border-radius:var(--r);background:rgba(245,158,11,.055)}
+.hint-step{display:none;padding:1rem 1.05rem;margin-top:.75rem;border:1px solid color-mix(in srgb,var(--accent) 24%,var(--border));border-radius:var(--r);background:rgba(var(--accent-rgb),.045)}
 .hint-step.visible{display:block;animation:fadeUp .22s both}
 .hint-step:first-of-type{margin-top:0}
-.hint-step-label{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#b45309;margin-bottom:.45rem}
+.hint-step-label{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:.45rem}
 .hint-step-text{font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.78}
 .hint-step-image{display:block;max-width:min(100%,560px);max-height:420px;object-fit:contain;margin:1rem auto 0;border:1px solid var(--border);border-radius:10px;background:var(--bg)}
 .hint-step-caption{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;color:var(--text2);text-align:center;margin-top:.45rem}
 .formula{font-family:Georgia,'Times New Roman',serif;font-size:1.03em;white-space:normal}
-:root{--reveal-heading:#f5f5f3;--reveal-heading-hover:#f0f0ed;--reveal-heading-open:#ecece8;--reveal-panel:#fafaf8;--reveal-hint:#faf7ef;--reveal-solution:#f5f4f1;--reveal-answer:#efefec;--reveal-divider:#d8d8d3}
-html[data-theme="dark"]{--reveal-heading:#1b1d21;--reveal-heading-hover:#202226;--reveal-heading-open:#24262a;--reveal-panel:#17191d;--reveal-hint:#1f1d18;--reveal-solution:#1c1e22;--reveal-answer:#222428;--reveal-divider:#34363b}
-@media(prefers-color-scheme:dark){html:not([data-theme]){--reveal-heading:#1b1d21;--reveal-heading-hover:#202226;--reveal-heading-open:#24262a;--reveal-panel:#17191d;--reveal-hint:#1f1d18;--reveal-solution:#1c1e22;--reveal-answer:#222428;--reveal-divider:#34363b}}
+:root{--reveal-heading:color-mix(in srgb,var(--bg) 80%,var(--bg2));--reveal-heading-hover:color-mix(in srgb,var(--bg) 64%,var(--bg2));--reveal-heading-open:color-mix(in srgb,var(--bg2) 93%,var(--accent));--reveal-panel:var(--bg);--reveal-divider:color-mix(in srgb,var(--border) 82%,var(--bg))}
 .reveal-section{padding:0;border-bottom:1px solid var(--reveal-divider)}
 .reveal-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.05rem 1.8rem;cursor:pointer;background:var(--reveal-heading);transition:background .15s}
 .reveal-heading:hover{background:var(--reveal-heading-hover)}
@@ -349,9 +347,7 @@ html[data-theme="dark"]{--reveal-heading:#1b1d21;--reveal-heading-hover:#202226;
 .reveal-btn:hover,.reveal-btn[aria-expanded="true"]{border-color:var(--accent);color:var(--accent);background:rgba(var(--accent-rgb),.06)}
 .reveal-panel{display:none;padding:1.45rem 1.8rem;border-top:1px solid var(--reveal-divider);background:var(--reveal-panel);font-size:16px;line-height:1.78;font-family:Georgia,'Times New Roman',serif}
 .reveal-panel.open{display:block;animation:fadeUp .22s both}
-.hint-panel{background:var(--reveal-hint)}
-.solution-panel{background:var(--reveal-solution)}
-.answer-panel{background:var(--reveal-answer)}
+.hint-panel,.solution-panel,.answer-panel{background:var(--reveal-panel)}
 .answer-text{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.65}
 .problem-body mjx-container[display="true"],.reveal-panel mjx-container[display="true"],.answer-text mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden}
 .problem-body table,.reveal-panel table,.answer-text table{display:block;max-width:100%;overflow-x:auto}
@@ -786,11 +782,11 @@ function mergeSiteContent(base,override){
   return result;
 }
 const CALENDAR_COUNTRIES={
-  KR:{name:'Республика Корея',asset:'assets/flags/kr.svg?v=1115'},
-  SE:{name:'Швеция',asset:'assets/flags/se.svg?v=1115'},
-  RU:{name:'Россия',asset:'assets/flags/ru.svg?v=1115'},
-  TR:{name:'Турция',asset:'assets/flags/tr.svg?v=1115'},
-  CO:{name:'Колумбия',asset:'assets/flags/co.svg?v=1115'}
+  KR:{name:'Республика Корея',asset:'assets/flags/kr.svg'},
+  SE:{name:'Швеция',asset:'assets/flags/se.svg'},
+  RU:{name:'Россия',asset:'assets/flags/ru.svg'},
+  TR:{name:'Турция',asset:'assets/flags/tr.svg'},
+  CO:{name:'Колумбия',asset:'assets/flags/co.svg'}
 };
 function calendarCountryCode(item){
   const explicit=String(item?.countryCode||'').trim().toUpperCase();
