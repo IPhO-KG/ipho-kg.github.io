@@ -39,3 +39,5 @@ HTML • CSS • JavaScript • GitHub Pages
 
 ## Check before publishing
 Run `node scripts/check-site.mjs` to check local asset paths, PDF links, result pages, and JavaScript syntax. No dependencies are required.
+
+Public asset URLs use `?v=20261020` to bypass previously cached 404 responses. Bump this version when relocating or replacing shared assets.
