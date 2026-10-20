@@ -9,6 +9,8 @@
     if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
   } catch {}
 </script>
+<script src="/assets/js/i18n.js"></script>
+<script src="/assets/js/npho-data.js"></script>
 <script>
   window.MathJax = {
     tex: {
@@ -22,9 +24,13 @@
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
 <title>Национальная олимпиада по физике, Кыргызстан (NPhO)</title>
-<meta name="description" content="Национальная олимпиада по физике Кыргызстана. Задачи, решения и информация об олимпиаде.">
+<meta name="description" content="Официальный сайт Национальной олимпиады по физике Кыргызской Республики. Задачи, решения, результаты и информация об олимпиаде.">
 <meta name="google-site-verification" content="SyxztxKSBm8W-PTQ3tYS_m2zo_RvEGYlv08fUyaxAxk"/>
-<meta name="keywords" content="физика Кыргызстан, олимпиада по физике, NPhO, IPhO Кыргызстан, физика олимпиада Бишкек">
+<meta name="keywords" content="физика Кыргызстан, олимпиада по физике, NPhO, IPhO Кыргызстан, физика олимпиада Бишкек, физика боюнча олимпиада, National Physics Olympiad Kyrgyzstan">
+<link rel="alternate" hreflang="ru" href="https://npho.edu.kg/?lang=ru">
+<link rel="alternate" hreflang="ky" href="https://npho.edu.kg/?lang=ky">
+<link rel="alternate" hreflang="en" href="https://npho.edu.kg/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://npho.edu.kg/">
 <link rel="icon" type="image/png" href="/favicon.png">
 <style>
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
@@ -53,7 +59,7 @@ nav>*{position:relative;z-index:1}
 .hero>*{position:relative;z-index:1}
 .hero #atom-canvas{filter:drop-shadow(0 15px 24px rgba(var(--accent-rgb),.13))}
 .hero h1{font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.15;margin-bottom:1rem;letter-spacing:-.02em;animation:fadeUp .6s .08s both}
-.hero h1 span{color:var(--accent)}
+.hero h1 span{color:var(--accent)}.hero h1 span.hero-t1{color:inherit}
 .hero-sub{font-size:16px;color:var(--text2);max-width:520px;margin:0 auto 2.25rem;animation:fadeUp .6s .16s both}
 .hbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s .24s both}
 .btn-p{padding:11px 26px;background:var(--accent);background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 76%,var(--accent2)));box-shadow:0 8px 20px rgba(var(--accent-rgb),.18),inset 0 1px 0 rgba(255,255,255,.18);color:#fff;border:none;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;transition:transform .15s,box-shadow .15s,filter .15s}
@@ -389,6 +395,25 @@ html[data-theme="dark"] .difficulty-4{--difficulty:#f87171;--difficulty-bg:rgba(
 html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturate(.9) contrast(1.06)}
 @media(prefers-color-scheme:dark){html:not([data-theme]) nav::before{opacity:.078;filter:brightness(1.28) saturate(.9) contrast(1.06)}}
 @media(max-width:640px){nav::before{background-size:auto 54px;opacity:.056}}
+
+/* Язык, официальный статус, ссылки на страницы результатов */
+.lang-select{appearance:none;-webkit-appearance:none;min-height:34px;flex-shrink:0;padding:6px 26px 6px 10px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none' stroke='%23697587' stroke-width='1.5'%3E%3Cpath d='M1 1l4 4 4-4'/%3E%3C/svg%3E") no-repeat right 9px center;color:var(--text2);font:inherit;font-size:12px;font-weight:700;cursor:pointer;transition:border-color .15s,color .15s}
+.lang-select:hover,.lang-select:focus{border-color:var(--accent);color:var(--accent);outline:none}
+.official-badge{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:6px 10px;max-width:min(640px,100%);margin:0 auto 1.15rem;padding:6px 14px;border:1px solid color-mix(in srgb,var(--accent2) 34%,var(--border));border-radius:100px;background:color-mix(in srgb,var(--bg) 90%,var(--accent2));color:var(--text2);font-size:12px;font-weight:600;line-height:1.45;animation:fadeUp .6s both}
+.official-badge strong{display:inline-flex;align-items:center;gap:6px;color:var(--accent2);font-weight:800}
+.official-badge strong::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 3px rgba(var(--accent2-rgb),.16)}
+.fc .fchair{margin-top:.55rem;font-size:12px;color:var(--text3)}
+.fc .fchair b{color:var(--text2);font-weight:700}
+.yhero-link{display:inline-flex;align-items:center;gap:6px;margin-top:.7rem;color:var(--accent);font-size:12px;font-weight:700;text-decoration:none}
+.yhero-link:hover{text-decoration:underline}
+.medal-team1{background:rgba(var(--accent-rgb),.13);color:var(--accent)}.medal-team2{background:rgba(var(--accent2-rgb),.13);color:var(--accent2)}.medal-rest{background:var(--bg3);color:var(--text2)}
+.status-team1{background:rgba(var(--accent-rgb),.1);color:var(--accent);border:1px solid rgba(var(--accent-rgb),.3)}.status-team2{background:rgba(var(--accent2-rgb),.1);color:var(--accent2);border:1px solid rgba(var(--accent2-rgb),.3)}.status-rest{background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
+.row-team1 td{background:rgba(var(--accent-rgb),.03)}.row-team2 td{background:rgba(var(--accent2-rgb),.025)}
+.name-orig{display:block;font-size:11px;font-weight:500;color:var(--text3)}
+.legend-note{margin-top:.9rem;font-size:12px;color:var(--text3)}
+.content-note{margin-top:.35rem;font-size:12px;color:var(--text3)}
+.content-note:empty{display:none}
+@media(max-width:640px){.lang-select{padding:6px 22px 6px 7px;font-size:11px;background-position:right 7px center}.official-badge{border-radius:var(--r);font-size:11px;padding:6px 10px}}
 </style>
 </head>
 <body>
@@ -397,11 +422,16 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
   <div class="logo" onclick="go('home')"><div class="logo-dot"></div>NPhO</div>
   <div class="nav-right">
     <div class="nav-links">
-      <button class="nl active" id="nl-home" onclick="go('home')">Главная</button>
-      <button class="nl" id="nl-problems" onclick="go('problems')">Банк задач</button>
-      <button class="nl" id="nl-archive" onclick="go('archive')">Результаты</button>
-      <button class="nl" id="nl-about" onclick="go('about')">Об олимпиаде</button>
+      <button class="nl active" id="nl-home" onclick="go('home')" data-i18n="nav.home">Главная</button>
+      <button class="nl" id="nl-problems" onclick="go('problems')" data-i18n="nav.problems">Банк задач</button>
+      <button class="nl" id="nl-archive" onclick="go('archive')" data-i18n="nav.results">Результаты</button>
+      <button class="nl" id="nl-about" onclick="go('about')" data-i18n="nav.about">Об олимпиаде</button>
     </div>
+    <select class="lang-select" data-lang-select onchange="NPHO_I18N.setLang(this.value)" data-i18n-attr="aria-label:lang.label;title:lang.label" aria-label="Язык">
+      <option value="ky">Кыр</option>
+      <option value="ru" selected>Рус</option>
+      <option value="en">Eng</option>
+    </select>
     <button class="theme-toggle" id="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Переключить цветовую тему" title="Переключить цветовую тему">
       <span class="theme-icon" id="theme-icon" aria-hidden="true">☾</span>
       <span class="theme-label" id="theme-label">Тёмная</span>
@@ -412,11 +442,12 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 <div id="sec-home" class="sec active">
   <div class="hero">
     <canvas id="atom-canvas" width="220" height="220" style="display:block;margin:0 auto 1rem"></canvas>
-    <h1>Национальная олимпиада<br><span>по физике</span></h1>
-    <p class="hero-sub">Задачи, решения и понятный путь от национального отбора к международным олимпиадам по физике.</p>
+    <p class="official-badge"><strong data-i18n="official.site">Официальный сайт</strong><span data-i18n="official.badge">Представитель официального комитета по физике КР</span></p>
+    <h1><span class="hero-t1" data-i18n="hero.title1">Национальная олимпиада</span><br><span data-i18n="hero.title2">по физике</span></h1>
+    <p class="hero-sub" data-i18n="hero.sub">Задачи, решения и понятный путь от национального отбора к международным олимпиадам по физике.</p>
     <div class="hbtns">
-      <button class="btn-p" onclick="go('problems')">Банк задач</button>
-      <button class="btn-o" onclick="go('archive')">Результаты</button>
+      <button class="btn-p" onclick="go('problems')" data-i18n="nav.problems">Банк задач</button>
+      <button class="btn-o" onclick="go('archive')" data-i18n="nav.results">Результаты</button>
     </div>
   </div>
   <main class="inner home-inner">
@@ -426,21 +457,21 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
   <footer>
     <div class="fi">
       <div class="fg">
-        <div class="fc"><h4>Национальная олимпиада по физике</h4><p>Отбор, задачи и результаты участников из Кыргызстана.</p></div>
-        <div class="fc"><h4>Навигация</h4><a onclick="go('home')">Главная</a><a onclick="go('problems')">Банк задач</a><a onclick="go('archive')">Результаты</a><a onclick="go('about')">Об олимпиаде</a></div>
-        <div class="fc"><h4>Контакты</h4>
+        <div class="fc"><h4 data-i18n="footer.title">Национальная олимпиада по физике</h4><p data-i18n="footer.desc">Официальный сайт и представитель официального комитета по физике Кыргызской Республики.</p><p class="fchair"><span data-i18n="footer.chair">Председатель комитета</span>: <b data-i18n-chair>Кылычбеков Салижан</b></p></div>
+        <div class="fc"><h4 data-i18n="footer.nav">Навигация</h4><a onclick="go('home')" data-i18n="nav.home">Главная</a><a onclick="go('problems')" data-i18n="nav.problems">Банк задач</a><a onclick="go('archive')" data-i18n="nav.results">Результаты</a><a onclick="go('about')" data-i18n="nav.about">Об олимпиаде</a></div>
+        <div class="fc"><h4 data-i18n="footer.contacts">Контакты</h4>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#229ED9" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></div><a href="https://t.me/+9GGnjui6VT05Mzli" target="_blank" class="ct">Telegram</a></div>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1"/></svg></div><a href="https://www.instagram.com/ipho_kg" target="_blank" class="ct">Instagram</a></div>
         </div>
       </div>
-      <div class="fbot"><p>© 2026 Национальная олимпиада по физике Кыргызской Республики</p></div>
+      <div class="fbot"><p data-i18n="footer.copy">© 2026 Национальная олимпиада по физике Кыргызской Республики</p></div>
     </div>
   </footer>
 </div>
 
 <div id="sec-archive" class="sec">
   <div class="inner">
-    <p class="stitle">Результаты</p>
+    <p class="stitle" data-i18n="results.title">Результаты</p>
     <div class="ytabs" id="archive-year-tabs"></div>
     <div id="archive-year-panels"></div>
   </div>
@@ -452,11 +483,11 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
     <div id="problem-catalog-view" class="problem-catalog-view">
       <div class="practice-head">
         <div>
-          <p class="stitle" style="margin-bottom:.45rem">Банк задач</p>
-          <p class="practice-intro">Сначала выберите задачник, затем раздел физики и номер задачи.</p>
+          <p class="stitle" style="margin-bottom:.45rem" data-i18n="problems.title">Банк задач</p>
+          <p class="practice-intro" data-i18n="problems.intro">Сначала выберите задачник, затем раздел физики и номер задачи.</p><p class="content-note" data-i18n="problems.contentNote"></p>
           <p class="problem-sync-status" id="problem-sync-status" aria-live="polite">Загружаем опубликованные задачи…</p>
         </div>
-        <a class="problem-admin-button" href="/admin/" title="Доступно редакторам после входа"><span>＋</span> Добавить задачу</a>
+        <a class="problem-admin-button" href="/admin/" title="Доступно редакторам после входа" data-i18n-attr="title:problems.addTitle"><span>＋</span> <b style="font-weight:inherit" data-i18n="problems.add">Добавить задачу</b></a>
       </div>
 
       <div id="book-selection-view" class="selection-view">
@@ -482,7 +513,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
       </div>
 
       <div id="topic-selection-view" class="selection-view" hidden>
-        <button class="problem-back" onclick="showBookSelection()">← К выбору задачника</button>
+        <button class="problem-back" onclick="showBookSelection()" data-i18n="problems.backBooks">← К выбору задачника</button>
         <div class="selection-toolbar">
           <div>
             <h2 class="selection-title" id="selected-book-title"></h2>
@@ -492,7 +523,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
       </div>
 
       <div id="task-selection-view" class="selection-view" hidden>
-        <button class="problem-back" onclick="showTopicSelection()">← К разделам задачника</button>
+        <button class="problem-back" onclick="showTopicSelection()" data-i18n="problems.backTopics">← К разделам задачника</button>
         <div class="practice-head">
           <div>
             <p class="stitle" id="task-selection-title" style="margin-bottom:0"></p>
@@ -502,23 +533,23 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 
         <div class="catalog-search">
           <span class="catalog-search-icon" aria-hidden="true">⌕</span>
-          <input class="catalog-search-input" id="problem-search" type="search" placeholder="Поиск по номеру или главе" oninput="renderProblemCatalog()" autocomplete="off">
-          <button class="catalog-search-clear" type="button" onclick="clearProblemSearch()" aria-label="Очистить поиск" title="Очистить">×</button>
+          <input class="catalog-search-input" id="problem-search" type="search" placeholder="Поиск по номеру или главе" data-i18n-attr="placeholder:problems.search" oninput="renderProblemCatalog()" autocomplete="off">
+          <button class="catalog-search-clear" type="button" onclick="clearProblemSearch()" aria-label="Очистить поиск" title="Очистить" data-i18n-attr="aria-label:problems.clear;title:problems.clearShort">×</button>
         </div>
 
         <div id="problem-catalog" class="problem-catalog"></div>
-        <div id="empty-problems" class="empty-problems">В этом разделе пока нет задач.</div>
-        <div class="catalog-legend" aria-label="Цветовая шкала сложности задач">
-          <span class="legend-item"><span class="legend-color difficulty-1"></span>Лёгкая</span>
-          <span class="legend-item"><span class="legend-color difficulty-2"></span>Средняя</span>
-          <span class="legend-item"><span class="legend-color difficulty-3"></span>Сложная</span>
-          <span class="legend-item"><span class="legend-color difficulty-4">☠</span>Гроб</span>
+        <div id="empty-problems" class="empty-problems" data-i18n="problems.empty">В этом разделе пока нет задач.</div>
+        <div class="catalog-legend" aria-label="Цветовая шкала сложности задач" data-i18n-attr="aria-label:problems.legend">
+          <span class="legend-item"><span class="legend-color difficulty-1"></span><span data-i18n="diff.1">Лёгкая</span></span>
+          <span class="legend-item"><span class="legend-color difficulty-2"></span><span data-i18n="diff.2">Средняя</span></span>
+          <span class="legend-item"><span class="legend-color difficulty-3"></span><span data-i18n="diff.3">Сложная</span></span>
+          <span class="legend-item"><span class="legend-color difficulty-4">☠</span><span data-i18n="diff.4">Гроб</span></span>
         </div>
       </div>
     </div>
 
     <div id="problem-detail" class="problem-detail" hidden>
-      <button class="problem-back" onclick="closeProblem()">← Вернуться к задачам раздела</button>
+      <button class="problem-back" onclick="closeProblem()" data-i18n="problems.backSection">← Вернуться к задачам раздела</button>
       <div class="problem-page-layout">
         <article class="problem-article">
           <header class="problem-article-header">
@@ -528,19 +559,19 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
             </div>
             <div class="problem-title-row">
               <h1 class="problem-page-title" id="detail-title"></h1>
-              <button class="copy-problem-link" id="copy-problem-link" type="button" onclick="copyProblemLink()" title="Скопировать ссылку на задачу">⧉ Скопировать ссылку</button>
+              <button class="copy-problem-link" id="copy-problem-link" type="button" onclick="copyProblemLink()" title="Скопировать ссылку на задачу" data-i18n-attr="title:problems.copyTitle" data-i18n="problems.copyLink">⧉ Скопировать ссылку</button>
             </div>
           </header>
 
           <section class="problem-section">
-            <h2>Условие</h2>
+            <h2 data-i18n="problems.statement">Условие</h2>
             <div class="problem-body" id="detail-statement"></div>
             <div class="problem-images" id="detail-images" hidden></div>
           </section>
 
           <section class="reveal-section">
             <div class="reveal-heading" onclick="revealNextHint()">
-              <h2>Пошаговые подсказки</h2>
+              <h2 data-i18n="problems.hints">Пошаговые подсказки</h2>
               <button class="reveal-btn" id="detail-hint-btn" aria-expanded="false" onclick="event.stopPropagation();revealNextHint()">Открыть подсказку</button>
             </div>
             <div class="reveal-panel hint-panel" id="detail-hint"></div>
@@ -548,7 +579,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 
           <section class="reveal-section">
             <div class="reveal-heading" onclick="toggleDetailPanel('detail-solution',document.getElementById('detail-solution-btn'))">
-              <h2>Решение</h2>
+              <h2 data-i18n="problems.solution">Решение</h2>
               <button class="reveal-btn" id="detail-solution-btn" aria-expanded="false" onclick="event.stopPropagation();toggleDetailPanel('detail-solution',this)">Показать</button>
             </div>
             <div class="reveal-panel solution-panel" id="detail-solution"></div>
@@ -556,7 +587,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 
           <section class="reveal-section" id="detail-answer-section" hidden>
             <div class="reveal-heading" onclick="toggleDetailPanel('detail-answer',document.getElementById('detail-answer-btn'))">
-              <h2>Ответ</h2>
+              <h2 data-i18n="problems.answer">Ответ</h2>
               <button class="reveal-btn" id="detail-answer-btn" aria-expanded="false" onclick="event.stopPropagation();toggleDetailPanel('detail-answer',this)">Показать</button>
             </div>
             <div class="reveal-panel answer-panel answer-text" id="detail-answer"></div>
@@ -564,19 +595,19 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 
           <section class="reveal-section" id="detail-comment-section" hidden>
             <div class="reveal-heading" onclick="toggleDetailPanel('detail-comment',document.getElementById('detail-comment-btn'))">
-              <h2>Комментарий автора</h2>
+              <h2 data-i18n="problems.comment">Комментарий автора</h2>
               <button class="reveal-btn" id="detail-comment-btn" aria-expanded="false" onclick="event.stopPropagation();toggleDetailPanel('detail-comment',this)">Показать</button>
             </div>
             <div class="reveal-panel" id="detail-comment"></div>
           </section>
 
-          <nav class="problem-page-nav" aria-label="Переход между задачами">
+          <nav class="problem-page-nav" aria-label="Переход между задачами" data-i18n-attr="aria-label:problems.navLabel">
             <button class="problem-nav-btn" id="prev-problem" onclick="moveProblem(-1)">
-              <span class="problem-nav-label">← Предыдущая</span>
+              <span class="problem-nav-label" data-i18n="problems.prev">← Предыдущая</span>
               <span class="problem-nav-title" id="prev-problem-title"></span>
             </button>
             <button class="problem-nav-btn next" id="next-problem" onclick="moveProblem(1)">
-              <span class="problem-nav-label">Следующая →</span>
+              <span class="problem-nav-label" data-i18n="problems.next">Следующая →</span>
               <span class="problem-nav-title" id="next-problem-title"></span>
             </button>
           </nav>
@@ -588,7 +619,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
             <span class="sidebar-count" id="sidebar-count"></span>
           </div>
           <div class="sidebar-task-grid" id="sidebar-task-grid"></div>
-          <button class="sidebar-all" onclick="closeProblem()">Вернуться к разделу</button>
+          <button class="sidebar-all" onclick="closeProblem()" data-i18n="problems.sidebarBack">Вернуться к разделу</button>
         </aside>
       </div>
     </div>
@@ -601,116 +632,13 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 </div>
 
 <script>
-const PDF_LINKS = {
-  '2026': [
-    { label: 'День 1 · Условия задач', url: 'assets/pdf/IPhO_2026_TST_Rus1.pdf' },
-    { label: 'День 1 · Решения',       url: 'assets/pdf/IPhO_2026_TST_Sol1.pdf' },
-    { label: 'День 2 · Условия задач', url: 'assets/pdf/IPhO_2026_TST_Rus2.pdf' },
-    { label: 'День 2 · Решения',       url: 'assets/pdf/IPhO_2026_TST_Sol2.pdf' },
-    { label: 'День 3 · Условия задач', url: 'assets/pdf/IPhO_2026_TST_Rus3.pdf' },
-    { label: 'День 3 · Решения',       url: 'assets/pdf/IPhO_2026_TST_Sol3.pdf' },
-  ],
-  '2025': [
-    { label: 'День 1 · Условия задач', url: 'assets/pdf/Prob1.pdf' },
-    { label: 'День 1 · Решения',       url: 'assets/pdf/Solu1.pdf' },
-    { label: 'День 2 · Условия задач', url: 'assets/pdf/Prob2.pdf' },
-    { label: 'День 2 · Решения',       url: 'assets/pdf/Solu2.pdf' },
-  ],
-  '2024': [
-    { label: 'День 1 · Условия задач', url: '' },
-    { label: 'День 1 · Решения',       url: 'assets/pdf/Sol1.pdf' },
-    { label: 'День 2 · Условия задач', url: '' },
-    { label: 'День 2 · Решения',       url: '' },
-  ],
-};
-const GOLD_COUNT=5, SILVER_COUNT=3;
-let RESULTS = {
-  '2022': [
-    { name:'Сапарбек уулу Денис',  d1:'12.5', d2:'11.4', d3:'',    status:'APhO/IPhO' },
-    { name:'Турдубаев Эрбол',      d1:'11.5', d2:'8.8',  d3:'',    status:'APhO/IPhO' },
-    { name:'Жусупбеков Нияз',      d1:'11.3', d2:'4',    d3:'',    status:'APhO/IPhO' },
-    { name:'Мартыненко Арсений',   d1:'12.3', d2:'1.0',  d3:'1.5', status:'APhO/IPhO' },
-    { name:'Турдукеев Атай',       d1:'6.0',  d2:'2.6',  d3:'0.5', status:'APhO/IPhO' },
-    { name:'Садыков Темирлан',     d1:'10.8', d2:'2.8',  d3:'',    status:'APhO' },
-    { name:'Жамил уулу Алкелди',   d1:'6.9',  d2:'5',    d3:'',    status:'APhO' },
-    { name:'Гартман Бекали',       d1:'7.5',  d2:'0.5',  d3:'',    status:'APhO' },
-    { name:'Жусубалиев Сыймык',    d1:'5.6',  d2:'1.2',  d3:'',    status:'' },
-    { name:'Баратали Бектур',      d1:'5.3',  d2:'1',    d3:'0.2', status:'' },
-    { name:'Ускенбаева Анель',     d1:'5.4',  d2:'1',    d3:'',    status:'' },
-    { name:'Минкин Тимур',         d1:'5.6',  d2:'0',    d3:'',    status:'' },
-    { name:'Токтобекова Бактыгуль',d1:'1.6',  d2:'3',    d3:'',    status:'' },
-    { name:'Карташев Владимир',    d1:'2.5',  d2:'2',    d3:'',    status:'' },
-    { name:'Кадыр уулу Алинур',    d1:'2.4',  d2:'1.6',  d3:'',    status:'' },
-  ],
-  '2023': [
-    { name:'Турдукеев Атай',       d1:'20',   d2:'28',   d3:'', status:'IPhO/APhO' },
-    { name:'Баратали Бектур',      d1:'19',   d2:'27.5', d3:'', status:'IPhO/APhO' },
-    { name:'Жусубалиев Сыймык',    d1:'18',   d2:'27',   d3:'', status:'IPhO/APhO' },
-    { name:'Абдиев Аскар',         d1:'16',   d2:'28',   d3:'', status:'IPhO/APhO' },
-    { name:'Анаралы уулу Эмир',    d1:'20',   d2:'24',   d3:'', status:'IPhO/APhO' },
-    { name:'Турдубаев Эрбол',      d1:'20',   d2:'23.5', d3:'', status:'' },
-    { name:'Сакиева Умут',         d1:'9',    d2:'17.5', d3:'', status:'APhO/EuPhO' },
-    { name:'Чилдибаев Арстан',     d1:'16',   d2:'14.5', d3:'', status:'APhO/EuPhO' },
-    { name:'Озокеев Атай',         d1:'9',    d2:'17.5', d3:'', status:'APhO' },
-    { name:'Жамил уулу Алкелди',   d1:'16',   d2:'10',   d3:'', status:'' },
-    { name:'Ускенбаева Анель',     d1:'13',   d2:'10.5', d3:'', status:'EuPhO' },
-    { name:'Туратов Умар',         d1:'13',   d2:'9.5',  d3:'', status:'' },
-    { name:'Токтобекова Бактыгул', d1:'9',    d2:'11.5', d3:'', status:'EuPhO' },
-    { name:'Омурбеков Памир',      d1:'13',   d2:'7.5',  d3:'', status:'' },
-    { name:'Бакытбеков Акбар',     d1:'15',   d2:'5',    d3:'', status:'' },
-  ],
-  '2024': [
-    { name:'Абдиев Аскар',         d1:'51.85',  d2:'28.4',   d3:'', status:'IPhO/APhO/ISPhO' },
-    { name:'Анаралы уулу Эмир',    d1:'51.85',  d2:'22.65',  d3:'', status:'IPhO/APhO/ISPhO' },
-    { name:'Баратали Бектур',      d1:'41.25',  d2:'29.3',   d3:'', status:'IPhO/APhO/ISPhO' },
-    { name:'Эмилбеков Айтегин',    d1:'33.725', d2:'26.675', d3:'', status:'IPhO/APhO/ISPhO' },
-    { name:'Турдукеев Атай',       d1:'28.5',   d2:'30.975', d3:'', status:'IPhO/APhO/ISPhO' },
-    { name:'Абылаев Ахмед',        d1:'19.125', d2:'27.7',   d3:'', status:'APhO' },
-    { name:'Мамытов Иса',          d1:'28.5',   d2:'20.5',   d3:'', status:'APhO' },
-    { name:'Озокеев Атай',         d1:'23.875', d2:'21.6',   d3:'', status:'APhO' },
-    { name:'Жусубалиев Сыймык',    d1:'21.5',   d2:'23.45',  d3:'', status:'' },
-    { name:'Ашырова Эльдана',      d1:'22.175', d2:'17.9',   d3:'', status:'' },
-    { name:'Бакытбеков Акбар',     d1:'17.875', d2:'19',     d3:'', status:'EuPhO' },
-    { name:'Омурбеков Памир',      d1:'26.875', d2:'13.8',   d3:'', status:'EuPhO' },
-    { name:'Раяпов Нурсултан',     d1:'19.45',  d2:'14',     d3:'', status:'EuPhO' },
-    { name:'Салиев Темирхан',      d1:'13.55',  d2:'15',     d3:'', status:'EuPhO' },
-    { name:'Туратов Умар',         d1:'15.175', d2:'15.625', d3:'', status:'' },
-  ],
-  '2025': [
-    { name:'Анаралы уулу Эмир',  d1:'37.4',  d2:'30.8',  d3:'', status:'IPhO/APhO/ISPhO' },
-    { name:'Абдиев Аскар',       d1:'44.5',  d2:'22.3',  d3:'', status:'IPhO/APhO/ISPhO' },
-    { name:'Темирхан Салиев',    d1:'36.1',  d2:'24',    d3:'', status:'IPhO/APhO/ISPhO' },
-    { name:'Эмилбеков Айтегин',  d1:'29.45', d2:'19.5',  d3:'', status:'IPhO/APhO/ISPhO' },
-    { name:'Баратали Бектур',    d1:'30.6',  d2:'18.35', d3:'', status:'IPhO/APhO/ISPhO' },
-    { name:'Абылаев Ахмед',      d1:'24.55', d2:'21.05', d3:'', status:'APhO' },
-    { name:'Бакытбеков Акбар',   d1:'25.6',  d2:'16.05', d3:'', status:'APhO' },
-    { name:'Мамытов Иса',        d1:'19.4',  d2:'5',     d3:'', status:'APhO' },
-    { name:'Эрмеков Алан',       d1:'16',    d2:'4.7',   d3:'', status:'' },
-    { name:'Турдукеев Атай',     d1:'14.5',  d2:'6',     d3:'', status:'' },
-    { name:'Касымов Марсель',    d1:'11.45', d2:'6.2',   d3:'', status:'' },
-    { name:'Глинова Варвара',    d1:'8',     d2:'7.6',   d3:'', status:'' },
-    { name:'Каримов Асылбек',    d1:'11.3',  d2:'3.7',   d3:'', status:'' },
-    { name:'Туташбаев Умар',     d1:'12.5',  d2:'2.5',   d3:'', status:'' },
-    { name:'Мырзабеков Нурбол',  d1:'6.2',   d2:'5',     d3:'', status:'' },
-  ],
-  '2026': [
-    { name:'Аскар Абдиев',      d1:'16.4',  d2:'22.45', d3:'25',    status:'IPhO/APhO/EuPhO' },
-    { name:'Айтегин Эмилбеков', d1:'18.2',  d2:'24.25', d3:'12.9',  status:'IPhO/APhO/EuPhO' },
-    { name:'Темирхан Салиев',   d1:'11.3',  d2:'19.85', d3:'12.55', status:'IPhO/APhO' },
-    { name:'Нурбол Мырзабеков', d1:'12.85', d2:'12.45', d3:'15.25', status:'IPhO/APhO' },
-    { name:'Ахмед Абылаев',     d1:'11.05', d2:'18.85', d3:'6.45',  status:'IPhO/APhO' },
-    { name:'Истеми Тазабеков',  d1:'8.7',   d2:'16.15', d3:'8.25',  status:'APhO' },
-    { name:'Марсель Касымов',   d1:'12.2',  d2:'11.1',  d3:'9.7',   status:'APhO' },
-    { name:'Умар Туташбаев',    d1:'7.2',   d2:'13.55', d3:'7.15',  status:'APhO' },
-    { name:'Рашитов Бактыбек',  d1:'4.1',   d2:'6.1',   d3:'7.4',   status:'BPO' },
-    { name:'Асанбаев Ариетбек', d1:'5',     d2:'7.8',   d3:'3.8',   status:'BPO' },
-    { name:'Ашырова Эльдана',   d1:'7.35',  d2:'7.2',   d3:'1.9',   status:'BPO' },
-    { name:'Эрмеков Нурэл',     d1:'7.4',   d2:'6.9',   d3:'1.6',   status:'BPO' },
-    { name:'Таисия Ри',         d1:'5.1',   d2:'5.5',   d3:'2.65',  status:'Резерв' },
-    { name:'Каримов Асылбек',   d1:'4.3',   d2:'3.1',   d3:'5.4',   status:'Резерв' },
-    { name:'Осмонов Чынгыз',    d1:'5.6',   d2:'4.95',  d3:'0.7',   status:'Резерв' },
-  ]
-};
+/* Данные результатов и PDF вынесены в /assets/js/npho-data.js — общие для главной и страниц /results/ГГГГ/. */
+const I18N = window.NPHO_I18N;
+const t = (key, vars) => I18N.t(key, vars);
+const PDF_LINKS = window.NPHO_PDF_LINKS || {};
+const STAGE_DATES = window.NPHO_STAGE_DATES || {};
+const GOLD_COUNT = window.NPHO_GOLD_COUNT || 5, SILVER_COUNT = window.NPHO_SILVER_COUNT || 3;
+let RESULTS = JSON.parse(JSON.stringify(window.NPHO_RESULTS || {}));
 
 const DEFAULT_SITE_CONTENT = {
   contentVersion: 4,
@@ -836,39 +764,51 @@ function renderCalendarEvent(item){
   const title=url?'<a href="'+escapeAttribute(url)+'" target="_blank" rel="noopener">'+escapeHtml(item.title||'')+' ↗</a>':escapeHtml(item.title||'');
   const code=item.kind==='international'?calendarCountryCode(item):'';
   const country=CALENDAR_COUNTRIES[code];
-  const flag=country?'<span class="event-flag" title="'+escapeAttribute(country.name)+'"><img src="'+escapeAttribute(country.asset)+'" alt="Флаг '+escapeAttribute(country.name)+'"></span>':'';
+  const countryName=country?(I18N.country(code)||country.name):'';
+  const flag=country?'<span class="event-flag" title="'+escapeAttribute(countryName)+'"><img src="'+escapeAttribute(country.asset)+'" alt="'+escapeAttribute(t('flag.alt',{name:countryName}))+'"></span>':'';
   return '<div class="calendar-event '+kind+'"><div class="calendar-date">'+escapeHtml(item.date||'')+'</div><div class="calendar-track"><span class="calendar-dot"></span><span class="calendar-line"></span></div><div class="calendar-copy"><h3 class="calendar-event-title">'+flag+title+'</h3><p>'+escapeHtml(item.details||'')+'</p></div></div>';
+}
+function localizedContent(){
+  return I18N.localizeContent(SITE_CONTENT,DEFAULT_SITE_CONTENT);
 }
 function renderHomeContent(){
   const selectionRoot=document.getElementById('home-selection-content');
   const calendarRoot=document.getElementById('home-calendar-content');
-  const s=SITE_CONTENT.selection||{};
+  const C=localizedContent();
+  const s=C.selection||{};
   if(selectionRoot){
-    selectionRoot.innerHTML='<header class="home-section-head"><div><p class="eyebrow">Два маршрута · один финал</p><h2 id="home-selection-title">'+escapeHtml(s.title||'Как устроен отбор')+'</h2></div><p>'+escapeHtml(s.intro||'')+'</p></header>'+renderSelectionTree(s);
+    selectionRoot.innerHTML='<header class="home-section-head"><div><p class="eyebrow">'+escapeHtml(t('home.selEyebrow'))+'</p><h2 id="home-selection-title">'+escapeHtml(s.title||t('home.selTitle'))+'</h2></div><p>'+escapeHtml(s.intro||'')+'</p></header>'+renderSelectionTree(s);
   }
   if(calendarRoot){
-    const events=SITE_CONTENT.calendar||[];
+    const events=C.calendar||[];
     const stages=events.filter(item=>item.kind!=='international');
     const international=events.filter(item=>item.kind==='international');
-    calendarRoot.innerHTML='<header class="home-section-head compact"><div><p class="eyebrow">Сезон 2025–2026</p><h2 id="home-calendar-title">Календарь сезона</h2></div></header><div class="change-notice"><strong>Важно</strong><span>'+escapeHtml(SITE_CONTENT.notice||'')+'</span></div><div class="home-calendar-grid"><section class="calendar-column"><h3 class="calendar-column-title">Этапы NPhO</h3><div class="calendar-list">'+stages.map(renderCalendarEvent).join('')+'</div></section><section class="calendar-column international"><h3 class="calendar-column-title">Международные старты</h3><div class="calendar-list">'+international.map(renderCalendarEvent).join('')+'</div></section></div>';
+    calendarRoot.innerHTML='<header class="home-section-head compact"><div><p class="eyebrow">'+escapeHtml(t('home.calEyebrow'))+'</p><h2 id="home-calendar-title">'+escapeHtml(t('home.calTitle'))+'</h2></div></header><div class="change-notice"><strong>'+escapeHtml(t('home.important'))+'</strong><span>'+escapeHtml(C.notice||'')+'</span></div><div class="home-calendar-grid"><section class="calendar-column"><h3 class="calendar-column-title">'+escapeHtml(t('home.stagesCol'))+'</h3><div class="calendar-list">'+stages.map(renderCalendarEvent).join('')+'</div></section><section class="calendar-column international"><h3 class="calendar-column-title">'+escapeHtml(t('home.intlCol'))+'</h3><div class="calendar-list">'+international.map(renderCalendarEvent).join('')+'</div></section></div>';
   }
 }
 function renderAboutContent(){
-  const root=document.getElementById('about-content');if(!root)return;const a=SITE_CONTENT.about||{},s=SITE_CONTENT.selection||{};
+  const root=document.getElementById('about-content');if(!root)return;const C=localizedContent();const a=C.about||{},s=C.selection||{};
   const originCopy=String(a.originText||'').split(/\n\s*\n/).map(item=>item.trim()).filter(Boolean).map(item=>'<p>'+escapeHtml(item)+'</p>').join('');
   const benefits=(a.benefits||[]).map(item=>'<div class="about-fact"><dt>'+escapeHtml(item.title||'')+'</dt><dd>'+escapeHtml(item.text||'')+'</dd></div>').join('');
   const guide=(a.internationalDetails||[]).map(item=>'<div class="olympiad-row"><span class="olympiad-code">'+escapeHtml(item.code||'')+'</span><div><span class="olympiad-name">'+escapeHtml(item.name||'')+'</span><p class="olympiad-description">'+escapeHtml(item.text||'')+'</p></div></div>').join('');
   const teamRules=(s.teamRules||[]).map(item=>'<div class="team-selection-row"><span class="team-selection-code">'+escapeHtml(item.code||'')+'</span><span class="team-selection-count">'+escapeHtml(item.count||'')+'</span><p class="team-selection-text">'+escapeHtml(item.text||'')+'</p></div>').join('');
-  const notice=SITE_CONTENT.notice?'<p class="about-notice">'+escapeHtml(SITE_CONTENT.notice)+'</p>':'';
+  const notice=C.notice?'<p class="about-notice">'+escapeHtml(C.notice)+'</p>':'';
+  const orgFacts=[['about.org.status','about.org.statusVal'],['about.org.committee','about.org.committeeVal']].map(([dt,dd])=>'<div class="about-fact"><dt>'+escapeHtml(t(dt))+'</dt><dd>'+escapeHtml(t(dd))+'</dd></div>').join('')+'<div class="about-fact"><dt>'+escapeHtml(t('about.org.chair'))+'</dt><dd><strong style="color:var(--text)">'+escapeHtml(I18N.chair())+'</strong></dd></div>';
+  const orgSection='<section class="about-section" id="about-official"><div><p class="about-section-label">'+escapeHtml(t('about.label.org'))+'</p><h2>'+escapeHtml(t('about.orgTitle'))+'</h2></div><div><p class="about-selection-copy">'+escapeHtml(t('about.orgText'))+'</p><dl class="about-facts">'+orgFacts+'</dl></div></section>';
   const pathIntro=a.pathText?'<p class="olympiad-intro">'+escapeHtml(a.pathText)+'</p>':'';
-  root.innerHTML='<header class="about-hero"><p class="eyebrow">'+escapeHtml(a.kicker||'Об олимпиаде')+'</p><h1 class="about-title">'+escapeHtml(a.title||'Национальная олимпиада по физике')+'</h1><p class="about-lead">'+escapeHtml(a.intro||'')+'</p></header><div class="about-document"><section class="about-section"><div><p class="about-section-label">Система отбора</p><h2>'+escapeHtml(a.originTitle||'Два пути к заключительному отбору')+'</h2></div><div><div class="about-copy">'+originCopy+'</div><h3 class="about-subtitle">'+escapeHtml(a.benefitTitle||'Принципы отбора в NPhO')+'</h3><dl class="about-facts">'+benefits+'</dl></div></section><section class="about-section"><div><p class="about-section-label">Состав команд</p><h2>'+escapeHtml(s.rulesTitle||'Формирование международных команд')+'</h2></div><div><p class="about-selection-copy">'+escapeHtml(s.rulesText||'')+'</p><div class="team-selection-list">'+teamRules+'</div>'+notice+'</div></section><section class="about-section"><div><p class="about-section-label">Международный уровень</p><h2>'+escapeHtml(a.pathTitle||'Международные олимпиады')+'</h2></div><div>'+pathIntro+'<div class="olympiad-guide">'+guide+'</div></div></section></div>';
+  root.innerHTML='<header class="about-hero"><p class="eyebrow">'+escapeHtml(a.kicker||t('about.kicker'))+'</p><h1 class="about-title">'+escapeHtml(a.title||t('footer.title'))+'</h1><p class="about-lead">'+escapeHtml(a.intro||'')+'</p></header><div class="about-document">'+orgSection+'<section class="about-section"><div><p class="about-section-label">'+escapeHtml(t('about.label.system'))+'</p><h2>'+escapeHtml(a.originTitle||'Два пути к заключительному отбору')+'</h2></div><div><div class="about-copy">'+originCopy+'</div><h3 class="about-subtitle">'+escapeHtml(a.benefitTitle||'Принципы отбора в NPhO')+'</h3><dl class="about-facts">'+benefits+'</dl></div></section><section class="about-section"><div><p class="about-section-label">'+escapeHtml(t('about.label.teams'))+'</p><h2>'+escapeHtml(s.rulesTitle||'Формирование международных команд')+'</h2></div><div><p class="about-selection-copy">'+escapeHtml(s.rulesText||'')+'</p><div class="team-selection-list">'+teamRules+'</div>'+notice+'</div></section><section class="about-section"><div><p class="about-section-label">'+escapeHtml(t('about.label.intl'))+'</p><h2>'+escapeHtml(a.pathTitle||'Международные олимпиады')+'</h2></div><div>'+pathIntro+'<div class="olympiad-guide">'+guide+'</div></div></section></div>';
 }
 let ACTIVE_ARCHIVE_YEAR='2026';
 function renderArchivePanels(){
   const tabs=document.getElementById('archive-year-tabs'),panels=document.getElementById('archive-year-panels');if(!tabs||!panels)return;
   const years=Object.keys(RESULTS).filter(year=>/^\d{4}$/.test(year)).sort();if(!years.includes(ACTIVE_ARCHIVE_YEAR))ACTIVE_ARCHIVE_YEAR=years.at(-1)||'';
   tabs.innerHTML=years.map(year=>'<button class="ytab '+(year===ACTIVE_ARCHIVE_YEAR?'active':'')+'" onclick="sy(\'y'+year+'\',this)">'+year+'</button>').join('');
-  panels.innerHTML=years.map(year=>{const days=(RESULTS[year]||[]).some(row=>String(row.d3||'').trim())?3:2;const dateFact=year==='2026'?'<div class="yhero-fact"><dt>Даты</dt><dd>4–6 апреля 2026</dd></div>':'';return '<div id="y'+year+'" class="yp '+(year===ACTIVE_ARCHIVE_YEAR?'active':'')+'"><div class="yhero"><div><span class="yhero-kicker">Заключительный этап</span><h2>IV этап '+year+'</h2></div><dl class="yhero-facts">'+dateFact+'<div class="yhero-fact"><dt>Место</dt><dd>Бишкек</dd></div><div class="yhero-fact"><dt>Продолжительность</dt><dd>'+days+' дня</dd></div></dl></div><div id="pdfs'+year+'"></div><div class="slbl" style="margin-top:1.5rem">Таблица результатов</div><div class="tw"><div id="t'+year+'"></div></div></div>'}).join('');
+  panels.innerHTML=years.map(year=>{
+    const days=(RESULTS[year]||[]).some(row=>String(row.d3||'').trim())?3:2;
+    const dates=STAGE_DATES[year];
+    const dateFact=dates?'<div class="yhero-fact"><dt>'+escapeHtml(t('results.dates'))+'</dt><dd>'+escapeHtml(dates[I18N.lang]||dates.ru||'')+'</dd></div>':'';
+    return '<div id="y'+year+'" class="yp '+(year===ACTIVE_ARCHIVE_YEAR?'active':'')+'"><div class="yhero"><div><span class="yhero-kicker">'+escapeHtml(t('results.kicker'))+'</span><h2>'+escapeHtml(t('results.stage',{year}))+'</h2><a class="yhero-link" href="/results/'+year+'/">'+escapeHtml(t('results.permalink'))+' · npho.edu.kg/results/'+year+' ↗</a></div><dl class="yhero-facts">'+dateFact+'<div class="yhero-fact"><dt>'+escapeHtml(t('results.place'))+'</dt><dd>'+escapeHtml(t('results.bishkek'))+'</dd></div><div class="yhero-fact"><dt>'+escapeHtml(t('results.duration'))+'</dt><dd>'+escapeHtml(I18N.pluralDays(days))+'</dd></div></dl></div><div id="pdfs'+year+'"></div><div class="slbl" style="margin-top:1.5rem">'+escapeHtml(t('results.table'))+'</div><div class="tw"><div id="t'+year+'"></div></div></div>';
+  }).join('');
   years.forEach(year=>{renderPDFs(year);renderTable(year)});
 }
 function renderSiteContent(){
@@ -1061,7 +1001,7 @@ async function loadPublishedProblems(){
     console.warn('Не удалось синхронизировать банк задач:',error);
     if(status){
       status.hidden=false;
-      status.textContent='Показаны сохранённые на сайте задачи.';
+      status.textContent=t('problems.fallback');
       status.className='problem-sync-status ok';
     }
   }
@@ -1135,17 +1075,11 @@ function availableProblemTopics(book){
 function renderBookChoices(){
   const grid=document.getElementById('book-choice-grid');
   if(!grid)return;
-  const descriptions={
-    'Савченко':'Задачи по механике, термодинамике, электричеству и оптике.',
-    'Овчинкин':'Отдельный каталог задач с собственной нумерацией по каждому разделу.',
-    'Сборник NPhO':'Официальные и тренировочные задачи Национальной олимпиады по физике.',
-    'Авторские задачи':'Авторские подборки преподавателей и тренеров сборной.'
-  };
   grid.innerHTML=availableProblemBooks().map(book=>{
     const total=PRACTICE_TASKS.filter(problem=>problemBook(problem)===book).length;
-    const description=descriptions[book]||'Задачи и решения, опубликованные редакцией NPhO.';
+    const description=I18N.has('book.desc.'+book)?t('book.desc.'+book):t('book.desc.default');
     return `<button class="book-choice-card" onclick='selectProblemBook(${problemIdArgument(book)})'>
-      <span class="book-choice-title">${escapeHtml(book)}</span>
+      <span class="book-choice-title">${escapeHtml(I18N.term(book))}</span>
       <span class="book-choice-description">${escapeHtml(description)}</span>
       <span class="book-choice-footer">
         <span class="book-choice-count" data-book-count="${escapeAttribute(book)}">${total} ${pluralTasks(total)}</span>
@@ -1197,14 +1131,14 @@ function showTopicSelection(){
 
   setProblemSelectionView('topic-selection-view');
   const title=document.getElementById('selected-book-title');
-  if(title)title.textContent=activeProblemBook;
+  if(title)title.textContent=I18N.term(activeProblemBook);
 
   const grid=document.getElementById('topic-choice-grid');
   if(grid){
     grid.innerHTML=availableProblemTopics(activeProblemBook).map(topic=>{
       const total=PRACTICE_TASKS.filter(problem=>problemBook(problem)===activeProblemBook&&problem.topic===topic).length;
       return `<button class="topic-choice-card" onclick='selectProblemTopic(${problemIdArgument(topic)})'>
-        <span class="topic-choice-name">${escapeHtml(topic)}</span>
+        <span class="topic-choice-name">${escapeHtml(I18N.term(topic))}</span>
         <span class="topic-choice-count">${total} ${pluralTasks(total)} →</span>
       </button>`;
     }).join('');
@@ -1241,7 +1175,7 @@ function showTaskSelection(){
 
   setProblemSelectionView('task-selection-view');
   const title=document.getElementById('task-selection-title');
-  if(title)title.textContent=activeProblemTopic;
+  if(title)title.textContent=I18N.term(activeProblemTopic);
   renderProblemCatalog(activeProblemBook,activeProblemTopic);
   window.scrollTo(0,0);
 }
@@ -1257,9 +1191,9 @@ function renderProblemCatalog(book=activeProblemBook,topic=activeProblemTopic){
   const list=query?allList.filter(problem=>[
     problemDisplayNumber(problem,''),problemChapter(problem),difficultyShortLabel(problem.difficulty)
   ].join(' ').toLowerCase().includes(query)):allList;
-  if(count)count.textContent=query?list.length+' из '+allList.length:list.length+' '+pluralTasks(list.length);
+  if(count)count.textContent=query?t('problems.of',{a:list.length,b:allList.length}):list.length+' '+pluralTasks(list.length);
   if(empty)empty.style.display=list.length?'none':'block';
-  if(empty)empty.textContent=query?'По вашему запросу ничего не найдено.':'В этом разделе пока нет задач.';
+  if(empty)empty.textContent=query?t('problems.notFound'):t('problems.empty');
 
   const fallbackNumbers=new Map(allList.map((problem,index)=>[String(problem.id),index+1]));
   const chapters=new Map();
@@ -1272,13 +1206,13 @@ function renderProblemCatalog(book=activeProblemBook,topic=activeProblemTopic){
   catalog.innerHTML=list.length?[...chapters].map(([chapter,problems])=>`
     <section class="topic-block chapter-block">
       <div class="topic-block-head">
-        <h2 class="topic-block-title">${escapeHtml(chapter)}</h2>
+        <h2 class="topic-block-title">${escapeHtml(I18N.term(chapter))}</h2>
         <span class="topic-block-count">${problems.length} ${pluralTasks(problems.length)}</span>
       </div>
       <div class="topic-task-grid">
         ${problems.map(problem=>{
           const number=problemDisplayNumber(problem,fallbackNumbers.get(String(problem.id)));
-          return `<button class="task-number-tile ${difficultyClass(problem.difficulty)}" onclick='openProblem(${problemIdArgument(problem.id)})' title="Задача ${escapeAttribute(number)} · ${difficultyLabel(problem.difficulty)}" aria-label="Открыть задачу ${escapeAttribute(number)}. Сложность: ${difficultyLabel(problem.difficulty)}"><span class="task-tile-number">${escapeHtml(number)}</span>${normalizeDifficulty(problem.difficulty)===4?'<span class="task-tile-skull" aria-hidden="true">☠</span>':''}</button>`;
+          return `<button class="task-number-tile ${difficultyClass(problem.difficulty)}" onclick='openProblem(${problemIdArgument(problem.id)})' title="${escapeAttribute(t('problems.task',{n:number}))} · ${escapeAttribute(difficultyLabel(problem.difficulty))}" aria-label="${escapeAttribute(t('problems.openTask',{n:number,d:difficultyLabel(problem.difficulty)}))}"><span class="task-tile-number">${escapeHtml(number)}</span>${normalizeDifficulty(problem.difficulty)===4?'<span class="task-tile-skull" aria-hidden="true">☠</span>':''}</button>`;
         }).join('')}
       </div>
     </section>
@@ -1300,29 +1234,16 @@ function difficultyClass(value){
 
 function difficultyShortLabel(value){
   const n=normalizeDifficulty(value);
-  return {
-    1:'Лёгкая',
-    2:'Средняя',
-    3:'Сложная',
-    4:'☠ Гроб'
-  }[n];
+  return (n===4?'☠ ':'')+t('diff.'+n);
 }
 
 function difficultyLabel(value){
   const n=normalizeDifficulty(value);
-  return {
-    1:'Лёгкая задача — зелёный цвет',
-    2:'Средняя задача — оранжевый цвет',
-    3:'Сложная задача — красный цвет',
-    4:'Гроб — тёмно-красный цвет с черепом'
-  }[n];
+  return t('diffLong.'+n);
 }
 
 function pluralTasks(n){
-  const n10=n%10,n100=n%100;
-  if(n10===1&&n100!==11)return 'задача';
-  if(n10>=2&&n10<=4&&(n100<12||n100>14))return 'задачи';
-  return 'задач';
+  return I18N.pluralTasks(n);
 }
 
 function getBookTopicProblemNumber(problem){
@@ -1382,17 +1303,17 @@ function openProblem(id,updateHash=true){
 
   document.getElementById('problem-catalog-view').hidden=true;
   document.getElementById('problem-detail').hidden=false;
-  document.getElementById('detail-topic').textContent=activeProblemBook+' · '+p.topic+' · '+problemChapter(p);
+  document.getElementById('detail-topic').textContent=I18N.term(activeProblemBook)+' · '+I18N.term(p.topic)+' · '+I18N.term(problemChapter(p));
   const level=document.getElementById('detail-level');
   level.textContent=difficultyShortLabel(p.difficulty);
   level.className='level-chip difficulty-chip '+difficultyClass(p.difficulty);
-  level.setAttribute('aria-label','Сложность: '+difficultyLabel(p.difficulty));
+  level.setAttribute('aria-label',t('problems.difficulty',{d:difficultyLabel(p.difficulty)}));
   level.title=difficultyLabel(p.difficulty);
   const topicNumber=getBookTopicProblemNumber(p);
-  document.getElementById('detail-title').textContent='Задача '+topicNumber;
+  document.getElementById('detail-title').textContent=t('problems.task',{n:topicNumber});
   document.getElementById('detail-statement').innerHTML=p.statement;
   renderStepHints(p);
-  document.getElementById('detail-solution').innerHTML=p.solution||'Решение пока не добавлено.';
+  document.getElementById('detail-solution').innerHTML=p.solution||escapeHtml(t('problems.noSolution'));
   renderProblemImages(p);
 
   const answerSection=document.getElementById('detail-answer-section');
@@ -1424,7 +1345,7 @@ function openProblem(id,updateHash=true){
   resetDetailPanels();
   renderProblemSidebar(p);
   renderProblemNavigation(p);
-  document.title=activeProblemBook+' · '+p.topic+' · Задача '+topicNumber+' — NPhO';
+  document.title=I18N.term(activeProblemBook)+' · '+I18N.term(p.topic)+' · '+t('problems.task',{n:topicNumber})+' — NPhO';
   if(updateHash)history.pushState({problemId:p.id},'', '#problem-'+encodeURIComponent(problemRouteToken(p)));
   window.scrollTo(0,0);
 }
@@ -1485,22 +1406,22 @@ function renderStepHints(problem){
   if(!panel||!btn)return;
 
   if(!currentHintSteps.length){
-    panel.innerHTML='<div class="hint-progress">Подсказки пока не добавлены.</div>';
+    panel.innerHTML='<div class="hint-progress">'+escapeHtml(t('problems.noHints'))+'</div>';
     panel.classList.remove('open');
     btn.disabled=true;
-    btn.textContent='Нет подсказок';
+    btn.textContent=t('problems.noHintsBtn');
     btn.setAttribute('aria-expanded','false');
     return;
   }
 
-  panel.innerHTML='<div class="hint-progress" id="hint-progress">Открыто 0 из '+currentHintSteps.length+'</div>'+currentHintSteps.map((step,index)=>{
+  panel.innerHTML='<div class="hint-progress" id="hint-progress">'+escapeHtml(t('problems.hintsOpened',{a:0,b:currentHintSteps.length}))+'</div>'+currentHintSteps.map((step,index)=>{
     const image=step.image?'<img class="hint-step-image" src="'+escapeAttribute(step.image)+'" alt="'+escapeAttribute(step.imageAlt)+'" loading="lazy">':'';
     const caption=step.caption?'<div class="hint-step-caption">'+escapeHtml(step.caption)+'</div>':'';
-    return '<div class="hint-step" data-hint-index="'+index+'"><div class="hint-step-label">Подсказка '+(index+1)+'</div><div class="hint-step-text">'+step.text+'</div>'+image+caption+'</div>';
+    return '<div class="hint-step" data-hint-index="'+index+'"><div class="hint-step-label">'+escapeHtml(t('problems.hintN',{n:index+1}))+'</div><div class="hint-step-text">'+step.text+'</div>'+image+caption+'</div>';
   }).join('');
 
   btn.disabled=false;
-  btn.textContent='Открыть подсказку 1 из '+currentHintSteps.length;
+  btn.textContent=t('problems.openHintN',{a:1,b:currentHintSteps.length});
   btn.setAttribute('aria-expanded','false');
   panel.classList.remove('open');
 }
@@ -1523,11 +1444,11 @@ function revealNextHint(){
   }
   visibleHintCount++;
   const progress=document.getElementById('hint-progress');
-  if(progress)progress.textContent='Открыто '+visibleHintCount+' из '+currentHintSteps.length;
+  if(progress)progress.textContent=t('problems.hintsOpened',{a:visibleHintCount,b:currentHintSteps.length});
   btn.setAttribute('aria-expanded','true');
   btn.textContent=visibleHintCount<currentHintSteps.length
-    ?'Открыть подсказку '+(visibleHintCount+1)+' из '+currentHintSteps.length
-    :'Скрыть подсказки';
+    ?t('problems.openHintN',{a:visibleHintCount+1,b:currentHintSteps.length})
+    :t('problems.hideHints');
 }
 
 function resetHintSteps(){
@@ -1539,10 +1460,10 @@ function resetHintSteps(){
     panel.querySelectorAll('.hint-step').forEach(step=>step.classList.remove('visible'));
   }
   const progress=document.getElementById('hint-progress');
-  if(progress)progress.textContent='Открыто 0 из '+currentHintSteps.length;
+  if(progress)progress.textContent=t('problems.hintsOpened',{a:0,b:currentHintSteps.length});
   if(btn&&!btn.disabled){
     btn.setAttribute('aria-expanded','false');
-    btn.textContent='Открыть подсказку 1 из '+currentHintSteps.length;
+    btn.textContent=t('problems.openHintN',{a:1,b:currentHintSteps.length});
   }
 }
 
@@ -1561,7 +1482,7 @@ function closeProblem(updateHash=true){
     showBookSelection();
   }
 
-  document.title='Национальная олимпиада по физике, Кыргызстан (NPhO)';
+  document.title=t('meta.title');
   if(updateHash)history.pushState({},'', '#problems');
   window.scrollTo(0,0);
 }
@@ -1569,10 +1490,10 @@ function closeProblem(updateHash=true){
 function renderProblemSidebar(problem){
   const book=problemBook(problem);
   const sameSection=sortedSectionProblems(book,problem.topic).filter(item=>problemChapter(item)===problemChapter(problem));
-  document.getElementById('sidebar-topic').textContent=problemChapter(problem);
+  document.getElementById('sidebar-topic').textContent=I18N.term(problemChapter(problem));
   document.getElementById('sidebar-count').textContent=sameSection.length+' '+pluralTasks(sameSection.length);
   document.getElementById('sidebar-task-grid').innerHTML=sameSection.map((item,index)=>`
-    <button class="sidebar-task-btn ${difficultyClass(item.difficulty)} ${sameProblemId(item.id,problem.id)?'active':''}" onclick='openProblem(${problemIdArgument(item.id)})' title="Задача ${escapeAttribute(problemDisplayNumber(item,index+1))} · ${difficultyLabel(item.difficulty)}" aria-label="Задача ${escapeAttribute(problemDisplayNumber(item,index+1))}. ${difficultyLabel(item.difficulty)}">${escapeHtml(problemDisplayNumber(item,index+1))}${normalizeDifficulty(item.difficulty)===4?'<span class="sidebar-skull" aria-hidden="true">☠</span>':''}</button>
+    <button class="sidebar-task-btn ${difficultyClass(item.difficulty)} ${sameProblemId(item.id,problem.id)?'active':''}" onclick='openProblem(${problemIdArgument(item.id)})' title="${escapeAttribute(t('problems.task',{n:problemDisplayNumber(item,index+1)}))} · ${escapeAttribute(difficultyLabel(item.difficulty))}" aria-label="${escapeAttribute(t('problems.task',{n:problemDisplayNumber(item,index+1)}))}. ${escapeAttribute(difficultyLabel(item.difficulty))}">${escapeHtml(problemDisplayNumber(item,index+1))}${normalizeDifficulty(item.difficulty)===4?'<span class="sidebar-skull" aria-hidden="true">☠</span>':''}</button>
   `).join('');
 }
 
@@ -1586,8 +1507,8 @@ function renderProblemNavigation(problem){
   const nextBtn=document.getElementById('next-problem');
   prevBtn.disabled=!prev;
   nextBtn.disabled=!next;
-  document.getElementById('prev-problem-title').textContent=prev?('Задача '+problemDisplayNumber(prev,index)):'Начало раздела';
-  document.getElementById('next-problem-title').textContent=next?('Задача '+problemDisplayNumber(next,index+2)):'Конец раздела';
+  document.getElementById('prev-problem-title').textContent=prev?t('problems.task',{n:problemDisplayNumber(prev,index)}):t('problems.sectionStart');
+  document.getElementById('next-problem-title').textContent=next?t('problems.task',{n:problemDisplayNumber(next,index+2)}):t('problems.sectionEnd');
 }
 
 function moveProblem(direction){
@@ -1605,7 +1526,7 @@ function toggleDetailPanel(id,btn){
   if(!panel||!btn)return;
   const open=panel.classList.toggle('open');
   btn.setAttribute('aria-expanded',open?'true':'false');
-  btn.textContent=open?'Скрыть':'Показать';
+  btn.textContent=open?t('problems.hide'):t('problems.show');
   if(open)requestAnimationFrame(()=>renderMath([panel]));
 }
 
@@ -1614,12 +1535,23 @@ function resetDetailPanels(){
   ['solution','answer','comment'].forEach(name=>{
     document.getElementById('detail-'+name)?.classList.remove('open');
     const button=document.getElementById('detail-'+name+'-btn');
-    if(button){button.setAttribute('aria-expanded','false');button.textContent='Показать'}
+    if(button){button.setAttribute('aria-expanded','false');button.textContent=t('problems.show')}
   });
 }
 
 function handleProblemRoute(){
   const match=location.hash.match(/^#(?:problem|task)-(.+)$/);
+  const resultsMatch=location.hash.match(/^#(?:results|archive)(?:[-/](\d{4}))?$/);
+  if(resultsMatch){
+    go('archive',false);
+    if(resultsMatch[1])selectArchiveYear(resultsMatch[1]);
+    return;
+  }
+  if(location.hash==='#about'||location.hash==='#about-official'){
+    go('about',false);
+    if(location.hash==='#about-official')requestAnimationFrame(()=>document.getElementById('about-official')?.scrollIntoView({block:'start'}));
+    return;
+  }
   if(match){
     go('problems',false);
     const problem=findProblemByRouteToken(decodeURIComponent(match[1]));
@@ -1632,7 +1564,7 @@ function handleProblemRoute(){
     document.getElementById('problem-detail').hidden=true;
     document.getElementById('problem-catalog-view').hidden=false;
     showBookSelection();
-  }else if(document.getElementById('sec-problems')?.classList.contains('active')){
+  }else if(!document.getElementById('sec-home')?.classList.contains('active')){
     go('home',false);
   }
 }
@@ -1642,9 +1574,9 @@ async function copyProblemLink(){
   const url=location.href;
   try{
     await navigator.clipboard.writeText(url);
-    if(button){button.textContent='✓ Ссылка скопирована';setTimeout(()=>button.textContent='⧉ Скопировать ссылку',1800)}
+    if(button){button.textContent=t('problems.copied');setTimeout(()=>button.textContent=t('problems.copyLink'),1800)}
   }catch{
-    window.prompt('Скопируйте ссылку на задачу:',url);
+    window.prompt(t('problems.copyPrompt'),url);
   }
 }
 
@@ -1659,9 +1591,9 @@ function updateThemeToggle(){
   const label=document.getElementById('theme-label');
   const button=document.getElementById('theme-toggle');
   if(icon)icon.textContent=dark?'☀':'☾';
-  if(label)label.textContent=dark?'Светлая':'Тёмная';
+  if(label)label.textContent=dark?t('theme.light'):t('theme.dark');
   if(button){
-    const action=dark?'Включить светлую тему':'Включить тёмную тему';
+    const action=dark?t('theme.toLight'):t('theme.toDark');
     button.setAttribute('aria-label',action);
     button.title=action;
   }
@@ -1694,6 +1626,10 @@ function go(id,updateHash=true){
     document.getElementById('problem-catalog-view').hidden=false;
     showBookSelection();
     history.pushState({},'', '#problems');
+  }else if(id==='archive'&&updateHash){
+    history.pushState({},'', '#results-'+ACTIVE_ARCHIVE_YEAR);
+  }else if(id==='about'&&updateHash){
+    history.pushState({},'', '#about');
   }else if(updateHash&&location.hash){
     history.pushState({},'', location.pathname+location.search);
   }
@@ -1704,9 +1640,18 @@ function go(id,updateHash=true){
 function sy(id,btn){
   document.querySelectorAll('.yp').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.ytab').forEach(t=>t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
+  document.getElementById(id)?.classList.add('active');
+  btn?.classList.add('active');
   ACTIVE_ARCHIVE_YEAR=id.replace(/^y/,'');
+  if(document.getElementById('sec-archive')?.classList.contains('active'))history.replaceState({},'','#results-'+ACTIVE_ARCHIVE_YEAR);
+}
+function selectArchiveYear(year){
+  const tab=[...document.querySelectorAll('.ytab')].find(item=>item.textContent.trim()===String(year));
+  if(tab)sy('y'+year,tab);
+}
+function pdfLabel(file){
+  if(file.label&&!file.kind)return file.label;
+  return t('results.day',{n:file.day})+' · '+t(file.kind==='solutions'?'results.solutions':'results.problems');
 }
 function renderPDFs(year){
   const el=document.getElementById('pdfs'+year);
@@ -1714,10 +1659,10 @@ function renderPDFs(year){
   const list=PDF_LINKS[year]||[];
   if(!list.length){el.innerHTML='';return;}
   const ico='<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="1.3"><path d="M3 1h7l4 4v10H3V1z"/><path d="M10 1v4h4"/><path d="M5 9h6M5 11.5h4"/></svg>';
-  let h='<div class="slbl">Задачи и решения</div>';
+  let h='<div class="slbl">'+escapeHtml(t('results.pdfs'))+'</div>';
   list.forEach(f=>{
-    h+='<div class="pdf-row"><div class="pdf-info"><div class="pdf-icon">'+ico+'</div><div><div class="pdf-name">'+f.label+'</div><div class="pdf-sub">'+(f.url?'Доступно для скачивания':'Будет добавлено позже')+'</div></div></div>';
-    h+=f.url?'<a class="btn-dl" href="'+f.url+'" target="_blank"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6.5 1v8M4 7l2.5 2.5L9 7"/><path d="M1 10v1.5a1 1 0 001 1h9a1 1 0 001-1V10"/></svg> Скачать</a>':'<span class="no-file">Скоро</span>';
+    h+='<div class="pdf-row"><div class="pdf-info"><div class="pdf-icon">'+ico+'</div><div><div class="pdf-name">'+escapeHtml(pdfLabel(f))+'</div><div class="pdf-sub">'+escapeHtml(t(f.url?'results.available':'results.later'))+'</div></div></div>';
+    h+=f.url?'<a class="btn-dl" href="'+escapeAttribute(f.url)+'" target="_blank"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6.5 1v8M4 7l2.5 2.5L9 7"/><path d="M1 10v1.5a1 1 0 001 1h9a1 1 0 001-1V10"/></svg> '+escapeHtml(t('results.download'))+'</a>':'<span class="no-file">'+escapeHtml(t('results.soon'))+'</span>';
     h+='</div>';
   });
   el.innerHTML=h;
@@ -1726,27 +1671,46 @@ function renderTable(year){
   const data=RESULTS[year]||[];
   const el=document.getElementById('t'+year);
   if(!el)return;
-  if(!data.length){el.innerHTML='<p style="font-size:12px;color:var(--text3);padding:.5rem 0">Нет данных.</p>';return;}
+  if(!data.length){el.innerHTML='<p style="font-size:12px;color:var(--text3);padding:.5rem 0">'+escapeHtml(t('results.noData'))+'</p>';return;}
   const sorted=[...data].sort((a,b)=>{
     const ta=(parseFloat(a.d1)||0)+(parseFloat(a.d2)||0)+(parseFloat(a.d3)||0);
     const tb=(parseFloat(b.d1)||0)+(parseFloat(b.d2)||0)+(parseFloat(b.d3)||0);
     return tb-ta;
   });
   const hasDay3=sorted.some(r=>r.d3&&r.d3!=='');
-  let h='<table class="rt"><thead><tr><th></th><th>Участник</th><th>День 1</th><th>День 2</th>'+(hasDay3?'<th>День 3</th>':'')+'<th>Итого</th><th>Статус</th></tr></thead><tbody>';
+  const day=n=>escapeHtml(t('results.day',{n}));
+  let h='<table class="rt"><thead><tr><th></th><th>'+escapeHtml(t('results.participant'))+'</th><th>'+day(1)+'</th><th>'+day(2)+'</th>'+(hasDay3?'<th>'+day(3)+'</th>':'')+'<th>'+escapeHtml(t('results.total'))+'</th><th>'+escapeHtml(t('results.status'))+'</th></tr></thead><tbody>';
   sorted.forEach((r,i)=>{
     const tot=((parseFloat(r.d1)||0)+(parseFloat(r.d2)||0)+(parseFloat(r.d3)||0)).toFixed(2);
-    const tier=i<GOLD_COUNT?'gold':i<GOLD_COUNT+SILVER_COUNT?'silver':'bronze';
-    const bv=r.status?'<span class="sbadge status-'+tier+'">'+escapeHtml(r.status)+'</span>':'';
+    const tier=i<GOLD_COUNT?'team1':i<GOLD_COUNT+SILVER_COUNT?'team2':'rest';
+    const bv=r.status?'<span class="sbadge status-'+tier+'">'+escapeHtml(I18N.statusLabel(r.status))+'</span>':'';
     h+='<tr class="row-'+tier+'"><td><span class="medal medal-'+tier+'">'+(i+1)+'</span></td>';
-    h+='<td style="font-weight:600">'+escapeHtml(r.name||'—')+'</td>';
+    h+='<td style="font-weight:600">'+I18N.personNameHtml(r,escapeHtml)+'</td>';
     h+='<td>'+escapeHtml(r.d1||'—')+'</td><td>'+escapeHtml(r.d2||'—')+'</td>';
     if(hasDay3) h+='<td>'+escapeHtml(r.d3||'—')+'</td>';
     h+='<td style="font-weight:700;color:var(--accent)">'+tot+'</td><td>'+bv+'</td></tr>';
   });
-  h+='</tbody></table>';
+  h+='</tbody></table><p class="legend-note">'+escapeHtml(t('results.legend'))+'</p>';
   el.innerHTML=h;
 }
+function applyLanguage(){
+  I18N.applyStatic();
+  document.title=t('meta.title');
+  document.querySelector('meta[name="description"]')?.setAttribute('content',t('meta.description'));
+  const status=document.getElementById('problem-sync-status');
+  if(status&&!status.hidden)status.textContent=status.classList.contains('ok')?t('problems.fallback'):t('problems.loading');
+  renderHomeContent();renderAboutContent();renderArchivePanels();
+  renderBookChoices();renderBookCounts();
+  const detail=document.getElementById('problem-detail');
+  if(activeProblemId!==null&&detail&&!detail.hidden){openProblem(activeProblemId,false)}
+  else{
+    const visible=['book-selection-view','topic-selection-view','task-selection-view'].find(id=>!document.getElementById(id)?.hidden);
+    if(visible==='topic-selection-view')showTopicSelection();
+    else if(visible==='task-selection-view')showTaskSelection();
+  }
+  updateThemeToggle();
+}
+document.addEventListener('npho:langchange',()=>{const y=window.scrollY;applyLanguage();window.scrollTo(0,y)});
 renderSiteContent();
 updateProblemTaxonomy();
 renderBookChoices();
@@ -1755,7 +1719,7 @@ showBookSelection();
 window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change',()=>{if(!document.documentElement.dataset.theme)updateThemeToggle()});
 window.addEventListener('popstate',handleProblemRoute);
 window.addEventListener('pageshow',event=>{if(event.persisted)loadPublishedProblems();updateThemeToggle();});
-updateThemeToggle();
+applyLanguage();
 handleProblemRoute();
 loadPublishedProblems();
 </script>
