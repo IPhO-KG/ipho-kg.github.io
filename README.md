@@ -22,3 +22,16 @@ for the National Physics Olympiad community in Kyrgyzstan.
 
 ## Technologies
 HTML • CSS • JavaScript • GitHub Pages
+
+## Languages (Кыргызча / Русский / English)
+- Interface translations: `assets/js/i18n.js` (UI strings + translations of site content).
+- Language switch in the navbar; also via URL: `?lang=ky`, `?lang=ru`, `?lang=en`.
+- Russian is the source language: content edited in `/admin/` is stored in Russian.
+  If an edited text differs from the default, KY/EN show the edited Russian text until its translation is added to `i18n.js`.
+
+## Results pages
+- `/results/2022/` … `/results/2026/` — standalone pages for each year; `/results/` redirects to the latest year.
+- Results and PDF links live in `assets/js/npho-data.js` (shared by the home page and the results pages).
+- SPA links also work: `/#results-2025`, `/#about`.
+- To add a new year: add data to `npho-data.js`, then copy `results/2026/index.html` to `results/<year>/index.html`
+  and change `data-year`, `<title>` and `canonical` (and update the redirect in `results/index.html`).
