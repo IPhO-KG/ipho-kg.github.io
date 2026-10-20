@@ -59,20 +59,20 @@ nav>*{position:relative;z-index:1}
 .rt td{padding:9px 12px;border-bottom:1px solid var(--border)}
 .rt tbody tr:hover td{background:var(--bg2)}.rt tr:last-child td{border-bottom:none}
 .medal{width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
-.medal-gold{background:#fef3c7;color:#92400e}.medal-silver{background:#f3f4f6;color:#374151}
-.medal-bronze{background:#fde8d8;color:#9a3412}.medal-plain{background:var(--bg3);color:var(--text2)}
-.status-gold{background:rgba(251,191,36,.15);color:#92400e;border:1px solid rgba(251,191,36,.4)}
-.status-silver{background:rgba(148,163,184,.12);color:#374151;border:1px solid rgba(148,163,184,.35)}
-.status-bronze{background:rgba(180,83,9,.1);color:#9a3412;border:1px solid rgba(180,83,9,.3)}
+.medal-gold,.medal-team1{background:#fef3c7;color:#92400e}.medal-silver,.medal-team2{background:#f3f4f6;color:#374151}
+.medal-bronze,.medal-rest{background:#fde8d8;color:#9a3412}.medal-plain{background:var(--bg3);color:var(--text2)}
+.status-gold,.status-team1{background:rgba(251,191,36,.15);color:#92400e;border:1px solid rgba(251,191,36,.4)}
+.status-silver,.status-team2{background:rgba(148,163,184,.12);color:#374151;border:1px solid rgba(148,163,184,.35)}
+.status-bronze,.status-rest{background:rgba(180,83,9,.1);color:#9a3412;border:1px solid rgba(180,83,9,.3)}
 .sbadge{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:100px}
-.row-gold td{background:rgba(251,191,36,.04)}.row-silver td{background:rgba(148,163,184,.04)}.row-bronze td{background:rgba(180,83,9,.03)}
-html[data-theme="dark"] .status-gold{background:rgba(251,191,36,.19);color:#fde68a;border-color:rgba(253,230,138,.5)}
-html[data-theme="dark"] .status-silver{background:rgba(203,213,225,.16);color:#e5e7eb;border-color:rgba(226,232,240,.42)}
-html[data-theme="dark"] .status-bronze{background:rgba(251,146,60,.16);color:#fdba74;border-color:rgba(253,186,116,.44)}
+.row-gold td,.row-team1 td{background:rgba(251,191,36,.04)}.row-silver td,.row-team2 td{background:rgba(148,163,184,.04)}.row-bronze td,.row-rest td{background:rgba(180,83,9,.03)}
+html[data-theme="dark"] .status-gold,html[data-theme="dark"] .status-team1{background:rgba(251,191,36,.19);color:#fde68a;border-color:rgba(253,230,138,.5)}
+html[data-theme="dark"] .status-silver,html[data-theme="dark"] .status-team2{background:rgba(203,213,225,.16);color:#e5e7eb;border-color:rgba(226,232,240,.42)}
+html[data-theme="dark"] .status-bronze,html[data-theme="dark"] .status-rest{background:rgba(251,146,60,.16);color:#fdba74;border-color:rgba(253,186,116,.44)}
 @media(prefers-color-scheme:dark){
-  html:not([data-theme]) .status-gold{background:rgba(251,191,36,.19);color:#fde68a;border-color:rgba(253,230,138,.5)}
-  html:not([data-theme]) .status-silver{background:rgba(203,213,225,.16);color:#e5e7eb;border-color:rgba(226,232,240,.42)}
-  html:not([data-theme]) .status-bronze{background:rgba(251,146,60,.16);color:#fdba74;border-color:rgba(253,186,116,.44)}
+  html:not([data-theme]) .status-gold,  html:not([data-theme]) .status-team1{background:rgba(251,191,36,.19);color:#fde68a;border-color:rgba(253,230,138,.5)}
+  html:not([data-theme]) .status-silver,  html:not([data-theme]) .status-team2{background:rgba(203,213,225,.16);color:#e5e7eb;border-color:rgba(226,232,240,.42)}
+  html:not([data-theme]) .status-bronze,  html:not([data-theme]) .status-rest{background:rgba(251,146,60,.16);color:#fdba74;border-color:rgba(253,186,116,.44)}
 }
 footer{position:relative;isolation:isolate;overflow:hidden;background:var(--bg);background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 97%,var(--bg2)),color-mix(in srgb,var(--bg) 92%,var(--bg2)));border-top:1px solid color-mix(in srgb,var(--accent) 10%,var(--border));padding:2.25rem 2rem 1.5rem}
 .fi{max-width:960px;margin:0 auto}
@@ -104,9 +104,6 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 @media(max-width:640px){body{overflow-x:hidden}nav{padding:.7rem .75rem;gap:.55rem}.logo{gap:7px;font-size:14px}.nav-right{flex:1;justify-content:flex-end;gap:3px;min-width:0}.nav-links{min-width:0;max-width:100%}.nl{padding:6px 8px;font-size:11px}.theme-toggle{width:34px;padding:6px}.theme-label{display:none}.lang-select{padding:6px 22px 6px 7px;font-size:11px;background-position:right 7px center}main.inner{padding:1.5rem 1rem}.ytabs{overflow-x:auto;scrollbar-width:none}.ytab{flex:0 0 auto;padding-inline:16px}.yhero{grid-template-columns:1fr;gap:1rem;padding:1.1rem}.yhero-fact:first-child{padding-left:0;border-left:0}.pdf-row{align-items:flex-start;gap:.8rem}.pdf-info{min-width:0}.pdf-name,.pdf-sub{overflow-wrap:anywhere}.btn-dl{flex-shrink:0}footer{padding:2rem 1rem 1.35rem}.fg{grid-template-columns:1fr;gap:1.2rem}.official-badge{border-radius:var(--r);font-size:11px;padding:6px 10px}}
 @media(max-width:640px){nav::before{background-size:auto 54px;opacity:.056}}
 
-/* Current result rows and bilingual participant names. */
-.medal-team1{background:rgba(var(--accent-rgb),.13);color:var(--accent)}.medal-team2{background:rgba(var(--accent2-rgb),.13);color:var(--accent2)}.medal-rest{background:var(--bg3);color:var(--text2)}
-.status-team1{background:rgba(var(--accent-rgb),.1);color:var(--accent);border:1px solid rgba(var(--accent-rgb),.3)}.status-team2{background:rgba(var(--accent2-rgb),.1);color:var(--accent2);border:1px solid rgba(var(--accent2-rgb),.3)}.status-rest{background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
-.row-team1 td{background:rgba(var(--accent-rgb),.03)}.row-team2 td{background:rgba(var(--accent2-rgb),.025)}
+/* Bilingual participant names. */
 .name-orig{display:block;font-size:11px;font-weight:500;color:var(--text3)}
 .legend-note{margin-top:.9rem;font-size:12px;color:var(--text3)}

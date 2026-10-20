@@ -135,20 +135,20 @@ hr.sep{border:none;border-top:1px solid var(--border);margin:2rem 0}
 .rt td{padding:9px 12px;border-bottom:1px solid var(--border)}
 .rt tbody tr:hover td{background:var(--bg2)}.rt tr:last-child td{border-bottom:none}
 .medal{width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
-.medal-gold{background:#fef3c7;color:#92400e}.medal-silver{background:#f3f4f6;color:#374151}
-.medal-bronze{background:#fde8d8;color:#9a3412}.medal-plain{background:var(--bg3);color:var(--text2)}
-.status-gold{background:rgba(251,191,36,.15);color:#92400e;border:1px solid rgba(251,191,36,.4)}
-.status-silver{background:rgba(148,163,184,.12);color:#374151;border:1px solid rgba(148,163,184,.35)}
-.status-bronze{background:rgba(180,83,9,.1);color:#9a3412;border:1px solid rgba(180,83,9,.3)}
+.medal-gold,.medal-team1{background:#fef3c7;color:#92400e}.medal-silver,.medal-team2{background:#f3f4f6;color:#374151}
+.medal-bronze,.medal-rest{background:#fde8d8;color:#9a3412}.medal-plain{background:var(--bg3);color:var(--text2)}
+.status-gold,.status-team1{background:rgba(251,191,36,.15);color:#92400e;border:1px solid rgba(251,191,36,.4)}
+.status-silver,.status-team2{background:rgba(148,163,184,.12);color:#374151;border:1px solid rgba(148,163,184,.35)}
+.status-bronze,.status-rest{background:rgba(180,83,9,.1);color:#9a3412;border:1px solid rgba(180,83,9,.3)}
 .sbadge{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:100px}
-.row-gold td{background:rgba(251,191,36,.04)}.row-silver td{background:rgba(148,163,184,.04)}.row-bronze td{background:rgba(180,83,9,.03)}
-html[data-theme="dark"] .status-gold{background:rgba(251,191,36,.19);color:#fde68a;border-color:rgba(253,230,138,.5)}
-html[data-theme="dark"] .status-silver{background:rgba(203,213,225,.16);color:#e5e7eb;border-color:rgba(226,232,240,.42)}
-html[data-theme="dark"] .status-bronze{background:rgba(251,146,60,.16);color:#fdba74;border-color:rgba(253,186,116,.44)}
+.row-gold td,.row-team1 td{background:rgba(251,191,36,.04)}.row-silver td,.row-team2 td{background:rgba(148,163,184,.04)}.row-bronze td,.row-rest td{background:rgba(180,83,9,.03)}
+html[data-theme="dark"] .status-gold,html[data-theme="dark"] .status-team1{background:rgba(251,191,36,.19);color:#fde68a;border-color:rgba(253,230,138,.5)}
+html[data-theme="dark"] .status-silver,html[data-theme="dark"] .status-team2{background:rgba(203,213,225,.16);color:#e5e7eb;border-color:rgba(226,232,240,.42)}
+html[data-theme="dark"] .status-bronze,html[data-theme="dark"] .status-rest{background:rgba(251,146,60,.16);color:#fdba74;border-color:rgba(253,186,116,.44)}
 @media(prefers-color-scheme:dark){
-  html:not([data-theme]) .status-gold{background:rgba(251,191,36,.19);color:#fde68a;border-color:rgba(253,230,138,.5)}
-  html:not([data-theme]) .status-silver{background:rgba(203,213,225,.16);color:#e5e7eb;border-color:rgba(226,232,240,.42)}
-  html:not([data-theme]) .status-bronze{background:rgba(251,146,60,.16);color:#fdba74;border-color:rgba(253,186,116,.44)}
+  html:not([data-theme]) .status-gold,  html:not([data-theme]) .status-team1{background:rgba(251,191,36,.19);color:#fde68a;border-color:rgba(253,230,138,.5)}
+  html:not([data-theme]) .status-silver,  html:not([data-theme]) .status-team2{background:rgba(203,213,225,.16);color:#e5e7eb;border-color:rgba(226,232,240,.42)}
+  html:not([data-theme]) .status-bronze,  html:not([data-theme]) .status-rest{background:rgba(251,146,60,.16);color:#fdba74;border-color:rgba(253,186,116,.44)}
 }
 
 /* Об олимпиаде: спокойная справочная страница */
@@ -407,9 +407,6 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 .fc .fchair b{color:var(--text2);font-weight:700}
 .yhero-link{display:inline-flex;align-items:center;gap:6px;margin-top:.7rem;color:var(--accent);font-size:12px;font-weight:700;text-decoration:none}
 .yhero-link:hover{text-decoration:underline}
-.medal-team1{background:rgba(var(--accent-rgb),.13);color:var(--accent)}.medal-team2{background:rgba(var(--accent2-rgb),.13);color:var(--accent2)}.medal-rest{background:var(--bg3);color:var(--text2)}
-.status-team1{background:rgba(var(--accent-rgb),.1);color:var(--accent);border:1px solid rgba(var(--accent-rgb),.3)}.status-team2{background:rgba(var(--accent2-rgb),.1);color:var(--accent2);border:1px solid rgba(var(--accent2-rgb),.3)}.status-rest{background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
-.row-team1 td{background:rgba(var(--accent-rgb),.03)}.row-team2 td{background:rgba(var(--accent2-rgb),.025)}
 .name-orig{display:block;font-size:11px;font-weight:500;color:var(--text3)}
 .legend-note{margin-top:.9rem;font-size:12px;color:var(--text3)}
 .content-note{margin-top:.35rem;font-size:12px;color:var(--text3)}
