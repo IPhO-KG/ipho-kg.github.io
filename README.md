@@ -23,8 +23,7 @@ Olympiad community in Kyrgyzstan.
 
 **Co-founder and main contributor: Askar Abdiev.** Askar helped me a lot throughout
 the development of the project and continues to develop the platform today. He is
-responsible for much of the ongoing work on the website, and I am very grateful
-for his contribution.
+responsible for much of the ongoing work on the website.
 
 ## Technologies
 HTML • CSS • JavaScript • GitHub Pages
