@@ -16,9 +16,12 @@ providing problems, results, resources, and competition information.
 - Online exams and appeals
 - Resources for olympiad preparation
 
-## My Contribution
-Designed and developed the platform and its core functionality
+## Authors
+I created this website: I designed and developed the platform and its core functionality
 for the National Physics Olympiad community in Kyrgyzstan.
+
+**Main contributor: Askar Abdiev.** Askar helped me a lot throughout the development
+of the project, and I am very grateful for his contribution.
 
 ## Technologies
 HTML • CSS • JavaScript • GitHub Pages
