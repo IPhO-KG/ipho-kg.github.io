@@ -21,7 +21,7 @@ providing problems, results, resources, and competition information.
 I designed and developed the platform and its core functionality for the National Physics
 Olympiad community in Kyrgyzstan.
 
-**Co-founder and main contributor: Askar Abdiev.** Askar helped me a lot throughout
+**Co-founder and developer: Askar Abdiev.** Askar helped me a lot throughout
 the development of the project and continues to develop the platform today. He is
 responsible for much of the ongoing work on the website.
 
