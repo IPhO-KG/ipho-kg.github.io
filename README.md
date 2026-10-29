@@ -17,8 +17,9 @@ providing problems, results, resources, and competition information.
 - Resources for olympiad preparation
 
 ## Authors
-I created this website: I designed and developed the platform and its core functionality
-for the National Physics Olympiad community in Kyrgyzstan.
+**Creator and developer: Emir Anaraly uulu.** I, Emir Anaraly uulu, created this website:
+I designed and developed the platform and its core functionality for the National Physics
+Olympiad community in Kyrgyzstan.
 
 **Co-founder and main contributor: Askar Abdiev.** Askar helped me a lot throughout
 the development of the project and continues to develop the platform today. He is
