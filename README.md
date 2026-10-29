@@ -20,8 +20,10 @@ providing problems, results, resources, and competition information.
 I created this website: I designed and developed the platform and its core functionality
 for the National Physics Olympiad community in Kyrgyzstan.
 
-**Main contributor: Askar Abdiev.** Askar helped me a lot throughout the development
-of the project, and I am very grateful for his contribution.
+**Co-founder and main contributor: Askar Abdiev.** Askar helped me a lot throughout
+the development of the project and continues to develop the platform today. He is
+responsible for much of the ongoing work on the website, and I am very grateful
+for his contribution.
 
 ## Technologies
 HTML • CSS • JavaScript • GitHub Pages
