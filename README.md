@@ -49,8 +49,8 @@ Public asset URLs use `?v=20261020` to bypass previously cached 404 responses. B
 
 
 ## Preparation guide
-- `/preparation/` — an author’s study route by Emir Anaraly uulu, from mathematics to international physics problems.
-- The guide is currently in Russian; navigation follows the site's RU/KY/EN setting and identifies the Russian-only content in KY/EN.
-- Page content: `preparation/index.html`; styles: `assets/css/preparation.css`; interactions and shared theme/language: `assets/js/preparation-page.js`.
+- `/preparation/` — Emir Anaraly uulu’s personal perspective on how he would prepare if he had started earlier. He began preparing in grade 10.
+- The text is currently in Russian; navigation follows the site's RU/KY/EN setting and identifies the Russian-only content in KY/EN.
+- Page content: `preparation/index.html`; shared site styles: `assets/css/results.css`, page styles: `assets/css/preparation.css`; interactions and shared theme/language: `assets/js/preparation-page.js`.
 - Stages support keyboard navigation, materials and answers expand on demand, and the workload selector shows three weekly plans. Printing includes all stages and expanded details.
 - The website version before adding the guide is preserved on `backup/before-preparation-2026-11-09` (commit `f5f7d981fb36c559f077da7572a253cf0f79eade`). To undo only this addition, revert its commit rather than resetting the branch history.
