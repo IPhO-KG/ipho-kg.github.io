@@ -2,7 +2,7 @@
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <script>try{const saved=localStorage.getItem('npho-theme');document.documentElement.dataset.theme=(saved==='dark'||saved==='light')?saved:(window.matchMedia?.('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
 <script src="/assets/js/i18n.js?v=20261109-personal-v2"></script><script src="/assets/js/i18n-fallback.js?v=20261109-personal-v2"></script>
-<title>Если бы я начал раньше · Подготовка к олимпиадам · NPhO</title><meta name="description" content="Эмир Анаралы уулу начал готовиться к олимпиадам по физике в 10-м классе. Его мысли о том, как он готовился бы, если бы начал раньше."><meta name="color-scheme" content="light dark"><link rel="canonical" href="https://npho.edu.kg/preparation/"><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" href="/assets/css/results.css?v=20261020-medals"><link rel="stylesheet" href="/assets/css/preparation.css?v=20261109-personal-v3"></head>
+<title>Заметки о подготовке · NPhO</title><meta name="description" content="Личный опыт подготовки к олимпиадам по физике: заметки участников, любимые советы, книги и идеи. Сохраняй полезное в свою подборку."><meta name="color-scheme" content="light dark"><link rel="canonical" href="https://npho.edu.kg/preparation/"><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" href="/assets/css/results.css?v=20261020-medals"><link rel="stylesheet" href="/assets/css/preparation.css?v=20261109-notes-v1"><link rel="stylesheet" href="/assets/css/preparation-wall.css?v=20261109-notes-v1"></head>
 <body id="top"><nav>
   <a class="logo" href="/" data-site-link="/"><div class="logo-dot"></div>NPhO</a>
   <div class="nav-right">
@@ -24,13 +24,51 @@
     </button>
   </div>
 </nav>
-<main class="inner preparation-inner" lang="ru"><div class="language-notice" role="status" hidden></div>
+<main class="inner notes-home" lang="ru">
+  <div class="language-notice" role="status" hidden></div>
+  <header class="rhead">
+    <p class="eyebrow">Личный опыт и советы</p>
+    <h1>Заметки о <span>подготовке</span></h1>
+    <p class="sub">У каждого свой путь в олимпиадах. Открывай заметки, выбирай то, что подходит тебе, и сохраняй любимые советы на свою стену.</p>
+    <p class="wall-meta">Авторы: <b id="author-total">1</b> &nbsp;·&nbsp; Заметки: <b id="note-total">7</b></p>
+  </header>
+  <section class="wall-controls" aria-label="Выбор заметок">
+    <div class="wall-control-row">
+      <div class="notes-views" role="group" aria-label="Подборка заметок">
+        <button type="button" data-notes-view="all" aria-pressed="true">Все заметки</button>
+        <button type="button" data-notes-view="favorites" aria-pressed="false"><span class="star-small" aria-hidden="true">☆</span> Избранное <span id="favorite-count">0</span></button>
+      </div>
+      <div class="wall-inputs">
+        <label class="wall-field wall-search-field"><span>Поиск по заметкам</span><input id="note-search" type="search" placeholder="Например, Иродов или математика" autocomplete="off"></label>
+        <label class="wall-field wall-author-field"><span>Автор</span><select id="author-filter"><option value="">Все авторы</option></select></label>
+      </div>
+    </div>
+    <div class="topic-filters" id="topic-filters" role="group" aria-label="Тема заметки"></div>
+  </section>
+  <section class="pinboard" aria-label="Стена заметок">
+    <div class="board-caption"><span id="notes-count" aria-live="polite"></span><span>Бумажки, к которым хочется вернуться</span></div>
+    <div class="notes-grid" id="notes-grid"></div>
+    <div class="notes-empty" id="notes-empty" hidden><h2 id="empty-title"></h2><p id="empty-text"></p><button type="button" id="reset-filters">Показать все заметки</button></div>
+    <noscript><p>Чтобы открыть заметки и сохранять избранное, включи JavaScript. Эмир Анаралы уулу — создатель npho.edu.kg. Он начал готовиться в 10-м классе и делится тем, как готовился бы, начав раньше.</p></noscript>
+  </section>
+  <p class="favorites-help">Избранное сохраняется в этом браузере. Звёздочка — твоя личная отметка.</p>
+  <p id="wall-status" class="wall-sr-only" role="status" aria-live="polite"></p>
+  <section class="wall-authors-section" aria-labelledby="authors-heading"><h2 id="authors-heading">Кто делится опытом</h2><div class="wall-authors" id="wall-authors"></div></section>
+</main>
+<dialog class="note-reader" id="note-reader" aria-labelledby="reader-title">
+  <div class="reader-toolbar">
+    <div class="reader-toolbar-copy"><span id="reader-kind">Заметка</span><h2 id="reader-title"></h2></div>
+    <div class="reader-toolbar-actions"><div id="reader-star"></div><button type="button" class="reader-close" id="reader-close" aria-label="Закрыть заметку"><span>На стену</span><span aria-hidden="true">×</span></button></div>
+  </div>
+  <div class="reader-content preparation-inner" id="reader-body" lang="ru"></div>
+</dialog>
+<template id="emir-full-plan">
 
 
-<header class="rhead">
+<header class="rhead" id="reader-plan-top">
   <p class="eyebrow">Личный взгляд · Эмир Анаралы уулу</p>
   <h1>Если бы я начал <span>раньше</span></h1>
-  <p class="sub">Готовиться к олимпиадам по физике я начал в 10-м классе. Здесь — моё мнение о том, как я бы готовился, если бы начал раньше: что изучал бы, какие книги брал и как распределил бы всё по годам.</p>
+  <p class="sub">Я Эмир, создатель npho.edu.kg. Готовиться к олимпиадам по физике я начал в 10-м классе. Здесь — моё мнение о том, как я бы готовился, если бы начал раньше: что изучал бы, какие книги брал и как распределил бы всё по годам.</p>
 </header>
 <div role="navigation" class="page-jump" aria-label="Разделы руководства"><a href="#route">Маршрут</a><a href="#practice">Как заниматься</a><a href="#experiment">Эксперимент</a><a href="#schedule">План недели</a><a href="#resources">Материалы</a><a href="#faq">Вопросы</a></div>
 <div class="principles"><div class="principle"><b>Сначала физический смысл</b><p>Модель и допущения → закон → вычисления.</p></div><div class="principle"><b>Решение важнее просмотра</b><p>Закрой разбор и восстанови ход самостоятельно.</p></div><div class="principle"><b>Эксперимент с самого начала</b><p>Измерения и ошибки — такая же часть подготовки.</p></div></div>
@@ -80,7 +118,7 @@
 <section class="section" id="resources"><div class="section-head"><div><span class="eyebrow">05 / ЧТО И ЗАЧЕМ ЧИТАТЬ</span><h2>У каждого источника своя роль</h2></div><p>Один основной источник теории и один источник задач на текущую тему обычно удобнее, чем пять книг одновременно.</p></div><div class="table-wrap" tabindex="0" role="region" aria-label="Таблица материалов"><table><thead><tr><th scope="col">Материал</th><th scope="col">Для чего</th><th scope="col">Как работать</th></tr></thead><tbody><tr><td>Павел Виктор</td><td>Объяснения школьной физики</td><td>Посмотрел фрагмент → закрыл → восстановил закон → решил задачу.</td></tr><tr><td>Кирик</td><td>База и закрепление</td><td>Выбирай класс, тему и сложность; пропускай повторения уже освоенного приёма.</td></tr><tr><td>Zambak / другой курс математики</td><td>Математический инструмент</td><td>Нужен конкретный том с нужной темой. Учись применять инструмент в физике.</td></tr><tr><td>Иродов</td><td>Общая физика и тематические задачи</td><td>Чередуй теорию и практику; выбирай задачи по имеющейся базе.</td></tr><tr><td>Morin · Classical Mechanics</td><td>Углублённая механика</td><td>После базы; подходящие главы и задачи, затем сложные модели.</td></tr><tr><td>Purcell &amp; Morin</td><td>Электричество и магнетизм</td><td>По темам; связывай математический вывод с физическим смыслом.</td></tr><tr><td>Савченко</td><td>Нестандартные физические идеи</td><td>После попытки разбери ключевой ход и повтори задачу самостоятельно.</td></tr><tr><td>Олимпиадные архивы</td><td>Перенос навыков и формат тура</td><td>Отдельные задачи → смешанные подборки → незнакомый полный тур.</td></tr></tbody></table></div><div class="resource-links"><a href="https://www.youtube.com/pvictor54" target="_blank" rel="noopener">Павел Виктор ↗</a><a href="https://mosphys.olimpiada.ru/task" target="_blank" rel="noopener">Архив МОШ ↗</a><a href="https://www.physolymp.spb.ru/index.php/archive" target="_blank" rel="noopener">Архив олимпиад СПб ↗</a><a href="https://www.ipho-new.org/documentations/" target="_blank" rel="noopener">Материалы IPhO ↗</a><a href="https://www.ipho-new.org/statutes-syllabus/" target="_blank" rel="noopener">Программа IPhO ↗</a></div><p class="resource-notes">У Кирика и Zambak есть разные книги: я бы выбирал том по нужным темам, а не только по номеру класса. Подробнее о книгах Morin и Purcell: <a href="https://davidmorin.physics.fas.harvard.edu/books/classical-mechanics" target="_blank" rel="noopener">страница механики</a> и <a href="https://davidmorin.physics.fas.harvard.edu/books/electricity-magnetism" target="_blank" rel="noopener">страница электродинамики</a> автора.</p></section>
 
 <section class="section" id="faq"><div class="section-head"><div><span class="eyebrow">06 / ЧАСТЫЕ ВОПРОСЫ</span><h2>Если что-то идёт не по плану</h2></div></div><div class="faq"><details><summary>Я начал в 10–11 классе. Уже поздно?</summary><p>Я сам начал в 10-м классе. Поэтому я бы не воспринимал эту схему как список того, что уже упущено. Сначала посмотрел бы, что умею сейчас, закрыл пробелы и продолжил с подходящего уровня.</p></details><details><summary>Нужно решить всего Кирика и всего Иродова?</summary><p>Это может быть личным способом работы, но не обязательным условием. Если уверенно решаешь несколько разных задач на один приём, переходи к новому типу. Если ошибка повторяется, вернись к базовым упражнениям. Нужны охват и самостоятельность, а не только число номеров.</p></details><details><summary>Нужно сначала выучить весь матанализ?</summary><p>Нет. Производную вводи вместе с движением и экстремумами, интеграл — вместе с работой и распределёнными величинами. Для первых олимпиадных задач достаточно школьной математики; углублённый аппарат добавляй по мере необходимости.</p></details><details><summary>Что делать, если задача не решается?</summary><p>Запиши, какие модели и подходы уже пробовал. Попробуй рисунок, более простой случай, оценку или предельное значение. Затем возьми одну подсказку, обсуди задачу с наставником или отложи. После разбора обязательно реши заново без готового текста.</p></details><details><summary>Можно готовиться без тренера?</summary><p>Я бы старался большую часть задач сначала разбирать сам, а затем обсуждать попытки с учителем, кружком или более опытным участником. Особенно полезно, когда кто-то проверяет не только ответ, но и оформление или метод эксперимента.</p></details><details><summary>Какие задачи считать решёнными?</summary><p>Самостоятельная — когда выбрал модель и получил ответ без существенной подсказки. После подсказки — учебный разбор, тоже полезный. Повторно решённая — когда спустя время смог восстановить ход без решения. Разделяй эти случаи в журнале, чтобы видеть реальные навыки.</p></details><details><summary>Достаточно ли только механики и электродинамики?</summary><p>Нет. План должен охватывать также тепло, волны, оптику, современную физику и эксперимент. Сверяй темы с программой выбранной олимпиады и задачами прошлых лет; сложность внутри одного раздела может быть очень разной.</p></details><details><summary>Ты сам готовился по этой схеме с детства?</summary><p>Нет, сам я начал готовиться в 10-м классе. Здесь я собрал свои мысли о том, как бы выстроил подготовку, если бы начал раньше.</p></details></div></section>
-<div class="final-note"><span>Я начал готовиться в 10-м классе. Здесь — мои мысли о том, что я бы делал, если бы начал раньше.</span><a class="back-top" href="#top">Вернуться к началу ↑</a></div></main>
+<div class="final-note"><span>Я начал готовиться в 10-м классе. Здесь — мои мысли о том, что я бы делал, если бы начал раньше.</span><a class="back-top" href="#reader-plan-top">Вернуться к началу ↑</a></div></template>
 <footer>
   <div class="fi">
     <div class="fg">
@@ -94,5 +132,5 @@
     <div class="fbot"><p data-i18n="footer.copy">© 2026 Национальная олимпиада по физике Кыргызской Республики</p></div>
   </div>
 </footer>
-<a class="anchor-top" href="#route">К маршруту ↑</a>
-<script src="/assets/js/preparation-page.js?v=20261109-personal-v3"></script></body></html>
+
+<script src="/assets/js/preparation-notes-data.js?v=20261109-notes-v1"></script><script src="/assets/js/preparation-wall.js?v=20261109-notes-v1"></script></body></html>

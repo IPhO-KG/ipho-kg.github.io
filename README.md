@@ -48,9 +48,13 @@ Run `node scripts/check-site.mjs` to check local asset paths, PDF links, result 
 Public asset URLs use `?v=20261020` to bypass previously cached 404 responses. Bump this version when relocating or replacing shared assets.
 
 
-## Preparation guide
-- `/preparation/` — Emir Anaraly uulu’s personal perspective on how he would prepare if he had started earlier. He began preparing in grade 10.
-- The text is currently in Russian; navigation follows the site's RU/KY/EN setting and identifies the Russian-only content in KY/EN.
-- Page content: `preparation/index.html`; shared site styles: `assets/css/results.css`, page styles: `assets/css/preparation.css`; interactions and shared theme/language: `assets/js/preparation-page.js`.
-- Stages support keyboard navigation, materials and answers expand on demand, and the workload selector shows three weekly plans. Printing includes all stages and expanded details.
-- The website version before adding the guide is preserved on `backup/before-preparation-2026-11-09` (commit `f5f7d981fb36c559f077da7572a253cf0f79eade`). To undo only this addition, revert its commit rather than resetting the branch history.
+## Preparation notes wall
+The `/preparation/` entry page is a paper-note wall, designed for multiple contributors. Emir’s profile identifies him as the creator of npho.edu.kg and states that he began preparing in grade 10. His longer note describes how he would prepare if starting earlier. Visitors can search, filter by topic or author, read notes in a notebook dialog, and save personal favorites in localStorage (`npho-preparation-favorites-v1`). Favorites are specific to a browser; there are no public like counts or accounts.
+
+- Add contributors and notes in `assets/js/preparation-notes-data.js`. Each author needs a stable `id`, name, initials, role and first-person bio. Each note needs a stable `id`, `authorId`, topic, paper color, title, excerpt and an array of body paragraphs.
+- Register new topic IDs in the same data file. New authors automatically appear in the author filter and profile list; do not add placeholder people or fabricated experience.
+- The long Emir plan is preserved in the `emir-full-plan` template inside `preparation/index.html`. Its note opens the full plan, including the existing stage and weekly workload controls. Other notes open their body paragraphs.
+- Existing links such as `/preparation/#route` and `#experiment` open the long plan at the relevant section. Individual notes use `/preparation/#note/<stable-id>`.
+- The site header/footer still use `results.css`. Paper and notebook styles are isolated in `preparation-wall.css`; the original long-plan styles remain in `preparation.css`.
+
+- Notes are currently in Russian; site navigation follows the shared RU/KY/EN setting. The pre-preparation site snapshot is preserved on `backup/before-preparation-2026-11-09`.

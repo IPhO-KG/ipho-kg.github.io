@@ -51,4 +51,21 @@ for (const year of Object.keys(context.window.NPHO_RESULTS)) {
   assert.match(readFileSync(join(root, `results/${year}/index.html`), 'utf8'), new RegExp(`data-year="${year}"`));
 }
 assert.deepEqual(errors, [], errors.join('\n'));
+const notesContext = { window: {} };
+vm.runInNewContext(readFileSync(join(root, 'assets/js/preparation-notes-data.js'), 'utf8'), notesContext);
+const notesData = notesContext.window.NPHO_PREPARATION_NOTES;
+const authorIds = new Set(notesData.authors.map(author => author.id));
+const topicIds = new Set(notesData.topics.map(topic => topic.id));
+const noteIds = new Set(notesData.notes.map(note => note.id));
+assert.equal(authorIds.size, notesData.authors.length, 'Author IDs must be unique');
+assert.equal(noteIds.size, notesData.notes.length, 'Note IDs must be unique');
+const notesHtml = readFileSync(join(root, 'preparation/index.html'), 'utf8');
+for (const note of notesData.notes) {
+  assert.ok(authorIds.has(note.authorId), `Unknown author in note ${note.id}`);
+  assert.ok(topicIds.has(note.topic), `Unknown topic in note ${note.id}`);
+  assert.ok(note.title && note.excerpt && Array.isArray(note.body), `Incomplete note ${note.id}`);
+  assert.ok(note.body.every(paragraph => typeof paragraph === 'string'), `Invalid paragraphs in note ${note.id}`);
+  if (note.fullPlan) assert.ok(note.templateId && notesHtml.includes(`id="${note.templateId}"`), `Missing full-plan template for ${note.id}`);
+}
 console.log('Site checks passed: local assets, PDF links, results pages and JavaScript syntax.');
+console.log(`Notes wall checks passed: ${authorIds.size} author(s), ${noteIds.size} notes and valid topic/template references.`);
