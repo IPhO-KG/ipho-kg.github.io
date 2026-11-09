@@ -5,7 +5,7 @@
   if(window.NPHO_I18N) return;
   const UI = {
       'lang.label':'Язык',
-      'nav.home':'Главная','nav.problems':'Банк задач','nav.results':'Результаты','nav.about':'Об олимпиаде',
+      'nav.home':'Главная','nav.preparation':'Подготовка','nav.problems':'Банк задач','nav.results':'Результаты','nav.about':'Об олимпиаде',
       'theme.dark':'Тёмная','theme.light':'Светлая','theme.toDark':'Включить тёмную тему','theme.toLight':'Включить светлую тему','theme.toggle':'Переключить цветовую тему',
       'meta.title':'Национальная олимпиада по физике, Кыргызстан (NPhO)',
       'meta.description':'Официальный сайт Национальной олимпиады по физике Кыргызской Республики. Задачи, решения, результаты и информация об олимпиаде.',

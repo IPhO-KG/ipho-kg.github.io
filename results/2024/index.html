@@ -9,8 +9,8 @@
     if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
   } catch {}
 </script>
-<script src="/assets/js/i18n.js?v=20261020"></script>
-<script src="/assets/js/i18n-fallback.js?v=20261020"></script>
+<script src="/assets/js/i18n.js?v=20261109-preparation"></script>
+<script src="/assets/js/i18n-fallback.js?v=20261109-preparation"></script>
 <script src="/assets/js/npho-data.js?v=20261020"></script>
 <title>NPhO 2024 — Результаты · Results · Жыйынтыктар</title>
 <meta name="description" content="Результаты IV этапа Национальной олимпиады по физике Кыргызской Республики 2024. NPhO 2024 final results — official website of the National Physics Olympiad of Kyrgyzstan.">
@@ -29,7 +29,8 @@
       <a class="nl" href="/" data-i18n="nav.home">Главная</a>
       <a class="nl" href="/#problems" data-i18n="nav.problems">Банк задач</a>
       <a class="nl active" href="/results/2026/" data-i18n="nav.results">Результаты</a>
-      <a class="nl" href="/#about" data-i18n="nav.about">Об олимпиаде</a>
+
+      <a class="nl" href="/preparation/" onclick="this.href=NPHO_I18N.langUrl(this.href)" data-i18n="nav.preparation">Подготовка</a>      <a class="nl" href="/#about" data-i18n="nav.about">Об олимпиаде</a>
     </div>
     <select class="lang-select" data-lang-select onchange="NPHO_I18N.setLang(this.value)" data-i18n-attr="aria-label:lang.label;title:lang.label" aria-label="Язык">
       <option value="ky">Кыр</option>
@@ -51,7 +52,7 @@
   <div class="fi">
     <div class="fg">
       <div class="fc"><h4 data-i18n="footer.title">Национальная олимпиада по физике</h4><p data-i18n="footer.desc">Официальный сайт и представитель официального комитета по физике Кыргызской Республики.</p><p class="fchair"><span data-i18n="footer.chair">Председатель комитета</span>: <b data-i18n-chair>Кылычбеков Салижан</b></p></div>
-      <div class="fc"><h4 data-i18n="footer.nav">Навигация</h4><a href="/" data-i18n="nav.home">Главная</a><a href="/#problems" data-i18n="nav.problems">Банк задач</a><a href="/results/2026/" data-i18n="nav.results">Результаты</a><a href="/#about" data-i18n="nav.about">Об олимпиаде</a></div>
+      <div class="fc"><h4 data-i18n="footer.nav">Навигация</h4><a href="/" data-i18n="nav.home">Главная</a><a href="/#problems" data-i18n="nav.problems">Банк задач</a><a href="/results/2026/" data-i18n="nav.results">Результаты</a><a href="/preparation/" onclick="this.href=NPHO_I18N.langUrl(this.href)" data-i18n="nav.preparation">Подготовка</a><a href="/#about" data-i18n="nav.about">Об олимпиаде</a></div>
       <div class="fc"><h4 data-i18n="footer.contacts">Контакты</h4>
         <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#229ED9" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></div><a href="https://t.me/+9GGnjui6VT05Mzli" target="_blank" rel="noopener" class="ct">Telegram</a></div>
         <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1"/></svg></div><a href="https://www.instagram.com/ipho_kg" target="_blank" rel="noopener" class="ct">Instagram</a></div>
