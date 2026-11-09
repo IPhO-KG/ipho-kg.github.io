@@ -14,7 +14,7 @@
   const UI = {
     ru: {
       'lang.label':'Язык',
-      'nav.home':'Главная','nav.problems':'Банк задач','nav.results':'Результаты','nav.about':'Об олимпиаде',
+      'nav.home':'Главная','nav.preparation':'Подготовка','nav.problems':'Банк задач','nav.results':'Результаты','nav.about':'Об олимпиаде',
       'theme.dark':'Тёмная','theme.light':'Светлая','theme.toDark':'Включить тёмную тему','theme.toLight':'Включить светлую тему','theme.toggle':'Переключить цветовую тему',
       'meta.title':'Национальная олимпиада по физике, Кыргызстан (NPhO)',
       'meta.description':'Официальный сайт Национальной олимпиады по физике Кыргызской Республики. Задачи, решения, результаты и информация об олимпиаде.',
@@ -70,7 +70,7 @@
     },
     ky: {
       'lang.label':'Тил',
-      'nav.home':'Башкы бет','nav.problems':'Маселелер банкы','nav.results':'Жыйынтыктар','nav.about':'Олимпиада жөнүндө',
+      'nav.home':'Башкы бет','nav.preparation':'Даярдык','nav.problems':'Маселелер банкы','nav.results':'Жыйынтыктар','nav.about':'Олимпиада жөнүндө',
       'theme.dark':'Караңгы','theme.light':'Жарык','theme.toDark':'Караңгы теманы күйгүзүү','theme.toLight':'Жарык теманы күйгүзүү','theme.toggle':'Түс темасын которуу',
       'meta.title':'Физика боюнча улуттук олимпиада, Кыргызстан (NPhO)',
       'meta.description':'Кыргыз Республикасынын физика боюнча улуттук олимпиадасынын расмий сайты. Маселелер, чыгарылыштар, жыйынтыктар жана олимпиада тууралуу маалымат.',
@@ -126,7 +126,7 @@
     },
     en: {
       'lang.label':'Language',
-      'nav.home':'Home','nav.problems':'Problem bank','nav.results':'Results','nav.about':'About',
+      'nav.home':'Home','nav.preparation':'Preparation','nav.problems':'Problem bank','nav.results':'Results','nav.about':'About',
       'theme.dark':'Dark','theme.light':'Light','theme.toDark':'Switch to dark theme','theme.toLight':'Switch to light theme','theme.toggle':'Toggle color theme',
       'meta.title':'National Physics Olympiad of Kyrgyzstan (NPhO)',
       'meta.description':'Official website of the National Physics Olympiad of the Kyrgyz Republic. Problems, solutions, results and information about the olympiad.',
