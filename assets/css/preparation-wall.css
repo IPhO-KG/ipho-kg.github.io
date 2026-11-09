@@ -95,3 +95,25 @@
 @media(max-width:540px){.board-caption>span:last-child{display:none}.notes-grid{gap:12px;grid-template-columns:1fr}.paper-featured{grid-column:auto}.paper-note{min-height:195px;padding:1.15rem}.paper-note:before{top:1.48rem}.note-title{font-size:21px}.paper-featured .note-title{font-size:24px}.note-excerpt{font-size:13px}.wall-inputs{display:grid;grid-template-columns:1fr}.wall-author-field{width:auto}.wall-field{width:100%}.wall-field select{width:100%}.wall-controls{margin-top:1.2rem}.topic-filters{gap:.15rem}.topic-filter{padding:.35rem .6rem}.reader-toolbar{padding:.65rem .7rem;gap:.5rem}.reader-toolbar-copy{max-width:50%}.reader-toolbar-copy>h2{font-size:11px}.reader-toolbar-actions{gap:.4rem}.reader-close span:first-child{display:none}.reader-favorite .favorite-label{display:none}.reader-favorite{padding:.4rem}.note-reader{width:calc(100% - 16px);max-height:95vh;height:95vh}.reader-content{padding:1.3rem 1rem 2rem 1.65rem;background-image:linear-gradient(90deg,transparent 12px,#c27a7338 12px,#c27a7338 13px,transparent 13px)}.reader-note-title{font-size:29px}.reader-prose p{font-size:14px}.reader-content .rhead h1{font-size:28px}.reader-author b{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.paper-note{transition:none}}
 @media print{.notes-home .wall-controls,.favorites-help,.board-caption,.note-favorite,.reader-toolbar,.reader-more{display:none!important}.paper-note{background:white;color:black;border-color:#ccc;box-shadow:none;break-inside:avoid}.paper-note :is(.note-title,.note-excerpt,.note-topic,.note-read){color:#222}.note-reader[open]~footer{display:none!important}.note-reader[open]{position:static;display:block;width:100%;height:auto;max-height:none;margin:0;border:0;box-shadow:none;background:white;color:black}.note-reading>nav,.note-reading>main,.note-reading>footer{display:none!important}.reader-content{padding:0;background:none}.reader-content .stage-panel[hidden],.reader-content .week-panel[hidden]{display:block!important}}
+
+/* Long notes keep a readable column and a quiet notebook contents panel. */
+.reader-contents{margin:1.8rem 0 2.3rem;padding:1rem 1.3rem;background:#f5efdf80;border:1px solid var(--border);border-radius:4px}
+.reader-contents .reader-contents-label{margin:0 0 .6rem;font-size:10px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+.reader-contents ol{margin:0;padding-left:1.1rem;columns:2;column-gap:2rem}
+.reader-contents li{font-size:12px;line-height:1.6;margin:0 0 .5rem;break-inside:avoid;color:var(--text3)}
+.reader-contents a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+.reader-contents a:hover{border-bottom-color:currentColor}
+.reader-prose-section{margin:2.2rem 0 0;scroll-margin-top:85px}
+.reader-prose-section h3{font-size:20px;font-weight:650;line-height:1.4;letter-spacing:-.025em;margin:0 0 1rem;color:var(--text)}
+.reader-progress{display:inline-block;margin:-.3rem 0 1rem;padding:.25rem .55rem;border:1px solid var(--border);border-radius:4px;color:var(--text2);font-size:10px;font-weight:600;background:#f5efdf80}
+.reader-prose :is(ul,ol){padding-left:1.25rem}
+.reader-prose-section li{font-size:14px;line-height:1.85;color:var(--text);padding-left:.2rem;margin:0 0 .65rem}
+.reader-resource{display:inline-block;color:var(--accent);font-size:13px;text-underline-offset:4px;margin:0 0 .5rem;overflow-wrap:anywhere}
+.reader-personal-math .reader-prose{margin-top:1rem}
+.reader-related{max-width:680px}
+.reader-related h2{font-size:23px;letter-spacing:-.025em;margin-bottom:1rem}
+.reader-related :is(p,li){font-size:13px;line-height:1.85;color:var(--text2)}
+.reader-related ul{padding-left:1.1rem;margin:1rem 0 0}
+.reader-related a{color:var(--accent);text-underline-offset:3px}
+.reader-content :is(section,.section){scroll-margin-top:85px}
+@media(max-width:540px){.reader-contents{padding:.85rem 1rem}.reader-contents ol{columns:1}.reader-prose-section h3{font-size:19px}.reader-prose-section{margin-top:1.8rem}.reader-prose-section li{font-size:14px}}

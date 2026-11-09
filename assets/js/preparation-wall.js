@@ -70,7 +70,9 @@
       return (!state.author || note.authorId === state.author) &&
         (!state.topic || note.topic === state.topic) &&
         (!state.favoritesOnly || favorites.has(note.id)) &&
-        (!query || normalize([note.title, note.excerpt, author.name, author.role, topics.get(note.topic), ...note.body].join(' ')).includes(query));
+        (!query || normalize([note.title, note.excerpt, author.name, author.role, topics.get(note.topic), ...note.body,
+          ...(note.sections || []).flatMap(section => [section.title, section.tag || '', ...section.paragraphs, ...(section.items || []), ...(section.links || []).map(link => link.label)])
+        ].join(' ')).includes(query));
     });
   }
   function renderWall() {
@@ -133,6 +135,37 @@
     const copy = element('div'); copy.append(element('b', '', author.name), element('span', '', author.role));
     block.append(copy); return block;
   }
+  function noteProse(note, withContents = true) {
+    const prose = element('div', 'reader-prose');
+    note.body.forEach(paragraph => prose.append(element('p', '', paragraph)));
+    if (withContents && note.sections?.length) {
+      const contents = element('div', 'reader-contents');
+      contents.setAttribute('role', 'navigation'); contents.setAttribute('aria-label', 'Содержание заметки');
+      contents.append(element('p', 'reader-contents-label', 'В этой заметке'));
+      const list = element('ol');
+      note.sections.forEach(section => {
+        const item = element('li');
+        const link = element('a', '', section.title.replace(/^\d+\.\s*/, ''));
+        link.href = '#' + note.id + '-' + section.id; item.append(link); list.append(item);
+      });
+      contents.append(list); prose.append(contents);
+    }
+    (note.sections || []).forEach(section => {
+      const block = element('section', 'reader-prose-section'); block.id = note.id + '-' + section.id;
+      block.append(element('h3', '', section.title));
+      if (section.tag) block.append(element('span', 'reader-progress', section.tag));
+      section.paragraphs.forEach(paragraph => block.append(element('p', '', paragraph)));
+      if (section.items?.length) {
+        const list = element('ul'); section.items.forEach(item => list.append(element('li', '', item))); block.append(list);
+      }
+      (section.links || []).forEach(resource => {
+        const link = element('a', 'reader-resource', resource.label + ' ↗');
+        link.href = resource.url; link.target = '_blank'; link.rel = 'noopener'; block.append(link);
+      });
+      prose.append(block);
+    });
+    return prose;
+  }
   function showNote(note, legacyAnchor) {
     if (currentNote !== note.id) {
       currentNote = note.id;
@@ -144,13 +177,16 @@
       if (note.fullPlan) {
         readerBody.append(document.getElementById(note.templateId).content.cloneNode(true));
         const header = readerBody.querySelector('.rhead'); header.prepend(authorBlock(author));
+        readerBody.querySelectorAll('[data-note-copy]').forEach(placeholder => {
+          const source = notes.get(placeholder.dataset.noteCopy);
+          if (source) placeholder.append(noteProse(source, false));
+        });
         setupPlan(readerBody);
       } else {
         readerBody.append(authorBlock(author));
         const heading = element('h2', 'reader-note-title', note.title); readerBody.append(heading);
         readerBody.append(element('p', 'reader-bio', author.bio));
-        const text = element('div', 'reader-prose'); note.body.forEach(paragraph => text.append(element('p', '', paragraph)));
-        readerBody.append(text);
+        readerBody.append(noteProse(note));
         const more = element('a', 'reader-more', 'Читать весь план Эмира →');
         if (note.authorId === 'emir') { more.href = '#note/emir-early-start'; readerBody.append(more); }
       }

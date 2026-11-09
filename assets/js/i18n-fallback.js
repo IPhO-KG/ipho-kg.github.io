@@ -15,7 +15,7 @@
       'hero.sub':'Задачи, решения и понятный путь от национального отбора к международным олимпиадам по физике.',
       'footer.title':'Национальная олимпиада по физике',
       'footer.desc':'Официальный сайт и представитель официального комитета по физике Кыргызской Республики.',
-      'footer.chair':'Председатель комитета',
+      'footer.chair':'Председатель',
       'footer.nav':'Навигация','footer.contacts':'Контакты',
       'footer.copy':'© 2026 Национальная олимпиада по физике Кыргызской Республики',
       'home.selEyebrow':'Два маршрута · один финал','home.selTitle':'Как устроен отбор',
@@ -25,7 +25,7 @@
       'about.orgText':'npho.edu.kg — официальный сайт Национальной олимпиады по физике Кыргызской Республики. Сайт является представителем официального комитета по физике КР: здесь публикуются условия и решения, результаты отбора и составы команд на международные олимпиады.',
       'about.org.status':'Статус','about.org.statusVal':'Официальный сайт Национальной олимпиады по физике',
       'about.org.committee':'Комитет','about.org.committeeVal':'Представитель официального комитета по физике Кыргызской Республики',
-      'about.org.chair':'Председатель комитета',
+      'about.org.chair':'Председатель',
       'about.label.system':'Система отбора','about.label.teams':'Состав команд','about.label.intl':'Международный уровень',
       'results.title':'Результаты','results.kicker':'Заключительный этап','results.stage':'IV этап {year}',
       'results.dates':'Даты','results.place':'Место','results.bishkek':'Бишкек','results.duration':'Продолжительность',
@@ -63,7 +63,7 @@
   const has = key => Object.prototype.hasOwnProperty.call(UI,key);
   const t = (key,vars) => (has(key)?UI[key]:key).replace(/\{(\w+)\}/g,(match,name)=>vars&&vars[name]!==undefined?vars[name]:match);
   const plural = (n,one,few,many) => n%10===1&&n%100!==11?one:n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?few:many;
-  const chair = () => 'Кылычбеков Салижан';
+  const chair = () => 'Салижан Кылычбеков';
   function langUrl(path){
     const url=new URL(path||location.href,location.origin);
     url.searchParams.delete('lang');

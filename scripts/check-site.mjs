@@ -65,7 +65,19 @@ for (const note of notesData.notes) {
   assert.ok(topicIds.has(note.topic), `Unknown topic in note ${note.id}`);
   assert.ok(note.title && note.excerpt && Array.isArray(note.body), `Incomplete note ${note.id}`);
   assert.ok(note.body.every(paragraph => typeof paragraph === 'string'), `Invalid paragraphs in note ${note.id}`);
+  const sectionIds = new Set();
+  for (const section of note.sections || []) {
+    assert.match(section.id, /^[a-z][a-z0-9-]*$/);
+    assert.ok(!sectionIds.has(section.id), `Duplicate section in ${note.id}`); sectionIds.add(section.id);
+    assert.ok(section.title && Array.isArray(section.paragraphs), `Incomplete section in ${note.id}`);
+    assert.ok(section.paragraphs.every(text => typeof text === 'string'));
+    assert.ok((section.items || []).every(text => typeof text === 'string'));
+    for (const link of section.links || []) {
+      assert.ok(link.label); assert.equal(new URL(link.url).protocol, 'https:');
+    }
+  }
   if (note.fullPlan) assert.ok(note.templateId && notesHtml.includes(`id="${note.templateId}"`), `Missing full-plan template for ${note.id}`);
 }
+for (const match of notesHtml.matchAll(/data-note-copy="([^"]+)"/g)) assert.ok(noteIds.has(match[1]), `Unknown inline note ${match[1]}`);
 console.log('Site checks passed: local assets, PDF links, results pages and JavaScript syntax.');
 console.log(`Notes wall checks passed: ${authorIds.size} author(s), ${noteIds.size} notes and valid topic/template references.`);
