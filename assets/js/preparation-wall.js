@@ -167,6 +167,7 @@
     return prose;
   }
   function showNote(note, legacyAnchor) {
+    const changed = currentNote !== note.id;
     if (currentNote !== note.id) {
       currentNote = note.id;
       const author = authors.get(note.authorId);
@@ -190,10 +191,10 @@
         const more = element('a', 'reader-more', 'Читать весь план Эмира →');
         if (note.authorId === 'emir') { more.href = '#note/emir-early-start'; readerBody.append(more); }
       }
-      dialog.scrollTop = 0; readerBody.scrollTop = 0;
       document.title = note.title + ' · Заметки NPhO';
     }
     if (!dialog.open) { dialog.showModal(); document.body.classList.add('note-reading'); }
+    if (changed) { dialog.scrollTop = 0; readerBody.scrollTop = 0; }
     syncFavorites();
     if (legacyAnchor) requestAnimationFrame(() => readerBody.querySelector('#' + legacyAnchor)?.scrollIntoView({block: 'start'}));
   }
