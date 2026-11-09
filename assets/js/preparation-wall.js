@@ -76,23 +76,23 @@
   function renderWall() {
     const visible = visibleNotes();
     wall.replaceChildren();
-    visible.forEach((note, index) => {
+    visible.forEach(note => {
       const author = authors.get(note.authorId);
       const card = element('article', 'paper-note paper-' + note.color + (note.featured ? ' paper-featured' : ''));
-      card.style.setProperty('--paper-rotation', ['-.7deg', '.8deg', '-.35deg', '.45deg'][index % 4]);
-      const pin = element('span', 'paper-pin'); pin.setAttribute('aria-hidden', 'true');
-      card.append(pin, favoriteButton(note));
+      card.append(favoriteButton(note));
       const open = element('button', 'note-open'); open.type = 'button';
       open.setAttribute('aria-label', 'Читать заметку: ' + note.title);
       open.dataset.openNote = note.id;
       open.append(element('span', 'note-topic', note.label || topics.get(note.topic)), element('h2', 'note-title', note.title), element('p', 'note-excerpt', note.excerpt));
-      if (note.featured) open.append(element('span', 'note-handwritten', 'Что я изучал бы с 5–6-го класса'));
       open.append(element('span', 'note-read', note.fullPlan ? 'Открыть весь план ↗' : 'Читать заметку ↗'));
       open.addEventListener('click', () => { lastOpener = open; location.hash = 'note/' + encodeURIComponent(note.id); });
-      const byline = element('div', 'note-byline');
-      byline.append(element('span', 'note-initials', author.initials));
-      const name = element('div', 'note-author'); name.append(element('b', '', author.name), element('span', '', author.role));
-      byline.append(name); card.append(open, byline); wall.append(card);
+      card.append(open);
+      if (authors.size > 1) {
+        const byline = element('div', 'note-byline');
+        byline.append(element('span', 'note-initials', author.initials), element('span', 'note-author-name', author.name));
+        card.append(byline);
+      }
+      wall.append(card);
     });
     count.textContent = state.favoritesOnly ? 'В избранном: ' + visible.length : 'Показано ' + visible.length + ' из ' + data.notes.length;
     empty.hidden = visible.length !== 0;
@@ -202,6 +202,7 @@
     }); topicFilters.append(button);
   });
   const authorSelect = document.getElementById('author-filter');
+  authorSelect.closest('label').hidden = authors.size < 2;
   data.authors.forEach(author => { const option = element('option', '', author.name); option.value = author.id; authorSelect.append(option); });
   authorSelect.addEventListener('change', () => { state.author = authorSelect.value; renderWall(); });
   document.getElementById('note-search').addEventListener('input', event => { state.query = event.target.value; renderWall(); });
