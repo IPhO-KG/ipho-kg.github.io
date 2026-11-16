@@ -1,0 +1,57 @@
+{
+  "id": "T3",
+  "title": "В погоне за абсолютным нулём",
+  "points": 10,
+  "sourcePages": [
+    11,
+    12,
+    13,
+    14
+  ],
+  "subtasks": [
+    {
+      "id": "T3-A1",
+      "points": 0.2
+    },
+    {
+      "id": "T3-A2",
+      "points": 0.6
+    },
+    {
+      "id": "T3-A3",
+      "points": 0.2
+    },
+    {
+      "id": "T3-B1",
+      "points": 1.5
+    },
+    {
+      "id": "T3-B2",
+      "points": 1.5
+    },
+    {
+      "id": "T3-C1",
+      "points": 0.2
+    },
+    {
+      "id": "T3-C2",
+      "points": 1.5
+    },
+    {
+      "id": "T3-C3",
+      "points": 0.8
+    },
+    {
+      "id": "T3-C4",
+      "points": 2.0
+    },
+    {
+      "id": "T3-C5",
+      "points": 1.5
+    }
+  ],
+  "solutionsAvailable": true,
+  "solutionData": "/assets/practice/ipho-2026/solutions/t3.json",
+  "solutionPdf": "/assets/practice/ipho-2026/IPhO_2026_S3_EN.pdf",
+  "stepScoring": "editorial-unweighted-manual-subtask-assessment"
+}

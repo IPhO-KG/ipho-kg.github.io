@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <script>try{const saved=localStorage.getItem('npho-theme');document.documentElement.dataset.theme=(saved==='dark'||saved==='light')?saved:(window.matchMedia?.('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
-<script src="/assets/js/i18n.js?v=20261110-notes-v3"></script><script src="/assets/js/i18n-fallback.js?v=20261110-notes-v3"></script>
-<title>Заметки о подготовке · NPhO</title><meta name="description" content="Личный опыт подготовки к олимпиадам по физике: заметки участников, любимые советы, книги и идеи. Сохраняй полезное в свою подборку."><meta name="color-scheme" content="light dark"><link rel="canonical" href="https://npho.edu.kg/preparation/"><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" href="/assets/css/results.css?v=20261020-medals"><link rel="stylesheet" href="/assets/css/preparation.css?v=20261110-notes-v3"><link rel="stylesheet" href="/assets/css/preparation-wall.css?v=20261110-notes-v3"></head>
+<script src="/assets/js/i18n.js?v=20261117-figures"></script><script src="/assets/js/i18n-fallback.js?v=20261117-figures"></script>
+<title>Заметки о подготовке · NPhO</title><meta name="description" content="Личный опыт подготовки к олимпиадам по физике: заметки участников, любимые советы, книги и идеи. Сохраняй полезное в свою подборку."><meta name="color-scheme" content="light dark"><link rel="canonical" href="https://npho.edu.kg/preparation/"><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" href="/assets/css/results.css?v=20261117-figures"><link rel="stylesheet" href="/assets/css/preparation.css?v=20261117-figures"><link rel="stylesheet" href="/assets/css/preparation-wall.css?v=20261117-figures"><link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-figures"><script defer src="/assets/js/site-ui.js?v=20261117-figures"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-figures"></head>
 <body id="top"><nav>
   <a class="logo" href="/" data-site-link="/"><div class="logo-dot"></div>NPhO</a>
   <div class="nav-right">
@@ -11,12 +11,12 @@
       <a class="nl" href="/#problems" data-i18n="nav.problems" data-site-link="/#problems">Банк задач</a>
       <a class="nl" href="/results/2026/" data-i18n="nav.results" data-site-link="/results/2026/">Результаты</a>
 
-      <a class="nl active" aria-current="page" href="/preparation/" onclick="this.href=NPHO_I18N.langUrl(this.href)" data-i18n="nav.preparation" data-site-link="/preparation/">Подготовка</a>      <a class="nl" href="/#about" data-i18n="nav.about" data-site-link="/#about">Об олимпиаде</a>
+      <a class="nl" href="/practice/" onclick="this.href=NPHO_I18N.langUrl(this.href)" data-i18n="nav.practice" data-site-link="/practice/">Практика</a>      <a class="nl" href="/#about" data-i18n="nav.about" data-site-link="/#about">Об олимпиаде</a>
     </div>
     <select class="lang-select" data-lang-select onchange="NPHO_I18N.setLang(this.value)" data-i18n-attr="aria-label:lang.label;title:lang.label" aria-label="Язык">
-      <option value="ky">Кыр</option>
-      <option value="ru" selected>Рус</option>
-      <option value="en">Eng</option>
+      <option value="ky">Кыргызча</option>
+      <option value="ru" selected>Русский</option>
+      <option value="en">English</option>
     </select>
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Переключить цветовую тему">
       <span class="theme-icon" id="theme-icon" aria-hidden="true">☾</span>
@@ -135,7 +135,7 @@
   <div class="fi">
     <div class="fg">
       <div class="fc"><h4 data-i18n="footer.title">Национальная олимпиада по физике</h4><p data-i18n="footer.desc">Официальный сайт и представитель официального комитета по физике Кыргызской Республики.</p><p class="fchair"><span data-i18n="footer.chair">Председатель</span>: <b data-i18n-chair>Салижан Кылычбеков</b></p></div>
-      <div class="fc"><h4 data-i18n="footer.nav">Навигация</h4><a href="/" data-i18n="nav.home" data-site-link="/">Главная</a><a href="/#problems" data-i18n="nav.problems" data-site-link="/#problems">Банк задач</a><a href="/results/2026/" data-i18n="nav.results" data-site-link="/results/2026/">Результаты</a><a href="/preparation/" onclick="this.href=NPHO_I18N.langUrl(this.href)" data-i18n="nav.preparation" data-site-link="/preparation/">Подготовка</a><a href="/#about" data-i18n="nav.about" data-site-link="/#about">Об олимпиаде</a></div>
+      <div class="fc"><h4 data-i18n="footer.nav">Навигация</h4><a href="/" data-i18n="nav.home" data-site-link="/">Главная</a><a href="/#problems" data-i18n="nav.problems" data-site-link="/#problems">Банк задач</a><a href="/results/2026/" data-i18n="nav.results" data-site-link="/results/2026/">Результаты</a><a href="/practice/" onclick="this.href=NPHO_I18N.langUrl(this.href)" data-i18n="nav.practice" data-site-link="/practice/">Практика</a><a href="/#about" data-i18n="nav.about" data-site-link="/#about">Об олимпиаде</a></div>
       <div class="fc"><h4 data-i18n="footer.contacts">Контакты</h4>
         <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#229ED9" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></div><a href="https://t.me/+9GGnjui6VT05Mzli" target="_blank" rel="noopener" class="ct">Telegram</a></div>
         <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1"/></svg></div><a href="https://www.instagram.com/ipho_kg" target="_blank" rel="noopener" class="ct">Instagram</a></div>
@@ -145,4 +145,4 @@
   </div>
 </footer>
 
-<script src="/assets/js/preparation-notes-data.js?v=20261110-notes-v3"></script><script src="/assets/js/preparation-wall.js?v=20261110-notes-v4"></script></body></html>
+<script src="/assets/js/preparation-notes-data.js?v=20261117-figures"></script><script src="/assets/js/preparation-wall.js?v=20261117-figures"></script></body></html>

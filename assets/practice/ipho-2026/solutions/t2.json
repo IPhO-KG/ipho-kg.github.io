@@ -1,0 +1,553 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Готовим на солнце?",
+    "en": "Cooking with sunlight?"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2026/IPhO_2026_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-A1",
+      "max": 1.5,
+      "title": {
+        "ru": "Порог для N отражений",
+        "en": "Threshold for N reflections"
+      },
+      "steps": [
+        {
+          "id": "limiting-ray",
+          "label": {
+            "ru": "Граничная траектория определена",
+            "en": "Limiting ray identified"
+          },
+          "body": {
+            "ru": "<p>Достаточно рассмотреть луч справа от оси: слева картина симметрична. Обозначим угол падения через \\(\\theta\\); координата первого попадания равна \\(x=R\\sin\\theta\\). Граничный луч после \\(N\\) отражений проходит через противоположный край зеркала.</p><div class=\"exam-figure-row\"><figure><img src=\"/assets/practice/ipho-2026/solutions/figures/t2-a-n1.png\" alt=\"Предельная траектория с одним отражением проходит от первой точки зеркала до противоположного края.\" loading=\"lazy\"><figcaption>Граничный луч: одно отражение.</figcaption></figure><figure><img src=\"/assets/practice/ipho-2026/solutions/figures/t2-a-n2.png\" alt=\"Предельная траектория с двумя отражениями образует две хорды и выходит через противоположный край.\" loading=\"lazy\"><figcaption>Граничный луч: два отражения.</figcaption></figure></div>",
+            "en": "<p>Consider a ray to the right of the axis; the left side is symmetric. If its angle of incidence is \\(\\theta\\), the first impact has coordinate \\(x=R\\sin\\theta\\). At the threshold, the ray reaches the opposite rim after \\(N\\) reflections.</p><div class=\"exam-figure-row\"><figure><img src=\"/assets/practice/ipho-2026/solutions/figures/t2-a-n1.png\" alt=\"The limiting one-reflection ray connects its first mirror impact to the opposite rim.\" loading=\"lazy\"><figcaption>Limiting ray: one reflection.</figcaption></figure><figure><img src=\"/assets/practice/ipho-2026/solutions/figures/t2-a-n2.png\" alt=\"The limiting two-reflection ray follows two chords and exits at the opposite rim.\" loading=\"lazy\"><figcaption>Limiting ray: two reflections.</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "equal-chords",
+          "label": {
+            "ru": "Углы между радиусами найдены",
+            "en": "Equal chord angles established"
+          },
+          "body": {
+            "ru": "<p>Радиусы к концам каждой хорды образуют равнобедренный треугольник. Закон отражения сохраняет угол \\(\\theta\\) при последующих попаданиях, поэтому центральный угол каждой хорды равен \\(\\pi-2\\theta\\). От первого попадания до противоположного края нужно пройти по окружности угол \\(\\pi/2+\\theta\\).</p>",
+            "en": "<p>Each chord and its two radii form an isosceles triangle. Reflection preserves the angle \\(\\theta\\) at successive impacts, so every chord subtends \\(\\pi-2\\theta\\) at the center. The angular distance from the first impact to the opposite rim is \\(\\pi/2+\\theta\\).</p>"
+          }
+        },
+        {
+          "id": "threshold-angle",
+          "label": {
+            "ru": "Граничный угол вычислен",
+            "en": "Threshold angle calculated"
+          },
+          "body": {
+            "ru": "<p>Для граничной траектории имеется \\(N\\) таких отрезков:</p>\\[N(\\pi-2\\theta_N)=\\frac\\pi2+\\theta_N.\\]<p>Отсюда \\(\\theta_N=\\dfrac{2N-1}{4N+2}\\pi=\\dfrac\\pi2-\\dfrac\\pi{2N+1}\\).</p>",
+            "en": "<p>The limiting trajectory contains \\(N\\) such segments:</p>\\[N(\\pi-2\\theta_N)=\\frac\\pi2+\\theta_N.\\]<p>Therefore \\(\\theta_N=\\dfrac{2N-1}{4N+2}\\pi=\\dfrac\\pi2-\\dfrac\\pi{2N+1}\\).</p>"
+          }
+        },
+        {
+          "id": "coordinate-check",
+          "label": {
+            "ru": "Координата и частные случаи проверены",
+            "en": "Coordinate and limiting cases checked"
+          },
+          "body": {
+            "ru": "<p>Подставляем угол в \\(x_N=R\\sin\\theta_N\\). Получаем \\(x_1=R/2\\), \\(x_2=(1+\\sqrt5)R/4\\), а при \\(N\\to\\infty\\) граница стремится к \\(R\\). Это согласуется с увеличением числа отражений у края зеркала.</p>",
+            "en": "<p>Substitute into \\(x_N=R\\sin\\theta_N\\). The result gives \\(x_1=R/2\\), \\(x_2=(1+\\sqrt5)R/4\\), and \\(x_N\\to R\\) as \\(N\\to\\infty\\), consistent with more reflections near the rim.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{x_N=R\\cos\\!\\left(\\frac{\\pi}{2N+1}\\right)},\\qquad N=1,2,\\ldots\\]",
+        "en": "\\[\\boxed{x_N=R\\cos\\!\\left(\\frac{\\pi}{2N+1}\\right)},\\qquad N=1,2,\\ldots\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "Угол между соседними радиусами равен \\(\\pi-2\\theta\\), а не \\(2\\theta\\).",
+          "Число отрезков граничной траектории от первого попадания до противоположного края равно \\(N\\). Проверка \\(N=1\\) помогает обнаружить сдвиг индекса."
+        ],
+        "en": [
+          "The angle between successive radii is \\(\\pi-2\\theta\\), not \\(2\\theta\\).",
+          "There are \\(N\\) limiting segments from the first impact to the opposite rim. Checking \\(N=1\\) catches an index shift."
+        ]
+      },
+      "sourcePages": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "T2-B1",
+      "max": 2,
+      "title": {
+        "ru": "Радиус контейнера",
+        "en": "Container radius"
+      },
+      "steps": [
+        {
+          "id": "geometry",
+          "label": {
+            "ru": "Геометрия задана",
+            "en": "Geometry specified"
+          },
+          "body": {
+            "ru": "<p>Центр зеркала обозначим \\(O=(0,0)\\), центр контейнера — \\(O_c=(0,R/2)\\). Точка отражения граничного луча имеет координаты \\(B=(R\\sin\\theta,R\\cos\\theta)\\), где здесь \\(\\theta=\\theta_{\\max}\\).</p><figure><img src=\"/assets/practice/ipho-2026/solutions/figures/t2-b-tangent.png\" alt=\"Полуцилиндрическое зеркало с центром O и круглым контейнером с центром Oc; отражённый луч из B касается контейнера в C и пересекает ось в D.\" loading=\"lazy\"><figcaption>Граничный отражённый луч касается контейнера.</figcaption></figure>",
+            "en": "<p>Let the mirror center be \\(O=(0,0)\\) and the container center be \\(O_c=(0,R/2)\\). The limiting ray reflects at \\(B=(R\\sin\\theta,R\\cos\\theta)\\), where \\(\\theta=\\theta_{\\max}\\) in this part.</p><figure><img src=\"/assets/practice/ipho-2026/solutions/figures/t2-b-tangent.png\" alt=\"A semicircular mirror centered at O contains the cylinder centered at Oc; the reflected ray from B touches the cylinder at C and crosses the axis at D.\" loading=\"lazy\"><figcaption>The limiting reflected ray is tangent to the container.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "axis-intercept",
+          "label": {
+            "ru": "Отражённый луч построен",
+            "en": "Reflected ray constructed"
+          },
+          "body": {
+            "ru": "<p>После отражения направление луча пропорционально \\((-\\sin2\\theta,-\\cos2\\theta)\\). Луч пересекает ось \\(y\\) в точке \\(D\\). Подстановка \\(x_D=0\\) даёт</p>\\[OD=R\\cos\\theta-R\\sin\\theta\\cot2\\theta=\\frac{R}{2\\cos\\theta}.\\]",
+            "en": "<p>After reflection the ray has direction \\((-\\sin2\\theta,-\\cos2\\theta)\\). Let \\(D\\) be its intersection with the \\(y\\)-axis. Setting \\(x_D=0\\) gives</p>\\[OD=R\\cos\\theta-R\\sin\\theta\\cot2\\theta=\\frac{R}{2\\cos\\theta}.\\]"
+          }
+        },
+        {
+          "id": "tangency",
+          "label": {
+            "ru": "Условие касания использовано",
+            "en": "Tangency condition applied"
+          },
+          "body": {
+            "ru": "<p>Граничный отражённый луч касается контейнера. Поэтому \\(a\\) — перпендикулярное расстояние от \\(O_c\\) до этого луча. Из прямоугольного треугольника:</p>\\[a=\\left(OD-\\frac R2\\right)\\sin2\\theta=R\\sin\\theta-\\frac R2\\sin2\\theta.\\]",
+            "en": "<p>The limiting reflected ray is tangent to the container. Thus \\(a\\) is the perpendicular distance from \\(O_c\\) to the ray. The right triangle gives</p>\\[a=\\left(OD-\\frac R2\\right)\\sin2\\theta=R\\sin\\theta-\\frac R2\\sin2\\theta.\\]"
+          }
+        },
+        {
+          "id": "coefficients",
+          "label": {
+            "ru": "Коэффициенты сопоставлены",
+            "en": "Coefficients identified"
+          },
+          "body": {
+            "ru": "<p>Сравниваем с заданным видом \\(a=\\alpha\\sin\\theta_{\\max}+\\beta\\sin2\\theta_{\\max}\\). Оба коэффициента имеют размерность длины. Равносильная форма результата: \\(a=R\\sin\\theta_{\\max}(1-\\cos\\theta_{\\max})\\).</p>",
+            "en": "<p>Compare with \\(a=\\alpha\\sin\\theta_{\\max}+\\beta\\sin2\\theta_{\\max}\\). Both coefficients have dimensions of length. An equivalent form is \\(a=R\\sin\\theta_{\\max}(1-\\cos\\theta_{\\max})\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{\\alpha=R,\\qquad\\beta=-\\frac R2}.\\]",
+        "en": "\\[\\boxed{\\alpha=R,\\qquad\\beta=-\\frac R2}.\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "В условии касания используется расстояние до прямой, а не вертикальная разность \\(OD-R/2\\).",
+          "Минус перед \\(\\sin2\\theta_{\\max}\\) связан с положением центра контейнера: он находится на высоте \\(R/2\\), а не в центре зеркала."
+        ],
+        "en": [
+          "Tangency uses the perpendicular distance to the line, not just the vertical separation \\(OD-R/2\\).",
+          "The minus sign in front of \\(\\sin2\\theta_{\\max}\\) comes from the container center being at height \\(R/2\\), rather than at the mirror center."
+        ]
+      },
+      "sourcePages": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "T2-B2",
+      "max": 1.5,
+      "title": {
+        "ru": "Коэффициент усиления мощности",
+        "en": "Power gain"
+      },
+      "steps": [
+        {
+          "id": "reference-power",
+          "label": {
+            "ru": "Мощность без зеркала найдена",
+            "en": "Reference power found"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(I\\) — интенсивность солнечного света, \\(\\ell\\) — длина контейнера. Без зеркала цилиндр принимает свет через проекцию площадью \\(2a\\ell\\), поэтому \\(P_0=2Ia\\ell\\).</p>",
+            "en": "<p>Let \\(I\\) be the sunlight intensity and \\(\\ell\\) the container length. Without the mirror, the cylinder intercepts a projected area \\(2a\\ell\\), so \\(P_0=2Ia\\ell\\).</p>"
+          }
+        },
+        {
+          "id": "captured-aperture",
+          "label": {
+            "ru": "Собранный свет подсчитан без повтора",
+            "en": "Captured light counted once"
+          },
+          "body": {
+            "ru": "<p>Край принятого пучка соответствует \\(x_{\\max}=R\\sin\\theta_{\\max}\\). Полоса \\(|x|\\le a\\) попадает в контейнер напрямую, а свет из оставшейся принятой полосы приходит после отражения. Поэтому</p>\\[P=2Ia\\ell+2I\\ell(x_{\\max}-a)=2IR\\ell\\sin\\theta_{\\max}.\\]",
+            "en": "<p>The accepted beam ends at \\(x_{\\max}=R\\sin\\theta_{\\max}\\). Rays with \\(|x|\\le a\\) reach the container directly; the rest of the accepted strip arrives after reflection. Hence</p>\\[P=2Ia\\ell+2I\\ell(x_{\\max}-a)=2IR\\ell\\sin\\theta_{\\max}.\\]"
+          }
+        },
+        {
+          "id": "gain",
+          "label": {
+            "ru": "Отношение мощностей упрощено",
+            "en": "Power ratio simplified"
+          },
+          "body": {
+            "ru": "<p>Делим на \\(P_0\\) и подставляем радиус из B1:</p>\\[\\frac P{P_0}=\\frac{R\\sin\\theta_{\\max}}a=\\frac1{1-\\cos\\theta_{\\max}}.\\]<p>Если коэффициенты B1 оставлены символически, столь же допустима форма \\(P/P_0=R/(\\alpha+2\\beta\\cos\\theta_{\\max})\\).</p>",
+            "en": "<p>Divide by \\(P_0\\) and substitute the radius from B1:</p>\\[\\frac P{P_0}=\\frac{R\\sin\\theta_{\\max}}a=\\frac1{1-\\cos\\theta_{\\max}}.\\]<p>If the B1 coefficients are kept symbolic, the equivalent form \\(P/P_0=R/(\\alpha+2\\beta\\cos\\theta_{\\max})\\) is also valid.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{\\frac P{P_0}=\\frac1{1-\\cos\\theta_{\\max}}}.\\]",
+        "en": "\\[\\boxed{\\frac P{P_0}=\\frac1{1-\\cos\\theta_{\\max}}}.\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "В \\(2IR\\ell\\sin\\theta_{\\max}\\) уже учтён прямой свет. Прибавлять к этому выражению ещё \\(P_0\\) нельзя.",
+          "Нужна проекция собирающего отверстия, а не площадь кривой зеркальной поверхности."
+        ],
+        "en": [
+          "The expression \\(2IR\\ell\\sin\\theta_{\\max}\\) already includes direct light. Adding another \\(P_0\\) would count it twice.",
+          "Use the projected accepted aperture, not the area of the curved mirror surface."
+        ]
+      },
+      "sourcePages": [
+        3
+      ]
+    },
+    {
+      "id": "T2-B3",
+      "max": 0.5,
+      "title": {
+        "ru": "Радиус при пятикратной мощности",
+        "en": "Radius for a fivefold gain"
+      },
+      "steps": [
+        {
+          "id": "gain-angle",
+          "label": {
+            "ru": "Угол найден из усиления",
+            "en": "Angle obtained from gain"
+          },
+          "body": {
+            "ru": "<p>Из \\(5=1/(1-\\cos\\theta_{\\max})\\) следует \\(\\cos\\theta_{\\max}=4/5\\). Для рассматриваемой геометрии \\(0<\\theta_{\\max}<\\pi/2\\), поэтому \\(\\sin\\theta_{\\max}=3/5\\).</p>",
+            "en": "<p>From \\(5=1/(1-\\cos\\theta_{\\max})\\), obtain \\(\\cos\\theta_{\\max}=4/5\\). Here \\(0<\\theta_{\\max}<\\pi/2\\), so \\(\\sin\\theta_{\\max}=3/5\\).</p>"
+          }
+        },
+        {
+          "id": "radius",
+          "label": {
+            "ru": "Радиус вычислен",
+            "en": "Radius evaluated"
+          },
+          "body": {
+            "ru": "<p>Подставляем в B1:</p>\\[a=R\\frac35\\left(1-\\frac45\\right)=\\frac{3R}{25}.\\]<p>При \\(R=1.0\\,\\mathrm m\\) получаем \\(a=0.12\\,\\mathrm m=12\\,\\mathrm{cm}\\).</p>",
+            "en": "<p>Substitute into B1:</p>\\[a=R\\frac35\\left(1-\\frac45\\right)=\\frac{3R}{25}.\\]<p>For \\(R=1.0\\,\\mathrm m\\), this gives \\(a=0.12\\,\\mathrm m=12\\,\\mathrm{cm}\\).</p>"
+          }
+        },
+        {
+          "id": "physical-check",
+          "label": {
+            "ru": "Смысл ограничения отражений проверен",
+            "en": "Reflection assumption interpreted"
+          },
+          "body": {
+            "ru": "<p>Полученный угол равен примерно \\(36.87^\\circ\\). Это не противоречит условию: требуется не более одного отражения <em>до поглощения</em> контейнером. Порог \\(30^\\circ\\) из A1 относится к выходу луча из пустого зеркала.</p>",
+            "en": "<p>The angle is approximately \\(36.87^\\circ\\). This is consistent with the assumption of at most one reflection <em>before absorption</em> by the container. The \\(30^\\circ\\) threshold in A1 instead concerns escape from an empty mirror.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{a=12\\,\\mathrm{cm}}.\\]",
+        "en": "\\[\\boxed{a=12\\,\\mathrm{cm}}.\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "Из усиления 5 следует \\(\\cos\\theta_{\\max}=4/5\\), а не \\(1/5\\).",
+          "Не вводите здесь дополнительное ограничение \\(\\theta_{\\max}<30^\\circ\\): оно относится к другому вопросу."
+        ],
+        "en": [
+          "A gain of 5 gives \\(\\cos\\theta_{\\max}=4/5\\), not \\(1/5\\).",
+          "Do not impose an extra \\(\\theta_{\\max}<30^\\circ\\) condition here; that threshold belongs to a different question."
+        ]
+      },
+      "sourcePages": [
+        3
+      ]
+    },
+    {
+      "id": "T2-C1",
+      "max": 0.5,
+      "title": {
+        "ru": "Уравнение отражённого луча",
+        "en": "Equation of the reflected ray"
+      },
+      "steps": [
+        {
+          "id": "slope",
+          "label": {
+            "ru": "Наклон отражённого луча найден",
+            "en": "Reflected-ray slope found"
+          },
+          "body": {
+            "ru": "<p>Луч падает вертикально, а радиус к точке попадания наклонён к вертикали на \\(\\theta\\). Закон отражения задаёт направляющий вектор \\((-\\sin2\\theta,-\\cos2\\theta)\\), поэтому</p>\\[m_A=\\frac{-\\cos2\\theta}{-\\sin2\\theta}=\\cot2\\theta.\\]",
+            "en": "<p>The incident ray is vertical, and the radius at impact is tilted by \\(\\theta\\) from the vertical. Reflection gives direction \\((-\\sin2\\theta,-\\cos2\\theta)\\), hence</p>\\[m_A=\\frac{-\\cos2\\theta}{-\\sin2\\theta}=\\cot2\\theta.\\]"
+          }
+        },
+        {
+          "id": "point-on-line",
+          "label": {
+            "ru": "Точка отражения подставлена",
+            "en": "Reflection point substituted"
+          },
+          "body": {
+            "ru": "<p>Прямая проходит через \\((R\\sin\\theta,R\\cos\\theta)\\). Из \\(R\\cos\\theta=m_AR\\sin\\theta+b_A\\) получаем</p>\\[b_A=R\\cos\\theta-R\\sin\\theta\\cot2\\theta=\\frac{R}{2\\cos\\theta}.\\]",
+            "en": "<p>The line passes through \\((R\\sin\\theta,R\\cos\\theta)\\). Thus \\(R\\cos\\theta=m_AR\\sin\\theta+b_A\\), giving</p>\\[b_A=R\\cos\\theta-R\\sin\\theta\\cot2\\theta=\\frac{R}{2\\cos\\theta}.\\]"
+          }
+        },
+        {
+          "id": "equivalent-forms",
+          "label": {
+            "ru": "Формы ответа и размерности проверены",
+            "en": "Equivalent forms and dimensions checked"
+          },
+          "body": {
+            "ru": "<p>Наклон \\(m_A\\) безразмерен, а \\(b_A\\) имеет размерность длины. Равносильные записи: \\(m_A=(\\cot\\theta-\\tan\\theta)/2\\), \\(b_A=(R/2)\\sec\\theta\\). В форме подсказки \\(K_1=1\\), \\(K_2=2\\), \\(K_3=1/2\\), \\(K_4=1\\).</p>",
+            "en": "<p>The slope \\(m_A\\) is dimensionless and \\(b_A\\) has dimensions of length. Equivalent forms are \\(m_A=(\\cot\\theta-\\tan\\theta)/2\\) and \\(b_A=(R/2)\\sec\\theta\\). In the hint notation, \\(K_1=1\\), \\(K_2=2\\), \\(K_3=1/2\\), \\(K_4=1\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{m_A=\\cot2\\theta,\\qquad b_A=\\frac{R}{2\\cos\\theta}}.\\]",
+        "en": "\\[\\boxed{m_A=\\cot2\\theta,\\qquad b_A=\\frac{R}{2\\cos\\theta}}.\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "Обе компоненты направления луча отрицательны на показанной ветви при \\(\\theta<\\pi/4\\), поэтому наклон положителен.",
+          "Угол отражённого луча с вертикалью даёт \\(\\cot2\\theta\\), а не \\(\\tan2\\theta\\). При \\(\\theta=0\\) луч вертикален; формула с конечным наклоном понимается предельно."
+        ],
+        "en": [
+          "Both direction components are negative on the illustrated branch for \\(\\theta<\\pi/4\\), so its slope is positive.",
+          "The angle measured from the vertical gives \\(\\cot2\\theta\\), not \\(\\tan2\\theta\\). At \\(\\theta=0\\) the ray is vertical; the finite-slope form is interpreted by a limit."
+        ]
+      },
+      "sourcePages": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "T2-C2",
+      "max": 2,
+      "title": {
+        "ru": "Соседний луч в первом порядке",
+        "en": "Neighboring ray to first order"
+      },
+      "steps": [
+        {
+          "id": "shift-angle",
+          "label": {
+            "ru": "Угол соседнего луча подставлен",
+            "en": "Neighboring angle substituted"
+          },
+          "body": {
+            "ru": "<p>Для луча \\(B\\) угол падения равен \\(\\theta+\\Delta\\theta\\). Поэтому точные выражения перед разложением имеют вид</p>\\[m_B=\\cot(2\\theta+2\\Delta\\theta),\\qquad b_B=\\frac R2\\sec(\\theta+\\Delta\\theta).\\]",
+            "en": "<p>Ray \\(B\\) has incidence angle \\(\\theta+\\Delta\\theta\\). Before expansion, the exact expressions are</p>\\[m_B=\\cot(2\\theta+2\\Delta\\theta),\\qquad b_B=\\frac R2\\sec(\\theta+\\Delta\\theta).\\]"
+          }
+        },
+        {
+          "id": "slope-expansion",
+          "label": {
+            "ru": "Наклон разложен по малому углу",
+            "en": "Slope expanded in the small angle"
+          },
+          "body": {
+            "ru": "<p>Применяем \\(f(\\theta+\\Delta\\theta)=f(\\theta)+f^{\\prime}(\\theta)\\Delta\\theta+O((\\Delta\\theta)^2)\\). Так как \\(d(\\cot2\\theta)/d\\theta=-2\\csc^2(2\\theta)\\),</p>\\[m_B=\\cot2\\theta-2\\csc^2(2\\theta)\\,\\Delta\\theta+O((\\Delta\\theta)^2).\\]",
+            "en": "<p>Use \\(f(\\theta+\\Delta\\theta)=f(\\theta)+f^{\\prime}(\\theta)\\Delta\\theta+O((\\Delta\\theta)^2)\\). Since \\(d(\\cot2\\theta)/d\\theta=-2\\csc^2(2\\theta)\\),</p>\\[m_B=\\cot2\\theta-2\\csc^2(2\\theta)\\,\\Delta\\theta+O((\\Delta\\theta)^2).\\]"
+          }
+        },
+        {
+          "id": "intercept-expansion",
+          "label": {
+            "ru": "Свободный член разложен",
+            "en": "Intercept expanded"
+          },
+          "body": {
+            "ru": "<p>Используем \\(d(\\sec\\theta)/d\\theta=\\sec\\theta\\tan\\theta\\):</p>\\[b_B=\\frac R2\\sec\\theta+\\frac R2\\sec\\theta\\tan\\theta\\,\\Delta\\theta+O((\\Delta\\theta)^2).\\]<p>Первый порядок можно также записать как \\(\\dfrac{R}{2\\cos\\theta}(1+\\tan\\theta\\,\\Delta\\theta)\\).</p>",
+            "en": "<p>Using \\(d(\\sec\\theta)/d\\theta=\\sec\\theta\\tan\\theta\\),</p>\\[b_B=\\frac R2\\sec\\theta+\\frac R2\\sec\\theta\\tan\\theta\\,\\Delta\\theta+O((\\Delta\\theta)^2).\\]<p>The first-order expression is equivalently \\(\\dfrac{R}{2\\cos\\theta}(1+\\tan\\theta\\,\\Delta\\theta)\\).</p>"
+          }
+        },
+        {
+          "id": "order-check",
+          "label": {
+            "ru": "Порядок приближения соблюдён",
+            "en": "Approximation order checked"
+          },
+          "body": {
+            "ru": "<p>В обоих коэффициентах сохранены постоянный член и член, линейный по \\(\\Delta\\theta\\); углы измеряются в радианах. Тригонометрически преобразованные, но равносильные выражения столь же корректны.</p>",
+            "en": "<p>Both coefficients retain the constant and linear terms in \\(\\Delta\\theta\\); angles are in radians. Algebraically equivalent trigonometric forms are equally valid.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{m_B=\\cot2\\theta-2\\csc^2(2\\theta)\\Delta\\theta}\\]\\[\\boxed{b_B=\\frac{R}{2\\cos\\theta}(1+\\tan\\theta\\Delta\\theta)}\\]<p>До первого порядка по \\(\\Delta\\theta\\).</p>",
+        "en": "\\[\\boxed{m_B=\\cot2\\theta-2\\csc^2(2\\theta)\\Delta\\theta}\\]\\[\\boxed{b_B=\\frac{R}{2\\cos\\theta}(1+\\tan\\theta\\Delta\\theta)}\\]<p>To first order in \\(\\Delta\\theta\\).</p>"
+      },
+      "pitfalls": {
+        "ru": [
+          "При дифференцировании \\(\\cot2\\theta\\) необходимо учесть множитель 2 и отрицательный знак.",
+          "В \\(b_B\\) малый угол входит как \\(\\Delta\\theta\\), а не \\(2\\Delta\\theta\\); квадратичные члены в этом пункте отбрасываются."
+        ],
+        "en": [
+          "Differentiating \\(\\cot2\\theta\\) requires both the factor 2 and the minus sign.",
+          "The small-angle shift in \\(b_B\\) is \\(\\Delta\\theta\\), not \\(2\\Delta\\theta\\); discard quadratic terms here."
+        ]
+      },
+      "sourcePages": [
+        4
+      ]
+    },
+    {
+      "id": "T2-C3",
+      "max": 1,
+      "title": {
+        "ru": "Огибающая отражённых лучей",
+        "en": "Envelope of the reflected rays"
+      },
+      "steps": [
+        {
+          "id": "intersection",
+          "label": {
+            "ru": "Уравнения пересечения записаны",
+            "en": "Intersection equations written"
+          },
+          "body": {
+            "ru": "<p>В точке пересечения \\(Y_c=m_AX_c+b_A=m_BX_c+b_B\\). Вычитая уравнения, получаем</p>\\[X_c=-\\frac{b_B-b_A}{m_B-m_A}.\\]<p>Каустика получается в пределе \\(\\Delta\\theta\\to0\\).</p>",
+            "en": "<p>At the intersection, \\(Y_c=m_AX_c+b_A=m_BX_c+b_B\\). Subtracting gives</p>\\[X_c=-\\frac{b_B-b_A}{m_B-m_A}.\\]<p>The caustic is obtained as \\(\\Delta\\theta\\to0\\).</p>"
+          }
+        },
+        {
+          "id": "derivative-ratio",
+          "label": {
+            "ru": "Предел отношения найден",
+            "en": "Derivative ratio evaluated"
+          },
+          "body": {
+            "ru": "<p>Подставляем линейные приращения из C2 и сокращаем \\(\\Delta\\theta\\):</p>\\[X_c=-\\frac{b_A^{\\prime}(\\theta)}{m_A^{\\prime}(\\theta)}=\\frac R4\\sec\\theta\\tan\\theta\\sin^2(2\\theta).\\]",
+            "en": "<p>Substitute the linear increments from C2 and cancel \\(\\Delta\\theta\\):</p>\\[X_c=-\\frac{b_A^{\\prime}(\\theta)}{m_A^{\\prime}(\\theta)}=\\frac R4\\sec\\theta\\tan\\theta\\sin^2(2\\theta).\\]"
+          }
+        },
+        {
+          "id": "x-coordinate",
+          "label": {
+            "ru": "Абсцисса упрощена",
+            "en": "Horizontal coordinate simplified"
+          },
+          "body": {
+            "ru": "<p>Используем \\(\\sin2\\theta=2\\sin\\theta\\cos\\theta\\). Тогда</p>\\[X_c=\\frac R4\\frac{\\sin\\theta}{\\cos^2\\theta}\\,4\\sin^2\\theta\\cos^2\\theta=R\\sin^3\\theta.\\]",
+            "en": "<p>Using \\(\\sin2\\theta=2\\sin\\theta\\cos\\theta\\),</p>\\[X_c=\\frac R4\\frac{\\sin\\theta}{\\cos^2\\theta}\\,4\\sin^2\\theta\\cos^2\\theta=R\\sin^3\\theta.\\]"
+          }
+        },
+        {
+          "id": "y-coordinate",
+          "label": {
+            "ru": "Ордината и равносильная форма найдены",
+            "en": "Vertical coordinate and equivalent form found"
+          },
+          "body": {
+            "ru": "<p>Возвращаем результат в \\(Y_c=m_AX_c+b_A\\):</p>\\[Y_c=\\frac R2\\cos\\theta(2-\\cos2\\theta)=\\frac R4(3\\cos\\theta-\\cos3\\theta).\\]<p>Обе координаты имеют размерность длины; при \\(\\theta\\to0\\) получаем вершину \\((0,R/2)\\).</p>",
+            "en": "<p>Substitute back into \\(Y_c=m_AX_c+b_A\\):</p>\\[Y_c=\\frac R2\\cos\\theta(2-\\cos2\\theta)=\\frac R4(3\\cos\\theta-\\cos3\\theta).\\]<p>Both coordinates have dimensions of length, and \\(\\theta\\to0\\) gives the cusp \\((0,R/2)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{X_c=R\\sin^3\\theta}\\]\\[\\boxed{Y_c=\\frac R2\\cos\\theta(2-\\cos2\\theta)}.\\]",
+        "en": "\\[\\boxed{X_c=R\\sin^3\\theta}\\]\\[\\boxed{Y_c=\\frac R2\\cos\\theta(2-\\cos2\\theta)}.\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "В формуле для \\(X_c\\) важен минус: \\(X_c=-\\Delta b/\\Delta m\\).",
+          "Не подставляйте \\(\\Delta\\theta=0\\) до сокращения: получится неопределённость \\(0/0\\). Искомая точка принадлежит пределу соседних лучей, а не пересечению совпавших прямых."
+        ],
+        "en": [
+          "The minus sign matters: \\(X_c=-\\Delta b/\\Delta m\\).",
+          "Do not set \\(\\Delta\\theta=0\\) before taking the ratio; that gives \\(0/0\\). The point is the limiting intersection of neighboring rays, not the intersection of two identical lines."
+        ]
+      },
+      "sourcePages": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "T2-C4",
+      "max": 1,
+      "title": {
+        "ru": "Форма каустики около вершины",
+        "en": "Caustic near its cusp"
+      },
+      "steps": [
+        {
+          "id": "local-expansion",
+          "label": {
+            "ru": "Ведущие степени угла найдены",
+            "en": "Leading angular powers found"
+          },
+          "body": {
+            "ru": "<p>Из параметрических формул C3:</p>\\[X_c=R\\theta^3+O(\\theta^5),\\qquad Y_c=\\frac R2+\\frac{3R}{4}\\theta^2+O(\\theta^4).\\]<p>Для \\(X_c\\) необходим кубический член: линейный и квадратичный отсутствуют.</p>",
+            "en": "<p>The parametric formulas from C3 give</p>\\[X_c=R\\theta^3+O(\\theta^5),\\qquad Y_c=\\frac R2+\\frac{3R}{4}\\theta^2+O(\\theta^4).\\]<p>The cubic term in \\(X_c\\) is essential; its linear and quadratic terms vanish.</p>"
+          }
+        },
+        {
+          "id": "eliminate-angle",
+          "label": {
+            "ru": "Параметр исключён",
+            "en": "Angle eliminated"
+          },
+          "body": {
+            "ru": "<p>В ведущем порядке \\(\\theta^2=(|X_c|/R)^{2/3}\\). Подставляя в ординату, получаем локальную форму</p>\\[Y_c\\simeq\\frac R2+\\frac34R^{1/3}|X_c|^{2/3}.\\]<p>Модуль описывает обе симметричные ветви каустики.</p>",
+            "en": "<p>To leading order, \\(\\theta^2=(|X_c|/R)^{2/3}\\). Substitution gives the local form</p>\\[Y_c\\simeq\\frac R2+\\frac34R^{1/3}|X_c|^{2/3}.\\]<p>The absolute value covers both symmetric branches.</p>"
+          }
+        },
+        {
+          "id": "cusp-coefficients",
+          "label": {
+            "ru": "Коэффициенты и степень сопоставлены",
+            "en": "Cusp coefficients and exponent identified"
+          },
+          "body": {
+            "ru": "<p>Сравниваем с \\(Y_c=v|X_c|^{p/q}+u\\). Получаем \\(u=R/2\\), \\(v=(3/4)R^{1/3}\\) и \\(p/q=2/3\\). Обычно выбирают взаимно простые \\(p=2\\), \\(q=3\\); любая равная рациональная степень соответствует тому же ответу. Размерность \\(v\\) равна \\(\\mathrm{length}^{1/3}\\).</p>",
+            "en": "<p>Compare with \\(Y_c=v|X_c|^{p/q}+u\\). Thus \\(u=R/2\\), \\(v=(3/4)R^{1/3}\\), and \\(p/q=2/3\\). The usual coprime choice is \\(p=2\\), \\(q=3\\); any equal rational exponent is equivalent. The dimensions of \\(v\\) are \\(\\mathrm{length}^{1/3}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{u=\\frac R2,\\qquad v=\\frac34R^{1/3}}\\]\\[\\boxed{\\frac pq=\\frac23}.\\]",
+        "en": "\\[\\boxed{u=\\frac R2,\\qquad v=\\frac34R^{1/3}}\\]\\[\\boxed{\\frac pq=\\frac23}.\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "Нужно сохранить \\(X_c\\sim\\theta^3\\) и \\(Y_c-R/2\\sim\\theta^2\\); слишком раннее обнуление малых членов скрывает степень \\(2/3\\).",
+          "Это приближение вблизи вершины, а не точное уравнение всей каустики."
+        ],
+        "en": [
+          "Retain \\(X_c\\sim\\theta^3\\) and \\(Y_c-R/2\\sim\\theta^2\\); dropping small terms too early hides the \\(2/3\\) exponent.",
+          "This is a near-cusp approximation, not an exact equation for the whole caustic."
+        ]
+      },
+      "sourcePages": [
+        5
+      ]
+    }
+  ],
+  "notes": {
+    "ru": [
+      "Чеклист помогает проверить физические шаги решения. Это не официальная побалльная схема: баллы указаны только для подпунктов.",
+      "Равносильные формулы, другой порядок рассуждений и корректные альтернативные методы допустимы; отсутствие именно такого промежуточного шага само по себе не означает ошибку.",
+      "В исходном PDF в C2 есть опечатка в одной промежуточной строке разложения наклона. Здесь разложение получено через производную; итоговая формула источника \\(m_B=\\cot2\\theta-2\\csc^2(2\\theta)\\Delta\\theta\\) верна.",
+      "Номера страниц ниже отсчитываются от начала PDF решения (1-5); печатная нумерация самого документа — 5-9."
+    ],
+    "en": [
+      "The checklist supports self-review of the physical reasoning. It is not an official step-by-step marking rubric: marks are given only for whole subparts.",
+      "Equivalent formulas, a different order of reasoning, and valid alternative methods are acceptable; omitting a particular intermediate step shown here is not itself an error.",
+      "The source PDF has a typo in one intermediate line of the C2 slope expansion. The expansion here is obtained by differentiation; the source final formula \\(m_B=\\cot2\\theta-2\\csc^2(2\\theta)\\Delta\\theta\\) is correct.",
+      "Source page numbers count from the beginning of the solution PDF (1-5); the document itself prints pages 5-9."
+    ]
+  }
+}

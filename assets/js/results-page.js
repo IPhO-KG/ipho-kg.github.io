@@ -59,7 +59,7 @@
       '<header class="rhead"><p class="official-badge"><strong>'+esc(t('official.site'))+'</strong><span>'+esc(t('official.badge'))+'</span></p>'+
       '<h1>'+esc(t('results.pageTitle',{year:YEAR})).replace(esc(YEAR),'<span>'+esc(YEAR)+'</span>')+'</h1><p class="sub">'+esc(t('results.pageSub'))+'</p></header>'+
       '<div class="ytabs" role="navigation" aria-label="'+esc(t('results.years'))+'">'+tabs+'</div>'+
-      '<div class="yhero"><div><span class="yhero-kicker">'+esc(t('results.kicker'))+'</span><h2>'+esc(t('results.stage',{year:YEAR}))+'</h2><div class="yhero-actions"><button class="copy-btn" type="button" id="copy-link">⧉ '+esc(t('results.copyLink'))+'</button></div></div>'+
+      '<div class="yhero"><div><span class="yhero-kicker">'+esc(t('results.kicker'))+'</span><h2>'+esc(t('results.stage',{year:YEAR}))+'</h2><div class="yhero-actions"><button class="copy-btn" type="button" id="copy-link">'+esc(t('results.copyLink'))+'</button></div></div>'+
       '<dl class="yhero-facts">'+dateFact+'<div class="yhero-fact"><dt>'+esc(t('results.place'))+'</dt><dd>'+esc(t('results.bishkek'))+'</dd></div><div class="yhero-fact"><dt>'+esc(t('results.duration'))+'</dt><dd>'+esc(I18N.pluralDays(days))+'</dd></div></dl></div>'+
       renderPDFs()+
       '<div class="slbl" style="margin-top:1.5rem">'+esc(t('results.table'))+'</div><div class="tw">'+renderTable()+'</div>';
@@ -73,7 +73,7 @@
   async function copyLink(){
     const btn=document.getElementById('copy-link');
     const url=I18N.langUrl('/results/'+YEAR+'/');
-    try{ await navigator.clipboard.writeText(url); if(btn){btn.textContent='✓ '+t('results.copied'); setTimeout(()=>{btn.textContent='⧉ '+t('results.copyLink')},1800);} }
+    try{ await navigator.clipboard.writeText(url); if(btn){btn.textContent=t('results.copied'); setTimeout(()=>{btn.textContent=t('results.copyLink')},1800);} }
     catch{ window.prompt(t('results.copyLink'),url); }
   }
 
@@ -84,7 +84,7 @@
   function updateThemeToggle(){
     const dark=resolvedTheme()==='dark';
     const icon=document.getElementById('theme-icon'),label=document.getElementById('theme-label'),btn=document.getElementById('theme-toggle');
-    if(icon)icon.textContent=dark?'☀':'☾';
+    if(icon)icon.innerHTML=dark?'<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>':'<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1a9 9 0 1 0 9.9 9.9Z"/></svg>';
     if(label)label.textContent=dark?t('theme.light'):t('theme.dark');
     if(btn){const a=dark?t('theme.toLight'):t('theme.toDark');btn.setAttribute('aria-label',a);btn.title=a;}
   }

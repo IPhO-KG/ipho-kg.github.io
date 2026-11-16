@@ -1,0 +1,396 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Три задачи",
+    "en": "Three problems"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2026/IPhO_2026_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-A1",
+      "max": 3,
+      "title": {
+        "ru": "Размер гидростатического затвора",
+        "en": "Size of the hydrostatic gate"
+      },
+      "steps": [
+        {
+          "id": "critical-contact",
+          "label": {
+            "ru": "Выбрать условие открытия",
+            "en": "Identify the opening threshold"
+          },
+          "body": {
+            "ru": "<p>Рассмотрим момент, когда затвор только начинает открываться. Реакция нижнего края отверстия становится нулевой. Реакция шарнира проходит через \\(O\\), поэтому её момент относительно оси вращения равен нулю. Остаётся сравнить моменты давления воды и эффективного веса куба.</p><p>Обе стороны куба погружены в воду. Давление удобно представить как обычное гидростатическое давление при одинаковом уровне воды плюс постоянную добавку \\(\\Delta p=\\rho_0g\\Delta h\\) со стороны более высокого уровня.</p>",
+            "en": "<p>Consider the instant at which the gate just begins to open. The reaction at the lower edge of the opening becomes zero. The hinge reaction acts through \\(O\\), so it has no torque about the rotation axis. The remaining balance is between the water-pressure torque and the effective-weight torque.</p><p>Both sides of the cube are submerged. Decompose the pressure into the ordinary hydrostatic pressure for equal water levels plus a constant additional pressure \\(\\Delta p=\\rho_0g\\Delta h\\) on the higher-level side.</p>"
+          }
+        },
+        {
+          "id": "projected-pressure",
+          "label": {
+            "ru": "Найти результирующую давления",
+            "en": "Find the net pressure force"
+          },
+          "body": {
+            "ru": "<p>Горизонтальная сила от добавочного давления определяется вертикальной проекцией закрытого отверстия, а не площадью наклонной грани куба. Размер отверстия по вертикали равен \\(a/\\sqrt2\\), ширина перпендикулярно рисунку — \\(a\\). Поэтому</p>\\[S=\\frac{a^2}{\\sqrt2},\\qquad \\Delta F=\\Delta p\\,S=\\frac{\\rho_0g\\Delta h\\,a^2}{\\sqrt2}.\\]<p>При постоянной добавке давления линия действия проходит через середину вертикальной проекции отверстия. Базовое гидростатическое давление даёт силу Архимеда \\(F_A=\\rho_0ga^3\\).</p>",
+            "en": "<p>The horizontal force due to the extra pressure is determined by the vertical projection of the sealed opening, not the area of an inclined cube face. The opening has vertical size \\(a/\\sqrt2\\) and width \\(a\\) perpendicular to the figure. Thus</p>\\[S=\\frac{a^2}{\\sqrt2},\\qquad \\Delta F=\\Delta p\\,S=\\frac{\\rho_0g\\Delta h\\,a^2}{\\sqrt2}.\\]<p>Because the extra pressure is constant, its resultant acts through the midpoint of the opening’s vertical projection. The baseline hydrostatic pressure produces the buoyant force \\(F_A=\\rho_0ga^3\\).</p>"
+          }
+        },
+        {
+          "id": "torque-balance",
+          "label": {
+            "ru": "Составить уравнение моментов",
+            "en": "Balance torques about the hinge"
+          },
+          "body": {
+            "ru": "<p>По геометрии рисунка вертикальное плечо \\(\\Delta F\\) и горизонтальное плечо эффективного веса одинаковы:</p>\\[d=\\frac{a}{2\\sqrt2}.\\]<p>Центр тяжести и центр вытесненного объёма совпадают. Поэтому вес вместе с силой Архимеда эквивалентен направленной вниз силе \\((\\rho-\\rho_0)ga^3\\). На пороге открытия</p>\\[\\frac{\\rho_0g\\Delta h\\,a^2}{\\sqrt2}\\,d=(\\rho-\\rho_0)ga^3d.\\]<p>После сокращения общего плеча, \\(g\\) и \\(a^2\\) получаем</p>\\[a=\\frac{\\rho_0\\Delta h}{\\sqrt2(\\rho-\\rho_0)}.\\]",
+            "en": "<p>The geometry gives the same vertical lever arm for \\(\\Delta F\\) and horizontal lever arm for the effective weight:</p>\\[d=\\frac{a}{2\\sqrt2}.\\]<p>The centre of mass and the centre of displaced volume coincide. Weight and buoyancy therefore combine into a downward force \\((\\rho-\\rho_0)ga^3\\). At the opening threshold,</p>\\[\\frac{\\rho_0g\\Delta h\\,a^2}{\\sqrt2}\\,d=(\\rho-\\rho_0)ga^3d.\\]<p>Cancelling the common lever arm, \\(g\\), and \\(a^2\\) gives</p>\\[a=\\frac{\\rho_0\\Delta h}{\\sqrt2(\\rho-\\rho_0)}.\\]"
+          }
+        },
+        {
+          "id": "numerical-threshold",
+          "label": {
+            "ru": "Подставить плотность и проверить порог",
+            "en": "Substitute the density and check the threshold"
+          },
+          "body": {
+            "ru": "<p>При \\(\\rho=3\\rho_0\\)</p>\\[a=\\frac{\\Delta h}{2\\sqrt2}=\\frac{1.41}{2\\sqrt2}\\,\\mathrm m=0.4985\\ldots\\,\\mathrm m\\approx0.50\\,\\mathrm m.\\]<p>Проверка: \\(\\Delta h_{\\mathrm{crit}}=2\\sqrt2\\,a\\), то есть более тяжёлый или больший куб требует большей разности уровней для открытия. Равенство даёт предельный размер для указанного уровня; меньший куб открывался бы раньше.</p>",
+            "en": "<p>For \\(\\rho=3\\rho_0\\),</p>\\[a=\\frac{\\Delta h}{2\\sqrt2}=\\frac{1.41}{2\\sqrt2}\\,\\mathrm m=0.4985\\ldots\\,\\mathrm m\\approx0.50\\,\\mathrm m.\\]<p>As a check, \\(\\Delta h_{\\mathrm{crit}}=2\\sqrt2\\,a\\): a heavier or larger cube needs a greater water-level difference to open. Equality gives the limiting size for the specified level; a smaller cube would open earlier.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\(\\displaystyle a=\\frac{\\Delta h}{2\\sqrt2}=0.4985\\ldots\\,\\mathrm m\\approx0.50\\,\\mathrm m.\\)",
+        "en": "\\(\\displaystyle a=\\frac{\\Delta h}{2\\sqrt2}=0.4985\\ldots\\,\\mathrm m\\approx0.50\\,\\mathrm m.\\)"
+      },
+      "pitfalls": {
+        "ru": [
+          "Использовать площадь наклонной грани вместо вертикальной проекции отверстия.",
+          "Забыть силу Архимеда или приписать шарниру ненулевой момент относительно O.",
+          "Использовать разные плечи без проверки геометрии: здесь оба равны a/(2√2)."
+        ],
+        "en": [
+          "Using the inclined-face area instead of the vertical projection of the opening.",
+          "Omitting buoyancy or assigning a hinge torque about O.",
+          "Using unequal lever arms without checking the geometry: both are a/(2√2) here."
+        ]
+      },
+      "sourcePages": [
+        1
+      ]
+    },
+    {
+      "id": "T1-B1",
+      "max": 1,
+      "title": {
+        "ru": "Максимальное расстояние в связанной паре",
+        "en": "Maximum separation of the bound pair"
+      },
+      "steps": [
+        {
+          "id": "initial-energy",
+          "label": {
+            "ru": "Найти начальную скорость и полную энергию",
+            "en": "Find the initial speed and total energy"
+          },
+          "body": {
+            "ru": "<p>Обозначим \\(\\kappa=ke^2\\), \\(r_0=100a_0\\). Из определения боровского радиуса следует \\(\\hbar^2=m\\kappa a_0\\). Каждая частица находится на расстоянии \\(r_0/2=50a_0\\) от центра масс. Условие на момент импульса каждой частицы даёт</p>\\[mv_0\\frac{r_0}{2}=\\mu\\hbar,\\qquad v_0=\\frac{\\mu\\hbar}{50ma_0}.\\]<p>Суммируем кинетические энергии обеих частиц, но потенциальную энергию пары учитываем один раз:</p>\\[E=2\\frac{mv_0^2}{2}-\\frac{\\kappa}{r_0}=\\frac{\\kappa}{a_0}\\left(\\frac{\\mu^2}{2500}-\\frac1{100}\\right).\\]<p>При \\(\\mu=4\\) получаем \\(E=-9\\kappa/(2500a_0)&lt;0\\).</p>",
+            "en": "<p>Write \\(\\kappa=ke^2\\) and \\(r_0=100a_0\\). The Bohr-radius definition gives \\(\\hbar^2=m\\kappa a_0\\). Each particle is \\(r_0/2=50a_0\\) from the centre of mass. Its individual angular momentum therefore gives</p>\\[mv_0\\frac{r_0}{2}=\\mu\\hbar,\\qquad v_0=\\frac{\\mu\\hbar}{50ma_0}.\\]<p>Add both kinetic energies, but count the pair’s potential energy only once:</p>\\[E=2\\frac{mv_0^2}{2}-\\frac{\\kappa}{r_0}=\\frac{\\kappa}{a_0}\\left(\\frac{\\mu^2}{2500}-\\frac1{100}\\right).\\]<p>For \\(\\mu=4\\), this is \\(E=-9\\kappa/(2500a_0)&lt;0\\).</p>"
+          }
+        },
+        {
+          "id": "relative-motion",
+          "label": {
+            "ru": "Различить индивидуальный и полный моменты",
+            "en": "Distinguish individual and total angular momenta"
+          },
+          "body": {
+            "ru": "<p>В относительном движении используем расстояние между частицами \\(r\\), относительную скорость \\(u=2v\\) и приведённую массу \\(m_{\\mathrm{red}}=m/2\\). Полный момент системы равен</p>\\[L=m_{\\mathrm{red}}ru=2\\mu\\hbar=8\\hbar.\\]<p>Он вдвое больше момента каждой отдельной частицы. Энергия относительного движения:</p>\\[E=\\frac{m_{\\mathrm{red}}\\dot r^2}{2}+\\frac{L^2}{2m_{\\mathrm{red}}r^2}-\\frac{\\kappa}{r}=\\frac{m\\dot r^2}{4}+\\frac{L^2}{mr^2}-\\frac{\\kappa}{r}.\\]",
+            "en": "<p>For relative motion, use the separation \\(r\\), relative speed \\(u=2v\\), and reduced mass \\(m_{\\mathrm{red}}=m/2\\). The system’s total angular momentum is</p>\\[L=m_{\\mathrm{red}}ru=2\\mu\\hbar=8\\hbar.\\]<p>This is twice the angular momentum of either individual particle. The relative-motion energy is</p>\\[E=\\frac{m_{\\mathrm{red}}\\dot r^2}{2}+\\frac{L^2}{2m_{\\mathrm{red}}r^2}-\\frac{\\kappa}{r}=\\frac{m\\dot r^2}{4}+\\frac{L^2}{mr^2}-\\frac{\\kappa}{r}.\\]"
+          }
+        },
+        {
+          "id": "turning-points",
+          "label": {
+            "ru": "Найти два поворотных расстояния",
+            "en": "Find both turning separations"
+          },
+          "body": {
+            "ru": "<p>В точках минимального и максимального расстояния \\(\\dot r=0\\). Подставляя найденные \\(E\\) и \\(L\\), получаем</p>\\[-\\frac{9\\kappa}{2500a_0}=\\frac{64\\hbar^2}{mr^2}-\\frac{\\kappa}{r}.\\]<p>Для \\(x=r/a_0\\) и \\(\\hbar^2=m\\kappa a_0\\) это уравнение принимает вид</p>\\[\\frac9{2500}x^2-x+64=0,\\qquad x=100\\quad\\text{или}\\quad x=\\frac{1600}{9}.\\]",
+            "en": "<p>At minimum and maximum separation, \\(\\dot r=0\\). Substituting the calculated \\(E\\) and \\(L\\) gives</p>\\[-\\frac{9\\kappa}{2500a_0}=\\frac{64\\hbar^2}{mr^2}-\\frac{\\kappa}{r}.\\]<p>Using \\(x=r/a_0\\) and \\(\\hbar^2=m\\kappa a_0\\), this becomes</p>\\[\\frac9{2500}x^2-x+64=0,\\qquad x=100\\quad\\text{or}\\quad x=\\frac{1600}{9}.\\]"
+          }
+        },
+        {
+          "id": "select-apocentre",
+          "label": {
+            "ru": "Выбрать максимум и проверить эллипсом",
+            "en": "Select the maximum and check using the ellipse"
+          },
+          "body": {
+            "ru": "<p>Начальное расстояние \\(100a_0\\) — меньший корень, то есть перицентр. Следовательно,</p>\\[r_{\\max}=\\frac{1600}{9}a_0\\approx177.78a_0.\\]<p>Эквивалентная проверка: большая полуось относительной эллиптической орбиты равна \\(a_{\\mathrm{orb}}=-\\kappa/(2E)=1250a_0/9\\). Поэтому \\(r_{\\min}+r_{\\max}=2a_{\\mathrm{orb}}\\), что даёт тот же ответ. Такой геометрический способ также корректен.</p>",
+            "en": "<p>The initial separation \\(100a_0\\) is the smaller root, hence the pericentre. Therefore,</p>\\[r_{\\max}=\\frac{1600}{9}a_0\\approx177.78a_0.\\]<p>An equivalent check uses the relative ellipse’s semimajor axis, \\(a_{\\mathrm{orb}}=-\\kappa/(2E)=1250a_0/9\\). The identity \\(r_{\\min}+r_{\\max}=2a_{\\mathrm{orb}}\\) gives the same answer. This geometric route is equally valid.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\(\\displaystyle r_{\\max}=\\frac{1600}{9}a_0\\approx177.78a_0.\\)",
+        "en": "\\(\\displaystyle r_{\\max}=\\frac{1600}{9}a_0\\approx177.78a_0.\\)"
+      },
+      "pitfalls": {
+        "ru": [
+          "Подставлять μℏ как полный момент системы: полный момент равен 2μℏ.",
+          "Использовать массу m вместо приведённой массы m/2 вместе с относительной скоростью.",
+          "Удвоить потенциальную энергию пары или принять начальное расстояние за максимум."
+        ],
+        "en": [
+          "Using μℏ as the system’s total angular momentum: the total is 2μℏ.",
+          "Using mass m instead of reduced mass m/2 together with the relative speed.",
+          "Double-counting the pair potential or treating the initial separation as the maximum."
+        ]
+      },
+      "sourcePages": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "T1-B2",
+      "max": 2.5,
+      "title": {
+        "ru": "Направление разлёта несвязанной пары",
+        "en": "Asymptotic direction of the unbound pair"
+      },
+      "steps": [
+        {
+          "id": "positive-energy",
+          "label": {
+            "ru": "Определить энергию и полный момент",
+            "en": "Determine the energy and total angular momentum"
+          },
+          "body": {
+            "ru": "<p>Снова положим \\(\\kappa=ke^2\\), \\(r_0=100a_0\\), \\(m_{\\mathrm{red}}=m/2\\). Из \\(mv_0r_0/2=\\mu\\hbar\\) и \\(E=mv_0^2-\\kappa/r_0\\) при \\(\\mu=15/2\\) следует</p>\\[L=2\\mu\\hbar=15\\hbar,\\qquad E=\\frac{\\kappa}{a_0}\\left(\\frac{(15/2)^2}{2500}-\\frac1{100}\\right)=\\frac{\\kappa}{80a_0}&gt;0.\\]<p>Положительная энергия соответствует гиперболической относительной орбите. Начальная скорость перпендикулярна радиусу, поэтому начальная точка является перицентром гиперболы.</p>",
+            "en": "<p>Again use \\(\\kappa=ke^2\\), \\(r_0=100a_0\\), and \\(m_{\\mathrm{red}}=m/2\\). From \\(mv_0r_0/2=\\mu\\hbar\\) and \\(E=mv_0^2-\\kappa/r_0\\), the value \\(\\mu=15/2\\) gives</p>\\[L=2\\mu\\hbar=15\\hbar,\\qquad E=\\frac{\\kappa}{a_0}\\left(\\frac{(15/2)^2}{2500}-\\frac1{100}\\right)=\\frac{\\kappa}{80a_0}&gt;0.\\]<p>Positive energy corresponds to a hyperbolic relative orbit. The initial velocity is perpendicular to the radius, so the initial point is the hyperbola’s pericentre.</p>"
+          }
+        },
+        {
+          "id": "eccentricity",
+          "label": {
+            "ru": "Вычислить эксцентриситет",
+            "en": "Calculate the eccentricity"
+          },
+          "body": {
+            "ru": "<p>В формуле из подсказки \\(L\\) — полный момент относительного движения:</p>\\[\\varepsilon=\\sqrt{1+\\frac{4L^2E}{m\\kappa^2}}.\\]<p>С учётом \\(\\hbar^2=m\\kappa a_0\\)</p>\\[\\varepsilon=\\sqrt{1+\\frac{4(15\\hbar)^2}{m\\kappa^2}\\frac{\\kappa}{80a_0}}=\\sqrt{1+\\frac{45}{4}}=\\frac72.\\]<p>Проверка \\(\\varepsilon&gt;1\\) согласуется с несвязанной орбитой.</p>",
+            "en": "<p>In the supplied hint, \\(L\\) is the total angular momentum of the relative motion:</p>\\[\\varepsilon=\\sqrt{1+\\frac{4L^2E}{m\\kappa^2}}.\\]<p>Using \\(\\hbar^2=m\\kappa a_0\\),</p>\\[\\varepsilon=\\sqrt{1+\\frac{4(15\\hbar)^2}{m\\kappa^2}\\frac{\\kappa}{80a_0}}=\\sqrt{1+\\frac{45}{4}}=\\frac72.\\]<p>The check \\(\\varepsilon&gt;1\\) agrees with an unbound orbit.</p>"
+          }
+        },
+        {
+          "id": "outgoing-asymptote",
+          "label": {
+            "ru": "Связать асимптоту с направлением скорости",
+            "en": "Relate the asymptote to the velocity direction"
+          },
+          "body": {
+            "ru": "<p>Отсчитывая полярный угол \\(\\chi\\) от начального радиуса в сторону движения, запишем орбиту как</p>\\[r(\\chi)=\\frac{\\ell}{1+\\varepsilon\\cos\\chi},\\qquad \\ell=\\frac{L^2}{m_{\\mathrm{red}}\\kappa}.\\]<p>На исходящей асимптоте \\(r\\to\\infty\\), поэтому знаменатель стремится к нулю:</p>\\[\\chi_\\infty=\\arccos\\left(-\\frac1\\varepsilon\\right)=\\arccos\\left(-\\frac27\\right)=106.60\\ldots^\\circ.\\]<p>При больших \\(r\\) поперечная компонента относительной скорости \\(L/(m_{\\mathrm{red}}r)\\) стремится к нулю. Поэтому направление \\(\\vec u_\\infty\\) совпадает с направлением исходящей асимптоты.</p>",
+            "en": "<p>Measure the polar angle \\(\\chi\\) from the initial radius in the direction of motion. The orbit can be written as</p>\\[r(\\chi)=\\frac{\\ell}{1+\\varepsilon\\cos\\chi},\\qquad \\ell=\\frac{L^2}{m_{\\mathrm{red}}\\kappa}.\\]<p>On the outgoing asymptote, \\(r\\to\\infty\\), so the denominator tends to zero:</p>\\[\\chi_\\infty=\\arccos\\left(-\\frac1\\varepsilon\\right)=\\arccos\\left(-\\frac27\\right)=106.60\\ldots^\\circ.\\]<p>At large \\(r\\), the transverse component of relative velocity, \\(L/(m_{\\mathrm{red}}r)\\), tends to zero. Thus \\(\\vec u_\\infty\\) points along the outgoing asymptote.</p>"
+          }
+        },
+        {
+          "id": "requested-angle",
+          "label": {
+            "ru": "Отделить угол к линии от знака отклонения",
+            "en": "Distinguish the angle to the line from signed deflection"
+          },
+          "body": {
+            "ru": "<p>Начальная скорость позитрона направлена по касательной, то есть под \\(90^\\circ\\) к начальному радиусу. Относительная скорость параллельна скорости позитрона, поскольку в системе центра масс \\(\\vec u=2\\vec v_+\\). Значит, искомый неориентированный угол равен</p>\\[\\alpha=\\chi_\\infty-90^\\circ=\\arcsin\\left(\\frac27\\right)=16.60\\ldots^\\circ.\\]<p>Если начальную скорость направить вдоль положительной оси \\(x\\), а начальный радиус — вдоль положительной \\(y\\), ориентированное отклонение будет \\(-16.60^\\circ\\). Минус указывает сторону поворота, но угол между скоростью и первоначальной линией равен \\(16.60^\\circ\\). Это половина угла рассеяния между двумя бесконечными асимптотами, поскольку движение задано с перицентра.</p>",
+            "en": "<p>The positron’s initial velocity is tangent to the orbit, hence at \\(90^\\circ\\) to the initial radius. Relative velocity is parallel to the positron’s velocity because \\(\\vec u=2\\vec v_+\\) in the centre-of-mass frame. The requested nonoriented angle is therefore</p>\\[\\alpha=\\chi_\\infty-90^\\circ=\\arcsin\\left(\\frac27\\right)=16.60\\ldots^\\circ.\\]<p>If the initial velocity is along positive \\(x\\) and the initial radius along positive \\(y\\), the signed deflection is \\(-16.60^\\circ\\). That sign identifies the turning direction; the angle between the velocity and its initial line is \\(16.60^\\circ\\). It is half the scattering angle between the two infinite asymptotes, because the specified motion starts at pericentre.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\(\\displaystyle \\alpha=\\arcsin(2/7)\\approx16.60^\\circ.\\) Ориентированное отклонение в координатах исходного решения: \\(-16.60^\\circ\\).",
+        "en": "\\(\\displaystyle \\alpha=\\arcsin(2/7)\\approx16.60^\\circ.\\) The signed deflection in the source solution’s coordinates is \\(-16.60^\\circ\\)."
+      },
+      "pitfalls": {
+        "ru": [
+          "Считать μℏ полным моментом вместо момента одной частицы.",
+          "Принять угол 106.60° к начальному радиусу за искомый угол к начальной линии движения.",
+          "Удвоить ответ, используя полный угол рассеяния от бесконечности до бесконечности.",
+          "Перенести знак ориентированного отклонения на неориентированный угол."
+        ],
+        "en": [
+          "Treating μℏ as the total rather than the individual angular momentum.",
+          "Mistaking the 106.60° angle to the initial radius for the angle to the initial line of motion.",
+          "Doubling the answer by using the full infinity-to-infinity scattering angle.",
+          "Giving the sign of a directed deflection as a nonoriented angle."
+        ]
+      },
+      "sourcePages": [
+        2
+      ]
+    },
+    {
+      "id": "T1-C1",
+      "max": 2.5,
+      "title": {
+        "ru": "Порог фотодиссоциации при заданном угле",
+        "en": "Photodissociation threshold at a specified angle"
+      },
+      "steps": [
+        {
+          "id": "conservation-laws",
+          "label": {
+            "ru": "Записать энергию и векторный импульс",
+            "en": "Write energy and vector momentum conservation"
+          },
+          "body": {
+            "ru": "<p>Обозначим энергию фотона \\(E_\\gamma=\\hbar\\omega\\), его направление \\(\\hat{\\mathbf z}\\). Импульс молекулы \\(\\mathrm O_2\\) — \\(\\mathbf p\\), \\(p=|\\mathbf p|\\ge0\\); импульс атома \\(\\mathrm O\\) — \\(\\mathbf q\\). Массы продуктов равны \\(2m\\) и \\(m\\), а начальная молекула покоится. Тогда</p>\\[\\mathbf p+\\mathbf q=\\frac{E_\\gamma}{c}\\hat{\\mathbf z},\\qquad E_\\gamma=\\Delta U+\\frac{p^2}{4m}+\\frac{q^2}{2m}.\\]<p>Разность внутренних энергий \\(\\Delta U=U_f-U_i\\) не следует дополнительно включать в массы: условие явно задаёт классическую модель без такого вклада.</p>",
+            "en": "<p>Let the photon energy be \\(E_\\gamma=\\hbar\\omega\\), with direction \\(\\hat{\\mathbf z}\\). Write the oxygen molecule’s momentum as \\(\\mathbf p\\), with \\(p=|\\mathbf p|\\ge0\\), and the atom’s momentum as \\(\\mathbf q\\). The product masses are \\(2m\\) and \\(m\\), and the original molecule is at rest. Hence</p>\\[\\mathbf p+\\mathbf q=\\frac{E_\\gamma}{c}\\hat{\\mathbf z},\\qquad E_\\gamma=\\Delta U+\\frac{p^2}{4m}+\\frac{q^2}{2m}.\\]<p>Do not additionally incorporate the internal-energy difference \\(\\Delta U=U_f-U_i\\) into the masses: the problem explicitly specifies a classical model without that contribution.</p>"
+          }
+        },
+        {
+          "id": "fixed-angle-energy",
+          "label": {
+            "ru": "Выразить энергию через импульс при фиксированном угле",
+            "en": "Express the fixed-angle energy in terms of momentum"
+          },
+          "body": {
+            "ru": "<p>Угол между \\(\\mathbf p\\) и фотоном равен \\(\\theta\\), поэтому</p>\\[q^2=\\frac{E_\\gamma^2}{c^2}+p^2-\\frac{2E_\\gamma p\\cos\\theta}{c}.\\]<p>Подставив это в энергию и выделив полный квадрат, получаем</p>\\[E_\\gamma-\\Delta U=\\frac{3}{4m}\\left(p-\\frac{2E_\\gamma\\cos\\theta}{3c}\\right)^2+\\frac{A E_\\gamma^2}{6mc^2},\\qquad A=3-2\\cos^2\\theta=2-\\cos2\\theta.\\]<p>Это уравнение показывает, какую минимальную кинетическую энергию требуют сохранение импульса и выбранное направление вылета.</p>",
+            "en": "<p>The angle between \\(\\mathbf p\\) and the photon is \\(\\theta\\), so</p>\\[q^2=\\frac{E_\\gamma^2}{c^2}+p^2-\\frac{2E_\\gamma p\\cos\\theta}{c}.\\]<p>Substitution into the energy equation and completing the square give</p>\\[E_\\gamma-\\Delta U=\\frac{3}{4m}\\left(p-\\frac{2E_\\gamma\\cos\\theta}{3c}\\right)^2+\\frac{A E_\\gamma^2}{6mc^2},\\qquad A=3-2\\cos^2\\theta=2-\\cos2\\theta.\\]<p>This states the minimum kinetic energy required by momentum conservation and the chosen outgoing direction.</p>"
+          }
+        },
+        {
+          "id": "physical-minimization",
+          "label": {
+            "ru": "Проверить допустимость минимизирующего импульса",
+            "en": "Check that the minimizing momentum is physical"
+          },
+          "body": {
+            "ru": "<p>Для \\(0\\le\\theta&lt;\\pi/2\\) вершина квадратичной функции лежит в физической области:</p>\\[p_*=\\frac{2E_\\gamma\\cos\\theta}{3c}&gt;0.\\]<p>Поэтому на пороге квадрат обращается в нуль:</p>\\[E_{\\gamma,\\min}=\\Delta U+\\frac{A E_{\\gamma,\\min}^2}{6mc^2}.\\]<p>Условие нулевого дискриминанта квадратичного уравнения по \\(p\\) даёт тот же результат именно для этой ветви. Сам по себе вещественный корень без проверки \\(p\\ge0\\) ещё не гарантирует физическое решение.</p>",
+            "en": "<p>For \\(0\\le\\theta&lt;\\pi/2\\), the quadratic minimum lies in the physical region:</p>\\[p_*=\\frac{2E_\\gamma\\cos\\theta}{3c}&gt;0.\\]<p>At threshold the square therefore vanishes:</p>\\[E_{\\gamma,\\min}=\\Delta U+\\frac{A E_{\\gamma,\\min}^2}{6mc^2}.\\]<p>A zero discriminant in the quadratic equation for \\(p\\) gives the same result on this branch. A real algebraic root alone does not guarantee a physical solution unless \\(p\\ge0\\) is also checked.</p>"
+          }
+        },
+        {
+          "id": "lower-energy-root",
+          "label": {
+            "ru": "Выбрать физическую низкоэнергетическую ветвь",
+            "en": "Choose the physical low-energy branch"
+          },
+          "body": {
+            "ru": "<p>Выбираем меньший корень, близкий к \\(\\Delta U\\), поскольку продукты по условию нерелятивистские. Второй корень имеет масштаб \\(mc^2\\) и выходит за область этой модели:</p>\\[\\hbar\\omega_{\\min}=\\frac{3mc^2}{A}\\left(1-\\sqrt{1-\\frac{2A\\Delta U}{3mc^2}}\\right).\\]<p>Эквивалентная форма без вычитания близких чисел:</p>\\[\\omega_{\\min}=\\frac{2\\Delta U}{\\hbar\\left(1+\\sqrt{1-\\frac{2A\\Delta U}{3mc^2}}\\right)},\\qquad A=2-\\cos2\\theta.\\]<p>Проверка при \\(c\\to\\infty\\): порог стремится к \\(\\Delta U/\\hbar\\). Метод центра масс с геометрией скоростей даёт ту же ветвь.</p>",
+            "en": "<p>Choose the smaller root, close to \\(\\Delta U\\), because the products are nonrelativistic by assumption. The other root is of order \\(mc^2\\), outside this model’s regime:</p>\\[\\hbar\\omega_{\\min}=\\frac{3mc^2}{A}\\left(1-\\sqrt{1-\\frac{2A\\Delta U}{3mc^2}}\\right).\\]<p>An equivalent form that avoids subtracting nearly equal numbers is</p>\\[\\omega_{\\min}=\\frac{2\\Delta U}{\\hbar\\left(1+\\sqrt{1-\\frac{2A\\Delta U}{3mc^2}}\\right)},\\qquad A=2-\\cos2\\theta.\\]<p>As a check, \\(c\\to\\infty\\) gives the threshold \\(\\Delta U/\\hbar\\). A centre-of-mass construction using velocity geometry yields the same branch.</p>"
+          }
+        },
+        {
+          "id": "nonacute-directions",
+          "label": {
+            "ru": "Отдельно учесть прямые и тупые углы",
+            "en": "Handle right and obtuse angles separately"
+          },
+          "body": {
+            "ru": "<p>При \\(\\pi/2\\le\\theta\\le\\pi\\) вершина имеет \\(p_*\\le0\\). На допустимой полуоси \\(p\\ge0\\) минимальная кинетическая энергия достигается при \\(p=0\\), а не в вершине с отрицательным импульсом. Предельная энергия определяется условием</p>\\[E_{\\mathrm{thr}}=\\Delta U+\\frac{E_{\\mathrm{thr}}^2}{2mc^2},\\qquad E_{\\mathrm{thr}}=mc^2\\left(1-\\sqrt{1-\\frac{2\\Delta U}{mc^2}}\\right).\\]<p>Это значение совпадает с остроугольной формулой при \\(\\theta=\\pi/2\\) и служит одинаковой нижней границей для всех неострых направлений. При точно \\(p=0\\) направление вылета молекулы не определено. Поэтому для ненулевого импульса под прямым или тупым углом нужно \\(E_\\gamma&gt;E_{\\mathrm{thr}}\\): указанная граница является инфимумом, к которому можно сколь угодно приблизиться при \\(p\\to0^+\\).</p>",
+            "en": "<p>For \\(\\pi/2\\le\\theta\\le\\pi\\), the quadratic vertex has \\(p_*\\le0\\). On the allowed half-line \\(p\\ge0\\), kinetic energy is minimized at \\(p=0\\), not at a negative-momentum vertex. The limiting energy satisfies</p>\\[E_{\\mathrm{thr}}=\\Delta U+\\frac{E_{\\mathrm{thr}}^2}{2mc^2},\\qquad E_{\\mathrm{thr}}=mc^2\\left(1-\\sqrt{1-\\frac{2\\Delta U}{mc^2}}\\right).\\]<p>This equals the acute-angle formula at \\(\\theta=\\pi/2\\) and is the same lower threshold for every nonacute direction. At exactly \\(p=0\\), the molecule’s outgoing direction is undefined. A nonzero momentum at a right or obtuse angle therefore requires \\(E_\\gamma&gt;E_{\\mathrm{thr}}\\): the threshold is an infimum approached as \\(p\\to0^+\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Для \\(0\\le\\theta&lt;\\pi/2\\), положив \\(A=2-\\cos2\\theta\\),</p>\\[\\omega_{\\min}=\\frac{3mc^2}{A\\hbar}\\left(1-\\sqrt{1-\\frac{2A\\Delta U}{3mc^2}}\\right).\\]<p>Для \\(\\pi/2\\le\\theta\\le\\pi\\) нижняя граница энергии равна \\(E_{\\mathrm{thr}}=mc^2[1-\\sqrt{1-2\\Delta U/(mc^2)}]\\). Для ненулевого импульса требуется \\(\\omega&gt;E_{\\mathrm{thr}}/\\hbar\\); равенство — предел с неопределённым направлением при \\(p=0\\).</p>",
+        "en": "<p>For \\(0\\le\\theta&lt;\\pi/2\\), let \\(A=2-\\cos2\\theta\\). Then</p>\\[\\omega_{\\min}=\\frac{3mc^2}{A\\hbar}\\left(1-\\sqrt{1-\\frac{2A\\Delta U}{3mc^2}}\\right).\\]<p>For \\(\\pi/2\\le\\theta\\le\\pi\\), the lower energy threshold is \\(E_{\\mathrm{thr}}=mc^2[1-\\sqrt{1-2\\Delta U/(mc^2)}]\\). Nonzero momentum requires \\(\\omega&gt;E_{\\mathrm{thr}}/\\hbar\\); equality is a limiting zero-momentum case with no defined outgoing direction.</p>"
+      },
+      "pitfalls": {
+        "ru": [
+          "Использовать одинаковую массу m для атома и молекулы O₂: у молекулы масса 2m.",
+          "Проверить только дискриминант и забыть, что p — модуль импульса и должен быть неотрицателен.",
+          "Продолжить остроугольную формулу на тупые углы или считать направление определённым при p=0.",
+          "Выбрать высокоэнергетический корень, несовместимый с нерелятивистским условием."
+        ],
+        "en": [
+          "Assigning mass m to both products: the O₂ molecule has mass 2m.",
+          "Checking only the discriminant and forgetting that p is a nonnegative momentum magnitude.",
+          "Extending the acute-angle formula to obtuse angles or assigning a direction at p=0.",
+          "Choosing the high-energy root, inconsistent with the nonrelativistic assumption."
+        ]
+      },
+      "sourcePages": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "T1-C2",
+      "max": 1,
+      "title": {
+        "ru": "Малая поправка к энергии порога",
+        "en": "Small correction to the threshold energy"
+      },
+      "steps": [
+        {
+          "id": "small-parameter",
+          "label": {
+            "ru": "Определить малый параметр",
+            "en": "Identify the small parameter"
+          },
+          "body": {
+            "ru": "<p>Здесь \\(\\theta=\\pi/6\\), поэтому применима остроугольная ветвь и</p>\\[A=2-\\cos(2\\theta)=2-\\cos(\\pi/3)=\\frac32.\\]<p>Энергия покоя атома \\(mc^2\\) порядка \\(10^{10}\\,\\mathrm{eV}\\), тогда как \\(\\Delta U=1.10\\,\\mathrm{eV}\\). Значит, \\(\\Delta U/(mc^2)\\ll1\\), и подсказка о разложении позволяет найти малую разность без потери точности.</p>",
+            "en": "<p>Here \\(\\theta=\\pi/6\\), so the acute-angle branch applies and</p>\\[A=2-\\cos(2\\theta)=2-\\cos(\\pi/3)=\\frac32.\\]<p>The atomic rest energy \\(mc^2\\) is of order \\(10^{10}\\,\\mathrm{eV}\\), whereas \\(\\Delta U=1.10\\,\\mathrm{eV}\\). Thus \\(\\Delta U/(mc^2)\\ll1\\), and the supplied expansion finds the small difference without loss of precision.</p>"
+          }
+        },
+        {
+          "id": "second-order-expansion",
+          "label": {
+            "ru": "Сохранить второй порядок в энергии связи",
+            "en": "Keep the second order in the binding-energy difference"
+          },
+          "body": {
+            "ru": "<p>Для \\(x=2A\\Delta U/(3mc^2)\\) используем \\(\\sqrt{1-x}=1-x/2-x^2/8+\\cdots\\). Подстановка в меньший корень даёт</p>\\[\\hbar\\omega_{\\min}=\\Delta U+\\frac{A(\\Delta U)^2}{6mc^2}+O\\!\\left(\\frac{(\\Delta U)^3}{m^2c^4}\\right).\\]<p>Вычитая \\(\\Delta U\\) и подставляя \\(A=3/2\\), получаем</p>\\[\\hbar\\omega_{\\min}-\\Delta U\\simeq\\frac{(\\Delta U)^2}{4mc^2}.\\]",
+            "en": "<p>For \\(x=2A\\Delta U/(3mc^2)\\), use \\(\\sqrt{1-x}=1-x/2-x^2/8+\\cdots\\). Substitution into the smaller root gives</p>\\[\\hbar\\omega_{\\min}=\\Delta U+\\frac{A(\\Delta U)^2}{6mc^2}+O\\!\\left(\\frac{(\\Delta U)^3}{m^2c^4}\\right).\\]<p>Subtracting \\(\\Delta U\\) and setting \\(A=3/2\\),</p>\\[\\hbar\\omega_{\\min}-\\Delta U\\simeq\\frac{(\\Delta U)^2}{4mc^2}.\\]"
+          }
+        },
+        {
+          "id": "numerical-energy",
+          "label": {
+            "ru": "Перевести массу в энергетические единицы",
+            "en": "Convert the mass to energy units"
+          },
+          "body": {
+            "ru": "<p>Используем \\(1\\,\\mathrm{u}\\,c^2\\approx931.5\\,\\mathrm{MeV}\\). Для атома массы \\(16.0\\,\\mathrm{u}\\)</p>\\[mc^2\\approx16.0\\times931.5\\times10^6\\,\\mathrm{eV}=1.4904\\times10^{10}\\,\\mathrm{eV}.\\]<p>Следовательно,</p>\\[\\hbar\\omega_{\\min}-\\Delta U\\simeq\\frac{(1.10\\,\\mathrm{eV})^2}{4(1.4904\\times10^{10}\\,\\mathrm{eV})}=2.03\\times10^{-11}\\,\\mathrm{eV}.\\]<p>Поправка положительна: часть энергии фотона неизбежно уходит в кинетическую энергию продуктов. Прямое вычитание двух чисел, близких к \\(1.10\\,\\mathrm{eV}\\), в обычной машинной точности менее надёжно, чем это разложение.</p>",
+            "en": "<p>Use \\(1\\,\\mathrm{u}\\,c^2\\approx931.5\\,\\mathrm{MeV}\\). For an atomic mass of \\(16.0\\,\\mathrm{u}\\),</p>\\[mc^2\\approx16.0\\times931.5\\times10^6\\,\\mathrm{eV}=1.4904\\times10^{10}\\,\\mathrm{eV}.\\]<p>Therefore,</p>\\[\\hbar\\omega_{\\min}-\\Delta U\\simeq\\frac{(1.10\\,\\mathrm{eV})^2}{4(1.4904\\times10^{10}\\,\\mathrm{eV})}=2.03\\times10^{-11}\\,\\mathrm{eV}.\\]<p>The correction is positive: some photon energy must become product kinetic energy. Directly subtracting two numbers close to \\(1.10\\,\\mathrm{eV}\\) in ordinary machine precision is less reliable than this expansion.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\(\\displaystyle \\hbar\\omega_{\\min}-\\Delta U\\simeq\\frac{(\\Delta U)^2}{4mc^2}=2.03\\times10^{-11}\\,\\mathrm{eV}.\\)",
+        "en": "\\(\\displaystyle \\hbar\\omega_{\\min}-\\Delta U\\simeq\\frac{(\\Delta U)^2}{4mc^2}=2.03\\times10^{-11}\\,\\mathrm{eV}.\\)"
+      },
+      "pitfalls": {
+        "ru": [
+          "Оставить только первый порядок разложения: после вычитания ΔU он даёт ложный нуль.",
+          "Подставить m=16 без перевода атомных единиц массы в энергию.",
+          "Вычесть почти равные числа вместо устойчивого разложения малой поправки."
+        ],
+        "en": [
+          "Keeping only first order: subtracting ΔU then gives a spurious zero.",
+          "Substituting m=16 without converting atomic mass units to energy units.",
+          "Subtracting nearly equal numbers instead of expanding the small correction stably."
+        ]
+      },
+      "sourcePages": [
+        4
+      ]
+    }
+  ],
+  "notes": {
+    "ru": [
+      "Это редакционное подробное объяснение для самостоятельной проверки, а не официальный регламент оценивания. Контрольные шаги не имеют отдельных весов; максимумы подпунктов взяты из условий. Другие физически и математически корректные способы также допустимы.",
+      "В заголовке части T1-B исходного решения указано 2.5 балла, хотя подпункты B1 и B2 дают 1.0+2.5=3.5 балла. Здесь использованы 3.5 балла из условия; общий максимум T1 равен 10.",
+      "В рамке метода центра масс на странице 4 исходного решения пропущен множитель 2 под корнем. Верная комбинация — 1−2(2−cos 2θ)ΔU/(3mc²), как следует из сохранения энергии и согласуется с алгебраическим методом на странице 3 и числом в C2.",
+      "В исходном решении B2 приведено ориентированное отклонение −16.60°. Требуемый неориентированный угол к начальной линии движения равен 16.60°."
+    ],
+    "en": [
+      "This is an editorial detailed explanation for self-checking, not an official marking scheme. Check steps have no individual weights; subpart maxima come from the question paper. Other physically and mathematically valid methods are also acceptable.",
+      "The source solution labels the T1-B heading as 2.5 points, although B1 and B2 sum to 1.0+2.5=3.5 points. The question paper’s 3.5 points are used here; T1 totals 10.",
+      "The boxed centre-of-mass expression on source page 4 omits a factor of 2 inside the square root. The correct combination is 1−2(2−cos 2θ)ΔU/(3mc²), following energy conservation and agreeing with the algebraic method on page 3 and the C2 numerical result.",
+      "The source solution gives the signed B2 deflection as −16.60°. The requested nonoriented angle to the initial line of motion is 16.60°."
+    ]
+  }
+}

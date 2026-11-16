@@ -1,0 +1,680 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "В погоне за абсолютным нулём",
+    "en": "Chasing the absolute zero"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2026/IPhO_2026_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-A1",
+      "max": 0.2,
+      "title": {
+        "ru": "Напряжённость поля в торе",
+        "en": "Magnetic field strength in the torus"
+      },
+      "steps": [
+        {
+          "id": "ampere",
+          "label": {
+            "ru": "Применён закон циркуляции для H",
+            "en": "Apply the circuital law for H"
+          },
+          "body": {
+            "ru": "<p>Выберем окружность среднего радиуса \\(R\\) внутри тора. По симметрии поле \\(\\vec H\\) направлено вдоль неё, а при \\(r\\ll R\\) его модуль почти постоянен. Каждый из \\(N\\) витков пересекает натянутую на контур поверхность, поэтому свободный ток, охваченный контуром, равен \\(NI\\):</p>\\[\\oint\\vec H\\cdot\\mathrm d\\vec\\ell=H\\,2\\pi R=NI.\\]",
+            "en": "<p>Choose a circle of mean radius \\(R\\) inside the torus. By symmetry, \\(\\vec H\\) is tangent to the circle, and for \\(r\\ll R\\) its magnitude is approximately constant. The surface bounded by the circle is crossed by all \\(N\\) turns, so the enclosed free current is \\(NI\\):</p>\\[\\oint\\vec H\\cdot\\mathrm d\\vec\\ell=H\\,2\\pi R=NI.\\]"
+          }
+        },
+        {
+          "id": "geometry",
+          "label": {
+            "ru": "Длина контура выражена через V и A",
+            "en": "Express the contour length through V and A"
+          },
+          "body": {
+            "ru": "<p>Объём тонкого тора равен длине средней окружности, умноженной на площадь поперечного сечения: \\(V=2\\pi R A\\). Следовательно, \\(2\\pi R=V/A\\), и подстановка даёт искомую форму. Единица \\(IA/V\\) — \\(\\mathrm{A/m}\\), как и у \\(H\\).</p>",
+            "en": "<p>The volume of a thin torus is the mean circumference times its cross-sectional area: \\(V=2\\pi R A\\). Thus \\(2\\pi R=V/A\\), which gives the requested form. The unit of \\(IA/V\\) is \\(\\mathrm{A/m}\\), as required for \\(H\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{H=\\frac{NI}{2\\pi R}=\\frac{NIA}{V}.}\\]",
+        "en": "\\[\\boxed{H=\\frac{NI}{2\\pi R}=\\frac{NIA}{V}.}\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "В законе циркуляции для \\(H\\) справа стоит свободный ток \\(NI\\), без множителя \\(\\mu_0\\).",
+          "Площадь \\(A\\) — площадь сечения тора, а не площадь круга радиуса \\(R\\)."
+        ],
+        "en": [
+          "The circuital law for \\(H\\) contains the free current \\(NI\\), with no factor \\(\\mu_0\\).",
+          "\\(A\\) is the torus cross-sectional area, not the area of a circle of radius \\(R\\)."
+        ]
+      },
+      "sourcePages": [
+        1
+      ]
+    },
+    {
+      "id": "T3-A2",
+      "max": 0.6,
+      "title": {
+        "ru": "Работа внешнего источника",
+        "en": "Work done by the external source"
+      },
+      "steps": [
+        {
+          "id": "linked-flux",
+          "label": {
+            "ru": "Найден потокосцепленный магнитный поток",
+            "en": "Find the total flux linkage"
+          },
+          "body": {
+            "ru": "<p>Магнитная индукция \\(B\\) почти однородна в сечении площадью \\(A\\), поэтому поток через один виток равен \\(AB\\), а потокосцепление всех витков — \\(\\Phi_B=NAB\\). При изменении поля \\(\\mathrm d\\Phi_B=NA\\,\\mathrm dB\\).</p>",
+            "en": "<p>The magnetic induction \\(B\\) is approximately uniform over the cross-sectional area \\(A\\). The flux through one turn is \\(AB\\), and the total flux linkage is \\(\\Phi_B=NAB\\). Consequently, \\(\\mathrm d\\Phi_B=NA\\,\\mathrm dB\\).</p>"
+          }
+        },
+        {
+          "id": "faraday-source",
+          "label": {
+            "ru": "ЭДС источника связана с законом Фарадея",
+            "en": "Relate the source emf to Faraday's law"
+          },
+          "body": {
+            "ru": "<p>Закон Фарадея даёт \\(\\mathcal E_{\\mathrm{ind}}=-\\mathrm d\\Phi_B/\\mathrm dt\\). Поскольку сопротивление обмотки пренебрежимо мало, \\(\\mathcal E+\\mathcal E_{\\mathrm{ind}}\\simeq0\\), то есть источник компенсирует ЭДС индукции. Проходящий за \\(\\mathrm dt\\) заряд равен \\(\\mathrm dq=I\\,\\mathrm dt\\).</p>",
+            "en": "<p>Faraday's law gives \\(\\mathcal E_{\\mathrm{ind}}=-\\mathrm d\\Phi_B/\\mathrm dt\\). Negligible winding resistance implies \\(\\mathcal E+\\mathcal E_{\\mathrm{ind}}\\simeq0\\): the source compensates the induced emf. The charge passing in time \\(\\mathrm dt\\) is \\(\\mathrm dq=I\\,\\mathrm dt\\).</p>"
+          }
+        },
+        {
+          "id": "source-work",
+          "label": {
+            "ru": "Работа записана через H и объём",
+            "en": "Write the source work using H and the volume"
+          },
+          "body": {
+            "ru": "<p>Работа источника над системой:</p>\\[\\mathrm dW_{emf}=\\mathcal E\\,\\mathrm dq=I\\,\\mathrm d\\Phi_B=NIA\\,\\mathrm dB.\\]<p>Из A1 следует \\(NIA=VH\\). Поэтому \\(\\mathrm dW_{emf}=VH\\,\\mathrm dB\\). Здесь \\(V\\) — объём, а не электрическое напряжение. Размерность \\(VH\\,\\mathrm dB\\) равна джоулю.</p>",
+            "en": "<p>The source work on the system is</p>\\[\\mathrm dW_{emf}=\\mathcal E\\,\\mathrm dq=I\\,\\mathrm d\\Phi_B=NIA\\,\\mathrm dB.\\]<p>Part A1 gives \\(NIA=VH\\), hence \\(\\mathrm dW_{emf}=VH\\,\\mathrm dB\\). Here \\(V\\) denotes volume, not voltage. The dimensions of \\(VH\\,\\mathrm dB\\) are joules.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{\\mathrm dW_{emf}=VH\\,\\mathrm dB.}\\]",
+        "en": "\\[\\boxed{\\mathrm dW_{emf}=VH\\,\\mathrm dB.}\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "Не терять множитель \\(N\\): источник связан с потоком через все витки.",
+          "Минус в законе Фарадея относится к ЭДС индукции; компенсирующая ЭДС источника имеет противоположный знак.",
+          "Это работа источника, включающая вакуумную часть магнитной энергии; работа над веществом будет выделена в A3."
+        ],
+        "en": [
+          "Do not omit \\(N\\): the source is linked to the flux through all turns.",
+          "The minus sign in Faraday's law belongs to the induced emf; the compensating source emf has the opposite sign.",
+          "This is the total source work, including the vacuum-field contribution. The material contribution is isolated in A3."
+        ]
+      },
+      "sourcePages": [
+        1
+      ]
+    },
+    {
+      "id": "T3-A3",
+      "max": 0.2,
+      "title": {
+        "ru": "Магнитная работа над веществом",
+        "en": "Magnetic work on the material"
+      },
+      "steps": [
+        {
+          "id": "split-induction",
+          "label": {
+            "ru": "Разделены изменения поля и намагниченности",
+            "en": "Separate the field and magnetization changes"
+          },
+          "body": {
+            "ru": "<p>Векторы \\(\\vec B\\), \\(\\vec H\\) и \\(\\vec M\\) параллельны. Для их модулей \\(B=\\mu_0H+\\mu_0M\\), поэтому</p>\\[\\mathrm dB=\\mu_0\\,\\mathrm dH+\\mu_0\\,\\mathrm dM,\\qquad \\mathrm dW_{emf}=\\mu_0VH\\,\\mathrm dH+\\mu_0VH\\,\\mathrm dM.\\]",
+            "en": "<p>The vectors \\(\\vec B\\), \\(\\vec H\\), and \\(\\vec M\\) are parallel. Their magnitudes obey \\(B=\\mu_0H+\\mu_0M\\), so</p>\\[\\mathrm dB=\\mu_0\\,\\mathrm dH+\\mu_0\\,\\mathrm dM,\\qquad \\mathrm dW_{emf}=\\mu_0VH\\,\\mathrm dH+\\mu_0VH\\,\\mathrm dM.\\]"
+          }
+        },
+        {
+          "id": "remove-vacuum",
+          "label": {
+            "ru": "Вычтена вакуумная часть работы",
+            "en": "Subtract the vacuum-field contribution"
+          },
+          "body": {
+            "ru": "<p>При вакуумном сердечнике \\(M=0\\); изменение энергии поля \\(U_{vac}=\\mu_0VH^2/2\\) равно \\(\\mathrm dW_{vac}=\\mu_0VH\\,\\mathrm dH\\). Оставшийся член — работа над парамагнитным веществом:</p>\\[\\mathrm dW=\\mathrm dW_{emf}-\\mathrm dW_{vac}=\\mu_0VH\\,\\mathrm dM.\\]",
+            "en": "<p>For a vacuum core, \\(M=0\\). The field energy \\(U_{vac}=\\mu_0VH^2/2\\) changes by \\(\\mathrm dW_{vac}=\\mu_0VH\\,\\mathrm dH\\). The remaining term is the work on the paramagnetic material:</p>\\[\\mathrm dW=\\mathrm dW_{emf}-\\mathrm dW_{vac}=\\mu_0VH\\,\\mathrm dM.\\]"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{\\mathrm dW=\\mu_0VH\\,\\mathrm dM.}\\]",
+        "en": "\\[\\boxed{\\mathrm dW=\\mu_0VH\\,\\mathrm dM.}\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "Не подставлять всю работу источника \\(VH\\,\\mathrm dB\\) вместо работы над веществом в первом начале для Pm-T.",
+          "По принятому в задаче соглашению работа над веществом входит в \\(\\mathrm dU=\\mathrm dW+\\mathrm dQ\\) со знаком плюс."
+        ],
+        "en": [
+          "Do not substitute the full source work \\(VH\\,\\mathrm dB\\) for the material work in the first law for the Pm-T.",
+          "Under the problem's convention, work on the material enters \\(\\mathrm dU=\\mathrm dW+\\mathrm dQ\\) with a plus sign."
+        ]
+      },
+      "sourcePages": [
+        1
+      ]
+    },
+    {
+      "id": "T3-B1",
+      "max": 1.5,
+      "title": {
+        "ru": "Теплота изотермического процесса",
+        "en": "Heat in an isothermal process"
+      },
+      "steps": [
+        {
+          "id": "isothermal-first-law",
+          "label": {
+            "ru": "Использовано первое начало при постоянной T",
+            "en": "Use the first law at constant T"
+          },
+          "body": {
+            "ru": "<p>В таблице дано, что в любом процессе \\(\\mathrm dU=C_M\\,\\mathrm dT=n\\lambda\\,\\mathrm dT/T^2\\); следовательно, в этой модели внутренняя энергия зависит только от \\(T\\). На изотерме \\(\\mathrm dT=0\\), значит \\(\\mathrm dU=0\\). Первое начало с работой над веществом из A3 даёт</p>\\[0=\\mu_0VH\\,\\mathrm dM+\\mathrm dQ,\\qquad \\mathrm dQ=-\\mu_0VH\\,\\mathrm dM.\\]",
+            "en": "<p>The table states that \\(\\mathrm dU=C_M\\,\\mathrm dT=n\\lambda\\,\\mathrm dT/T^2\\) in any process, so in this model the internal energy depends on \\(T\\) alone. An isotherm has \\(\\mathrm dT=0\\), hence \\(\\mathrm dU=0\\). Using A3 in the first law gives</p>\\[0=\\mu_0VH\\,\\mathrm dM+\\mathrm dQ,\\qquad \\mathrm dQ=-\\mu_0VH\\,\\mathrm dM.\\]"
+          }
+        },
+        {
+          "id": "isothermal-state",
+          "label": {
+            "ru": "Выражено dM через dH",
+            "en": "Express dM through dH"
+          },
+          "body": {
+            "ru": "<p>Из уравнения состояния \\(TMV=nKH\\) при постоянных \\(T\\), \\(V\\) и \\(n\\) получаем</p>\\[\\mathrm dM=\\frac{nK}{TV}\\,\\mathrm dH.\\]<p>После подстановки объём сокращается: \\(\\mathrm dQ=-\\mu_0nK H\\,\\mathrm dH/T\\).</p>",
+            "en": "<p>Differentiate the equation of state \\(TMV=nKH\\) at constant \\(T\\), \\(V\\), and \\(n\\):</p>\\[\\mathrm dM=\\frac{nK}{TV}\\,\\mathrm dH.\\]<p>Substitution cancels the explicit volume: \\(\\mathrm dQ=-\\mu_0nK H\\,\\mathrm dH/T\\).</p>"
+          }
+        },
+        {
+          "id": "isothermal-integral",
+          "label": {
+            "ru": "Теплота проинтегрирована между заданными полями",
+            "en": "Integrate between the given field strengths"
+          },
+          "body": {
+            "ru": "<p>Сохраняем знак количества теплоты, поступающего в Pm-T:</p>\\[Q=-\\frac{\\mu_0nK}{T}\\int_{H_i}^{H_f}H\\,\\mathrm dH=\\frac{\\mu_0nK}{2T}\\left(H_i^2-H_f^2\\right).\\]",
+            "en": "<p>Retaining the sign of heat flowing into the Pm-T gives</p>\\[Q=-\\frac{\\mu_0nK}{T}\\int_{H_i}^{H_f}H\\,\\mathrm dH=\\frac{\\mu_0nK}{2T}\\left(H_i^2-H_f^2\\right).\\]"
+          }
+        },
+        {
+          "id": "heat-sign",
+          "label": {
+            "ru": "Проверены знак и зависимость от количества вещества",
+            "en": "Check the sign and extensivity"
+          },
+          "body": {
+            "ru": "<p>При изотермическом размагничивании \\(H_f&lt;H_i\\) получаем \\(Q&gt;0\\): тор поглощает теплоту. При намагничивании \\(Q&lt;0\\), то есть отдаёт её. Отсутствие явного \\(V\\) не означает независимость от размера образца: для данного материала \\(n\\) пропорционально объёму.</p>",
+            "en": "<p>For isothermal demagnetization, \\(H_f&lt;H_i\\) and \\(Q&gt;0\\): the torus absorbs heat. Magnetization gives \\(Q&lt;0\\), meaning heat is released. The cancellation of the explicit \\(V\\) does not remove extensivity: for a fixed material, \\(n\\) is proportional to sample volume.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{Q=\\frac{\\mu_0nK}{2T}\\left(H_i^2-H_f^2\\right).}\\]",
+        "en": "\\[\\boxed{Q=\\frac{\\mu_0nK}{2T}\\left(H_i^2-H_f^2\\right).}\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "Изотермический процесс не означает \\(Q=0\\): магнитная работа компенсируется теплообменом.",
+          "Не заменять здесь подписанное \\(Q\\) его модулем. Модули \\(Q_c\\) и \\(Q_h\\) будут введены для холодильного цикла.",
+          "Используется именно данное в таблице свойство \\(\\mathrm dU=C_M\\,\\mathrm dT\\) для любого процесса."
+        ],
+        "en": [
+          "Isothermal does not mean \\(Q=0\\): heat exchange compensates the magnetic work.",
+          "Do not replace the signed \\(Q\\) here by its absolute value. Positive magnitudes \\(Q_c\\) and \\(Q_h\\) are used later for the refrigeration cycle.",
+          "The argument relies on the table's explicit statement that \\(\\mathrm dU=C_M\\,\\mathrm dT\\) holds in any process."
+        ]
+      },
+      "sourcePages": [
+        1
+      ]
+    },
+    {
+      "id": "T3-B2",
+      "max": 1.5,
+      "title": {
+        "ru": "Адиабатическое изменение температуры",
+        "en": "Adiabatic temperature change"
+      },
+      "steps": [
+        {
+          "id": "adiabatic-balance",
+          "label": {
+            "ru": "Записано первое начало без теплообмена",
+            "en": "Write the first law with no heat exchange"
+          },
+          "body": {
+            "ru": "<p>На адиабате \\(\\mathrm dQ=0\\), но магнитная работа вообще не равна нулю. Поэтому</p>\\[\\frac{n\\lambda}{T^2}\\,\\mathrm dT=\\mu_0VH\\,\\mathrm dM.\\]<p>Зависимость теплоёмкости от температуры нужно сохранить.</p>",
+            "en": "<p>An adiabat has \\(\\mathrm dQ=0\\), but the magnetic work is generally nonzero. Thus</p>\\[\\frac{n\\lambda}{T^2}\\,\\mathrm dT=\\mu_0VH\\,\\mathrm dM.\\]<p>The temperature dependence of the heat capacity must be retained.</p>"
+          }
+        },
+        {
+          "id": "differentiate-state",
+          "label": {
+            "ru": "Учтена зависимость M от H и T",
+            "en": "Account for both H and T in M"
+          },
+          "body": {
+            "ru": "<p>Из \\(M=nKH/(VT)\\), при постоянных \\(n\\) и \\(V\\),</p>\\[\\mathrm dM=\\frac{nK}{V}\\left(\\frac{\\mathrm dH}{T}-\\frac{H\\,\\mathrm dT}{T^2}\\right).\\]<p>Подставляем это в баланс и умножаем на \\(T^2/n\\):</p>\\[(\\lambda+\\mu_0KH^2)\\,\\mathrm dT=\\mu_0KHT\\,\\mathrm dH.\\]",
+            "en": "<p>From \\(M=nKH/(VT)\\), at constant \\(n\\) and \\(V\\),</p>\\[\\mathrm dM=\\frac{nK}{V}\\left(\\frac{\\mathrm dH}{T}-\\frac{H\\,\\mathrm dT}{T^2}\\right).\\]<p>Substitute into the energy balance and multiply by \\(T^2/n\\):</p>\\[(\\lambda+\\mu_0KH^2)\\,\\mathrm dT=\\mu_0KHT\\,\\mathrm dH.\\]"
+          }
+        },
+        {
+          "id": "adiabatic-integral",
+          "label": {
+            "ru": "Получена связь температуры и поля на адиабате",
+            "en": "Integrate the adiabatic relation"
+          },
+          "body": {
+            "ru": "<p>Разделяем переменные и интегрируем:</p>\\[\\frac{\\mathrm dT}{T}=\\frac{\\mu_0KH\\,\\mathrm dH}{\\lambda+\\mu_0KH^2},\\qquad \\ln\\frac{T_f}{T_i}=\\frac12\\ln\\frac{\\lambda+\\mu_0KH_f^2}{\\lambda+\\mu_0KH_i^2}.\\]<p>Берём положительный корень, поскольку абсолютная температура положительна.</p>",
+            "en": "<p>Separate variables and integrate:</p>\\[\\frac{\\mathrm dT}{T}=\\frac{\\mu_0KH\\,\\mathrm dH}{\\lambda+\\mu_0KH^2},\\qquad \\ln\\frac{T_f}{T_i}=\\frac12\\ln\\frac{\\lambda+\\mu_0KH_f^2}{\\lambda+\\mu_0KH_i^2}.\\]<p>Take the positive square root because absolute temperature is positive.</p>"
+          }
+        },
+        {
+          "id": "temperature-change",
+          "label": {
+            "ru": "Найдена ΔT и проверен знак охлаждения",
+            "en": "Obtain ΔT and check the cooling sign"
+          },
+          "body": {
+            "ru": "<p>Вычитаем \\(T_i\\) из найденной конечной температуры. При \\(K&gt;0\\), \\(\\lambda&gt;0\\) и \\(H_f&lt;H_i\\) корень меньше единицы, то есть \\(\\Delta T&lt;0\\): адиабатическое размагничивание охлаждает образец. Члены \\(\\lambda\\) и \\(\\mu_0KH^2\\) имеют одинаковую размерность \\(\\mathrm{J\\,K/mol}\\); \\(n\\) и \\(V\\) сократились.</p>",
+            "en": "<p>Subtract \\(T_i\\) from the resulting final temperature. For \\(K&gt;0\\), \\(\\lambda&gt;0\\), and \\(H_f&lt;H_i\\), the square-root factor is below one, so \\(\\Delta T&lt;0\\): adiabatic demagnetization cools the sample. Both \\(\\lambda\\) and \\(\\mu_0KH^2\\) have units \\(\\mathrm{J\\,K/mol}\\); \\(n\\) and \\(V\\) cancel.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{\\Delta T=T_i\\left(\\sqrt{\\frac{\\lambda+\\mu_0KH_f^2}{\\lambda+\\mu_0KH_i^2}}-1\\right).}\\]",
+        "en": "\\[\\boxed{\\Delta T=T_i\\left(\\sqrt{\\frac{\\lambda+\\mu_0KH_f^2}{\\lambda+\\mu_0KH_i^2}}-1\\right).}\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "Не использовать изотермическое \\(\\mathrm dM=nK\\,\\mathrm dH/(VT)\\) на адиабате: температура тоже меняется.",
+          "Теплоёмкость \\(C_M=n\\lambda/T^2\\) нельзя считать постоянной.",
+          "\\(\\Delta T\\) — подписанное изменение \\(T_f-T_i\\), а не модуль понижения температуры."
+        ],
+        "en": [
+          "Do not use the isothermal differential \\(\\mathrm dM=nK\\,\\mathrm dH/(VT)\\) on an adiabat: temperature changes as well.",
+          "The heat capacity \\(C_M=n\\lambda/T^2\\) must not be treated as constant.",
+          "\\(\\Delta T\\) is the signed change \\(T_f-T_i\\), not the magnitude of cooling."
+        ]
+      },
+      "sourcePages": [
+        1
+      ]
+    },
+    {
+      "id": "T3-C1",
+      "max": 0.2,
+      "title": {
+        "ru": "Температуры и теплообмен в цикле",
+        "en": "Reservoir temperatures and heat exchange"
+      },
+      "steps": [
+        {
+          "id": "identify-isotherms",
+          "label": {
+            "ru": "Найдены холодная и горячая изотермы",
+            "en": "Identify the cold and hot isotherms"
+          },
+          "body": {
+            "ru": "<p>На диаграмме по горизонтальной оси отложена температура \\(T\\). Поэтому вертикальные участки изотермические. Левая вертикаль \\(2\\to3\\) соответствует \\(T_c=T_2=T_3\\), правая \\(4\\to1\\) — \\(T_h=T_4=T_1\\). Криволинейные ветви \\(1\\to2\\) и \\(3\\to4\\) — адиабаты.</p><figure><img src=\"/assets/practice/ipho-2026/solutions/figures/t3-c-cycle.png\" alt=\"Цикл Карно на диаграмме H от T: теплота Q_L поглощается на левой изотерме, Q_H отдаётся на правой.\"><figcaption>Рисунок из исходного решения: \\(T_L=T_c\\), \\(T_H=T_h\\), \\(Q_L=Q_c\\), \\(Q_H=Q_h\\).</figcaption></figure>",
+            "en": "<p>Temperature \\(T\\) is on the horizontal axis, so the vertical segments are isotherms. The left segment \\(2\\to3\\) has \\(T_c=T_2=T_3\\); the right segment \\(4\\to1\\) has \\(T_h=T_4=T_1\\). The curved branches \\(1\\to2\\) and \\(3\\to4\\) are adiabats.</p><figure><img src=\"/assets/practice/ipho-2026/solutions/figures/t3-c-cycle.png\" alt=\"Carnot cycle on the H versus T diagram: Q_L is absorbed on the left isotherm and Q_H is rejected on the right.\"><figcaption>Diagram from the source solution: \\(T_L=T_c\\), \\(T_H=T_h\\), \\(Q_L=Q_c\\), \\(Q_H=Q_h\\).</figcaption></figure>"
+          }
+        },
+        {
+          "id": "identify-heat",
+          "label": {
+            "ru": "Указаны поглощение и отдача теплоты",
+            "en": "Locate heat absorption and rejection"
+          },
+          "body": {
+            "ru": "<p>На \\(2\\to3\\) поле и намагниченность уменьшаются при постоянной \\(T_c\\). По B1 теплота поступает в тор: \\(Q_{2\\to3}=+Q_c\\). На \\(4\\to1\\) происходит изотермическое намагничивание, поэтому \\(Q_{4\\to1}=-Q_h\\): теплота передаётся горячему термостату. На адиабатах теплообмена нет.</p>",
+            "en": "<p>Along \\(2\\to3\\), field and magnetization decrease at constant \\(T_c\\). By B1, heat enters the torus: \\(Q_{2\\to3}=+Q_c\\). Along \\(4\\to1\\), isothermal magnetization gives \\(Q_{4\\to1}=-Q_h\\): heat is delivered to the hot reservoir. The adiabats exchange no heat.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Левая вертикаль: \\(\\boxed{T_c=T_2=T_3}\\), поглощение \\(\\boxed{Q_c\\text{ на }2\\to3}\\). Правая вертикаль: \\(\\boxed{T_h=T_4=T_1}\\), отдача \\(\\boxed{Q_h\\text{ на }4\\to1}\\).</p>",
+        "en": "<p>Left vertical: \\(\\boxed{T_c=T_2=T_3}\\), absorption \\(\\boxed{Q_c\\text{ on }2\\to3}\\). Right vertical: \\(\\boxed{T_h=T_4=T_1}\\), rejection \\(\\boxed{Q_h\\text{ on }4\\to1}\\).</p>"
+      },
+      "pitfalls": {
+        "ru": [
+          "Здесь график \\(H(T)\\), а не \\(P(V)\\): вертикальный участок означает постоянную температуру.",
+          "\\(Q_h\\) и \\(Q_c\\) определены как положительные модули; подписанная теплота тора на горячей изотерме отрицательна."
+        ],
+        "en": [
+          "This is an \\(H(T)\\) diagram, not a \\(P(V)\\) diagram: a vertical segment means constant temperature.",
+          "\\(Q_h\\) and \\(Q_c\\) are positive magnitudes; the signed heat of the torus on the hot isotherm is negative."
+        ]
+      },
+      "sourcePages": [
+        2
+      ]
+    },
+    {
+      "id": "T3-C2",
+      "max": 1.5,
+      "title": {
+        "ru": "Связь намагниченностей в вершинах",
+        "en": "Relation between the vertex magnetizations"
+      },
+      "steps": [
+        {
+          "id": "cycle-heat",
+          "label": {
+            "ru": "Записаны количества теплоты на двух изотермах",
+            "en": "Write the heat magnitudes on both isotherms"
+          },
+          "body": {
+            "ru": "<p>Применяя B1 к процессам, определённым в C1, получаем положительные модули:</p>\\[Q_c=\\frac{\\mu_0nK}{2T_c}(H_2^2-H_3^2),\\qquad Q_h=\\frac{\\mu_0nK}{2T_h}(H_1^2-H_4^2).\\]",
+            "en": "<p>Applying B1 to the processes identified in C1 gives the positive magnitudes</p>\\[Q_c=\\frac{\\mu_0nK}{2T_c}(H_2^2-H_3^2),\\qquad Q_h=\\frac{\\mu_0nK}{2T_h}(H_1^2-H_4^2).\\]"
+          }
+        },
+        {
+          "id": "carnot-identity",
+          "label": {
+            "ru": "Применено соотношение Карно",
+            "en": "Apply the Carnot identity"
+          },
+          "body": {
+            "ru": "<p>Для обратимого цикла Карно \\(Q_c/Q_h=T_c/T_h\\). Подставляя выражения выше и сокращая общие множители, получаем</p>\\[\\frac{H_2^2-H_3^2}{T_c^2}=\\frac{H_1^2-H_4^2}{T_h^2}.\\]",
+            "en": "<p>A reversible Carnot cycle obeys \\(Q_c/Q_h=T_c/T_h\\). Substitute the heat expressions and cancel their common factors:</p>\\[\\frac{H_2^2-H_3^2}{T_c^2}=\\frac{H_1^2-H_4^2}{T_h^2}.\\]"
+          }
+        },
+        {
+          "id": "state-to-magnetization",
+          "label": {
+            "ru": "Поля заменены намагниченностями",
+            "en": "Replace field strengths by magnetizations"
+          },
+          "body": {
+            "ru": "<p>В каждой вершине \\(M_j=nKH_j/(VT_j)\\). Вершины 2 и 3 имеют температуру \\(T_c\\), а вершины 1 и 4 — \\(T_h\\). Умножение предыдущего равенства на \\((nK/V)^2\\) даёт</p>\\[M_2^2-M_3^2=M_1^2-M_4^2.\\]",
+            "en": "<p>At each vertex, \\(M_j=nKH_j/(VT_j)\\). Vertices 2 and 3 are at \\(T_c\\), while 1 and 4 are at \\(T_h\\). Multiplication of the previous relation by \\((nK/V)^2\\) yields</p>\\[M_2^2-M_3^2=M_1^2-M_4^2.\\]"
+          }
+        },
+        {
+          "id": "solve-positive-magnitude",
+          "label": {
+            "ru": "Выбран положительный модуль M₁",
+            "en": "Choose the positive magnitude M₁"
+          },
+          "body": {
+            "ru": "<p>Переносим слагаемые и извлекаем положительный квадратный корень, поскольку \\(M_1\\) — модуль вектора намагниченности. Подкоренное выражение имеет размерность квадрата намагниченности.</p>",
+            "en": "<p>Rearrange and take the positive square root because \\(M_1\\) is the magnitude of the magnetization vector. The radicand has the dimensions of magnetization squared.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{M_1=\\sqrt{M_2^2-M_3^2+M_4^2}.}\\]",
+        "en": "\\[\\boxed{M_1=\\sqrt{M_2^2-M_3^2+M_4^2}.}\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "Не приравнивать просто \\(H_2^2-H_3^2\\) и \\(H_1^2-H_4^2\\): температуры изотерм различны.",
+          "В соотношение Карно подставляются положительные \\(Q_c\\) и \\(Q_h\\), а не подписанные теплоты тора.",
+          "В ответе нужны квадраты намагниченностей; линейное равенство их разностей неверно."
+        ],
+        "en": [
+          "Do not simply equate \\(H_2^2-H_3^2\\) and \\(H_1^2-H_4^2\\): the isotherm temperatures differ.",
+          "The Carnot identity uses positive \\(Q_c\\) and \\(Q_h\\), not the signed torus heat transfers.",
+          "The relation involves squared magnetizations; equating their linear differences is incorrect."
+        ]
+      },
+      "sourcePages": [
+        2
+      ]
+    },
+    {
+      "id": "T3-C3",
+      "max": 0.8,
+      "title": {
+        "ru": "Температура гелия после одного цикла",
+        "en": "Helium temperature after one cycle"
+      },
+      "steps": [
+        {
+          "id": "cold-isotherm-heat",
+          "label": {
+            "ru": "Вычислена теплота, извлечённая из гелия",
+            "en": "Calculate the heat extracted from helium"
+          },
+          "body": {
+            "ru": "<p>Берём холодную изотерму при начальной температуре гелия \\(T_c=1.00\\,\\mathrm K\\) и используем результат C2:</p>\\[Q_c=\\frac{\\mu_0nK}{2T_c}(H_2^2-H_3^2).\\]<p>При \\(\\mu_0=4\\pi\\times10^{-7}\\,\\mathrm{H/m}\\), \\(n=2.0\\,\\mathrm{mol}\\), \\(K=1.87\\times10^{-6}\\,\\mathrm{K\\,m^3/mol}\\), \\(H_2=311306\\,\\mathrm{A/m}\\), \\(H_3=204618\\,\\mathrm{A/m}\\):</p>\\[Q_c=0.1293459\\ldots\\,\\mathrm J\\simeq0.129\\,\\mathrm J.\\]",
+            "en": "<p>Use the cold isotherm at the initial helium temperature \\(T_c=1.00\\,\\mathrm K\\) and the result of C2:</p>\\[Q_c=\\frac{\\mu_0nK}{2T_c}(H_2^2-H_3^2).\\]<p>With \\(\\mu_0=4\\pi\\times10^{-7}\\,\\mathrm{H/m}\\), \\(n=2.0\\,\\mathrm{mol}\\), \\(K=1.87\\times10^{-6}\\,\\mathrm{K\\,m^3/mol}\\), \\(H_2=311306\\,\\mathrm{A/m}\\), and \\(H_3=204618\\,\\mathrm{A/m}\\):</p>\\[Q_c=0.1293459\\ldots\\,\\mathrm J\\simeq0.129\\,\\mathrm J.\\]"
+          }
+        },
+        {
+          "id": "helium-heat-capacity",
+          "label": {
+            "ru": "Найдена теплоёмкость охлаждаемого гелия",
+            "en": "Find the helium heat capacity"
+          },
+          "body": {
+            "ru": "<p>Переводим объём: \\(V_{He}=1.00\\,\\mathrm L=10^{-3}\\,\\mathrm{m^3}\\). Масса и полная теплоёмкость гелия:</p>\\[m_{He}=\\rho V_{He}=130\\times10^{-3}=0.130\\,\\mathrm{kg},\\qquad C_{He}=m_{He}c=13.0\\,\\mathrm{J/K}.\\]<p>Используется плотность гелия, а не плотность материала тора.</p>",
+            "en": "<p>Convert the volume: \\(V_{He}=1.00\\,\\mathrm L=10^{-3}\\,\\mathrm{m^3}\\). The helium mass and total heat capacity are</p>\\[m_{He}=\\rho V_{He}=130\\times10^{-3}=0.130\\,\\mathrm{kg},\\qquad C_{He}=m_{He}c=13.0\\,\\mathrm{J/K}.\\]<p>Use the helium density, not the torus material density.</p>"
+          }
+        },
+        {
+          "id": "helium-energy-balance",
+          "label": {
+            "ru": "Из теплового баланса найдена конечная температура",
+            "en": "Use the heat balance for the final temperature"
+          },
+          "body": {
+            "ru": "<p>Гелий отдаёт положительное количество теплоты \\(Q_c\\), поэтому его температура уменьшается:</p>\\[T_f=1.00\\,\\mathrm K-\\frac{Q_c}{C_{He}}=1.00\\,\\mathrm K-0.0099497\\ldots\\,\\mathrm K=0.9900503\\ldots\\,\\mathrm K.\\]<p>Разумно записать итог как \\(T_f\\simeq0.990\\,\\mathrm K\\). Это одноцикловая оценка принятой модели: \\(Q_c\\) рассчитано для \\(T_c=1.00\\,\\mathrm K\\), а полученное изменение составляет около 1% этой температуры.</p>",
+            "en": "<p>The helium releases the positive heat amount \\(Q_c\\), so its temperature decreases:</p>\\[T_f=1.00\\,\\mathrm K-\\frac{Q_c}{C_{He}}=1.00\\,\\mathrm K-0.0099497\\ldots\\,\\mathrm K=0.9900503\\ldots\\,\\mathrm K.\\]<p>An appropriate final value is \\(T_f\\simeq0.990\\,\\mathrm K\\). This is the adopted model's one-cycle estimate: \\(Q_c\\) is calculated at \\(T_c=1.00\\,\\mathrm K\\), and the resulting temperature drop is about 1% of that temperature.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{T_f\\simeq0.990\\,\\mathrm K.}\\]<p>Без промежуточного округления получается \\(0.9900503\\ldots\\,\\mathrm K\\). Официальное решение округляет \\(Q_c\\) до \\(0.129\\,\\mathrm J\\) и приводит \\(0.99008\\,\\mathrm K\\); различие связано с округлением промежуточных величин.</p>",
+        "en": "\\[\\boxed{T_f\\simeq0.990\\,\\mathrm K.}\\]<p>Without intermediate rounding, the result is \\(0.9900503\\ldots\\,\\mathrm K\\). The official solution rounds \\(Q_c\\) to \\(0.129\\,\\mathrm J\\) and reports \\(0.99008\\,\\mathrm K\\); the difference comes from intermediate rounding.</p>"
+      },
+      "pitfalls": {
+        "ru": [
+          "\\(1\\,\\mathrm L=10^{-3}\\,\\mathrm{m^3}\\), а не \\(1\\,\\mathrm{m^3}\\).",
+          "Величина \\(Q_c\\) извлекается из гелия: в балансе его энергии стоит минус.",
+          "Плотность и молярная масса тора не нужны для этого вычисления: в формуле уже задано количество вещества \\(n\\), а явный объём тора сократился.",
+          "Не приписывать физическую значимость последним десятичным знакам промежуточного вычисления."
+        ],
+        "en": [
+          "\\(1\\,\\mathrm L=10^{-3}\\,\\mathrm{m^3}\\), not \\(1\\,\\mathrm{m^3}\\).",
+          "\\(Q_c\\) is extracted from the helium and therefore decreases its energy.",
+          "The torus density and molar mass are not required here: the amount \\(n\\) is already given and the explicit torus volume cancels.",
+          "Do not attribute physical significance to all the working digits of the intermediate calculation."
+        ]
+      },
+      "sourcePages": [
+        2
+      ]
+    },
+    {
+      "id": "T3-C4",
+      "max": 2,
+      "title": {
+        "ru": "Время непрерывного охлаждения",
+        "en": "Time required for continuous cooling"
+      },
+      "steps": [
+        {
+          "id": "cooling-body-heat",
+          "label": {
+            "ru": "Теплота связана с понижением температуры тела",
+            "en": "Relate extracted heat to the body's temperature drop"
+          },
+          "body": {
+            "ru": "<p>Тело имеет постоянную теплоёмкость \\(C_c\\). При охлаждении \\(\\mathrm dT_c&lt;0\\), а извлечённая из него теплота положительна:</p>\\[\\mathrm dQ_c=-C_c\\,\\mathrm dT_c.\\]<p>Горячий термостат сохраняет температуру \\(T_h\\); принимаем \\(0&lt;T&lt;T_0&lt;T_h\\).</p>",
+            "en": "<p>The cooled body has constant heat capacity \\(C_c\\). During cooling, \\(\\mathrm dT_c&lt;0\\), whereas the heat extracted from it is positive:</p>\\[\\mathrm dQ_c=-C_c\\,\\mathrm dT_c.\\]<p>The hot reservoir remains at \\(T_h\\); assume \\(0&lt;T&lt;T_0&lt;T_h\\).</p>"
+          }
+        },
+        {
+          "id": "incremental-carnot-work",
+          "label": {
+            "ru": "Для малого цикла найдена необходимая работа",
+            "en": "Find the work required by an infinitesimal cycle"
+          },
+          "body": {
+            "ru": "<p>Для каждого обратимого малого цикла \\(\\mathrm dQ_h/\\mathrm dQ_c=T_h/T_c\\). За цикл внутренняя энергия холодильной машины возвращается к исходной, так что</p>\\[\\mathrm dW=\\mathrm dQ_h-\\mathrm dQ_c=\\left(\\frac{T_h}{T_c}-1\\right)\\mathrm dQ_c.\\]<p>Это работа, подводимая к машине, и она положительна.</p>",
+            "en": "<p>Each reversible infinitesimal cycle obeys \\(\\mathrm dQ_h/\\mathrm dQ_c=T_h/T_c\\). The refrigerator returns to its initial internal energy after each cycle, so</p>\\[\\mathrm dW=\\mathrm dQ_h-\\mathrm dQ_c=\\left(\\frac{T_h}{T_c}-1\\right)\\mathrm dQ_c.\\]<p>This is positive work supplied to the refrigerator.</p>"
+          }
+        },
+        {
+          "id": "constant-power",
+          "label": {
+            "ru": "Постоянная мощность связана с темпом охлаждения",
+            "en": "Relate constant power to the cooling rate"
+          },
+          "body": {
+            "ru": "<p>Из \\(\\mathrm dW=P\\,\\mathrm dt\\) и баланса тела:</p>\\[P\\,\\mathrm dt=-C_c\\left(\\frac{T_h}{T_c}-1\\right)\\mathrm dT_c,\\qquad \\mathrm dt=-\\frac{C_c}{P}\\left(\\frac{T_h}{T_c}-1\\right)\\mathrm dT_c.\\]<p>Знак согласован: при \\(\\mathrm dT_c&lt;0\\) время увеличивается.</p>",
+            "en": "<p>Combine \\(\\mathrm dW=P\\,\\mathrm dt\\) with the cooled-body heat balance:</p>\\[P\\,\\mathrm dt=-C_c\\left(\\frac{T_h}{T_c}-1\\right)\\mathrm dT_c,\\qquad \\mathrm dt=-\\frac{C_c}{P}\\left(\\frac{T_h}{T_c}-1\\right)\\mathrm dT_c.\\]<p>The sign is consistent: \\(\\mathrm dT_c&lt;0\\) corresponds to increasing time.</p>"
+          }
+        },
+        {
+          "id": "cooling-time-integral",
+          "label": {
+            "ru": "Время проинтегрировано от T₀ до T",
+            "en": "Integrate the time from T₀ to T"
+          },
+          "body": {
+            "ru": "<p>Интегрируем от \\((0,T_0)\\) до \\((t,T)\\):</p>\\[t=-\\frac{C_c}{P}\\int_{T_0}^{T}\\left(\\frac{T_h}{T_c}-1\\right)\\mathrm dT_c=\\frac{C_c}{P}\\left[T_h\\ln\\frac{T_0}{T}-(T_0-T)\\right].\\]",
+            "en": "<p>Integrate from \\((0,T_0)\\) to \\((t,T)\\):</p>\\[t=-\\frac{C_c}{P}\\int_{T_0}^{T}\\left(\\frac{T_h}{T_c}-1\\right)\\mathrm dT_c=\\frac{C_c}{P}\\left[T_h\\ln\\frac{T_0}{T}-(T_0-T)\\right].\\]"
+          }
+        },
+        {
+          "id": "time-limits",
+          "label": {
+            "ru": "Проверены размерность и недостижимость T = 0",
+            "en": "Check the units and the limit T = 0"
+          },
+          "body": {
+            "ru": "<p>Множитель \\(C_c/P\\) имеет размерность \\(\\mathrm{s/K}\\), а скобка — кельвин: итог измеряется в секундах. При \\(T=T_0\\) время равно нулю. При \\(T\\to0^+\\) логарифм неограниченно растёт: в этой модели точный абсолютный нуль нельзя достичь за конечное время при постоянной конечной мощности.</p>",
+            "en": "<p>The factor \\(C_c/P\\) has units \\(\\mathrm{s/K}\\), and the bracket has units kelvin, so the result is a time. It vanishes at \\(T=T_0\\). As \\(T\\to0^+\\), the logarithm diverges: in this model, exact absolute zero cannot be reached in finite time with finite constant power.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{t=\\frac{C_c}{P}\\left[T_h\\ln\\frac{T_0}{T}-(T_0-T)\\right]=\\frac{C_cT_h}{P}\\left[\\ln\\frac{T_0}{T}-\\frac{T_0-T}{T_h}\\right].}\\]",
+        "en": "\\[\\boxed{t=\\frac{C_c}{P}\\left[T_h\\ln\\frac{T_0}{T}-(T_0-T)\\right]=\\frac{C_cT_h}{P}\\left[\\ln\\frac{T_0}{T}-\\frac{T_0-T}{T_h}\\right].}\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "Мощность \\(P\\) — подводимая работа в единицу времени, а не скорость отвода теплоты \\(\\mathrm dQ_c/\\mathrm dt\\).",
+          "Нельзя считать холодильный коэффициент постоянным: температура охлаждаемого тела меняется.",
+          "При охлаждении \\(\\mathrm dQ_c=-C_c\\,\\mathrm dT_c\\), а не \\(+C_c\\,\\mathrm dT_c\\).",
+          "В логарифме должен стоять безразмерный аргумент \\(T_0/T\\)."
+        ],
+        "en": [
+          "\\(P\\) is the supplied work per unit time, not the heat extraction rate \\(\\mathrm dQ_c/\\mathrm dt\\).",
+          "The coefficient of performance is not constant because the cooled-body temperature changes.",
+          "During cooling, \\(\\mathrm dQ_c=-C_c\\,\\mathrm dT_c\\), not \\(+C_c\\,\\mathrm dT_c\\).",
+          "The logarithm must have the dimensionless argument \\(T_0/T\\)."
+        ]
+      },
+      "sourcePages": [
+        2
+      ]
+    },
+    {
+      "id": "T3-C5",
+      "max": 1.5,
+      "title": {
+        "ru": "Общий холодильный коэффициент",
+        "en": "Overall coefficient of performance"
+      },
+      "steps": [
+        {
+          "id": "total-cold-heat",
+          "label": {
+            "ru": "Найдена суммарная извлечённая теплота",
+            "en": "Find the total extracted heat"
+          },
+          "body": {
+            "ru": "<p>За всё охлаждение от \\(T_0\\) до \\(T\\) из тела с постоянной теплоёмкостью извлечено</p>\\[Q_c=\\int_{T_0}^{T}(-C_c\\,\\mathrm dT_c)=C_c(T_0-T).\\]<p>Это полная теплота за все циклы, а не теплота одного малого цикла.</p>",
+            "en": "<p>Over the entire cooling process from \\(T_0\\) to \\(T\\), the constant-heat-capacity body loses</p>\\[Q_c=\\int_{T_0}^{T}(-C_c\\,\\mathrm dT_c)=C_c(T_0-T).\\]<p>This is the heat extracted by all cycles, not by one infinitesimal cycle.</p>"
+          }
+        },
+        {
+          "id": "total-input-work",
+          "label": {
+            "ru": "Найдена работа за всё время",
+            "en": "Find the total input work"
+          },
+          "body": {
+            "ru": "<p>При постоянной мощности полная подведённая работа равна \\(W=Pt\\). Подставляя время из C4,</p>\\[W=C_c\\left[T_h\\ln\\frac{T_0}{T}-(T_0-T)\\right]=C_cT_h\\ln\\frac{T_0}{T}-Q_c.\\]",
+            "en": "<p>Constant power gives total input work \\(W=Pt\\). Substitute the time from C4:</p>\\[W=C_c\\left[T_h\\ln\\frac{T_0}{T}-(T_0-T)\\right]=C_cT_h\\ln\\frac{T_0}{T}-Q_c.\\]"
+          }
+        },
+        {
+          "id": "overall-ratio",
+          "label": {
+            "ru": "Взят общий COP как отношение полных величин",
+            "en": "Take the ratio of total heat to total work"
+          },
+          "body": {
+            "ru": "<p>По определению \\(\\mathrm{COP}_{tot}=Q_c/W\\). Делим числитель и знаменатель на \\(C_c(T_0-T)\\):</p>\\[\\mathrm{COP}_{tot}=\\frac{T_0-T}{T_h\\ln(T_0/T)-(T_0-T)}=\\left[\\frac{T_h}{T_0-T}\\ln\\frac{T_0}{T}-1\\right]^{-1}.\\]<p>Мощность и теплоёмкость сократились.</p>",
+            "en": "<p>By definition, \\(\\mathrm{COP}_{tot}=Q_c/W\\). Divide numerator and denominator by \\(C_c(T_0-T)\\):</p>\\[\\mathrm{COP}_{tot}=\\frac{T_0-T}{T_h\\ln(T_0/T)-(T_0-T)}=\\left[\\frac{T_h}{T_0-T}\\ln\\frac{T_0}{T}-1\\right]^{-1}.\\]<p>Power and heat capacity cancel.</p>"
+          }
+        },
+        {
+          "id": "overall-not-instantaneous",
+          "label": {
+            "ru": "Общий COP отличён от мгновенного",
+            "en": "Distinguish overall and instantaneous COP"
+          },
+          "body": {
+            "ru": "<p>Для одного малого цикла при текущей температуре \\(T_c\\) холодильный коэффициент равен \\(T_c/(T_h-T_c)\\). Он меняется при охлаждении, поэтому подстановка конечной \\(T\\) не даёт общий коэффициент. При очень малом охлаждении \\(T\\to T_0\\) найденный общий COP стремится к \\(T_0/(T_h-T_0)\\), а при \\(T\\to0^+\\) — к нулю.</p>",
+            "en": "<p>For a single infinitesimal cycle at the current temperature \\(T_c\\), the COP is \\(T_c/(T_h-T_c)\\). This changes throughout cooling, so substituting the final \\(T\\) does not give the overall COP. For an infinitesimal total temperature drop, \\(T\\to T_0\\), the overall result approaches \\(T_0/(T_h-T_0)\\); as \\(T\\to0^+\\), it approaches zero.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "\\[\\boxed{\\mathrm{COP}_{tot}=\\left[\\frac{T_h}{T_0-T}\\ln\\frac{T_0}{T}-1\\right]^{-1}.}\\]",
+        "en": "\\[\\boxed{\\mathrm{COP}_{tot}=\\left[\\frac{T_h}{T_0-T}\\ln\\frac{T_0}{T}-1\\right]^{-1}.}\\]"
+      },
+      "pitfalls": {
+        "ru": [
+          "Общий COP — отношение полной извлечённой теплоты к полной работе; он не равен \\(T/(T_h-T)\\) при конечном изменении температуры.",
+          "Нельзя брать простое арифметическое среднее мгновенных COP.",
+          "Холодильный коэффициент не является КПД теплового двигателя и может превышать единицу."
+        ],
+        "en": [
+          "The overall COP is total extracted heat divided by total input work; for a finite temperature change it is not \\(T/(T_h-T)\\).",
+          "Do not use a simple arithmetic average of instantaneous COP values.",
+          "A refrigerator COP is not a heat-engine efficiency and may exceed one."
+        ]
+      },
+      "sourcePages": [
+        2
+      ]
+    }
+  ],
+  "notes": {
+    "ru": [
+      "Шаги и чекбоксы — учебный разбор на основе приложенного официального решения, а не официальные критерии оценивания. Баллы относятся к подпунктам целиком; отдельным шагам веса не назначены.",
+      "Во всём разборе используется соглашение задачи: работа и теплота положительны при поступлении энергии в систему, поэтому \\(\\mathrm dU=\\mathrm dW+\\mathrm dQ\\). В C1–C5 \\(Q_c\\) и \\(Q_h\\) обозначают положительные модули теплообмена.",
+      "Различаются полная работа источника \\(\\mathrm dW_{emf}=VH\\,\\mathrm dB\\) и работа над веществом \\(\\mathrm dW=\\mu_0VH\\,\\mathrm dM\\). В термодинамические уравнения Pm-T входит вторая. За полный замкнутый цикл вакуумная энергия поля возвращается к исходному значению: \\(\\oint\\mu_0VH\\,\\mathrm dH=0\\). Поэтому суммарная работа источника за цикл совпадает с суммарной работой над веществом.",
+      "В исходном PDF решения обозначения первых двух подпунктов ошибочно начинаются с T1; здесь они приведены в соответствие с условием T3-A1 и T3-A2.",
+      "В C3 расчёт без промежуточного округления даёт \\(T_f=0.9900503\\ldots\\,\\mathrm K\\), тогда как официальный PDF после округления \\(Q_c\\) приводит \\(0.99008\\,\\mathrm K\\). Обе записи соответствуют \\(T_f\\simeq0.990\\,\\mathrm K\\). Расчёт одного цикла использует начальную \\(T_c=1.00\\,\\mathrm K\\), как и официальный разбор; изменение температуры составляет около 1%.",
+      "В пояснения добавлены выводы промежуточных формул, проверки знаков, размерностей и предельных случаев. Они не изменяют исходные условия и не задают дополнительные требования к оцениванию."
+    ],
+    "en": [
+      "The steps and checkboxes are an educational explanation based on the supplied official solution, not an official marking rubric. Marks belong to whole subparts; individual steps have no assigned weights.",
+      "Throughout, use the problem's convention: work and heat are positive when energy enters the system, so \\(\\mathrm dU=\\mathrm dW+\\mathrm dQ\\). In C1–C5, \\(Q_c\\) and \\(Q_h\\) are positive heat-transfer magnitudes.",
+      "The total source work \\(\\mathrm dW_{emf}=VH\\,\\mathrm dB\\) differs from the material work \\(\\mathrm dW=\\mu_0VH\\,\\mathrm dM\\). The Pm-T thermodynamic equations use the latter. Over a complete closed cycle, the vacuum-field energy returns to its initial value: \\(\\oint\\mu_0VH\\,\\mathrm dH=0\\). Thus the net source work per cycle equals the net work on the material.",
+      "The source solution PDF mistakenly labels the first two subparts with a T1 prefix; they are matched here to the condition labels T3-A1 and T3-A2.",
+      "In C3, substitution without intermediate rounding yields \\(T_f=0.9900503\\ldots\\,\\mathrm K\\), whereas the official PDF rounds \\(Q_c\\) and reports \\(0.99008\\,\\mathrm K\\). Both correspond to \\(T_f\\simeq0.990\\,\\mathrm K\\). The one-cycle estimate uses the initial \\(T_c=1.00\\,\\mathrm K\\), as in the official solution; the temperature change is about 1%.",
+      "The explanation adds derivations of intermediate formulas and checks of signs, units, and limiting cases. These do not change the original conditions or introduce additional marking requirements."
+    ]
+  }
+}
