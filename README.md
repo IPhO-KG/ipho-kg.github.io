@@ -43,7 +43,7 @@ HTML • CSS • JavaScript • GitHub Pages
   and change `data-year`, `<title>` and `canonical` (and update the redirect in `results/index.html`).
 
 ## Check before publishing
-Run `node scripts/check-site.mjs` to check local asset paths, PDF links, result pages, and JavaScript syntax. No dependencies are required.
+Run `node scripts/check-site.mjs` to check local asset paths, PDF links, result pages, and JavaScript syntax. Run `node scripts/check-review.mjs` for manual self-assessment validation. No dependencies are required.
 
 Public asset URLs use `?v=20261020` to bypass previously cached 404 responses. Bump this version when relocating or replacing shared assets.
 
@@ -58,3 +58,31 @@ The `/preparation/` entry page is a paper-note wall, designed for multiple contr
 - The site header/footer still use `results.css`. Paper and notebook styles are isolated in `preparation-wall.css`; the original long-plan styles remain in `preparation.css`.
 
 - Notes are currently in Russian; site navigation follows the shared RU/KY/EN setting. The pre-preparation site snapshot is preserved on `backup/before-preparation-2026-11-09`.
+
+
+## Practice and IPhO 2026 mock
+
+- `/practice/` lists available full papers and resumes the active attempt. History and personal-note controls are omitted from the interface; existing saved records remain compatible.
+- The edition card on `/practice/ipho/` expands in place with reading and exam/training controls. Submitting it opens the reader directly via `?start=exam` or `?start=training&minutes=90`; launch arguments are consumed once and existing active attempts take priority.
+- `/practice/ipho-2026/` also supports the saved setup URL for a 5-hour exam or a training session (1–1440 minutes, with pause). `?view=read` opens conditions without starting a timer.
+- Russian conditions are loaded from `assets/practice/ipho-2026/q1.html`, `q2.html`, `q3.html`; English conditions use `q1_en.html`, `q2_en.html`, `q3_en.html`. Original and Russian PDF files are available as downloads. The supplied official conditions include some hints; these remain part of the exam.
+- Detailed solutions use the supplied organizer PDFs. Self-assessment uses manual subpart scores; checklist steps do not award marks automatically.
+- `assets/js/practice-engine.js` contains pure timing/state transitions. `practice-page.js` handles local storage, the inline bilingual reader, PDF downloads, and active-attempt resume. Styles are isolated in `assets/css/practice.css`.
+- Exam time uses an absolute deadline and continues while a tab is closed or the computer sleeps. Training pauses preserve the remaining budget. Completed/expired attempts cannot resume. Cross-tab updates reload the latest saved state; a tab pointing to an older unfinished attempt becomes read-only when a new active attempt exists.
+- Attempts use localStorage keys starting `npho-practice-v1:ipho-2026:`. History is device/browser-local. Private mode or blocked storage may prevent persistence; the UI reports this. There is no account, server timer, proctoring, or cross-device synchronization.
+- Both languages use native HTML with MathJax; PDF links download files without embedding a browser viewer. MathJax is loaded from the same CDN/version family as the existing site. A static HTTP server is required for HTML fragments; opening `index.html` through `file://` is not supported.
+- Run `node scripts/check-site.mjs` and `node scripts/check-practice.mjs` before publishing.
+
+## Solutions and self-assessment
+
+- The wider practice reader preserves IPhO subpart numbering, formulas and figures. The native NPhO palette, shared controls and one continuous document surface keep practice consistent with the rest of the site.
+- Detailed Russian/English solutions live in `assets/practice/ipho-2026/solutions/t1.json`, `t2.json`, `t3.json`; original solution PDFs are bundled alongside conditions.
+- Part maxima match the 23 published subquestions (30 points). Editorial checklist steps are unweighted and never award points automatically. The supplied PDFs do not provide a granular official marking scheme.
+- Self-assessment has manual capped scores, unassessed/null scores and a live count of checked steps per task and subpart. Existing uncertainty/note values are preserved in old records without visible controls. Records remain separate from exam state for each attempt.
+- Review access is blocked for an unfinished selected attempt; opening review never finishes or resets an attempt. Existing timing/state schemas are retained.
+- `practice-review-model.js` handles pure validated score transitions; the review UI handles navigation, rendering and local persistence.
+
+
+## Typography
+
+`assets/css/fonts.css` loads bundled Open Sans for interface controls and STIX for mathematical reading. Fonts are self-hosted in `assets/fonts/`, with their redistribution licenses. STIX covers Russian/English reading; UI fonts also cover Kyrgyz letters. MathJax equations and the source PDFs are unchanged.

@@ -1,0 +1,43 @@
+/* Shared navigation controls. Native select remains available without JavaScript. */
+.ui-icon{display:inline-block;width:1em;height:1em;flex-shrink:0;vertical-align:-.12em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.icon-button .ui-icon{width:18px;height:18px;vertical-align:middle}
+.asset-credit .ui-icon{margin-left:2px}
+.language-chevron{display:inline-flex;align-items:center}
+.theme-icon .ui-icon{display:block}
+
+body>nav{overflow:visible}
+.language-picker{position:relative;flex-shrink:0;z-index:110}
+.language-trigger{display:flex;align-items:center;gap:8px;min-height:36px;padding:7px 11px;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font:600 13px/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;cursor:pointer}
+.language-trigger img,.language-menu img{display:block;width:24px;height:16px;object-fit:cover;border-radius:3px;box-shadow:0 0 0 1px rgba(127,127,127,.25)}
+.language-chevron{color:var(--text2);font-size:15px}
+.language-menu{position:absolute;right:0;top:calc(100% + 8px);width:190px;padding:6px;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 14px 36px rgba(0,0,0,.2)}
+.language-menu[hidden],select[data-lang-select][hidden]{display:none!important}
+.language-menu button{display:flex;align-items:center;gap:10px;width:100%;padding:10px;border:0;border-radius:7px;background:transparent;color:var(--text);font:500 14px/1.3 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-align:left;cursor:pointer}
+.language-menu button:hover,.language-menu button:focus-visible,.language-menu button[aria-checked=true]{background:var(--bg2)}
+.language-check{margin-left:auto;visibility:hidden;color:var(--accent)}
+.language-menu button[aria-checked=true] .language-check{visibility:visible}
+.language-trigger:focus-visible,.language-menu button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(max-width:640px){.language-trigger{padding:7px 8px;gap:6px;font-size:12px}.language-trigger img{width:21px;height:14px}.language-menu{width:180px}}
+/* Calendar categories: solid green nationally, turquoise internationally. */
+.calendar-column{--calendar-color:#28ae81}
+.calendar-column.international{--calendar-color:#19a9b4}
+.calendar-column .calendar-dot{background:var(--calendar-color);border-color:var(--calendar-color)}
+.calendar-column.international .calendar-event .calendar-dot{background:var(--calendar-color);border-color:var(--calendar-color)}
+.calendar-column .calendar-column-title:before,.calendar-column.international .calendar-column-title:before{background:var(--calendar-color)}
+.calendar-column .calendar-event.current .calendar-dot{background:var(--calendar-color);border-color:var(--calendar-color);box-shadow:0 0 0 7px rgba(40,174,129,.15)}
+.change-notice{background:var(--bg2);border:1px solid var(--border);color:var(--text2)}
+.change-notice strong{color:var(--text)}
+.olympiad-row .olympiad-format{margin-top:9px;color:var(--text2);font-size:14px;line-height:1.7}
+.olympiad-source{display:inline-block;margin-top:10px;color:var(--accent);font-size:13px;text-decoration:none}
+.olympiad-source:hover{text-decoration:underline}
+.about-hero .eyebrow{display:none}
+.about-section-label{display:none}
+.about-section{border-top-color:var(--border)}
+.team-selection-row{grid-template-columns:145px minmax(0,1fr)}
+.olympiad-description p+p{margin-top:10px}
+.olympiad-name{font-size:16px}
+@media(max-width:700px){.team-selection-row{grid-template-columns:1fr;gap:6px}.team-selection-text{grid-column:auto}}
+@media(max-width:640px){nav .nav-right{gap:6px}.calendar-event-title{flex-wrap:wrap}}
+
+/* Keep site status above the committee representation, including translated footers. */
+.fc [data-i18n="footer.desc"]{white-space:pre-line;line-height:1.7}

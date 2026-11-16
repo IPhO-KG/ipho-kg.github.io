@@ -1,0 +1,43 @@
+{
+  "id": "T2",
+  "title": "Готовим на солнце?",
+  "points": 10,
+  "subtasks": [
+    {
+      "id": "T2-A1",
+      "points": 1.5
+    },
+    {
+      "id": "T2-B1",
+      "points": 2.0
+    },
+    {
+      "id": "T2-B2",
+      "points": 1.5
+    },
+    {
+      "id": "T2-B3",
+      "points": 0.5
+    },
+    {
+      "id": "T2-C1",
+      "points": 0.5
+    },
+    {
+      "id": "T2-C2",
+      "points": 2.0
+    },
+    {
+      "id": "T2-C3",
+      "points": 1.0
+    },
+    {
+      "id": "T2-C4",
+      "points": 1.0
+    }
+  ],
+  "solutionsAvailable": true,
+  "solutionData": "/assets/practice/ipho-2026/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2026/IPhO_2026_S2_EN.pdf",
+  "stepScoring": "editorial-unweighted-manual-subtask-assessment"
+}

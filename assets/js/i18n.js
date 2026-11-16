@@ -14,27 +14,27 @@
   const UI = {
     ru: {
       'lang.label':'Язык',
-      'nav.home':'Главная','nav.preparation':'Подготовка','nav.problems':'Банк задач','nav.results':'Результаты','nav.about':'Об олимпиаде',
+      'nav.home':'Главная','nav.preparation':'Подготовка','nav.practice':'Практика','nav.problems':'Банк задач','nav.results':'Результаты','nav.about':'Об олимпиаде',
       'theme.dark':'Тёмная','theme.light':'Светлая','theme.toDark':'Включить тёмную тему','theme.toLight':'Включить светлую тему','theme.toggle':'Переключить цветовую тему',
       'meta.title':'Национальная олимпиада по физике, Кыргызстан (NPhO)',
       'meta.description':'Официальный сайт Национальной олимпиады по физике Кыргызской Республики. Задачи, решения, результаты и информация об олимпиаде.',
       'official.site':'Официальный сайт',
-      'official.badge':'Представитель официального комитета по физике КР',
+      'official.badge':'Представитель официального комитета по физике Кыргызской Республики',
       'hero.title1':'Национальная олимпиада','hero.title2':'по физике',
       'hero.sub':'Задачи, решения и понятный путь от национального отбора к международным олимпиадам по физике.',
       'footer.title':'Национальная олимпиада по физике',
-      'footer.desc':'Официальный сайт и представитель официального комитета по физике Кыргызской Республики.',
+      'footer.desc':"Официальный сайт\nПредставитель официального комитета по физике Кыргызской Республики.",
       'footer.chair':'Председатель',
       'footer.nav':'Навигация','footer.contacts':'Контакты',
       'footer.copy':'© 2026 Национальная олимпиада по физике Кыргызской Республики',
       'home.selEyebrow':'Два маршрута · один финал','home.selTitle':'Как устроен отбор',
       'home.calEyebrow':'Сезон 2025–2026','home.calTitle':'Календарь сезона','home.important':'Важно',
       'home.stagesCol':'Этапы NPhO','home.intlCol':'Международные старты','flag.alt':'Флаг: {name}',
-      'about.kicker':'Об олимпиаде','about.label.org':'Организатор','about.orgTitle':'Официальный статус',
+      'about.kicker':'Об олимпиаде','about.label.org':'Организатор','about.orgTitle':'Официальный сайт','about.committeeText':"Представитель официального комитета по физике Кыргызской Республики.",
       'about.orgText':'npho.edu.kg — официальный сайт Национальной олимпиады по физике Кыргызской Республики. Сайт является представителем официального комитета по физике КР: здесь публикуются условия и решения, результаты отбора и составы команд на международные олимпиады.',
       'about.org.status':'Статус','about.org.statusVal':'Официальный сайт Национальной олимпиады по физике',
       'about.org.committee':'Комитет','about.org.committeeVal':'Представитель официального комитета по физике Кыргызской Республики',
-      'about.org.chair':'Председатель',
+      'about.org.chair':'Председатель комитета',
       'about.label.system':'Система отбора','about.label.teams':'Состав команд','about.label.intl':'Международный уровень',
       'results.title':'Результаты','results.kicker':'Заключительный этап','results.stage':'IV этап {year}',
       'results.dates':'Даты','results.place':'Место','results.bishkek':'Бишкек','results.duration':'Продолжительность',
@@ -55,7 +55,7 @@
       'diff.1':'Лёгкая','diff.2':'Средняя','diff.3':'Сложная','diff.4':'Гроб',
       'diffLong.1':'Лёгкая задача — зелёный цвет','diffLong.2':'Средняя задача — оранжевый цвет','diffLong.3':'Сложная задача — красный цвет','diffLong.4':'Гроб — тёмно-красный цвет с черепом',
       'problems.task':'Задача {n}','problems.openTask':'Открыть задачу {n}. Сложность: {d}','problems.difficulty':'Сложность: {d}',
-      'problems.copyLink':'⧉ Скопировать ссылку','problems.copied':'✓ Ссылка скопирована','problems.copyTitle':'Скопировать ссылку на задачу','problems.copyPrompt':'Скопируйте ссылку на задачу:',
+      'problems.copyLink':'Скопировать ссылку','problems.copied':'Ссылка скопирована','problems.copyTitle':'Скопировать ссылку на задачу','problems.copyPrompt':'Скопируйте ссылку на задачу:',
       'problems.statement':'Условие','problems.hints':'Пошаговые подсказки','problems.openHint':'Открыть подсказку','problems.solution':'Решение',
       'problems.answer':'Ответ','problems.comment':'Комментарий автора','problems.show':'Показать','problems.hide':'Скрыть',
       'problems.prev':'← Предыдущая','problems.next':'Следующая →','problems.navLabel':'Переход между задачами','problems.sidebarBack':'Вернуться к разделу',
@@ -70,7 +70,7 @@
     },
     ky: {
       'lang.label':'Тил',
-      'nav.home':'Башкы бет','nav.preparation':'Даярдык','nav.problems':'Маселелер банкы','nav.results':'Жыйынтыктар','nav.about':'Олимпиада жөнүндө',
+      'nav.home':'Башкы бет','nav.preparation':'Даярдык','nav.practice':'Практика','nav.problems':'Маселелер банкы','nav.results':'Жыйынтыктар','nav.about':'Олимпиада жөнүндө',
       'theme.dark':'Караңгы','theme.light':'Жарык','theme.toDark':'Караңгы теманы күйгүзүү','theme.toLight':'Жарык теманы күйгүзүү','theme.toggle':'Түс темасын которуу',
       'meta.title':'Физика боюнча улуттук олимпиада, Кыргызстан (NPhO)',
       'meta.description':'Кыргыз Республикасынын физика боюнча улуттук олимпиадасынын расмий сайты. Маселелер, чыгарылыштар, жыйынтыктар жана олимпиада тууралуу маалымат.',
@@ -79,14 +79,14 @@
       'hero.title1':'Физика боюнча','hero.title2':'улуттук олимпиада',
       'hero.sub':'Маселелер, чыгарылыштар жана улуттук тандоодон эл аралык физика олимпиадаларына чейинки түшүнүктүү жол.',
       'footer.title':'Физика боюнча улуттук олимпиада',
-      'footer.desc':'Кыргыз Республикасынын физика боюнча расмий комитетинин расмий сайты жана өкүлү.',
+      'footer.desc':"Расмий сайт\nКыргыз Республикасынын физика боюнча расмий комитетинин өкүлү.",
       'footer.chair':'Комитеттин төрагасы',
       'footer.nav':'Навигация','footer.contacts':'Байланыш',
       'footer.copy':'© 2026 Кыргыз Республикасынын физика боюнча улуттук олимпиадасы',
       'home.selEyebrow':'Эки жол · бир финал','home.selTitle':'Тандоо кандай уюштурулган',
       'home.calEyebrow':'2025–2026-окуу жылы','home.calTitle':'Сезондун календары','home.important':'Маанилүү',
       'home.stagesCol':'NPhO этаптары','home.intlCol':'Эл аралык мелдештер','flag.alt':'Желек: {name}',
-      'about.kicker':'Олимпиада жөнүндө','about.label.org':'Уюштуруучу','about.orgTitle':'Расмий статус',
+      'about.kicker':'Олимпиада жөнүндө','about.label.org':'Уюштуруучу','about.orgTitle':'Расмий сайт','about.committeeText':"Кыргыз Республикасынын физика боюнча расмий комитетинин өкүлү.",
       'about.orgText':'npho.edu.kg — Кыргыз Республикасынын физика боюнча улуттук олимпиадасынын расмий сайты. Сайт КР физика боюнча расмий комитетинин өкүлү болуп саналат: бул жерде маселелердин шарттары жана чыгарылыштары, тандоонун жыйынтыктары жана эл аралык олимпиадаларга командалардын курамы жарыяланат.',
       'about.org.status':'Статус','about.org.statusVal':'Физика боюнча улуттук олимпиаданын расмий сайты',
       'about.org.committee':'Комитет','about.org.committeeVal':'Кыргыз Республикасынын физика боюнча расмий комитетинин өкүлү',
@@ -111,7 +111,7 @@
       'diff.1':'Жеңил','diff.2':'Орто','diff.3':'Татаал','diff.4':'Өтө татаал',
       'diffLong.1':'Жеңил маселе — жашыл түс','diffLong.2':'Орто маселе — кызгылт сары түс','diffLong.3':'Татаал маселе — кызыл түс','diffLong.4':'Өтө татаал — баш сөөгү бар кочкул кызыл түс',
       'problems.task':'{n}-маселе','problems.openTask':'{n}-маселени ачуу. Татаалдыгы: {d}','problems.difficulty':'Татаалдыгы: {d}',
-      'problems.copyLink':'⧉ Шилтемени көчүрүү','problems.copied':'✓ Шилтеме көчүрүлдү','problems.copyTitle':'Маселенин шилтемесин көчүрүү','problems.copyPrompt':'Маселенин шилтемесин көчүрүп алыңыз:',
+      'problems.copyLink':'Шилтемени көчүрүү','problems.copied':'Шилтеме көчүрүлдү','problems.copyTitle':'Маселенин шилтемесин көчүрүү','problems.copyPrompt':'Маселенин шилтемесин көчүрүп алыңыз:',
       'problems.statement':'Шарты','problems.hints':'Кадам сайын кеңештер','problems.openHint':'Кеңешти ачуу','problems.solution':'Чыгарылышы',
       'problems.answer':'Жообу','problems.comment':'Автордун комментарийи','problems.show':'Көрсөтүү','problems.hide':'Жашыруу',
       'problems.prev':'← Мурунку','problems.next':'Кийинки →','problems.navLabel':'Маселелердин ортосунда өтүү','problems.sidebarBack':'Бөлүмгө кайтуу',
@@ -126,7 +126,7 @@
     },
     en: {
       'lang.label':'Language',
-      'nav.home':'Home','nav.preparation':'Preparation','nav.problems':'Problem bank','nav.results':'Results','nav.about':'About',
+      'nav.home':'Home','nav.preparation':'Preparation','nav.practice':'Practice','nav.problems':'Problem bank','nav.results':'Results','nav.about':'About',
       'theme.dark':'Dark','theme.light':'Light','theme.toDark':'Switch to dark theme','theme.toLight':'Switch to light theme','theme.toggle':'Toggle color theme',
       'meta.title':'National Physics Olympiad of Kyrgyzstan (NPhO)',
       'meta.description':'Official website of the National Physics Olympiad of the Kyrgyz Republic. Problems, solutions, results and information about the olympiad.',
@@ -135,14 +135,14 @@
       'hero.title1':'National','hero.title2':'Physics Olympiad',
       'hero.sub':'Problems, solutions and a clear path from national selection to the international physics olympiads.',
       'footer.title':'National Physics Olympiad',
-      'footer.desc':'Official website and representative of the official Physics Committee of the Kyrgyz Republic.',
+      'footer.desc':"Official website\nRepresentative of the official Physics Committee of the Kyrgyz Republic.",
       'footer.chair':'Committee Chair',
       'footer.nav':'Navigation','footer.contacts':'Contacts',
       'footer.copy':'© 2026 National Physics Olympiad of the Kyrgyz Republic',
       'home.selEyebrow':'Two routes · one final','home.selTitle':'How selection works',
       'home.calEyebrow':'Season 2025–2026','home.calTitle':'Season calendar','home.important':'Important',
       'home.stagesCol':'NPhO stages','home.intlCol':'International competitions','flag.alt':'Flag: {name}',
-      'about.kicker':'About the Olympiad','about.label.org':'Organizer','about.orgTitle':'Official status',
+      'about.kicker':'About the Olympiad','about.label.org':'Organizer','about.orgTitle':'Official website','about.committeeText':"Representative of the official Physics Committee of the Kyrgyz Republic.",
       'about.orgText':'npho.edu.kg is the official website of the National Physics Olympiad of the Kyrgyz Republic. The site represents the official Physics Committee of the Kyrgyz Republic: problems and solutions, selection results and international team rosters are published here.',
       'about.org.status':'Status','about.org.statusVal':'Official website of the National Physics Olympiad',
       'about.org.committee':'Committee','about.org.committeeVal':'Representative of the official Physics Committee of the Kyrgyz Republic',
@@ -167,7 +167,7 @@
       'diff.1':'Easy','diff.2':'Medium','diff.3':'Hard','diff.4':'Brutal',
       'diffLong.1':'Easy problem — green','diffLong.2':'Medium problem — orange','diffLong.3':'Hard problem — red','diffLong.4':'Brutal — dark red with a skull',
       'problems.task':'Problem {n}','problems.openTask':'Open problem {n}. Difficulty: {d}','problems.difficulty':'Difficulty: {d}',
-      'problems.copyLink':'⧉ Copy link','problems.copied':'✓ Link copied','problems.copyTitle':'Copy a link to this problem','problems.copyPrompt':'Copy the link to this problem:',
+      'problems.copyLink':'Copy link','problems.copied':'Link copied','problems.copyTitle':'Copy a link to this problem','problems.copyPrompt':'Copy the link to this problem:',
       'problems.statement':'Statement','problems.hints':'Step-by-step hints','problems.openHint':'Show hint','problems.solution':'Solution',
       'problems.answer':'Answer','problems.comment':'Author’s comment','problems.show':'Show','problems.hide':'Hide',
       'problems.prev':'← Previous','problems.next':'Next →','problems.navLabel':'Problem navigation','problems.sidebarBack':'Back to the topic',
@@ -310,6 +310,18 @@
       }
     }
   };
+
+
+  const REFRESH_UI={"ru":{"home.season":"Сезон {season}","hero.sub":"Условия, решения, результаты и порядок отбора школьников Кыргызстана.","about.officialLink":"Регламент и сведения организаторов","book.desc.Овчинкин":"","home.selEyebrow":"Отбор"},"en":{"home.season":"Season {season}","hero.sub":"Problems, solutions, results and selection information for students in Kyrgyzstan.","about.officialLink":"Rules and organizer information","book.desc.Овчинкин":"","home.selEyebrow":"Selection"},"ky":{"home.season":"{season}-окуу жылы","hero.sub":"Кыргызстандын окуучулары үчүн маселелер, чыгарылыштар, жыйынтыктар жана тандоо тартиби.","about.officialLink":"Регламент жана уюштуруучулардын маалыматы","book.desc.Овчинкин":"","home.selEyebrow":"Тандоо"}};
+  Object.keys(REFRESH_UI).forEach(lang=>Object.assign(UI[lang],REFRESH_UI[lang]));
+  Object.assign(COUNTRIES.ru,{TH:'Таиланд',SA:'Саудовская Аравия'});
+  Object.assign(COUNTRIES.ky,{TH:'Таиланд',SA:'Сауд Арабиясы'});
+  Object.assign(COUNTRIES.en,{TH:'Thailand',SA:'Saudi Arabia'});
+  const REFRESH_CONTENT={"ky":{"about":{"intro":"Физика боюнча улуттук олимпиада (NPhO) — Кыргызстандын окуучулары үчүн мелдеш жана эл аралык олимпиадаларга тандоонун бир жолу. Катышуучулардын жыйынтыктары аймагына жана окуган жерине карабастан бирдиктүү улуттук рейтингде салыштырылат.","originTitle":"Тандоо тартиби","originText":"Тандоо эки багытта өтөт. Республикалык олимпиадада катышуучулар райондук, облустук же шаардык, андан кийин республикалык этаптардан өтүшөт. Кийинки этапка өтүү аймактык квоталар менен чектелет.\n\nУлуттук олимпиадада тандоо аймактык квотасыз, бирдиктүү рейтинг боюнча жүргүзүлөт. I жана II этаптар онлайн, III этап Бишкек менен Ошто бетме-бет өтөт. IV этапта улуттук тандоонун катышуучулары Республикалык олимпиада аркылуу өткөн катышуучуларга кошулат.","pathText":"","internationalDetails":[{"name":"Эл аралык физика олимпиадасы","text":"Окуучулар үчүн дүйнөлүк мелдеш, жыйынтыктар жеке эсепте бааланат. Улуттук командага адатта бешке чейин катышуучу кирет.\n\nАр бири беш сааттык эки тур: үч теориялык маселе жана бир же эки эксперименттик иш. Теория физиканын бир нече бөлүмүн, эксперимент өлчөөлөрдү жана алардын каталарын талдоону камтыйт."},{"name":"Азия физика олимпиадасы","text":"Азия жана Океания өлкөлөрүнүн окуучулары үчүн аймактык мелдеш. Улуттук командага сегизге чейин катышуучу кирет; эсеп жеке жүргүзүлөт.\n\nТеориялык жана эксперименттик турлар адатта беш сааттан созулат. Кеңири маселелер моделди так түзүүнү, ырааттуу эсептөөлөрдү жана эксперименттик ишти талап кылат."},{"name":"Европа физика олимпиадасы","text":"Европа өлкөлөрүнүн окуучулары жана башка аймактардан чакырылган командалар үчүн мелдеш.\n\nПрограмма теориялык жана эксперименттик турларды камтыйт. Өзгөчөлүгү — физикалык моделди жана чыгаруу ыкмасын тандоого мүмкүнчүлүк берген кыска шарттар."},{"name":"Балкан физика олимпиадасы","text":"Балкан физика биримдигине кирген өлкөлөрдүн окуучулары жана чакырылган командалар үчүн аймактык мелдеш.\n\nАкыркы чыгарылыштарда төрт маселеден турган бир жазуу туру өткөрүлүп, өзүнчө эксперименттик тур болбойт. Катышуу шарттары жана жаш чеги уюштуруучулардын регламентинде аныкталат."},{"name":"Эл аралык илимий физика олимпиадасы","text":"Улуттук делегациялардын курамында катышкан жаш физиктер үчүн эл аралык мелдеш.\n\nТеориялык жана эксперименттик тапшырмалар физикалык талдоону, компьютердик моделдөөнү жана маалымат иштетүүнү айкалыштырат. Ар бир чыгарылыштын даталары менен форматын уюштуруучулар аныктайт."}]},"calendar":[{"date":"Даталары такталууда","title":"NPhO I этабы","details":"Онлайн"},{"date":"Даталары такталууда","title":"NPhO II этабы","details":"Онлайн"},{"date":"Даталары такталууда","title":"NPhO III этабы","details":"Бетме-бет этап"},{"date":"Даталары такталууда","title":"IV этап — улуттук финал","details":"Жалпы жыйынтыктоочу тандоо"},{"date":"16–24-май 2027","title":"APhO 2027","details":"Накхонратчасима, Таиланд"},{"date":"Июнь 2027","title":"EuPhO 2027","details":"Анталья, Түркия · так даталар күтүлүүдө"},{"date":"Даталары такталууда","title":"ISPhO 2027","details":"Өткөрүү маалыматы такталууда"},{"date":"Даталары такталууда","title":"BPO 2027","details":"Өткөрүү маалыматы такталууда"},{"date":"4–12-июль 2027","title":"IPhO 2027","details":"Эр-Рияд, Сауд Арабиясы"}],"notice":"Даталар, өткөрүү жайлары жана тандоо шарттары уюштуруучулар тарабынан такталат. Катышууда учурдагы регламентти жана расмий жарыяларды жетекчиликке алуу керек.","selection":{"intro":"Улуттук жана Республикалык олимпиадалар — жалпы IV этапка алып баруучу эки тандоо багыты.","republicanNote":"Этаптар арасында аймактык квоталар колдонулат.","nationalNote":"Аймактык квотасыз, бирдиктүү рейтинг боюнча тандоо.","finalText":"Эки багыттын катышуучулары бирдиктүү рейтингде жыйынтыктоочу тандоодон өтөт."}},"en":{"about":{"intro":"The National Physics Olympiad (NPhO) is a competition for school students in Kyrgyzstan and one of the routes to selection for international olympiads. Results are compared in a single national ranking, regardless of region or school.","originTitle":"Selection process","originText":"Selection follows two routes. In the Republican Olympiad, students advance through district, regional or city, and republican stages. Progression is limited by territorial quotas.\n\nThe National Olympiad uses a single national ranking without regional quotas. Stages I and II are online; Stage III takes place in person in Bishkek and Osh. At Stage IV, participants of the National Olympiad join those selected through the Republican Olympiad.","pathText":"","internationalDetails":[{"name":"International Physics Olympiad","text":"A worldwide competition for school students with individual rankings. A national team normally includes up to five participants.\n\nTwo five-hour rounds: three theoretical problems and one or two experimental tasks. Theory spans several areas of physics; experiments test measurement skills and uncertainty analysis."},{"name":"Asian Physics Olympiad","text":"A regional competition for students from Asia and Oceania. National teams include up to eight participants, with individual rankings.\n\nThe theoretical and experimental rounds normally last five hours each. Extended problems require careful modelling, sustained calculations and experimental work."},{"name":"European Physics Olympiad","text":"A competition for school students from European countries and invited teams from other regions.\n\nThe programme includes theoretical and experimental rounds. A characteristic feature is short problem statements that leave room to choose a physical model and an approach."},{"name":"Balkan Physics Olympiad","text":"A regional competition for school students from Balkan Physical Union member countries and invited teams.\n\nRecent editions feature one written round of four problems and no separate experimental round. Eligibility and age limits are defined by the organizers’ regulations."},{"name":"International Scientific Physics Olympiad","text":"An international competition for young physicists representing national delegations.\n\nTheoretical and experimental tasks combine physical analysis, computer modelling and data processing. Dates and event format are set by the organizers for each edition."}]},"calendar":[{"date":"Dates pending","title":"Stage I NPhO","details":"Online"},{"date":"Dates pending","title":"Stage II NPhO","details":"Online"},{"date":"Dates pending","title":"Stage III NPhO","details":"In-person round"},{"date":"Dates pending","title":"Stage IV — national final","details":"Common final selection"},{"date":"16–24 May 2027","title":"APhO 2027","details":"Nakhon Ratchasima, Thailand"},{"date":"June 2027","title":"EuPhO 2027","details":"Antalya, Türkiye · exact dates pending"},{"date":"Dates pending","title":"ISPhO 2027","details":"Event details pending"},{"date":"Dates pending","title":"BPO 2027","details":"Event details pending"},{"date":"4–12 July 2027","title":"IPhO 2027","details":"Riyadh, Saudi Arabia"}],"notice":"Dates, venues and selection rules are confirmed by the organizers. Refer to current regulations and official announcements before participating.","selection":{"intro":"The National and Republican Olympiads are two selection routes to a common Stage IV.","republicanNote":"Territorial quotas apply between stages.","nationalNote":"Selection by a single ranking without regional quotas.","finalText":"Participants from both routes join the final selection in a common ranking."}}};
+  Object.keys(REFRESH_CONTENT).forEach(lang=>{
+    const c=REFRESH_CONTENT[lang];Object.assign(CONTENT[lang].about,c.about);
+    Object.assign(CONTENT[lang].selection,c.selection);CONTENT[lang].calendar=c.calendar;CONTENT[lang].notice=c.notice;
+  });
 
   function normalize(lang){ lang=String(lang||'').toLowerCase(); if(lang==='kg'||lang==='kgz')lang='ky'; return LANGS.includes(lang)?lang:''; }
 
