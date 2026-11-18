@@ -9,8 +9,8 @@
     if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
   } catch {}
 </script>
-<script src="/assets/js/i18n.js?v=20261119-team"></script>
-<script src="/assets/js/i18n-fallback.js?v=20261119-team"></script>
+<script src="/assets/js/i18n.js?v=20261119-minimal"></script>
+<script src="/assets/js/i18n-fallback.js?v=20261119-minimal"></script>
 <script src="/assets/js/npho-data.js?v=20261117-controls"></script>
 <script>
   window.MathJax = {
@@ -420,7 +420,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 .content-note:empty{display:none}
 @media(max-width:640px){.lang-select{padding:6px 22px 6px 7px;font-size:11px;background-position:right 7px center}.official-badge{border-radius:var(--r);font-size:11px;padding:6px 10px}}
 </style>
-<link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-controls"><script defer src="/assets/js/site-ui.js?v=20261117-controls"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-controls"><link rel="stylesheet" href="/assets/css/about-team.css?v=20261119-team"></head>
+<link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-controls"><script defer src="/assets/js/site-ui.js?v=20261117-controls"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-controls"><link rel="stylesheet" href="/assets/css/about-flow.css?v=20261119-flow"></head>
 <body>
 
 <nav>
@@ -431,7 +431,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
       <button class="nl" id="nl-problems" onclick="go('problems')" data-i18n="nav.problems">Банк задач</button>
       <button class="nl" id="nl-archive" onclick="go('archive')" data-i18n="nav.results">Результаты</button>
 
-      <a class="nl" href="/practice/" onclick="this.href=NPHO_I18N.langUrl(this.href)" data-i18n="nav.practice" data-site-link="/practice/">Практика</a>      <button class="nl" id="nl-about" onclick="go('about')" data-i18n="nav.about">Об олимпиаде</button><button class="nl" id="nl-team" onclick="go('team')" data-i18n="nav.team">О нас</button>
+      <a class="nl" href="/practice/" onclick="this.href=NPHO_I18N.langUrl(this.href)" data-i18n="nav.practice" data-site-link="/practice/">Практика</a>      <button class="nl" id="nl-about" onclick="go('about')" data-i18n="nav.about">Об олимпиаде</button>
     </div>
     <select class="lang-select" data-lang-select onchange="NPHO_I18N.setLang(this.value)" data-i18n-attr="aria-label:lang.label;title:lang.label" aria-label="Язык">
       <option value="ky">Кыргызча</option>
@@ -465,7 +465,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
     <div class="fi">
       <div class="fg">
         <div class="fc"><h4 data-i18n="footer.title">Национальная олимпиада по физике</h4><p data-i18n="footer.desc">Представитель официального комитета по физике Кыргызской Республики.</p><p class="fchair"><span data-i18n="footer.chair">Председатель</span>: <b data-i18n-chair>Салижан Кылычбеков</b></p></div>
-        <div class="fc"><h4 data-i18n="footer.nav">Навигация</h4><a onclick="go('home')" data-i18n="nav.home">Главная</a><a onclick="go('problems')" data-i18n="nav.problems">Банк задач</a><a onclick="go('archive')" data-i18n="nav.results">Результаты</a><a href="/practice/" onclick="this.href=NPHO_I18N.langUrl(this.href)" data-i18n="nav.practice" data-site-link="/practice/">Практика</a><a onclick="go('about')" data-i18n="nav.about">Об олимпиаде</a><a onclick="go('team')" data-i18n="nav.team">О нас</a></div>
+        <div class="fc"><h4 data-i18n="footer.nav">Навигация</h4><a onclick="go('home')" data-i18n="nav.home">Главная</a><a onclick="go('problems')" data-i18n="nav.problems">Банк задач</a><a onclick="go('archive')" data-i18n="nav.results">Результаты</a><a href="/practice/" onclick="this.href=NPHO_I18N.langUrl(this.href)" data-i18n="nav.practice" data-site-link="/practice/">Практика</a><a onclick="go('about')" data-i18n="nav.about">Об олимпиаде</a></div>
         <div class="fc"><h4 data-i18n="footer.contacts">Контакты</h4>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#229ED9" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></div><a href="https://t.me/+9GGnjui6VT05Mzli" target="_blank" class="ct">Telegram</a></div>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1"/></svg></div><a href="https://www.instagram.com/ipho_kg" target="_blank" class="ct">Instagram</a></div>
@@ -636,10 +636,6 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 
 <div id="sec-about" class="sec">
   <div class="inner about-inner" id="about-content"></div>
-</div>
-
-<div id="sec-team" class="sec">
-  <div class="inner team-inner" id="team-content"></div>
 </div>
 
 <script>
@@ -938,7 +934,7 @@ function renderHomeContent(){
   const C=localizedContent();
   const s=C.selection||{};
   if(selectionRoot){
-    selectionRoot.innerHTML='<header class="home-section-head"><div><p class="eyebrow">'+escapeHtml(t('home.selEyebrow'))+'</p><h2 id="home-selection-title">'+escapeHtml(s.title||t('home.selTitle'))+'</h2></div><p>'+escapeHtml(s.intro||'')+'</p></header>'+renderSelectionFlow(s);
+    selectionRoot.innerHTML='<header class="home-section-head"><div><p class="eyebrow">'+escapeHtml(t('home.selEyebrow'))+'</p><h2 id="home-selection-title">'+escapeHtml(s.title||t('home.selTitle'))+'</h2></div><p>'+escapeHtml(s.intro||'')+'</p></header>'+renderSelectionTree(s);
   }
   if(calendarRoot){
     const events=C.calendar||[];
@@ -947,50 +943,24 @@ function renderHomeContent(){
     calendarRoot.innerHTML='<header class="home-section-head compact"><div><p class="eyebrow">'+escapeHtml(t('home.season',{season:(()=>{const ys=(C.calendar||[]).flatMap(e=>((e.date||'')+' '+(e.title||'')).match(/20\d{2}/g)||[]).map(Number);const y=ys.length?Math.max(...ys):2027;return (y-1)+'–'+y})()}))+'</p><h2 id="home-calendar-title">'+escapeHtml(t('home.calTitle'))+'</h2></div></header><div class="change-notice"><strong>'+escapeHtml(t('home.important'))+'</strong><span>'+escapeHtml(C.notice||'')+'</span></div><div class="home-calendar-grid"><section class="calendar-column"><h3 class="calendar-column-title">'+escapeHtml(t('home.stagesCol'))+'</h3><div class="calendar-list">'+stages.map(renderCalendarEvent).join('')+'</div></section><section class="calendar-column international"><h3 class="calendar-column-title">'+escapeHtml(t('home.intlCol'))+'</h3><div class="calendar-list">'+international.map(renderCalendarEvent).join('')+'</div></section></div>';
   }
 }
-const FLOW_ICONS={
-  pin:'<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>',
-  city:'<path d="M3 21h18"/><path d="M5 21V10l5-3v14"/><path d="M10 21V4l9 4v13"/><path d="M13.5 10h2.5M13.5 14h2.5M13.5 18h2.5"/>',
-  flag:'<path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/>',
-  laptop:'<rect x="4" y="5" width="16" height="10.5" rx="1.5"/><path d="M2 19h20"/>',
-  arrow:'<path d="M12 5v14M6 13l6 6 6-6"/>',
-  trophy:'<path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H5.5a2.5 2.5 0 0 0 2.6 3.6M16 6h2.5a2.5 2.5 0 0 1-2.6 3.6"/><path d="M12 13v3.5M8.5 20h7M10 16.5h4V20h-4Z"/>',
-  quota:'<path d="M4 5h16l-6 7v6l-4 2v-8L4 5Z"/>',
-  ranking:'<path d="M5 20v-6M12 20V6M19 20v-9"/>',
-  globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/>',
-  shield:'<path d="M12 3 5 6v5.5c0 4.3 2.9 8.1 7 9.5 4.1-1.4 7-5.2 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/>',
-  book:'<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/>',
-  chart:'<path d="M4 20h16"/><path d="M7 16v-5M12 16V7M17 16v-8"/>',
-  timer:'<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2h5"/>',
-  route:'<circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7.5a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H16"/>',
-  medal:'<path d="M8.5 2h3l1.5 5.5M15.5 2h-3"/><circle cx="12" cy="14.5" r="6"/><path d="m12 11.6.95 1.95 2.1.3-1.52 1.48.36 2.1L12 16.44l-1.89.99.36-2.1-1.52-1.48 2.1-.3Z"/>',
-  next:'<path d="M9 6l6 6-6 6"/>',
-  send:'<path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/>',
-  camera:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/>'
-};
-function flowIcon(name){return '<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'+(FLOW_ICONS[name]||FLOW_ICONS.pin)+'</svg>'}
 function renderSelectionFlow(selection){
   const s=selection||{};
-  const lane=(kind,n,title,stages,icons,tagIcon,tagLabel,note,delay)=>{
-    const list=stages||[];
-    const items=list.map((item,i)=>{
-      const parts=String(item||'').split(' · ');
-      const out=i===list.length-1&&list.length>1;
-      return '<li class="sflow-step'+(out?' is-out':'')+'"><span class="sflow-node">'+flowIcon(out?'arrow':(icons[i]||'pin'))+'</span><span class="sflow-step-text"><strong>'+escapeHtml(parts[0])+'</strong>'+(parts.length>1?'<small>'+escapeHtml(parts.slice(1).join(' · '))+'</small>':'')+'</span></li>';
-    }).join('');
-    return '<article class="sflow-lane '+kind+'" style="--d:'+delay+'"><header class="sflow-lane-head"><div class="sflow-lane-top"><span class="sflow-route">'+escapeHtml(t('flow.route',{n}))+'</span><span class="sflow-tag">'+flowIcon(tagIcon)+escapeHtml(tagLabel)+'</span></div><h3>'+escapeHtml(title)+'</h3></header><ol class="sflow-steps">'+items+'</ol>'+(note?'<p class="sflow-rule">'+escapeHtml(note)+'</p>':'')+'</article>';
+  const lane=(kind,n,title,stages,tag,note)=>{
+    const list=(stages||[]).slice();
+    const out=list.length>1?list.pop():'';
+    const rows=list.map((item,i)=>{const parts=String(item||'').split(' · ');return '<li class="sflow-step"><span class="sflow-num">'+String(i+1).padStart(2,'0')+'</span><span class="sflow-step-text"><strong>'+escapeHtml(parts[0])+'</strong>'+(parts.length>1?'<small>'+escapeHtml(parts.slice(1).join(' · '))+'</small>':'')+'</span></li>'}).join('');
+    return '<article class="sflow-lane '+kind+'" style="--d:'+(n-1)+'"><header class="sflow-lane-head"><p class="sflow-route">'+escapeHtml(t('flow.route',{n}))+'</p><h3>'+escapeHtml(title)+'</h3><span class="sflow-tag">'+escapeHtml(tag)+'</span></header><ol class="sflow-steps">'+rows+'</ol>'+(out||note?'<p class="sflow-out">'+(out?'<strong>'+escapeHtml(out)+'</strong>':'')+(note?'<span>'+escapeHtml(note)+'</span>':'')+'</p>':'')+'</article>';
   };
   const rules=s.teamRules||[];
-  const n=Math.max(rules.length,1);
-  const join='<svg class="sflow-wires sflow-join" viewBox="0 0 200 56" preserveAspectRatio="none" aria-hidden="true">'+[['rep','M50 0 C50 30 100 26 100 56'],['nat','M150 0 C150 30 100 26 100 56']].map(([k,d])=>'<path class="sflow-wire '+k+'" vector-effect="non-scaling-stroke" d="'+d+'"/><path class="sflow-current '+k+'" vector-effect="non-scaling-stroke" d="'+d+'"/>').join('')+'</svg>';
-  const split='<svg class="sflow-wires sflow-split" viewBox="0 0 200 56" preserveAspectRatio="none" aria-hidden="true">'+rules.map((_,i)=>{const x=((2*i+1)/(2*n)*200).toFixed(1);const d='M100 0 C100 30 '+x+' 26 '+x+' 56';return '<path class="sflow-wire" vector-effect="non-scaling-stroke" d="'+d+'"/><path class="sflow-current out" vector-effect="non-scaling-stroke" d="'+d+'"/>'}).join('')+'</svg>';
-  const teams=rules.map((r,i)=>'<article class="sflow-team" style="--d:'+(4+i)+'"><div class="sflow-team-head"><span class="sflow-team-code">'+escapeHtml(r.code||'')+'</span>'+(r.count?'<span class="sflow-team-count">'+escapeHtml(r.count)+'</span>':'')+'</div><p>'+escapeHtml(r.text||'')+'</p></article>').join('');
+  const teamRows=rules.map(r=>'<div class="sflow-team"><span class="sflow-team-code">'+escapeHtml(r.code||'')+'</span><span class="sflow-team-count">'+escapeHtml(r.count||'')+'</span><p>'+escapeHtml(r.text||'')+'</p></div>').join('');
+  const line=d=>'<svg class="sflow-wires" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="sflow-wire" vector-effect="non-scaling-stroke" d="'+d+'"/></svg>';
   return '<div class="sflow">'
     +'<div class="sflow-lanes">'
-      +lane('republican',1,s.republicanTitle||'',s.republicanStages,['pin','city','flag'],'quota',t('flow.quota'),s.republicanNote,0)
-      +lane('national',2,s.nationalTitle||'',s.nationalStages,['laptop','laptop','pin'],'ranking',t('flow.ranking'),s.nationalNote,1)
-    +'</div>'+join
-    +'<article class="sflow-final" style="--d:2"><span class="sflow-final-icon">'+flowIcon('trophy')+'</span><div><p class="sflow-kicker">'+escapeHtml(t('flow.finalKicker'))+'</p><h3>'+escapeHtml(s.finalTitle||'')+'</h3><p>'+escapeHtml(s.finalText||'')+'</p></div></article>'
-    +(rules.length?split+'<p class="sflow-teams-label">'+flowIcon('globe')+escapeHtml(t('flow.teams'))+'</p><div class="sflow-teams" style="--n:'+n+'">'+teams+'</div>':'')
+      +lane('republican',1,s.republicanTitle||'',s.republicanStages,t('flow.quota'),s.republicanNote)
+      +lane('national',2,s.nationalTitle||'',s.nationalStages,t('flow.ranking'),s.nationalNote)
+    +'</div>'+line('M50 0 V14 H150 V0 M100 14 V40')
+    +'<article class="sflow-final" style="--d:2"><p class="sflow-kicker">'+escapeHtml(t('flow.finalKicker'))+'</p><h3>'+escapeHtml(s.finalTitle||'')+'</h3><p>'+escapeHtml(s.finalText||'')+'</p></article>'
+    +(rules.length?line('M100 0 V40')+'<p class="sflow-teams-label">'+escapeHtml(t('flow.teams'))+'</p><div class="sflow-teams" style="--d:3">'+teamRows+'</div>':'')
     +(s.rulesText?'<p class="sflow-foot">'+escapeHtml(s.rulesText)+'</p>':'')
   +'</div>';
 }
@@ -1001,30 +971,6 @@ function armSelectionFlows(){
   if(reduce||!('IntersectionObserver' in window)){flows.forEach(f=>f.classList.add('in-view'));return}
   if(!SFLOW_OBSERVER)SFLOW_OBSERVER=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');SFLOW_OBSERVER.unobserve(e.target)}}),{threshold:.12});
   flows.forEach(f=>{f.classList.add('armed');SFLOW_OBSERVER.observe(f)});
-}
-const TEAM_PEOPLE=[
-  {key:'emir',initials:{ru:'ЭА',ky:'ЭА',en:'EA'},medals:[['IPhO 2025','bronze'],['APhO 2025','bronze'],['IZhO 2025','silver']]},
-  {key:'askar',initials:{ru:'АА',ky:'АА',en:'AA'},medals:[['IPhO 2026','bronze'],['IPhO 2025','bronze'],['APhO 2025','bronze'],['IZhO 2025','silver']]}
-];
-function renderTeamContent(){
-  const root=document.getElementById('team-content');if(!root)return;
-  const lang=I18N.lang||'ru';
-  const offers=[
-    ['book','team.offer1',"go('problems')",'#problems'],
-    ['chart','team.offer2',"go('archive')",'#results'],
-    ['timer','team.offer3','','/practice/'],
-    ['route','team.offer4',"go('about')",'#about']
-  ].map(([icon,key,action,href])=>'<li><a href="'+escapeAttribute(href)+'"'+(action?' onclick="event.preventDefault();'+action+'"':' onclick="this.href=NPHO_I18N.langUrl(this.href)"')+'><span class="team-offer-icon">'+flowIcon(icon)+'</span><span>'+escapeHtml(t(key))+'</span><span class="team-offer-go">'+flowIcon('next')+'</span></a></li>').join('');
-  const people=TEAM_PEOPLE.map(p=>'<article class="person-card"><div class="person-head"><span class="person-avatar" aria-hidden="true">'+escapeHtml(p.initials[lang]||p.initials.ru)+'</span><div><h3>'+escapeHtml(t('team.'+p.key+'.name'))+'</h3><p class="person-role">'+escapeHtml(t('team.'+p.key+'.role'))+'</p></div></div><ul class="award-list">'+p.medals.map(([event,type])=>'<li class="award '+type+'">'+flowIcon('medal')+'<span class="award-event">'+escapeHtml(event)+'</span><span class="award-type">'+escapeHtml(t('team.medal.'+type))+'</span></li>').join('')+'</ul></article>').join('');
-  root.innerHTML='<header class="team-hero"><p class="eyebrow">'+escapeHtml(t('team.kicker'))+'</p><h1 class="about-title">'+escapeHtml(t('team.title'))+'</h1><p class="about-lead">'+escapeHtml(t('team.lead'))+'</p></header>'
-    +'<div class="team-layout"><div class="team-main">'
-      +'<section class="team-official"><span class="team-official-icon">'+flowIcon('shield')+'</span><div><h2>'+escapeHtml(t('team.officialTitle'))+'</h2><p>'+escapeHtml(t('team.officialText'))+'</p><p class="team-chair">'+escapeHtml(t('about.org.chair'))+': <strong>'+escapeHtml(I18N.chair())+'</strong></p></div></section>'
-      +'<section class="team-block"><h2>'+escapeHtml(t('team.whyTitle'))+'</h2><p>'+escapeHtml(t('team.whyText'))+'</p></section>'
-      +'<section class="team-block"><h2>'+escapeHtml(t('team.offerTitle'))+'</h2><ul class="team-offer">'+offers+'</ul></section>'
-      +'<section class="team-block"><h2>'+escapeHtml(t('team.plansTitle'))+'</h2><p>'+escapeHtml(t('team.plansText'))+'</p></section>'
-    +'</div><aside class="team-side" aria-label="'+escapeAttribute(t('team.peopleTitle'))+'"><h2 class="team-side-title">'+escapeHtml(t('team.peopleTitle'))+'</h2>'+people
-      +'<div class="team-contacts"><span>'+escapeHtml(t('team.contact'))+'</span><a href="https://t.me/+9GGnjui6VT05Mzli" target="_blank" rel="noopener">'+flowIcon('send')+'Telegram</a><a href="https://www.instagram.com/ipho_kg" target="_blank" rel="noopener">'+flowIcon('camera')+'Instagram</a></div>'
-    +'</aside></div>';
 }
 function renderAboutContent(){
   const root=document.getElementById('about-content');if(!root)return;
@@ -1059,7 +1005,7 @@ function renderSiteContent(){
     RESULTS=JSON.parse(JSON.stringify(SITE_CONTENT.results));
   }
   window.NPHO_SITE_CONTENT=SITE_CONTENT;
-  renderHomeContent();renderAboutContent();renderTeamContent();renderArchivePanels();armSelectionFlows();
+  renderHomeContent();renderAboutContent();renderArchivePanels();armSelectionFlows();
 }
 async function loadSiteContent(){
   try{const response=await fetch('/api/site-content',{cache:'no-store',headers:{Accept:'application/json'}});if(!response.ok)throw new Error('HTTP '+response.status);const payload=await response.json();if(payload.content&&Object.keys(payload.content).length){const savedVersion=Number(payload.content.contentVersion)||0;SITE_CONTENT=migrateSiteContent(mergeSiteContent(DEFAULT_SITE_CONTENT,payload.content),savedVersion)}}catch(error){console.warn('Не удалось загрузить контент сайта:',error)}
@@ -1788,10 +1734,6 @@ function handleProblemRoute(){
     if(resultsMatch[1])selectArchiveYear(resultsMatch[1]);
     return;
   }
-  if(location.hash==='#team'){
-    go('team',false);
-    return;
-  }
   if(location.hash==='#about'||location.hash==='#about-official'){
     go('about',false);
     if(location.hash==='#about-official')requestAnimationFrame(()=>document.getElementById('about-official')?.scrollIntoView({block:'start'}));
@@ -1875,8 +1817,6 @@ function go(id,updateHash=true){
     history.pushState({},'', '#results-'+ACTIVE_ARCHIVE_YEAR);
   }else if(id==='about'&&updateHash){
     history.pushState({},'', '#about');
-  }else if(id==='team'&&updateHash){
-    history.pushState({},'', '#team');
   }else if(updateHash&&location.hash){
     history.pushState({},'', location.pathname+location.search);
   }
@@ -1946,7 +1886,7 @@ function applyLanguage(){
   document.querySelector('meta[name="description"]')?.setAttribute('content',t('meta.description'));
   const status=document.getElementById('problem-sync-status');
   if(status&&!status.hidden)status.textContent=status.classList.contains('ok')?t('problems.fallback'):t('problems.loading');
-  renderHomeContent();renderAboutContent();renderTeamContent();renderArchivePanels();armSelectionFlows();
+  renderHomeContent();renderAboutContent();renderArchivePanels();armSelectionFlows();
   renderBookChoices();renderBookCounts();
   const detail=document.getElementById('problem-detail');
   if(activeProblemId!==null&&detail&&!detail.hidden){openProblem(activeProblemId,false)}

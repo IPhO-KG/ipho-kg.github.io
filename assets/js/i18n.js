@@ -323,30 +323,9 @@
     Object.assign(CONTENT[lang].selection,c.selection);CONTENT[lang].calendar=c.calendar;CONTENT[lang].notice=c.notice;
   });
 
-  /* «О нас» и схема отбора (2026-11-19). */
-  const TEAM_UI={
+  /* Схема отбора и подзаголовок главной (2026-11-19). */
+  const FLOW_UI={
     ru:{
-      'nav.team':'О нас',
-      'team.meta.title':'О нас · Национальная олимпиада по физике',
-      'team.kicker':'О проекте',
-      'team.title':'О нас',
-      'team.lead':'npho.edu.kg — официальный сайт Национальной олимпиады по физике. Его создали и ведут Эмир Анаралы уулу и Аскар Абдиев — призёры международных олимпиад по физике.',
-      'team.officialTitle':'Официальный статус',
-      'team.officialText':'Сайт ведут представители официального комитета по физике Кыргызской Республики.',
-      'team.whyTitle':'Зачем мы создали сайт',
-      'team.whyText':'Олимпиадные материалы часто разбросаны по чатам, файлам и объявлениям. Мы хотим, чтобы у каждого школьника — из Бишкека, Оша или самого отдалённого села — был простой и бесплатный доступ ко всему, что нужно для подготовки и участия.',
-      'team.offerTitle':'Что уже есть на сайте',
-      'team.offer1':'Банк задач с решениями по темам и сборникам',
-      'team.offer2':'Результаты национальных этапов с 2022 года',
-      'team.offer3':'Полные туры международных олимпиад с таймером и самопроверкой',
-      'team.offer4':'Понятный порядок отбора и календарь сезона',
-      'team.plansTitle':'Что дальше',
-      'team.plansText':'Мы продолжаем развивать платформу: пополнять банк задач и разборы, добавлять новые пробные туры и материалы для подготовки. Цель — чтобы путь от первой олимпиадной задачи до международной сборной был понятен каждому.',
-      'team.peopleTitle':'Команда',
-      'team.emir.name':'Эмир Анаралы уулу','team.emir.role':'Создатель и разработчик',
-      'team.askar.name':'Аскар Абдиев','team.askar.role':'Сооснователь и разработчик',
-      'team.medal.bronze':'Бронза','team.medal.silver':'Серебро',
-      'team.contact':'Связаться с нами',
       'flow.route':'Путь {n}',
       'flow.quota':'Квоты по регионам',
       'hero.sub':'Задачи с решениями, результаты этапов и путь к международным олимпиадам — в одном месте.',
@@ -356,27 +335,6 @@
       'flow.legend':'Два пути сходятся на IV этапе. По его итогам формируются сборные на международные олимпиады.'
     },
     ky:{
-      'nav.team':'Биз жөнүндө',
-      'team.meta.title':'Биз жөнүндө · Физика боюнча улуттук олимпиада',
-      'team.kicker':'Долбоор жөнүндө',
-      'team.title':'Биз жөнүндө',
-      'team.lead':'npho.edu.kg — Физика боюнча улуттук олимпиаданын расмий сайты. Аны физика боюнча эл аралык олимпиадалардын призёрлору Эмир Анаралы уулу жана Аскар Абдиев түзүп, жүргүзүп келишет.',
-      'team.officialTitle':'Расмий статус',
-      'team.officialText':'Сайтты Кыргыз Республикасынын физика боюнча расмий комитетинин өкүлдөрү жүргүзөт.',
-      'team.whyTitle':'Сайтты эмне үчүн түздүк',
-      'team.whyText':'Олимпиадалык материалдар көбүнчө чаттарга, файлдарга жана жарыяларга чачылып калат. Бишкектен, Оштон же эң алыскы айылдан болобу, ар бир окуучу даярдануу жана катышуу үчүн керектүү нерселердин баарын жөнөкөй жана акысыз таба алышын каалайбыз.',
-      'team.offerTitle':'Сайтта азыр эмне бар',
-      'team.offer1':'Темалар жана жыйнактар боюнча чыгарылыштары менен маселелер банкы',
-      'team.offer2':'2022-жылдан бери улуттук этаптардын жыйынтыктары',
-      'team.offer3':'Таймер жана өзүн-өзү текшерүү менен эл аралык олимпиадалардын толук турлары',
-      'team.offer4':'Түшүнүктүү тандоо тартиби жана сезондун календары',
-      'team.plansTitle':'Мындан ары',
-      'team.plansText':'Платформаны өнүктүрүүнү улантабыз: маселелер банкын жана чыгарылыштарды толуктап, жаңы сынамык турларды жана даярдык материалдарын кошобуз. Максатыбыз — биринчи олимпиадалык маселеден эл аралык курама командага чейинки жол ар бир окуучуга түшүнүктүү болушу.',
-      'team.peopleTitle':'Команда',
-      'team.emir.name':'Эмир Анаралы уулу','team.emir.role':'Түзүүчү жана иштеп чыгуучу',
-      'team.askar.name':'Аскар Абдиев','team.askar.role':'Тең негиздөөчү жана иштеп чыгуучу',
-      'team.medal.bronze':'Коло','team.medal.silver':'Күмүш',
-      'team.contact':'Биз менен байланышуу',
       'flow.route':'{n}-жол',
       'flow.quota':'Аймактык квоталар',
       'hero.sub':'Чыгарылыштары менен маселелер, этаптардын жыйынтыктары жана эл аралык олимпиадаларга жол — бир жерде.',
@@ -386,27 +344,6 @@
       'flow.legend':'Эки жол IV этапта кошулат. Анын жыйынтыгы боюнча эл аралык олимпиадаларга курама командалар түзүлөт.'
     },
     en:{
-      'nav.team':'About us',
-      'team.meta.title':'About us · National Physics Olympiad',
-      'team.kicker':'About the project',
-      'team.title':'About us',
-      'team.lead':'npho.edu.kg is the official website of the National Physics Olympiad. It was created and is run by Emir Anaraly uulu and Askar Abdiev, medallists of international physics olympiads.',
-      'team.officialTitle':'Official status',
-      'team.officialText':'The website is run by representatives of the official physics committee of the Kyrgyz Republic.',
-      'team.whyTitle':'Why we built it',
-      'team.whyText':'Olympiad materials are often scattered across chats, files and announcements. We want every student — from Bishkek, Osh or the most remote village — to have simple, free access to everything they need to prepare and take part.',
-      'team.offerTitle':'What the site offers today',
-      'team.offer1':'A problem bank with solutions, organised by topic and collection',
-      'team.offer2':'National stage results since 2022',
-      'team.offer3':'Full international olympiad papers with a timer and self-assessment',
-      'team.offer4':'A clear selection process and season calendar',
-      'team.plansTitle':'What comes next',
-      'team.plansText':'We keep developing the platform: expanding the problem bank and solutions, and adding new mock papers and preparation materials. Our goal is to make the path from a first olympiad problem to the national team clear to everyone.',
-      'team.peopleTitle':'Team',
-      'team.emir.name':'Emir Anaraly uulu','team.emir.role':'Creator and developer',
-      'team.askar.name':'Askar Abdiev','team.askar.role':'Co-founder and developer',
-      'team.medal.bronze':'Bronze','team.medal.silver':'Silver',
-      'team.contact':'Contact us',
       'flow.route':'Route {n}',
       'flow.quota':'Regional quotas',
       'hero.sub':'Problems with solutions, stage results and the route to international olympiads — all in one place.',
@@ -416,7 +353,7 @@
       'flow.legend':'The two routes meet at Stage IV. Its results determine the teams for international olympiads.'
     }
   };
-  Object.keys(TEAM_UI).forEach(lang=>Object.assign(UI[lang],TEAM_UI[lang]));
+  Object.keys(FLOW_UI).forEach(lang=>Object.assign(UI[lang],FLOW_UI[lang]));
   /* Подписи количества участников в схеме отбора. */
   [['ky',['5 катышуучу','8 катышуучу','Уюштуруучулардын чечими боюнча']],['en',['5 participants','8 participants','By organizers’ decision']]].forEach(([lang,counts])=>{
     const rules=CONTENT[lang]&&CONTENT[lang].selection&&CONTENT[lang].selection.teamRules;
