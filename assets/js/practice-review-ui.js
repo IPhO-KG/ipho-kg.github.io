@@ -6,50 +6,87 @@
   const localized = (value, lang) => value && typeof value === 'object' ? value[lang] ?? value.en ?? value.ru ?? '' : value || '';
   function create(options) {
     const M = window.NPHO_REVIEW_MODEL, holder = options.holder, t = options.t;
-    let documents = null, specs = [], loading = null, record = null, recordKey = '', renderedKey = '', generation = 0;
-    const closedSteps = new Set(), closedAnswers = new Set();
+    let documents = null, specs = [], loading = null, record = null, recordKey = '', renderedKey = '', generation = 0, navigationIntent = 0;
+    const mountedNavigations = new Map(), selectedParts = new Map();
     const score = n => M.formatScore(n, window.NPHO_I18N?.lang || 'ru');
+    const navigation = id => typeof options.navigation === 'function' ? options.navigation(id) : id === options.getContext().task ? options.navigation : null;
     const contextKey = context => [context.recordKey, context.task, context.material, window.NPHO_I18N?.lang || 'ru'].join('|');
+    function clearNavigation() {
+      mountedNavigations.forEach(nav => nav.replaceChildren()); mountedNavigations.clear();
+      options.onSummary?.(null);
+    }
     function flush() {
       if (!record || !recordKey) return;
       options.write(recordKey, JSON.stringify(record));
-      const status = holder.querySelector('[data-review-save]');
-      if (status) status.textContent = t(options.isPersistent() ? 'saved' : 'savedTab');
     }
     function update(action) {
       if (!record || !options.getContext().allowed) return;
       record = M.change(record, specs, action);
-      flush();
-      updateSummary();
+      if (action.type === 'check') {
+        const input = holder.querySelector('[data-review-score="' + action.partId + '"]');
+        if (input) {
+          input.value = score(record.parts[action.partId].score);
+          input.setAttribute('aria-invalid', 'false');
+          input.setAttribute('aria-label', action.partId + ': ' + t('reviewMyScore'));
+        }
+        const error = holder.querySelector('[data-score-error="' + action.partId + '"]');
+        if (error) error.hidden = true;
+      }
+      flush(); updateSummary();
     }
     function taskSpecs(id) { return specs.filter(spec => spec.id.startsWith(id + '-')); }
     function updateSummary() {
       if (!record || !documents) return;
-      const context = options.getContext(), total = M.summarize(record, specs), current = M.summarize(record, taskSpecs(context.task));
-      const map = {
-        '[data-review-task-score]': (current.scoredParts ? score(current.score) : '—') + ' / ' + score(current.max),
-        '[data-review-tour-score]': (total.scoredParts ? score(total.score) : '—') + ' / ' + score(total.max),
-        '[data-review-checked]': t('reviewCheckedSteps', { n: current.checkedSteps, total: current.totalSteps })
-      };
-      Object.entries(map).forEach(([selector, value]) => { const el = holder.querySelector(selector); if (el) el.textContent = value; });
-      const taskTotal = holder.querySelector('[data-review-task-score]'), tourTotal = holder.querySelector('[data-review-tour-score]');
-      if (taskTotal) taskTotal.setAttribute('aria-label', current.scoredParts ? map['[data-review-task-score]'] : t('reviewUnscored') + ', ' + context.task);
-      if (tourTotal) tourTotal.setAttribute('aria-label', total.scoredParts ? map['[data-review-tour-score]'] : t('reviewUnscored') + ', ' + t('reviewTourTotal'));
-      holder.querySelectorAll('[data-review-jump]').forEach(button => {
-        const id = button.dataset.reviewJump, part = record.parts[id], spec = specs.find(item => item.id === id);
-        button.classList.toggle('assessed', part.score !== null);
-        const status = button.querySelector('[data-chip-score]'); if (status) status.textContent = part.score === null ? '' : score(part.score) + ' / ' + score(spec.max);
+      const context = options.getContext();
+      if (!context.allowed) { clearNavigation(); return; }
+      const total = M.summarize(record, specs);
+      mountedNavigations.forEach(nav => nav.querySelectorAll('[data-review-jump]').forEach(button => {
+        const id = button.dataset.reviewJump, saved = record.parts[id], spec = specs.find(item => item.id === id);
+        const assessed = saved.score !== null;
+        const value = assessed ? score(saved.score) : '';
+        button.querySelector('.review-subpart-score').textContent = value;
+        button.querySelector('.score-divider').hidden = !assessed;
+        button.classList.toggle('assessed', assessed);
+        const earned = assessed ? t('reviewEarnedHeading') + ' ' + value : t('reviewUnscored');
+        button.setAttribute('aria-label', id + ', ' + earned + ', ' + t('reviewMaximum', { n: score(spec.max) }));
+        if (id === selectedParts.get(context.task) && id.startsWith(context.task + '-')) button.setAttribute('aria-current', 'location');
+        else button.removeAttribute('aria-current');
+      }));
+      const tasks = {};
+      documents.forEach(doc => {
+        const summary = M.summarize(record, taskSpecs(doc.id));
+        tasks[doc.id] = { score: summary.scoredParts ? summary.score : null, max: summary.max, sourcePdf: doc.sourcePdf };
       });
-      holder.querySelectorAll('[data-review-part-progress]').forEach(progress => {
-        const id = progress.dataset.reviewPartProgress, spec = specs.find(item => item.id === id), part = record.parts[id];
-        progress.textContent = part.checked.length + ' / ' + spec.stepIds.length;
-        progress.setAttribute('aria-label', t('reviewCheckedSteps', { n: part.checked.length, total: spec.stepIds.length }));
-      });
-      const next = holder.querySelector('[data-next-unreviewed]'); if (next) next.disabled = !taskSpecs(context.task).some(spec => record.parts[spec.id].score === null);
+      options.onSummary?.({ tasks, tour: { score: total.scoredParts ? total.score : null, max: total.max } });
     }
     function focusPart(id) {
       const part = document.getElementById('review-' + id); if (!part) return;
-      part.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); part.focus({ preventScroll: true });
+      part.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      part.focus({ preventScroll: true });
+    }
+    function renderNavigation(context) {
+      documents.forEach(documentData => {
+        const nav = navigation(documentData.id), previous = mountedNavigations.get(documentData.id);
+        if (previous && previous !== nav) previous.replaceChildren();
+        if (!nav) { mountedNavigations.delete(documentData.id); return; }
+        mountedNavigations.set(documentData.id, nav);
+        nav.innerHTML = documentData.parts.map(part => '<button type="button" class="review-subpart-button" data-review-jump="' + esc(part.id) + '" aria-controls="review-panel"><span class="review-subpart-label">' + esc(part.id.replace(/^T[123]-/, '')) + '</span><span class="review-subpart-score"></span><span class="score-divider" aria-hidden="true" hidden>/</span><span class="score-limit">' + esc(score(part.max)) + '</span><span class="score-unit">' + esc(t('reviewPointUnit')) + '</span></button>').join('');
+        nav.querySelectorAll('[data-review-jump]').forEach(button => button.addEventListener('click', async () => {
+          const before = options.getContext();
+          if (!before.allowed) { lock(t('reviewLocked')); return; }
+          if (before.recordKey !== context.recordKey) return;
+          const id = button.dataset.reviewJump, task = id.split('-')[0], intent = ++navigationIntent;
+          if (before.task !== task) {
+            if (typeof options.selectTask !== 'function') return;
+            await options.selectTask(task);
+          }
+          let latest = options.getContext();
+          if (intent !== navigationIntent || !latest.allowed || latest.recordKey !== before.recordKey || latest.task !== task) return;
+          selectedParts.set(task, id); await open(); latest = options.getContext();
+          if (intent !== navigationIntent || !latest.allowed || latest.recordKey !== before.recordKey || latest.task !== task) return;
+          updateSummary(); focusPart(id);
+        }));
+      });
     }
     function scoreInput(input, part, commit = false) {
       const raw = input.value.trim().replace(',', '.');
@@ -64,54 +101,61 @@
     }
     function partMarkup(part, lang) {
       const saved = record.parts[part.id];
-      const steps = part.steps.map(step => '<div class="review-step"><label class="review-step-toggle"><input type="checkbox" data-review-check="' + esc(part.id) + '" data-step-id="' + esc(step.id) + '" aria-label="' + esc(t('reviewCheckStep') + ': ' + localized(step.label, lang)) + '"' + (saved.checked.includes(step.id) ? ' checked' : '') + '></label><details data-step-details="' + esc(part.id + ':' + step.id) + '"' + (closedSteps.has(part.id + ':' + step.id) ? '' : ' open') + '><summary>' + esc(localized(step.label, lang)) + '</summary><div class="review-step-body">' + rich(localized(step.body, lang)) + '</div></details></div>').join('');
-      return '<section class="review-part" id="review-' + esc(part.id) + '" tabindex="-1"><header class="review-part-head"><h3><span class="review-part-id">' + esc(part.id) + '</span><span class="review-part-title">' + esc(localized(part.title, lang) || part.id) + '</span></h3><span class="review-part-progress" data-review-part-progress="' + esc(part.id) + '"></span>' +
-        '<div class="review-score-row"><label class="review-score-label" for="score-' + esc(part.id) + '">' + esc(t('reviewMyScore')) + '</label><input id="score-' + esc(part.id) + '" class="review-score-input" data-review-score="' + esc(part.id) + '" type="text" inputmode="decimal" autocomplete="off" maxlength="12" aria-describedby="score-error-' + esc(part.id) + '" aria-label="' + esc(part.id + ': ' + t('reviewMyScore') + (saved.score === null ? ', ' + t('reviewUnscored') : '')) + '" placeholder="—" value="' + (saved.score === null ? '' : esc(score(saved.score))) + '"><span class="review-score-of">/ ' + esc(score(part.max)) + '</span><div class="review-score-shortcuts"><button type="button" data-review-set="' + esc(part.id) + '" data-value="' + part.max + '">' + esc(t('reviewFullMarks')) + '</button></div></div></header>' +
+      const answerTitle = esc(t('reviewAnswerPitfalls'));
+      let answerControl = '';
+      const steps = part.steps.map((step, index) => {
+        const checkId = 'check-' + esc(part.id) + '-' + esc(step.id);
+        const title = esc(localized(step.label, lang));
+        const isAnswer = step.type === 'answer' && index === part.steps.length - 1;
+        const checkLabel = isAnswer ? answerTitle + ' · ' + title : title;
+        const checkbox = '<input id="' + checkId + '" type="checkbox" data-review-check="' + esc(part.id) + '" data-step-id="' + esc(step.id) + '" aria-label="' + esc(t('reviewCheckStep')) + ': ' + checkLabel + '"' + (saved.checked.includes(step.id) ? ' checked' : '') + '>';
+        if (isAnswer) {
+          answerControl = '<label class="review-answer-check">' + checkbox + answerTitle + '</label>';
+          return '';
+        }
+        return '<div class="review-step"><label class="review-step-toggle">' + checkbox + '</label>' +
+          '<h4 class="review-step-title"><label for="' + checkId + '">' + title + '</label></h4>' +
+          '<div class="review-step-body">' + rich(localized(step.body, lang)) + '</div></div>';
+      }).join('');
+      return '<section class="review-part" id="review-' + esc(part.id) + '" tabindex="-1" aria-labelledby="review-heading-' + esc(part.id) + '"><header class="review-part-head"><div class="review-part-heading"><h3 id="review-heading-' + esc(part.id) + '"><span class="review-part-id">' + esc(part.id) + '</span><span class="review-part-title">' + esc(localized(part.title, lang) || part.id) + '</span></h3></div>' +
+        '<div class="review-score-row"><label class="review-score-control" for="score-' + esc(part.id) + '" title="' + esc(t('reviewScoreHint')) + '">' +
+          '<span class="review-score-label">' + esc(t('reviewMyScore')) + '</span><span class="review-score-field">' +
+          '<input id="score-' + esc(part.id) + '" class="review-score-input" data-review-score="' + esc(part.id) + '" type="text" inputmode="decimal" autocomplete="off" maxlength="12" aria-describedby="score-error-' + esc(part.id) + '" aria-label="' + esc(part.id + ': ' + t('reviewMyScore') + (saved.score === null ? ', ' + t('reviewUnscored') : '')) + '" placeholder=" " value="' + (saved.score === null ? '' : esc(score(saved.score))) + '">' +
+          '<span class="score-divider" aria-hidden="true">/</span><span class="review-score-of score-limit">' + esc(score(part.max)) + '</span><span class="score-unit">' + esc(t('reviewPointUnit')) + '</span>' +
+          '<svg class="score-edit-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m3 10.7-.6 2.9 2.9-.6 7.4-7.4a1.6 1.6 0 0 0-2.3-2.3zM9.4 4.3l2.3 2.3"/></svg>' +
+          '</span></label></div></header>' +
         '<p class="review-input-error" id="score-error-' + esc(part.id) + '" data-score-error="' + esc(part.id) + '" role="status" hidden></p><div class="review-steps">' + steps + '</div>' +
-        '<details class="review-answer" data-answer-details="' + esc(part.id) + '"' + (closedAnswers.has(part.id) ? '' : ' open') + '><summary>' + esc(t('reviewAnswerPitfalls')) + '</summary><div class="review-answer-body">' + rich(localized(part.answer, lang)) + '</div></details></section>';
+        '<section class="review-answer' + (answerControl ? ' review-step' : '') + '"><h4 class="review-answer-title">' + (answerControl || answerTitle) + '</h4><div class="review-answer-body' + (answerControl ? ' review-step-body' : '') + '">' + rich(localized(part.answer, lang)) + '</div></section></section>';
     }
     function bind(documentData) {
-      holder.querySelectorAll('[data-review-jump]').forEach(button => button.addEventListener('click', () => focusPart(button.dataset.reviewJump)));
-      holder.querySelector('[data-next-unreviewed]')?.addEventListener('click', () => { const part = documentData.parts.find(item => record.parts[item.id].score === null); if (part) focusPart(part.id); });
       holder.querySelectorAll('[data-review-check]').forEach(input => input.addEventListener('change', () => update({ type: 'check', partId: input.dataset.reviewCheck, stepId: input.dataset.stepId, value: input.checked })));
       holder.querySelectorAll('[data-review-score]').forEach(input => { const part = documentData.parts.find(item => item.id === input.dataset.reviewScore); input.addEventListener('input', () => scoreInput(input, part)); input.addEventListener('blur', () => scoreInput(input, part, true)); });
-      holder.querySelectorAll('[data-review-set]').forEach(button => button.addEventListener('click', () => { const input = holder.querySelector('[data-review-score="' + button.dataset.reviewSet + '"]'); input.value = score(Number(button.dataset.value)); scoreInput(input, documentData.parts.find(part => part.id === button.dataset.reviewSet)); }));
-      const bindDisclosure = (selector, key, closed) => holder.querySelectorAll(selector).forEach(details => details.addEventListener('toggle', () => {
-        if (details.hasAttribute('open')) { closed.delete(details.dataset[key]); window.MathJax?.typesetPromise?.([details]).catch(() => options.announce(t('mathError'))); }
-        else closed.add(details.dataset[key]);
-      }));
-      bindDisclosure('[data-step-details]', 'stepDetails', closedSteps);
-      bindDisclosure('[data-answer-details]', 'answerDetails', closedAnswers);
-      holder.querySelector('[data-copy-review]')?.addEventListener('click', async () => {
-        const lines = [t('reviewCopyTitle') + ' · IPhO 2026'];
-        documents.forEach(doc => { const summary = M.summarize(record, taskSpecs(doc.id)); lines.push(doc.id + ': ' + (summary.scoredParts ? score(summary.score) + '/' + score(summary.max) : t('reviewUnscored')) + ' · ' + t('reviewCheckedSteps', { n: summary.checkedSteps, total: summary.totalSteps })); doc.parts.forEach(part => { const saved = record.parts[part.id]; lines.push(part.id + ': ' + (saved.score === null ? t('reviewUnscored') : score(saved.score) + '/' + score(part.max))); }); });
-        const summary = M.summarize(record, specs); lines.push(t('reviewTourTotal') + ': ' + (summary.scoredParts ? score(summary.score) + '/' + score(summary.max) : t('reviewUnscored')));
-        try { await navigator.clipboard.writeText(lines.join('\n')); options.announce(t('reviewCopied')); } catch { window.prompt(t('reviewCopy'), lines.join('\n')); }
-      });
     }
     function render(context) {
       const documentData = documents.find(item => item.id === context.task), lang = context.material;
-      holder.innerHTML = '<div class="review-totals"><div><span>' + esc(context.task) + '</span><strong data-review-task-score></strong></div><div><span>' + esc(t('reviewTourTotal')) + '</span><strong data-review-tour-score></strong></div><div class="review-totals-meta"><span data-review-checked role="status" aria-live="polite"></span></div></div>' +
-        '<div class="review-toolbar"><div class="review-part-nav" aria-label="' + esc(t('reviewParts')) + '">' + documentData.parts.map(part => '<button type="button" data-review-jump="' + esc(part.id) + '"><span>' + esc(part.id.replace(/^T[123]-/, '')) + '</span><small data-chip-score></small></button>').join('') + '</div><button class="text-button" type="button" data-next-unreviewed>' + esc(t('reviewNextUnscored')) + '</button></div>' +
-        documentData.parts.map(part => partMarkup(part, lang)).join('') + '<footer class="review-footer"><a class="text-link" href="' + esc(documentData.sourcePdf) + '" download>' + esc(t('reviewSourcePdf')) + '</a><button class="text-button" type="button" data-copy-review>' + esc(t('reviewCopy')) + '</button><span class="review-save-status" data-review-save role="status">' + esc(t(options.isPersistent() ? 'saved' : 'savedTab')) + '</span></footer>';
-      renderedKey = contextKey(context); bind(documentData); updateSummary();
+      if (!documentData.parts.some(part => part.id === selectedParts.get(context.task))) selectedParts.set(context.task, documentData.parts[0]?.id || '');
+      holder.innerHTML = documentData.parts.map(part => partMarkup(part, lang)).join('');
+      renderedKey = contextKey(context); renderNavigation(context); bind(documentData); updateSummary();
       window.MathJax?.typesetPromise?.([holder]).catch(() => options.announce(t('mathError')));
     }
     async function open() {
       const context = options.getContext(); if (!context.allowed) { lock(t('reviewLocked')); return; }
-      if (renderedKey === contextKey(context) && record) { updateSummary(); return; }
-      flush(); const token = ++generation;
+      if (renderedKey === contextKey(context) && record) {
+        if (documents.some(doc => navigation(doc.id) && (mountedNavigations.get(doc.id) !== navigation(doc.id) || !navigation(doc.id).querySelector('[data-review-jump]')))) renderNavigation(context);
+        updateSummary(); return;
+      }
+      flush(); clearNavigation(); const token = ++generation;
       holder.innerHTML = '<p class="review-loading" role="status">' + esc(t('reviewLoading')) + '</p>';
       try {
-        if (!loading && !documents) loading = Promise.all(['t1', 't2', 't3'].map(async id => { const response = await fetch('/assets/practice/ipho-2026/solutions/' + id + '.json'); if (!response.ok) throw new Error('Missing solution'); return JSON.parse(await response.text()); })).then(data => { documents = data; specs = documents.flatMap(doc => doc.parts.map(part => ({ id: part.id, max: part.max, stepIds: part.steps.map(step => step.id) }))); }).catch(error => { loading = null; throw error; });
+        if (!loading && !documents) loading = Promise.all(['t1', 't2', 't3'].map(async id => { const response = await fetch('/assets/practice/ipho-2026/solutions/' + id + '.json', { cache: 'no-cache' }); if (!response.ok) throw new Error('Missing solution'); return JSON.parse(await response.text()); })).then(data => { documents = data; specs = documents.flatMap(doc => doc.parts.map(part => ({ id: part.id, max: part.max, stepIds: part.steps.map(step => step.id) }))); }).catch(error => { loading = null; throw error; });
         if (loading) await loading;
         const latest = options.getContext(); if (token !== generation || !latest.allowed || contextKey(latest) !== contextKey(context)) return;
         if (recordKey !== context.recordKey || !record) { let raw; try { raw = JSON.parse(options.read(context.recordKey)); } catch {} record = M.normalize(raw, specs); recordKey = context.recordKey; }
         render(context);
       } catch { if (token !== generation) return; holder.innerHTML = '<p class="notice">' + esc(t('reviewLoadError')) + '</p><button class="pbtn" type="button" data-review-retry>' + esc(t('retry')) + '</button>'; holder.querySelector('[data-review-retry]')?.addEventListener('click', open); }
     }
-    function lock(message) { flush(); generation++; renderedKey = ''; holder.innerHTML = '<div class="review-lock" role="status"><h2>' + esc(t('reviewTitle')) + '</h2><p>' + esc(message) + '</p></div>'; }
-    function close() { flush(); generation++; }
+    function lock(message) { flush(); generation++; navigationIntent++; renderedKey = ''; clearNavigation(); holder.innerHTML = '<div class="review-lock" role="status"><h2>' + esc(t('reviewTitle')) + '</h2><p>' + esc(message) + '</p></div>'; }
+    function close() { flush(); generation++; navigationIntent++; clearNavigation(); }
     window.addEventListener('pagehide', flush);
     return { open, lock, close, flush };
   }

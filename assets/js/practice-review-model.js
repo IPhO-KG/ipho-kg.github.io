@@ -1,4 +1,4 @@
-/* Manual self-assessment only. Editorial step checks never award points. */
+/* Self-assessment: step checks share each part maximum equally; manual scores remain editable. */
 (function (root) {
   'use strict';
 
@@ -84,6 +84,8 @@
       const checked = new Set(part.checked);
       if (action.value) checked.add(action.stepId); else checked.delete(action.stepId);
       part.checked = spec.stepIds.filter(id => checked.has(id));
+      const maximum = cents(spec.max);
+      part.score = fromCents(Math.min(maximum, Math.round(maximum * (part.checked.length / spec.stepIds.length))));
     } else if (action.type === 'uncertain') {
       if (typeof action.value !== 'boolean') throw new TypeError('An uncertainty flag must be boolean');
       part.uncertain = action.value;

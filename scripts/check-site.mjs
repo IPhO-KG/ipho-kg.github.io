@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
-import { dirname, join, resolve } from 'node:path';
+import { basename, dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 
@@ -23,6 +23,38 @@ function checkCss(css, source) {
   for (const match of css.matchAll(/url\(\s*(['"]?)(.*?)\1\s*\)/g)) checkReference(match[2], source);
 }
 
+function checkEquationRows(html, location) {
+  const math = /\\\[([\s\S]*?)\\\]|\$\$([\s\S]*?)\$\$|\\\(([\s\S]*?)\\\)|\\begin\{((?:align(?:at)?|equation|gather|multline)\*?)\}[\s\S]*?\\end\{\4\}/g;
+  const rowBreak = /\\\\\*?(?:\s*\[[^\]]*\])?|\\(?:cr|newline)\b/;
+  const environment = /\\begin\{(?:align(?:ed)?(?:at)?|gather(?:ed)?|equation|split|multline)\*?\}(?:\[[tbc]\]|\{\d+\})?/g;
+  const padding = /^(?:\s|&|\{\}|\\(?:qquad\b|quad\b|displaystyle\b|[,;:!]))+/;
+  const relation = /^(?:[=<>≈≃≅≡≠≤≥∝]|\\(?:approx|simeq|sim|cong|equiv|asymp|doteq|neq?|leq?|geq?|propto|lesssim|gtrsim)\b)/;
+  for (const [whole, display, dollarDisplay, inline] of html.matchAll(math)) {
+    const tex = (display ?? dollarDisplay ?? inline ?? whole).replace(/&(?:amp|#38|#x26);/gi, '&')
+      .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').replace(environment, '');
+    const rows = tex.split(rowBreak);
+    // A single inline relation may name a symbol in prose (for example, “≈”).
+    if (inline !== undefined && rows.length === 1) continue;
+    for (const row of rows) {
+      if (relation.test(row.replace(padding, ''))) {
+        errors.push(location + ': equation row needs a left-hand side: ' + row.trim().slice(0, 80));
+      }
+    }
+  }
+}
+
+function checkSolutionEquations(path) {
+  const { parts } = JSON.parse(readFileSync(path, 'utf8'));
+  for (const part of parts) {
+    const fields = [...part.steps.map(step => [step.id, step.body]), ['answer', part.answer]];
+    for (const [field, body] of fields) {
+      const location = path.slice(root.length) + ' ' + part.id + '/' + field;
+      const languages = typeof body === 'string' ? [['', body]] : Object.entries(body ?? {});
+      for (const [lang, html] of languages) checkEquationRows(html, location + (lang && ' (' + lang + ')'));
+    }
+  }
+}
+
 for (const path of files(root)) {
   if (path.endsWith('.html')) {
     const html = readFileSync(path, 'utf8');
@@ -39,6 +71,8 @@ for (const path of files(root)) {
     new vm.Script(readFileSync(path, 'utf8'), { filename: path });
   } else if (path.endsWith('.css')) {
     checkCss(readFileSync(path, 'utf8'), path);
+  } else if (path.endsWith('.json') && basename(dirname(path)) === 'solutions') {
+    checkSolutionEquations(path);
   }
 }
 

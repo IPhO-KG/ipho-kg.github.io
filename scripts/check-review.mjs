@@ -62,17 +62,62 @@ test('score updates reject nonfinite, nonnumeric and out-of-cap values before ro
   assert.equal(M.summarize(cleared, specs).assessedMax, 0);
 });
 
-test('step checkboxes are unweighted editorial checks and never award points', () => {
+test('step checkboxes divide each part maximum equally and explicit zero differs from untouched null', () => {
   const initial = M.normalize(null, specs);
-  const checked = M.change(initial, specs, { type: 'check', partId: 'T1-A1', stepId: 'result', value: true });
-  assert.equal(checked.parts['T1-A1'].score, null);
-  assert.equal(M.summarize(checked, specs).score, 0);
-  assert.equal(M.summarize(checked, specs).scoredParts, 0);
-  assert.equal(M.summarize(checked, specs).checkedSteps, 1);
-  const scored = M.change(checked, specs, { type: 'score', partId: 'T1-A1', value: 0.2 });
-  const unchecked = M.change(scored, specs, { type: 'check', partId: 'T1-A1', stepId: 'result', value: false });
-  assert.equal(unchecked.parts['T1-A1'].score, 0.2);
-  assert.equal(M.summarize(unchecked, specs).checkedSteps, 0);
+  assert.equal(initial.parts['T1-A1'].score, null);
+  let record = M.change(initial, specs, { type: 'check', partId: 'T1-A1', stepId: 'result', value: true });
+  assert.equal(record.parts['T1-A1'].score, 0.15);
+  assert.equal(M.summarize(record, specs).score, 0.15);
+  assert.equal(M.summarize(record, specs).scoredParts, 1);
+  assert.equal(M.summarize(record, specs).checkedSteps, 1);
+  record = M.change(record, specs, { type: 'check', partId: 'T1-A1', stepId: 'model', value: true });
+  assert.equal(record.parts['T1-A1'].score, 0.3);
+  record = M.change(record, specs, { type: 'check', partId: 'T1-A1', stepId: 'result', value: false });
+  assert.equal(record.parts['T1-A1'].score, 0.15);
+  record = M.change(record, specs, { type: 'check', partId: 'T1-A1', stepId: 'model', value: false });
+  assert.equal(record.parts['T1-A1'].score, 0);
+  assert.equal(record.parts['T1-A2'].score, null);
+  assert.equal(M.summarize(record, specs).scoredParts, 1);
+  assert.equal(M.summarize(record, specs).checkedSteps, 0);
+});
+
+test('automatic fractions round to two decimals, remain reversible and reach the exact maximum', () => {
+  const fractions = [{ id: 'sixths', max: 1, stepIds: ['a','b','c','d','e','f'] }, { id: 'half-cent', max: 0.03, stepIds: ['a','b'] }];
+  let record = M.normalize(null, fractions);
+  for (const [index, expected] of [0.17,0.33,0.5,0.67,0.83,1].entries()) {
+    record = M.change(record, fractions, { type: 'check', partId: 'sixths', stepId: fractions[0].stepIds[index], value: true });
+    assert.equal(record.parts.sixths.score, expected);
+  }
+  for (const [index, expected] of [0.83,0.67,0.5,0.33,0.17,0].entries()) {
+    record = M.change(record, fractions, { type: 'check', partId: 'sixths', stepId: fractions[0].stepIds[index], value: false });
+    assert.equal(record.parts.sixths.score, expected);
+  }
+  record = M.change(record, fractions, { type: 'check', partId: 'half-cent', stepId: 'a', value: true });
+  assert.equal(record.parts['half-cent'].score, 0.02);
+  record = M.change(record, fractions, { type: 'check', partId: 'half-cent', stepId: 'b', value: true });
+  assert.equal(record.parts['half-cent'].score, 0.03);
+});
+
+test('manual overrides and legacy scores survive loading until the next checkbox event for that part', () => {
+  const legacy = { schema: 1, parts: { 'T1-A1': { score: 0.27, checked: ['model'], uncertain: true, note: 'Saved manual score.' } } };
+  let record = M.normalize(frozen(legacy), specs);
+  assert.equal(record.parts['T1-A1'].score, 0.27);
+  record = M.normalize(plain(record), specs);
+  assert.equal(record.parts['T1-A1'].score, 0.27);
+  record = M.change(record, specs, { type: 'check', partId: 'T1-A2', stepId: 'calculation', value: true });
+  assert.equal(record.parts['T1-A1'].score, 0.27);
+  record = M.change(record, specs, { type: 'score', partId: 'T1-A1', value: 0.2 });
+  assert.deepEqual(plain(record.parts['T1-A1'].checked), ['model']);
+  assert.equal(M.normalize(plain(record), specs).parts['T1-A1'].score, 0.2);
+  record = M.change(record, specs, { type: 'check', partId: 'T1-A1', stepId: 'result', value: true });
+  assert.equal(record.parts['T1-A1'].score, 0.3);
+  assert.equal(record.parts['T1-A1'].note, legacy.parts['T1-A1'].note);
+  assert.equal(record.parts['T1-A1'].uncertain, true);
+  record = M.change(record, specs, { type: 'score', partId: 'T1-A1', value: null });
+  assert.equal(record.parts['T1-A1'].score, null);
+  assert.deepEqual(plain(record.parts['T1-A1'].checked), ['model','result']);
+  record = M.change(record, specs, { type: 'check', partId: 'T1-A1', stepId: 'model', value: false });
+  assert.equal(record.parts['T1-A1'].score, 0.15);
 });
 
 test('step progress is task-scoped, reversible and preserves existing hidden notes and flags', () => {
@@ -88,13 +133,13 @@ test('step progress is task-scoped, reversible and preserves existing hidden not
   assert.equal(M.summarize(record, specs.filter(spec => spec.id.startsWith('T2-'))).checkedSteps, 0);
   record = M.normalize(plain(record), specs);
   assert.equal(M.summarize(record, task).checkedSteps, 1);
-  assert.equal(record.parts['T1-A1'].score, 0.2);
+  assert.equal(record.parts['T1-A1'].score, 0.15);
   assert.equal(record.parts['T1-A1'].uncertain, true);
   assert.equal(record.parts['T1-A1'].note, initial.parts['T1-A1'].note);
   assert.equal(record.parts['T2-B1'].note, initial.parts['T2-B1'].note);
   record = M.change(record, specs, { type: 'check', partId: 'T1-A1', stepId: 'model', value: false });
   assert.equal(M.summarize(record, task).checkedSteps, 0);
-  assert.equal(M.summarize(record, specs).score, 1.45);
+  assert.equal(M.summarize(record, specs).score, 1.25);
 });
 
 test('normalization removes corrupt scores, unknown parts, duplicate and unknown steps', () => {
@@ -194,7 +239,7 @@ test('score formatting supports Russian, English, Kyrgyz and invalid input safel
 
 const solutionFiles = [1, 2, 3].map(n => new URL(`assets/practice/ipho-2026/solutions/t${n}.json`, root));
 if (solutionFiles.every(existsSync)) {
-  test('actual solution parts preserve the published 30-point total and never derive scores from step checks', () => {
+  test('checking every step reaches the published 30-point total and unchecking reverses it to zero', () => {
     const actual = solutionFiles.flatMap(file => JSON.parse(readFileSync(file, 'utf8')).parts.map(part => ({
       id: part.id, max: part.max, stepIds: part.steps.map(step => step.id)
     })));
@@ -203,13 +248,18 @@ if (solutionFiles.every(existsSync)) {
       for (const stepId of spec.stepIds) record = M.change(record, actual, { type: 'check', partId: spec.id, stepId, value: true });
     }
     assert.equal(M.summarize(record, actual).max, 30);
-    assert.equal(M.summarize(record, actual).score, 0);
-    assert.equal(M.summarize(record, actual).scoredParts, 0);
+    assert.equal(M.summarize(record, actual).score, 30);
+    assert.equal(M.summarize(record, actual).scoredParts, 23);
+    for (const spec of actual) assert.equal(record.parts[spec.id].score, spec.max);
     for (const spec of actual) record = M.change(record, actual, { type: 'score', partId: spec.id, value: spec.max });
     const summary = M.summarize(record, actual);
     assert.equal(summary.score, 30);
     assert.equal(summary.lost, 0);
     assert.equal(summary.complete, true);
+    for (const spec of actual) for (const stepId of spec.stepIds) record = M.change(record, actual, { type: 'check', partId: spec.id, stepId, value: false });
+    assert.equal(M.summarize(record, actual).score, 0);
+    assert.equal(M.summarize(record, actual).checkedSteps, 0);
+    assert.equal(M.summarize(record, actual).scoredParts, 23);
     for (const [i, file] of solutionFiles.entries()) {
       const parts = JSON.parse(readFileSync(file, 'utf8')).parts;
       const max = parts.reduce((total, part) => total + Math.round(part.max * 100), 0) / 100;
