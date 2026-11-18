@@ -52,5 +52,3 @@
 .about-flow-head p{margin:0;font-size:15px;line-height:1.7;color:var(--text2)}
 @media(max-width:700px){.about-flow-head{grid-template-columns:1fr;gap:.6rem}}
 
-/* Подзаголовок на главной: ровный перенос строк */
-.hero-sub{max-width:560px;text-wrap:balance;line-height:1.65}
