@@ -69,3 +69,5 @@
 .about-olympiads .olympiad-source:hover{color:var(--accent)}
 @media(max-width:760px){.about-olympiads .olympiad-guide{grid-template-columns:1fr;gap:1rem}}
 @media(max-width:700px){.about-olympiads .olympiad-fields>div{grid-template-columns:1fr;gap:.15rem}}
+.about-olympiads .olympiad-row-wide{grid-column:1/-1}
+.about-olympiads .olympiad-row-wide .olympiad-fields>div{grid-template-columns:110px minmax(0,1fr)}
