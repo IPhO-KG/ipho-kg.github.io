@@ -9,8 +9,8 @@
     if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
   } catch {}
 </script>
-<script src="/assets/js/i18n.js?v=20261119-home"></script>
-<script src="/assets/js/i18n-fallback.js?v=20261119-home"></script>
+<script src="/assets/js/i18n.js?v=20261119-lean"></script>
+<script src="/assets/js/i18n-fallback.js?v=20261119-lean"></script>
 <script src="/assets/js/npho-data.js?v=20261117-controls"></script>
 <script>
   window.MathJax = {
@@ -420,7 +420,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 .content-note:empty{display:none}
 @media(max-width:640px){.lang-select{padding:6px 22px 6px 7px;font-size:11px;background-position:right 7px center}.official-badge{border-radius:var(--r);font-size:11px;padding:6px 10px}}
 </style>
-<link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-controls"><script defer src="/assets/js/site-ui.js?v=20261117-controls"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-controls"><link rel="stylesheet" href="/assets/css/about-flow.css?v=20261119-even"></head>
+<link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-controls"><script defer src="/assets/js/site-ui.js?v=20261117-controls"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-controls"><link rel="stylesheet" href="/assets/css/about-flow.css?v=20261119-lean"></head>
 <body>
 
 <nav>
@@ -683,7 +683,7 @@ const DEFAULT_SITE_CONTENT = {
     {
       "code": "IPhO",
       "name": "Международная физическая олимпиада",
-      "text": "Всемирная олимпиада с индивидуальным зачётом.",
+      "text": "",
       "participants": "До пяти школьников от страны. Выпускники могут участвовать в год окончания школы до начала учёбы в вузе.",
       "format": "На теорию и эксперимент отводят по пять часов в разные дни.",
       "tasks": "Три теоретические задачи на 30 баллов в сумме. Одна или две экспериментальные работы — ещё на 20 баллов."
@@ -691,7 +691,7 @@ const DEFAULT_SITE_CONTENT = {
     {
       "code": "APhO",
       "name": "Азиатская физическая олимпиада",
-      "text": "Олимпиада стран Азии и Океании с индивидуальным зачётом.",
+      "text": "",
       "participants": "Обычно восемь школьников от страны.",
       "format": "Теория и эксперимент проходят в разные дни, обычно по пять часов.",
       "tasks": "Три теоретические задачи на 30 баллов в сумме охватывают не менее четырёх разделов физики. На одну или две экспериментальные работы приходится 20 баллов."
@@ -699,7 +699,7 @@ const DEFAULT_SITE_CONTENT = {
     {
       "code": "EuPhO",
       "name": "Европейская физическая олимпиада",
-      "text": "В олимпиаде участвуют школьники из Европы и других регионов.",
+      "text": "",
       "participants": "До пяти школьников от страны.",
       "format": "На теорию и эксперимент отводят по пять часов в разные дни. На апелляции участник сам обсуждает свою оценку с жюри.",
       "tasks": "Три теоретические задачи с короткими условиями и одна или две экспериментальные работы."
@@ -952,16 +952,15 @@ function renderSelectionFlow(selection){
     return '<article class="sflow-lane '+kind+'" style="--d:'+(n-1)+'"><header class="sflow-lane-head"><p class="sflow-route">'+escapeHtml(t('flow.route',{n}))+'</p><h3>'+escapeHtml(title)+'</h3><span class="sflow-tag">'+escapeHtml(tag)+'</span></header><ol class="sflow-steps">'+rows+'</ol>'+(out||note?'<p class="sflow-out">'+(out?'<strong>'+escapeHtml(out)+'</strong>':'')+(note?'<span>'+escapeHtml(note)+'</span>':'')+'</p>':'')+'</article>';
   };
   const rules=s.teamRules||[];
-  const teamRows=rules.map(r=>'<div class="sflow-team"><span class="sflow-team-code">'+escapeHtml(r.code||'')+'</span><span class="sflow-team-count">'+escapeHtml(r.count||'')+'</span><p>'+escapeHtml(r.text||'')+'</p></div>').join('');
+  const teamRows=rules.map(r=>'<div class="sflow-team"><span class="sflow-team-code">'+escapeHtml(r.code||'')+'</span><span class="sflow-team-count">'+escapeHtml(r.count||'')+'</span></div>').join('');
   const line=d=>'<svg class="sflow-wires" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="sflow-wire" vector-effect="non-scaling-stroke" d="'+d+'"/></svg>';
   return '<div class="sflow">'
     +'<div class="sflow-lanes">'
-      +lane('republican',1,s.republicanTitle||'',s.republicanStages,t('flow.quota'),s.republicanNote)
-      +lane('national',2,s.nationalTitle||'',s.nationalStages,t('flow.ranking'),s.nationalNote)
+      +lane('republican',1,s.republicanTitle||'',s.republicanStages,t('flow.quota'),'')
+      +lane('national',2,s.nationalTitle||'',s.nationalStages,t('flow.ranking'),'')
     +'</div>'+line('M50 0 V14 H150 V0 M100 14 V40')
-    +'<article class="sflow-final" style="--d:2"><p class="sflow-kicker">'+escapeHtml(t('flow.finalKicker'))+'</p><h3>'+escapeHtml(s.finalTitle||'')+'</h3><p>'+escapeHtml(s.finalText||'')+'</p></article>'
+    +'<article class="sflow-final" style="--d:2"><p class="sflow-kicker">'+escapeHtml(t('flow.finalKicker'))+'</p><h3>'+escapeHtml(s.finalTitle||'')+'</h3></article>'
     +(rules.length?line('M100 0 V40')+'<p class="sflow-teams-label">'+escapeHtml(t('flow.teams'))+'</p><div class="sflow-teams" style="--d:3">'+teamRows+'</div>':'')
-    +(s.rulesText?'<p class="sflow-foot">'+escapeHtml(s.rulesText)+'</p>':'')
   +'</div>';
 }
 let SFLOW_OBSERVER=null;
@@ -984,7 +983,7 @@ function renderAboutContent(){
   }).join('');
   /* Текст, изменённый в редакторе, показывается над схемой; стандартный текст заменён схемой. */
   const customOrigin=SITE_CONTENT.about?.originText&&SITE_CONTENT.about.originText!==DEFAULT_SITE_CONTENT.about.originText?'<div class="about-copy">'+paragraphs(a.originText)+'</div>':'';
-  root.innerHTML='<header class="about-hero"><h1 class="about-title">'+escapeHtml(a.title||t('footer.title'))+'</h1><section id="about-official" class="about-official-card" aria-labelledby="about-official-title"><h2 id="about-official-title">'+escapeHtml(t('about.orgTitle'))+'</h2><div class="about-copy"><p>'+escapeHtml(t('about.committeeText'))+'</p><p class="about-official-chair">'+escapeHtml(t('about.org.chair'))+': <strong>'+escapeHtml(I18N.chair())+'</strong></p></div></section><p class="about-lead">'+escapeHtml(a.intro||'')+'</p></header><div class="about-document"><section class="about-section about-section-flow"><div class="about-flow-head"><h2>'+escapeHtml(a.originTitle||'')+'</h2><p>'+escapeHtml(t('flow.legend'))+'</p></div>'+customOrigin+renderSelectionFlow(s)+'</section><section class="about-section"><h2>'+escapeHtml(a.pathTitle||'')+'</h2><div>'+(a.pathText?'<p class="olympiad-intro">'+escapeHtml(a.pathText)+'</p>':'')+'<div class="olympiad-guide">'+guide+'</div></div></section></div>';
+  root.innerHTML='<header class="about-hero"><h1 class="about-title">'+escapeHtml(a.title||t('footer.title'))+'</h1><section id="about-official" class="about-official-card" aria-labelledby="about-official-title"><h2 id="about-official-title">'+escapeHtml(t('about.orgTitle'))+'</h2><div class="about-copy"><p>'+escapeHtml(t('about.committeeText'))+'</p><p class="about-official-chair">'+escapeHtml(t('about.org.chair'))+': <strong>'+escapeHtml(I18N.chair())+'</strong></p></div></section><p class="about-lead">'+escapeHtml(a.intro||'')+'</p></header><div class="about-document"><section class="about-section about-section-flow"><div class="about-flow-head"><h2>'+escapeHtml(a.originTitle||'')+'</h2></div>'+customOrigin+renderSelectionFlow(s)+'</section><section class="about-section about-section-flow about-olympiads"><div class="about-flow-head"><h2>'+escapeHtml(a.pathTitle||'')+'</h2>'+(a.pathText?'<p>'+escapeHtml(a.pathText)+'</p>':'')+'</div><div class="olympiad-guide">'+guide+'</div></section></div>';
 }
 let ACTIVE_ARCHIVE_YEAR='2026';
 function renderArchivePanels(){
