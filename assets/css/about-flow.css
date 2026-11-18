@@ -22,11 +22,11 @@
 .sflow-final h3{margin:0 0 .25rem;font-size:18px;font-weight:650;line-height:1.3;letter-spacing:-.01em;color:var(--text)}
 .sflow-final p:last-child{margin:0;font-size:14px;line-height:1.6;color:var(--text2)}
 .sflow-teams-label{margin:0 0 .6rem;text-align:center;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text3)}
-.sflow-teams{border:1px solid var(--border);border-radius:var(--r);background:var(--bg);transition:opacity .6s ease}
-.sflow-team{display:grid;grid-template-columns:150px 170px minmax(0,1fr);gap:1.25rem;align-items:baseline;padding:.85rem 1.2rem;border-bottom:1px solid var(--border)}
+.sflow-teams{max-width:620px;margin:0 auto;border:1px solid var(--border);border-radius:var(--r);background:var(--bg);transition:opacity .6s ease}
+.sflow-team{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.25rem;align-items:baseline;padding:.85rem 1.2rem;border-bottom:1px solid var(--border)}
 .sflow-team:last-child{border-bottom:0}
 .sflow-team-code{font-size:15px;font-weight:700;color:var(--text)}
-.sflow-team-count{font-size:13px;color:var(--text2)}
+.sflow-team-count{font-size:13px;color:var(--text2);text-align:right;white-space:nowrap}
 .sflow-team p{margin:0;font-size:13.5px;line-height:1.55;color:var(--text2)}
 .sflow-foot{margin:.9rem 0 0;text-align:center;font-size:12.5px;line-height:1.6;color:var(--text3)}
 /* Появление при прокрутке — только прозрачность */
