@@ -328,7 +328,6 @@
     ru:{
       'flow.route':'Путь {n}',
       'flow.quota':'Квоты по регионам',
-      'hero.sub':'Задачи с решениями, результаты этапов и путь к международным олимпиадам — в одном месте.',
       'flow.ranking':'Без квот · единый рейтинг',
       'flow.finalKicker':'Общий финал',
       'flow.teams':'Сборные Кыргызстана',
@@ -337,7 +336,6 @@
     ky:{
       'flow.route':'{n}-жол',
       'flow.quota':'Аймактык квоталар',
-      'hero.sub':'Чыгарылыштары менен маселелер, этаптардын жыйынтыктары жана эл аралык олимпиадаларга жол — бир жерде.',
       'flow.ranking':'Квотасыз · бирдиктүү рейтинг',
       'flow.finalKicker':'Жалпы финал',
       'flow.teams':'Кыргызстандын курама командалары',
@@ -346,7 +344,6 @@
     en:{
       'flow.route':'Route {n}',
       'flow.quota':'Regional quotas',
-      'hero.sub':'Problems with solutions, stage results and the route to international olympiads — all in one place.',
       'flow.ranking':'No quotas · single ranking',
       'flow.finalKicker':'Common final',
       'flow.teams':'Kyrgyzstan teams',
