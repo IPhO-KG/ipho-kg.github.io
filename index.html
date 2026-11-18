@@ -9,8 +9,8 @@
     if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
   } catch {}
 </script>
-<script src="/assets/js/i18n.js?v=20261119-lean"></script>
-<script src="/assets/js/i18n-fallback.js?v=20261119-lean"></script>
+<script src="/assets/js/i18n.js?v=20261119-bpo"></script>
+<script src="/assets/js/i18n-fallback.js?v=20261119-bpo"></script>
 <script src="/assets/js/npho-data.js?v=20261117-controls"></script>
 <script>
   window.MathJax = {
@@ -420,7 +420,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 .content-note:empty{display:none}
 @media(max-width:640px){.lang-select{padding:6px 22px 6px 7px;font-size:11px;background-position:right 7px center}.official-badge{border-radius:var(--r);font-size:11px;padding:6px 10px}}
 </style>
-<link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-controls"><script defer src="/assets/js/site-ui.js?v=20261117-controls"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-controls"><link rel="stylesheet" href="/assets/css/about-flow.css?v=20261119-lean"></head>
+<link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-controls"><script defer src="/assets/js/site-ui.js?v=20261117-controls"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-controls"><link rel="stylesheet" href="/assets/css/about-flow.css?v=20261119-bpo"></head>
 <body>
 
 <nav>
@@ -709,6 +709,7 @@ const DEFAULT_SITE_CONTENT = {
       "name": "Балканская физическая олимпиада",
       "text": "Участвуют команды стран Балканского физического союза и приглашённых стран.",
       "participants": "До четырёх школьников от страны.",
+      "age": "В 2026 году — школьники, родившиеся после 1 января 2009 года. Старших допускают, если они учатся в том же классе.",
       "format": "В 2026 году прошёл один письменный тур продолжительностью четыре часа.",
       "tasks": "Четыре теоретические задачи. Решения можно писать на официальном языке своей страны."
     },
@@ -976,10 +977,11 @@ function renderAboutContent(){
   const C=localizedContent(),a=C.about||{},s=C.selection||{};
   const paragraphs=text=>String(text||'').split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean).map(p=>'<p>'+escapeHtml(p)+'</p>').join('');
   const urls={IPhO:'https://www.ipho-new.org/statutes-syllabus/',APhO:'https://apho2026.kr/en/sub1_4.html',EuPhO:'https://eupho.ee/rules/',BPO:'https://balkanphysicalunion.info/8th-balkan-physics-olympiad-2026/',ISPhO:'https://ispho.mipt.ru/olympiad'};
-  const guide=(a.internationalDetails||[]).map(item=>{
-    const fields=[['participants','about.participants'],['format','about.rounds'],['tasks','about.tasks']].filter(([key])=>item[key]);
+  const ORDER=['IPhO','APhO','EuPhO','ISPhO','BPO'],rank=code=>{const i=ORDER.indexOf(code);return i<0?ORDER.length:i};
+  const guide=(a.internationalDetails||[]).slice().sort((x,y)=>rank(x.code)-rank(y.code)).map(item=>{
+    const fields=[['participants','about.participants'],['age','about.age'],['format','about.rounds'],['tasks','about.tasks']].filter(([key])=>item[key]);
     const details=fields.length?'<dl class="olympiad-fields">'+fields.map(([key,label])=>'<div><dt>'+escapeHtml(t(label))+'</dt><dd>'+escapeHtml(item[key])+'</dd></div>').join('')+'</dl>':'';
-    return '<article class="olympiad-row"><span class="olympiad-code">'+escapeHtml(item.code||'')+'</span><div><h3 class="olympiad-name">'+escapeHtml(item.name||'')+'</h3><div class="olympiad-description">'+paragraphs(item.text)+'</div>'+details+(urls[item.code]?'<a class="olympiad-source" target="_blank" rel="noopener" href="'+escapeAttribute(urls[item.code])+'">'+escapeHtml(t('about.officialLink'))+' <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>':'')+'</div></article>';
+    return '<article class="olympiad-row'+(item.code==='BPO'?' olympiad-row-wide':'')+'"><span class="olympiad-code">'+escapeHtml(item.code||'')+'</span><div><h3 class="olympiad-name">'+escapeHtml(item.name||'')+'</h3><div class="olympiad-description">'+paragraphs(item.text)+'</div>'+details+(urls[item.code]?'<a class="olympiad-source" target="_blank" rel="noopener" href="'+escapeAttribute(urls[item.code])+'">'+escapeHtml(t('about.officialLink'))+' <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>':'')+'</div></article>';
   }).join('');
   /* Текст, изменённый в редакторе, показывается над схемой; стандартный текст заменён схемой. */
   const customOrigin=SITE_CONTENT.about?.originText&&SITE_CONTENT.about.originText!==DEFAULT_SITE_CONTENT.about.originText?'<div class="about-copy">'+paragraphs(a.originText)+'</div>':'';
