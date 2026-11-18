@@ -41,3 +41,20 @@ body>nav{overflow:visible}
 
 /* Keep site status above the committee representation, including translated footers. */
 .fc [data-i18n="footer.desc"]{white-space:pre-line;line-height:1.7}
+
+/* About uses the same information order for every olympiad. */
+.about-process{gap:1.15rem}
+.about-process-step h3{margin:0 0 .35rem;color:var(--text);font-size:15px;line-height:1.45;font-weight:600}
+.about-process-step p{margin:0}
+.olympiad-row{padding:1.3rem 1.2rem}
+.olympiad-fields{display:grid;gap:.7rem;margin:1rem 0 .3rem}
+.olympiad-fields>div{display:grid;grid-template-columns:95px minmax(0,1fr);gap:1rem;align-items:start}
+.olympiad-fields dt{color:var(--text);font-size:12px;line-height:1.65;font-weight:600}
+.olympiad-fields dd{margin:0;color:var(--text2);font-size:14px;line-height:1.65}
+.change-notice,.about-notice{display:grid;gap:.5rem}
+.change-notice>strong,.about-notice>strong{display:block;margin:0;line-height:1.4}
+.change-notice>span,.about-notice>span{display:block}
+.about-notice>strong{color:var(--text);font-size:12px;font-weight:600}
+@media(max-width:700px){.olympiad-fields>div{grid-template-columns:1fr;gap:.15rem}.olympiad-fields{gap:.8rem}.olympiad-row{padding:1.1rem 1rem}}
+
+.about-title{text-wrap:balance}

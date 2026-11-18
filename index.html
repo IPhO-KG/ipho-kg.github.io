@@ -9,9 +9,9 @@
     if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
   } catch {}
 </script>
-<script src="/assets/js/i18n.js?v=20261117-figures"></script>
-<script src="/assets/js/i18n-fallback.js?v=20261117-figures"></script>
-<script src="/assets/js/npho-data.js?v=20261117-figures"></script>
+<script src="/assets/js/i18n.js?v=20261117-controls"></script>
+<script src="/assets/js/i18n-fallback.js?v=20261117-controls"></script>
+<script src="/assets/js/npho-data.js?v=20261117-controls"></script>
 <script>
   window.MathJax = {
     tex: {
@@ -420,7 +420,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 .content-note:empty{display:none}
 @media(max-width:640px){.lang-select{padding:6px 22px 6px 7px;font-size:11px;background-position:right 7px center}.official-badge{border-radius:var(--r);font-size:11px;padding:6px 10px}}
 </style>
-<link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-figures"><script defer src="/assets/js/site-ui.js?v=20261117-figures"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-figures"></head>
+<link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-controls"><script defer src="/assets/js/site-ui.js?v=20261117-controls"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-controls"></head>
 <body>
 
 <nav>
@@ -464,8 +464,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
   <footer>
     <div class="fi">
       <div class="fg">
-        <div class="fc"><h4 data-i18n="footer.title">Национальная олимпиада по физике</h4><p data-i18n="footer.desc">Официальный сайт
-Представитель официального комитета по физике Кыргызской Республики.</p><p class="fchair"><span data-i18n="footer.chair">Председатель</span>: <b data-i18n-chair>Салижан Кылычбеков</b></p></div>
+        <div class="fc"><h4 data-i18n="footer.title">Национальная олимпиада по физике</h4><p data-i18n="footer.desc">Представитель официального комитета по физике Кыргызской Республики.</p><p class="fchair"><span data-i18n="footer.chair">Председатель</span>: <b data-i18n-chair>Салижан Кылычбеков</b></p></div>
         <div class="fc"><h4 data-i18n="footer.nav">Навигация</h4><a onclick="go('home')" data-i18n="nav.home">Главная</a><a onclick="go('problems')" data-i18n="nav.problems">Банк задач</a><a onclick="go('archive')" data-i18n="nav.results">Результаты</a><a href="/practice/" onclick="this.href=NPHO_I18N.langUrl(this.href)" data-i18n="nav.practice" data-site-link="/practice/">Практика</a><a onclick="go('about')" data-i18n="nav.about">Об олимпиаде</a></div>
         <div class="fc"><h4 data-i18n="footer.contacts">Контакты</h4>
           <div class="crow"><div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#229ED9" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></div><a href="https://t.me/+9GGnjui6VT05Mzli" target="_blank" class="ct">Telegram</a></div>
@@ -649,65 +648,94 @@ const GOLD_COUNT = window.NPHO_GOLD_COUNT || 5, SILVER_COUNT = window.NPHO_SILVE
 let RESULTS = JSON.parse(JSON.stringify(window.NPHO_RESULTS || {}));
 
 const DEFAULT_SITE_CONTENT = {
-  "contentVersion": 5,
+  "contentVersion": 7,
   "about": {
-    "kicker": "Об олимпиаде",
-    "title": "Национальная олимпиада по физике",
-    "intro": "Национальная олимпиада по физике (NPhO) — соревнование школьников Кыргызстана и один из путей отбора на международные олимпиады. Результаты участников сравниваются в едином национальном рейтинге независимо от региона и места обучения.",
-    "originTitle": "Порядок отбора",
-    "originText": "Отбор проходит по двум направлениям. В Республиканской олимпиаде участники последовательно проходят районный, областной или городской и республиканский этапы. Число проходящих на следующий этап ограничено территориальными квотами.\n\nВ Национальной олимпиаде отбор ведётся по единому рейтингу без региональных квот. I и II этапы проходят онлайн, III — очно в Бишкеке и Оше. На IV этапе участники Национальной олимпиады встречаются с участниками, прошедшими через Республиканскую олимпиаду.",
-    "benefitTitle": "Принципы отбора в Национальной олимпиаде",
-    "benefits": [
-      {
-        "title": "Единый рейтинг",
-        "text": "Все участники Национальной олимпиады решают задачи на общих условиях, и их результаты сравниваются по стране."
-      },
-      {
-        "title": "Независимость от региона",
-        "text": "Проход на следующий этап определяется набранными баллами, а не квотой района, области или города."
-      },
-      {
-        "title": "Общий IV этап",
-        "text": "Лучшие участники Национальной олимпиады встречаются с сильнейшими участниками Республиканской олимпиады в общем заключительном отборе."
-      }
-    ],
-    "pathTitle": "Международные олимпиады",
-    "pathText": "",
-    "international": [
-      "APhO",
-      "EuPhO",
-      "BPO",
-      "ISPhO",
-      "IPhO"
-    ],
-    "internationalDetails": [
-      {
-        "code": "IPhO",
-        "name": "Международная физическая олимпиада",
-        "text": "Всемирное соревнование школьников с индивидуальным зачётом. Национальная команда обычно включает до пяти участников.\n\nДва тура по пять часов: три теоретические задачи и одна или две экспериментальные работы. Теоретический тур охватывает несколько разделов физики; экспериментальный проверяет работу с измерениями и их погрешностями."
-      },
-      {
-        "code": "APhO",
-        "name": "Азиатская физическая олимпиада",
-        "text": "Региональное соревнование школьников стран Азии и Океании. Национальная команда включает до восьми участников, зачёт индивидуальный.\n\nТеоретический и экспериментальный туры обычно длятся по пять часов. Развёрнутые задачи требуют точного построения модели, последовательных вычислений и уверенной экспериментальной работы."
-      },
-      {
-        "code": "EuPhO",
-        "name": "Европейская физическая олимпиада",
-        "text": "Соревнование школьников европейских стран и приглашённых команд из других регионов.\n\nПрограмма включает теоретический и экспериментальный туры. Характерная особенность — короткие условия, оставляющие участнику выбор физической модели и подхода к решению."
-      },
-      {
-        "code": "BPO",
-        "name": "Балканская физическая олимпиада",
-        "text": "Региональное соревнование школьников стран Балканского физического союза и приглашённых команд.\n\nВ последних выпусках проводится один письменный тур из четырёх задач без отдельного экспериментального тура. Условия участия и возрастные ограничения устанавливаются регламентом организаторов."
-      },
-      {
-        "code": "ISPhO",
-        "name": "Международная научная физическая олимпиада",
-        "text": "Международное соревнование молодых физиков, выступающих в составе национальных делегаций.\n\nТеоретические и экспериментальные задания сочетают физический анализ, компьютерное моделирование и обработку данных. Даты и формат проведения определяются организаторами каждого выпуска."
-      }
-    ]
-  },
+  "kicker": "Об олимпиаде",
+  "title": "Национальная олимпиада по физике",
+  "intro": "Национальная олимпиада по физике (NPhO) — соревнование школьников Кыргызстана и один из двух путей к заключительному отбору на международные олимпиады.",
+  "originTitle": "Порядок отбора",
+  "originText": "Отбор проходит по двум направлениям. В Республиканской олимпиаде участники последовательно проходят районный, областной или городской и республиканский этапы. Число проходящих на следующий этап ограничено территориальными квотами.\n\nВ Национальной олимпиаде отбор ведётся по единому рейтингу без региональных квот. I и II этапы проходят онлайн, III — очно в Бишкеке и Оше. На IV этапе участники Национальной олимпиады встречаются с участниками, прошедшими через Республиканскую олимпиаду.",
+  "benefitTitle": "Принципы отбора в Национальной олимпиаде",
+  "benefits": [
+    {
+      "title": "Единый рейтинг",
+      "text": "Все участники Национальной олимпиады решают задачи на общих условиях, и их результаты сравниваются по стране."
+    },
+    {
+      "title": "Независимость от региона",
+      "text": "Проход на следующий этап определяется набранными баллами, а не квотой района, области или города."
+    },
+    {
+      "title": "Общий IV этап",
+      "text": "Лучшие участники Национальной олимпиады встречаются с сильнейшими участниками Республиканской олимпиады в общем заключительном отборе."
+    }
+  ],
+  "pathTitle": "Международные олимпиады",
+  "pathText": "",
+  "international": [
+    "APhO",
+    "EuPhO",
+    "BPO",
+    "ISPhO",
+    "IPhO"
+  ],
+  "internationalDetails": [
+    {
+      "code": "IPhO",
+      "name": "Международная физическая олимпиада",
+      "text": "Всемирная олимпиада с индивидуальным зачётом.",
+      "participants": "До пяти школьников от страны. Выпускники могут участвовать в год окончания школы до начала учёбы в вузе.",
+      "format": "На теорию и эксперимент отводят по пять часов в разные дни.",
+      "tasks": "Три теоретические задачи на 30 баллов в сумме. Одна или две экспериментальные работы — ещё на 20 баллов."
+    },
+    {
+      "code": "APhO",
+      "name": "Азиатская физическая олимпиада",
+      "text": "Олимпиада стран Азии и Океании с индивидуальным зачётом.",
+      "participants": "Обычно восемь школьников от страны.",
+      "format": "Теория и эксперимент проходят в разные дни, обычно по пять часов.",
+      "tasks": "Три теоретические задачи на 30 баллов в сумме охватывают не менее четырёх разделов физики. На одну или две экспериментальные работы приходится 20 баллов."
+    },
+    {
+      "code": "EuPhO",
+      "name": "Европейская физическая олимпиада",
+      "text": "В олимпиаде участвуют школьники из Европы и других регионов.",
+      "participants": "До пяти школьников от страны.",
+      "format": "На теорию и эксперимент отводят по пять часов в разные дни. На апелляции участник сам обсуждает свою оценку с жюри.",
+      "tasks": "Три теоретические задачи с короткими условиями и одна или две экспериментальные работы."
+    },
+    {
+      "code": "BPO",
+      "name": "Балканская физическая олимпиада",
+      "text": "Участвуют команды стран Балканского физического союза и приглашённых стран.",
+      "participants": "До четырёх школьников от страны.",
+      "format": "В 2026 году прошёл один письменный тур продолжительностью четыре часа.",
+      "tasks": "Четыре теоретические задачи. Решения можно писать на официальном языке своей страны."
+    },
+    {
+      "code": "ISPhO",
+      "name": "Международная научная физическая олимпиада",
+      "text": "В 2026 году олимпиада прошла онлайн по программе Азиатской физической олимпиады.",
+      "participants": "До пяти участников от страны.",
+      "format": "Теоретический тур и эксперимент на симуляторе лабораторной установки.",
+      "tasks": "Три теоретические задачи, одна из них — с компьютерным моделированием."
+    }
+  ],
+  "originSections": [
+    {
+      "title": "Республиканская олимпиада",
+      "text": "Районный → областной или городской → республиканский этап. Переход на следующий этап ограничен территориальными квотами."
+    },
+    {
+      "title": "Национальная олимпиада",
+      "text": "I и II этапы проходят онлайн, III — очно в Бишкеке и Оше. Отбор ведётся по единому национальному рейтингу без региональных квот."
+    },
+    {
+      "title": "Общий IV этап",
+      "text": "На IV этапе участники обоих направлений решают задачи на общих условиях и соревнуются в едином рейтинге."
+    }
+  ]
+},
   "notice": "Даты, места проведения и условия отбора уточняются организаторами. При участии следует руководствоваться действующим регламентом и официальными объявлениями.",
   "calendar": [
     {
@@ -780,47 +808,47 @@ const DEFAULT_SITE_CONTENT = {
     }
   ],
   "selection": {
-    "title": "Как устроен отбор",
-    "intro": "Национальная и Республиканская олимпиады — два направления отбора к общему IV этапу.",
-    "republicanTitle": "Республиканская олимпиада",
-    "republicanStages": [
-      "Районный этап",
-      "Областной / городской этап",
-      "Республиканский этап",
-      "Лучшие по итогам этапа"
-    ],
-    "republicanNote": "На каждом переходе действуют территориальные квоты.",
-    "nationalTitle": "Национальная олимпиада",
-    "nationalStages": [
-      "I этап · онлайн",
-      "II этап · онлайн",
-      "III этап · очно в Бишкеке и Оше",
-      "Лучшие по итогам III этапа"
-    ],
-    "nationalNote": "Отбор по единому рейтингу без региональных квот.",
-    "finalTitle": "IV этап Национальной олимпиады",
-    "finalText": "Участники обоих направлений проходят заключительный отбор в общем рейтинге.",
-    "afterText": "",
-    "rulesTitle": "Формирование международных команд",
-    "rulesText": "После IV этапа составляется итоговый рейтинг. На его основе и с учётом решений организаторов определяются составы команд Кыргызстана.",
-    "teamRules": [
-      {
-        "code": "IPhO",
-        "count": "5 участников",
-        "text": "Пять первых участников итогового рейтинга входят в состав команды на IPhO."
-      },
-      {
-        "code": "APhO",
-        "count": "8 участников",
-        "text": "Восемь первых участников итогового рейтинга входят в состав команды на APhO."
-      },
-      {
-        "code": "EuPhO, BPO, ISPhO",
-        "count": "По решению организаторов",
-        "text": "Составы определяются отдельно с учётом результатов отбора, регламентов и доступных квот."
-      }
-    ]
-  }
+  "title": "Как устроен отбор",
+  "intro": "Национальная и Республиканская олимпиады — два направления отбора к общему IV этапу.",
+  "republicanTitle": "Республиканская олимпиада",
+  "republicanStages": [
+    "Районный этап",
+    "Областной / городской этап",
+    "Республиканский этап",
+    "Лучшие по итогам этапа"
+  ],
+  "republicanNote": "На каждом переходе действуют территориальные квоты.",
+  "nationalTitle": "Национальная олимпиада",
+  "nationalStages": [
+    "I этап · онлайн",
+    "II этап · онлайн",
+    "III этап · очно в Бишкеке и Оше",
+    "Лучшие по итогам III этапа"
+  ],
+  "nationalNote": "Отбор по единому рейтингу без региональных квот.",
+  "finalTitle": "IV этап Национальной олимпиады",
+  "finalText": "Участники обоих направлений проходят заключительный отбор в общем рейтинге.",
+  "afterText": "",
+  "rulesTitle": "Формирование международных команд",
+  "rulesText": "Составы команд Кыргызстана определяются по результатам IV этапа с учётом решений организаторов.",
+  "teamRules": [
+    {
+      "code": "IPhO",
+      "count": "5 участников",
+      "text": "В команду входят участники, занявшие первые пять мест."
+    },
+    {
+      "code": "APhO",
+      "count": "8 участников",
+      "text": "В команду входят участники, занявшие первые восемь мест."
+    },
+    {
+      "code": "EuPhO, BPO, ISPhO",
+      "count": "По решению организаторов",
+      "text": "Команды формируются отдельно с учётом результатов отбора, регламентов и доступных квот."
+    }
+  ]
+}
 ,
   results: JSON.parse(JSON.stringify(RESULTS))
 };
@@ -836,7 +864,7 @@ function mergeSiteContent(base,override){
 }
 const CALENDAR_COUNTRIES={"KR":{"name":"Республика Корея","asset":"/assets/flags/kr.svg"},"SE":{"name":"Швеция","asset":"/assets/flags/se.svg"},"RU":{"name":"Россия","asset":"/assets/flags/ru.svg"},"TR":{"name":"Турция","asset":"/assets/flags/tr.svg"},"CO":{"name":"Колумбия","asset":"/assets/flags/co.svg"},"TH":{"name":"Таиланд","asset":"/assets/flags/th.svg"},"SA":{"name":"Саудовская Аравия","asset":"/assets/flags/sa.svg"}};
 function calendarCountryCode(item){const code=String(item?.countryCode||'').trim().toUpperCase();return CALENDAR_COUNTRIES[code]?code:''}
-function migrateSiteContent(content,savedVersion=5){
+function migrateSiteContent(content,savedVersion=7){
   // Replace only known defaults. Text edited by the site owner is preserved.
   if(Number(savedVersion)<5){
     const legacy={"about":{"kicker":"Об олимпиаде","title":"Национальная олимпиада по физике","intro":"Национальная олимпиада по физике (NPhO) — соревнование национального уровня и дополнительный путь к заключительному отбору. Участники из всех регионов решают задачи на общих условиях, а их результаты сравниваются в едином рейтинге страны.","originTitle":"Два пути к заключительному отбору","originText":"В Кыргызстане к заключительному отбору ведут два параллельных пути. Через Республиканскую олимпиаду участник проходит районный, затем областной или городской и республиканский этапы. На каждом переходе действует территориальная квота, поэтому проход дальше зависит не только от результата, но и от конкуренции внутри района, области или города.\n\nNPhO создаёт второй, национальный путь. На первых двух онлайн-этапах участники из всех регионов решают одинаковые задачи и попадают в единый рейтинг: место обучения и региональная квота не влияют на отбор. Лучшие проходят на очный III этап в Бишкеке и Оше. На IV этапе оба пути объединяются, и участники NPhO и Республиканской олимпиады соревнуются в общем рейтинге.","benefitTitle":"Принципы отбора в NPhO","benefits":[{"title":"Единый рейтинг","text":"Все участники NPhO решают задачи на общих условиях, и их результаты сравниваются по стране."},{"title":"Независимость от региона","text":"Проход на следующий этап определяется набранными баллами, а не квотой района, области или города."},{"title":"Общий IV этап","text":"Лучшие участники NPhO встречаются с сильнейшими участниками Республиканской олимпиады в общем заключительном отборе."}],"pathTitle":"Международные олимпиады","pathText":"Кыргызстан формирует команды для нескольких международных соревнований. Их регламенты, размер команд и характер задач различаются.","international":["APhO","EuPhO","BPO","ISPhO","IPhO"],"internationalDetails":[{"code":"IPhO","name":"Международная физическая олимпиада","text":"Всемирная олимпиада для национальных команд школьников и наиболее престижное международное соревнование этого уровня. В программу входят отдельные теоретический и экспериментальный туры; команда страны состоит не более чем из пяти участников."},{"code":"APhO","name":"Азиатская физическая олимпиада","text":"Региональная олимпиада для стран Азии и Океании. Формат близок к IPhO, но команда может включать до восьми участников; теоретический и экспериментальный туры отличаются высокой сложностью и плотностью работы."},{"code":"EuPhO","name":"Европейская физическая олимпиада","text":"Европейская олимпиада с участием европейских и приглашённых команд. Она включает теоретический и экспериментальный туры; короткие условия обычно требуют самостоятельно выбрать модель и ключевую физическую идею."},{"code":"BPO","name":"Балканская физическая олимпиада","text":"Региональная олимпиада стран Балканского физического союза и приглашённых команд. Более компактный формат даёт участникам опыт решения задач в международной среде."},{"code":"ISPhO","name":"International Scientific Physics Olympiad","text":"Международная научная физическая олимпиада для национальных делегаций. Задания охватывают теоретическую и экспериментальную физику и требуют уверенной работы с моделями и анализом данных."}]},"notice":"Информация может изменяться. Даты, места проведения, формат туров и условия отбора уточняются организаторами на каждый учебный год. Перед участием рекомендуем сверяться с актуальными приказами Министерства просвещения Кыргызской Республики.","calendar":[{"date":"Январь 2026","title":"I этап NPhO","details":"Онлайн · прокторинг и единый рейтинг","kind":"stage","url":""},{"date":"Февраль 2026","title":"II этап NPhO","details":"Онлайн · следующий этап национальной ветки","kind":"stage","url":""},{"date":"Март 2026","title":"III этап NPhO","details":"Один очный день · Бишкек и Ош","kind":"stage","url":""},{"date":"4–6 апреля 2026","title":"IV этап — национальный финал","details":"Три дня · Бишкек · две ветки отбора сходятся вместе","kind":"current","url":""},{"date":"17–25 мая 2026","title":"APhO 2026","details":"Бусан, Республика Корея","kind":"international","countryCode":"KR","url":"https://apho2026.kr/"},{"date":"12–16 июня 2026","title":"EuPhO 2026","details":"Гётеборг, Швеция","kind":"international","countryCode":"SE","url":"https://eupho26.se/"},{"date":"21–30 июня 2026","title":"ISPhO 2026","details":"Онлайн","kind":"international","countryCode":"RU","url":"https://ispho.mipt.ru/"},{"date":"27–30 июня 2026","title":"BPO 2026","details":"Стамбул, Турция","kind":"international","countryCode":"TR","url":"https://balkanphysicalunion.info/blog/2026/03/23/bpo8-welcome/"},{"date":"4–12 июля 2026","title":"IPhO 2026","details":"Букараманга, Колумбия","kind":"international","countryCode":"CO","url":"https://ipho2026.com/"}],"selection":{"title":"Как устроен отбор","intro":"К общему финалу ведут два маршрута: Республиканская и Национальная олимпиады. На IV этапе их сильнейшие участники встречаются в едином отборе.","republicanTitle":"Республиканская олимпиада","republicanStages":["Районный этап","Областной / городской этап","Республиканский этап","Лучшие по итогам этапа"],"republicanNote":"Между этапами действуют квоты, поэтому пройти весь путь через Республиканскую олимпиаду непросто.","nationalTitle":"Национальная олимпиада","nationalStages":["I этап · онлайн","II этап · онлайн","III этап · очно в Бишкеке и Оше","Лучшие по итогам III этапа"],"nationalNote":"Единый национальный рейтинг даёт дополнительный маршрут к общему финальному отбору.","finalTitle":"IV этап Национальной олимпиады","finalText":"Топ-участники Национальной олимпиады + сильнейшие участники Республиканской олимпиады","afterText":"","rulesTitle":"Формирование международных команд","rulesText":"После IV этапа составляется итоговый рейтинг. На его основе и с учётом решений организаторов определяются составы команд Кыргызстана.","teamRules":[{"code":"IPhO","count":"5 участников","text":"Пять первых участников итогового рейтинга входят в состав команды на IPhO."},{"code":"APhO","count":"8 участников","text":"Восемь первых участников итогового рейтинга входят в состав команды на APhO."},{"code":"EuPhO, BPO, ISPhO","count":"По решению организаторов","text":"Составы определяются отдельно с учётом результатов отбора, регламентов и доступных квот."}]}};
@@ -851,8 +879,35 @@ function migrateSiteContent(content,savedVersion=5){
     }
     Object.keys(legacy).forEach(key=>{if(key in content)content[key]=upgrade(content[key],legacy[key],DEFAULT_SITE_CONTENT[key])});
   }
+  if(Number(savedVersion)<6){
+    if(content.about.intro==="Национальная олимпиада по физике (NPhO) — соревнование школьников Кыргызстана и один из путей отбора на международные олимпиады. Результаты участников сравниваются в едином национальном рейтинге независимо от региона и места обучения.")content.about.intro=DEFAULT_SITE_CONTENT.about.intro;
+    if(content.about.pathText==='')content.about.pathText=DEFAULT_SITE_CONTENT.about.pathText;
+    const previousDetails=[{"code":"IPhO","name":"Международная физическая олимпиада","text":"Всемирное соревнование школьников с индивидуальным зачётом. Национальная команда обычно включает до пяти участников.\n\nДва тура по пять часов: три теоретические задачи и одна или две экспериментальные работы. Теоретический тур охватывает несколько разделов физики; экспериментальный проверяет работу с измерениями и их погрешностями."},{"code":"APhO","name":"Азиатская физическая олимпиада","text":"Региональное соревнование школьников стран Азии и Океании. Национальная команда включает до восьми участников, зачёт индивидуальный.\n\nТеоретический и экспериментальный туры обычно длятся по пять часов. Развёрнутые задачи требуют точного построения модели, последовательных вычислений и уверенной экспериментальной работы."},{"code":"EuPhO","name":"Европейская физическая олимпиада","text":"Соревнование школьников европейских стран и приглашённых команд из других регионов.\n\nПрограмма включает теоретический и экспериментальный туры. Характерная особенность — короткие условия, оставляющие участнику выбор физической модели и подхода к решению."},{"code":"BPO","name":"Балканская физическая олимпиада","text":"Региональное соревнование школьников стран Балканского физического союза и приглашённых команд.\n\nВ последних выпусках проводится один письменный тур из четырёх задач без отдельного экспериментального тура. Условия участия и возрастные ограничения устанавливаются регламентом организаторов."},{"code":"ISPhO","name":"Международная научная физическая олимпиада","text":"Международное соревнование молодых физиков, выступающих в составе национальных делегаций.\n\nТеоретические и экспериментальные задания сочетают физический анализ, компьютерное моделирование и обработку данных. Даты и формат проведения определяются организаторами каждого выпуска."}];
+    content.about.internationalDetails=(content.about.internationalDetails||[]).map(item=>{
+      const old=previousDetails.find(row=>row.code===item.code),fresh=DEFAULT_SITE_CONTENT.about.internationalDetails.find(row=>row.code===item.code);
+      return old&&fresh&&item.name===old.name&&item.text===old.text?JSON.parse(JSON.stringify(fresh)):item;
+    });
+  }
+  if (Number(savedVersion) < 7 && content.about) {
+    if (content.about.pathText === "Международные олимпиады различаются форматом туров и характером задач.") content.about.pathText = DEFAULT_SITE_CONTENT.about.pathText;
+    const oldCards = {
+      IPhO: {"text":"Ежегодная всемирная олимпиада школьников с индивидуальным зачётом.","participants":"Национальные команды — до пяти школьников, ещё не начавших обучение в вузе.","format":"Теоретический и экспериментальный туры, каждый по пять часов.","tasks":"Три теоретические задачи из разных разделов физики и одна или две экспериментальные работы с измерениями и анализом погрешностей."},
+      APhO: {"text":"Ежегодная олимпиада стран Азии и Океании с индивидуальным зачётом.","participants":"Национальные команды — обычно восемь школьников, ещё не начавших обучение в вузе.","format":"Теоретический и экспериментальный туры, обычно по пять часов.","tasks":"Три теоретические задачи и одна или две экспериментальные работы. Проверяются построение физических моделей, расчёты и навыки эксперимента."},
+      EuPhO: {"text":"Европейская олимпиада, открытая также для команд из других регионов; зачёт индивидуальный.","participants":"Национальные команды — до пяти школьников, ещё не начавших обучение в вузе.","format":"Теоретический и экспериментальный туры, каждый по пять часов.","tasks":"Три теоретические задачи и одна или две экспериментальные работы. Короткие условия оставляют участнику выбор модели и способа решения."},
+      BPO: {"text":"Региональная олимпиада Балканского физического союза с участием приглашённых стран.","participants":"Команды — до четырёх школьников. Возрастные требования определяются регламентом олимпиады на соответствующий год.","format":"Один письменный тур без отдельного экспериментального экзамена.","tasks":"Четыре задачи по физике. Условия переводятся на языки участников, на которых можно записывать решения."},
+      ISPhO: {"text":"Международное соревнование молодых физиков в составе национальных делегаций.","participants":"В 2026 году — до пяти участников от страны.","format":"Теоретический и экспериментальный туры; в 2026 году — полностью онлайн.","tasks":"Три теоретические задачи, включая компьютерное моделирование. Экспериментальный тур посвящён виртуальному оборудованию, моделированию и обработке данных."}
+    };
+    for (const card of content.about.internationalDetails || []) {
+      const old = oldCards[card.code];
+      const revised = DEFAULT_SITE_CONTENT.about.internationalDetails.find(item => item.code === card.code);
+      if (!old || !revised) continue;
+      for (const field of Object.keys(old)) {
+        if (card[field] === old[field]) card[field] = revised[field];
+      }
+    }
+  }
   content.calendar=(content.calendar||[]).map(item=>({...item,countryCode:calendarCountryCode(item)}));
-  content.contentVersion=5;return content;
+  content.contentVersion=7;return content;
 }
 function safeSiteUrl(value){if(!String(value||'').trim())return'';try{const url=new URL(String(value),location.origin);return url.protocol==='https:'||url.protocol==='http:'?url.href:''}catch{return''}}
 function renderSelectionTree(selection){
@@ -892,10 +947,15 @@ function renderAboutContent(){
   const root=document.getElementById('about-content');if(!root)return;
   const C=localizedContent(),a=C.about||{},s=C.selection||{};
   const paragraphs=text=>String(text||'').split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean).map(p=>'<p>'+escapeHtml(p)+'</p>').join('');
-  const urls={IPhO:'https://www.ipho-new.org/statutes-syllabus/',APhO:'https://apho2026.kr/en/sub1_4.html',EuPhO:'https://eupho.ee/about/',BPO:'https://balkanphysicalunion.info/',ISPhO:'https://ispho.mipt.ru/olympiad'};
-  const guide=(a.internationalDetails||[]).map(item=>'<article class="olympiad-row"><span class="olympiad-code">'+escapeHtml(item.code||'')+'</span><div><h3 class="olympiad-name">'+escapeHtml(item.name||'')+'</h3><div class="olympiad-description">'+paragraphs(item.text)+'</div>'+(urls[item.code]?'<a class="olympiad-source" target="_blank" rel="noopener" href="'+escapeAttribute(urls[item.code])+'">'+escapeHtml(t('about.officialLink'))+' <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>':'')+'</div></article>').join('');
+  const urls={IPhO:'https://www.ipho-new.org/statutes-syllabus/',APhO:'https://apho2026.kr/en/sub1_4.html',EuPhO:'https://eupho.ee/rules/',BPO:'https://balkanphysicalunion.info/8th-balkan-physics-olympiad-2026/',ISPhO:'https://ispho.mipt.ru/olympiad'};
+  const guide=(a.internationalDetails||[]).map(item=>{
+    const fields=[['participants','about.participants'],['format','about.rounds'],['tasks','about.tasks']].filter(([key])=>item[key]);
+    const details=fields.length?'<dl class="olympiad-fields">'+fields.map(([key,label])=>'<div><dt>'+escapeHtml(t(label))+'</dt><dd>'+escapeHtml(item[key])+'</dd></div>').join('')+'</dl>':'';
+    return '<article class="olympiad-row"><span class="olympiad-code">'+escapeHtml(item.code||'')+'</span><div><h3 class="olympiad-name">'+escapeHtml(item.name||'')+'</h3><div class="olympiad-description">'+paragraphs(item.text)+'</div>'+details+(urls[item.code]?'<a class="olympiad-source" target="_blank" rel="noopener" href="'+escapeAttribute(urls[item.code])+'">'+escapeHtml(t('about.officialLink'))+' <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>':'')+'</div></article>';
+  }).join('');
+  const origin=SITE_CONTENT.about?.originText===DEFAULT_SITE_CONTENT.about.originText&&Array.isArray(a.originSections)?a.originSections.map(item=>'<section class="about-process-step"><h3>'+escapeHtml(item.title||'')+'</h3><p>'+escapeHtml(item.text||'')+'</p></section>').join(''):paragraphs(a.originText);
   const rules=(s.teamRules||[]).map(item=>'<div class="team-selection-row"><span class="team-selection-code">'+escapeHtml(item.code||'')+'</span><p class="team-selection-text">'+escapeHtml(item.text||item.count||'')+'</p></div>').join('');
-  root.innerHTML='<header class="about-hero"><h1 class="about-title">'+escapeHtml(a.title||t('footer.title'))+'</h1><section id="about-official" class="about-official-card" aria-labelledby="about-official-title"><h2 id="about-official-title">'+escapeHtml(t('about.orgTitle'))+'</h2><div class="about-copy"><p>'+escapeHtml(t('about.committeeText'))+'</p><p class="about-official-chair">'+escapeHtml(t('about.org.chair'))+': <strong>'+escapeHtml(I18N.chair())+'</strong></p></div></section><p class="about-lead">'+escapeHtml(a.intro||'')+'</p></header><div class="about-document"><section class="about-section"><h2>'+escapeHtml(a.originTitle||'')+'</h2><div class="about-copy">'+paragraphs(a.originText)+'</div></section><section class="about-section"><h2>'+escapeHtml(s.rulesTitle||'')+'</h2><div><p class="about-selection-copy">'+escapeHtml(s.rulesText||'')+'</p><div class="team-selection-list">'+rules+'</div></div></section><section class="about-section"><h2>'+escapeHtml(a.pathTitle||'')+'</h2><div>'+(a.pathText?'<p class="olympiad-intro">'+escapeHtml(a.pathText)+'</p>':'')+'<div class="olympiad-guide">'+guide+'</div></div></section><p class="about-notice">'+escapeHtml(C.notice||'')+'</p></div>';
+  root.innerHTML='<header class="about-hero"><h1 class="about-title">'+escapeHtml(a.title||t('footer.title'))+'</h1><section id="about-official" class="about-official-card" aria-labelledby="about-official-title"><h2 id="about-official-title">'+escapeHtml(t('about.orgTitle'))+'</h2><div class="about-copy"><p>'+escapeHtml(t('about.committeeText'))+'</p><p class="about-official-chair">'+escapeHtml(t('about.org.chair'))+': <strong>'+escapeHtml(I18N.chair())+'</strong></p></div></section><p class="about-lead">'+escapeHtml(a.intro||'')+'</p></header><div class="about-document"><section class="about-section"><h2>'+escapeHtml(a.originTitle||'')+'</h2><div class="about-copy about-process">'+origin+'</div></section><section class="about-section"><h2>'+escapeHtml(s.rulesTitle||'')+'</h2><div><p class="about-selection-copy">'+escapeHtml(s.rulesText||'')+'</p><div class="team-selection-list">'+rules+'</div></div></section><section class="about-section"><h2>'+escapeHtml(a.pathTitle||'')+'</h2><div>'+(a.pathText?'<p class="olympiad-intro">'+escapeHtml(a.pathText)+'</p>':'')+'<div class="olympiad-guide">'+guide+'</div></div></section><aside class="about-notice"><strong>'+escapeHtml(t('home.important'))+'</strong><span>'+escapeHtml(C.notice||'')+'</span></aside></div>';
 }
 let ACTIVE_ARCHIVE_YEAR='2026';
 function renderArchivePanels(){

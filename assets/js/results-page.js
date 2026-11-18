@@ -56,7 +56,7 @@
     const dateFact=dates?'<div class="yhero-fact"><dt>'+esc(t('results.dates'))+'</dt><dd>'+esc(dates[I18N.lang]||dates.ru)+'</dd></div>':'';
     const tabs=list.map(y=>'<a class="ytab'+(y===YEAR?' active':'')+'" href="/results/'+y+'/"'+(y===YEAR?' aria-current="page"':'')+'>'+y+'</a>').join('');
     app.innerHTML=
-      '<header class="rhead"><p class="official-badge"><strong>'+esc(t('official.site'))+'</strong><span>'+esc(t('official.badge'))+'</span></p>'+
+      '<header class="rhead">'+
       '<h1>'+esc(t('results.pageTitle',{year:YEAR})).replace(esc(YEAR),'<span>'+esc(YEAR)+'</span>')+'</h1><p class="sub">'+esc(t('results.pageSub'))+'</p></header>'+
       '<div class="ytabs" role="navigation" aria-label="'+esc(t('results.years'))+'">'+tabs+'</div>'+
       '<div class="yhero"><div><span class="yhero-kicker">'+esc(t('results.kicker'))+'</span><h2>'+esc(t('results.stage',{year:YEAR}))+'</h2><div class="yhero-actions"><button class="copy-btn" type="button" id="copy-link">'+esc(t('results.copyLink'))+'</button></div></div>'+

@@ -12,7 +12,8 @@
   const contentCache = new Map();
   let canStore = true, current = null, task = 'T1', readOnly = false;
   let timerHidden = false, focus = false, font = '19', material = 'ru', positions = {};
-  let reviewUI = null, reviewSelected = false, reviewAuthorized = false;
+  let reviewUI = null, reviewSelected = false, reviewAuthorized = false, reviewSummary = null;
+  let roundMetadata = null, metadataRequest = null;
   let loadingNumber = 0, previousRemaining = null, lastCheckpoint = 0;
   let scrollTimer = null, restoring = false, tabIsStale = false, loadedTask = null, restoreNumber = 0;
   function storageWarning() { canStore = false; if ($('storage-warning')) $('storage-warning').hidden = false; }
@@ -142,21 +143,16 @@
     $('setup-panel').hidden = true; $('session-panel').hidden = false;
     document.body.classList.add('practice-session');
     document.body.classList.toggle('practice-ended', !!current && E.terminal(current));
+    const activeRound = !!current && !E.terminal(current);
+    $('exam-toolbar').hidden = !activeRound;
     $('timer-group').hidden = !current || E.terminal(current);
     $('finish-attempt').hidden = !current || E.terminal(current); $('finish-attempt').disabled = tabIsStale;
     $('pause-attempt').hidden = !current || current.mode !== 'training' || E.terminal(current); $('pause-attempt').disabled = tabIsStale;
-    $('session-mode').textContent = current ? modeLabel(current) : t('readMode');
-    $('session-status').textContent = !current ? '' : t({ paused: 'paused', expired: 'expired', finished: 'finished' }[current.status] || '') ;
-    if (current?.status === 'running') $('session-status').textContent = '';
+    $('session-mode').textContent = activeRound ? modeLabel(current) : '';
+    $('session-status').textContent = current?.status === 'paused' ? t('paused') : '';
     $('pause-attempt').textContent = t(current?.status === 'paused' ? 'resume' : 'pause');
-    $('task-status-control').hidden = !current || E.terminal(current);
-    $('task-status').disabled = !current || E.terminal(current) || tabIsStale;
-    $('task-status').value = current?.tasks[task] || 'new';
     document.querySelectorAll('[data-task]').forEach(button => {
       const active = button.dataset.task === task; button.classList.toggle('active', active); button.setAttribute('aria-current', String(active));
-      const state = current?.tasks[button.dataset.task] || 'new', dot = button.querySelector('.task-dot');
-      dot.className = 'task-dot ' + state; dot.hidden = !current;
-      button.setAttribute('aria-label', button.dataset.task + ', 10 ' + t('points') + (current ? ', ' + t(state) : ''));
     });
     renderTimer();
     syncReview();
@@ -176,6 +172,75 @@
     const allowed = current ? E.terminal(current) : !active || E.terminal(active);
     return { task, material, allowed, recordKey: PREFIX + 'review:' + (current?.id || 'standalone') };
   }
+  function loadRoundMetadata() {
+    if (roundMetadata || metadataRequest) return;
+    metadataRequest = Promise.all(['q1', 'q2', 'q3'].map(async id => {
+      const response = await fetch('/assets/practice/ipho-2026/' + id + '_metadata.json');
+      if (!response.ok) throw new Error('Missing task metadata');
+      return JSON.parse(await response.text());
+    })).then(papers => {
+      roundMetadata = {
+        files: Object.fromEntries(papers.map(paper => [paper.id, paper.solutionPdf])),
+        specs: papers.flatMap(paper => paper.subtasks.map(part => ({id: part.id, max: part.points, stepIds: []})))
+      };
+      renderTaskScores();
+    }).catch(() => { metadataRequest = null; });
+  }
+  function savedRoundTotal(key) {
+    if (!roundMetadata) return null;
+    let raw;
+    try { raw = JSON.parse(get(key)); } catch {}
+    const summary = window.NPHO_REVIEW_MODEL.summarize(raw, roundMetadata.specs);
+    return {score: summary.scoredParts ? summary.score : null, max: summary.max};
+  }
+  function renderTaskScores() {
+    const context = reviewContext();
+    const visible = reviewSelected && reviewAuthorized && context.allowed;
+    const showResults = (current || readOnly) && context.allowed && (!reviewSelected || reviewAuthorized);
+    if (showResults && !reviewSummary) loadRoundMetadata();
+    const format = value => window.NPHO_REVIEW_MODEL.formatScore(value, I?.lang || 'ru');
+    const tour = showResults ? reviewSummary?.tour || savedRoundTotal(context.recordKey) : null;
+    $('review-tour-total').hidden = !tour;
+    if (tour) {
+      const assessed = tour.score !== null;
+      $('review-tour-label').textContent = t(assessed ? 'reviewTourTotal' : 'reviewTourAvailable');
+      $('review-tour-earned').hidden = !assessed;
+      $('review-tour-earned').textContent = assessed ? format(tour.score) : '';
+      $('review-tour-divider').hidden = !assessed;
+      $('review-tour-max').textContent = format(tour.max);
+    }
+    const solutionLink = $('download-solution');
+    const sourcePdf = showResults && (reviewSummary?.tasks[task]?.sourcePdf || roundMetadata?.files[task]);
+    solutionLink.hidden = !sourcePdf;
+    if (sourcePdf) solutionLink.href = sourcePdf;
+    else solutionLink.removeAttribute('href');
+    $('control-task-list').classList.toggle('has-scores', visible && !!reviewSummary);
+    document.querySelectorAll('[data-task-score]').forEach(label => {
+      const id = label.dataset.taskScore;
+      const button = document.querySelector('[data-task="' + id + '"]');
+      const total = visible ? reviewSummary?.tasks[id] : null;
+      let description;
+      if (total) {
+        const assessed = total.score !== null;
+        label.textContent = assessed ? format(total.score) : '';
+        const maximum = format(total.max);
+        button.querySelector('.score-limit').textContent = maximum;
+        description = (assessed ? t('reviewEarnedHeading') + ' ' + label.textContent : t('reviewUnscored')) + ', ' + t('reviewMaximum', { n: maximum });
+      } else {
+        label.textContent = '10 ' + t('points');
+        button.querySelector('.score-limit').textContent = '';
+        description = label.textContent;
+      }
+      const hasEarnedScore = !!total && total.score !== null;
+      button.querySelector('.score-divider').hidden = !hasEarnedScore;
+      button.classList.toggle('assessed', hasEarnedScore);
+      button.setAttribute('aria-label', id + ', ' + description);
+    });
+    document.querySelectorAll('[data-review-navigation]').forEach(nav => {
+      nav.hidden = !visible;
+      nav.setAttribute('aria-label', nav.dataset.reviewNavigation + ' · ' + t('reviewParts'));
+    });
+  }
   function syncReview() {
     if (!reviewUI) return;
     document.body.classList.toggle('practice-review', reviewSelected);
@@ -185,6 +250,7 @@
     $('show-review').setAttribute('aria-selected', String(reviewSelected));
     $('show-conditions').tabIndex = reviewSelected ? -1 : 0;
     $('show-review').tabIndex = reviewSelected ? 0 : -1;
+    renderTaskScores();
     if (reviewSelected) {
       if (reviewAuthorized && reviewContext().allowed) reviewUI.open();
       else { reviewAuthorized = false; reviewUI.lock(t(reviewContext().allowed ? 'reviewReady' : 'reviewLocked')); }
@@ -204,13 +270,53 @@
     const heading = holder.querySelector('h2'); if (!heading) return;
     const match = heading.textContent.trim().match(/^(?:Задача|Question)\s+(T[123])\s*\[([^\]]+)\]\s*\.?\s*(.+)$/iu);
     if (!match || match[1].toUpperCase() !== id) return;
-    const meta = document.createElement('span'), title = document.createElement('span');
-    meta.className = 'exam-heading-meta'; meta.textContent = id + ' · ' + match[2].trim() + '\n';
+    const title = document.createElement('span');
     title.className = 'exam-heading-title'; title.textContent = match[3].trim();
-    heading.replaceChildren(meta, title);
+    heading.replaceChildren(title);
+  }
+  function formatPaperParts(holder, language) {
+    const span = (className, text) => {
+      const item = document.createElement('span');
+      item.className = className;
+      item.textContent = text;
+      return item;
+    };
+    const points = (value, fullUnit = false) => {
+      const amount = Number(value.replace(',', '.'));
+      let unit;
+      if (language === 'ru') {
+        const forms = {one: 'балл', few: 'балла', many: 'баллов', other: 'балла'};
+        unit = fullUnit ? forms[new Intl.PluralRules('ru').select(amount)] : 'б.';
+      } else {
+        unit = fullUnit ? (amount === 1 ? 'point' : 'points') : (amount === 1 ? 'pt' : 'pts');
+      }
+      return amount.toLocaleString(language) + '\u00a0' + unit;
+    };
+    for (const heading of holder.querySelectorAll('h3')) {
+      const match = heading.textContent.trim().match(/^(T[123]-[ABC])\s*\[([\d.,]+)[^\]]*\]\.?\s+(.+)$/u);
+      if (!match) continue;
+      heading.classList.add('paper-part-heading');
+      const meta = document.createElement('span');
+      meta.className = 'paper-part-meta';
+      meta.append(span('paper-id', match[1]), ' ', span('paper-points', points(match[2], true)));
+      heading.replaceChildren(meta, ' ', span('paper-part-name', match[3]));
+    }
+    for (const question of holder.querySelectorAll('.exam-question, .exam-subtask')) {
+      const label = question.querySelector('strong');
+      const match = label?.textContent.trim().match(/^(T[123]-[ABC]\d+)\s*\[([\d.,]+)[^\]]*\]\.?$/u);
+      if (!match || question.id !== match[1]) continue;
+      label.classList.add('paper-question-label');
+      label.replaceChildren(span('paper-id', match[1]), ' ', span('paper-points', points(match[2])));
+    }
+    for (const caption of holder.querySelectorAll('figcaption')) {
+      const match = caption.textContent.trim().match(/^(Fig\.|Рис\.)\s*(\d+[a-z])\.$/u);
+      if (match) caption.textContent = match[1] + '\u00a0' + match[2] + '.';
+    }
   }
   async function selectTask(id, capture = true) {
     if (!['T1', 'T2', 'T3'].includes(id)) return;
+    const entry = document.querySelector('[data-task-entry="' + id + '"]');
+    if (entry?.tagName === 'DETAILS') entry.open = true;
     if (capture) capturePosition();
     task = id; loadedTask = null; restoring = true; saveReader();
     if (current) refreshState(); renderSession(); updateMaterials();
@@ -220,7 +326,7 @@
       let html = contentCache.get(cacheKey);
       if (!html) { const response = await fetch('/assets/practice/ipho-2026/q' + id.slice(1) + (language === 'en' ? '_en' : '') + '.html'); if (!response.ok) throw new Error('Missing task'); html = await response.text(); contentCache.set(cacheKey, html); }
       if (token !== loadingNumber) return;
-      window.MathJax?.typesetClear?.([holder]); holder.innerHTML = html; formatTaskHeading(holder, id);
+      window.MathJax?.typesetClear?.([holder]); holder.innerHTML = html; formatTaskHeading(holder, id); formatPaperParts(holder, language);
       holder.querySelectorAll('img').forEach(img => {
         img.tabIndex = 0; img.setAttribute('role', 'button'); const alt = img.alt || task;
         img.setAttribute('aria-label', t('enlargement') + ': ' + alt);
@@ -308,7 +414,7 @@
     } else { renderResume(); if ($('edition-language')) $('edition-language').value = I?.lang || 'ru'; }
   }
   function initReader() {
-    reviewUI = window.NPHO_PRACTICE_REVIEW?.create({ holder: $('review-panel'), t, getContext: reviewContext, read: get, write: put, isPersistent: () => canStore, announce });
+    reviewUI = window.NPHO_PRACTICE_REVIEW?.create({ holder: $('review-panel'), navigation: id => $('review-navigation-' + id), selectTask: id => selectTask(id), onSummary: summary => { reviewSummary = summary; renderTaskScores(); }, t, getContext: reviewContext, read: get, write: put, announce });
     $('show-conditions').addEventListener('click', () => choosePanel(false));
     $('show-review').addEventListener('click', () => choosePanel(true));
     [$('show-conditions'), $('show-review')].forEach((button, index, tabs) => button.addEventListener('keydown', event => {
@@ -321,9 +427,14 @@
     }));
     $('duration-minutes').disabled = true;
     $('read-only').addEventListener('click', openReadOnly);
-    document.querySelectorAll('[data-task]').forEach(button => button.addEventListener('click', () => selectTask(button.dataset.task)));
+    document.querySelectorAll('[data-task]').forEach(button => button.addEventListener('click', event => {
+      if (button.tagName === 'SUMMARY') {
+        if (button.dataset.task === task) return;
+        event.preventDefault();
+      }
+      selectTask(button.dataset.task);
+    }));
     $('material-language').addEventListener('change', () => { capturePosition(); material = $('material-language').value === 'en' ? 'en' : 'ru'; saveReader(); selectTask(task, false); });
-    $('task-status').addEventListener('change', () => mutate({ type: 'task', id: task, value: $('task-status').value }));
     $('pause-attempt').addEventListener('click', () => { refreshState(); mutate({ type: current?.status === 'paused' ? 'resume' : 'pause' }); });
     $('finish-attempt').addEventListener('click', () => { $('finish-dialog').returnValue = 'cancel'; $('finish-dialog').showModal(); });
     $('finish-dialog').addEventListener('close', () => { if ($('finish-dialog').returnValue === 'finish') { mutate({ type: 'finish' }); $('show-review').focus(); announce(t('doneTitle')); } });
@@ -342,7 +453,13 @@
     window.addEventListener('scroll', () => { if (restoring) return; clearTimeout(scrollTimer); scrollTimer = setTimeout(capturePosition, 250); }, { passive: true });
     window.addEventListener('pagehide', flush);
     document.addEventListener('visibilitychange', () => { if (document.hidden) flush(); else { tick(); if (current) renderSession(); } });
-    window.addEventListener('storage', event => { if (event.key === ACTIVE || (current && event.key === attemptKey(current.id))) { if (current) { refreshState(); renderSession(); } else syncReview(); } });
+    window.addEventListener('storage', event => {
+      if (event.key === ACTIVE || (current && event.key === attemptKey(current.id))) {
+        if (current) { refreshState(); renderSession(); } else syncReview();
+      } else if (!reviewSelected && event.key === reviewContext().recordKey) {
+        renderTaskScores();
+      }
+    });
     const directStart = takeDirectStart();
     const requested = params.get('attempt');
     if (requested) { const state = normalized(requested); if (state) openAttempt(state); else announce(t('notFound')); }
