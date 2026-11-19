@@ -1,0 +1,93 @@
+{
+  "id": "T1",
+  "title": "Две задачи по механике",
+  "points": 10,
+  "sourceFile": "IPhO_2016_T1_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "sections": [
+    {
+      "id": "T1-A",
+      "points": 3.5,
+      "title": "Скрытый диск"
+    },
+    {
+      "id": "T1-B",
+      "points": 6.5,
+      "title": "Вращающаяся космическая станция"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T1-A1",
+      "points": 0.8
+    },
+    {
+      "id": "T1-A2",
+      "points": 0.5
+    },
+    {
+      "id": "T1-A3",
+      "points": 0.4
+    },
+    {
+      "id": "T1-A4",
+      "points": 0.7
+    },
+    {
+      "id": "T1-A5",
+      "points": 1.1
+    },
+    {
+      "id": "T1-B1",
+      "points": 0.5
+    },
+    {
+      "id": "T1-B2",
+      "points": 0.2
+    },
+    {
+      "id": "T1-B3",
+      "points": 0.6
+    },
+    {
+      "id": "T1-B4",
+      "points": 0.8
+    },
+    {
+      "id": "T1-B5",
+      "points": 0.3
+    },
+    {
+      "id": "T1-B6",
+      "points": 1.1
+    },
+    {
+      "id": "T1-B7",
+      "points": 1.3
+    },
+    {
+      "id": "T1-B8",
+      "points": 1.7
+    }
+  ],
+  "figures": [
+    "t1-f1.png",
+    "t1-f2.png",
+    "t1-f3.png",
+    "t1-f4.png",
+    "t1-f5.png"
+  ],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "published-subpart-maxima-and-grouped-official-criteria",
+  "solutionData": "/assets/practice/ipho-2016/solutions/t1.json",
+  "solutionPdf": "/assets/practice/ipho-2016/IPhO_2016_S1_EN.pdf"
+}

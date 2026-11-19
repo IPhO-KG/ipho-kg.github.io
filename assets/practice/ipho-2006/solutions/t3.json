@@ -1,0 +1,455 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Пять физических оценок",
+    "en": "Five order-of-magnitude estimates"
+  },
+  "sourcePdf": "/assets/practice/ipho-2006/IPhO_2006_S3_EN.pdf",
+  "max": 10,
+  "parts": [
+    {
+      "id": "T3-3.1",
+      "max": 1,
+      "label": "3.1",
+      "title": {
+        "ru": "Дифракционное разрешение",
+        "en": "Diffraction-limited resolution"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.7,
+          "label": {
+            "ru": "Критерий Рэлея",
+            "en": "Rayleigh criterion"
+          },
+          "body": {
+            "ru": "<p>Для круглой апертуры угловое расстояние между двумя разрешимыми точечными источниками составляет \\(\\theta_R\\simeq1{,}22\\lambda/D\\). Изображение далёкого объекта формируется в фокальной плоскости. Там углу \\(\\theta_R\\) соответствует расстояние \\(f\\theta_R=1{,}22\\lambda F\\).</p>",
+            "en": "<p>For a circular aperture, the Rayleigh angular separation of two resolvable point sources is \\(\\theta_R\\simeq1.22\\lambda/D\\). A distant object is imaged in the focal plane. There the separation is \\(f\\theta_R=1.22\\lambda F\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Наибольшее отверстие",
+            "en": "Widest aperture"
+          },
+          "body": {
+            "ru": "<p>Наилучшему разрешению отвечает наименьшее число \\(F=2\\). При \\(\\lambda=500\\,\\mathrm{nm}\\) расстояние Рэлея равно \\(1220\\,\\mathrm{nm}\\).</p>",
+            "en": "<p>The finest resolution is obtained with the smallest f-number, \\(F=2\\). For \\(\\lambda=500\\,\\mathrm{nm}\\) the Rayleigh separation is \\(1220\\,\\mathrm{nm}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta x\\simeq1{,}22\\lambda F,\\qquad \\Delta x_{\\min}\\simeq1{,}22\\,\\mu\\mathrm m.\\]</div>",
+        "en": "<div>\\[\\Delta x\\simeq1.22\\lambda F,\\qquad \\Delta x_{\\min}\\simeq1.22\\,\\mu\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.2",
+      "max": 0.5,
+      "label": "3.2",
+      "title": {
+        "ru": "Число пикселей",
+        "en": "Number of pixels"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Согласование шага и разрешения",
+            "en": "Matching the pitch to the resolution"
+          },
+          "body": {
+            "ru": "<p>При квадратной сетке с \\(N\\) элементами вдоль стороны расположено \\(\\sqrt N\\) пикселей. Приравняем шаг \\(L/\\sqrt N\\) к линейному разрешению \\(1{,}22\\,\\mu\\mathrm m\\). Длина стороны матрицы \\(35\\,\\mathrm{mm}\\) равна \\(35\\,000\\,\\mu\\mathrm m\\).</p>",
+            "en": "<p>A square sensor of \\(N\\) pixels has \\(\\sqrt N\\) pixels per side. Match its pitch \\(L/\\sqrt N\\) to the optical resolution \\(1.22\\,\\mu\\mathrm m\\). The sensor side of \\(35\\,\\mathrm{mm}\\) is \\(35\\,000\\,\\mu\\mathrm m\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[N\\simeq\\left(\\frac{L}{\\Delta x_{\\min}}\\right)^2\\simeq8{,}23\\times10^8\\quad (823\\ \\text{Мп}).\\]</div>",
+        "en": "<div>\\[N\\simeq\\left(\\frac{L}{\\Delta x_{\\min}}\\right)^2\\simeq8.23\\times10^8\\quad (823\\ \\mathrm{Mpix}).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.3",
+      "max": 0.5,
+      "label": "3.3",
+      "title": {
+        "ru": "Выбор диафрагмы",
+        "en": "Aperture choice"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Предельное диафрагменное число",
+            "en": "Largest acceptable f-number"
+          },
+          "body": {
+            "ru": "<p>У матрицы на \\(16\\) Мп вдоль стороны \\(4000\\) пикселей, шаг равен \\(8{,}75\\,\\mu\\mathrm m\\). Дифракционное пятно должно оставаться в пределах этого шага: \\(1{,}22\\lambda F\\le L/\\sqrt{N_0}\\). Верхняя граница \\(F\\simeq14{,}3\\) лежит между 11 и 16. Из допустимых выбираем наибольшее число, то есть наименьшее отверстие.</p>",
+            "en": "<p>The 16 Mpix chip has \\(4000\\) pixels per side and pitch \\(8.75\\,\\mu\\mathrm m\\). Require the diffraction separation to be no greater than this pitch: \\(1.22\\lambda F\\le L/\\sqrt{N_0}\\). The upper bound of about \\(14.3\\) lies between 11 and 16. Choose the largest allowed f-number, giving the smallest acceptable aperture.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F=11.\\]</div>",
+        "en": "<div>\\[F=11.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.4",
+      "max": 0.5,
+      "label": "3.4",
+      "title": {
+        "ru": "Расстояние просмотра отпечатка",
+        "en": "Print viewing distance"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Угловой размер шага печати",
+            "en": "Angular size of the dot spacing"
+          },
+          "body": {
+            "ru": "<p>Шаг печати равен \\(d=25{,}4\\,\\mathrm{mm}/300\\simeq84{,}7\\,\\mu\\mathrm m\\). Чтобы соседние точки слились, их угловое расстояние \\(d/z\\) должно стать не больше \\(\\phi=2\\cdot2{,}91\\times10^{-4}\\) рад. Граничное расстояние получается при равенстве.</p>",
+            "en": "<p>The dot spacing is \\(d=25.4\\,\\mathrm{mm}/300\\simeq84.7\\,\\mu\\mathrm m\\). For neighbouring dots to merge, their angular separation \\(d/z\\) must be no larger than \\(\\phi=2\\cdot2.91\\times10^{-4}\\) rad. Equality gives the limiting distance.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[z_{\\min}=\\frac d\\phi\\simeq0{,}15\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[z_{\\min}=\\frac d\\phi\\simeq0.15\\,\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.5",
+      "max": 0.5,
+      "label": "3.5",
+      "title": {
+        "ru": "Энергия нагрева",
+        "en": "Heating energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Масса и изменение температуры",
+            "en": "Mass and temperature rise"
+          },
+          "body": {
+            "ru": "<p>Считаем яйцо шаром. Его масса \\(m=\\mu(4\\pi R^3/3)\\simeq65{,}4\\,\\mathrm g\\). Для прогрева всей массы до температуры свёртывания нужна разность \\(T_c-T_0=61\\,\\mathrm K\\). Используем теплоёмкость в джоулях на грамм и кельвин.</p>",
+            "en": "<p>Approximate the egg by a sphere. Its mass is \\(m=\\mu(4\\pi R^3/3)\\simeq65.4\\,\\mathrm g\\). Bringing its whole mass to the coagulation temperature requires a rise \\(T_c-T_0=61\\,\\mathrm K\\). Use the specified heat capacity per gram per kelvin.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[U\\simeq\\frac{4\\pi R^3}{3}\\mu C(T_c-T_0)\\simeq1{,}68\\times10^4\\,\\mathrm J.\\]</div>",
+        "en": "<div>\\[U\\simeq\\frac{4\\pi R^3}{3}\\mu C(T_c-T_0)\\simeq1.68\\times10^4\\,\\mathrm J.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.6",
+      "max": 0.5,
+      "label": "3.6",
+      "title": {
+        "ru": "Плотность теплового потока",
+        "en": "Heat flux density"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Оценка градиента температуры",
+            "en": "Estimating the temperature gradient"
+          },
+          "body": {
+            "ru": "<p>Сразу после погружения поверхность быстро нагревается до температуры кипящей воды, а центр ещё холодный. Возьмём начальную разность \\(100-4=96\\,\\mathrm K\\) на радиусе \\(R=0{,}025\\,\\mathrm m\\). Закон Фурье даёт характерное начальное значение плотности потока.</p>",
+            "en": "<p>Just after immersion the surface rapidly approaches the boiling-water temperature while the centre is still cold. Use the initial contrast \\(100-4=96\\,\\mathrm K\\) over a radius \\(R=0.025\\,\\mathrm m\\). Fourier’s law then estimates the initial heat flux density.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[J\\simeq\\kappa\\frac{T_1-T_0}{R}\\simeq2{,}46\\times10^3\\,\\mathrm{W/m^2}.\\]</div>",
+        "en": "<div>\\[J\\simeq\\kappa\\frac{T_1-T_0}{R}\\simeq2.46\\times10^3\\,\\mathrm{W/m^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.7",
+      "max": 0.5,
+      "label": "3.7",
+      "title": {
+        "ru": "Мощность теплопередачи",
+        "en": "Heating power"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Интеграл по поверхности",
+            "en": "Flux over the full surface"
+          },
+          "body": {
+            "ru": "<p>Тепло поступает со всей поверхности сферы площади \\(4\\pi R^2\\), а не через её поперечное сечение. При одной характерной плотности потока полная мощность равна площади, умноженной на \\(J\\).</p>",
+            "en": "<p>Heat enters over the entire spherical surface of area \\(4\\pi R^2\\). Taking a representative uniform flux density, multiply this area by \\(J\\) to obtain the total power.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P\\simeq4\\pi R^2J\\simeq19{,}3\\,\\mathrm W.\\]</div>",
+        "en": "<div>\\[P\\simeq4\\pi R^2J\\simeq19.3\\,\\mathrm W.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.8",
+      "max": 0.5,
+      "label": "3.8",
+      "title": {
+        "ru": "Время прогрева",
+        "en": "Heating time"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Баланс переданной энергии",
+            "en": "Energy delivered over time"
+          },
+          "body": {
+            "ru": "<p>Разделим энергию нагрева до \\(T_c\\) на оценённую мощность. В этой оценке тепловой поток заменён его характерным значением. Сокращение общей площади и одного множителя \\(R\\) даёт квадратичную зависимость времени от радиуса.</p>",
+            "en": "<p>Divide the energy required to reach \\(T_c\\) by the estimated power. The calculation uses a representative heat flux. On substituting the previous results, the time scales as the square of the radius.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tau\\simeq\\frac UP=\\frac{\\mu CR^2}{3\\kappa}\\frac{T_c-T_0}{T_1-T_0}\\simeq870\\,\\mathrm s\\approx14{,}5\\ \\text{мин}.\\]</div>",
+        "en": "<div>\\[\\tau\\simeq\\frac UP=\\frac{\\mu CR^2}{3\\kappa}\\frac{T_c-T_0}{T_1-T_0}\\simeq870\\,\\mathrm s\\approx14.5\\,\\mathrm{min}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.9",
+      "max": 0.5,
+      "label": "3.9",
+      "title": {
+        "ru": "Заряд разряда",
+        "en": "Charge in one pulse"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Площадь под кривой тока",
+            "en": "Area under the current curve"
+          },
+          "body": {
+            "ru": "<p>Перенесённый заряд \\(Q=\\int I(t)\\,dt\\) равен площади треугольника с основанием \\(\\tau=0{,}1\\,\\mathrm{ms}=10^{-4}\\,\\mathrm s\\) и высотой \\(I_{\\max}=100\\,\\mathrm{kA}=10^5\\,\\mathrm A\\). Момент достижения максимума на площадь не влияет.</p>",
+            "en": "<p>The transferred charge \\(Q=\\int I(t)\\,dt\\) is the area of a triangle of base \\(\\tau=0.1\\,\\mathrm{ms}=10^{-4}\\,\\mathrm s\\) and height \\(I_{\\max}=100\\,\\mathrm{kA}=10^5\\,\\mathrm A\\). Its area is independent of when the peak occurs.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[Q=\\frac12I_{\\max}\\tau=5\\,\\mathrm C.\\]</div>",
+        "en": "<div>\\[Q=\\frac12I_{\\max}\\tau=5\\,\\mathrm C.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.10",
+      "max": 0.5,
+      "label": "3.10",
+      "title": {
+        "ru": "Средний ток",
+        "en": "Average current"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Заряд за время импульса",
+            "en": "Charge per pulse duration"
+          },
+          "body": {
+            "ru": "<p>Разделим заряд одного импульса на полное время его действия. Для треугольного импульса среднее значение составляет половину максимального тока.</p>",
+            "en": "<p>Divide the charge of one pulse by its full duration. A triangular pulse has mean current equal to half its peak value.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I=\\frac Q\\tau=\\frac{I_{\\max}}2=50\\,\\mathrm{kA}.\\]</div>",
+        "en": "<div>\\[I=\\frac Q\\tau=\\frac{I_{\\max}}2=50\\,\\mathrm{kA}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.11",
+      "max": 1,
+      "label": "3.11",
+      "title": {
+        "ru": "Энергия молний в расчёте на человека",
+        "en": "Lightning energy per person"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1,
+          "label": {
+            "ru": "Запасённая энергия и время работы лампы",
+            "en": "Stored energy and lamp operating time"
+          },
+          "body": {
+            "ru": "<p>Облако и землю представим двумя обкладками конденсатора. Перед разрядом напряжение по модулю \\(U_0\\simeq E_0h=3\\times10^8\\,\\mathrm V\\). При разрядке напряжение падает вместе с зарядом, поэтому энергия одного импульса \\(W=QU_0/2\\simeq7{,}5\\times10^8\\,\\mathrm J\\). За год на одного человека приходится \\(W(32\\times10^6)/(6{,}5\\times10^9)\\simeq3{,}7\\times10^6\\,\\mathrm J\\). Делим эту энергию на мощность лампы.</p>",
+            "en": "<p>Treat cloud and ground as the plates of a capacitor. The potential difference just before breakdown has magnitude \\(U_0\\simeq E_0h=3\\times10^8\\,\\mathrm V\\). During discharge voltage falls with charge, so the energy per pulse is \\(W=QU_0/2\\simeq7.5\\times10^8\\,\\mathrm J\\). The annual share per person is \\(W(32\\times10^6)/(6.5\\times10^9)\\simeq3.7\\times10^6\\,\\mathrm J\\). Divide by the lamp power.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[t\\simeq3{,}7\\times10^4\\,\\mathrm s\\approx10\\ \\text{ч}.\\]</div>",
+        "en": "<div>\\[t\\simeq3.7\\times10^4\\,\\mathrm s\\approx10\\,\\mathrm h.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.12",
+      "max": 1,
+      "label": "3.12",
+      "title": {
+        "ru": "Число параллельных капилляров",
+        "en": "Number of parallel capillaries"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1,
+          "label": {
+            "ru": "Суммирование расходов",
+            "en": "Adding the flow rates"
+          },
+          "body": {
+            "ru": "<p>На каждом параллельном сосуде один и тот же перепад давления. Расход одного капилляра \\(D_1=\\pi r^4\\Delta p/(8\\eta L)\\), общий расход \\(D_{\\rm tot}=ND_1\\). Переводим единицы: \\(\\eta=4{,}5\\times10^{-3}\\,\\mathrm{Pa\\,s}\\), \\(D_{\\rm tot}=10^{-4}\\,\\mathrm{m^3/s}\\). Подстановка даёт \\(D_1\\simeq2{,}23\\times10^{-14}\\,\\mathrm{m^3/s}\\).</p>",
+            "en": "<p>Each parallel vessel experiences the same pressure drop. One capillary carries \\(D_1=\\pi r^4\\Delta p/(8\\eta L)\\) and the total is \\(D_{\\rm tot}=ND_1\\). In SI, \\(\\eta=4.5\\times10^{-3}\\,\\mathrm{Pa\\,s}\\) and \\(D_{\\rm tot}=10^{-4}\\,\\mathrm{m^3/s}\\). The individual flow is approximately \\(2.23\\times10^{-14}\\,\\mathrm{m^3/s}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[N=\\frac{8\\eta L D_{\\rm tot}}{\\pi r^4\\Delta p}\\simeq4{,}5\\times10^9.\\]</div>",
+        "en": "<div>\\[N=\\frac{8\\eta L D_{\\rm tot}}{\\pi r^4\\Delta p}\\simeq4.5\\times10^9.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.13",
+      "max": 0.5,
+      "label": "3.13",
+      "title": {
+        "ru": "Скорость в капилляре",
+        "en": "Speed within one capillary"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Расход на единицу сечения",
+            "en": "Flow per cross-sectional area"
+          },
+          "body": {
+            "ru": "<p>Средняя скорость равна расходу одного капилляра, делённому на площадь \\(\\pi r^2\\). В законе Пуазейля сокращаются \\(\\pi\\) и две степени радиуса.</p>",
+            "en": "<p>The mean speed is the flow through one vessel divided by \\(\\pi r^2\\). In the Poiseuille expression, \\(\\pi\\) and two powers of the radius cancel.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[u=\\frac{\\Delta p\\,r^2}{8\\eta L}\\simeq0{,}44\\,\\mathrm{mm/s}.\\]</div>",
+        "en": "<div>\\[u=\\frac{\\Delta p\\,r^2}{8\\eta L}\\simeq0.44\\,\\mathrm{mm/s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.14",
+      "max": 0.5,
+      "label": "3.14",
+      "title": {
+        "ru": "Адиабатическое охлаждение",
+        "en": "Adiabatic cooling"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Исключение объёма",
+            "en": "Eliminating the volume"
+          },
+          "body": {
+            "ru": "<p>В порции с постоянным числом молекул \\(V\\propto T/p\\). Подставляя это соотношение в \\(pV^\\gamma=\\mathrm{const}\\), получаем \\(T^\\gamma p^{1-\\gamma}=\\mathrm{const}\\). Логарифмическое дифференцирование связывает малые изменения давления и температуры.</p>",
+            "en": "<p>For a fixed number of molecules \\(V\\propto T/p\\). Insert this into \\(pV^\\gamma=\\mathrm{const}\\) to obtain \\(T^\\gamma p^{1-\\gamma}=\\mathrm{const}\\). Logarithmic differentiation relates the small pressure and temperature changes.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{dT}{T}=\\frac{\\gamma-1}{\\gamma}\\frac{dp}{p}.\\]</div>",
+        "en": "<div>\\[\\frac{dT}{T}=\\frac{\\gamma-1}{\\gamma}\\frac{dp}{p}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.15",
+      "max": 0.5,
+      "label": "3.15",
+      "title": {
+        "ru": "Градиент атмосферного давления",
+        "en": "Atmospheric pressure gradient"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Гидростатика и плотность газа",
+            "en": "Hydrostatics and gas density"
+          },
+          "body": {
+            "ru": "<p>Ось \\(z\\) направлена вверх. Равновесие тонкого слоя воздуха даёт \\(dp=-\\rho g\\,dz\\). Если \\(n\\) — число молекул в единице объёма, то \\(\\rho=mn\\) и \\(p=nkT\\). Исключение \\(n\\) даёт локальную плотность \\(mp/(kT)\\).</p>",
+            "en": "<p>Choose \\(z\\) positive upwards. Vertical force balance for a thin air layer gives \\(dp=-\\rho g\\,dz\\). For number density \\(n\\), \\(\\rho=mn\\) and \\(p=nkT\\). Eliminate \\(n\\) to obtain local density \\(mp/(kT)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[dp=-\\frac{mgp}{kT}\\,dz.\\]</div>",
+        "en": "<div>\\[dp=-\\frac{mgp}{kT}\\,dz.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.16",
+      "max": 1,
+      "label": "3.16",
+      "title": {
+        "ru": "Температура на высоте километра",
+        "en": "Temperature one kilometre up"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1,
+          "label": {
+            "ru": "Постоянный температурный градиент",
+            "en": "Constant temperature gradient"
+          },
+          "body": {
+            "ru": "<p>Подставляем гидростатическое изменение давления в адиабатическое соотношение. Местные \\(p\\) и \\(T\\) сокращаются:</p><div>\\[\\frac{dT}{dz}=-\\frac{\\gamma-1}{\\gamma}\\frac{mg}{k}.\\]</div><p>При \\(\\gamma=7/5\\) градиент составляет около \\(-9{,}4\\,\\mathrm{K/km}\\). На высоте \\(H=1\\,\\mathrm{km}\\) вычтем это падение температуры из значения у основания.</p>",
+            "en": "<p>Insert the hydrostatic pressure change into the adiabatic relation. The local \\(p\\) and \\(T\\) cancel:</p><div>\\[\\frac{dT}{dz}=-\\frac{\\gamma-1}{\\gamma}\\frac{mg}{k}.\\]</div><p>For \\(\\gamma=7/5\\) this is about \\(-9.4\\,\\mathrm{K/km}\\). Subtract the temperature drop over \\(H=1\\,\\mathrm{km}\\) from the base temperature.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_{\\rm top}=T_{\\rm bot}-\\frac{\\gamma-1}{\\gamma}\\frac{mgH}{k}\\simeq20{,}6^\\circ\\mathrm C.\\]</div>",
+        "en": "<div>\\[T_{\\rm top}=T_{\\rm bot}-\\frac{\\gamma-1}{\\gamma}\\frac{mgH}{k}\\simeq20.6^\\circ\\mathrm C.\\]</div>"
+      }
+    }
+  ]
+}

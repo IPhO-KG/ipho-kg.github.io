@@ -1,0 +1,28 @@
+<article class="exam-problem" id="T1" lang="en">
+<h2>Question T1 [10 points]. The gravitational wave GW150914</h2>
+<p>LIGO's first gravitational-wave detection, GW150914, came from two black holes in nearly circular orbits. Infer the properties of this binary from the changing frequency of the signal.</p>
+<section id="T1-A">
+<h3>T1-A [3 points]. Newtonian orbits</h3>
+<p>Two isolated stars of masses \(M_1\) and \(M_2\) move nonrelativistically. Their positions obey \(M_1\mathbf r_1+M_2\mathbf r_2=0\) in the centre-of-mass frame. Use \(G=6.67\times10^{-11}\,\mathrm{N\,m^2/kg^2}\).</p>
+<div class="exam-question" id="T1-A1" data-points="1"><p><strong>T1-A1 [1 point].</strong> Write the acceleration as \(\ddot{\mathbf r}_1=-\alpha\mathbf r_1/r_1^n\), where \(r_1=\lvert\mathbf r_1\rvert\). Determine the positive integer \(n\) and the coefficient \(\alpha(G,M_1,M_2)\).</p></div>
+<div class="exam-question" id="T1-A2" data-points="1"><p><strong>T1-A2 [1 point].</strong> Now take circular orbits of angular speed \(\Omega\) and separation \(L=r_1+r_2\). Set \(M=M_1+M_2\) and \(\mu=M_1M_2/M\). Find \(A\) in the total energy \(E=A(\mu,\Omega,L)-GM\mu/L\).</p></div>
+<div class="exam-question" id="T1-A3" data-points="1"><p><strong>T1-A3 [1 point].</strong> Express \(E\) as \(\beta GM\mu/L\) and determine \(\beta\).</p></div>
+</section>
+<section id="T1-B">
+<h3>T1-B [7 points]. Energy loss through gravitational waves</h3>
+<p>A nonrelativistic circular binary radiates gravitational waves at twice its orbital frequency. Its leading-order luminosity is given by the quadrupole formula below, with \(c=3.0\times10^8\,\mathrm{m/s}\).</p>
+<div>\[\mathcal P=\frac{G}{5c^5}\sum_{i=1}^3\sum_{j=1}^3\left(\frac{\mathrm d^3Q_{ij}}{\mathrm dt^3}\right)^2.\]</div>
+<p>The orbit lies in the \(xy\) plane. Star \(A\) has coordinates \((x_A,y_A,0)\). The following quadrupole components can be nonzero, with each sum taken over the two stars.</p>
+<div>\[Q_{11}=\frac13\sum_A M_A(2x_A^2-y_A^2),\qquad Q_{22}=\frac13\sum_A M_A(2y_A^2-x_A^2).\]</div>
+<div>\[Q_{33}=-\frac13\sum_A M_A(x_A^2+y_A^2),\qquad Q_{12}=Q_{21}=\sum_A M_Ax_Ay_A.\]</div>
+<div class="exam-question" id="T1-B1" data-points="1"><p><strong>T1-B1 [1 point].</strong> For circular orbits write \(Q_{ii}=\tfrac12\mu L^2(a_i+b_i\cos kt)\) and \(Q_{ij}=\tfrac12\mu L^2c_{ij}\sin kt\) for \(i\ne j\). Determine \(k\), the triples \((a_i)\) and \((b_i)\), and the constants \(c_{ij}\).</p></div>
+<div class="exam-question" id="T1-B2" data-points="1"><p><strong>T1-B2 [1 point].</strong> Calculate the radiated power and determine \(\xi\) in \(\mathcal P=\xi G\mu^2L^4\Omega^6/c^5\). You may use \(\xi=6.4\) in subsequent parts.</p></div>
+<div class="exam-question" id="T1-B3" data-points="1"><p><strong>T1-B3 [1 point].</strong> Radiation causes the orbit to shrink through a sequence of nearly circular configurations. Show that \((\mathrm d\Omega/\mathrm dt)^3=(3\xi)^3\Omega^{11}(GM_c)^5/c^{15}\) and express the chirp mass \(M_c\) in terms of \(M\) and \(\mu\).</p></div>
+<div class="exam-question" id="T1-B4" data-points="2"><p><strong>T1-B4 [2 points].</strong> Relate \(\Omega\) to the wave frequency \(f_{\mathrm{GW}}\). For \(\dot F=\chi F^a\) with constant \(\chi\) and \(a\ne1\), you may use \(F^{1-a}=\chi(1-a)(t-t_0)\). Derive the following relation and determine \(p\).</p>
+<div>\[f_{\mathrm{GW}}^{-8/3}=8\pi^{8/3}\xi\left(\frac{GM_c}{c^3}\right)^{2/3+p}(t_0-t)^{2-p}.\]</div></div>
+<p>LIGO has two perpendicular arms of length 4 km each. The graph shows the fractional change in an arm's length on 14 September 2015. This response follows the wave linearly. Points \(A,B,C,D\) occur at \(0\), \(0.009\), \(0.034\) and \(0.040\,\mathrm s\). The peak after \(D\) approximately marks the merger.</p>
+<figure><img src="/assets/practice/ipho-2018/q1/strain.png" alt="Fig. 1. H1 arm strain versus time." style="width:min(100%,590px);height:auto" loading="lazy"><figcaption>Fig. 1. H1 arm strain versus time.</figcaption></figure>
+<div class="exam-question" id="T1-B5" data-points="1"><p><strong>T1-B5 [1 point].</strong> Estimate the wave frequency at the midpoint of each interval \(AB\) and \(CD\). Assume equal component masses and extrapolate B4 to merger to estimate \(M_c\) and the total mass in units of \(M_\odot=2\times10^{30}\,\mathrm{kg}\).</p></div>
+<div class="exam-question" id="T1-B6" data-points="1"><p><strong>T1-B6 [1 point].</strong> Estimate the separation at \(t_{CD}\), an upper bound \(R_{\max}\) on the radius of either object, and the ratio \(R_\odot/R_{\max}\) for \(R_\odot=7\times10^5\,\mathrm{km}\). Express the orbital speed of each component at this instant as a fraction of \(c\).</p></div>
+</section>
+</article>

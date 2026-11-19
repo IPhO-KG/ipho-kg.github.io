@@ -1,0 +1,87 @@
+{
+  "id": "T2",
+  "title": "Нелинейная динамика электрических цепей",
+  "points": 10,
+  "sourceFile": "IPhO_2016_T2_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "sections": [
+    {
+      "id": "T2-A",
+      "points": 3,
+      "title": "Стационарные состояния и устойчивость"
+    },
+    {
+      "id": "T2-B",
+      "points": 5,
+      "title": "Релаксационный генератор и антенна"
+    },
+    {
+      "id": "T2-C",
+      "points": 2,
+      "title": "Нейристор"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-A1",
+      "points": 0.4
+    },
+    {
+      "id": "T2-A2",
+      "points": 1
+    },
+    {
+      "id": "T2-A3",
+      "points": 0.6
+    },
+    {
+      "id": "T2-A4",
+      "points": 1
+    },
+    {
+      "id": "T2-B1",
+      "points": 1.8
+    },
+    {
+      "id": "T2-B2",
+      "points": 1.9
+    },
+    {
+      "id": "T2-B3",
+      "points": 0.7
+    },
+    {
+      "id": "T2-B4",
+      "points": 0.6
+    },
+    {
+      "id": "T2-C1",
+      "points": 1.2
+    },
+    {
+      "id": "T2-C2",
+      "points": 0.6
+    },
+    {
+      "id": "T2-C3",
+      "points": 0.2
+    }
+  ],
+  "figures": [
+    "t2-f1.png",
+    "t2-f2.png",
+    "t2-f3.png",
+    "t2-f4.png"
+  ],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "published-subpart-maxima-and-grouped-official-criteria",
+  "solutionData": "/assets/practice/ipho-2016/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2016/IPhO_2016_S2_EN.pdf"
+}

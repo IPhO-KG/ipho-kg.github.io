@@ -1,0 +1,104 @@
+{
+  "id": "T2",
+  "title": "Электростатическая линза",
+  "points": 10,
+  "sourceFile": "IPhO_2021_Q2.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "sections": [
+    {
+      "id": "T2-A",
+      "points": 1.0,
+      "title": "Поле на оси"
+    },
+    {
+      "id": "T2-B",
+      "points": 1.7,
+      "title": "Поле в плоскости кольца"
+    },
+    {
+      "id": "T2-C",
+      "points": 2.3,
+      "title": "Линза с мгновенным включением"
+    },
+    {
+      "id": "T2-D",
+      "points": 3.0,
+      "title": "Ёмкость и зарядка кольца"
+    },
+    {
+      "id": "T2-E",
+      "points": 2.0,
+      "title": "Линза с конечным временем зарядки"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-A1",
+      "points": 0.3
+    },
+    {
+      "id": "T2-A2",
+      "points": 0.4
+    },
+    {
+      "id": "T2-A3",
+      "points": 0.2
+    },
+    {
+      "id": "T2-A4",
+      "points": 0.1
+    },
+    {
+      "id": "T2-B1",
+      "points": 1.5
+    },
+    {
+      "id": "T2-B2",
+      "points": 0.2
+    },
+    {
+      "id": "T2-C1",
+      "points": 1.3
+    },
+    {
+      "id": "T2-C2",
+      "points": 0.8
+    },
+    {
+      "id": "T2-C3",
+      "points": 0.2
+    },
+    {
+      "id": "T2-D1",
+      "points": 2.0
+    },
+    {
+      "id": "T2-D2",
+      "points": 1.0
+    },
+    {
+      "id": "T2-E1",
+      "points": 1.7
+    },
+    {
+      "id": "T2-E2",
+      "points": 0.3
+    }
+  ],
+  "figures": [
+    "ring",
+    "lens",
+    "switch"
+  ],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "official-subtask-maxima",
+  "solutionData": "/assets/practice/ipho-2021/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2021/IPhO_2021_S2_EN.pdf"
+}

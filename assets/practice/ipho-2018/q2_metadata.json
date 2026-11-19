@@ -1,0 +1,85 @@
+{
+  "id": "T2",
+  "title": "Где нейтрино?",
+  "points": 10,
+  "sourceFile": "/assets/practice/ipho-2018/IPhO_2018_T2_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "translationStatus": "editorial-adaptation",
+  "sections": [
+    {
+      "id": "T2-A",
+      "title": "Физика детектора ATLAS",
+      "points": 4.0
+    },
+    {
+      "id": "T2-B",
+      "title": "Поиск нейтрино",
+      "points": 6.0
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-A1",
+      "points": 0.5
+    },
+    {
+      "id": "T2-A2",
+      "points": 0.5
+    },
+    {
+      "id": "T2-A3",
+      "points": 1.0
+    },
+    {
+      "id": "T2-A4",
+      "points": 1.0
+    },
+    {
+      "id": "T2-A5",
+      "points": 0.5
+    },
+    {
+      "id": "T2-A6",
+      "points": 0.5
+    },
+    {
+      "id": "T2-B1",
+      "points": 1.5
+    },
+    {
+      "id": "T2-B2",
+      "points": 1.5
+    },
+    {
+      "id": "T2-B3",
+      "points": 1.0
+    },
+    {
+      "id": "T2-B4",
+      "points": 1.0
+    },
+    {
+      "id": "T2-B5",
+      "points": 1.0
+    }
+  ],
+  "figures": [
+    "collision",
+    "distribution"
+  ],
+  "solutionsAvailable": true,
+  "stepScoring": "published-additive-criteria",
+  "solutionData": "/assets/practice/ipho-2018/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2018/IPhO_2018_S2_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2018/IPhO_2018_M2_EN.pdf",
+  "sourceLinks": {
+    "problem": "https://olimpiadas.spf.pt/docs/2018/TRANSLATION_T2_Q_Official_english.pdf",
+    "solution": "https://olimpiadas.spf.pt/docs/2018/ST2-IPhO2018.pdf",
+    "marking": "https://natuurkundeolympiade.nl/wp-content/uploads/sites/225/2018/07/2018itheo_uitw.pdf"
+  }
+}

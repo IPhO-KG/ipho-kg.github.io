@@ -1,0 +1,419 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Землетрясение, извержение и цунами",
+    "en": "Earthquake, volcano and tsunami"
+  },
+  "max": 10.0,
+  "sourcePdf": "/assets/practice/ipho-2017/IPhO_2017_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-A1",
+      "max": 0.5,
+      "title": {
+        "ru": "Температура смеси",
+        "en": "Mixing temperature"
+      },
+      "steps": [
+        {
+          "id": "a1-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Тепловой баланс",
+            "en": "Heat balance"
+          },
+          "body": {
+            "ru": "<p>На первой стадии объём постоянен. Теплота, отданная магмой, переходит к воде. Обозначим \\(C_m=m_mc_{Vm}\\) и \\(C_w=m_wc_{Vw}\\). Из \\(C_m(T_m-T_e)=C_w(T_e-T_w)\\) получаем среднее, взвешенное по теплоёмкостям.</p>",
+            "en": "<p>Volume is fixed during mixing. Heat lost by the magma is gained by the water. Set \\(C_m=m_mc_{Vm}\\) and \\(C_w=m_wc_{Vw}\\). Solving \\(C_m(T_m-T_e)=C_w(T_e-T_w)\\) gives a heat-capacity-weighted mean.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_e=\\frac{C_w T_w+C_mT_m}{C_w+C_m}.\\]</div>",
+        "en": "<div>\\[T_e=\\frac{C_w T_w+C_mT_m}{C_w+C_m}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A2",
+      "max": 0.3,
+      "title": {
+        "ru": "Давление после смешения",
+        "en": "Pressure after mixing"
+      },
+      "steps": [
+        {
+          "id": "a2-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Уравнение состояния",
+            "en": "Equation of state"
+          },
+          "body": {
+            "ru": "<p>Для одного моля в равновесии \\(p_ev_e=RT_e\\). Подставляем температуру из A1 при заданном молярном объёме.</p>",
+            "en": "<p>For one mole in equilibrium \\(p_ev_e=RT_e\\). Insert the temperature from A1 at the specified molar volume.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p_e=\\frac{R}{v_e}\\frac{C_w T_w+C_mT_m}{C_w+C_m}.\\]</div>",
+        "en": "<div>\\[p_e=\\frac{R}{v_e}\\frac{C_w T_w+C_mT_m}{C_w+C_m}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A3",
+      "max": 0.5,
+      "title": {
+        "ru": "Масштаб скорости газа",
+        "en": "Gas speed scale"
+      },
+      "steps": [
+        {
+          "id": "a3-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Размерности",
+            "en": "Dimensional analysis"
+          },
+          "body": {
+            "ru": "<p>Давление, умноженное на объём, имеет размерность работы. Отношение \\(pV/m\\) имеет размерность квадрата скорости. Из заданных трёх величин другой независимой комбинации с размерностью скорости составить нельзя.</p>",
+            "en": "<p>Pressure times volume has dimensions of work. Dividing \\(pV\\) by mass gives a speed squared. These three quantities admit a unique combination with dimensions of speed.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[u_{\\rm rel}=\\kappa\\sqrt{\\frac{pV}{m}}.\\]</div>",
+        "en": "<div>\\[u_{\\rm rel}=\\kappa\\sqrt{\\frac{pV}{m}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B1",
+      "max": 0.5,
+      "title": {
+        "ru": "Скорость в земной коре",
+        "en": "Wave speed in the crust"
+      },
+      "steps": [
+        {
+          "id": "b1-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Первое вступление в YOGI",
+            "en": "First arrival at YOGI"
+          },
+          "body": {
+            "ru": "<p>Отсчитываем время от 22:54:00 до первого отклонения от фоновой линии. По записи можно принять \\(t\\simeq4{,}7\\) с. Разрешение графика допускает чтение в пределах 4,5–5,5 с.</p><figure><img src=\"/assets/practice/ipho-2017/figures/s2f1.png\" alt=\"Начало сигнала на станции YOGI.\" style=\"width:min(100%,540px)\" loading=\"lazy\"><figcaption>Начало сигнала на станции YOGI.</figcaption></figure>",
+            "en": "<p>Measure from 22:54:00 to the first departure from the quiet trace. A reading of \\(t\\simeq4.7\\) s is reasonable. The plot permits about 4.5–5.5 s.</p><figure><img src=\"/assets/practice/ipho-2017/figures/s2f1.png\" alt=\"First signal at YOGI.\" style=\"width:min(100%,540px)\" loading=\"lazy\"><figcaption>First signal at YOGI.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "b1-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Длина прямого луча",
+            "en": "Direct path length"
+          },
+          "body": {
+            "ru": "<p>Горизонтальная проекция пути равна 22,5 км, глубина очага — 15 км. Делим гипотенузу \\(\\sqrt{22{,}5^2+15^2}\\simeq27{,}04\\) км на измеренное время.</p>",
+            "en": "<p>The horizontal displacement is 22.5 km and the source depth is 15 km. Divide the hypotenuse \\(\\sqrt{22.5^2+15^2}\\simeq27.04\\) km by the observed time.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_1\\simeq5{,}75\\ \\mathrm{km/s}.\\]</div>",
+        "en": "<div>\\[v_1\\simeq5.75\\ \\mathrm{km/s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B2",
+      "max": 0.6,
+      "title": {
+        "ru": "Прямой и отражённый лучи",
+        "en": "Direct and reflected rays"
+      },
+      "steps": [
+        {
+          "id": "b2-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Прямая волна",
+            "en": "Direct arrival"
+          },
+          "body": {
+            "ru": "<p>Прямая соединяет очаг с приёмником. При расстоянии 500 км по поверхности и глубине 15 км её время хода равно \\(\\sqrt{500^2+15^2}/v_1\\).</p>",
+            "en": "<p>Join the source straight to the receiver. With 500 km horizontal and 15 km vertical separation the travel time is \\(\\sqrt{500^2+15^2}/v_1\\).</p>"
+          }
+        },
+        {
+          "id": "b2-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Зеркальный источник",
+            "en": "Image source"
+          },
+          "body": {
+            "ru": "<p>Отразим источник в границе на глубине 30 км. Его изображение находится на глубине \\(2\\cdot30-15=45\\) км. Путь с отражением равен прямому расстоянию от изображения до станции.</p><figure><img src=\"/assets/practice/ipho-2017/figures/s2f2.png\" alt=\"Два пути от очага к станции.\" style=\"width:min(100%,500px)\" loading=\"lazy\"><figcaption>Два пути от очага к станции.</figcaption></figure>",
+            "en": "<p>Reflect the source across the boundary at 30 km. The image is \\(2\\cdot30-15=45\\) km below the surface. The reflected path equals the straight-line distance from the image to the receiver.</p><figure><img src=\"/assets/practice/ipho-2017/figures/s2f2.png\" alt=\"Two paths from the source to the station.\" style=\"width:min(100%,500px)\" loading=\"lazy\"><figcaption>Two paths from the source to the station.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[t_{\\rm dir}\\simeq86{,}9\\ \\mathrm{s},\\qquad t_{\\rm refl}\\simeq87{,}3\\ \\mathrm{s}.\\]</div>",
+        "en": "<div>\\[t_{\\rm dir}\\simeq86.9\\ \\mathrm{s},\\qquad t_{\\rm refl}\\simeq87.3\\ \\mathrm{s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B3",
+      "max": 1.2,
+      "title": {
+        "ru": "Скорость в мантии",
+        "en": "Mantle wave speed"
+      },
+      "steps": [
+        {
+          "id": "b3-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Критический угол",
+            "en": "Critical angle"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(\\theta\\) отсчитан от вертикали. Закон преломления даёт \\(\\sin\\theta=v_1/v_2\\). Луч проходит 15 км до границы по вертикали и 30 км обратно. Общая длина участков в коре равна \\(45/\\cos\\theta\\) км, вдоль границы остаётся \\(500-45\\tan\\theta\\) км.</p>",
+            "en": "<p>Measure \\(\\theta\\) from the vertical. Critical refraction gives \\(\\sin\\theta=v_1/v_2\\). The two vertical spans in the crust are 15 and 30 km. Their combined path is \\(45/\\cos\\theta\\) km, leaving \\(500-45\\tan\\theta\\) km along the boundary.</p>"
+          }
+        },
+        {
+          "id": "b3-2",
+          "points": 0.5,
+          "label": {
+            "ru": "Время головной волны",
+            "en": "Head-wave travel time"
+          },
+          "body": {
+            "ru": "<p>Делим длину каждого участка на скорость в соответствующем слое. Используя критический угол, получаем </p><div>\\[t=\\frac{500}{v_2}+45\\sqrt{\\frac1{v_1^2}-\\frac1{v_2^2}}.\\]</div>",
+            "en": "<p>Divide each segment by the speed in its layer. Eliminating the critical angle gives </p><div>\\[t=\\frac{500}{v_2}+45\\sqrt{\\frac1{v_1^2}-\\frac1{v_2^2}}.\\]</div>"
+          }
+        },
+        {
+          "id": "b3-3",
+          "points": 0.3,
+          "label": {
+            "ru": "Первое вступление в DNP",
+            "en": "First arrival at DNP"
+          },
+          "body": {
+            "ru": "<p>Первое отклонение в DNP наблюдается около 22:55:15, то есть через 75 с. Подставляем \\(t=75\\) с и \\(v_1=5{,}75\\) км/с и решаем уравнение для ветви \\(v_2&gt;v_1\\) с положительной длиной участка в мантии.</p><figure><img src=\"/assets/practice/ipho-2017/figures/s2f3.png\" alt=\"Первое вступление на станции DNP.\" style=\"width:min(100%,455px)\" loading=\"lazy\"><figcaption>Первое вступление на станции DNP.</figcaption></figure>",
+            "en": "<p>The first arrival appears at about 22:55:15, or 75 s after the origin time. Set \\(t=75\\) s and \\(v_1=5.75\\) km/s and solve on the branch with \\(v_2&gt;v_1\\) and a positive segment in the mantle.</p><figure><img src=\"/assets/practice/ipho-2017/figures/s2f3.png\" alt=\"First arrival at DNP.\" style=\"width:min(100%,455px)\" loading=\"lazy\"><figcaption>First arrival at DNP.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_2\\simeq7{,}1\\ \\mathrm{km/s}.\\]</div>",
+        "en": "<div>\\[v_2\\simeq7.1\\ \\mathrm{km/s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B4",
+      "max": 1.4,
+      "title": {
+        "ru": "Дальность луча в неоднородной коре",
+        "en": "Range in a velocity gradient"
+      },
+      "steps": [
+        {
+          "id": "b4-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Инвариант луча",
+            "en": "Ray invariant"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(z\\) возрастает вниз. Для тонких горизонтальных слоёв закон Снеллиуса сохраняет \\(p=\\sin\\theta/v(z)\\) вдоль луча.</p>",
+            "en": "<p>Take depth \\(z\\) positive downward. Snell's law across infinitesimal horizontal layers conserves \\(p=\\sin\\theta/v(z)\\) along the ray.</p>"
+          }
+        },
+        {
+          "id": "b4-2",
+          "points": 0.5,
+          "label": {
+            "ru": "Наклон траектории",
+            "en": "Ray slope"
+          },
+          "body": {
+            "ru": "<p>На нисходящей ветви \\(dx/dz=\\tan\\theta\\). Выражая обе тригонометрические функции через \\(p\\), получаем </p><div>\\[\\frac{dx}{dz}=\\frac{p\\,v(z)}{\\sqrt{1-p^2v^2(z)}}.\\]</div><figure><img src=\"/assets/practice/ipho-2017/figures/s2f4.png\" alt=\"Угол луча по отношению к вертикали.\" style=\"width:min(100%,230px)\" loading=\"lazy\"><figcaption>Угол луча по отношению к вертикали.</figcaption></figure>",
+            "en": "<p>On the descending branch \\(dx/dz=\\tan\\theta\\). Expressing sine and cosine through \\(p\\) gives </p><div>\\[\\frac{dx}{dz}=\\frac{p\\,v(z)}{\\sqrt{1-p^2v^2(z)}}.\\]</div><figure><img src=\"/assets/practice/ipho-2017/figures/s2f4.png\" alt=\"Ray direction relative to the vertical.\" style=\"width:min(100%,230px)\" loading=\"lazy\"><figcaption>Ray direction relative to the vertical.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "b4-3",
+          "points": 0.7,
+          "label": {
+            "ru": "Точка поворота и полный путь",
+            "en": "Turning point and full range"
+          },
+          "body": {
+            "ru": "<p>В нижней точке \\(\\sin\\theta=1\\), поэтому \\(z_t=(1/p-v_0)/a\\). Горизонтальная дальность вдвое больше интеграла по нисходящей ветви. Замена \\(y=p(v_0+az)\\) сводит его к интегралу \\(2(ap)^{-1}\\int_{pv_0}^1y\\,dy/\\sqrt{1-y^2}\\).</p>",
+            "en": "<p>At the turning point \\(\\sin\\theta=1\\), giving \\(z_t=(1/p-v_0)/a\\). Double the integral along the downward branch. Substituting \\(y=p(v_0+az)\\) reduces the range to \\(2(ap)^{-1}\\int_{pv_0}^1 y\\,dy/\\sqrt{1-y^2}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[X=\\frac{2}{ap}\\sqrt{1-p^2v_0^2}.\\]</div>",
+        "en": "<div>\\[X=\\frac{2}{ap}\\sqrt{1-p^2v_0^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B5",
+      "max": 1.0,
+      "title": {
+        "ru": "Время вдоль искривлённого луча",
+        "en": "Travel time along the curved ray"
+      },
+      "steps": [
+        {
+          "id": "b5-1",
+          "points": 1.0,
+          "label": {
+            "ru": "Интеграл по глубине",
+            "en": "Depth integral"
+          },
+          "body": {
+            "ru": "<p>Отрезку \\(ds\\) соответствует время \\(dt=ds/v\\). На нисходящей ветви \\(ds=dz/\\cos\\theta\\), где \\(\\cos\\theta=\\sqrt{1-p^2v^2}\\). Время на обратной ветви такое же.</p>",
+            "en": "<p>An element \\(ds\\) takes time \\(dt=ds/v\\). On descent \\(ds=dz/\\cos\\theta\\) with \\(\\cos\\theta=\\sqrt{1-p^2v^2}\\). The ascent takes the same time.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T=2\\int_0^{z_t}\\frac{dz}{(v_0+az)\\sqrt{1-p^2(v_0+az)^2}}.\\]</div>",
+        "en": "<div>\\[T=2\\int_0^{z_t}\\frac{dz}{(v_0+az)\\sqrt{1-p^2(v_0+az)^2}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B6",
+      "max": 1.0,
+      "title": {
+        "ru": "Оценка для трёх слоёв",
+        "en": "Three-layer travel time"
+      },
+      "steps": [
+        {
+          "id": "b6-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Время в каждом слое",
+            "en": "Time in each layer"
+          },
+          "body": {
+            "ru": "<p>Внутри слоя наклон и скорость постоянны. Прохождение слоя туда и обратно даёт \\(T_i=2\\Delta z_i/[v_i\\sqrt{1-p^2v_i^2}]\\). Полное время равно сумме трёх вкладов.</p>",
+            "en": "<p>Within each layer the ray angle and speed are constant. Crossing layer \\(i\\) in both directions takes \\(T_i=2\\Delta z_i/[v_i\\sqrt{1-p^2v_i^2}]\\). Add the three contributions.</p>"
+          }
+        },
+        {
+          "id": "b6-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Численная оценка",
+            "en": "Numerical evaluation"
+          },
+          "body": {
+            "ru": "<p>С заданными скоростями вклады равны 5,83, 31,86 и 146,37 с. В решении жюри величины \\(1/v_i\\) сначала округлены до 0,1504, 0,1435 и 0,1431 с/км, в официальном ответе указано 151,64 с. В третьем слое луч почти горизонтален, поэтому такое округление существенно меняет результат.</p>",
+            "en": "<p>Using the given speeds directly gives 5.83, 31.86 and 146.37 s. The jury first rounded \\(1/v_i\\) to 0.1504, 0.1435 and 0.1431 s/km, and reports 151.64 s. The last ray segment is nearly horizontal, making the time sensitive to this intermediate rounding.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>По исходным данным \\(T\\simeq184\\) с. С округлением жюри \\(T\\simeq152\\) с.</p>",
+        "en": "<p>Direct substitution gives \\(T\\simeq184\\) s. The jury's rounded slownesses give \\(T\\simeq152\\) s.</p>"
+      }
+    },
+    {
+      "id": "T2-C1",
+      "max": 0.5,
+      "title": {
+        "ru": "Потенциальная энергия гребня",
+        "en": "Potential energy of the crest"
+      },
+      "steps": [
+        {
+          "id": "c1-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Поднятый объём",
+            "en": "Raised volume"
+          },
+          "body": {
+            "ru": "<p>Над исходным уровнем оказывается прямоугольный объём \\(L(\\lambda/2)h\\). Его центр масс расположен на высоте \\(h/2\\). Умножаем массу поднятой воды на \\(gh/2\\).</p>",
+            "en": "<p>The rectangular volume above the original level is \\(L(\\lambda/2)h\\). Its centre of mass is at height \\(h/2\\). Multiply the raised mass by \\(gh/2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E_p=\\frac14\\rho gL\\lambda h^2.\\]</div>",
+        "en": "<div>\\[E_p=\\frac14\\rho gL\\lambda h^2.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C2",
+      "max": 1.2,
+      "title": {
+        "ru": "Скорость длинной волны",
+        "en": "Long-wave speed"
+      },
+      "steps": [
+        {
+          "id": "c2-1",
+          "points": 0.7,
+          "label": {
+            "ru": "Перенос воды и энергии",
+            "en": "Volume and energy balance"
+          },
+          "body": {
+            "ru": "<p>За полпериода через сечение \\(Ld\\) проходит объём \\(LdU\\tau/2\\), равный объёму гребня \\(Lh\\lambda/2\\). Поэтому \\(U=hv/d\\), где \\(v=\\lambda/\\tau\\). Половина длины волны, движущаяся со скоростью \\(U\\), имеет энергию \\(\\rho L\\lambda dU^2/4\\).</p>",
+            "en": "<p>In half a period the section \\(Ld\\) transmits \\(LdU\\tau/2\\), equal to the crest volume \\(Lh\\lambda/2\\). Thus \\(U=hv/d\\) where \\(v=\\lambda/\\tau\\). A half-wavelength moving at \\(U\\) carries kinetic energy \\(\\rho L\\lambda dU^2/4\\).</p>"
+          }
+        },
+        {
+          "id": "c2-2",
+          "points": 0.5,
+          "label": {
+            "ru": "Скорость переноса профиля",
+            "en": "Crest propagation speed"
+          },
+          "body": {
+            "ru": "<p>Приравнивая эту энергию потенциальной энергии из C1, находим \\(dU^2=gh^2\\). После подстановки \\(U=hv/d\\) высота волны сокращается.</p>",
+            "en": "<p>Equating the kinetic energy to the potential energy from C1 gives \\(dU^2=gh^2\\). Substituting \\(U=hv/d\\) eliminates the wave height.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v=\\sqrt{gd}.\\]</div>",
+        "en": "<div>\\[v=\\sqrt{gd}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C3",
+      "max": 1.3,
+      "title": {
+        "ru": "Рост волны на мелководье",
+        "en": "Shoaling in shallow water"
+      },
+      "steps": [
+        {
+          "id": "c3-1",
+          "points": 1.3,
+          "label": {
+            "ru": "Сохранение потока энергии",
+            "en": "Energy flux conservation"
+          },
+          "body": {
+            "ru": "<p>Энергия волны на единицу площади пропорциональна \\(A^2\\). За единицу времени волна переносит через единицу ширины энергию, пропорциональную \\(A^2v\\). При постоянной ширине фронта и отсутствии потерь \\(A^2\\sqrt{gd}=A_0^2\\sqrt{gd_0}\\).</p>",
+            "en": "<p>Wave energy per unit horizontal area scales as \\(A^2\\). The energy carried per unit time and crest width is proportional to \\(A^2v\\). With no dissipation or lateral spreading, \\(A^2\\sqrt{gd}=A_0^2\\sqrt{gd_0}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[A(d)=A_0\\left(\\frac{d_0}{d}\\right)^{1/4}.\\]</div>",
+        "en": "<div>\\[A(d)=A_0\\left(\\frac{d_0}{d}\\right)^{1/4}.\\]</div>"
+      }
+    }
+  ]
+}

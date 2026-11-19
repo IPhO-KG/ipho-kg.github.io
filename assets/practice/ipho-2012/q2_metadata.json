@@ -1,0 +1,61 @@
+{
+  "id": "T2",
+  "title": "Капельница Кельвина",
+  "points": 8.0,
+  "sourceFile": "IPhO_2012_T2_EN.pdf",
+  "sourcePdf": "/assets/practice/ipho-2012/IPhO_2012_T2_EN.pdf",
+  "sections": [
+    {
+      "id": "T2-A",
+      "title": "Одна трубка",
+      "points": 4.0
+    },
+    {
+      "id": "T2-B",
+      "title": "Две трубки",
+      "points": 4.0
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-A1",
+      "label": "A-i",
+      "points": 1.2
+    },
+    {
+      "id": "T2-A2",
+      "label": "A-ii",
+      "points": 1.2
+    },
+    {
+      "id": "T2-A3",
+      "label": "A-iii",
+      "points": 1.6
+    },
+    {
+      "id": "T2-B1",
+      "label": "B-i",
+      "points": 1.2
+    },
+    {
+      "id": "T2-B2",
+      "label": "B-ii",
+      "points": 1.5
+    },
+    {
+      "id": "T2-B3",
+      "label": "B-iii",
+      "points": 1.3
+    }
+  ],
+  "figures": [
+    "/assets/practice/ipho-2012/figures/q2f1.png",
+    "/assets/practice/ipho-2012/figures/q2f2.png"
+  ],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "official-criteria-grouped",
+  "solutionData": "/assets/practice/ipho-2012/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2012/IPhO_2012_S2_EN.pdf"
+}

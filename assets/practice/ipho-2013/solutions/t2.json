@@ -1,0 +1,471 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Плазмонный парогенератор",
+    "en": "Plasmonic steam generator"
+  },
+  "max": 12,
+  "sourcePdf": "/assets/practice/ipho-2013/IPhO_2013_S2_EN.pdf",
+  "markingSchemePdf": "/assets/practice/ipho-2013/IPhO_2013_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-2.1",
+      "label": "2.1",
+      "max": 0.7,
+      "title": {
+        "ru": "Число носителей заряда",
+        "en": "Counting charge carriers"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.7,
+          "label": {
+            "ru": "Число носителей заряда",
+            "en": "Counting charge carriers"
+          },
+          "body": {
+            "ru": "<p>Объём шара \\(V=4\\pi R^3/3\\). Масса \\(M=\\rho_{\\mathrm{Ag}}V\\), поэтому число атомов \\(N=MN_A/M_{\\mathrm{Ag}}\\). По одному электрону на атом даёт \\(n=N/V\\), \\(\\rho=en\\), \\(m_0=Nm_e\\). Обозначим модуль заряда облака через \\(Q=Ne\\); его заряд отрицателен.</p>",
+            "en": "<p>The sphere has \\(V=4\\pi R^3/3\\) and \\(M=\\rho_{\\mathrm{Ag}}V\\), giving \\(N=MN_A/M_{\\mathrm{Ag}}\\) atoms. With one carrier per atom, \\(n=N/V\\), \\(\\rho=en\\) and \\(m_0=Nm_e\\). Write \\(Q=Ne\\) for the magnitude of the negative cloud charge.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V=4{,}19\\times10^{-24}\\,\\mathrm{m^3},\\quad M=4{,}39\\times10^{-20}\\,\\mathrm{kg},\\quad N=2{,}45\\times10^5.\\]</div>\n<div>\\[n=5{,}85\\times10^{28}\\,\\mathrm{m^{-3}},\\quad\\rho=9{,}38\\times10^9\\,\\mathrm{C/m^3}.\\]</div>\n<div>\\[Q_e=-3{,}93\\times10^{-14}\\,\\mathrm C,\\qquad m_0=2{,}23\\times10^{-25}\\,\\mathrm{kg}.\\]</div>",
+        "en": "<div>\\[V=4.19\\times10^{-24}\\,\\mathrm{m^3},\\quad M=4.39\\times10^{-20}\\,\\mathrm{kg},\\quad N=2.45\\times10^5.\\]</div>\n<div>\\[n=5.85\\times10^{28}\\,\\mathrm{m^{-3}},\\quad\\rho=9.38\\times10^9\\,\\mathrm{C/m^3}.\\]</div>\n<div>\\[Q_e=-3.93\\times10^{-14}\\,\\mathrm C,\\qquad m_0=2.23\\times10^{-25}\\,\\mathrm{kg}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.2",
+      "label": "2.2",
+      "max": 1.2,
+      "title": {
+        "ru": "Поле в сферической полости",
+        "en": "Field in a spherical cavity"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.2,
+          "label": {
+            "ru": "Поле в сферической полости",
+            "en": "Field in a spherical cavity"
+          },
+          "body": {
+            "ru": "<p>Закон Гаусса внутри однородно заряженного шара даёт \\(\\mathbf E_1=\\rho\\mathbf r/(3\\varepsilon_0)\\). Для шара отрицательной плотности радиус-вектор относительно его центра равен \\(\\mathbf r-\\mathbf x_d\\), поэтому \\(\\mathbf E_2=-\\rho(\\mathbf r-\\mathbf x_d)/(3\\varepsilon_0)\\). При сложении зависимость от точки исчезает.</p>",
+            "en": "<p>Gauss’s law inside the positive sphere gives \\(\\mathbf E_1=\\rho\\mathbf r/(3\\varepsilon_0)\\). In the negative sphere the position from its centre is \\(\\mathbf r-\\mathbf x_d\\), giving \\(\\mathbf E_2=-\\rho(\\mathbf r-\\mathbf x_d)/(3\\varepsilon_0)\\). The position dependence cancels in the sum.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathbf E=\\frac{\\rho\\,\\mathbf x_d}{3\\varepsilon_0},\\qquad A=\\tfrac13.\\]</div>",
+        "en": "<div>\\[\\mathbf E=\\frac{\\rho\\,\\mathbf x_d}{3\\varepsilon_0},\\qquad A=\\tfrac13.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.3",
+      "label": "2.3",
+      "max": 1.0,
+      "title": {
+        "ru": "Возвращающая сила",
+        "en": "Restoring force"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Возвращающая сила",
+            "en": "Restoring force"
+          },
+          "body": {
+            "ru": "<p>В общей части шаров поле равно \\(ne\\mathbf x_p/(3\\varepsilon_0)\\). В первом порядке по смещению полную силу получаем умножением на заряд \\(-Q\\). Она имеет вид \\(-K\\mathbf x_p\\); требуемая работа — интеграл \\(Kx\\,dx\\) от нуля до \\(x_p\\).</p>",
+            "en": "<p>In the overlap the field is \\(ne\\mathbf x_p/(3\\varepsilon_0)\\). To first order, multiply by the cloud charge \\(-Q\\) to obtain the net force. It has the form \\(-K\\mathbf x_p\\); the external work is the integral of \\(Kx\\,dx\\) from zero to \\(x_p\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[K=\\frac{4\\pi R^3n^2e^2}{9\\varepsilon_0},\\qquad \\mathbf F=-K\\mathbf x_p,\\qquad W_{\\mathrm{el}}=\\tfrac12Kx_p^2.\\]</div>",
+        "en": "<div>\\[K=\\frac{4\\pi R^3n^2e^2}{9\\varepsilon_0},\\qquad \\mathbf F=-K\\mathbf x_p,\\qquad W_{\\mathrm{el}}=\\tfrac12Kx_p^2.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.4",
+      "label": "2.4",
+      "max": 0.6,
+      "title": {
+        "ru": "Статическое смещение",
+        "en": "Static displacement"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.6,
+          "label": {
+            "ru": "Статическое смещение",
+            "en": "Static displacement"
+          },
+          "body": {
+            "ru": "<p>В равновесии сумма внешнего и наведённого поля внутри проводника равна нулю, откуда \\(ne x_p/(3\\varepsilon_0)=E_0\\). Через центральную плоскость проходит слой толщины \\(x_p\\) и площади \\(\\pi R^2\\) с плотностью заряда \\(-ne\\).</p>",
+            "en": "<p>At equilibrium the applied and induced fields cancel, so \\(ne x_p/(3\\varepsilon_0)=E_0\\). A slab of cross-section \\(\\pi R^2\\), thickness \\(x_p\\) and charge density \\(-ne\\) crosses the central plane.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x_p=\\frac{3\\varepsilon_0 E_0}{ne},\\qquad -\\Delta Q=-ne\\pi R^2x_p.\\]</div>",
+        "en": "<div>\\[x_p=\\frac{3\\varepsilon_0 E_0}{ne},\\qquad -\\Delta Q=-ne\\pi R^2x_p.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.5a",
+      "label": "2.5a",
+      "max": 0.7,
+      "title": {
+        "ru": "Эквивалентная ёмкость",
+        "en": "Equivalent capacitance"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.7,
+          "label": {
+            "ru": "Эквивалентная ёмкость",
+            "en": "Equivalent capacitance"
+          },
+          "body": {
+            "ru": "<p>Приравняем \\(W_{\\mathrm{el}}\\) и \\((\\Delta Q)^2/(2C)\\). Подставляя \\(W_{\\mathrm{el}}=Kx_p^2/2\\) и \\(\\Delta Q=ne\\pi R^2 x_p\\), сокращаем смещение и плотность носителей.</p>",
+            "en": "<p>Set \\(W_{\\mathrm{el}}=(\\Delta Q)^2/(2C)\\). Substituting \\(W_{\\mathrm{el}}=Kx_p^2/2\\) and \\(\\Delta Q=ne\\pi R^2 x_p\\) cancels the displacement and carrier density.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[C=\\frac94\\pi\\varepsilon_0 R=6{,}26\\times10^{-19}\\,\\mathrm F.\\]</div>",
+        "en": "<div>\\[C=\\frac94\\pi\\varepsilon_0 R=6.26\\times10^{-19}\\,\\mathrm F.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.5b",
+      "label": "2.5b",
+      "max": 0.4,
+      "title": {
+        "ru": "Напряжение",
+        "en": "Equivalent voltage"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.4,
+          "label": {
+            "ru": "Напряжение",
+            "en": "Equivalent voltage"
+          },
+          "body": {
+            "ru": "<p>Из 2.4 следует \\(\\Delta Q=3\\pi\\varepsilon_0R^2 E_0\\). Деление на ёмкость из 2.5а даёт напряжение источника.</p>",
+            "en": "<p>From 2.4 the separated charge is \\(\\Delta Q=3\\pi\\varepsilon_0 R^2 E_0\\). Divide by the capacitance from 2.5a to find the equivalent voltage.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V_0=\\frac43 R E_0.\\]</div>",
+        "en": "<div>\\[V_0=\\frac43 R E_0.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.6a",
+      "label": "2.6a",
+      "max": 0.7,
+      "title": {
+        "ru": "Энергия и ток",
+        "en": "Energy and current"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.7,
+          "label": {
+            "ru": "Энергия и ток",
+            "en": "Energy and current"
+          },
+          "body": {
+            "ru": "<p>Все \\(N=n(4\\pi R^3/3)\\) электронов участвуют в общем движении. За время \\(dt\\) через сечение проходят электроны из объёма \\(\\pi R^2 v\\,dt\\). Из-за отрицательного заряда направление тока противоположно движению.</p>",
+            "en": "<p>All \\(N=n(4\\pi R^3/3)\\) electrons participate. In time \\(dt\\) the carriers in a volume \\(\\pi R^2v\\,dt\\) cross the section. The conventional current runs opposite to the electron velocity.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[W_{\\mathrm{kin}}=\\tfrac12 Nm_ev^2,\\qquad I=-ne\\pi R^2v.\\]</div>",
+        "en": "<div>\\[W_{\\mathrm{kin}}=\\tfrac12 Nm_ev^2,\\qquad I=-ne\\pi R^2v.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.6b",
+      "label": "2.6b",
+      "max": 0.5,
+      "title": {
+        "ru": "Индуктивность",
+        "en": "Inductance"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Индуктивность",
+            "en": "Inductance"
+          },
+          "body": {
+            "ru": "<p>Для эквивалентного элемента \\(LI^2/2=W_{\\mathrm{kin}}\\). Подстановка выражений из 2.6а устраняет \\(v\\) и даёт параметр, зависящий только от частицы.</p>",
+            "en": "<p>For the equivalent inductor \\(LI^2/2=W_{\\mathrm{kin}}\\). Substituting the results of 2.6a removes \\(v\\) and leaves a particle property.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[L=\\frac{4m_e}{3\\pi Rne^2}=2{,}57\\times10^{-14}\\,\\mathrm H.\\]</div>",
+        "en": "<div>\\[L=\\frac{4m_e}{3\\pi Rne^2}=2.57\\times10^{-14}\\,\\mathrm H.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.7a",
+      "label": "2.7a",
+      "max": 0.5,
+      "title": {
+        "ru": "Частота плазмонного резонанса",
+        "en": "Plasmon resonance frequency"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Частота плазмонного резонанса",
+            "en": "Plasmon resonance frequency"
+          },
+          "body": {
+            "ru": "<p>Используем \\(\\omega_p^2=1/(LC)\\). При перемножении ёмкости и индуктивности радиус частицы сокращается. То же уравнение следует из \\(Nm_e\\ddot x_p=-Kx_p\\).</p>",
+            "en": "<p>Use \\(\\omega_p^2=1/(LC)\\). The particle radius cancels in \\(LC\\). The same result follows from \\(Nm_e\\ddot x_p=-Kx_p\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_p=\\sqrt{\\frac{ne^2}{3\\varepsilon_0m_e}}.\\]</div>",
+        "en": "<div>\\[\\omega_p=\\sqrt{\\frac{ne^2}{3\\varepsilon_0m_e}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.7b",
+      "label": "2.7b",
+      "max": 0.4,
+      "title": {
+        "ru": "Резонансная длина волны",
+        "en": "Resonant wavelength"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.4,
+          "label": {
+            "ru": "Резонансная длина волны",
+            "en": "Resonant wavelength"
+          },
+          "body": {
+            "ru": "<p>Подставляем \\(n\\) из 2.1 и постоянные из справочной таблицы. Поскольку \\(\\omega_p\\) — угловая частота, длина волны \\(\\lambda_p=2\\pi c/\\omega_p\\).</p>",
+            "en": "<p>Insert the density from 2.1 and the tabulated constants. Since \\(\\omega_p\\) is an angular frequency, \\(\\lambda_p=2\\pi c/\\omega_p\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_p=7{,}88\\times10^{15}\\,\\mathrm{rad/s},\\qquad \\lambda_p=239\\,\\mathrm{nm}.\\]</div>",
+        "en": "<div>\\[\\omega_p=7.88\\times10^{15}\\,\\mathrm{rad/s},\\qquad \\lambda_p=239\\,\\mathrm{nm}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.8a",
+      "label": "2.8a",
+      "max": 1.0,
+      "title": {
+        "ru": "Средняя мощность нагрева",
+        "en": "Mean heating power"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Средняя мощность нагрева",
+            "en": "Mean heating power"
+          },
+          "body": {
+            "ru": "<p>В среднем за время \\(\\tau\\) каждый электрон теряет энергию \\(m_e\\langle v^2\\rangle/2\\). Складываем потери по \\(N\\) электронам. Средний квадрат тока получаем непосредственно из \\(I=-ne\\pi R^2v\\).</p>",
+            "en": "<p>On average each electron loses \\(m_e\\langle v^2\\rangle/2\\) per interval \\(\\tau\\). Sum over all \\(N\\) electrons. Squaring \\(I=-ne\\pi R^2v\\) and averaging gives the current result.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_h=\\frac{Nm_e}{2\\tau}\\langle v^2\\rangle,\\qquad \\langle I^2\\rangle=(ne\\pi R^2)^2\\langle v^2\\rangle.\\]</div>",
+        "en": "<div>\\[P_h=\\frac{Nm_e}{2\\tau}\\langle v^2\\rangle,\\qquad \\langle I^2\\rangle=(ne\\pi R^2)^2\\langle v^2\\rangle.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.8b",
+      "label": "2.8b",
+      "max": 1.0,
+      "title": {
+        "ru": "Сопротивление нагрева",
+        "en": "Heating resistance"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Сопротивление нагрева",
+            "en": "Heating resistance"
+          },
+          "body": {
+            "ru": "<p>Приравниваем \\(R_h\\langle I^2\\rangle\\) мощности столкновительных потерь. При делении результатов 2.8а сокращается средний квадрат скорости; с учётом 2.6б получается \\(R_h=L/(2\\tau)\\).</p>",
+            "en": "<p>Match \\(R_h\\langle I^2\\rangle\\) to the collisional loss. Dividing the two results of 2.8a cancels the mean square speed, giving \\(R_h=L/(2\\tau)\\) by 2.6b.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[R_h=\\frac{2m_e}{3\\pi Rne^2\\tau}=2{,}46\\,\\Omega.\\]</div>",
+        "en": "<div>\\[R_h=\\frac{2m_e}{3\\pi Rne^2\\tau}=2.46\\,\\Omega.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.9",
+      "label": "2.9",
+      "max": 1.0,
+      "title": {
+        "ru": "Сопротивление рассеяния",
+        "en": "Scattering resistance"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Сопротивление рассеяния",
+            "en": "Scattering resistance"
+          },
+          "body": {
+            "ru": "<p>При гармоническом смещении \\(\\langle v^2\\rangle=x_0^2\\omega_p^2/2\\). Поскольку \\(Q=4\\pi R^3ne/3\\), из 2.8а имеем \\(\\langle I^2\\rangle=(3Q/4R)^2\\langle v^2\\rangle\\). Отношение \\(P_s/\\langle I^2\\rangle\\) не зависит от амплитуды колебаний.</p>",
+            "en": "<p>Harmonic motion gives \\(\\langle v^2\\rangle=x_0^2\\omega_p^2/2\\). Since \\(Q=4\\pi R^3ne/3\\), 2.8a implies \\(\\langle I^2\\rangle=(3Q/4R)^2\\langle v^2\\rangle\\). The amplitude cancels in \\(P_s/\\langle I^2\\rangle\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[R_s=\\frac{8\\omega_p^2R^2}{27\\pi\\varepsilon_0c^3}=2{,}45\\,\\Omega.\\]</div>",
+        "en": "<div>\\[R_s=\\frac{8\\omega_p^2R^2}{27\\pi\\varepsilon_0c^3}=2.45\\,\\Omega.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.10a",
+      "label": "2.10a",
+      "max": 1.2,
+      "title": {
+        "ru": "Разделение поглощённой мощности",
+        "en": "Power in the two loss channels"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.2,
+          "label": {
+            "ru": "Разделение поглощённой мощности",
+            "en": "Power in the two loss channels"
+          },
+          "body": {
+            "ru": "<p>Индуктивное и ёмкостное сопротивления взаимно компенсируются, поэтому амплитуда тока \\(I_0=V_0/(R_h+R_s)\\). Каждому механизму соответствует средняя мощность \\(R_jI_0^2/2\\). Подставляем \\(V_0=4RE_0/3\\).</p>",
+            "en": "<p>Inductive and capacitive reactances cancel, leaving a current amplitude \\(I_0=V_0/(R_h+R_s)\\). Each channel carries mean power \\(R_j I_0^2/2\\). Use \\(V_0=4RE_0/3\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_h=\\frac{8R_h R^2E_0^2}{9(R_h+R_s)^2},\\qquad P_s=\\frac{8R_s R^2E_0^2}{9(R_h+R_s)^2}.\\]</div>",
+        "en": "<div>\\[P_h=\\frac{8R_h R^2E_0^2}{9(R_h+R_s)^2},\\qquad P_s=\\frac{8R_s R^2E_0^2}{9(R_h+R_s)^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.10b",
+      "label": "2.10b",
+      "max": 0.3,
+      "title": {
+        "ru": "Численные мощности",
+        "en": "Numerical powers"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.3,
+          "label": {
+            "ru": "Численные мощности",
+            "en": "Numerical powers"
+          },
+          "body": {
+            "ru": "<p>Интенсивность определяет амплитуду \\(E_0=\\sqrt{2S/(\\varepsilon_0 c)}\\). Подставляем её в 2.10а. Почти одинаковые сопротивления дают почти одинаковые мощности.</p>",
+            "en": "<p>The intensity fixes \\(E_0=\\sqrt{2S/(\\varepsilon_0 c)}\\). Substitute it into 2.10a. The two resistances are almost equal, so the powers are close.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E_0=27{,}4\\,\\mathrm{kV/m},\\qquad P_h=6{,}82\\,\\mathrm{nW},\\qquad P_s=6{,}81\\,\\mathrm{nW}.\\]</div>",
+        "en": "<div>\\[E_0=27.4\\,\\mathrm{kV/m},\\qquad P_h=6.82\\,\\mathrm{nW},\\qquad P_s=6.81\\,\\mathrm{nW}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.11a",
+      "label": "2.11a",
+      "max": 0.6,
+      "title": {
+        "ru": "Массовый расход пара",
+        "en": "Steam mass flow"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.6,
+          "label": {
+            "ru": "Массовый расход пара",
+            "en": "Steam mass flow"
+          },
+          "body": {
+            "ru": "<p>Число частиц \\(n_p h^2a=7{,}3\\times10^{11}\\), а суммарная тепловая мощность \\(P_{\\mathrm{st}}=n_p h^2a P_h=4{,}98\\,\\mathrm{kW}\\). Каждый килограмм воды сначала нагревается до кипения, испаряется, затем пар перегревается на 10 К. Поэтому \\(q=80c_{\\mathrm{wa}}+L_{\\mathrm{wa}}+10c_{\\mathrm{st}}=2{,}62\\times10^6\\,\\mathrm{J/kg}\\), где числовые множители теплоёмкостей выражены в кельвинах.</p>",
+            "en": "<p>There are \\(n_ph^2a=7.3\\times10^{11}\\) particles, supplying total heat \\(P_{\\mathrm{st}}=n_ph^2aP_h=4.98\\,\\mathrm{kW}\\). Water is heated to boiling, vaporised, then superheated by 10 K. The required energy per kilogram is \\(q=80c_{\\mathrm{wa}}+L_{\\mathrm{wa}}+10c_{\\mathrm{st}}=2.62\\times10^6\\,\\mathrm{J/kg}\\), where the temperature intervals are in kelvin.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\dot m_{\\mathrm{st}}=P_{\\mathrm{st}}/q=1{,}90\\times10^{-3}\\,\\mathrm{kg/s}.\\]</div>",
+        "en": "<div>\\[\\dot m_{\\mathrm{st}}=P_{\\mathrm{st}}/q=1.90\\times10^{-3}\\,\\mathrm{kg/s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.11b",
+      "label": "2.11b",
+      "max": 0.2,
+      "title": {
+        "ru": "КПД установки",
+        "en": "Generator efficiency"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.2,
+          "label": {
+            "ru": "КПД установки",
+            "en": "Generator efficiency"
+          },
+          "body": {
+            "ru": "<p>На грань площадью \\(0{,}010\\,\\mathrm{m^2}\\) падает мощность \\(P_{\\mathrm{tot}}=S h^2=10{,}0\\,\\mathrm{kW}\\). На парообразование идёт тепловая мощность из 2.11а.</p>",
+            "en": "<p>The \\(0.010\\,\\mathrm{m^2}\\) face receives \\(P_{\\mathrm{tot}}=S h^2=10.0\\,\\mathrm{kW}\\). The useful output is the thermal power calculated in 2.11a.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\eta\\simeq0{,}498=49{,}8\\%.\\]</div>",
+        "en": "<div>\\[\\eta\\simeq0.498=49.8\\%.\\]</div>"
+      }
+    }
+  ]
+}

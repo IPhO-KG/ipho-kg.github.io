@@ -1,0 +1,464 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Ловушка для ионов и охлаждение атомов",
+    "en": "Trapping ions and cooling atoms"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2024/IPhO_2024_S2_EN.pdf",
+  "markingSchemePdf": "/assets/practice/ipho-2024/IPhO_2024_M2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-A1",
+      "max": 1.5,
+      "title": {
+        "ru": "Поле в центре кольца",
+        "en": "Field near the centre"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Поле вдоль оси",
+            "en": "Axial field"
+          },
+          "body": {
+            "ru": "<p>На оси поперечные компоненты поля взаимно уничтожаются. Вклад каждого элемента в \\(E_z\\) имеет один и тот же геометрический множитель.</p>\n<div>\\[E_z=\\frac{\\lambda Rz}{2\\varepsilon_0(R^2+z^2)^{3/2}}\\simeq\\frac{\\lambda z}{2\\varepsilon_0R^2}.\\]</div>",
+            "en": "<p>On the axis the transverse contributions cancel. Every charge element contributes the same geometric factor to the axial field.</p>\n<div>\\[E_z=\\frac{\\lambda Rz}{2\\varepsilon_0(R^2+z^2)^{3/2}}\\simeq\\frac{\\lambda z}{2\\varepsilon_0R^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Поле в плоскости",
+            "en": "In-plane field"
+          },
+          "body": {
+            "ru": "<p>По симметрии \\(E_x=Cx\\) и \\(E_y=Cy\\). Центр свободен от заряда, поэтому \\(2C+\\partial E_z/\\partial z=0\\).</p>\n<div>\\[(E_x,E_y)=-\\frac{\\lambda}{4\\varepsilon_0R^2}(x,y).\\]</div>",
+            "en": "<p>Rotational symmetry gives \\(E_x=Cx\\) and \\(E_y=Cy\\). There is no charge near the centre, so the divergence vanishes and \\(2C+\\partial E_z/\\partial z=0\\).</p>\n<div>\\[(E_x,E_y)=-\\frac{\\lambda}{4\\varepsilon_0R^2}(x,y).\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.5,
+          "label": {
+            "ru": "Поперечная частота",
+            "en": "Transverse oscillations"
+          },
+          "body": {
+            "ru": "<p>В плоскости сила возвращает заряд к центру. Вдоль \\(z\\) заряд уходит от положения равновесия. Сравнение \\(m\\ddot x=QE_x\\) с уравнением гармонических колебаний даёт частоту.</p>\n<div>\\[\\omega_x=\\omega_y=\\sqrt{\\frac{Q\\lambda}{4m\\varepsilon_0R^2}}.\\]</div>",
+            "en": "<p>The in-plane force is restoring; the axial force is destabilising. Compare \\(m\\ddot x=QE_x\\) to the harmonic-oscillator equation.</p>\n<div>\\[\\omega_x=\\omega_y=\\sqrt{\\frac{Q\\lambda}{4m\\varepsilon_0R^2}}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathbf E=\\frac{\\lambda}{4\\varepsilon_0R^2}(-x,-y,2z),\\qquad \\omega_{x,y}^2=\\frac{Q\\lambda}{4m\\varepsilon_0R^2}.\\]</div>",
+        "en": "<div>\\[\\mathbf E=\\frac{\\lambda}{4\\varepsilon_0R^2}(-x,-y,2z),\\qquad \\omega_{x,y}^2=\\frac{Q\\lambda}{4m\\varepsilon_0R^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A2",
+      "max": 0.4,
+      "title": {
+        "ru": "Параметры поля",
+        "en": "Drive parameters"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Переменная составляющая",
+            "en": "Driven component"
+          },
+          "body": {
+            "ru": "<p>Подставим \\(\\lambda(t)\\) в \\(QE_z/m\\). Коэффициент при \\(z\\cos\\Omega t\\) равен \\(a\\Omega^2\\).</p>\n<div>\\[a=\\frac{Qu}{2\\varepsilon_0R^2m\\Omega^2}.\\]</div>",
+            "en": "<p>Insert \\(\\lambda(t)\\) into \\(QE_z/m\\). Match the coefficient of \\(z\\cos\\Omega t\\) to \\(a\\Omega^2\\).</p>\n<div>\\[a=\\frac{Qu}{2\\varepsilon_0R^2m\\Omega^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Постоянная составляющая",
+            "en": "Static component"
+          },
+          "body": {
+            "ru": "<p>Коэффициент постоянной части в уравнении равен \\(k^2\\).</p>\n<div>\\[k=\\sqrt{\\frac{Q\\lambda_0}{2\\varepsilon_0R^2m}}.\\]</div>",
+            "en": "<p>The remaining, time-independent coefficient is \\(k^2\\).</p>\n<div>\\[k=\\sqrt{\\frac{Q\\lambda_0}{2\\varepsilon_0R^2m}}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[k=\\sqrt{\\frac{Q\\lambda_0}{2\\varepsilon_0R^2m}},\\qquad a=\\frac{Qu}{2\\varepsilon_0R^2m\\Omega^2}.\\]</div>",
+        "en": "<div>\\[k=\\sqrt{\\frac{Q\\lambda_0}{2\\varepsilon_0R^2m}},\\qquad a=\\frac{Qu}{2\\varepsilon_0R^2m\\Omega^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A3",
+      "max": 1.8,
+      "title": {
+        "ru": "Быстрое движение",
+        "en": "Fast motion"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1,
+          "label": {
+            "ru": "Уравнение на быстром масштабе",
+            "en": "Equation on the fast time scale"
+          },
+          "body": {
+            "ru": "<p>За один период примем \\(p\\) постоянной в осциллирующем источнике. Ускорение быстро меняющейся части доминирует над \\(\\ddot p\\). Ведущий осциллирующий член равен \\(a\\Omega^2p\\cos\\Omega t\\), поскольку \\(|q|\\ll |p|\\) и \\(k^2\\ll a\\Omega^2\\).</p>\n<div>\\[\\ddot q=a\\Omega^2p\\cos\\Omega t.\\]</div>",
+            "en": "<p>Freeze \\(p\\) during one cycle in the oscillatory forcing term. The rapid acceleration dominates \\(\\ddot p\\). Keep \\(a\\Omega^2p\\cos\\Omega t\\), since \\(|q|\\ll|p|\\) and \\(k^2\\ll a\\Omega^2\\).</p>\n<div>\\[\\ddot q=a\\Omega^2p\\cos\\Omega t.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Два интегрирования",
+            "en": "Integrate twice"
+          },
+          "body": {
+            "ru": "<p>На коротком интервале получаем решение с двумя произвольными постоянными.</p>\n<div>\\[q=-ap\\cos\\Omega t+C_1t+C_0.\\]</div>",
+            "en": "<p>Integrating at fixed \\(p\\) leaves two arbitrary constants.</p>\n<div>\\[q=-ap\\cos\\Omega t+C_1t+C_0.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Отсутствие дрейфа",
+            "en": "No drift"
+          },
+          "body": {
+            "ru": "<p>Быстрое движение ограничено во времени. Линейный дрейф не принадлежит \\(q\\), поэтому \\(C_1=0\\).</p>",
+            "en": "<p>The fast response is bounded. A constant drift cannot be included in \\(q\\), so \\(C_1=0\\).</p>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.2,
+          "label": {
+            "ru": "Нулевое среднее",
+            "en": "Zero mean"
+          },
+          "body": {
+            "ru": "<p>Среднее косинуса за период равно нулю. Условие \\(\\langle q\\rangle=0\\) фиксирует \\(C_0=0\\).</p>",
+            "en": "<p>The cosine has zero average over a period. Imposing \\(\\langle q\\rangle=0\\) gives \\(C_0=0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[q(t)\\simeq-ap(t)\\cos\\Omega t.\\]</div>",
+        "en": "<div>\\[q(t)\\simeq-ap(t)\\cos\\Omega t.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A4",
+      "max": 1.5,
+      "title": {
+        "ru": "Динамическая устойчивость",
+        "en": "Dynamic stability"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Усреднение микродвижения",
+            "en": "Average the micromotion"
+          },
+          "body": {
+            "ru": "<p>При усреднении \\(\\langle q\\rangle=\\langle\\ddot q\\rangle=0\\). Произведение \\(q\\cos\\Omega t\\) имеет ненулевое среднее, поскольку колебания коррелированы с полем.</p>\n<div>\\[\\langle q\\cos\\Omega t\\rangle=-ap\\langle\\cos^2\\Omega t\\rangle=-ap/2.\\]</div>",
+            "en": "<p>The averages of \\(q\\) and \\(\\ddot q\\) vanish. Their phase relation with the drive leaves a nonzero average of \\(q\\cos\\Omega t\\).</p>\n<div>\\[\\langle q\\cos\\Omega t\\rangle=-ap\\langle\\cos^2\\Omega t\\rangle=-ap/2.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Эффективное уравнение",
+            "en": "Effective equation"
+          },
+          "body": {
+            "ru": "<p>Подставим оставшийся вклад в уравнение осевого движения.</p>\n<div>\\[\\ddot p=(k^2-a^2\\Omega^2/2)p.\\]</div>",
+            "en": "<p>Insert the surviving product in the averaged axial equation.</p>\n<div>\\[\\ddot p=(k^2-a^2\\Omega^2/2)p.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.3,
+          "label": {
+            "ru": "Условие возвращающей силы",
+            "en": "Restoring-force condition"
+          },
+          "body": {
+            "ru": "<p>В устойчивом режиме ускорение направлено против смещения.</p>\n<div>\\[\\Omega&gt;\\frac{\\sqrt2\\,k}{|a|}.\\]</div>",
+            "en": "<p>Stability requires acceleration opposite to the displacement.</p>\n<div>\\[\\Omega&gt;\\frac{\\sqrt2\\,k}{|a|}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_{\\rm slow}^2=\\frac{a^2\\Omega^2}{2}-k^2&gt;0.\\]</div>",
+        "en": "<div>\\[\\omega_{\\rm slow}^2=\\frac{a^2\\Omega^2}{2}-k^2&gt;0.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A5",
+      "max": 0.4,
+      "title": {
+        "ru": "Минимальная частота поля",
+        "en": "Minimum drive frequency"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Параметр статического поля",
+            "en": "Static-field scale"
+          },
+          "body": {
+            "ru": "<p>Подставим \\(Q=e,\\ m=100m_H\\) в результат A2.</p>\n<div>\\[k=\\sqrt{\\frac{e\\lambda_0}{200\\varepsilon_0R^2m_H}}\\simeq2\\times10^5\\,\\mathrm{s^{-1}}.\\]</div>",
+            "en": "<p>Use \\(Q=e,\\ m=100m_H\\) in A2.</p>\n<div>\\[k=\\sqrt{\\frac{e\\lambda_0}{200\\varepsilon_0R^2m_H}}\\simeq2\\times10^5\\,\\mathrm{s^{-1}}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Порог устойчивости",
+            "en": "Stability threshold"
+          },
+          "body": {
+            "ru": "<p>При указанном \\(a\\) берём граничное значение неравенства A4.</p>\n<div>\\[\\Omega_{\\min}\\simeq7\\times10^6\\,\\mathrm{rad\\,s^{-1}}.\\]</div>",
+            "en": "<p>Use the limiting value in A4 at the specified \\(a\\).</p>\n<div>\\[\\Omega_{\\min}\\simeq7\\times10^6\\,\\mathrm{rad\\,s^{-1}}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[k\\simeq2\\times10^5\\,\\mathrm{s^{-1}},\\qquad \\Omega_{\\min}\\simeq7\\times10^6\\,\\mathrm{rad\\,s^{-1}}.\\]</div>",
+        "en": "<div>\\[k\\simeq2\\times10^5\\,\\mathrm{s^{-1}},\\qquad \\Omega_{\\min}\\simeq7\\times10^6\\,\\mathrm{rad\\,s^{-1}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B1",
+      "max": 0.5,
+      "title": {
+        "ru": "Естественная ширина",
+        "en": "Natural linewidth"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Связь времени жизни и ширины",
+            "en": "Lifetime–linewidth relation"
+          },
+          "body": {
+            "ru": "<p>Конечная продолжительность возбуждения задаёт разброс энергии \\(\\Delta E\\sim\\hbar/\\tau\\). Перейдя к угловой частоте, получим ширину с точностью до множителя порядка единицы.</p>\n<div>\\[\\Gamma\\sim1/\\tau.\\]</div>",
+            "en": "<p>An excited state of finite duration has energy spread \\(\\Delta E\\sim\\hbar/\\tau\\). Dividing by \\(\\hbar\\) gives the frequency spread up to a factor of order unity.</p>\n<div>\\[\\Gamma\\sim1/\\tau.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Gamma\\sim\\tau^{-1}.\\]</div>",
+        "en": "<div>\\[\\Gamma\\sim\\tau^{-1}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B2",
+      "max": 1.7,
+      "title": {
+        "ru": "Сила светового трения",
+        "en": "Optical damping force"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Встречный пучок",
+            "en": "Counterpropagating beam"
+          },
+          "body": {
+            "ru": "<p>Встречная волна сдвигается к резонансу. Подставляем доплеровскую частоту в линейное приближение линии.</p>\n<div>\\[\\omega_+=\\omega_L(1+v/c),\\qquad s_+=s_L+\\alpha\\omega_Lv/c.\\]</div>",
+            "en": "<p>The counterpropagating beam shifts towards resonance. Substitute its Doppler frequency into the absorption law.</p>\n<div>\\[\\omega_+=\\omega_L(1+v/c),\\qquad s_+=s_L+\\alpha\\omega_Lv/c.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Попутный пучок",
+            "en": "Copropagating beam"
+          },
+          "body": {
+            "ru": "<p>Для попутного пучка сдвиг имеет противоположный знак.</p>\n<div>\\[\\omega_-=\\omega_L(1-v/c),\\qquad s_-=s_L-\\alpha\\omega_Lv/c.\\]</div>",
+            "en": "<p>The shift reverses for the beam travelling with the atom.</p>\n<div>\\[\\omega_-=\\omega_L(1-v/c),\\qquad s_-=s_L-\\alpha\\omega_Lv/c.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.1,
+          "label": {
+            "ru": "Импульс встречного пучка",
+            "en": "Momentum from the opposing beam"
+          },
+          "body": {
+            "ru": "<p>Умножаем число поглощений в секунду на отрицательный импульс фотона.</p>\n<div>\\[\\pi_+=-\\hbar(\\omega_+/c)s_+.\\]</div>",
+            "en": "<p>Multiply the absorption rate by the negative incident photon momentum.</p>\n<div>\\[\\pi_+=-\\hbar(\\omega_+/c)s_+.\\]</div>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.1,
+          "label": {
+            "ru": "Импульс попутного пучка",
+            "en": "Momentum from the following beam"
+          },
+          "body": {
+            "ru": "<p>Для второго пучка импульс фотона положителен.</p>\n<div>\\[\\pi_-=\\hbar(\\omega_-/c)s_-.\\]</div>",
+            "en": "<p>Photons in the other beam carry positive momentum.</p>\n<div>\\[\\pi_-=\\hbar(\\omega_-/c)s_-.\\]</div>"
+          }
+        },
+        {
+          "id": "s5",
+          "points": 0.5,
+          "label": {
+            "ru": "Итоговая сила",
+            "en": "Net force"
+          },
+          "body": {
+            "ru": "<p>В среднем симметричное переизлучение импульса не даёт. Складываем два потока, сохраняем только линейные по скорости члены и отбрасываем \\(s_L/(\\alpha\\omega_L)\\ll1\\). В этом порядке сила одинакова в обеих системах.</p>\n<div>\\[F_x=-2\\alpha\\hbar k_L^2v.\\]</div>",
+            "en": "<p>Symmetric spontaneous emission has zero mean momentum. Sum the rates to first order in \\(v/c\\) and discard \\(s_L/(\\alpha\\omega_L)\\ll1\\). The force is the same in the two frames to this order.</p>\n<div>\\[F_x=-2\\alpha\\hbar k_L^2v.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_x=-2\\alpha\\hbar k_L^2v.\\]</div>",
+        "en": "<div>\\[F_x=-2\\alpha\\hbar k_L^2v.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B3",
+      "max": 1.0,
+      "title": {
+        "ru": "Нагрев отдачей",
+        "en": "Recoil heating"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Два исхода",
+            "en": "Two recoil outcomes"
+          },
+          "body": {
+            "ru": "<p>Положим импульс первичного фотона равным \\(+\\hbar k_L\\). При излучении вперёд импульсы сокращаются, а при излучении назад складываются. Оба исхода равновероятны.</p>\n<div>\\[p_1=0,\\qquad p_2=2\\hbar k_L.\\]</div>",
+            "en": "<p>Choose the incident momentum to be \\(+\\hbar k_L\\). Forward emission cancels the absorption impulse; backward emission doubles it. Each occurs with probability one half.</p>\n<div>\\[p_1=0,\\qquad p_2=2\\hbar k_L.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Средняя мощность",
+            "en": "Mean power"
+          },
+          "body": {
+            "ru": "<p>Усреднять нужно кинетическую энергию каждого исхода. Делим её приращение на время цикла.</p>\n<div>\\[P_{\\rm in}=\\frac{1}{2\\tau}\\frac{(2\\hbar k_L)^2}{2m}=\\frac{\\hbar^2 k_L^2}{m\\tau}.\\]</div>",
+            "en": "<p>Average the kinetic energy of the two outcomes, then divide the energy increase by the cycle time.</p>\n<div>\\[P_{\\rm in}=\\frac{1}{2\\tau}\\frac{(2\\hbar k_L)^2}{2m}=\\frac{\\hbar^2 k_L^2}{m\\tau}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_{\\rm in}=\\frac{\\hbar^2 k_L^2}{m\\tau}.\\]</div>",
+        "en": "<div>\\[P_{\\rm in}=\\frac{\\hbar^2 k_L^2}{m\\tau}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B4",
+      "max": 0.8,
+      "title": {
+        "ru": "Температурный предел",
+        "en": "Cooling limit"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Работа трения",
+            "en": "Work by friction"
+          },
+          "body": {
+            "ru": "<p>Умножим проекцию силы на скорость: работа отрицательна.</p>\n<div>\\[P_F=F_xv=-2\\alpha\\hbar k_L^2v^2.\\]</div>",
+            "en": "<p>Multiply the signed force by the velocity to obtain the negative mechanical power.</p>\n<div>\\[P_F=F_xv=-2\\alpha\\hbar k_L^2v^2.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Баланс мощностей",
+            "en": "Power balance"
+          },
+          "body": {
+            "ru": "<p>Условие \\(P_{\\rm in}+\\langle P_F\\rangle=0\\) задаёт дисперсию скорости.</p>\n<div>\\[\\langle v^2\\rangle=\\frac{\\hbar}{2\\alpha m\\tau}.\\]</div>",
+            "en": "<p>The balance \\(P_{\\rm in}+\\langle P_F\\rangle=0\\) fixes the mean square speed.</p>\n<div>\\[\\langle v^2\\rangle=\\frac{\\hbar}{2\\alpha m\\tau}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Одномерная температура",
+            "en": "One-dimensional temperature"
+          },
+          "body": {
+            "ru": "<p>Вдоль одной оси на поступательное движение приходится \\(k_BT/2\\).</p>\n<div>\\[T=\\frac{m\\langle v^2\\rangle}{k_B}=\\frac{\\hbar}{2\\alpha k_B\\tau}.\\]</div>",
+            "en": "<p>Translation along one axis carries mean kinetic energy \\(k_BT/2\\).</p>\n<div>\\[T=\\frac{m\\langle v^2\\rangle}{k_B}=\\frac{\\hbar}{2\\alpha k_B\\tau}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T\\simeq\\frac{\\hbar\\Gamma}{2\\alpha k_B}.\\]</div>",
+        "en": "<div>\\[T\\simeq\\frac{\\hbar\\Gamma}{2\\alpha k_B}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B5",
+      "max": 0.4,
+      "title": {
+        "ru": "Численная оценка",
+        "en": "Numerical temperature"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Температура в кельвинах",
+            "en": "Temperature in kelvins"
+          },
+          "body": {
+            "ru": "<p>Масса и волновое число сократились в энергетическом балансе. Подставим время жизни и наклон линии в выражение из B4.</p>\n<div>\\[T=\\frac{1{,}055\\times10^{-34}}{2\\cdot4\\cdot1{,}381\\times10^{-23}\\cdot5\\times10^{-9}}\\,\\mathrm K\\simeq2\\times10^{-4}\\,\\mathrm K.\\]</div>",
+            "en": "<p>The mass and the wave number cancel in the balance. Insert the lifetime and the line slope in the B4 expression.</p>\n<div>\\[T=\\frac{1.055\\times10^{-34}}{2\\cdot4\\cdot1.381\\times10^{-23}\\cdot5\\times10^{-9}}\\,\\mathrm K\\simeq2\\times10^{-4}\\,\\mathrm K.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T\\simeq0{,}2\\,\\mathrm{mK}.\\]</div>",
+        "en": "<div>\\[T\\simeq0.2\\,\\mathrm{mK}.\\]</div>"
+      }
+    }
+  ]
+}

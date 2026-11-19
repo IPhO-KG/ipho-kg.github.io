@@ -1,0 +1,126 @@
+{
+  "id": "T2",
+  "title": "Акселерометр для подушки безопасности",
+  "points": 10.0,
+  "sourceFile": "IPhO_2007_T2_EN.pdf",
+  "sourcePdf": "/assets/practice/ipho-2007/IPhO_2007_T2_EN.pdf",
+  "sections": [
+    {
+      "id": "T2-1",
+      "title": "Конденсатор на пружине",
+      "points": 2.7
+    },
+    {
+      "id": "T2-2",
+      "title": "Заземлённая средняя пластина",
+      "points": 2.1
+    },
+    {
+      "id": "T2-3",
+      "title": "Пластина с измерительным конденсатором",
+      "points": 1.7
+    },
+    {
+      "id": "T2-4",
+      "title": "Порог и время срабатывания",
+      "points": 3.5
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-1.1",
+      "label": "1.1",
+      "points": 0.8
+    },
+    {
+      "id": "T2-1.2",
+      "label": "1.2",
+      "points": 0.6
+    },
+    {
+      "id": "T2-1.3",
+      "label": "1.3",
+      "points": 0.4
+    },
+    {
+      "id": "T2-1.4",
+      "label": "1.4",
+      "points": 0.3
+    },
+    {
+      "id": "T2-1.5",
+      "label": "1.5",
+      "points": 0.6
+    },
+    {
+      "id": "T2-2.1",
+      "label": "2.1",
+      "points": 0.4
+    },
+    {
+      "id": "T2-2.2",
+      "label": "2.2",
+      "points": 0.4
+    },
+    {
+      "id": "T2-2.3",
+      "label": "2.3",
+      "points": 0.2
+    },
+    {
+      "id": "T2-2.4",
+      "label": "2.4",
+      "points": 0.7
+    },
+    {
+      "id": "T2-2.5",
+      "label": "2.5",
+      "points": 0.4
+    },
+    {
+      "id": "T2-3.1",
+      "label": "3.1",
+      "points": 1.5
+    },
+    {
+      "id": "T2-3.2",
+      "label": "3.2",
+      "points": 0.2
+    },
+    {
+      "id": "T2-4.1",
+      "label": "4.1",
+      "points": 0.6
+    },
+    {
+      "id": "T2-4.2",
+      "label": "4.2",
+      "points": 0.6
+    },
+    {
+      "id": "T2-4.3",
+      "label": "4.3",
+      "points": 0.6
+    },
+    {
+      "id": "T2-4.4",
+      "label": "4.4",
+      "points": 0.8
+    },
+    {
+      "id": "T2-4.5",
+      "label": "4.5",
+      "points": 0.9
+    }
+  ],
+  "figures": [
+    "/assets/practice/ipho-2007/figures/q2f1.png",
+    "/assets/practice/ipho-2007/figures/q2f2.png"
+  ],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "official-criteria-grouped",
+  "solutionData": "/assets/practice/ipho-2007/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2007/IPhO_2007_S2_EN.pdf"
+}

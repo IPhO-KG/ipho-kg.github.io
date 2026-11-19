@@ -1,0 +1,463 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Большой адронный коллайдер",
+    "en": "The Large Hadron Collider"
+  },
+  "sourcePdf": "/assets/practice/ipho-2016/IPhO_2016_S3_EN.pdf",
+  "max": 10,
+  "parts": [
+    {
+      "id": "T3-A1",
+      "max": 0.7,
+      "title": {
+        "ru": "Скорость после ускорения",
+        "en": "Speed after acceleration"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Энергия протона",
+            "en": "Proton energy"
+          },
+          "body": {
+            "ru": "<p>Электрическое поле совершает работу \\(eV\\). Протон стартовал из состояния покоя, поэтому его полная энергия в конце равна</p><div>\\[\\gamma m_pc^2=m_pc^2+eV.\\]</div>",
+            "en": "<p>The electric field does work \\(eV\\). Since the proton starts at rest, its final total energy obeys</p><div>\\[\\gamma m_pc^2=m_pc^2+eV.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Связь скорости с энергией",
+            "en": "Speed from the energy"
+          },
+          "body": {
+            "ru": "<p>Подставляем найденное \\(\\gamma\\) в \\(v=c\\sqrt{1-\\gamma^{-2}}\\). Это выражение справедливо при любом ускоряющем напряжении.</p>",
+            "en": "<p>Insert this Lorentz factor into \\(v=c\\sqrt{1-\\gamma^{-2}}\\). The result holds for any accelerating voltage.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v=c\\sqrt{1-\\left(1+\\frac{eV}{m_pc^2}\\right)^{-2}}.\\]</div>",
+        "en": "<div>\\[v=c\\sqrt{1-\\left(1+\\frac{eV}{m_pc^2}\\right)^{-2}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A2",
+      "max": 0.8,
+      "title": {
+        "ru": "Отклонение скорости электрона от скорости света",
+        "en": "Electron speed deficit"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Разложение при большой энергии",
+            "en": "High-energy expansion"
+          },
+          "body": {
+            "ru": "<p>Для электрона \\(\\gamma=1+eV/(m_ec^2)\\). Малая величина в корне — \\(\\gamma^{-2}\\). Оставляя первый ненулевой член, находим</p><div>\\[\\Delta=1-\\sqrt{1-\\gamma^{-2}}\\simeq\\frac{1}{2\\gamma^2}.\\]</div>",
+            "en": "<p>For an electron \\(\\gamma=1+eV/(m_ec^2)\\). The small parameter in the square root is \\(\\gamma^{-2}\\). To first nonzero order,</p><div>\\[\\Delta=1-\\sqrt{1-\\gamma^{-2}}\\simeq\\frac{1}{2\\gamma^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Оценка для шестидесяти ГэВ",
+            "en": "Evaluation at sixty GeV"
+          },
+          "body": {
+            "ru": "<p>Поскольку \\(m_ec^2=0{,}511\\,\\mathrm{MeV}\\) намного меньше \\(60{,}0\\,\\mathrm{GeV}\\), при вычислении можно пренебречь единицей в выражении для \\(\\gamma\\).</p>",
+            "en": "<p>Since \\(m_ec^2=0.511\\,\\mathrm{MeV}\\) is much smaller than \\(60.0\\,\\mathrm{GeV}\\), dropping the unit term in \\(\\gamma\\) has negligible effect on the numerical result.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta\\simeq\\frac12\\left(1+\\frac{eV}{m_ec^2}\\right)^{-2}\\simeq3{,}63\\times10^{-11}.\\]</div>",
+        "en": "<div>\\[\\Delta\\simeq\\frac12\\left(1+\\frac{eV}{m_ec^2}\\right)^{-2}\\simeq3.63\\times10^{-11}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A3",
+      "max": 1,
+      "title": {
+        "ru": "Магнитное поле на орбите",
+        "en": "Magnetic field on the orbit"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Вращение вектора импульса",
+            "en": "Rotation of the momentum vector"
+          },
+          "body": {
+            "ru": "<p>Сила Лоренца направлена поперёк импульса. При движении по кругу \\(|d\\mathbf p/dt|=pv/r=e v B\\), откуда \\(p=eBr\\).</p>",
+            "en": "<p>The Lorentz force is perpendicular to the momentum. On a circle \\(|d\\mathbf p/dt|=pv/r=e v B\\), giving \\(p=eBr\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Радиус и энергия пучка",
+            "en": "Ring radius and beam energy"
+          },
+          "body": {
+            "ru": "<p>Окружность длины \\(L\\) имеет радиус \\(r=L/(2\\pi)\\). При \\(7\\,\\mathrm{TeV}\\) энергия покоя протона мала, поэтому \\(p\\simeq E/c\\). Исключаем \\(r\\) и \\(p\\).</p>",
+            "en": "<p>The radius of a circle of circumference \\(L\\) is \\(r=L/(2\\pi)\\). At \\(7\\,\\mathrm{TeV}\\) the proton rest energy is negligible, and \\(p\\simeq E/c\\). Eliminate \\(r\\) and \\(p\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Численное поле",
+            "en": "Numerical field"
+          },
+          "body": {
+            "ru": "<p>При подстановке удобно взять \\(E/e=7{,}00\\times10^{12}\\,\\mathrm V\\), а длину кольца перевести в метры.</p>",
+            "en": "<p>Use \\(E/e=7.00\\times10^{12}\\,\\mathrm V\\) and express the ring circumference in metres.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[B\\simeq\\frac{2\\pi E}{ecL}=5{,}50\\,\\mathrm T.\\]</div>",
+        "en": "<div>\\[B\\simeq\\frac{2\\pi E}{ecL}=5.50\\,\\mathrm T.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A4",
+      "max": 1,
+      "title": {
+        "ru": "Размерность мощности излучения",
+        "en": "Dimensions of radiated power"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Электрическая размерность",
+            "en": "Electrical dimensions"
+          },
+          "body": {
+            "ru": "<p>В законе Кулона величина \\(q^2/\\varepsilon_0\\) делится на квадрат длины и даёт силу. Следовательно, \\(q^2/\\varepsilon_0\\) имеет размерность энергии, умноженной на длину. Чтобы получить мощность, остаётся множитель размерности \\(L^{-1}T^{-1}\\).</p>",
+            "en": "<p>Coulomb’s law divides \\(q^2/\\varepsilon_0\\) by a length squared to obtain a force. Thus \\(q^2/\\varepsilon_0\\) has units of energy times length. The missing factor for power must have units \\(L^{-1}T^{-1}\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Степени ускорения и скорости",
+            "en": "Powers of acceleration and speed"
+          },
+          "body": {
+            "ru": "<p>Для множителя \\(a^u c^v\\) показатели длины и времени равны \\(u+v\\) и \\(-2u-v\\). Условия \\(u+v=-1\\) и \\(-2u-v=-1\\) дают \\(u=2\\), \\(v=-3\\). Коэффициент \\(K\\) безразмерен.</p>",
+            "en": "<p>For a factor \\(a^u c^v\\), the length and time exponents are \\(u+v\\) and \\(-2u-v\\). Requiring \\(u+v=-1\\) and \\(-2u-v=-1\\) gives \\(u=2\\), \\(v=-3\\). The coefficient \\(K\\) is dimensionless.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_{\\rm rad}=K\\frac{q^2a^2}{\\varepsilon_0c^3}.\\]</div>",
+        "en": "<div>\\[P_{\\rm rad}=K\\frac{q^2a^2}{\\varepsilon_0c^3}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A5",
+      "max": 1,
+      "title": {
+        "ru": "Мощность излучения двух пучков",
+        "en": "Power radiated by both beams"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Релятивистская поправка",
+            "en": "Relativistic factor"
+          },
+          "body": {
+            "ru": "<p>Для одного протона \\(P_1=e^2a^2\\gamma^4/(6\\pi\\varepsilon_0c^3)\\). При указанной энергии можно взять \\(\\gamma\\simeq E/(m_pc^2)\\).</p>",
+            "en": "<p>For one proton \\(P_1=e^2a^2\\gamma^4/(6\\pi\\varepsilon_0c^3)\\). At the stated energy one may take \\(\\gamma\\simeq E/(m_pc^2)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Излучение одного протона",
+            "en": "Single-proton radiation"
+          },
+          "body": {
+            "ru": "<p>Скорость почти равна \\(c\\), поэтому \\(a\\simeq c^2/r\\), где \\(r=L/(2\\pi)\\). После подстановки</p><div>\\[P_1\\simeq\\frac{e^2c}{6\\pi\\varepsilon_0r^2}\\left(\\frac{E}{m_pc^2}\\right)^4\\simeq7{,}94\\times10^{-12}\\,\\mathrm W.\\]</div>",
+            "en": "<p>The speed is nearly \\(c\\), so \\(a\\simeq c^2/r\\) with \\(r=L/(2\\pi)\\). Substitution gives</p><div>\\[P_1\\simeq\\frac{e^2c}{6\\pi\\varepsilon_0r^2}\\left(\\frac{E}{m_pc^2}\\right)^4\\simeq7.94\\times10^{-12}\\,\\mathrm W.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Число протонов",
+            "en": "Proton count"
+          },
+          "body": {
+            "ru": "<p>В каждом из двух пучков \\(2808\\) сгустков, по \\(1{,}15\\times10^{11}\\) протонов в каждом. Умножаем мощность одного протона на общее число частиц.</p>",
+            "en": "<p>Each of the two beams contains \\(2808\\) bunches of \\(1.15\\times10^{11}\\) protons. Multiply the single-proton power by the full particle count.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_{\\rm tot}\\simeq5{,}13\\,\\mathrm{kW}.\\]</div>",
+        "en": "<div>\\[P_{\\rm tot}\\simeq5.13\\,\\mathrm{kW}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A6",
+      "max": 1.5,
+      "title": {
+        "ru": "Время в линейном ускорителе",
+        "en": "Transit time in a linear accelerator"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Импульс силы",
+            "en": "Impulse of the force"
+          },
+          "body": {
+            "ru": "<p>Поле между пластинами однородно, так что \\(F=eV/d\\) постоянно даже при изменении скорости. При нулевом начальном импульсе конечный импульс равен \\(p_f=FT\\).</p>",
+            "en": "<p>The homogeneous field gives a constant force \\(F=eV/d\\) even as the speed changes. With zero initial momentum the final momentum is \\(p_f=FT\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Конечный импульс",
+            "en": "Final momentum"
+          },
+          "body": {
+            "ru": "<p>Работа поля равна \\(eV\\). Подставляем полную энергию \\(m_pc^2+eV\\) в релятивистское соотношение энергии и импульса:</p><div>\\[p_f^2c^2=(m_pc^2+eV)^2-m_p^2c^4.\\]</div>",
+            "en": "<p>The field does work \\(eV\\). Insert the final total energy \\(m_pc^2+eV\\) into the relativistic energy–momentum relation:</p><div>\\[p_f^2c^2=(m_pc^2+eV)^2-m_p^2c^4.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Время пролёта",
+            "en": "Transit time"
+          },
+          "body": {
+            "ru": "<p>Делим \\(p_f\\) на \\(F\\). Для \\(d=30{,}0\\,\\mathrm m\\) время \\(d/c\\) равно примерно \\(100\\,\\mathrm{ns}\\), а релятивистский множитель при \\(eV=500\\,\\mathrm{MeV}\\) равен \\(2{,}18\\).</p>",
+            "en": "<p>Divide \\(p_f\\) by \\(F\\). For \\(d=30.0\\,\\mathrm m\\), the light travel time \\(d/c\\) is about \\(100\\,\\mathrm{ns}\\) and the factor for \\(eV=500\\,\\mathrm{MeV}\\) is \\(2.18\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T=\\frac{d}{c}\\sqrt{1+\\frac{2m_pc^2}{eV}}\\simeq218\\,\\mathrm{ns}.\\]</div>",
+        "en": "<div>\\[T=\\frac{d}{c}\\sqrt{1+\\frac{2m_pc^2}{eV}}\\simeq218\\,\\mathrm{ns}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B1",
+      "max": 0.8,
+      "title": {
+        "ru": "Масса по времени пролёта",
+        "en": "Mass from time of flight"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Скорость по двум плоскостям",
+            "en": "Speed between the planes"
+          },
+          "body": {
+            "ru": "<p>Траектория перпендикулярна обеим плоскостям, поэтому пройденный путь равен \\(l\\), а скорость \\(v=l/t\\).</p>",
+            "en": "<p>The track is normal to both planes, so the particle travels a distance \\(l\\) at speed \\(v=l/t\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Исключение лоренц-фактора",
+            "en": "Eliminating the Lorentz factor"
+          },
+          "body": {
+            "ru": "<p>Из \\(p=mv/\\sqrt{1-v^2/c^2}\\) следует \\(m^2=p^2(v^{-2}-c^{-2})\\). Заменяем \\(v\\) измеренным отношением и берём положительный корень.</p>",
+            "en": "<p>From \\(p=mv/\\sqrt{1-v^2/c^2}\\) one obtains \\(m^2=p^2(v^{-2}-c^{-2})\\). Substitute the measured speed and take the positive root.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[m=p\\sqrt{\\frac{t^2}{l^2}-\\frac{1}{c^2}}.\\]</div>",
+        "en": "<div>\\[m=p\\sqrt{\\frac{t^2}{l^2}-\\frac{1}{c^2}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B2",
+      "max": 0.7,
+      "title": {
+        "ru": "Разделение пиона и каона",
+        "en": "Pion–kaon separation"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Разность времён",
+            "en": "Time difference"
+          },
+          "body": {
+            "ru": "<p>Для частицы массы \\(m_i\\) с известным импульсом \\(p\\) время равно \\(t_i=(l/c)\\sqrt{1+(m_ic/p)^2}\\). Более тяжёлый каон приходит позже. Требуем \\(t_K-t_\\pi&gt;3\\sigma_t=450\\,\\mathrm{ps}\\).</p>",
+            "en": "<p>For mass \\(m_i\\) and known momentum \\(p\\), the flight time is \\(t_i=(l/c)\\sqrt{1+(m_ic/p)^2}\\). The heavier kaon arrives later. Require \\(t_K-t_\\pi&gt;3\\sigma_t=450\\,\\mathrm{ps}\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Порог длины",
+            "en": "Threshold length"
+          },
+          "body": {
+            "ru": "<p>При \\(p=1\\,\\mathrm{GeV}/c\\) множители подстановки для каона и пиона равны примерно \\(1{,}115\\) и \\(1{,}010\\). Порог задаётся равенством, а рабочая длина должна превышать его.</p>",
+            "en": "<p>At \\(p=1\\,\\mathrm{GeV}/c\\) the square-root factors for the kaon and pion are about \\(1.115\\) and \\(1.010\\). Equality gives the threshold, and the working length must exceed it.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[l_{\\min}=\\frac{3c\\sigma_t}{\\sqrt{1+(m_Kc/p)^2}-\\sqrt{1+(m_\\pi c/p)^2}}\\simeq1{,}28\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[l_{\\min}=\\frac{3c\\sigma_t}{\\sqrt{1+(m_Kc/p)^2}-\\sqrt{1+(m_\\pi c/p)^2}}\\simeq1.28\\,\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B3",
+      "max": 1.7,
+      "title": {
+        "ru": "Масса по кривизне трека",
+        "en": "Mass from track curvature"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Угол дуги",
+            "en": "Angle subtended by the arc"
+          },
+          "body": {
+            "ru": "<p>Расстояние между точкой столкновения и срабатыванием цилиндрического детектора равно \\(R\\). Это хорда окружности трека радиуса \\(r\\), поэтому \\(R=2r\\sin(\\alpha/2)\\).</p>",
+            "en": "<p>The straight-line distance from the collision to the cylindrical detector hit is \\(R\\). This is a chord of the track circle of radius \\(r\\), so \\(R=2r\\sin(\\alpha/2)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Путь и импульс",
+            "en": "Path length and momentum"
+          },
+          "body": {
+            "ru": "<p>До первого попадания в трубку частица проходит меньшую дугу \\(l=2r\\arcsin[R/(2r)]\\). Так как трек перпендикулярен полю, весь импульс определяется кривизной: \\(p=eBr\\).</p>",
+            "en": "<p>The first hit occurs after traversal of the shorter arc, \\(l=2r\\arcsin[R/(2r)]\\). The track is transverse to the field, so curvature gives the full momentum \\(p=eBr\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Сборка измеряемых величин",
+            "en": "Combining the measurements"
+          },
+          "body": {
+            "ru": "<p>Используем измеренное время \\(t\\) для определения скорости \\(l/t\\). Подстановка длины дуги и импульса в выражение для инвариантной массы завершает расчёт.</p>",
+            "en": "<p>The measured time gives the speed \\(l/t\\). Insert the arc length and momentum into the invariant-mass expression.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[m=eBr\\sqrt{\\left[\\frac{t}{2r\\arcsin(R/2r)}\\right]^2-\\frac{1}{c^2}}.\\]</div>",
+        "en": "<div>\\[m=eBr\\sqrt{\\left[\\frac{t}{2r\\arcsin(R/2r)}\\right]^2-\\frac{1}{c^2}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B4",
+      "max": 0.8,
+      "title": {
+        "ru": "Идентификация четырёх частиц",
+        "en": "Identifying four particles"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Частица A",
+            "en": "Particle A"
+          },
+          "body": {
+            "ru": "<p>Для \\(B=0{,}500\\,\\mathrm T\\) импульс удобно находить по \\(p[\\mathrm{GeV}/c]=0{,}2998\\,B[\\mathrm T]\\,r[\\mathrm m]\\). При \\(r=5{,}10\\,\\mathrm m\\) получается \\(p=764\\,\\mathrm{MeV}/c\\). Длина дуги \\(3{,}786\\,\\mathrm m\\) и время \\(20\\,\\mathrm{ns}\\) дают массу \\(939\\,\\mathrm{MeV}/c^2\\), соответствующую протону.</p>",
+            "en": "<p>For \\(B=0.500\\,\\mathrm T\\), a convenient conversion is \\(p[\\mathrm{GeV}/c]=0.2998\\,B[\\mathrm T]\\,r[\\mathrm m]\\). With \\(r=5.10\\,\\mathrm m\\) this gives \\(p=764\\,\\mathrm{MeV}/c\\). The \\(3.786\\,\\mathrm m\\) arc and \\(20\\,\\mathrm{ns}\\) flight yield \\(939\\,\\mathrm{MeV}/c^2\\), a proton.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Частица B",
+            "en": "Particle B"
+          },
+          "body": {
+            "ru": "<p>Радиусу \\(2{,}94\\,\\mathrm m\\) соответствуют дуга \\(4{,}002\\,\\mathrm m\\) и импульс \\(441\\,\\mathrm{MeV}/c\\). За \\(14\\,\\mathrm{ns}\\) такой путь проходит частица массы \\(139\\,\\mathrm{MeV}/c^2\\): заряженный пион.</p>",
+            "en": "<p>A radius of \\(2.94\\,\\mathrm m\\) gives a \\(4.002\\,\\mathrm m\\) arc and \\(441\\,\\mathrm{MeV}/c\\) momentum. A \\(14\\,\\mathrm{ns}\\) flight yields \\(139\\,\\mathrm{MeV}/c^2\\), a charged pion.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Частица C",
+            "en": "Particle C"
+          },
+          "body": {
+            "ru": "<p>При \\(r=6{,}06\\,\\mathrm m\\) получаем \\(l=3{,}760\\,\\mathrm m\\) и \\(p=908\\,\\mathrm{MeV}/c\\). Время \\(18\\,\\mathrm{ns}\\) даёт массу \\(935\\,\\mathrm{MeV}/c^2\\): это второй протон.</p>",
+            "en": "<p>With \\(r=6.06\\,\\mathrm m\\) the arc is \\(3.760\\,\\mathrm m\\) and the momentum \\(908\\,\\mathrm{MeV}/c\\). The \\(18\\,\\mathrm{ns}\\) flight gives \\(935\\,\\mathrm{MeV}/c^2\\), a second proton.</p>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.2,
+          "label": {
+            "ru": "Частица D",
+            "en": "Particle D"
+          },
+          "body": {
+            "ru": "<p>По радиусу из условия \\(r=2{,}31\\,\\mathrm m\\) получаем \\(l=4{,}291\\,\\mathrm m\\), \\(p=346\\,\\mathrm{MeV}/c\\). За \\(25\\,\\mathrm{ns}\\) такой путь проходит заряженный каон массы около \\(496\\,\\mathrm{MeV}/c^2\\). В таблице официального решения взято \\(2{,}32\\,\\mathrm m\\), что даёт \\(499\\,\\mathrm{MeV}/c^2\\) и ту же идентификацию.</p>",
+            "en": "<p>Using the question’s radius \\(r=2.31\\,\\mathrm m\\) gives \\(l=4.291\\,\\mathrm m\\) and \\(p=346\\,\\mathrm{MeV}/c\\). At \\(25\\,\\mathrm{ns}\\) the mass is about \\(496\\,\\mathrm{MeV}/c^2\\), a charged kaon. The official solution table uses \\(2.32\\,\\mathrm m\\), yielding \\(499\\,\\mathrm{MeV}/c^2\\) and the same identification.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>A и C — протоны, B — заряженный пион, D — заряженный каон.</p>",
+        "en": "<p>A and C are protons, B is a charged pion, and D is a charged kaon.</p>"
+      }
+    }
+  ]
+}

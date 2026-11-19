@@ -1,0 +1,395 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Заряженный мыльный пузырь",
+    "en": "An electrified soap bubble"
+  },
+  "sourcePdf": "/assets/practice/ipho-2011/IPhO_2011_S2_EN.pdf",
+  "max": 10,
+  "parts": [
+    {
+      "id": "T2-2.1",
+      "max": 1.7,
+      "label": "2.1",
+      "title": {
+        "ru": "Давление под мыльной плёнкой",
+        "en": "Pressure beneath the soap film"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Две поверхности плёнки",
+            "en": "Two film surfaces"
+          },
+          "body": {
+            "ru": "<p>Внутреннее давление \\(P_i\\) должно преодолеть внешнее давление и натяжение обеих поверхностей. При малом расширении работа избытка давления равна увеличению поверхностной энергии:</p><div>\\[(P_i-P_a)\\,dV=2\\gamma\\,dA.\\]</div><p>Здесь \\(A\\) — площадь одной поверхности.</p><figure><img src=\"/assets/practice/ipho-2011/figures/s2-f1.png\" alt=\"Обозначения для воздуха и тонкой плёнки.\" loading=\"lazy\" style=\"max-width:min(100%,390px)\"><figcaption>Обозначения для воздуха и тонкой плёнки.</figcaption></figure>",
+            "en": "<p>The internal pressure \\(P_i\\) balances the ambient pressure and the tension of both interfaces. For a small expansion the work of the excess pressure supplies the increase of surface energy:</p><div>\\[(P_i-P_a)\\,dV=2\\gamma\\,dA.\\]</div><p>Here \\(A\\) is the area of one interface.</p><figure><img src=\"/assets/practice/ipho-2011/figures/s2-f1.png\" alt=\"Notation for the trapped air, surrounding air and thin film.\" loading=\"lazy\" style=\"max-width:min(100%,390px)\"><figcaption>Notation for the trapped air, surrounding air and thin film.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Скачок давления",
+            "en": "Pressure jump"
+          },
+          "body": {
+            "ru": "<p>У сферы \\(dA=8\\pi R_0\\,dR\\) и \\(dV=4\\pi R_0^2\\,dR\\). Деление работы на изменение объёма даёт \\(P_i-P_a=4\\gamma/R_0\\).</p>",
+            "en": "<p>For the sphere \\(dA=8\\pi R_0\\,dR\\) and \\(dV=4\\pi R_0^2\\,dR\\). Dividing the surface-energy change by the volume change gives \\(P_i-P_a=4\\gamma/R_0\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Переход к плотности и температуре",
+            "en": "Density and temperature ratio"
+          },
+          "body": {
+            "ru": "<p>Состав газа внутри и снаружи одинаков. Из \\(P=\\rho R_{\\rm gas}T/M_{\\rm mol}\\) следует, что отношение произведений \\(\\rho T\\) равно отношению давлений. Теперь подставляем \\(P_i\\).</p>",
+            "en": "<p>The gas composition is the same on both sides. The ideal-gas relation \\(P=\\rho R_{\\rm gas}T/M_{\\rm mol}\\) makes the ratio of the products \\(\\rho T\\) equal to the pressure ratio. Substitute \\(P_i\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{\\rho_iT_i}{\\rho_aT_a}=1+\\frac{4\\gamma}{R_0P_a}.\\]</div>",
+        "en": "<div>\\[\\frac{\\rho_iT_i}{\\rho_aT_a}=1+\\frac{4\\gamma}{R_0P_a}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.2",
+      "max": 0.4,
+      "label": "2.2",
+      "title": {
+        "ru": "Величина капиллярной поправки",
+        "en": "Size of the capillary correction"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Относительный избыток давления",
+            "en": "Fractional pressure increase"
+          },
+          "body": {
+            "ru": "<p>Переведём радиус в метры. При \\(R_0=0{,}0100\\,\\mathrm m\\) добавочное давление \\(4\\gamma/R_0=10{,}0\\,\\mathrm{Pa}\\). Искомая величина равна доле этого давления от атмосферного.</p>",
+            "en": "<p>Convert the radius to metres. At \\(R_0=0.0100\\,\\mathrm m\\) the excess pressure \\(4\\gamma/R_0\\) is \\(10.0\\,\\mathrm{Pa}\\). The requested quantity is this pressure as a fraction of atmospheric pressure.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{\\rho_iT_i}{\\rho_aT_a}-1=9{,}87\\times10^{-5}.\\]</div>",
+        "en": "<div>\\[\\frac{\\rho_iT_i}{\\rho_aT_a}-1=9.87\\times10^{-5}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.3",
+      "max": 2,
+      "label": "2.3",
+      "title": {
+        "ru": "Температура всплытия",
+        "en": "Temperature for neutral buoyancy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Масса плёнки и воздуха",
+            "en": "Mass of film and trapped air"
+          },
+          "body": {
+            "ru": "<p>Обозначим объём через \\(V_0=4\\pi R_0^3/3\\). Масса оболочки равна \\(m_s=4\\pi R_0^2t\\rho_s\\), а масса газа — \\(\\rho_iV_0\\). Из 2.1 следует \\(\\rho_i=\\rho_a(T_a/T_i)(1+\\delta)\\), где \\(\\delta=4\\gamma/(R_0P_a)\\).</p>",
+            "en": "<p>Write the volume as \\(V_0=4\\pi R_0^3/3\\). The shell has mass \\(m_s=4\\pi R_0^2t\\rho_s\\) and the trapped gas has mass \\(\\rho_iV_0\\). Part 2.1 gives \\(\\rho_i=\\rho_a(T_a/T_i)(1+\\delta)\\), with \\(\\delta=4\\gamma/(R_0P_a)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Масса вытесненного воздуха",
+            "en": "Mass of displaced air"
+          },
+          "body": {
+            "ru": "<p>Выталкивающая сила \\(B=\\rho_a gV_0\\) определяется наружной плотностью. Вес пузыря вместе с воздухом внутри равен \\(W=(m_s+\\rho_iV_0)g\\).</p>",
+            "en": "<p>The buoyant force \\(B=\\rho_a gV_0\\) is set by the ambient density. The total weight is \\(W=(m_s+\\rho_iV_0)g\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Граница плавания",
+            "en": "Buoyancy threshold"
+          },
+          "body": {
+            "ru": "<p>При минимальной температуре \\(B=W\\). После деления на \\(gV_0\\) получаем \\(\\rho_i=\\rho_a-3\\rho_s t/R_0\\). Выразим из этого условия \\(T_i\\).</p>",
+            "en": "<p>At the threshold \\(B=W\\). Dividing by \\(gV_0\\) gives \\(\\rho_i=\\rho_a-3\\rho_s t/R_0\\). Solve for \\(T_i\\) using the ideal-gas relation above.</p>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.4,
+          "label": {
+            "ru": "Минимальная температура",
+            "en": "Minimum temperature"
+          },
+          "body": {
+            "ru": "<p>Относительная поправка из-за веса плёнки составляет \\(3\\rho_s t/(\\rho_a R_0)\\simeq0{,}0231\\). Для её компенсации воздух внутри должен быть примерно на \\(7{,}1\\,\\mathrm K\\) теплее наружного.</p>",
+            "en": "<p>The fractional film-weight correction is \\(3\\rho_s t/(\\rho_a R_0)\\simeq0.0231\\). Compensating for it requires the inside air to be about \\(7.1\\,\\mathrm K\\) warmer than the surroundings.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_{i,\\min}=T_a\\frac{1+\\delta}{1-3\\rho_s t/(\\rho_aR_0)}\\simeq307{,}1\\,\\mathrm K.\\]</div>",
+        "en": "<div>\\[T_{i,\\min}=T_a\\frac{1+\\delta}{1-3\\rho_s t/(\\rho_aR_0)}\\simeq307.1\\,\\mathrm K.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.4",
+      "max": 1.6,
+      "label": "2.4",
+      "title": {
+        "ru": "Поддерживающий воздушный поток",
+        "en": "Updraught needed for support"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Три силы в равновесии",
+            "en": "Three-force balance"
+          },
+          "body": {
+            "ru": "<p>Рассмотрим неподвижный пузырь. Вверх действуют архимедова сила \\(B\\) и сила Стокса \\(6\\pi\\eta R_0u\\). При минимальной скорости их сумма равна весу \\(W\\).</p>",
+            "en": "<p>Consider a stationary bubble. Buoyancy \\(B\\) and the Stokes force \\(6\\pi\\eta R_0u\\) both act upwards. At the minimum speed their sum equals the weight \\(W\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Избыток веса",
+            "en": "Excess weight"
+          },
+          "body": {
+            "ru": "<p>Вычтем из веса плёнки и внутреннего газа вес вытесненного воздуха:</p><div>\\[W-B=\\left[4\\pi R_0^2t\\rho_s+\\frac{4\\pi R_0^3}{3}(\\rho_i-\\rho_a)\\right]g.\\]</div>",
+            "en": "<p>Subtract the weight of displaced air from the weight of the film and inner gas:</p><div>\\[W-B=\\left[4\\pi R_0^2t\\rho_s+\\frac{4\\pi R_0^3}{3}(\\rho_i-\\rho_a)\\right]g.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.5,
+          "label": {
+            "ru": "Плотность после охлаждения",
+            "en": "Density after cooling"
+          },
+          "body": {
+            "ru": "<p>При \\(T_i=T_a\\) из 2.1 следует \\(\\rho_i-\\rho_a=\\rho_a\\delta\\), где \\(\\delta=4\\gamma/(R_0P_a)\\). Поэтому даже в тепловом равновесии избыток веса содержит небольшую капиллярную поправку.</p>",
+            "en": "<p>At \\(T_i=T_a\\), part 2.1 gives \\(\\rho_i-\\rho_a=\\rho_a\\delta\\) with \\(\\delta=4\\gamma/(R_0P_a)\\). This leaves a small capillary contribution to the excess weight even in thermal equilibrium.</p>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.4,
+          "label": {
+            "ru": "Скорость потока",
+            "en": "Updraught speed"
+          },
+          "body": {
+            "ru": "<p>Разделим \\(W-B\\) на \\(6\\pi\\eta R_0\\). Полное выражение равно</p><div>\\[u_{\\min}=\\frac{2R_0g}{3\\eta}\\left(\\rho_st+\\frac{R_0\\rho_a\\delta}{3}\\right).\\]</div><p>Второе слагаемое в скобках для заданных величин составляет менее половины процента от первого.</p>",
+            "en": "<p>Divide \\(W-B\\) by \\(6\\pi\\eta R_0\\). The complete expression is</p><div>\\[u_{\\min}=\\frac{2R_0g}{3\\eta}\\left(\\rho_st+\\frac{R_0\\rho_a\\delta}{3}\\right).\\]</div><p>For the given values the second term in parentheses is less than half a percent of the first.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[u_{\\min}\\simeq\\frac{2\\rho_s tR_0g}{3\\eta}.\\]</div>",
+        "en": "<div>\\[u_{\\min}\\simeq\\frac{2\\rho_s tR_0g}{3\\eta}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.5",
+      "max": 0.4,
+      "label": "2.5",
+      "title": {
+        "ru": "Численная скорость потока",
+        "en": "Numerical updraught speed"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Подстановка в закон Стокса",
+            "en": "Evaluating the Stokes balance"
+          },
+          "body": {
+            "ru": "<p>Используем \\(t=10^{-7}\\,\\mathrm m\\) и \\(R_0=10^{-2}\\,\\mathrm m\\). Основное слагаемое даёт \\(0{,}363\\,\\mathrm{m/s}\\). Поправка от скачка давления не изменяет результат при округлении до двух значащих цифр.</p>",
+            "en": "<p>Use \\(t=10^{-7}\\,\\mathrm m\\) and \\(R_0=10^{-2}\\,\\mathrm m\\). The leading contribution is \\(0.363\\,\\mathrm{m/s}\\). Including the pressure-jump correction leaves the two-significant-figure result unchanged.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[u_{\\min}\\simeq0{,}36\\,\\mathrm{m/s}.\\]</div>",
+        "en": "<div>\\[u_{\\min}\\simeq0.36\\,\\mathrm{m/s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.6",
+      "max": 2,
+      "label": "2.6",
+      "title": {
+        "ru": "Равновесие заряженной оболочки",
+        "en": "Equilibrium of the charged shell"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.7,
+          "label": {
+            "ru": "Поле, действующее на участок плёнки",
+            "en": "Field acting on a film element"
+          },
+          "body": {
+            "ru": "<p>На сфере радиуса \\(R_1\\) поверхностная плотность заряда \\(\\sigma=q/(4\\pi R_1^2)\\). По закону Гаусса радиальное поле снаружи равно \\(\\sigma/\\varepsilon_0\\), внутри равно нулю. Собственное поле малого плоского участка с разных сторон противоположно, а поле остальных зарядов непрерывно. Поэтому на участок действует среднее предельных полей: \\(E_*=\\sigma/(2\\varepsilon_0)\\).</p><figure><img src=\"/assets/practice/ipho-2011/figures/s2-f2.png\" alt=\"Малая гауссова поверхность на заряженной плёнке.\" loading=\"lazy\" style=\"max-width:min(100%,300px)\"><figcaption>Малая гауссова поверхность на заряженной плёнке.</figcaption></figure>",
+            "en": "<p>The surface charge density is \\(\\sigma=q/(4\\pi R_1^2)\\). Gauss’s law gives radial field \\(\\sigma/\\varepsilon_0\\) immediately outside and zero inside. A small surface element produces opposite fields on its two sides, while the field of the remaining charges is continuous. Thus the field acting on the element is the average of the two limits, \\(E_*=\\sigma/(2\\varepsilon_0)\\).</p><figure><img src=\"/assets/practice/ipho-2011/figures/s2-f2.png\" alt=\"A small Gaussian surface straddling the charged film.\" loading=\"lazy\" style=\"max-width:min(100%,300px)\"><figcaption>A small Gaussian surface straddling the charged film.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Электрическое давление",
+            "en": "Electrostatic pressure"
+          },
+          "body": {
+            "ru": "<p>Сила на единицу площади направлена наружу при любом знаке заряда. Её величина</p><div>\\[p_{\\rm el}=\\sigma E_*=\\frac{q^2}{32\\pi^2\\varepsilon_0R_1^4}.\\]</div>",
+            "en": "<p>The force per unit area points outward for either sign of charge. Its magnitude is</p><div>\\[p_{\\rm el}=\\sigma E_*=\\frac{q^2}{32\\pi^2\\varepsilon_0R_1^4}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Изотермическое расширение",
+            "en": "Isothermal expansion"
+          },
+          "body": {
+            "ru": "<p>При той же температуре и постоянном количестве газа произведение давления на объём сохраняется. До зарядки \\(P_i=P_a\\) в приближении без поверхностного натяжения. После расширения \\(P_i=P_a(R_0/R_1)^3\\).</p>",
+            "en": "<p>At fixed temperature and particle number the pressure–volume product is constant. With surface tension neglected, the gas initially has pressure \\(P_a\\). After expansion \\(P_i=P_a(R_0/R_1)^3\\).</p>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.6,
+          "label": {
+            "ru": "Новый равновесный радиус",
+            "en": "New equilibrium radius"
+          },
+          "body": {
+            "ru": "<p>В равновесии давление газа изнутри и электрическое давление вместе уравновешивают атмосферное: \\(P_i+p_{\\rm el}=P_a\\). Обозначим \\(x=R_1/R_0\\) и умножим уравнение на \\(x^4/P_a\\). Физический корень при \\(q\\to0\\) стремится к единице.</p>",
+            "en": "<p>At equilibrium the internal gas pressure and the outward electrical pressure together balance the atmosphere: \\(P_i+p_{\\rm el}=P_a\\). Put \\(x=R_1/R_0\\) and multiply through by \\(x^4/P_a\\). The physical root tends to one as \\(q\\to0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x^4-x=\\frac{q^2}{32\\pi^2\\varepsilon_0P_aR_0^4},\\qquad x=\\frac{R_1}{R_0}.\\]</div>",
+        "en": "<div>\\[x^4-x=\\frac{q^2}{32\\pi^2\\varepsilon_0P_aR_0^4},\\qquad x=\\frac{R_1}{R_0}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.7",
+      "max": 0.7,
+      "label": "2.7",
+      "title": {
+        "ru": "Малое увеличение радиуса",
+        "en": "Small radius increase"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Разложение уравнения равновесия",
+            "en": "Expanding the equilibrium equation"
+          },
+          "body": {
+            "ru": "<p>Положим \\(x=1+\\xi\\), где \\(\\xi=\\Delta R/R_0\\). Тогда \\(x^4\\simeq1+4\\xi\\) и разность \\(x^4-x\\) в первом порядке равна \\(3\\xi\\).</p>",
+            "en": "<p>Set \\(x=1+\\xi\\) with \\(\\xi=\\Delta R/R_0\\). Then \\(x^4\\simeq1+4\\xi\\), and the difference \\(x^4-x\\) is \\(3\\xi\\) to first order.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Поправка к радиусу",
+            "en": "Correction to the radius"
+          },
+          "body": {
+            "ru": "<p>Приравниваем \\(3\\xi\\) правой части уравнения 2.6 и умножаем на \\(R_0\\). Поправка положительна и квадратична по заряду.</p>",
+            "en": "<p>Equate \\(3\\xi\\) to the right-hand side of 2.6 and multiply by \\(R_0\\). The correction is positive and quadratic in charge.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta R\\simeq\\frac{q^2}{96\\pi^2\\varepsilon_0P_aR_0^3}.\\]</div>",
+        "en": "<div>\\[\\Delta R\\simeq\\frac{q^2}{96\\pi^2\\varepsilon_0P_aR_0^3}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.8",
+      "max": 1.2,
+      "label": "2.8",
+      "title": {
+        "ru": "Заряд для нейтральной плавучести",
+        "en": "Charge for neutral buoyancy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.7,
+          "label": {
+            "ru": "Добавочная подъёмная сила",
+            "en": "Additional buoyancy"
+          },
+          "body": {
+            "ru": "<p>До зарядки газ внутри имеет плотность \\(\\rho_a\\), поэтому его вес уже скомпенсирован вытесненным воздухом. Для поддержки плёнки нужна добавка объёма \\(\\Delta V\\simeq4\\pi R_0^2\\Delta R\\). Из \\(\\rho_a\\Delta V=4\\pi R_0^2t\\rho_s\\) получаем \\(\\Delta R=\\rho_s t/\\rho_a\\).</p>",
+            "en": "<p>Initially the gas inside has density \\(\\rho_a\\), so its weight is already balanced by the air displaced. Supporting the film requires extra volume \\(\\Delta V\\simeq4\\pi R_0^2\\Delta R\\). The balance \\(\\rho_a\\Delta V=4\\pi R_0^2t\\rho_s\\) gives \\(\\Delta R=\\rho_s t/\\rho_a\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Модуль заряда",
+            "en": "Charge magnitude"
+          },
+          "body": {
+            "ru": "<p>Приравниваем требуемое увеличение радиуса к выражению из 2.7 и решаем относительно \\(|q|\\).</p>",
+            "en": "<p>Equate the required radius increase to the result of 2.7 and solve for \\(|q|\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Численное значение",
+            "en": "Numerical value"
+          },
+          "body": {
+            "ru": "<p>При заданных плотностях требуется расширение примерно на \\(77\\,\\mu\\mathrm m\\). Подстановка исходного радиуса \\(0{,}0100\\,\\mathrm m\\) даёт заряд около четверти микрокулона.</p>",
+            "en": "<p>The specified densities require an expansion of about \\(77\\,\\mu\\mathrm m\\). With initial radius \\(0.0100\\,\\mathrm m\\), the charge is approximately a quarter of a microcoulomb.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[|q|\\simeq\\sqrt{\\frac{96\\pi^2\\varepsilon_0P_aR_0^3\\rho_s t}{\\rho_a}}\\simeq256\\,\\mathrm{nC}.\\]</div>",
+        "en": "<div>\\[|q|\\simeq\\sqrt{\\frac{96\\pi^2\\varepsilon_0P_aR_0^3\\rho_s t}{\\rho_a}}\\simeq256\\,\\mathrm{nC}.\\]</div>"
+      }
+    }
+  ]
+}

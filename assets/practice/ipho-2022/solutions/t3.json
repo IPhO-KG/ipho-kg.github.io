@@ -1,0 +1,236 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Законы подобия",
+    "en": "Scaling laws"
+  },
+  "max": 8.0,
+  "sourcePdf": "/assets/practice/ipho-2022/IPhO_2022_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-A1",
+      "max": 2.0,
+      "title": {
+        "ru": "Излом под собственным весом",
+        "en": "Breaking under its own weight"
+      },
+      "steps": [
+        {
+          "id": "gravity",
+          "points": 0.4,
+          "label": {
+            "ru": "Момент силы тяжести",
+            "en": "Gravitational torque"
+          },
+          "body": {
+            "ru": "<p>Рассмотрим одну половину спагетти. Её масса пропорциональна \\(d^2\\ell\\), а плечо веса относительно опоры пропорционально \\(\\ell\\). Изгибающий момент поэтому растёт как \\(d^2\\ell^2\\).</p>",
+            "en": "<p>Consider the half on one side of the support. Its mass scales as \\(d^2\\ell\\) and its centre of mass is a distance proportional to \\(\\ell\\) from the support. Hence the gravitational torque scales as \\(d^2\\ell^2\\).</p>"
+          }
+        },
+        {
+          "id": "stress",
+          "points": 1.0,
+          "label": {
+            "ru": "Предельный момент в сечении",
+            "en": "Breaking moment of a cross section"
+          },
+          "body": {
+            "ru": "<p>При изломе крайние волокна достигают одного и того же предельного напряжения \\(\\sigma\\). Силы растяжения и сжатия масштабируются как \\(\\sigma d^2\\), расстояние между их линиями действия как \\(d\\). Сечение выдерживает момент порядка \\(\\sigma d^3\\).</p>",
+            "en": "<p>The outermost fibres reach the same limiting stress \\(\\sigma\\) when the rod breaks. The tensile and compressive forces scale as \\(\\sigma d^2\\) and their lever arm scales as \\(d\\). The limiting moment therefore scales as \\(\\sigma d^3\\).</p>"
+          }
+        },
+        {
+          "id": "scale",
+          "points": 0.6,
+          "label": {
+            "ru": "Масштаб предельной длины",
+            "en": "Scaling of breaking length"
+          },
+          "body": {
+            "ru": "<p>Приравнивая моменты для одного материала, получаем \\(\\ell^2\\propto d\\). Диаметр вырос в десять раз, поэтому длина возрастает в \\(\\sqrt{10}\\) раз.</p>",
+            "en": "<p>Balancing the two moments for the same material gives \\(\\ell^2\\propto d\\). A tenfold increase in diameter therefore increases the limiting length by \\(\\sqrt{10}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\ell'=\\ell\\sqrt{d'/d}\\approx1{,}58\\,\\mathrm{м}.\\]</div>",
+        "en": "<div>\\[\\ell'=\\ell\\sqrt{d'/d}\\approx1.58\\,\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B1",
+      "max": 2.0,
+      "title": {
+        "ru": "Прочность влажного песка",
+        "en": "Strength of wet sand"
+      },
+      "steps": [
+        {
+          "id": "bridge",
+          "points": 0.5,
+          "label": {
+            "ru": "Сила отдельной перемычки",
+            "en": "Force of one liquid bridge"
+          },
+          "body": {
+            "ru": "<p>Поверхностное натяжение \\(\\gamma\\) действует вдоль линии длиной порядка \\(r\\). Разность давлений под искривлённой поверхностью имеет порядок \\(\\gamma/r\\) и действует на площадь порядка \\(r^2\\). Оба вклада имеют масштаб \\(\\gamma r\\).</p>",
+            "en": "<p>Surface tension \\(\\gamma\\) acts along a contact line of length proportional to \\(r\\). The pressure jump across the curved surface is of order \\(\\gamma/r\\) and acts over an area of order \\(r^2\\). Both contributions scale as \\(\\gamma r\\).</p>"
+          }
+        },
+        {
+          "id": "grain-load",
+          "points": 0.5,
+          "label": {
+            "ru": "Сопротивление смещению зёрен",
+            "en": "Resistance to grain motion"
+          },
+          "body": {
+            "ru": "<p>Мениск прижимает соседние зёрна друг к другу. Их относительному смещению препятствует трение, пропорциональное нормальной силе. Поэтому предельная сила на один контакт \\(F_g\\propto\\gamma r\\).</p>",
+            "en": "<p>A meniscus pulls the grains against one another. Friction resisting their relative motion is proportional to this normal load, so the limiting force per contact scales as \\(F_g\\propto\\gamma r\\).</p>"
+          }
+        },
+        {
+          "id": "area",
+          "points": 0.5,
+          "label": {
+            "ru": "Число контактов в сечении",
+            "en": "Number of contacts across a section"
+          },
+          "body": {
+            "ru": "<p>При одинаковой форме зёрен и оптимальной влажности контакты статистически подобны. Число жидких перемычек, пересекающих возможную поверхность разрушения, пропорционально \\(A/r^2\\). Здесь \\(A\\) — площадь сечения, \\(r\\) — характерный радиус зерна.</p><p>Если сечение пересекают \\(N\\) контактов, цилиндр выдерживает силу порядка \\(NF_g\\).</p>",
+            "en": "<p>At optimal moisture the contact networks of similarly shaped grains are geometrically similar. The number of liquid bridges crossing a failure surface scales as \\(A/r^2\\), where \\(A\\) is the section area and \\(r\\) the grain radius.</p><p>For a section cut by \\(N\\) contacts, the cylinder supports a load of order \\(NF_g\\).</p>"
+          }
+        },
+        {
+          "id": "ratio",
+          "points": 0.3,
+          "label": {
+            "ru": "Отношение предельных сил",
+            "en": "Ratio of failure loads"
+          },
+          "body": {
+            "ru": "<p>Умножая силу одной перемычки на число контактов, получаем \\(F\\propto A\\gamma/r\\). В равных цилиндрах площади одинаковы. Отношение радиусов равно кубическому корню из отношения объёмов.</p>",
+            "en": "<p>Multiplying the force of one bridge by the number of contacts gives \\(F\\propto A\\gamma/r\\). The cylinders have the same area. The ratio of grain radii is the cube root of their volume ratio.</p>"
+          }
+        },
+        {
+          "id": "numerical-result",
+          "points": 0.2,
+          "label": {
+            "ru": "Предельная сила",
+            "en": "Breaking force"
+          },
+          "body": {
+            "ru": "<div>\\[F_{\\rm fine}=F_{\\rm coarse}\\sqrt[3]{10}\\approx21{,}5\\,\\mathrm{Н}.\\]</div>",
+            "en": "<div>\\[F_{\\rm fine}=F_{\\rm coarse}\\sqrt[3]{10}\\approx21.5\\,\\mathrm N.\\]</div>"
+          },
+          "type": "answer"
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_{\\rm fine}=F_{\\rm coarse}\\sqrt[3]{10}\\approx21{,}5\\,\\mathrm{Н}.\\]</div>",
+        "en": "<div>\\[F_{\\rm fine}=F_{\\rm coarse}\\sqrt[3]{10}\\approx21.5\\,\\mathrm N.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-C1",
+      "max": 2.0,
+      "title": {
+        "ru": "Дальность релятивистского полёта",
+        "en": "Range of a relativistic journey"
+      },
+      "steps": [
+        {
+          "id": "velocity",
+          "points": 0.7,
+          "label": {
+            "ru": "Скорость по бортовым часам",
+            "en": "Velocity in terms of proper time"
+          },
+          "body": {
+            "ru": "<p>Путь состоит из четырёх симметричных участков по \\(T/4\\) бортового времени. За \\(d\\tau\\) корабль набирает в мгновенно сопутствующей системе скорость \\(g\\,d\\tau\\). Складывая её со скоростью \\(\\beta c\\) в системе Земли, получаем \\(d\\beta=(1-\\beta^2)g\\,d\\tau/c\\). Старт из покоя даёт \\(\\beta=\\tanh(g\\tau/c)\\).</p>",
+            "en": "<p>The flight has four symmetric legs, each lasting \\(T/4\\) on board. Over \\(d\\tau\\) the ship gains speed \\(g\\,d\\tau\\) in its instantaneous rest frame. Adding this to its Earth-frame velocity \\(\\beta c\\) gives \\(d\\beta=(1-\\beta^2)g\\,d\\tau/c\\). Starting from rest gives \\(\\beta=\\tanh(g\\tau/c)\\).</p>"
+          }
+        },
+        {
+          "id": "clock",
+          "points": 0.5,
+          "label": {
+            "ru": "Земное время",
+            "en": "Earth-frame time"
+          },
+          "body": {
+            "ru": "<p>Интервал земного времени равен \\(dt=d\\tau/\\sqrt{1-\\beta^2}=\\cosh(g\\tau/c)\\,d\\tau\\).</p>",
+            "en": "<p>The Earth-frame time interval is \\(dt=d\\tau/\\sqrt{1-\\beta^2}=\\cosh(g\\tau/c)\\,d\\tau\\).</p>"
+          }
+        },
+        {
+          "id": "range",
+          "points": 0.8,
+          "label": {
+            "ru": "Расстояние за два участка",
+            "en": "Distance across the outbound legs"
+          },
+          "body": {
+            "ru": "<p>На первом участке \\(dx=\\beta c\\,dt=c\\sinh(g\\tau/c)\\,d\\tau\\). Торможение до покоя даёт такое же расстояние. После интегрирования</p><div>\\[d(g)=\\frac{2c^2}{g}\\left[\\cosh\\!\\left(\\frac{gT}{4c}\\right)-1\\right].\\]</div><p>Подставляем \\(T=50\\) лет и оба значения ускорения.</p>",
+            "en": "<p>During the first leg \\(dx=\\beta c\\,dt=c\\sinh(g\\tau/c)\\,d\\tau\\). Braking to rest covers the same distance. Integration gives</p><div>\\[d(g)=\\frac{2c^2}{g}\\left[\\cosh\\!\\left(\\frac{gT}{4c}\\right)-1\\right].\\]</div><p>Evaluate at \\(T=50\\) years for each acceleration.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{d(g')}{d(g)}=\\frac{g}{g'}\\,\\frac{\\cosh(g'T/4c)-1}{\\cosh(gT/4c)-1}\\approx480.\\]</div>",
+        "en": "<div>\\[\\frac{d(g')}{d(g)}=\\frac{g}{g'}\\,\\frac{\\cosh(g'T/4c)-1}{\\cosh(gT/4c)-1}\\approx480.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-D1",
+      "max": 2.0,
+      "title": {
+        "ru": "Граница колебательного режима",
+        "en": "Threshold for oscillations"
+      },
+      "steps": [
+        {
+          "id": "buoyancy",
+          "points": 0.4,
+          "label": {
+            "ru": "Упругость и эффективная масса",
+            "en": "Restoring force and effective mass"
+          },
+          "body": {
+            "ru": "<p>Малое погружение на \\(x\\) меняет вытесненный объём на площадь ватерлинии, умноженную на \\(x\\). При той же плотности шара эта площадь масштабируется как \\(r^2\\), поэтому жёсткость \\(k\\propto r^2\\). Масса шара и присоединённая масса воды масштабируются как \\(r^3\\), откуда \\(\\omega_0^2=k/m_{\\rm eff}\\propto r^{-1}\\).</p>",
+            "en": "<p>A small extra immersion \\(x\\) displaces the waterline area times \\(x\\). For balls of the same density this area scales as \\(r^2\\), so the stiffness \\(k\\propto r^2\\). Both the ball and the water carried with it have effective mass proportional to \\(r^3\\), giving \\(\\omega_0^2=k/m_{\\rm eff}\\propto r^{-1}\\).</p>"
+          }
+        },
+        {
+          "id": "viscous",
+          "points": 0.9,
+          "label": {
+            "ru": "Вязкое затухание",
+            "en": "Viscous damping"
+          },
+          "body": {
+            "ru": "<p>Градиент скорости жидкости имеет порядок \\(v/r\\). Вязкое напряжение \\(\\eta v/r\\) действует на поверхность порядка \\(r^2\\), так что \\(F_d\\propto\\eta rv\\). Коэффициент затухания \\(\\beta=F_d/(2m_{\\rm eff}v)\\) пропорционален \\(r^{-2}\\).</p>",
+            "en": "<p>The velocity gradient in the water scales as \\(v/r\\). A viscous stress of order \\(\\eta v/r\\) acts on an area of order \\(r^2\\), giving \\(F_d\\propto\\eta rv\\). The damping rate \\(\\beta=F_d/(2m_{\\rm eff}v)\\) therefore scales as \\(r^{-2}\\).</p>"
+          }
+        },
+        {
+          "id": "critical",
+          "points": 0.7,
+          "label": {
+            "ru": "Критическое затухание",
+            "en": "Critical damping"
+          },
+          "body": {
+            "ru": "<p>У затухающего осциллятора \\(\\omega^2=\\omega_0^2-\\beta^2\\). При \\(r=r_0\\) отношение \\(\\beta^2/\\omega_0^2\\) равно \\(1-0{,}99^2\\). Это отношение растёт как \\(r^{-3}\\) и на границе колебаний достигает единицы.</p>",
+            "en": "<p>For a damped oscillator \\(\\omega^2=\\omega_0^2-\\beta^2\\). At \\(r=r_0\\), \\(\\beta^2/\\omega_0^2\\) equals \\(1-0.99^2\\). This ratio grows as \\(r^{-3}\\) and reaches one at critical damping.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r_{\\min}=r_0(1-0{,}99^2)^{1/3}\\approx0{,}271r_0.\\]</div>",
+        "en": "<div>\\[r_{\\min}=r_0(1-0.99^2)^{1/3}\\approx0.271r_0.\\]</div>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Гренландский ледниковый щит",
+    "en": "The Greenlandic ice sheet"
+  },
+  "max": 9,
+  "sourcePdf": "/assets/practice/ipho-2013/IPhO_2013_S3_EN.pdf",
+  "markingSchemePdf": "/assets/practice/ipho-2013/IPhO_2013_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-3.1",
+      "label": "3.1",
+      "max": 0.3,
+      "title": {
+        "ru": "Гидростатическое давление",
+        "en": "Hydrostatic pressure"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.3,
+          "label": {
+            "ru": "Гидростатическое давление",
+            "en": "Hydrostatic pressure"
+          },
+          "body": {
+            "ru": "<p>Давление на свободной поверхности равно нулю. Под точкой \\(H(x)\\) на высоте \\(z\\) давление создаёт столб льда глубины \\(H(x)-z\\).</p>",
+            "en": "<p>Gauge pressure vanishes at the free surface. A point at height \\(z\\) is beneath a column of ice of depth \\(H(x)-z\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p(x,z)=\\rho_i g[H(x)-z].\\]</div>",
+        "en": "<div>\\[p(x,z)=\\rho_i g[H(x)-z].\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.2a",
+      "label": "3.2a",
+      "max": 0.9,
+      "title": {
+        "ru": "Баланс на малом слое",
+        "en": "Force balance on a slab"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.9,
+          "label": {
+            "ru": "Баланс на малом слое",
+            "en": "Force balance on a slab"
+          },
+          "body": {
+            "ru": "<p>Сила на вертикальное сечение равна площади треугольной эпюры давления, умноженной на ширину, \\(F(x)=\\rho_i g H^2\\Delta y/2\\). Сила в сторону берега равна \\(F(x)-F(x+\\Delta x)\\simeq-F'(x)\\Delta x\\). Приравниваем её трению и сокращаем площадь основания.</p>",
+            "en": "<p>The force on a vertical face equals the area under its triangular pressure profile times the width, \\(F(x)=\\rho_i g H^2\\Delta y/2\\). The seaward resultant is \\(F(x)-F(x+\\Delta x)\\simeq-F'(x)\\Delta x\\). Equate this to basal friction and cancel the base area.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[S_b=-\\rho_i gH\\frac{dH}{dx},\\qquad k=-\\rho_i g.\\]</div>",
+        "en": "<div>\\[S_b=-\\rho_i gH\\frac{dH}{dx},\\qquad k=-\\rho_i g.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.2b",
+      "label": "3.2b",
+      "max": 0.8,
+      "title": {
+        "ru": "Высота над основанием",
+        "en": "Ice height above the bed"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.8,
+          "label": {
+            "ru": "Высота над основанием",
+            "en": "Ice height above the bed"
+          },
+          "body": {
+            "ru": "<p>Предыдущее уравнение можно записать как \\(d(H^2)/dx=-2S_b/(\\rho_i g)\\). Интегрируем от точки \\(x\\) до берега, где \\(H(L)=0\\). Симметрия задаёт противоположную половину щита.</p>",
+            "en": "<p>Rewrite the previous equation as \\(d(H^2)/dx=-2S_b/(\\rho_i g)\\). Integrate between \\(x\\) and the coast, where \\(H(L)=0\\). Reflection symmetry gives the opposite half.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[H(x)=H_m\\sqrt{1-\\frac{\\lvert x\\rvert}{L}},\\qquad H_m=\\sqrt{\\frac{2S_b L}{\\rho_i g}}\\propto L^{1/2}.\\]</div>",
+        "en": "<div>\\[H(x)=H_m\\sqrt{1-\\frac{\\lvert x\\rvert}{L}},\\qquad H_m=\\sqrt{\\frac{2S_b L}{\\rho_i g}}\\propto L^{1/2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.2c",
+      "label": "3.2c",
+      "max": 0.5,
+      "title": {
+        "ru": "Масштаб объёма",
+        "en": "Volume scaling"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Масштаб объёма",
+            "en": "Volume scaling"
+          },
+          "body": {
+            "ru": "<p>Площадь \\(A=10L^2\\). Удобно рассматривать среднюю высоту: интеграл \\(\\int_0^1\\sqrt{1-u}\\,du=2/3\\) даёт \\(V_i=(2/3)AH_m\\). Поскольку \\(H_m\\propto L^{1/2}\\propto A^{1/4}\\), находим</p>\n<div>\\[V_i\\propto A^{5/4}.\\]</div>",
+            "en": "<p>The area is \\(A=10L^2\\). The integral \\(\\int_0^1\\sqrt{1-u}\\,du=2/3\\) gives a mean height of \\(2H_m/3\\), hence \\(V_i=(2/3)AH_m\\). Since \\(H_m\\propto L^{1/2}\\propto A^{1/4}\\), it follows that</p>\n<div>\\[V_i\\propto A^{5/4}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\gamma=\\tfrac54.\\]</div>",
+        "en": "<div>\\[\\gamma=\\tfrac54.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.3",
+      "label": "3.3",
+      "max": 0.6,
+      "title": {
+        "ru": "Горизонтальное течение",
+        "en": "Horizontal flow"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.6,
+          "label": {
+            "ru": "Горизонтальное течение",
+            "en": "Horizontal flow"
+          },
+          "body": {
+            "ru": "<p>На полосе от ледораздела до \\(x\\) шириной \\(\\Delta y\\) за единицу времени накапливается объём \\(cx\\Delta y\\). Поток через вертикальное сечение равен \\(H_m\\Delta y\\,v_x\\). В стационаре эти величины равны.</p>",
+            "en": "<p>For a strip of width \\(\\Delta y\\) between the divide and \\(x\\), the volume accumulation rate is \\(cx\\Delta y\\). The outgoing volume flux across its vertical face is \\(H_m\\Delta y\\,v_x\\). In steady state these are equal.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_x(x)=\\frac{cx}{H_m}.\\]</div>",
+        "en": "<div>\\[v_x(x)=\\frac{cx}{H_m}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.4",
+      "label": "3.4",
+      "max": 0.6,
+      "title": {
+        "ru": "Вертикальное течение",
+        "en": "Vertical flow"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.6,
+          "label": {
+            "ru": "Вертикальное течение",
+            "en": "Vertical flow"
+          },
+          "body": {
+            "ru": "<p>Из 3.3 следует \\(dv_z/dz=-c/H_m\\). Через неподвижное основание лёд не проходит, так что \\(v_z(0)=0\\). Интегрирование даёт отрицательную вертикальную скорость.</p>",
+            "en": "<p>From 3.3, \\(dv_z/dz=-c/H_m\\). Ice cannot flow through the stationary bed, so \\(v_z(0)=0\\). Integration gives a downward velocity.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_z(z)=-\\frac{cz}{H_m}.\\]</div>",
+        "en": "<div>\\[v_z(z)=-\\frac{cz}{H_m}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.5",
+      "label": "3.5",
+      "max": 0.9,
+      "title": {
+        "ru": "Траектория частицы",
+        "en": "Particle path"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.9,
+          "label": {
+            "ru": "Траектория частицы",
+            "en": "Particle path"
+          },
+          "body": {
+            "ru": "<p>Исключив время, получим \\(dz/dx=v_z/v_x=-z/x\\). Следовательно, \\(d(xz)/dx=0\\), а начальное положение фиксирует постоянную \\(xz=x_iH_m\\). При \\(x_i=0\\) частица опускается непосредственно по ледоразделу.</p>",
+            "en": "<p>Eliminating time gives \\(dz/dx=v_z/v_x=-z/x\\), hence \\(d(xz)/dx=0\\). The starting point fixes the invariant \\(xz=x_iH_m\\). A particle starting at \\(x_i=0\\) sinks directly down the divide.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[z(x)=\\frac{x_iH_m}{x}\\quad(x_i\\ne0).\\]</div>",
+        "en": "<div>\\[z(x)=\\frac{x_iH_m}{x}\\quad(x_i\\ne0).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.6",
+      "label": "3.6",
+      "max": 1.0,
+      "title": {
+        "ru": "Возраст слоя у ледораздела",
+        "en": "Age of ice at the divide"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Возраст слоя у ледораздела",
+            "en": "Age of ice at the divide"
+          },
+          "body": {
+            "ru": "<p>Здесь движение вертикально. Разделяем \\(dz/z=-(c/H_m)dt\\) и интегрируем от момента выпадения на поверхность при \\(z=H_m\\) до текущего положения.</p>",
+            "en": "<p>Here the motion is vertical. Separate \\(dz/z=-(c/H_m)dt\\) and integrate from deposition at the surface \\(z=H_m\\) to the present position.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tau(z)=\\frac{H_m}{c}\\ln\\frac{H_m}{z}.\\]</div>",
+        "en": "<div>\\[\\tau(z)=\\frac{H_m}{c}\\ln\\frac{H_m}{z}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.7a",
+      "label": "3.7a",
+      "max": 0.8,
+      "title": {
+        "ru": "Темпы накопления",
+        "en": "Accumulation rates"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.8,
+          "label": {
+            "ru": "Темпы накопления",
+            "en": "Accumulation rates"
+          },
+          "body": {
+            "ru": "<p>Границам соответствуют высоты над основанием \\(z_1=3060-1492=1568\\,\\mathrm m\\) и \\(z_2=3060-3040=20\\,\\mathrm m\\). Величина \\(H_m\\ln(H_m/z)\\) равна интегралу \\(\\int c\\,dt\\). Поэтому \\(c_{\\mathrm{ig}}=H_m\\ln(H_m/z_1)/11700\\). Для более древнего интервала вычитаем вклад межледниковья: \\(c_{\\mathrm{ia}}=H_m\\ln(z_1/z_2)/(120000-11700)\\).</p>",
+            "en": "<p>The boundary heights above bedrock are \\(z_1=3060-1492=1568\\,\\mathrm m\\) and \\(z_2=3060-3040=20\\,\\mathrm m\\). The integrated accumulation \\(\\int c\\,dt\\) equals \\(H_m\\ln(H_m/z)\\). Thus \\(c_{\\mathrm{ig}}=H_m\\ln(H_m/z_1)/11700\\). Subtract the interglacial contribution for the earlier interval: \\(c_{\\mathrm{ia}}=H_m\\ln(z_1/z_2)/(120000-11700)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[c_{\\mathrm{ia}}\\simeq0{,}123\\,\\mathrm{m/yr},\\qquad c_{\\mathrm{ig}}\\simeq0{,}175\\,\\mathrm{m/yr}.\\]</div>",
+        "en": "<div>\\[c_{\\mathrm{ia}}\\simeq0.123\\,\\mathrm{m/yr},\\qquad c_{\\mathrm{ig}}\\simeq0.175\\,\\mathrm{m/yr}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.7b",
+      "label": "3.7b",
+      "max": 0.2,
+      "title": {
+        "ru": "Скачок температуры",
+        "en": "Temperature jump"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.2,
+          "label": {
+            "ru": "Скачок температуры",
+            "en": "Temperature jump"
+          },
+          "body": {
+            "ru": "<p>На графике керна показатель возрастает примерно с −43,5 до −34,5 промилле. По калибровочной прямой этим значениям соответствуют температуры около \\(-40\\,^\\circ\\mathrm C\\) и \\(-28\\,^\\circ\\mathrm C\\).</p>",
+            "en": "<p>The core record rises from about −43.5 to −34.5 per mille. The calibration line maps these values to roughly \\(-40\\,^\\circ\\mathrm C\\) and \\(-28\\,^\\circ\\mathrm C\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta T\\simeq+12\\,\\mathrm K.\\]</div>",
+        "en": "<div>\\[\\Delta T\\simeq+12\\,\\mathrm K.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.8",
+      "label": "3.8",
+      "max": 0.6,
+      "title": {
+        "ru": "Средний подъём уровня",
+        "en": "Mean global rise"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.6,
+          "label": {
+            "ru": "Средний подъём уровня",
+            "en": "Mean global rise"
+          },
+          "body": {
+            "ru": "<p>Из площади острова \\(L=\\sqrt{A_G/10}=4{,}14\\times10^5\\,\\mathrm m\\). Высота из 3.2б и объём из 3.2в дают \\(V_i=(2/3)A_G\\sqrt{2S_bL/(\\rho_i g)}=3{,}45\\times10^{15}\\,\\mathrm{m^3}\\). При таянии сохраняется масса, поэтому объём воды равен \\(V_i\\rho_i/\\rho_{\\mathrm{wa}}\\), где \\(\\rho_{\\mathrm{wa}}=998\\,\\mathrm{kg/m^3}\\).</p>",
+            "en": "<p>The island area gives \\(L=\\sqrt{A_G/10}=4.14\\times10^5\\,\\mathrm m\\). Combining 3.2b and 3.2c yields \\(V_i=(2/3)A_G\\sqrt{2S_bL/(\\rho_i g)}=3.45\\times10^{15}\\,\\mathrm{m^3}\\). Mass is conserved on melting, so the water occupies \\(V_i\\rho_i/\\rho_{\\mathrm{wa}}\\), with \\(\\rho_{\\mathrm{wa}}=998\\,\\mathrm{kg/m^3}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta h=\\frac{\\rho_i V_i}{\\rho_{\\mathrm{wa}}A_o}\\simeq8{,}79\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[\\Delta h=\\frac{\\rho_i V_i}{\\rho_{\\mathrm{wa}}A_o}\\simeq8.79\\,\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.9",
+      "label": "3.9",
+      "max": 1.8,
+      "title": {
+        "ru": "Гравитационное притяжение льда",
+        "en": "Gravitational attraction of the ice"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.8,
+          "label": {
+            "ru": "Гравитационное притяжение льда",
+            "en": "Gravitational attraction of the ice"
+          },
+          "body": {
+            "ru": "<p>Масса льда \\(M_i=\\rho_iV_i=3{,}17\\times10^{18}\\,\\mathrm{kg}\\). На свободной поверхности потенциал постоянен. При \\(h\\ll R_\\oplus\\) изменение земного потенциала на единицу массы равно \\(gh\\). Значит, \\(gh-GM_i/r\\) постоянно, где \\(r\\) — прямое расстояние до льда. При угловом удалении \\(\\theta\\) это хорда \\(r=2R_\\oplus\\sin(\\theta/2)\\).</p>\n<p>Для Копенгагена \\(\\theta=3500/6380=0{,}549\\), для противоположной точки \\(\\theta=\\pi\\). Вычитая уравнения эквипотенциали, получаем \\(\\Delta h=(GM_i/2gR_\\oplus)[1/\\sin(\\theta_{\\mathrm{CPH}}/2)-1]\\). Множитель перед скобкой равен \\(1{,}69\\,\\mathrm m\\).</p>\n<figure><img src=\"/assets/practice/ipho-2013/q3/sfig1.png\" alt=\"Расстояние до ледяной массы и центральный угол\" style=\"max-width:min(100%,355px)\"></figure>\n<p>Тот же результат даёт наклон поверхности. Касательная компонента притяжения льда равна \\((GM_i/r^2)\\cos(\\theta/2)\\). Из равновесия вдоль поверхности следует \\(dh/d\\theta=-R_\\oplus GM_i\\cos(\\theta/2)/(g r^2)\\): высота убывает с удалением от льда. Интегрирование от \\(\\pi\\) до \\(\\theta_{\\mathrm{CPH}}\\) восстанавливает ту же разность уровней.</p>\n<figure><img src=\"/assets/practice/ipho-2013/q3/sfig2.png\" alt=\"Направление сил на элемент поверхности океана\" style=\"max-width:min(100%,510px)\"></figure>",
+            "en": "<p>The ice mass is \\(M_i=\\rho_iV_i=3.17\\times10^{18}\\,\\mathrm{kg}\\). The free surface is an equipotential. For \\(h\\ll R_\\oplus\\) the Earth’s potential change per unit mass is \\(gh\\), so \\(gh-GM_i/r\\) is constant. The straight-line distance to the ice at angular separation \\(\\theta\\) is the chord \\(r=2R_\\oplus\\sin(\\theta/2)\\).</p>\n<p>Copenhagen has \\(\\theta=3500/6380=0.549\\), while its comparison point has \\(\\theta=\\pi\\). Subtracting the equipotential equations gives \\(\\Delta h=(GM_i/2gR_\\oplus)[1/\\sin(\\theta_{\\mathrm{CPH}}/2)-1]\\). The prefactor is \\(1.69\\,\\mathrm m\\).</p>\n<figure><img src=\"/assets/practice/ipho-2013/q3/sfig1.png\" alt=\"Ice-mass distance and central angle\" style=\"max-width:min(100%,355px)\"></figure>\n<p>The same result follows from the sea-surface slope. The tangential ice attraction is \\((GM_i/r^2)\\cos(\\theta/2)\\). Equilibrium along the surface gives \\(dh/d\\theta=-R_\\oplus GM_i\\cos(\\theta/2)/(g r^2)\\). Integration from \\(\\pi\\) to \\(\\theta_{\\mathrm{CPH}}\\) recovers the same difference.</p>\n<figure><img src=\"/assets/practice/ipho-2013/q3/sfig2.png\" alt=\"Force directions on a sea-surface element\" style=\"max-width:min(100%,510px)\"></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[h_{\\mathrm{CPH}}-h_{\\mathrm{OPP}}\\simeq4{,}56\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[h_{\\mathrm{CPH}}-h_{\\mathrm{OPP}}\\simeq4.56\\,\\mathrm m.\\]</div>"
+      }
+    }
+  ]
+}

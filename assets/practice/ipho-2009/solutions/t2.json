@@ -1,0 +1,776 @@
+{
+  "id": "T2",
+  "max": 10,
+  "title": {
+    "ru": "Доплеровское лазерное охлаждение и оптическая патока",
+    "en": "Doppler laser cooling and optical molasses"
+  },
+  "sourcePdf": "/assets/practice/ipho-2009/IPhO_2009_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-1a",
+      "max": 0.2,
+      "title": {
+        "ru": "Резонанс",
+        "en": "Resonance"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Частота в системе атома",
+            "en": "Frequency in the atomic frame"
+          },
+          "body": {
+            "ru": "<p>Атом движется навстречу волновым фронтам, поэтому в его системе частота лазера повышается. Поглощение резонансно, когда эта частота равна частоте перехода.</p>",
+            "en": "<p>The atom approaches the wavefronts, so it sees a higher frequency. Resonance requires this frequency to equal the transition frequency.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_0\\simeq\\omega_L(1+v/c).\\]</div>",
+        "en": "<div>\\[\\omega_0\\simeq\\omega_L(1+v/c).\\]</div>"
+      },
+      "label": "1a"
+    },
+    {
+      "id": "T2-1b",
+      "max": 0.2,
+      "title": {
+        "ru": "Импульс после поглощения",
+        "en": "Momentum after absorption"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Сумма импульсов",
+            "en": "Adding momenta"
+          },
+          "body": {
+            "ru": "<p>Фотон передаёт атому отрицательную проекцию своего импульса.</p>",
+            "en": "<p>The absorbed photon delivers its negative momentum component to the atom.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p_{\\rm at}=mv-\\hbar q.\\]</div>",
+        "en": "<div>\\[p_{\\rm at}=mv-\\hbar q.\\]</div>"
+      },
+      "label": "1b"
+    },
+    {
+      "id": "T2-1c",
+      "max": 0.2,
+      "title": {
+        "ru": "Энергия возбуждённого атома",
+        "en": "Excited-atom energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Внутренняя и кинетическая энергия",
+            "en": "Internal and kinetic energy"
+          },
+          "body": {
+            "ru": "<p>Кинетическая энергия уменьшается на \\(\\hbar qv\\), а внутренняя увеличивается на \\(\\hbar\\omega_0\\). По 1a разность \\(\\hbar\\omega_0-\\hbar qv\\) равна энергии падающего фотона.</p>",
+            "en": "<p>The kinetic energy decreases by \\(\\hbar qv\\) while the internal energy increases by \\(\\hbar\\omega_0\\). By 1a the difference \\(\\hbar\\omega_0-\\hbar qv\\) is the incident photon energy.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\varepsilon_{\\rm at}\\simeq \\tfrac12mv^2+\\hbar\\omega_L.\\]</div>",
+        "en": "<div>\\[\\varepsilon_{\\rm at}\\simeq \\tfrac12mv^2+\\hbar\\omega_L.\\]</div>"
+      },
+      "label": "1c"
+    },
+    {
+      "id": "T2-2a",
+      "max": 0.2,
+      "title": {
+        "ru": "Энергия фотона",
+        "en": "Photon energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Два доплеровских сдвига",
+            "en": "Two Doppler shifts"
+          },
+          "body": {
+            "ru": "<p>При наблюдении позади удаляющегося атома частота равна \\(\\omega_0(1-v/c)\\). Изменение скорости при поглощении даёт смешанную поправку \\(\\hbar q/(mc)\\), которой пренебрегаем. Подстановка 1a сокращает линейные сдвиги.</p>",
+            "en": "<p>Seen from behind the receding atom, the frequency is \\(\\omega_0(1-v/c)\\). The absorption-induced speed change would contribute the mixed term \\(\\hbar q/(mc)\\), which is discarded. Inserting 1a cancels the linear shifts.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\varepsilon_{\\rm ph}^{(-)}\\simeq\\hbar\\omega_L.\\]</div>",
+        "en": "<div>\\[\\varepsilon_{\\rm ph}^{(-)}\\simeq\\hbar\\omega_L.\\]</div>"
+      },
+      "label": "2a"
+    },
+    {
+      "id": "T2-2b",
+      "max": 0.2,
+      "title": {
+        "ru": "Импульс фотона",
+        "en": "Photon momentum"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Направление движения",
+            "en": "Direction of travel"
+          },
+          "body": {
+            "ru": "<p>Модуль импульса фотона равен его энергии, делённой на \\(c\\). Фотон летит в отрицательном направлении.</p>",
+            "en": "<p>A photon has momentum magnitude equal to its energy divided by \\(c\\). Here its direction is negative.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p_{\\rm ph}^{(-)}\\simeq-\\hbar q.\\]</div>",
+        "en": "<div>\\[p_{\\rm ph}^{(-)}\\simeq-\\hbar q.\\]</div>"
+      },
+      "label": "2b"
+    },
+    {
+      "id": "T2-2c",
+      "max": 0.2,
+      "title": {
+        "ru": "Импульс атома",
+        "en": "Atomic momentum"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Отдача при излучении",
+            "en": "Emission recoil"
+          },
+          "body": {
+            "ru": "<p>Из импульса возбуждённого атома \\(mv-\\hbar q\\) вычитаем отрицательный импульс испущенного фотона. Отдача компенсирует импульс поглощения.</p>",
+            "en": "<p>Subtract the emitted photon&#x27;s negative momentum from \\(mv-\\hbar q\\). The recoil cancels the absorption kick.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p_{\\rm at}^{(-)}\\simeq mv.\\]</div>",
+        "en": "<div>\\[p_{\\rm at}^{(-)}\\simeq mv.\\]</div>"
+      },
+      "label": "2c"
+    },
+    {
+      "id": "T2-2d",
+      "max": 0.2,
+      "title": {
+        "ru": "Энергия атома",
+        "en": "Atomic energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Возврат в основное состояние",
+            "en": "Return to the ground state"
+          },
+          "body": {
+            "ru": "<p>Внутренняя энергия вновь равна нулю, а импульс по 2c восстановился до начального значения.</p>",
+            "en": "<p>The internal energy returns to zero and 2c restores the original momentum.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\varepsilon_{\\rm at}^{(-)}\\simeq \\tfrac12mv^2.\\]</div>",
+        "en": "<div>\\[\\varepsilon_{\\rm at}^{(-)}\\simeq \\tfrac12mv^2.\\]</div>"
+      },
+      "label": "2d"
+    },
+    {
+      "id": "T2-3a",
+      "max": 0.2,
+      "title": {
+        "ru": "Энергия фотона",
+        "en": "Photon energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Частота при наблюдении впереди атома",
+            "en": "Frequency seen ahead of the atom"
+          },
+          "body": {
+            "ru": "<p>Движущийся к наблюдателю источник даёт \\(\\omega_{\\rm ph}\\simeq\\omega_0(1+v/c)\\). Частота перехода \\(\\omega_0\\) уже выше \\(\\omega_L\\) на доплеровскую поправку. Два сдвига складываются.</p>",
+            "en": "<p>An approaching emitter gives \\(\\omega_{\\rm ph}\\simeq\\omega_0(1+v/c)\\). The transition frequency is already above \\(\\omega_L\\) by one Doppler shift. The two shifts add.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\varepsilon_{\\rm ph}^{(+)}\\simeq\\hbar\\omega_L(1+2v/c).\\]</div>",
+        "en": "<div>\\[\\varepsilon_{\\rm ph}^{(+)}\\simeq\\hbar\\omega_L(1+2v/c).\\]</div>"
+      },
+      "label": "3a"
+    },
+    {
+      "id": "T2-3b",
+      "max": 0.2,
+      "title": {
+        "ru": "Импульс фотона",
+        "en": "Photon momentum"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Связь энергии с импульсом",
+            "en": "Energy–momentum relation"
+          },
+          "body": {
+            "ru": "<p>Фотон движется вдоль \\(+x\\), поэтому проекция импульса равна \\(+\\varepsilon_{\\rm ph}^{(+)}/c\\).</p>",
+            "en": "<p>The photon travels along \\(+x\\), so its signed momentum equals \\(+\\varepsilon_{\\rm ph}^{(+)}/c\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p_{\\rm ph}^{(+)}\\simeq\\hbar q(1+2v/c).\\]</div>",
+        "en": "<div>\\[p_{\\rm ph}^{(+)}\\simeq\\hbar q(1+2v/c).\\]</div>"
+      },
+      "label": "3b"
+    },
+    {
+      "id": "T2-3c",
+      "max": 0.2,
+      "title": {
+        "ru": "Двойная отдача",
+        "en": "Double kick"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Два импульса одного знака",
+            "en": "Two kicks in the same direction"
+          },
+          "body": {
+            "ru": "<p>Поглощение встречного фотона уменьшило импульс на \\(\\hbar q\\). Испуская фотон вперёд, атом теряет ещё \\(\\hbar q\\). Добавка \\(2\\hbar qv/c\\) относительно \\(mv\\) имеет второй, смешанный порядок.</p>",
+            "en": "<p>Absorbing the oncoming photon reduced the momentum by \\(\\hbar q\\). Forward emission removes another \\(\\hbar q\\). Relative to \\(mv\\), the correction \\(2\\hbar qv/c\\) is of mixed second order.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p_{\\rm at}^{(+)}\\simeq mv-2\\hbar q.\\]</div>",
+        "en": "<div>\\[p_{\\rm at}^{(+)}\\simeq mv-2\\hbar q.\\]</div>"
+      },
+      "label": "3c"
+    },
+    {
+      "id": "T2-3d",
+      "max": 0.2,
+      "title": {
+        "ru": "Энергия после отдачи",
+        "en": "Energy after recoil"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Разложение кинетической энергии",
+            "en": "Expanding the kinetic energy"
+          },
+          "body": {
+            "ru": "<p>В основном состоянии энергия равна \\((mv-2\\hbar q)^2/(2m)\\). Линейный член равен \\(-2\\hbar qv\\). В опубликованном решении здесь пропущен множитель два, что меняет также энергетические поправки в 4c, 5a и 6a.</p>",
+            "en": "<p>In the ground state the energy is \\((mv-2\\hbar q)^2/(2m)\\). Its linear term is \\(-2\\hbar qv\\). The published solution misses the factor of two here, which also affects the energy corrections in 4c, 5a and 6a.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\varepsilon_{\\rm at}^{(+)}\\simeq \\tfrac12mv^2-2\\hbar qv.\\]</div>",
+        "en": "<div>\\[\\varepsilon_{\\rm at}^{(+)}\\simeq \\tfrac12mv^2-2\\hbar qv.\\]</div>"
+      },
+      "label": "3d"
+    },
+    {
+      "id": "T2-4a",
+      "max": 0.2,
+      "title": {
+        "ru": "Средняя энергия фотона",
+        "en": "Mean photon energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Среднее двух частот",
+            "en": "Averaging the two frequencies"
+          },
+          "body": {
+            "ru": "<p>Одно направление даёт энергию \\(\\hbar\\omega_L\\), другое — \\(\\hbar\\omega_L(1+2v/c)\\). С равными весами остаётся одна доплеровская поправка.</p>",
+            "en": "<p>One direction gives \\(\\hbar\\omega_L\\), the other \\(\\hbar\\omega_L(1+2v/c)\\). Equal weights leave one Doppler correction.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle\\varepsilon_{\\rm ph}\\rangle\\simeq\\hbar\\omega_L(1+v/c).\\]</div>",
+        "en": "<div>\\[\\langle\\varepsilon_{\\rm ph}\\rangle\\simeq\\hbar\\omega_L(1+v/c).\\]</div>"
+      },
+      "label": "4a"
+    },
+    {
+      "id": "T2-4b",
+      "max": 0.2,
+      "title": {
+        "ru": "Средний импульс фотона",
+        "en": "Mean photon momentum"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Проекции противоположных знаков",
+            "en": "Oppositely signed components"
+          },
+          "body": {
+            "ru": "<p>Среднее между \\(-\\hbar q\\) и \\(+\\hbar q(1+2v/c)\\) сохраняет только доплеровскую разность. Относительно импульса атома \\(mv\\) этот остаток уже смешанного порядка.</p>",
+            "en": "<p>Averaging \\(-\\hbar q\\) and \\(+\\hbar q(1+2v/c)\\) leaves only their Doppler imbalance. On the scale of the atomic momentum \\(mv\\) this remainder is of mixed order.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle p_{\\rm ph}\\rangle\\simeq\\hbar q\\,v/c.\\]</div>\n<p>На шкале импульса атома этот член опускают. В таком приближении ответ жюри — ноль.</p>",
+        "en": "<div>\\[\\langle p_{\\rm ph}\\rangle\\simeq\\hbar q\\,v/c.\\]</div>\n<p>On the atomic momentum scale this term is discarded. At that precision the official answer is zero.</p>"
+      },
+      "label": "4b"
+    },
+    {
+      "id": "T2-4c",
+      "max": 0.2,
+      "title": {
+        "ru": "Средняя энергия атома",
+        "en": "Mean atomic energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Баланс энергии фотонов",
+            "en": "Photon energy balance"
+          },
+          "body": {
+            "ru": "<p>Атом поглотил \\(\\hbar\\omega_L\\) и испустил в среднем \\(\\hbar\\omega_L(1+v/c)\\). Разность энергий света должна быть взята из движения атома. Тот же результат даёт полусумма 2d и 3d.</p>",
+            "en": "<p>The atom absorbs \\(\\hbar\\omega_L\\) and emits \\(\\hbar\\omega_L(1+v/c)\\) on average. Its motion supplies the energy difference. Averaging 2d and 3d gives the same result.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle\\varepsilon_{\\rm at}\\rangle\\simeq\\tfrac12mv^2-\\hbar qv.\\]</div>",
+        "en": "<div>\\[\\langle\\varepsilon_{\\rm at}\\rangle\\simeq\\tfrac12mv^2-\\hbar qv.\\]</div>"
+      },
+      "label": "4c"
+    },
+    {
+      "id": "T2-4d",
+      "max": 0.2,
+      "title": {
+        "ru": "Средний импульс атома",
+        "en": "Mean atomic momentum"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Среднее по двум отдачам",
+            "en": "Averaging the two recoils"
+          },
+          "body": {
+            "ru": "<p>Среднее между \\(mv\\) и \\(mv-2\\hbar q\\) отличается от начального импульса на один фотонный импульс.</p>",
+            "en": "<p>The mean of \\(mv\\) and \\(mv-2\\hbar q\\) differs from the initial momentum by one photon kick.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle p_{\\rm at}\\rangle\\simeq mv-\\hbar q.\\]</div>",
+        "en": "<div>\\[\\langle p_{\\rm at}\\rangle\\simeq mv-\\hbar q.\\]</div>"
+      },
+      "label": "4d"
+    },
+    {
+      "id": "T2-5a",
+      "max": 0.2,
+      "title": {
+        "ru": "Изменение энергии",
+        "en": "Energy change"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Вычитание начальной энергии",
+            "en": "Subtracting the initial energy"
+          },
+          "body": {
+            "ru": "<p>Вычитаем \\(mv^2/2\\) из средней энергии 4c. Потеря энергии также равна произведению скорости на среднее изменение импульса в линейном приближении.</p>",
+            "en": "<p>Subtract \\(mv^2/2\\) from the mean in 4c. To linear order the energy change is also the velocity times the mean momentum change.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle\\Delta\\varepsilon\\rangle\\simeq-\\hbar qv.\\]</div>",
+        "en": "<div>\\[\\langle\\Delta\\varepsilon\\rangle\\simeq-\\hbar qv.\\]</div>"
+      },
+      "label": "5a"
+    },
+    {
+      "id": "T2-5b",
+      "max": 0.2,
+      "title": {
+        "ru": "Изменение импульса",
+        "en": "Momentum change"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Средний перенос одного фотона",
+            "en": "Mean transfer per photon"
+          },
+          "body": {
+            "ru": "<p>Из среднего конечного импульса 4d вычитаем \\(mv\\). Знак соответствует направлению падающего света.</p>",
+            "en": "<p>Subtract \\(mv\\) from the final mean in 4d. The sign follows the incident light.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle\\Delta p\\rangle\\simeq-\\hbar q.\\]</div>",
+        "en": "<div>\\[\\langle\\Delta p\\rangle\\simeq-\\hbar q.\\]</div>"
+      },
+      "label": "5b"
+    },
+    {
+      "id": "T2-6a",
+      "max": 0.3,
+      "title": {
+        "ru": "Изменение энергии",
+        "en": "Energy change"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Смена знака доплеровского сдвига",
+            "en": "Reversing the Doppler shift"
+          },
+          "body": {
+            "ru": "<p>Попутный фотон должен иметь \\(\\omega&#x27;_L(1-v/c)\\simeq\\omega_0\\). Средняя энергия излучения равна \\(\\hbar\\omega_0\\) до первого порядка. Избыток энергии поглощённого света переходит в движение, где \\(q&#x27;=\\omega&#x27;_L/c\\).</p>",
+            "en": "<p>Co-propagating light must satisfy \\(\\omega&#x27;_L(1-v/c)\\simeq\\omega_0\\). The emitted energy averages to \\(\\hbar\\omega_0\\) to first order. The absorbed photon&#x27;s excess energy goes into motion, with \\(q&#x27;=\\omega&#x27;_L/c\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle\\Delta\\varepsilon\\rangle\\simeq+\\hbar q&#x27;v.\\]</div>",
+        "en": "<div>\\[\\langle\\Delta\\varepsilon\\rangle\\simeq+\\hbar q&#x27;v.\\]</div>"
+      },
+      "label": "6a"
+    },
+    {
+      "id": "T2-6b",
+      "max": 0.3,
+      "title": {
+        "ru": "Изменение импульса",
+        "en": "Momentum change"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Импульс попутного пучка",
+            "en": "Co-propagating kick"
+          },
+          "body": {
+            "ru": "<p>В среднем остаётся импульс поглощённого фотона. Теперь он направлен вдоль положительной оси.</p>",
+            "en": "<p>The mean kick equals the momentum of the absorbed photon to this accuracy. It now points along the positive axis.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle\\Delta p\\rangle\\simeq+\\hbar q&#x27;.\\]</div>",
+        "en": "<div>\\[\\langle\\Delta p\\rangle\\simeq+\\hbar q&#x27;.\\]</div>"
+      },
+      "label": "6b"
+    },
+    {
+      "id": "T2-7a",
+      "max": 1.5,
+      "title": {
+        "ru": "Суммарная сила",
+        "en": "Net force"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.75,
+          "label": {
+            "ru": "Частоты в системе атомов",
+            "en": "Frequencies in the atomic frame"
+          },
+          "body": {
+            "ru": "<p>Обозначим \\(\\Delta=\\omega_0-\\omega_L\\), \\(D=\\Gamma^2/4+2\\Omega_R^2\\). Для попутного и встречного пучков частоты в системе атомов равны соответственно \\(\\omega_L-qv\\) и \\(\\omega_L+qv\\). Вероятности возбуждения различаются.</p>",
+            "en": "<p>Write \\(\\Delta=\\omega_0-\\omega_L\\) and \\(D=\\Gamma^2/4+2\\Omega_R^2\\). The co-propagating and oncoming frequencies seen by the atoms are \\(\\omega_L-qv\\) and \\(\\omega_L+qv\\), respectively. Their excitation probabilities differ.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.75,
+          "label": {
+            "ru": "Скорости передачи импульса",
+            "en": "Rates of momentum transfer"
+          },
+          "body": {
+            "ru": "<p>Числа циклов в секунду равны \\(N\\Gamma f(\\omega_L\\mp qv)\\). Один цикл передаёт атому импульс соответствующего пучка, поэтому вычитаем вклад встречного света из вклада попутного.</p>",
+            "en": "<p>The rates are \\(N\\Gamma f(\\omega_L\\mp qv)\\). Each event delivers the corresponding beam&#x27;s kick, so subtract the oncoming contribution from the co-propagating one.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F=N\\Gamma\\hbar q\\Omega_R^2\\!\\left[\\frac{1}{(\\Delta+qv)^2+D}-\\frac{1}{(\\Delta-qv)^2+D}\\right].\\]</div>",
+        "en": "<div>\\[F=N\\Gamma\\hbar q\\Omega_R^2\\!\\left[\\frac{1}{(\\Delta+qv)^2+D}-\\frac{1}{(\\Delta-qv)^2+D}\\right].\\]</div>"
+      },
+      "label": "7a"
+    },
+    {
+      "id": "T2-8a",
+      "max": 1.5,
+      "title": {
+        "ru": "Линейная сила",
+        "en": "Linear force"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.75,
+          "label": {
+            "ru": "Наклон линии поглощения",
+            "en": "Slope of the absorption line"
+          },
+          "body": {
+            "ru": "<p>Для \\(g(x)=1/(x^2+D)\\) разность встречающихся в 7a значений равна \\(g(\\Delta+qv)-g(\\Delta-qv)\\simeq2qv\\,g&#x27;(\\Delta)\\). Нулевые члены взаимно уничтожаются.</p>",
+            "en": "<p>For \\(g(x)=1/(x^2+D)\\) the difference in 7a is \\(g(\\Delta+qv)-g(\\Delta-qv)\\simeq2qv\\,g&#x27;(\\Delta)\\). The constant terms cancel.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.75,
+          "label": {
+            "ru": "Коэффициент при скорости",
+            "en": "Coefficient of velocity"
+          },
+          "body": {
+            "ru": "<p>Производная равна \\(g&#x27;(\\Delta)=-2\\Delta/(\\Delta^2+D)^2\\). Остаётся умножить её на \\(2qv\\) и на общий коэффициент из 7a.</p>",
+            "en": "<p>Differentiate to obtain \\(g&#x27;(\\Delta)=-2\\Delta/(\\Delta^2+D)^2\\). Multiply by \\(2qv\\) and the common prefactor in 7a.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F\\simeq-\\frac{4N\\hbar q^2\\Omega_R^2\\Gamma\\Delta}{(\\Delta^2+D)^2}\\,v.\\]</div>",
+        "en": "<div>\\[F\\simeq-\\frac{4N\\hbar q^2\\Omega_R^2\\Gamma\\Delta}{(\\Delta^2+D)^2}\\,v.\\]</div>"
+      },
+      "label": "8a"
+    },
+    {
+      "id": "T2-8b",
+      "max": 0.25,
+      "title": {
+        "ru": "Ускорение",
+        "en": "Acceleration"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.25,
+          "label": {
+            "ru": "Знак расстройки",
+            "en": "Sign of the detuning"
+          },
+          "body": {
+            "ru": "<p>Знаменатель всегда положителен. При \\(v&gt;0\\) знак силы противоположен знаку \\(\\Delta\\).</p>",
+            "en": "<p>The denominator is positive. For \\(v&gt;0\\) the force has the opposite sign to \\(\\Delta\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_L&gt;\\omega_0.\\]</div>",
+        "en": "<div>\\[\\omega_L&gt;\\omega_0.\\]</div>"
+      },
+      "label": "8b"
+    },
+    {
+      "id": "T2-8c",
+      "max": 0.25,
+      "title": {
+        "ru": "Нулевая сила",
+        "en": "Zero force"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.25,
+          "label": {
+            "ru": "Симметрия резонанса",
+            "en": "Resonance symmetry"
+          },
+          "body": {
+            "ru": "<p>Если лазеры настроены на частоту перехода, движущийся атом видит противоположные расстройки одинакового модуля. Интенсивности рассеяния равны.</p>",
+            "en": "<p>When both lasers are tuned to the transition, the atom sees equal and opposite detunings. The scattering rates match.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_L=\\omega_0.\\]</div>",
+        "en": "<div>\\[\\omega_L=\\omega_0.\\]</div>"
+      },
+      "label": "8c"
+    },
+    {
+      "id": "T2-8d",
+      "max": 0.25,
+      "title": {
+        "ru": "Торможение",
+        "en": "Deceleration"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.25,
+          "label": {
+            "ru": "Встречный пучок ближе к резонансу",
+            "en": "Oncoming beam closer to resonance"
+          },
+          "body": {
+            "ru": "<p>При частоте ниже резонансной встречный свет в системе атома смещается к резонансу, а попутный — от него. Встречный свет рассеивается чаще.</p>",
+            "en": "<p>For light below resonance the oncoming frequency moves towards resonance in the atomic frame and the co-propagating frequency moves away. The oncoming beam scatters more often.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_L&lt;\\omega_0.\\]</div>",
+        "en": "<div>\\[\\omega_L&lt;\\omega_0.\\]</div>"
+      },
+      "label": "8d"
+    },
+    {
+      "id": "T2-8e",
+      "max": 0.25,
+      "title": {
+        "ru": "Движение в обратную сторону",
+        "en": "Reversed motion"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.25,
+          "label": {
+            "ru": "Нечётность силы",
+            "en": "Odd dependence on velocity"
+          },
+          "body": {
+            "ru": "<p>При смене направления пучки обмениваются ролями, и сила меняет знак. При положительном \\(\\Delta\\) сила по-прежнему направлена против скорости.</p>",
+            "en": "<p>Reversing the velocity interchanges the beams and reverses the force. For positive \\(\\Delta\\) the force still opposes motion.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_L&lt;\\omega_0.\\]</div>",
+        "en": "<div>\\[\\omega_L&lt;\\omega_0.\\]</div>"
+      },
+      "label": "8e"
+    },
+    {
+      "id": "T2-9a",
+      "max": 1.5,
+      "title": {
+        "ru": "Затухание скорости",
+        "en": "Velocity decay"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.75,
+          "label": {
+            "ru": "Сила на один атом",
+            "en": "Force per atom"
+          },
+          "body": {
+            "ru": "<p>Разделим силу 8a на \\(N\\). Для одного атома \\(m\\dot v=-\\alpha v\\), где положительный коэффициент трения равен</p>\n<div>\\[\\alpha=\\frac{4\\hbar q^2\\Omega_R^2\\Gamma\\Delta}{(\\Delta^2+D)^2}.\\]</div>",
+            "en": "<p>Divide the force in 8a by \\(N\\). A single atom obeys \\(m\\dot v=-\\alpha v\\) with positive drag coefficient</p>\n<div>\\[\\alpha=\\frac{4\\hbar q^2\\Omega_R^2\\Gamma\\Delta}{(\\Delta^2+D)^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.75,
+          "label": {
+            "ru": "Интегрирование уравнения движения",
+            "en": "Integrating the equation of motion"
+          },
+          "body": {
+            "ru": "<p>Постоянный коэффициент даёт \\(d\\ln |v|/dt=-\\alpha/m\\). За время \\(m/\\alpha\\) скорость убывает в \\(e\\) раз.</p>",
+            "en": "<p>The constant coefficient gives \\(d\\ln |v|/dt=-\\alpha/m\\). The velocity falls by a factor of \\(e\\) in time \\(m/\\alpha\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v(\\tau)=v_0\\exp(-\\alpha\\tau/m).\\]</div>",
+        "en": "<div>\\[v(\\tau)=v_0\\exp(-\\alpha\\tau/m).\\]</div>"
+      },
+      "label": "9a"
+    },
+    {
+      "id": "T2-9b",
+      "max": 0.5,
+      "title": {
+        "ru": "Охлаждение газа",
+        "en": "Cooling of the gas"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Средняя квадратичная скорость",
+            "en": "Mean-square velocity"
+          },
+          "body": {
+            "ru": "<p>Случайная скорость каждого атома уменьшается с одним и тем же экспоненциальным множителем. В одном измерении \\(k_BT=m\\langle(v-\\langle v\\rangle)^2\\rangle\\), поэтому показатель для температуры удваивается. При очень низких температурах существенной становится не учтённая здесь случайная отдача фотонов.</p>",
+            "en": "<p>Each random velocity scales by the same exponential. In one dimension \\(k_BT=m\\langle(v-\\langle v\\rangle)^2\\rangle\\), so the exponent doubles for temperature. Random photon recoil, omitted here, matters at very low temperatures.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T(\\tau)=T_0\\exp(-2\\alpha\\tau/m).\\]</div>",
+        "en": "<div>\\[T(\\tau)=T_0\\exp(-2\\alpha\\tau/m).\\]</div>"
+      },
+      "label": "9b"
+    }
+  ]
+}

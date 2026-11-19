@@ -2,11 +2,12 @@
 (function (root) {
   'use strict';
   const VERSION = 1;
+  const validPack = value => typeof value === 'string' && /^ipho-\d{4}$/.test(value);
   const TASK_STATES = ['new', 'working', 'revisit', 'done'];
   const terminal = state => state && ['finished', 'expired'].includes(state.status);
   function validate(state) {
     return !!state && state.schema === VERSION && typeof state.id === 'string' &&
-      state.pack === 'ipho-2026' && ['exam', 'training'].includes(state.mode) &&
+      validPack(state.pack) && ['exam', 'training'].includes(state.mode) &&
       ['running', 'paused', 'finished', 'expired'].includes(state.status) &&
       Number.isFinite(state.durationMs) && state.durationMs >= 60000 && state.durationMs <= 24 * 3600000 &&
       (state.mode !== 'exam' || state.durationMs === 5 * 3600000) &&
@@ -19,13 +20,13 @@
         state.remainingAtFinish >= 0 && state.remainingAtFinish <= state.durationMs)) &&
       state.tasks && ['T1', 'T2', 'T3'].every(id => TASK_STATES.includes(state.tasks[id]));
   }
-  function create(id, mode, durationMs, now) {
-    if (!id || !['exam', 'training'].includes(mode) || !Number.isFinite(now) ||
+  function create(id, mode, durationMs, now, pack = 'ipho-2026') {
+    if (!id || !validPack(pack) || !['exam', 'training'].includes(mode) || !Number.isFinite(now) ||
         !Number.isFinite(durationMs) || durationMs < 60000 || durationMs > 24 * 3600000) {
       throw new Error('Invalid attempt settings');
     }
     const duration = mode === 'exam' ? 5 * 3600000 : durationMs;
-    return { schema: VERSION, id, pack: 'ipho-2026', contentVersion: 'ru-1.0', mode,
+    return { schema: VERSION, id, pack, contentVersion: 'ru-1.0', mode,
       durationMs: duration, startedAt: now, deadline: now + duration, status: 'running',
       pausedRemaining: null, finishedAt: null, remainingAtFinish: null,
       lastSeenAt: now, updatedAt: now, revision: 0,

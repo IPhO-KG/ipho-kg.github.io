@@ -17,6 +17,18 @@ const tests = [];
 const test = (name, run) => tests.push({ name, run });
 const raises = (fn, name) => assert.throws(fn, error => error && error.name === name);
 
+test('published criterion weights are added individually and survive reloading', () => {
+  const parts = [{ id: 'T1-A1', max: 0.8, stepIds: ['model', 'calculation', 'result'], stepPoints: [0.3, 0.3, 0.2] }];
+  const toggle = (record, stepId, value) => M.change(record, parts, {type: 'check', partId: 'T1-A1', stepId, value});
+  let record = toggle(null, 'result', true);
+  assert.equal(M.summarize(record, parts).score, 0.2);
+  record = toggle(M.normalize(plain(record), parts), 'model', true);
+  assert.equal(M.summarize(record, parts).score, 0.5);
+  record = toggle(record, 'result', false);
+  assert.equal(M.summarize(record, parts).score, 0.3);
+  raises(() => M.normalize(null, [{...parts[0], stepPoints: [0.2, 0.3, 0.2]}]), 'RangeError');
+});
+
 test('unassessed scores remain null and do not count as lost points', () => {
   const record = M.normalize(null, specs);
   assert.equal(record.parts['T1-A1'].score, null);
@@ -269,6 +281,43 @@ if (solutionFiles.every(existsSync)) {
 } else {
   console.log('SKIP actual solution fixtures: still being written; rerun once all three JSON files exist.');
 }
+
+test('each listed theory edition awards its published subpart and round totals', () => {
+  const catalog = readFileSync(new URL('practice/ipho/index.html', root), 'utf8');
+  const editions = [...catalog.matchAll(/<details\b[^>]*\bdata-edition="(ipho-\d{4})"/g)].map(match => match[1]);
+  assert.ok(editions.length > 0);
+  assert.equal(new Set(editions).size, editions.length);
+  for (const edition of editions) {
+    const directory = new URL('assets/practice/' + edition + '/', root);
+    const reader = readFileSync(new URL('practice/' + edition + '/index.html', root), 'utf8');
+    const sidebarMax = new Map([...reader.matchAll(/data-task-score="(T[123])"(?: data-max="([\d.]+)")?>([\d.]+) баллов/g)]
+      .map(match => [match[1], Number(match[2] || match[3])]));
+    assert.equal(sidebarMax.size, 3, edition + ' sidebar');
+    const rubric = [];
+    for (const number of [1, 2, 3]) {
+      const paper = JSON.parse(readFileSync(new URL('q' + number + '_metadata.json', directory), 'utf8'));
+      const solution = JSON.parse(readFileSync(new URL('solutions/t' + number + '.json', directory), 'utf8'));
+      assert.deepEqual(solution.parts.map(part => [part.id, part.max]),
+        paper.subtasks.map(part => [part.id, part.points]), edition + ' T' + number);
+      assert.equal(solution.max, paper.points);
+      assert.equal(sidebarMax.get('T' + number), paper.points, edition + ' T' + number + ' sidebar');
+      assert.equal(solution.parts.reduce((total, part) => total + Math.round(part.max * 100), 0), Math.round(paper.points * 100));
+      for (const part of solution.parts) {
+        const spec = {id: part.id, max: part.max, stepIds: part.steps.map(step => step.id)};
+        if (part.steps.some(step => step.points !== undefined)) spec.stepPoints = part.steps.map(step => step.points);
+        rubric.push(spec);
+      }
+    }
+    let record = M.normalize(null, rubric);
+    for (const spec of rubric) {
+      for (const stepId of spec.stepIds) {
+        record = M.change(record, rubric, {type: 'check', partId: spec.id, stepId, value: true});
+      }
+      assert.equal(record.parts[spec.id].score, spec.max, edition + ' ' + spec.id);
+    }
+    assert.equal(M.summarize(record, rubric).score, 30, edition);
+  }
+});
 
 let failed = 0;
 for (const { name, run } of tests) {

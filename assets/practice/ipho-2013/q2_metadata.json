@@ -1,0 +1,136 @@
+{
+  "id": "T2",
+  "title": "Плазмонный парогенератор",
+  "points": 12,
+  "sourceFile": "/assets/practice/ipho-2013/IPhO_2013_T2_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "translationStatus": "editorial-adaptation",
+  "sections": [
+    {
+      "id": "T2-A",
+      "title": "Заряд и поле наночастицы",
+      "points": 3.5
+    },
+    {
+      "id": "T2-B",
+      "title": "Эквивалентный контур",
+      "points": 3.2
+    },
+    {
+      "id": "T2-C",
+      "title": "Поглощение и рассеяние света",
+      "points": 4.5
+    },
+    {
+      "id": "T2-D",
+      "title": "Образование пара",
+      "points": 0.8
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-2.1",
+      "label": "2.1",
+      "points": 0.7
+    },
+    {
+      "id": "T2-2.2",
+      "label": "2.2",
+      "points": 1.2
+    },
+    {
+      "id": "T2-2.3",
+      "label": "2.3",
+      "points": 1.0
+    },
+    {
+      "id": "T2-2.4",
+      "label": "2.4",
+      "points": 0.6
+    },
+    {
+      "id": "T2-2.5a",
+      "label": "2.5a",
+      "points": 0.7
+    },
+    {
+      "id": "T2-2.5b",
+      "label": "2.5b",
+      "points": 0.4
+    },
+    {
+      "id": "T2-2.6a",
+      "label": "2.6a",
+      "points": 0.7
+    },
+    {
+      "id": "T2-2.6b",
+      "label": "2.6b",
+      "points": 0.5
+    },
+    {
+      "id": "T2-2.7a",
+      "label": "2.7a",
+      "points": 0.5
+    },
+    {
+      "id": "T2-2.7b",
+      "label": "2.7b",
+      "points": 0.4
+    },
+    {
+      "id": "T2-2.8a",
+      "label": "2.8a",
+      "points": 1.0
+    },
+    {
+      "id": "T2-2.8b",
+      "label": "2.8b",
+      "points": 1.0
+    },
+    {
+      "id": "T2-2.9",
+      "label": "2.9",
+      "points": 1.0
+    },
+    {
+      "id": "T2-2.10a",
+      "label": "2.10a",
+      "points": 1.2
+    },
+    {
+      "id": "T2-2.10b",
+      "label": "2.10b",
+      "points": 0.3
+    },
+    {
+      "id": "T2-2.11a",
+      "label": "2.11a",
+      "points": 0.6
+    },
+    {
+      "id": "T2-2.11b",
+      "label": "2.11b",
+      "points": 0.2
+    }
+  ],
+  "figures": [
+    "qfig1"
+  ],
+  "solutionsAvailable": true,
+  "stepScoring": "official-subtask-maxima",
+  "solutionData": "/assets/practice/ipho-2013/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2013/IPhO_2013_S2_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2013/IPhO_2013_S2_EN.pdf",
+  "sourceLinks": {
+    "problem": "https://ipho2013.dk/ipho2013-theoretical-problem-2.pdf",
+    "solution": "https://ipho2013.dk/IPhO2013_T2_solution.pdf",
+    "data": "https://ipho2013.dk/ipho2013-theory-data-sheet.pdf"
+  }
+}

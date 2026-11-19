@@ -1,0 +1,308 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Фотография движущегося стержня",
+    "en": "Watching a rod in motion"
+  },
+  "sourcePdf": "/assets/practice/ipho-2006/IPhO_2006_S2_EN.pdf",
+  "max": 10,
+  "parts": [
+    {
+      "id": "T2-2.1",
+      "max": 0.6,
+      "label": "2.1",
+      "title": {
+        "ru": "От видимой координаты к истинной",
+        "en": "From apparent to actual position"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Запаздывание света",
+            "en": "Light travel time"
+          },
+          "body": {
+            "ru": "<p>Свет от участка, видимого в \\(\\tilde x\\), прошёл до камеры путь \\(\\sqrt{D^2+\\tilde x^2}\\). За время распространения светового сигнала стержень переместился вправо на \\(v\\sqrt{D^2+\\tilde x^2}/c\\). Это перемещение нужно прибавить к координате в момент испускания.</p>",
+            "en": "<p>Light from the point seen at \\(\\tilde x\\) travelled a distance \\(\\sqrt{D^2+\\tilde x^2}\\) to the camera. During this travel time the rod moved right by \\(v\\sqrt{D^2+\\tilde x^2}/c\\). Add that distance to the emission coordinate.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x=\\tilde x+\\beta\\sqrt{D^2+\\tilde x^2}.\\]</div>",
+        "en": "<div>\\[x=\\tilde x+\\beta\\sqrt{D^2+\\tilde x^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.2",
+      "max": 0.9,
+      "label": "2.2",
+      "title": {
+        "ru": "Координата изображения",
+        "en": "Image coordinate"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.9,
+          "label": {
+            "ru": "Обращение уравнения запаздывания",
+            "en": "Inverting the retardation relation"
+          },
+          "body": {
+            "ru": "<p>Перенесём \\(\\tilde x\\) в левую часть уравнения 2.1 и возведём в квадрат. Получаем</p><div>\\[(1-\\beta^2)\\tilde x^2-2x\\tilde x+x^2-\\beta^2 D^2=0.\\]</div><p>Из двух корней нужен тот, который даёт \\(\\tilde x&lt;x\\): момент испускания предшествует съёмке. Обозначим найденное преобразование через \\(F(x)\\).</p>",
+            "en": "<p>Transfer \\(\\tilde x\\) to the left of the relation in 2.1 and square it. This gives</p><div>\\[(1-\\beta^2)\\tilde x^2-2x\\tilde x+x^2-\\beta^2D^2=0.\\]</div><p>Choose the root with \\(\\tilde x&lt;x\\), since emission precedes exposure. Denote this map by \\(F(x)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tilde x=F(x)=\\gamma^2x-\\beta\\gamma\\sqrt{D^2+\\gamma^2x^2}.\\]</div>",
+        "en": "<div>\\[\\tilde x=F(x)=\\gamma^2x-\\beta\\gamma\\sqrt{D^2+\\gamma^2x^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.3",
+      "max": 1.5,
+      "label": "2.3",
+      "title": {
+        "ru": "Видимая длина в произвольный момент",
+        "en": "Apparent length at any instant"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.5,
+          "label": {
+            "ru": "Изображения концов",
+            "en": "Images of the two ends"
+          },
+          "body": {
+            "ru": "<p>В системе камеры истинная длина движущегося стержня равна \\(L/\\gamma\\). Обозначим половину этой длины через \\(a=L/(2\\gamma)\\). В один момент положения переднего и заднего концов равны \\(x_0+a\\) и \\(x_0-a\\). Изображение каждого находим отдельно по формуле 2.2: \\(\\tilde L=F(x_0+a)-F(x_0-a)\\). Чтобы короче записать результат, введём</p><div>\\[d_\\pm=\\sqrt{D^2+(\\gamma x_0\\pm L/2)^2}.\\]</div>",
+            "en": "<p>In the camera frame the actual moving length is \\(L/\\gamma\\). Write \\(a=L/(2\\gamma)\\) for half that length. At a common instant the front and rear ends occupy \\(x_0+a\\) and \\(x_0-a\\). Apply the imaging map from 2.2 separately to each end: \\(\\tilde L=F(x_0+a)-F(x_0-a)\\). For a compact expression put</p><div>\\[d_\\pm=\\sqrt{D^2+(\\gamma x_0\\pm L/2)^2}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tilde L(x_0)=\\gamma L+\\beta\\gamma(d_--d_+).\\]</div>",
+        "en": "<div>\\[\\tilde L(x_0)=\\gamma L+\\beta\\gamma(d_--d_+).\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.4",
+      "max": 1.5,
+      "label": "2.4",
+      "title": {
+        "ru": "Изменение длины со временем",
+        "en": "How the length changes with time"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.5,
+          "label": {
+            "ru": "Кривизна отображения",
+            "en": "Curvature of the imaging map"
+          },
+          "body": {
+            "ru": "<p>Производная видимой длины по \\(x_0\\) равна \\(F^{\\prime}(x_0+a)-F^{\\prime}(x_0-a)\\). Для отображения из 2.2</p><div>\\[F^{\\prime\\prime}(x)=-\\frac{\\beta\\gamma^3D^2}{(D^2+\\gamma^2x^2)^{3/2}}&lt;0.\\]</div><p>Поэтому производная \\(F^{\\prime}\\) у переднего конца меньше, чем у заднего. Поскольку \\(x_0\\) с течением времени возрастает, видимая длина всё время уменьшается.</p><figure><img src=\"/assets/practice/ipho-2006/figures/s2-f1.png\" alt=\"Два корня в формуле длины как функции положения центра.\" loading=\"lazy\" style=\"max-width:min(100%,385px)\"><figcaption>Два корня в формуле длины как функции положения центра.</figcaption></figure>",
+            "en": "<p>The derivative of the apparent length with respect to \\(x_0\\) is \\(F^{\\prime}(x_0+a)-F^{\\prime}(x_0-a)\\). For the map in 2.2,</p><div>\\[F^{\\prime\\prime}(x)=-\\frac{\\beta\\gamma^3D^2}{(D^2+\\gamma^2x^2)^{3/2}}&lt;0.\\]</div><p>Thus \\(F^{\\prime}\\) is smaller at the leading end than at the trailing end. As \\(x_0\\) increases in time, the apparent length always decreases.</p><figure><img src=\"/assets/practice/ipho-2006/figures/s2-f1.png\" alt=\"The two square-root terms as functions of centre position.\" loading=\"lazy\" style=\"max-width:min(100%,385px)\"><figcaption>The two square-root terms as functions of centre position.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Вариант (в): видимая длина монотонно убывает.</p>",
+        "en": "<p>Choice (c): the apparent length decreases throughout.</p>"
+      }
+    },
+    {
+      "id": "T2-2.5",
+      "max": 0.8,
+      "label": "2.5",
+      "title": {
+        "ru": "Длина на симметричном снимке",
+        "en": "Length in the symmetric picture"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Одновременное испускание",
+            "en": "Simultaneous emission"
+          },
+          "body": {
+            "ru": "<p>Видимые концы расположены симметрично, поэтому свет от обоих прошёл одинаковый путь. Раз он попал в камеру одновременно, он и покинул концы одновременно в системе камеры. Видимая длина совпадает с лоренцевой длиной движущегося стержня.</p>",
+            "en": "<p>The apparent ends are symmetric, so their light travelled equal distances. Since the light arrived together, it left both ends simultaneously in the camera frame. The apparent length is consequently the Lorentz-contracted length.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tilde L_{\\rm sym}=\\frac L\\gamma.\\]</div>",
+        "en": "<div>\\[\\tilde L_{\\rm sym}=\\frac L\\gamma.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.6",
+      "max": 1,
+      "label": "2.6",
+      "title": {
+        "ru": "Положение центра при съёмке",
+        "en": "Centre position at exposure"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1,
+          "label": {
+            "ru": "Смещение за время пролёта света",
+            "en": "Translation during the light travel time"
+          },
+          "body": {
+            "ru": "<p>В момент испускания света концами они находились в точках \\(\\pm a\\), где \\(a=L/(2\\gamma)\\), а центр был в начале координат. Путь света до отверстия равен \\(s=\\sqrt{D^2+a^2}\\). К моменту съёмки центр сместился на \\(vs/c\\).</p>",
+            "en": "<p>When the endpoints emitted their light, their coordinates were \\(\\pm a\\), where \\(a=L/(2\\gamma)\\), and the centre was at zero. Light travelled \\(s=\\sqrt{D^2+a^2}\\) to the pinhole. By exposure time the centre had advanced by \\(vs/c\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x_0=\\beta\\sqrt{D^2+\\frac{L^2}{4\\gamma^2}}.\\]</div>",
+        "en": "<div>\\[x_0=\\beta\\sqrt{D^2+\\frac{L^2}{4\\gamma^2}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.7",
+      "max": 1.2,
+      "label": "2.7",
+      "title": {
+        "ru": "Изображение середины стержня",
+        "en": "Image of the midpoint"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.2,
+          "label": {
+            "ru": "Задержка сигнала от середины",
+            "en": "Retardation at the midpoint"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(a=L/(2\\gamma)\\), \\(s=\\sqrt{D^2+a^2}\\). Истинная координата центра в момент съёмки равна \\(\\beta s\\). Применим к ней \\(F\\) из 2.2. Если обозначить \\(s_\\beta=\\sqrt{D^2+\\beta^2a^2}\\), то после подстановки получим \\(\\tilde x_0=\\beta\\gamma^2(s-s_\\beta)\\). Для упрощения используем \\(s^2-s_\\beta^2=a^2/\\gamma^2\\):</p><div>\\[\\tilde x_0=\\frac{\\beta a^2}{s+s_\\beta}.\\]</div><p>Передний конец виден в \\(+a\\), поэтому искомое расстояние равно \\(a-\\tilde x_0\\).</p>",
+            "en": "<p>Put \\(a=L/(2\\gamma)\\) and \\(s=\\sqrt{D^2+a^2}\\). The actual centre coordinate at exposure is \\(\\beta s\\). Substitute it into \\(F\\) from 2.2. Writing \\(s_\\beta=\\sqrt{D^2+\\beta^2a^2}\\) gives \\(\\tilde x_0=\\beta\\gamma^2(s-s_\\beta)\\). Rationalise with \\(s^2-s_\\beta^2=a^2/\\gamma^2\\) to obtain</p><div>\\[\\tilde x_0=\\frac{\\beta a^2}{s+s_\\beta}.\\]</div><p>The front end appears at \\(+a\\), so its separation from this image is \\(a-\\tilde x_0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\ell=a-\\frac{\\beta a^2}{\\sqrt{D^2+a^2}+\\sqrt{D^2+\\beta^2a^2}},\\qquad a=\\frac{L}{2\\gamma}.\\]</div>",
+        "en": "<div>\\[\\ell=a-\\frac{\\beta a^2}{\\sqrt{D^2+a^2}+\\sqrt{D^2+\\beta^2a^2}},\\qquad a=\\frac{L}{2\\gamma}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.8",
+      "max": 0.5,
+      "label": "2.8",
+      "title": {
+        "ru": "Ранний и поздний снимки",
+        "en": "Early and late photographs"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Пределы видимой длины",
+            "en": "Limits of the apparent length"
+          },
+          "body": {
+            "ru": "<p>Вдали от камеры \\(\\sqrt{D^2+\\tilde x^2}\\simeq|\\tilde x|\\). Для приближающегося стержня \\(x\\simeq(1-\\beta)\\tilde x\\), для удаляющегося \\(x\\simeq(1+\\beta)\\tilde x\\). При одной истинной длине первый снимок даёт большее изображение.</p>",
+            "en": "<p>Far away, \\(\\sqrt{D^2+\\tilde x^2}\\simeq|\\tilde x|\\). For the approaching rod \\(x\\simeq(1-\\beta)\\tilde x\\), while for the receding rod \\(x\\simeq(1+\\beta)\\tilde x\\). The same actual length therefore appears longer in the first image.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Ранний снимок: \\(3{,}00\\,\\mathrm m\\). Поздний: \\(1{,}00\\,\\mathrm m\\).</p>",
+        "en": "<p>Early picture: \\(3.00\\,\\mathrm m\\). Late picture: \\(1.00\\,\\mathrm m\\).</p>"
+      }
+    },
+    {
+      "id": "T2-2.9",
+      "max": 1,
+      "label": "2.9",
+      "title": {
+        "ru": "Скорость стержня",
+        "en": "Speed of the rod"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1,
+          "label": {
+            "ru": "Отношение предельных длин",
+            "en": "Ratio of limiting lengths"
+          },
+          "body": {
+            "ru": "<p>Обозначим длины раннего и позднего изображений через \\(E\\) и \\(K\\). Из 2.8 следуют \\(E=L/[\\gamma(1-\\beta)]\\) и \\(K=L/[\\gamma(1+\\beta)]\\). Их отношение равно \\(3=(1+\\beta)/(1-\\beta)\\), что определяет скорость.</p>",
+            "en": "<p>Call the early and late apparent lengths \\(E\\) and \\(K\\). Part 2.8 gives \\(E=L/[\\gamma(1-\\beta)]\\) and \\(K=L/[\\gamma(1+\\beta)]\\). Dividing gives \\(3=(1+\\beta)/(1-\\beta)\\), which fixes the speed.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v=\\frac c2=1{,}50\\times10^8\\,\\mathrm{m/s}.\\]</div>",
+        "en": "<div>\\[v=\\frac c2=1.50\\times10^8\\,\\mathrm{m/s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.10",
+      "max": 0.6,
+      "label": "2.10",
+      "title": {
+        "ru": "Восстановление длины покоя",
+        "en": "Recovering the rest length"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Произведение длин",
+            "en": "Product of image lengths"
+          },
+          "body": {
+            "ru": "<p>При перемножении длин двух предельных изображений факторы растяжения и сжатия сокращаются: \\(EK=L^2/[\\gamma^2(1-\\beta^2)]=L^2\\). Таким образом, длина покоя — их среднее геометрическое.</p>",
+            "en": "<p>Multiplying the two limiting lengths cancels the stretch and compression factors: \\(EK=L^2/[\\gamma^2(1-\\beta^2)]=L^2\\). The rest length is their geometric mean.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[L=\\sqrt{EK}=\\sqrt3\\,\\mathrm m\\simeq1{,}73\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[L=\\sqrt{EK}=\\sqrt3\\,\\mathrm m\\simeq1.73\\,\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.11",
+      "max": 0.4,
+      "label": "2.11",
+      "title": {
+        "ru": "Симметричное изображение в числах",
+        "en": "Numerical symmetric length"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Лоренцево сокращение",
+            "en": "Lorentz contraction"
+          },
+          "body": {
+            "ru": "<p>При \\(\\beta=1/2\\) имеем \\(1/\\gamma=\\sqrt3/2\\). Умножаем длину покоя \\(\\sqrt3\\,\\mathrm m\\) на этот коэффициент, как в 2.5.</p>",
+            "en": "<p>For \\(\\beta=1/2\\), \\(1/\\gamma=\\sqrt3/2\\). Multiply the rest length \\(\\sqrt3\\,\\mathrm m\\) by this factor, as in part 2.5.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tilde L_{\\rm sym}=1{,}50\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[\\tilde L_{\\rm sym}=1.50\\,\\mathrm m.\\]</div>"
+      }
+    }
+  ]
+}

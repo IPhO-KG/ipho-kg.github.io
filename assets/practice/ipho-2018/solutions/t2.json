@@ -1,0 +1,490 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Где нейтрино?",
+    "en": "Where is the neutrino?"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2018/IPhO_2018_S2_EN.pdf",
+  "markingSchemePdf": "/assets/practice/ipho-2018/IPhO_2018_M2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-A1",
+      "max": 0.5,
+      "title": {
+        "ru": "Радиус орбиты",
+        "en": "Orbit radius"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Центростремительная сила",
+            "en": "Centripetal force"
+          },
+          "body": {
+            "ru": "<p>Сила Лоренца меняет направление скорости. Поэтому \\(mv^2/r=evB\\) и \\(r=mv/(eB)\\).</p>",
+            "en": "<p>The Lorentz force turns the velocity vector. Thus \\(mv^2/r=evB\\) and \\(r=mv/(eB)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Импульс через энергию",
+            "en": "Momentum from energy"
+          },
+          "body": {
+            "ru": "<p>Из \\(K=mv^2/2\\) следует \\(v=\\sqrt{2K/m}\\). Подставляем эту скорость в выражение для радиуса.</p>",
+            "en": "<p>From \\(K=mv^2/2\\) we obtain \\(v=\\sqrt{2K/m}\\). Substitute this speed into the orbit radius.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r=\\frac{\\sqrt{2mK}}{eB}.\\]</div>",
+        "en": "<div>\\[r=\\frac{\\sqrt{2mK}}{eB}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A2",
+      "max": 0.5,
+      "title": {
+        "ru": "Выход из цилиндра",
+        "en": "Reaching the cylinder wall"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Кривизна трека",
+            "en": "Track curvature"
+          },
+          "body": {
+            "ru": "<p>В релятивистском случае поперечная сила равна \\(pv/r\\), где \\(p=\\gamma mv\\). Из \\(pv/r=evB\\) получаем \\(p=eBr\\) для поперечного трека.</p>",
+            "en": "<p>For a transverse track the relativistic force is \\(pv/r\\), with \\(p=\\gamma mv\\). Equating it to \\(evB\\) gives \\(p=eBr\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Предельная траектория",
+            "en": "Limiting track"
+          },
+          "body": {
+            "ru": "<p>Орбита проходит через ось, поэтому максимальное удаление от неё равно диаметру орбиты. На границе выхода \\(2r=R\\). Используем \\(1\\,\\mathrm{MeV}/c=5{,}34\\times10^{-22}\\,\\mathrm{kg\\,m/s}\\).</p>",
+            "en": "<p>Since the orbit passes through the axis, its greatest distance from the axis is its diameter. At threshold \\(2r=R\\). Use \\(1\\,\\mathrm{MeV}/c=5.34\\times10^{-22}\\,\\mathrm{kg\\,m/s}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p_{\\min}=\\frac{eBR}{2}=330\\,\\mathrm{MeV}/c.\\]</div>",
+        "en": "<div>\\[p_{\\min}=\\frac{eBR}{2}=330\\,\\mathrm{MeV}/c.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A3",
+      "max": 1.0,
+      "title": {
+        "ru": "Мощность излучения",
+        "en": "Radiated power"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Поперечное ускорение",
+            "en": "Transverse acceleration"
+          },
+          "body": {
+            "ru": "<p>Для поперечной силы \\(a=evB/(\\gamma m)\\). Подставив это в формулу излучения и положив \\(v\\simeq c\\), получаем</p>\n<div>\\[P\\simeq\\frac{e^4B^2\\gamma^2}{6\\pi\\epsilon_0 m^2 c}.\\]</div>",
+            "en": "<p>The transverse acceleration is \\(a=evB/(\\gamma m)\\). Inserting this in the radiation formula and taking \\(v\\simeq c\\) gives</p>\n<div>\\[P\\simeq\\frac{e^4B^2\\gamma^2}{6\\pi\\epsilon_0 m^2 c}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Зависимость от энергии",
+            "en": "Energy dependence"
+          },
+          "body": {
+            "ru": "<p>Используем \\(\\gamma=E/(mc^2)\\). Тогда \\(P=e^4 B^2E^2/(6\\pi\\epsilon_0m^4c^5)\\). Сравнение с заданным видом определяет все три числа.</p>",
+            "en": "<p>Put \\(\\gamma=E/(mc^2)\\). This gives \\(P=e^4 B^2E^2/(6\\pi\\epsilon_0m^4c^5)\\). Read off the three constants.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\xi=\\frac{1}{6\\pi},\\qquad n=5,\\qquad k=4.\\]</div>",
+        "en": "<div>\\[\\xi=\\frac{1}{6\\pi},\\qquad n=5,\\qquad k=4.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A4",
+      "max": 1.0,
+      "title": {
+        "ru": "Убывание энергии",
+        "en": "Energy loss in time"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Баланс энергии",
+            "en": "Energy balance"
+          },
+          "body": {
+            "ru": "<p>Энергия уносится излучением. Из A3 получаем \\(dE/dt=-P=-bE^2\\), где \\(b=e^4B^2/(6\\pi\\epsilon_0m^4c^5)\\).</p>",
+            "en": "<p>Radiation carries energy away. A3 gives \\(dE/dt=-P=-bE^2\\), where \\(b=e^4B^2/(6\\pi\\epsilon_0m^4c^5)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Интегрирование",
+            "en": "Integrating the loss"
+          },
+          "body": {
+            "ru": "<p>Разделим уравнение на \\(-E^2\\) и проинтегрируем по времени от 0 до \\(t\\).</p>\n<div>\\[\\frac{1}{E(t)}-\\frac{1}{E_0}=bt.\\]</div>",
+            "en": "<p>Divide by \\(-E^2\\) and integrate in time from zero to \\(t\\).</p>\n<div>\\[\\frac{1}{E(t)}-\\frac{1}{E_0}=bt.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.3,
+          "label": {
+            "ru": "Коэффициент потерь",
+            "en": "Loss coefficient"
+          },
+          "body": {
+            "ru": "<p>Обращая полученное выражение, находим \\(E(t)=E_0/(1+bE_0t)\\). Значит, искомый коэффициент равен \\(b\\).</p>",
+            "en": "<p>Inverting yields \\(E(t)=E_0/(1+bE_0t)\\). The requested coefficient is therefore \\(b\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\alpha=\\frac{e^4B^2}{6\\pi\\epsilon_0m^4c^5}.\\]</div>",
+        "en": "<div>\\[\\alpha=\\frac{e^4B^2}{6\\pi\\epsilon_0m^4c^5}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A5",
+      "max": 0.5,
+      "title": {
+        "ru": "Потери до выхода",
+        "en": "Loss on leaving the detector"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Время пролёта",
+            "en": "Flight time"
+          },
+          "body": {
+            "ru": "<p>При \\(p\\simeq E_0/c\\) радиус кривизны \\(r=E_0/(eBc)\\simeq167\\,\\mathrm m\\) намного больше \\(R\\). Длина пути близка к \\(R\\), а время пролёта \\(t\\simeq R/c=3{,}7\\,\\mathrm{ns}\\).</p>",
+            "en": "<p>With \\(p\\simeq E_0/c\\) the curvature radius \\(r=E_0/(eBc)\\simeq167\\,\\mathrm m\\) greatly exceeds \\(R\\). The path length is effectively \\(R\\), and \\(t\\simeq R/c=3.7\\,\\mathrm{ns}\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Энергия излучения",
+            "en": "Energy carried away"
+          },
+          "body": {
+            "ru": "<p>Из A4 энергия излучения равна \\(E_0-E(t)=\\alpha E_0^2t/(1+\\alpha E_0t)\\). Потеря мала, поэтому достаточно \\(\\alpha E_0^2R/c\\).</p>",
+            "en": "<p>A4 gives the radiated energy \\(E_0-E(t)=\\alpha E_0^2t/(1+\\alpha E_0t)\\). The fractional loss is small, so \\(\\alpha E_0^2R/c\\) suffices.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E_{\\mathrm{rad}}\\simeq 56\\,\\mathrm{MeV}.\\]</div>",
+        "en": "<div>\\[E_{\\mathrm{rad}}\\simeq 56\\,\\mathrm{MeV}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A6",
+      "max": 0.5,
+      "title": {
+        "ru": "Циклотронная частота",
+        "en": "Cyclotron frequency"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Связь энергии с радиусом",
+            "en": "Radius and energy"
+          },
+          "body": {
+            "ru": "<p>Пока \\(v\\simeq c\\), импульс \\(p\\simeq E/c\\). Следовательно, мгновенный радиус орбиты \\(r(t)\\simeq E(t)/(eBc)\\).</p>",
+            "en": "<p>As long as \\(v\\simeq c\\), the momentum is \\(p\\simeq E/c\\). Hence the instantaneous orbit radius is \\(r(t)\\simeq E(t)/(eBc)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Угловая частота",
+            "en": "Angular frequency"
+          },
+          "body": {
+            "ru": "<p>Угловая частота \\(\\omega=v/r\\) возрастает по мере уменьшения энергии. Подставим \\(E(t)\\) из A4. Частота в оборотах в секунду равна \\(f=\\omega/(2\\pi)\\).</p>",
+            "en": "<p>The angular frequency \\(\\omega=v/r\\) increases as the electron loses energy. Insert \\(E(t)\\) from A4. The frequency in cycles per second is \\(f=\\omega/(2\\pi)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega(t)=\\frac{eBc^2}{E_0}\\bigl(1+\\alpha E_0t\\bigr).\\]</div>",
+        "en": "<div>\\[\\omega(t)=\\frac{eBc^2}{E_0}\\bigl(1+\\alpha E_0t\\bigr).\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B1",
+      "max": 1.5,
+      "title": {
+        "ru": "Инвариантная масса бозона",
+        "en": "Boson invariant mass"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Четырёхимпульс пары",
+            "en": "Four-momentum of the pair"
+          },
+          "body": {
+            "ru": "<p>Суммируем импульсы продуктов распада, \\(\\mathbf p_W=\\mathbf p_\\mu+\\mathbf p_\\nu\\). Для безмассовых частиц \\(E_W=c(p_\\mu+p_\\nu)\\), где \\(p_i\\) обозначает модуль трёхмерного импульса.</p>",
+            "en": "<p>Momentum conservation gives \\(\\mathbf p_W=\\mathbf p_\\mu+\\mathbf p_\\nu\\). For massless daughters \\(E_W=c(p_\\mu+p_\\nu)\\), where \\(p_i\\) is the magnitude of the three-momentum.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Инвариант",
+            "en": "Mass invariant"
+          },
+          "body": {
+            "ru": "<p>По определению \\(m_W^2c^4=E_W^2-c^2p_W^2\\). При раскрытии квадратов сокращаются квадраты импульсов каждой отдельной частицы.</p>",
+            "en": "<p>By definition \\(m_W^2c^4=E_W^2-c^2p_W^2\\). On expanding the squares, the individual daughter momentum squares cancel.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Разделение компонент",
+            "en": "Transverse and longitudinal components"
+          },
+          "body": {
+            "ru": "<p>Остаётся \\(m_W^2c^2=2(p_\\mu p_\\nu-\\mathbf p_\\mu\\cdot\\mathbf p_\\nu)\\). Записываем скалярное произведение и каждый модуль через поперечную и продольную части.</p>",
+            "en": "<p>The remaining term is \\(m_W^2c^2=2(p_\\mu p_\\nu-\\mathbf p_\\mu\\cdot\\mathbf p_\\nu)\\). Resolve the dot product and both magnitudes into their transverse and longitudinal components.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[m_W^2=\\frac{2}{c^2}\\left[\\sqrt{p_{\\mu T}^2+p_{\\mu z}^2}\\sqrt{p_{\\nu T}^2+p_{\\nu z}^2}-\\mathbf p_{\\mu T}\\cdot\\mathbf p_{\\nu T}-p_{\\mu z}p_{\\nu z}\\right].\\]</div>",
+        "en": "<div>\\[m_W^2=\\frac{2}{c^2}\\left[\\sqrt{p_{\\mu T}^2+p_{\\mu z}^2}\\sqrt{p_{\\nu T}^2+p_{\\nu z}^2}-\\mathbf p_{\\mu T}\\cdot\\mathbf p_{\\nu T}-p_{\\mu z}p_{\\nu z}\\right].\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B2",
+      "max": 1.5,
+      "title": {
+        "ru": "Продольный импульс",
+        "en": "Longitudinal momentum"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Коэффициенты уравнения",
+            "en": "Inputs to the quadratic"
+          },
+          "body": {
+            "ru": "<p>Из таблицы \\(p_\\mu=37{,}2\\) и \\(p_{\\mu z}=-12{,}4\\) в \\(\\mathrm{GeV}/c\\). В единицах \\((\\mathrm{GeV}/c)^2\\) получаем \\(m_W^2c^2=6464{,}2\\), \\(p_{\\nu T}^2=10864{,}9\\), \\(\\mathbf p_{\\mu T}\\cdot\\mathbf p_{\\nu T}=2439{,}3\\). Введём \\(D=m_W^2c^2/2+\\mathbf p_{\\mu T}\\cdot\\mathbf p_{\\nu T}\\) и \\(z=p_{\\nu z}\\).</p>",
+            "en": "<p>From the table \\(p_\\mu=37.2\\) and \\(p_{\\mu z}=-12.4\\) in \\(\\mathrm{GeV}/c\\). In \\((\\mathrm{GeV}/c)^2\\) the inputs are \\(m_W^2c^2=6464.2\\), \\(p_{\\nu T}^2=10864.9\\) and \\(\\mathbf p_{\\mu T}\\cdot\\mathbf p_{\\nu T}=2439.3\\). Set \\(D=m_W^2c^2/2+\\mathbf p_{\\mu T}\\cdot\\mathbf p_{\\nu T}\\) and \\(z=p_{\\nu z}\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Два допустимых корня",
+            "en": "Two admissible roots"
+          },
+          "body": {
+            "ru": "<p>Из B1 имеем \\(p_\\mu\\sqrt{p_{\\nu T}^2+z^2}=D+p_{\\mu z}z\\). Возводим в квадрат. Оба корня удовлетворяют исходному равенству.</p>\n<div>\\[p_{\\mu T}^2z^2-2Dp_{\\mu z}z+p_\\mu^2p_{\\nu T}^2-D^2=0.\\]</div>",
+            "en": "<p>B1 gives \\(p_\\mu\\sqrt{p_{\\nu T}^2+z^2}=D+p_{\\mu z}z\\). Square it to obtain the quadratic. Both roots satisfy the unsquared equation.</p>\n<div>\\[p_{\\mu T}^2z^2-2Dp_{\\mu z}z+p_\\mu^2p_{\\nu T}^2-D^2=0.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p_{\\nu z}^{(+)}\\simeq74{,}0\\,\\mathrm{GeV}/c,\\qquad p_{\\nu z}^{(-)}\\simeq-188{,}3\\,\\mathrm{GeV}/c.\\]</div>",
+        "en": "<div>\\[p_{\\nu z}^{(+)}\\simeq74.0\\,\\mathrm{GeV}/c,\\qquad p_{\\nu z}^{(-)}\\simeq-188.3\\,\\mathrm{GeV}/c.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B3",
+      "max": 1.0,
+      "title": {
+        "ru": "Масса верхнего кварка",
+        "en": "Reconstructed top mass"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Сумма по трём частицам",
+            "en": "Sum over three daughters"
+          },
+          "body": {
+            "ru": "<p>К паре \\(\\mu^+\\nu\\) добавляется струя \\(j_1\\). Поэтому \\(E_t=c(p_\\mu+p_\\nu+p_j)\\), а \\(\\mathbf p_t=\\mathbf p_\\mu+\\mathbf p_\\nu+\\mathbf p_j\\).</p>",
+            "en": "<p>The jet \\(j_1\\) joins the \\(\\mu^+\\nu\\) pair. Thus \\(E_t=c(p_\\mu+p_\\nu+p_j)\\) and \\(\\mathbf p_t=\\mathbf p_\\mu+\\mathbf p_\\nu+\\mathbf p_j\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Инвариантная масса",
+            "en": "Invariant mass"
+          },
+          "body": {
+            "ru": "<p>Энергия и импульс относятся к одной системе отсчёта. Масса получается из их инвариантной комбинации.</p>\n<div>\\[m_t=\\frac{1}{c^2}\\sqrt{E_t^2-c^2p_t^2}.\\]</div>",
+            "en": "<p>Energy and momentum are measured in the same frame. Their invariant combination gives the mass.</p>\n<div>\\[m_t=\\frac{1}{c^2}\\sqrt{E_t^2-c^2p_t^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Две реконструкции",
+            "en": "Two reconstructions"
+          },
+          "body": {
+            "ru": "<p>Для каждого корня заново вычисляем \\(p_\\nu=\\sqrt{p_{\\nu T}^2+p_{\\nu z}^2}\\) и \\(p_{tz}=p_{\\mu z}+p_{\\nu z}+p_{jz}\\). Положительному корню отвечает меньшая масса.</p>",
+            "en": "<p>For each root recalculate \\(p_\\nu=\\sqrt{p_{\\nu T}^2+p_{\\nu z}^2}\\) and \\(p_{tz}=p_{\\mu z}+p_{\\nu z}+p_{jz}\\). The positive root gives the smaller mass.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[m_t^{(+)}\\simeq169{,}3\\,\\mathrm{GeV}/c^2,\\qquad m_t^{(-)}\\simeq311{,}2\\,\\mathrm{GeV}/c^2.\\]</div>",
+        "en": "<div>\\[m_t^{(+)}\\simeq169.3\\,\\mathrm{GeV}/c^2,\\qquad m_t^{(-)}\\simeq311.2\\,\\mathrm{GeV}/c^2.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B4",
+      "max": 1.0,
+      "title": {
+        "ru": "Выбор по распределению",
+        "en": "Choosing the mass"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Масса у максимума",
+            "en": "Mass near the peak"
+          },
+          "body": {
+            "ru": "<p>На штриховой кривой интервал вблизи \\(169\\,\\mathrm{GeV}/c^2\\) содержит около \\(0{,}1\\) нормированной выборки сигнала.</p>",
+            "en": "<p>On the dashed curve the mass bin near \\(169\\,\\mathrm{GeV}/c^2\\) contains about \\(0.1\\) of the normalised signal sample.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Масса на хвосте",
+            "en": "Mass in the tail"
+          },
+          "body": {
+            "ru": "<p>При \\(311\\,\\mathrm{GeV}/c^2\\) соответствующая доля уже ниже \\(0{,}01\\).</p>",
+            "en": "<p>At \\(311\\,\\mathrm{GeV}/c^2\\) the corresponding fraction is below \\(0.01\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Предпочтительное значение",
+            "en": "Preferred candidate"
+          },
+          "body": {
+            "ru": "<p>Для одинаковых интервалов массы сигнал заметно выше у первого решения. Ему отвечает положительный продольный импульс нейтрино.</p>",
+            "en": "<p>For equal-width mass bins the signal is appreciably higher at the first solution. This corresponds to positive neutrino longitudinal momentum.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[m_t\\simeq169{,}3\\,\\mathrm{GeV}/c^2,\\qquad P_{\\mathrm{bin}}\\sim 10\\%.\\]</div>",
+        "en": "<div>\\[m_t\\simeq169.3\\,\\mathrm{GeV}/c^2,\\qquad P_{\\mathrm{bin}}\\sim 10\\%.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B5",
+      "max": 1.0,
+      "title": {
+        "ru": "Пробег до распада",
+        "en": "Distance before decay"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Энергия кварка",
+            "en": "Top-quark energy"
+          },
+          "body": {
+            "ru": "<p>При \\(p_{\\nu z}\\simeq74{,}0\\,\\mathrm{GeV}/c\\) сумма энергий трёх продуктов распада из B3 равна \\(E_t\\simeq272{,}6\\,\\mathrm{GeV}\\).</p>",
+            "en": "<p>With \\(p_{\\nu z}\\simeq74.0\\,\\mathrm{GeV}/c\\), the three daughter energies in B3 add up to \\(E_t\\simeq272.6\\,\\mathrm{GeV}\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Замедление времени",
+            "en": "Time dilation"
+          },
+          "body": {
+            "ru": "<p>Среднее время жизни в лаборатории равно \\(\\gamma\\tau_0\\), где \\(\\gamma=E_t/(m_tc^2)\\). За это время кварк проходит \\(d=\\beta c\\gamma\\tau_0\\).</p>",
+            "en": "<p>The mean laboratory lifetime is \\(\\gamma\\tau_0\\), where \\(\\gamma=E_t/(m_tc^2)\\). The distance in this time is \\(d=\\beta c\\gamma\\tau_0\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Численный пробег",
+            "en": "Numerical distance"
+          },
+          "body": {
+            "ru": "<p>Используем \\(\\beta\\gamma=\\sqrt{\\gamma^2-1}\\). Получаем около \\(1{,}9\\times10^{-16}\\,\\mathrm m\\) до округления.</p>",
+            "en": "<p>Use \\(\\beta\\gamma=\\sqrt{\\gamma^2-1}\\). The unrounded distance is about \\(1.9\\times10^{-16}\\,\\mathrm m\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[d=c\\tau_0\\sqrt{\\left(\\frac{E_t}{m_tc^2}\\right)^2-1}\\simeq2\\times10^{-16}\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[d=c\\tau_0\\sqrt{\\left(\\frac{E_t}{m_tc^2}\\right)^2-1}\\simeq2\\times10^{-16}\\,\\mathrm m.\\]</div>"
+      }
+    }
+  ]
+}

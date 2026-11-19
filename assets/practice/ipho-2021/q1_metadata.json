@@ -1,0 +1,69 @@
+{
+  "id": "T1",
+  "title": "Физика планет",
+  "points": 10,
+  "sourceFile": "IPhO_2021_Q1.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "sections": [
+    {
+      "id": "T1-A",
+      "points": 5.0,
+      "title": "Срединно-океанический хребет"
+    },
+    {
+      "id": "T1-B",
+      "points": 5.0,
+      "title": "Сейсмические лучи"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T1-A1",
+      "points": 0.8
+    },
+    {
+      "id": "T1-A2",
+      "points": 0.6
+    },
+    {
+      "id": "T1-A3",
+      "points": 1.1
+    },
+    {
+      "id": "T1-A4",
+      "points": 1.6
+    },
+    {
+      "id": "T1-A5",
+      "points": 0.9
+    },
+    {
+      "id": "T1-B1",
+      "points": 1.5
+    },
+    {
+      "id": "T1-B2",
+      "points": 1.5
+    },
+    {
+      "id": "T1-B3",
+      "points": 2.0
+    }
+  ],
+  "figures": [
+    "plates",
+    "ridge",
+    "source"
+  ],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "official-subtask-maxima",
+  "solutionData": "/assets/practice/ipho-2021/solutions/t1.json",
+  "solutionPdf": "/assets/practice/ipho-2021/IPhO_2021_S1_EN.pdf"
+}

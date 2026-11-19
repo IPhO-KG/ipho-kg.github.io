@@ -1,0 +1,398 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Физика в эскизах",
+    "en": "Focus on sketches"
+  },
+  "max": 13.0,
+  "sourcePdf": "/assets/practice/ipho-2012/IPhO_2012_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-A1",
+      "max": 0.8,
+      "label": "A-i",
+      "title": {
+        "ru": "Граница достижимой области",
+        "en": "Boundary of the reachable region"
+      },
+      "steps": [
+        {
+          "id": "a1-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Уравнение семейства траекторий",
+            "en": "Family of trajectories"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(\\theta\\) — угол броска. Время определяется из \\(x=v_0t\\cos\\theta\\). Подставим его в \\(z=v_0t\\sin\\theta-gt^2/2\\) и обозначим \\(u=\\tan\\theta\\). Для любого заданного \\(x\\) получаем </p><div>\\[z=xu-\\frac{gx^2}{2v_0^2}(1+u^2).\\]</div>",
+            "en": "<p>For launch angle \\(\\theta\\), solve \\(x=v_0t\\cos\\theta\\) for time and substitute in \\(z=v_0t\\sin\\theta-gt^2/2\\). Writing \\(u=\\tan\\theta\\) gives, at fixed \\(x\\), </p><div>\\[z=xu-\\frac{gx^2}{2v_0^2}(1+u^2).\\]</div>"
+          }
+        },
+        {
+          "id": "a1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Огибающая",
+            "en": "Envelope"
+          },
+          "body": {
+            "ru": "<p>Наибольшая высота при данном \\(x\\ne0\\) достигается в вершине квадратичной функции по \\(u\\), при \\(u=v_0^2/(gx)\\). После подстановки получаем \\(z=v_0^2/(2g)-gx^2/(2v_0^2)\\). При \\(x=0\\) тот же предел даёт вертикальный бросок.</p>",
+            "en": "<p>At any \\(x\\ne0\\) the maximum height is at the vertex of the quadratic in \\(u\\), namely \\(u=v_0^2/(gx)\\). Substitution gives \\(z=v_0^2/(2g)-gx^2/(2v_0^2)\\). A vertical launch gives the same limiting height at the origin.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[z_0=\\frac{v_0^2}{2g},\\qquad k=\\frac{g}{2v_0^2}.\\]</div>",
+        "en": "<div>\\[z_0=\\frac{v_0^2}{2g},\\qquad k=\\frac{g}{2v_0^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A2",
+      "max": 1.2,
+      "label": "A-ii",
+      "title": {
+        "ru": "Оптимальная траектория",
+        "en": "Optimal trajectory"
+      },
+      "steps": [
+        {
+          "id": "a2-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Касание при подъёме",
+            "en": "Tangency on ascent"
+          },
+          "body": {
+            "ru": "<p>Проведите параболу от земли так, чтобы на восходящей ветви она касалась боковой поверхности сферы. Пересечение означало бы столкновение, а при свободном зазоре можно уменьшить скорость.</p>",
+            "en": "<p>Draw a parabola from the ground whose rising branch grazes the side of the sphere. An intersection means a collision, while clearance would allow a lower speed.</p>"
+          }
+        },
+        {
+          "id": "a2-2",
+          "points": 0.7,
+          "label": {
+            "ru": "Попадание при спуске",
+            "en": "Arrival on descent"
+          },
+          "body": {
+            "ru": "<p>После касания мяч немного поднимается выше здания и попадает в его верхнюю точку на нисходящей ветви. В верхней точке здания касательная к траектории наклонна.</p><figure><img src=\"/assets/practice/ipho-2012/figures/s1f4.png\" alt=\"Эскиз оптимальной траектории.\" style=\"width:min(100%,275px)\" loading=\"lazy\"><figcaption>Эскиз оптимальной траектории.</figcaption></figure>",
+            "en": "<p>After grazing the side, the ball rises slightly above the building and reaches its highest point on the descending branch. The trajectory has a nonhorizontal tangent at the top of the building.</p><figure><img src=\"/assets/practice/ipho-2012/figures/s1f4.png\" alt=\"Sketch of the optimal trajectory.\" style=\"width:min(100%,275px)\" loading=\"lazy\"><figcaption>Sketch of the optimal trajectory.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>На подъёме мяч касается сферы сбоку, на спуске попадает в её вершину.</p>",
+        "en": "<p>The ball grazes the flank on the way up and reaches the top on the way down.</p>"
+      }
+    },
+    {
+      "id": "T1-A3",
+      "max": 2.5,
+      "label": "A-iii",
+      "title": {
+        "ru": "Минимальная скорость у земли",
+        "en": "Minimum speed at ground level"
+      },
+      "steps": [
+        {
+          "id": "a3-1",
+          "points": 1.5,
+          "label": {
+            "ru": "Обратное движение и огибающая",
+            "en": "Reverse motion and the envelope"
+          },
+          "body": {
+            "ru": "<p>Обратим траекторию и бросим мяч с вершины со скоростью \\(u\\). Для каждой боковой точки сферы должен существовать луч параболы, проходящий не ниже неё. В предельном случае огибающая из A-i касается сферы. При меньшей скорости часть крыши выступала бы над достижимой областью.</p>",
+            "en": "<p>Reverse the motion and launch from the top at speed \\(u\\). Each flank point must be reachable or passable from above. At threshold the envelope from A-i touches the sphere. A lower speed would leave some of the roof beyond the reachable region.</p>"
+          }
+        },
+        {
+          "id": "a3-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Условие касания",
+            "en": "Tangency condition"
+          },
+          "body": {
+            "ru": "<p>Поместим начало координат в вершину, а \\(h=u^2/(2g)\\). Тогда огибающая задаётся как \\(x^2=4h(h-z)\\), сфера как \\(x^2=-z^2-2Rz\\). Их пересечения удовлетворяют </p><div>\\[z^2+(2R-4h)z+4h^2=0.\\]</div>",
+            "en": "<p>Place the origin at the top and write \\(h=u^2/(2g)\\). The envelope gives \\(x^2=4h(h-z)\\) and the sphere \\(x^2=-z^2-2Rz\\). An intersection therefore satisfies </p><div>\\[z^2+(2R-4h)z+4h^2=0.\\]</div>"
+          }
+        },
+        {
+          "id": "a3-3",
+          "points": 0.4,
+          "label": {
+            "ru": "Скорость наверху и у земли",
+            "en": "Top and ground speeds"
+          },
+          "body": {
+            "ru": "<p>Касанию отвечает двойной корень. Из \\((2R-4h)^2-16h^2=0\\) получаем \\(h=R/4\\) и \\(u^2=gR/2\\). Перепад высот до земли равен \\(2R\\), поэтому \\(v_{\\min}^2=u^2+4gR\\).</p>",
+            "en": "<p>Tangency gives a double root. From \\((2R-4h)^2-16h^2=0\\) we get \\(h=R/4\\) and \\(u^2=gR/2\\). The ground is \\(2R\\) below the top, so \\(v_{\\min}^2=u^2+4gR\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_{\\min}=3\\sqrt{\\frac{gR}{2}}.\\]</div>",
+        "en": "<div>\\[v_{\\min}=3\\sqrt{\\frac{gR}{2}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B1",
+      "max": 0.8,
+      "label": "B-i",
+      "title": {
+        "ru": "Скорость воздуха в точке P",
+        "en": "Ground speed of the air at P"
+      },
+      "steps": [
+        {
+          "id": "b1-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Ширина трубки тока",
+            "en": "Streamtube width"
+          },
+          "body": {
+            "ru": "<p>Перейдём в систему крыла. Вдали воздух движется со скоростью \\(v_0\\). Измерим ширину трубки между соседними линиями вдали (\\(a\\)) и у точки \\(P\\) (\\(b\\)). Масштаб рисунка сокращается, отношение \\(a/b\\simeq10/13\\).</p>",
+            "en": "<p>In the wing frame the undisturbed air moves at \\(v_0\\). Measure the separation between adjacent streamlines far upstream (\\(a\\)) and near \\(P\\) (\\(b\\)). The reproduction scale cancels, giving \\(a/b\\simeq10/13\\).</p>"
+          }
+        },
+        {
+          "id": "b1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Расход и переход между системами",
+            "en": "Flux and frame change"
+          },
+          "body": {
+            "ru": "<p>Из постоянства расхода \\(u_Pb=v_0a\\). В точке \\(P\\) поток горизонтален и направлен против движения крыла. Скорость воздуха относительно земли равна разности \\(v_0-u_P\\).</p>",
+            "en": "<p>Constant flux requires \\(u_Pb=v_0a\\). At \\(P\\) the flow is horizontal and opposite to the wing's motion. The ground speed is the scalar difference \\(v_0-u_P\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_P=v_0(1-a/b)\\simeq23\\ \\mathrm{m/s}.\\]</div>",
+        "en": "<div>\\[v_P=v_0(1-a/b)\\simeq23\\ \\mathrm{m/s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B2",
+      "max": 1.2,
+      "label": "B-ii",
+      "title": {
+        "ru": "Место образования капель",
+        "en": "First condensation point"
+      },
+      "steps": [
+        {
+          "id": "b2-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Максимальная скорость и минимум давления",
+            "en": "Maximum speed and minimum pressure"
+          },
+          "body": {
+            "ru": "<p>Ширина трубки тока обратно пропорциональна скорости. Там, где линии теснее всего, кинетическое слагаемое в уравнении Бернулли максимально, а статическое давление минимально. Изменением высоты воздуха в масштабе крыла пренебрегаем.</p>",
+            "en": "<p>Continuity makes flow speed inversely proportional to streamtube width. Where lines are closest, the kinetic term in Bernoulli's equation is largest and the static pressure lowest. The small elevation change across the wing is negligible here.</p>"
+          }
+        },
+        {
+          "id": "b2-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Адиабатическое охлаждение",
+            "en": "Adiabatic cooling"
+          },
+          "body": {
+            "ru": "<p>Расширяющаяся порция воздуха охлаждается. Здесь раньше всего достигается точка росы. Значит, \\(Q\\) лежит у передней кромки, непосредственно над верхней поверхностью, где просвет между соседними линиями минимален.</p><figure><img src=\"/assets/practice/ipho-2012/figures/s1f5.png\" alt=\"Положение Q и интервалы для измерений.\" style=\"width:min(100%,735px)\" loading=\"lazy\"><figcaption>Положение Q и интервалы для измерений.</figcaption></figure>",
+            "en": "<p>An expanding parcel cools and first reaches its dew point at the pressure minimum. Hence \\(Q\\) is just above the upper leading edge, in the narrowest streamline gap.</p><figure><img src=\"/assets/practice/ipho-2012/figures/s1f5.png\" alt=\"Position of Q and the gaps used for measurement.\" style=\"width:min(100%,735px)\" loading=\"lazy\"><figcaption>Position of Q and the gaps used for measurement.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Точка \\(Q\\) находится над передней кромкой крыла.</p>",
+        "en": "<p>Point \\(Q\\) lies just above the leading edge.</p>"
+      }
+    },
+    {
+      "id": "T1-B3",
+      "max": 2.0,
+      "label": "B-iii",
+      "title": {
+        "ru": "Порог конденсации",
+        "en": "Condensation threshold"
+      },
+      "steps": [
+        {
+          "id": "b3-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Температура точки росы",
+            "en": "Dew-point temperature"
+          },
+          "body": {
+            "ru": "<p>Вдали от крыла парциальное давление равно \\(r p_{sa}\\). Линеаризуем кривую насыщения около \\(T_a\\). Изменением парциального давления при малом изменении общего давления пренебрегаем. Нужное охлаждение равно </p><div>\\[\\Delta T\\simeq\\frac{(1-r)p_{sa}(T_b-T_a)}{p_{sb}-p_{sa}}\\simeq1{,}54\\ \\mathrm K.\\]</div>",
+            "en": "<p>The far-field vapour pressure is \\(rp_{sa}\\). Linearize the saturation curve about \\(T_a\\) and neglect the small change of vapour partial pressure during expansion. The required cooling is </p><div>\\[\\Delta T\\simeq\\frac{(1-r)p_{sa}(T_b-T_a)}{p_{sb}-p_{sa}}\\simeq1.54\\ \\mathrm K.\\]</div>"
+          }
+        },
+        {
+          "id": "b3-2",
+          "points": 1.2,
+          "label": {
+            "ru": "Энергия потока",
+            "en": "Flow energy"
+          },
+          "body": {
+            "ru": "<p>Для единицы массы изменение кинетической и внутренней энергий равно работе давления на входе и выходе. Без теплообмена это даёт постоянство \\(v^2/2+c_VT+p/\\rho\\). По уравнению идеального газа \\(p/\\rho=(c_p-c_V)T\\). Таким образом, ускорение воздуха у крыла сопровождается уменьшением энтальпии: </p><div>\\[\\tfrac12(u_Q^2-v_{\\rm crit}^2)=c_p\\Delta T.\\]</div>",
+            "en": "<p>Per unit mass, the increase of kinetic and internal energy equals the net flow work at the ends of a streamtube. With no heat transfer, \\(v^2/2+c_VT+p/\\rho\\) is conserved. For ideal air \\(p/\\rho=(c_p-c_V)T\\), so the local acceleration uses enthalpy: </p><div>\\[\\tfrac12(u_Q^2-v_{\\rm crit}^2)=c_p\\Delta T.\\]</div>"
+          }
+        },
+        {
+          "id": "b3-3",
+          "points": 0.4,
+          "label": {
+            "ru": "Измерение просвета",
+            "en": "Reading the streamline gap"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(c\\) — минимальный просвет у \\(Q\\), а \\(a\\) — просвет вдали. Тогда \\(u_Q=v_{\\rm crit}a/c\\). В официальном ответе указано 23 м/с. При подстановке приведённых в том же решении \\(a=10\\) мм, \\(c=4{,}5\\) мм получается около 28 м/с. Результат зависит от считывания узкого просвета.</p>",
+            "en": "<p>Let \\(c\\) be the narrowest gap at \\(Q\\) and \\(a\\) the undisturbed one. Then \\(u_Q=v_{\\rm crit}a/c\\). The official answer quotes 23 m/s. Substituting the spacings also quoted there, \\(a=10\\) mm and \\(c=4.5\\) mm, gives about 28 m/s. The result depends on reading this narrow gap.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_{\\rm crit}=\\sqrt{\\frac{2c_p\\Delta T}{(a/c)^2-1}}\\simeq28\\ \\mathrm{m/s}.\\]</div><p>Оценка в ответе жюри — 23 м/с.</p>",
+        "en": "<div>\\[v_{\\rm crit}=\\sqrt{\\frac{2c_p\\Delta T}{(a/c)^2-1}}\\simeq28\\ \\mathrm{m/s}.\\]</div><p>The jury quotes 23 m/s.</p>"
+      }
+    },
+    {
+      "id": "T1-C1",
+      "max": 0.8,
+      "label": "C-i",
+      "title": {
+        "ru": "Картина магнитного поля",
+        "en": "Magnetic field-line sketch"
+      },
+      "steps": [
+        {
+          "id": "c1-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Поле внутри длинной трубки",
+            "en": "Field inside the long tube"
+          },
+          "body": {
+            "ru": "<p>Через стенку сверхпроводника поток не проходит. Вдали от концов решение однородно вдоль оси. Проведите через все пять точек прямые параллельные линии почти до обоих концов.</p>",
+            "en": "<p>No flux crosses the superconducting wall. Away from the ends the field is almost uniform along the axis. Draw straight parallel lines through all five marked points, extending almost to each end.</p>"
+          }
+        },
+        {
+          "id": "c1-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Поле у концов",
+            "en": "End fields"
+          },
+          "body": {
+            "ru": "<p>Вблизи отверстий линии расходятся наружу. Внешнее поле замыкает поток вокруг трубки; в масштабе рисунка видны главным образом начальные участки этих дуг.</p><figure><img src=\"/assets/practice/ipho-2012/figures/s1f6.png\" alt=\"Линии поля у концов сверхпроводящей трубки.\" style=\"width:min(100%,215px)\" loading=\"lazy\"><figcaption>Линии поля у концов сверхпроводящей трубки.</figcaption></figure>",
+            "en": "<p>The lines flare slightly outside the openings. The external field provides a return path around the tube. Only the beginnings of the curved lines fit in the drawing.</p><figure><img src=\"/assets/practice/ipho-2012/figures/s1f6.png\" alt=\"Field lines near the ends of the superconducting tube.\" style=\"width:min(100%,215px)\" loading=\"lazy\"><figcaption>Field lines near the ends of the superconducting tube.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Внутри трубки линии почти параллельны её оси, у отверстий расходятся.</p>",
+        "en": "<p>The lines are essentially axial inside and flare out at the ends.</p>"
+      }
+    },
+    {
+      "id": "T1-C2",
+      "max": 1.2,
+      "label": "C-ii",
+      "title": {
+        "ru": "Натяжение трубки",
+        "en": "Axial tension"
+      },
+      "steps": [
+        {
+          "id": "c2-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Плотность энергии поля",
+            "en": "Magnetic energy density"
+          },
+          "body": {
+            "ru": "<p>В средней части \\(B=\\Phi/(\\pi r^2)\\). Объёмная плотность магнитной энергии равна \\(w=B^2/(2\\mu_0)\\).</p>",
+            "en": "<p>In the middle \\(B=\\Phi/(\\pi r^2)\\). The magnetic energy per unit volume is \\(w=B^2/(2\\mu_0)\\).</p>"
+          }
+        },
+        {
+          "id": "c2-2",
+          "points": 0.8,
+          "label": {
+            "ru": "Виртуальное удлинение",
+            "en": "Virtual extension"
+          },
+          "body": {
+            "ru": "<p>Мысленно увеличим длину трубки на \\(dl\\), сохранив её сечение и захваченный поток. Вклад концов у длинной трубки практически не меняется. Дополнительный объём поля \\(\\pi r^2dl\\) требует работы \\(T\\,dl=w\\pi r^2dl\\).</p>",
+            "en": "<p>Virtually lengthen the tube by \\(dl\\) at fixed bore and trapped flux. The end contributions are practically unchanged for a long tube. The extra volume of field \\(\\pi r^2dl\\) requires work \\(T\\,dl=w\\pi r^2dl\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T=\\frac{\\Phi^2}{2\\mu_0\\pi r^2}.\\]</div>",
+        "en": "<div>\\[T=\\frac{\\Phi^2}{2\\mu_0\\pi r^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-C3",
+      "max": 2.5,
+      "label": "C-iii",
+      "title": {
+        "ru": "Взаимодействие двух трубок",
+        "en": "Interaction of two tubes"
+      },
+      "steps": [
+        {
+          "id": "c3-1",
+          "points": 1.0,
+          "label": {
+            "ru": "Полюса как источники потока",
+            "en": "Tube ends as flux sources"
+          },
+          "body": {
+            "ru": "<p>На расстоянии порядка \\(l\\gg r\\) каждый конец выглядит как точечный источник или сток потока \\(\\pm\\Phi\\). Вне трубок токов нет, поэтому поле этих четырёх концов имеет ту же геометрию, что поле четырёх электрических зарядов.</p>",
+            "en": "<p>At distances of order \\(l\\gg r\\) each end acts like a point source or sink of flux \\(\\pm\\Phi\\). The exterior is current-free, so the geometry is that of four electrostatic point charges.</p>"
+          }
+        },
+        {
+          "id": "c3-2",
+          "points": 1.0,
+          "label": {
+            "ru": "Сила между двумя концами",
+            "en": "Pairwise force"
+          },
+          "body": {
+            "ru": "<p>Поле одного конца на расстоянии \\(s\\) равно \\(\\Phi/(4\\pi s^2)\\). Энергия этого поля имеет плотность \\(B^2/(2\\mu_0)\\). Для электрического заряда соответствующая плотность равна \\(Q^2/(32\\pi^2\\epsilon_0s^4)\\). Сопоставление энергий означает замену \\(Q^2/\\epsilon_0\\) на \\(\\Phi^2/\\mu_0\\) в кулоновской силе: </p><div>\\[F_s=\\frac{\\Phi^2}{4\\pi\\mu_0s^2}.\\]</div>",
+            "en": "<p>One end produces a field \\(\\Phi/(4\\pi s^2)\\) at distance \\(s\\), with energy density \\(B^2/(2\\mu_0)\\). The electrostatic density for a charge is \\(Q^2/(32\\pi^2\\epsilon_0s^4)\\). Matching field energies replaces \\(Q^2/\\epsilon_0\\) by \\(\\Phi^2/\\mu_0\\) in the Coulomb force: </p><div>\\[F_s=\\frac{\\Phi^2}{4\\pi\\mu_0s^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "c3-3",
+          "points": 0.5,
+          "label": {
+            "ru": "Сумма четырёх сил",
+            "en": "Sum of the four interactions"
+          },
+          "body": {
+            "ru": "<p>Две пары ближайших концов притягиваются, каждая с силой \\(F_l\\). Диагональные пары одноимённы. На расстоянии \\(\\sqrt2l\\) их силы вдвое слабее, а проекция каждой на поперечное направление равна \\(F_l/(2\\sqrt2)\\). Продольные проекции взаимно уничтожаются.</p>",
+            "en": "<p>The two nearest pairs attract, each with force \\(F_l\\). The diagonal ends have like signs. At separation \\(\\sqrt2l\\) their repulsions are half as strong, with transverse projection \\(F_l/(2\\sqrt2)\\) each. Their longitudinal components cancel.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Трубки притягиваются с силой </p><div>\\[F=\\frac{(4-\\sqrt2)\\Phi^2}{8\\pi\\mu_0l^2}.\\]</div>",
+        "en": "<p>The tubes attract with force </p><div>\\[F=\\frac{(4-\\sqrt2)\\Phi^2}{8\\pi\\mu_0l^2}.\\]</div>"
+      }
+    }
+  ]
+}

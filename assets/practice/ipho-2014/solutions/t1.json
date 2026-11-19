@@ -1,0 +1,176 @@
+{
+  "id": "T1",
+  "max": 9,
+  "title": {
+    "ru": "Три независимые задачи",
+    "en": "Three independent problems"
+  },
+  "sourcePdf": "/assets/practice/ipho-2014/IPhO_2014_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-A1",
+      "max": 3.0,
+      "title": {
+        "ru": "Сила в нижней точке",
+        "en": "Contact force at the bottom"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Горизонтальное движение",
+            "en": "Horizontal motion"
+          },
+          "body": {
+            "ru": "<p>Пусть горизонтальная сила цилиндра на шайбу направлена вправо и равна \\(F_x\\). На цилиндр действует \\(-F_x\\). Эта сила проходит через его ось. Момент относительно оси создаёт лишь трение стола. При качении тонкого цилиндра \\(I=MR^2\\), поэтому сила трения по модулю равна \\(M|\\ddot X|\\) и направлена против ускорения центра. Для координаты центра \\(X\\) и координаты шайбы \\(x\\) имеем</p>\n<div>\\[m\\ddot x=F_x,\\qquad 2M\\ddot X=-F_x.\\]</div>\n<p>Из состояния покоя получаем \\(mu=2Mv\\), где в нижней точке шайба движется вправо со скоростью \\(u\\), центр цилиндра — влево со скоростью \\(v\\).</p>\n<figure><img src=\"/assets/practice/ipho-2014/figures/t1-s1.png\" loading=\"lazy\" alt=\"Силы, действующие на шайбу и цилиндр.\" style=\"max-width:min(100%,305px)\"><figcaption>Силы, действующие на шайбу и цилиндр.</figcaption></figure>",
+            "en": "<p>Let \\(F_x\\) be the rightward component of the force on the puck. The opposite force on the cylinder passes through its axis. Only table friction provides torque about that axis. Rolling with \\(I=MR^2\\) makes friction equal to \\(M|\\ddot X|\\) in magnitude and opposite to the centre acceleration. For centre coordinate \\(X\\) and puck coordinate \\(x\\),</p>\n<div>\\[m\\ddot x=F_x,\\qquad 2M\\ddot X=-F_x.\\]</div>\n<p>Starting from rest gives \\(mu=2Mv\\), where at the bottom the puck moves right at speed \\(u\\) and the centre moves left at speed \\(v\\).</p>\n<figure><img src=\"/assets/practice/ipho-2014/figures/t1-s1.png\" loading=\"lazy\" alt=\"Forces on the puck and cylinder.\" style=\"max-width:min(100%,305px)\"><figcaption>Forces on the puck and cylinder.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 1.0,
+          "label": {
+            "ru": "Энергия и относительная скорость",
+            "en": "Energy and relative speed"
+          },
+          "body": {
+            "ru": "<p>Шайба опускается на \\(R\\). Трение в неподвижной точке контакта не совершает работы. Вращательная энергия тонкого цилиндра равна его поступательной энергии.</p>\n<div>\\[mgR=\\tfrac12 m u^2+Mv^2.\\]</div>\n<p>Эти два уравнения дают относительную скорость шайбы вдоль окружности в нижней точке.</p>\n<div>\\[(u+v)^2=gR\\left(2+\\frac mM\\right).\\]</div>",
+            "en": "<p>The puck falls through \\(R\\). Static friction does no work at the instantaneously stationary point of contact. The cylinder has equal rotational and translational kinetic energies.</p>\n<div>\\[mgR=\\tfrac12 m u^2+Mv^2.\\]</div>\n<p>The two equations give the puck speed relative to the centre at the bottom.</p>\n<div>\\[(u+v)^2=gR\\left(2+\\frac mM\\right).\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 1.0,
+          "label": {
+            "ru": "Вертикальная составляющая ускорения",
+            "en": "Vertical acceleration"
+          },
+          "body": {
+            "ru": "<p>Центр цилиндра движется на постоянной высоте. В нижней точке вертикальное ускорение шайбы равно \\((u+v)^2/R\\) и направлено вверх. Поэтому \\(F-mg=m(u+v)^2/R\\).</p>",
+            "en": "<p>The cylinder centre stays at the same height. At the bottom the vertical acceleration of the puck is upwards with magnitude \\((u+v)^2/R\\). Hence \\(F-mg=m(u+v)^2/R\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F=mg\\left(3+\\frac mM\\right).\\]</div>",
+        "en": "<div>\\[F=mg\\left(3+\\frac mM\\right).\\]</div>"
+      },
+      "label": "A"
+    },
+    {
+      "id": "T1-B1",
+      "max": 3.0,
+      "title": {
+        "ru": "Теплоёмкость и радиальные колебания",
+        "en": "Heat capacity and radial oscillations"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.7,
+          "label": {
+            "ru": "Равновесный процесс",
+            "en": "Equilibrium path"
+          },
+          "body": {
+            "ru": "<p>У плёнки две поверхности, поэтому \\(p=4\\sigma/r\\). Геометрия даёт \\(V\\propto r^3\\), а уравнение идеального газа при постоянном количестве вещества \\(\\nu\\) даёт \\(T\\propto pV\\propto r^2\\). Следовательно, \\(\\mathrm dV/\\mathrm dT=3V/(2T)\\).</p>",
+            "en": "<p>The film has two interfaces, so \\(p=4\\sigma/r\\). Geometry gives \\(V\\propto r^3\\). For a fixed amount \\(\\nu\\) of ideal gas, \\(T\\propto pV\\propto r^2\\). Thus \\(\\mathrm dV/\\mathrm dT=3V/(2T)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.7,
+          "label": {
+            "ru": "Теплоёмкость при нагревании",
+            "en": "Heat capacity on heating"
+          },
+          "body": {
+            "ru": "<p>Первое начало учитывает работу расширения. Для двухатомного газа \\(C_V=5R/2\\), а слагаемое работы равно \\(3R/2\\) на моль и кельвин.</p>\n<div>\\[C=C_V+\\frac p\\nu\\frac{\\mathrm dV}{\\mathrm dT}=4R.\\]</div>",
+            "en": "<p>The first law adds expansion work to the internal energy change. A diatomic gas gives \\(C_V=5R/2\\), while the work contributes \\(3R/2\\) per mole and kelvin.</p>\n<div>\\[C=C_V+\\frac p\\nu\\frac{\\mathrm dV}{\\mathrm dT}=4R.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.8,
+          "label": {
+            "ru": "Возвращающая сила",
+            "en": "Restoring pressure"
+          },
+          "body": {
+            "ru": "<p>При быстром колебании плёнка благодаря большой теплоёмкости поддерживает практически постоянную температуру газа. Увеличение радиуса на \\(x\\) уменьшает давление газа в \\((1+x/r)^3\\) раз, а давление двух поверхностей — в \\(1+x/r\\) раз. В первом порядке разность равна</p>\n<div>\\[p_{\\rm gas}-p_{\\rm film}\\simeq\\frac{4\\sigma}{r}\\left(-\\frac{3x}{r}+\\frac{x}{r}\\right)=-\\frac{8\\sigma x}{r^2}.\\]</div>\n<figure><img src=\"/assets/practice/ipho-2014/figures/t1-s2.png\" loading=\"lazy\" alt=\"Элемент плёнки при малом радиальном смещении.\" style=\"max-width:min(100%,270px)\"><figcaption>Элемент плёнки при малом радиальном смещении.</figcaption></figure>",
+            "en": "<p>During an oscillation the large heat capacity of the film keeps the gas essentially isothermal. An outward displacement \\(x\\) reduces gas pressure by a factor \\((1+x/r)^3\\) and the Laplace pressure by a factor \\(1+x/r\\). To first order their difference is</p>\n<div>\\[p_{\\rm gas}-p_{\\rm film}\\simeq\\frac{4\\sigma}{r}\\left(-\\frac{3x}{r}+\\frac{x}{r}\\right)=-\\frac{8\\sigma x}{r^2}.\\]</div>\n<figure><img src=\"/assets/practice/ipho-2014/figures/t1-s2.png\" loading=\"lazy\" alt=\"A surface element of the film during a small radial displacement.\" style=\"max-width:min(100%,270px)\"><figcaption>A surface element of the film during a small radial displacement.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.8,
+          "label": {
+            "ru": "Частота колебаний",
+            "en": "Oscillation frequency"
+          },
+          "body": {
+            "ru": "<p>Масса единицы площади плёнки в равновесии равна \\(\\rho h\\). Поправку к этой массе в линейном уравнении можно опустить, поскольку ускорение уже первого порядка. Поэтому \\(\\rho h\\ddot x=-(8\\sigma/r^2)x\\).</p>",
+            "en": "<p>Film mass per equilibrium area is \\(\\rho h\\). Its change does not enter the linearized equation because the acceleration is already first order. Thus \\(\\rho h\\ddot x=-(8\\sigma/r^2)x\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[C=4R\\simeq33{,}2\\,\\mathrm{J\\,mol^{-1}K^{-1}}.\\]</div>\n<div>\\[\\omega=\\sqrt{\\frac{8\\sigma}{\\rho h r^2}}\\simeq108\\,\\mathrm{rad/s}.\\]</div>",
+        "en": "<div>\\[C=4R\\simeq33.2\\,\\mathrm{J\\,mol^{-1}K^{-1}}.\\]</div>\n<div>\\[\\omega=\\sqrt{\\frac{8\\sigma}{\\rho h r^2}}\\simeq108\\,\\mathrm{rad/s}.\\]</div>"
+      },
+      "label": "B"
+    },
+    {
+      "id": "T1-C1",
+      "max": 3.0,
+      "title": {
+        "ru": "Максимальный ток",
+        "en": "Maximum switch current"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Состояние в момент замыкания",
+            "en": "State at closure"
+          },
+          "body": {
+            "ru": "<p>В последовательной цепи при максимуме тока \\(\\dot I=0\\), так что суммарное напряжение на катушках равно нулю. Модули напряжений обоих конденсаторов в этот момент совпадают. Обозначим их через \\(U\\). Сохранение заряда на изолированном узле даёт \\(q_0=2CU+CU\\), откуда \\(U=q_0/(3C)\\).</p>",
+            "en": "<p>At maximum current in the series loop, \\(\\dot I=0\\) and the summed inductor voltage vanishes. The two capacitors then have the same voltage magnitude \\(U\\). Charge conservation at the isolated junction gives \\(q_0=2CU+CU\\), hence \\(U=q_0/(3C)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 1.0,
+          "label": {
+            "ru": "Два контура после замыкания",
+            "en": "Two loops after closure"
+          },
+          "body": {
+            "ru": "<p>Получаются контуры \\(L,2C\\) и \\(2L,C\\) с одной и той же собственной частотой \\(\\Omega=1/\\sqrt{2LC}\\). Ток через ключ — разность токов катушек. Сразу после замыкания он нулевой, поскольку оба тока непрерывны и до замыкания были равны.</p>\n<figure><img src=\"/assets/practice/ipho-2014/figures/t1-s3.png\" loading=\"lazy\" alt=\"Оба контура после замыкания и направления токов.\" style=\"max-width:min(100%,225px)\"><figcaption>Оба контура после замыкания и направления токов.</figcaption></figure>",
+            "en": "<p>The loops \\(L,2C\\) and \\(2L,C\\) have the same natural frequency \\(\\Omega=1/\\sqrt{2LC}\\). The switch current is the difference of the coil currents. It starts at zero since both currents are continuous and were equal before closure.</p>\n<figure><img src=\"/assets/practice/ipho-2014/figures/t1-s3.png\" loading=\"lazy\" alt=\"The two loops after closure and their current directions.\" style=\"max-width:min(100%,225px)\"><figcaption>The two loops after closure and their current directions.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 1.0,
+          "label": {
+            "ru": "Начальная производная и амплитуда",
+            "en": "Initial slope and amplitude"
+          },
+          "body": {
+            "ru": "<p>Для токов, отсчитанных в одном направлении вдоль исходного контура, одинаковые по модулю напряжения ускоряют один ток и замедляют другой. Модуль производной их разности равен \\(U/L+U/(2L)=q_0/(2LC)\\). Разность гармонических функций той же частоты также гармоническая, поэтому при нулевом начальном токе её амплитуда равна \\(|\\dot I_S(0)|/\\Omega\\).</p>",
+            "en": "<p>Measure both coil currents in the original loop direction. The equal voltage magnitudes increase one current and decrease the other. The magnitude of their difference&#x27;s initial slope is \\(U/L+U/(2L)=q_0/(2LC)\\). The difference is harmonic at the same frequency, so its amplitude at zero initial current equals \\(|\\dot I_S(0)|/\\Omega\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I_{\\max}=\\frac{q_0}{\\sqrt{2LC}}.\\]</div>",
+        "en": "<div>\\[I_{\\max}=\\frac{q_0}{\\sqrt{2LC}}.\\]</div>"
+      },
+      "label": "C"
+    }
+  ]
+}

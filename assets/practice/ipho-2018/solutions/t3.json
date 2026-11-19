@@ -1,0 +1,472 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Физика живых систем",
+    "en": "Physics of Live Systems"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2018/IPhO_2018_S3_EN.pdf",
+  "markingSchemePdf": "/assets/practice/ipho-2018/IPhO_2018_M3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-A1",
+      "max": 1.3,
+      "title": {
+        "ru": "Расход в ветви сети",
+        "en": "Flow in one branch"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Деление потока",
+            "en": "Flow at a bifurcation"
+          },
+          "body": {
+            "ru": "<p>Идентичные ветви получают поровну. Так как на уровне \\(i\\) имеется \\(2^i\\) ветвей, \\(Q_i=Q_0/2^i\\).</p>",
+            "en": "<p>Symmetry gives equal flow to each daughter vessel. There are \\(2^i\\) branches at level \\(i\\), so \\(Q_i=Q_0/2^i\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Сумма падений давления",
+            "en": "Pressure drops along a path"
+          },
+          "body": {
+            "ru": "<p>Проследим один путь от входа до капилляра. Он проходит ровно через один сосуд каждого уровня, поэтому \\(\\Delta P=\\sum_{i=0}^{N-1}R_iQ_i\\).</p>",
+            "en": "<p>Follow one path from the inlet to a capillary. It traverses one vessel at every level, hence \\(\\Delta P=\\sum_{i=0}^{N-1}R_iQ_i\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.3,
+          "label": {
+            "ru": "Одинаковый вклад уровней",
+            "en": "Equal drops per level"
+          },
+          "body": {
+            "ru": "<p>Поскольку \\(R_i\\propto\\ell_i/r_i^4\\), переход на следующий уровень удваивает сопротивление одного сосуда. Произведение \\(R_iQ_i=(2^iR_0)(Q_0/2^i)\\) одинаково на всех уровнях.</p>",
+            "en": "<p>As \\(R_i\\propto\\ell_i/r_i^4\\), the resistance of an individual vessel doubles at each level. The product \\(R_iQ_i=(2^iR_0)(Q_0/2^i)\\) is the same at every level.</p>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.4,
+          "label": {
+            "ru": "Расход на входе и в ветви",
+            "en": "Inlet and branch flow"
+          },
+          "body": {
+            "ru": "<p>Сумма перепадов равна \\(NR_0Q_0\\). Входной расход \\(Q_0=\\pi r_0^4\\Delta P/(8N\\ell_0\\eta)\\) делится между \\(2^i\\) ветвями.</p>",
+            "en": "<p>The pressure drops sum to \\(NR_0Q_0\\). The inlet flow \\(Q_0=\\pi r_0^4\\Delta P/(8N\\ell_0\\eta)\\) is shared between \\(2^i\\) branches.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[Q_i=\\frac{\\pi r_0^4\\Delta P}{2^i\\,8N\\ell_0\\eta}.\\]</div>",
+        "en": "<div>\\[Q_i=\\frac{\\pi r_0^4\\Delta P}{2^i\\,8N\\ell_0\\eta}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A2",
+      "max": 0.5,
+      "title": {
+        "ru": "Расход в первой артериоле",
+        "en": "Inlet flow rate"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Перепад в паскалях",
+            "en": "Pressure drop in pascals"
+          },
+          "body": {
+            "ru": "<p>Разность \\(25\\,\\mathrm{mmHg}\\) равна \\(25(1{,}013\\times10^5)/760\\simeq3{,}33\\times10^3\\,\\mathrm{Pa}\\). Подстановка в A1 при \\(i=0\\) даёт \\(Q_0\\simeq4{,}0\\times10^{-10}\\,\\mathrm{m^3/s}\\).</p>",
+            "en": "<p>The difference of \\(25\\,\\mathrm{mmHg}\\) is \\(25(1.013\\times10^5)/760\\simeq3.33\\times10^3\\,\\mathrm{Pa}\\). Substitution into A1 with \\(i=0\\) gives \\(Q_0\\simeq4.0\\times10^{-10}\\,\\mathrm{m^3/s}\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Перевод расхода",
+            "en": "Converting the flow rate"
+          },
+          "body": {
+            "ru": "<p>На кубический метр приходится \\(10^6\\) миллилитров, а на час — \\(3600\\) секунд. Сохраняем две значащие цифры.</p>",
+            "en": "<p>Multiply the SI value by \\(10^6\\) millilitres per cubic metre and \\(3600\\) seconds per hour. Retain two significant figures.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[Q_0\\simeq1{,}5\\,\\mathrm{mL/h}.\\]</div>",
+        "en": "<div>\\[Q_0\\simeq1.5\\,\\mathrm{mL/h}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A3",
+      "max": 2.0,
+      "title": {
+        "ru": "Передача пульсаций давления",
+        "en": "Pressure-pulse transmission"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Ток в эквивалентной цепи",
+            "en": "Current in the equivalent circuit"
+          },
+          "body": {
+            "ru": "<p>Входное напряжение приложено к последовательной цепи. Её комплексное сопротивление \\(Z=R+i\\omega L+1/(i\\omega C)\\), а комплексная амплитуда тока \\(\\widetilde I=P_{\\mathrm{in}}/Z\\).</p>",
+            "en": "<p>The input voltage is applied to a series circuit with impedance \\(Z=R+i\\omega L+1/(i\\omega C)\\). Its complex current amplitude is \\(\\widetilde I=P_{\\mathrm{in}}/Z\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Амплитуда на выходе",
+            "en": "Output amplitude"
+          },
+          "body": {
+            "ru": "<p>Выходное напряжение снимается с конденсатора: \\(\\widetilde P_{\\mathrm{out}}=\\widetilde I/(i\\omega C)\\). Амплитуда равна модулю этой величины.</p>\n<div>\\[P_{\\mathrm{out}}=\\frac{P_{\\mathrm{in}}}{\\sqrt{(1-\\omega^2 LC)^2+\\omega^2 R^2C^2}}.\\]</div>",
+            "en": "<p>The output is taken across the capacitor, so \\(\\widetilde P_{\\mathrm{out}}=\\widetilde I/(i\\omega C)\\). Take the magnitude to get the output amplitude.</p>\n<div>\\[P_{\\mathrm{out}}=\\frac{P_{\\mathrm{in}}}{\\sqrt{(1-\\omega^2 LC)^2+\\omega^2 R^2C^2}}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.5,
+          "label": {
+            "ru": "Низкочастотный предел",
+            "en": "Low-frequency limit"
+          },
+          "body": {
+            "ru": "<p>Квадрат знаменателя равен \\(1+\\omega^2(R^2C^2-2LC)+\\omega^4L^2C^2\\). Для ослабления уже в первом ненулевом порядке по \\(\\omega^2\\) требуется \\(R^2C&gt;2L\\).</p>",
+            "en": "<p>The squared denominator is \\(1+\\omega^2(R^2C^2-2LC)+\\omega^4L^2C^2\\). Attenuation at order \\(\\omega^2\\) requires \\(R^2C&gt;2L\\).</p>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.5,
+          "label": {
+            "ru": "Условие для сосуда",
+            "en": "Vessel parameters"
+          },
+          "body": {
+            "ru": "<p>Подставляем сопротивление Пуазейля и заданные \\(L,C\\). Общие множители сокращаются, и остаётся условие на геометрию и свойства стенки.</p>",
+            "en": "<p>Substitute the Poiseuille resistance and the given \\(L,C\\). Cancelling common factors gives the condition on the vessel geometry and material.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_{\\mathrm{out}}=\\frac{P_{\\mathrm{in}}}{\\sqrt{(1-\\omega^2 LC)^2+\\omega^2 R^2C^2}},\\]</div>\n<div>\\[\\frac{64\\eta^2\\ell^2}{3Eh r^3\\rho}&gt;1.\\]</div>",
+        "en": "<div>\\[P_{\\mathrm{out}}=\\frac{P_{\\mathrm{in}}}{\\sqrt{(1-\\omega^2 LC)^2+\\omega^2 R^2C^2}},\\]</div>\n<div>\\[\\frac{64\\eta^2\\ell^2}{3Eh r^3\\rho}&gt;1.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A4",
+      "max": 0.7,
+      "title": {
+        "ru": "Предельная толщина стенки",
+        "en": "Limiting wall thickness"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Граница для одного уровня",
+            "en": "Bound at one level"
+          },
+          "body": {
+            "ru": "<p>Из A3 следует \\(h&lt;64\\eta^2\\ell_i^2/(3E\\rho r_i^3)\\).</p>",
+            "en": "<p>A3 requires \\(h&lt;64\\eta^2\\ell_i^2/(3E\\rho r_i^3)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Изменение вдоль сети",
+            "en": "Variation down the network"
+          },
+          "body": {
+            "ru": "<p>Отношение \\(\\ell_i^2/r_i^3\\) равно \\(2^{i/3}\\ell_0^2/r_0^3\\). С численными данными A2 верхняя граница принимает вид \\((7{,}7\\times10^{-5}\\,\\mathrm m)\\,2^{i/3}\\).</p>",
+            "en": "<p>The ratio \\(\\ell_i^2/r_i^3\\) is \\(2^{i/3}\\ell_0^2/r_0^3\\). Using the A2 values, the upper bound becomes \\((7.7\\times10^{-5}\\,\\mathrm m)\\,2^{i/3}\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Ограничивающий сосуд",
+            "en": "Limiting vessel"
+          },
+          "body": {
+            "ru": "<p>Правая часть растёт с \\(i\\). Поэтому общую толщину ограничивает сосуд нулевого уровня.</p>",
+            "en": "<p>The bound grows with \\(i\\), so the level-zero vessel sets the limit for the whole network.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[h_{\\mathrm{lim}}\\simeq7{,}7\\times10^{-5}\\,\\mathrm m\\simeq80\\,\\mu\\mathrm m.\\]</div>",
+        "en": "<div>\\[h_{\\mathrm{lim}}\\simeq7.7\\times10^{-5}\\,\\mathrm m\\simeq80\\,\\mu\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B1",
+      "max": 1.0,
+      "title": {
+        "ru": "Объёмная доля опухоли",
+        "en": "Tumour volume fraction"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Масса каждой области",
+            "en": "Mass of each region"
+          },
+          "body": {
+            "ru": "<p>Масса нормальной ткани равна \\(\\rho_0 V=\\rho_{\\mathrm{N}}V(1-v)\\), а масса опухоли равна \\(M_{\\mathrm{T}}=\\rho_{\\mathrm{T}}Vv\\).</p>",
+            "en": "<p>The normal tissue mass is \\(\\rho_0 V=\\rho_{\\mathrm{N}}V(1-v)\\), while the tumour mass is \\(M_{\\mathrm{T}}=\\rho_{\\mathrm{T}}Vv\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Давление",
+            "en": "Pressure"
+          },
+          "body": {
+            "ru": "<p>Из первого равенства следует \\(1+p/K_{\\mathrm{N}}=1/(1-v)\\). Тогда \\(p=K_{\\mathrm{N}}v/(1-v)\\).</p>",
+            "en": "<p>The first equality gives \\(1+p/K_{\\mathrm{N}}=1/(1-v)\\), hence \\(p=K_{\\mathrm{N}}v/(1-v)\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Уравнение для доли",
+            "en": "Equation for the fraction"
+          },
+          "body": {
+            "ru": "<p>Второе равенство даёт \\(\\mu=v[1+\\kappa v/(1-v)]\\). После умножения на \\(1-v\\) получаем квадратное уравнение.</p>\n<div>\\[(1-\\kappa)v^2-(1+\\mu)v+\\mu=0.\\]</div>",
+            "en": "<p>The second equality gives \\(\\mu=v[1+\\kappa v/(1-v)]\\). Multiplying by \\(1-v\\) gives the quadratic.</p>\n<div>\\[(1-\\kappa)v^2-(1+\\mu)v+\\mu=0.\\]</div>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.4,
+          "label": {
+            "ru": "Физический корень",
+            "en": "Physical root"
+          },
+          "body": {
+            "ru": "<p>При \\(\\mu\\to0\\) доля опухоли должна стремиться к нулю. Выбираем соответствующий корень и рационализуем числитель. Полученная форма остаётся справедливой при \\(\\kappa=1\\), когда \\(v=\\mu/(1+\\mu)\\).</p>",
+            "en": "<p>As \\(\\mu\\to0\\), the tumour volume fraction must vanish. Choose this root and rationalise its numerator. The resulting form also holds at \\(\\kappa=1\\), when \\(v=\\mu/(1+\\mu)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v=\\frac{2\\mu}{1+\\mu+\\sqrt{(1+\\mu)^2-4\\mu(1-\\kappa)}}.\\]</div>",
+        "en": "<div>\\[v=\\frac{2\\mu}{1+\\mu+\\sqrt{(1+\\mu)^2-4\\mu(1-\\kappa)}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B2",
+      "max": 1.7,
+      "title": {
+        "ru": "Температура в центре",
+        "en": "Temperature at the centre"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Тепло внутри сферы",
+            "en": "Heat generated inside a sphere"
+          },
+          "body": {
+            "ru": "<p>При \\(r&lt;R_{\\mathrm{T}}\\) через сферу радиуса \\(r\\) выходит мощность, выделенная в её объёме. Поэтому \\(-4\\pi r^2 k\\,dT/dr=4\\pi r^3\\mathcal P/3\\). Интегрируя от центра, находим</p>\n<div>\\[T(r)=T(0)-\\frac{\\mathcal P r^2}{6k}.\\]</div>",
+            "en": "<p>For \\(r&lt;R_{\\mathrm{T}}\\) the heat current across a sphere of radius \\(r\\) equals the power generated inside that sphere. Thus \\(-4\\pi r^2 k\\,dT/dr=4\\pi r^3\\mathcal P/3\\). Integrate outwards from the centre to find</p>\n<div>\\[T(r)=T(0)-\\frac{\\mathcal P r^2}{6k}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Температура снаружи",
+            "en": "Exterior temperature"
+          },
+          "body": {
+            "ru": "<p>При \\(r&gt;R_{\\mathrm{T}}\\) поток через любую сферу переносит одну и ту же мощность \\(4\\pi R_{\\mathrm{T}}^3\\mathcal P/3\\). Интегрируем закон Фурье с условием \\(T(\\infty)=T_b\\).</p>\n<div>\\[T(r)=T_b+\\frac{\\mathcal P R_{\\mathrm{T}}^3}{3kr}.\\]</div>",
+            "en": "<p>For \\(r&gt;R_{\\mathrm{T}}\\) every sphere carries the same power \\(4\\pi R_{\\mathrm{T}}^3\\mathcal P/3\\). Integrating Fourier’s law with \\(T(\\infty)=T_b\\) yields</p>\n<div>\\[T(r)=T_b+\\frac{\\mathcal P R_{\\mathrm{T}}^3}{3kr}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.5,
+          "label": {
+            "ru": "Сшивка на границе",
+            "en": "Matching at the interface"
+          },
+          "body": {
+            "ru": "<p>Температура непрерывна при \\(r=R_{\\mathrm{T}}\\). Внешнее решение даёт превышение \\(\\mathcal P R_{\\mathrm{T}}^2/(3k)\\) на границе. От границы к центру температура возрастает ещё на \\(\\mathcal P R_{\\mathrm{T}}^2/(6k)\\).</p>",
+            "en": "<p>Temperature is continuous at \\(r=R_{\\mathrm{T}}\\). The outer solution gives a surface rise of \\(\\mathcal P R_{\\mathrm{T}}^2/(3k)\\). Going from the surface to the centre adds another \\(\\mathcal P R_{\\mathrm{T}}^2/(6k)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T(0)=T_b+\\frac{\\mathcal P R_{\\mathrm{T}}^2}{2k}.\\]</div>",
+        "en": "<div>\\[T(0)=T_b+\\frac{\\mathcal P R_{\\mathrm{T}}^2}{2k}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B3",
+      "max": 0.5,
+      "title": {
+        "ru": "Минимальная мощность нагрева",
+        "en": "Minimum heating power"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Самая холодная точка",
+            "en": "Coolest location"
+          },
+          "body": {
+            "ru": "<p>Внутри опухоли температура понижается с \\(r\\). Именно на поверхности превышение над \\(T_b\\) минимально: \\(\\Delta T_{\\mathrm{s}}=\\mathcal P R_{\\mathrm{T}}^2/(3k)\\).</p>",
+            "en": "<p>Temperature decreases with \\(r\\) inside the tumour. The minimum rise above \\(T_b\\) occurs at the surface, where \\(\\Delta T_{\\mathrm{s}}=\\mathcal P R_{\\mathrm{T}}^2/(3k)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Требуемый перепад",
+            "en": "Required temperature rise"
+          },
+          "body": {
+            "ru": "<p>Для достижения порога на поверхности требуется повышение температуры на \\(43{,}0-37{,}0=6{,}0\\,\\mathrm K\\).</p>",
+            "en": "<p>At the threshold the surface must warm by \\(43.0-37.0=6.0\\,\\mathrm K\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Пороговая мощность",
+            "en": "Power threshold"
+          },
+          "body": {
+            "ru": "<p>Подставляем \\(R_{\\mathrm{T}}=0{,}050\\,\\mathrm m\\). Чтобы превысить пороговую температуру во всём объёме, нужна мощность чуть выше найденной границы.</p>",
+            "en": "<p>Use \\(R_{\\mathrm{T}}=0.050\\,\\mathrm m\\). A power density just above this threshold gives a temperature strictly above the target everywhere.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathcal P_{\\min}=\\frac{3k\\Delta T_{\\mathrm{s}}}{R_{\\mathrm{T}}^2}\\simeq4{,}3\\,\\mathrm{kW/m^3}.\\]</div>",
+        "en": "<div>\\[\\mathcal P_{\\min}=\\frac{3k\\Delta T_{\\mathrm{s}}}{R_{\\mathrm{T}}^2}\\simeq4.3\\,\\mathrm{kW/m^3}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B4",
+      "max": 2.3,
+      "title": {
+        "ru": "Изменение расхода при сжатии",
+        "en": "Flow change under compression"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Линейное сужение",
+            "en": "Linear radius change"
+          },
+          "body": {
+            "ru": "<p>В модели сужения отбрасываем квадрат \\(\\delta r/\\delta r_c\\). Получаем \\(\\delta r=\\delta r_c(p-P_{\\mathrm{cap}})/[2(p_c-P_{\\mathrm{cap}})]\\).</p>",
+            "en": "<p>Discard the squared term in \\(\\delta r/\\delta r_c\\) in the compression law. This yields \\(\\delta r=\\delta r_c(p-P_{\\mathrm{cap}})/[2(p_c-P_{\\mathrm{cap}})]\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Давление через объём",
+            "en": "Pressure from tumour volume"
+          },
+          "body": {
+            "ru": "<p>Масса нормальной ткани фиксирована. Как в B1, \\((1-v)(1+p/K_{\\mathrm{N}})=1\\), то есть \\(p=K_{\\mathrm{N}}v/(1-v)\\).</p>",
+            "en": "<p>The normal tissue mass is fixed. As in B1, \\((1-v)(1+p/K_{\\mathrm{N}})=1\\), so \\(p=K_{\\mathrm{N}}v/(1-v)\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.3,
+          "label": {
+            "ru": "Сопротивление последнего уровня",
+            "en": "Last-level resistance"
+          },
+          "body": {
+            "ru": "<p>До сужения вклад каждого уровня в суммарное сопротивление равен \\(R_0\\). На последнем уровне этот вклад умножается на \\((1-\\delta r/r_{N-1})^{-4}\\simeq1+4\\delta r/r_{N-1}\\).</p>",
+            "en": "<p>Before compression each level contributes \\(R_0\\) to the network resistance. The last-level contribution is multiplied by \\((1-\\delta r/r_{N-1})^{-4}\\simeq1+4\\delta r/r_{N-1}\\).</p>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.3,
+          "label": {
+            "ru": "Изменение во всех ветвях",
+            "en": "Fractional change in each branch"
+          },
+          "body": {
+            "ru": "<p>Деление потока остаётся симметричным. Поэтому относительное изменение расхода \\(\\delta Q_{N-1}/Q_{N-1}\\) совпадает с \\(\\delta Q_0/Q_0\\).</p>",
+            "en": "<p>The flow still divides symmetrically, so the fractional change \\(\\delta Q_{N-1}/Q_{N-1}\\) equals \\(\\delta Q_0/Q_0\\).</p>"
+          }
+        },
+        {
+          "id": "s5",
+          "points": 0.6,
+          "label": {
+            "ru": "Пересчёт расхода",
+            "en": "Revised flow rate"
+          },
+          "body": {
+            "ru": "<p>Перепад давления на всей сети фиксирован. Величина \\(Q_0\\) обратно пропорциональна сопротивлению, которое возросло с \\(NR_0\\) на \\(4R_0\\delta r/r_{N-1}\\). Оставляя первую степень сужения, получаем</p>\n<div>\\[\\frac{\\delta Q_{N-1}}{Q_{N-1}}\\simeq-\\frac{4\\delta r}{N r_{N-1}}.\\]</div>",
+            "en": "<p>The pressure drop across the network is fixed. The inlet flow varies inversely with resistance, which has increased from \\(NR_0\\) by \\(4R_0\\delta r/r_{N-1}\\). To first order this gives</p>\n<div>\\[\\frac{\\delta Q_{N-1}}{Q_{N-1}}\\simeq-\\frac{4\\delta r}{N r_{N-1}}.\\]</div>"
+          }
+        },
+        {
+          "id": "s6",
+          "points": 0.4,
+          "label": {
+            "ru": "Подстановка давления",
+            "en": "Substituting the pressure"
+          },
+          "body": {
+            "ru": "<p>Подставляем линейную зависимость радиуса от давления и давление из B1. Отрицательный знак означает уменьшение расхода.</p>",
+            "en": "<p>Insert the linear radius response and the pressure from B1. The negative sign denotes a reduced flow rate.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{\\delta Q_{N-1}}{Q_{N-1}}\\simeq-\\frac{2\\delta r_c}{N r_{N-1}}\\frac{K_{\\mathrm{N}}v/(1-v)-P_{\\mathrm{cap}}}{p_c-P_{\\mathrm{cap}}}.\\]</div>",
+        "en": "<div>\\[\\frac{\\delta Q_{N-1}}{Q_{N-1}}\\simeq-\\frac{2\\delta r_c}{N r_{N-1}}\\frac{K_{\\mathrm{N}}v/(1-v)-P_{\\mathrm{cap}}}{p_c-P_{\\mathrm{cap}}}.\\]</div>"
+      }
+    }
+  ]
+}

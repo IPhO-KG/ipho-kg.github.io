@@ -1,0 +1,112 @@
+{
+  "id": "T3",
+  "title": "Гренландский ледниковый щит",
+  "points": 9,
+  "sourceFile": "/assets/practice/ipho-2013/IPhO_2013_T3_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "translationStatus": "editorial-adaptation",
+  "sections": [
+    {
+      "id": "T3-A",
+      "title": "Профиль ледникового щита",
+      "points": 2.5
+    },
+    {
+      "id": "T3-B",
+      "title": "Течение льда",
+      "points": 2.1
+    },
+    {
+      "id": "T3-C",
+      "title": "Возраст льда и климат",
+      "points": 2.0
+    },
+    {
+      "id": "T3-D",
+      "title": "Уровень океана",
+      "points": 2.4
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T3-3.1",
+      "label": "3.1",
+      "points": 0.3
+    },
+    {
+      "id": "T3-3.2a",
+      "label": "3.2a",
+      "points": 0.9
+    },
+    {
+      "id": "T3-3.2b",
+      "label": "3.2b",
+      "points": 0.8
+    },
+    {
+      "id": "T3-3.2c",
+      "label": "3.2c",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.3",
+      "label": "3.3",
+      "points": 0.6
+    },
+    {
+      "id": "T3-3.4",
+      "label": "3.4",
+      "points": 0.6
+    },
+    {
+      "id": "T3-3.5",
+      "label": "3.5",
+      "points": 0.9
+    },
+    {
+      "id": "T3-3.6",
+      "label": "3.6",
+      "points": 1.0
+    },
+    {
+      "id": "T3-3.7a",
+      "label": "3.7a",
+      "points": 0.8
+    },
+    {
+      "id": "T3-3.7b",
+      "label": "3.7b",
+      "points": 0.2
+    },
+    {
+      "id": "T3-3.8",
+      "label": "3.8",
+      "points": 0.6
+    },
+    {
+      "id": "T3-3.9",
+      "label": "3.9",
+      "points": 1.8
+    }
+  ],
+  "figures": [
+    "qfig1",
+    "qfig2"
+  ],
+  "solutionsAvailable": true,
+  "stepScoring": "official-subtask-maxima",
+  "solutionData": "/assets/practice/ipho-2013/solutions/t3.json",
+  "solutionPdf": "/assets/practice/ipho-2013/IPhO_2013_S3_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2013/IPhO_2013_S3_EN.pdf",
+  "sourceLinks": {
+    "problem": "https://ipho2013.dk/ipho2013-theoretical-problem-3.pdf",
+    "solution": "https://ipho2013.dk/IPhO2013_T3_solution.pdf",
+    "data": "https://ipho2013.dk/ipho2013-theory-data-sheet.pdf"
+  }
+}

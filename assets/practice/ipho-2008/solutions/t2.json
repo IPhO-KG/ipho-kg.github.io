@@ -1,0 +1,407 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Черенковское излучение и кольцевой детектор",
+    "en": "Cherenkov light and a ring-imaging counter"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2008/IPhO_2008_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-1.1",
+      "label": "1.1",
+      "max": 0.5,
+      "title": {
+        "ru": "Геометрия фронта",
+        "en": "Shape of the wavefront"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Геометрия фронта",
+            "en": "Shape of the wavefront"
+          },
+          "body": {
+            "ru": "<p>Если частица прошла \\(C\\) в момент \\(t\\), радиус волны к моменту \\(t_1\\) равен \\(c(t_1-t)/n\\), а \\(CB=v(t_1-t)\\). Отношение радиуса к \\(CB\\) постоянно. Все окружности в сечении подобны с центром подобия \\(B\\). Общие касательные из \\(B\\) к окружности с центром \\(A\\) касаются и всех промежуточных окружностей.</p>\n<figure><img src=\"/assets/practice/ipho-2008/q2/sfig1.png\" alt=\"Сечение конуса и две касательные из точки B.\" style=\"width:min(100%,375px);height:auto\" loading=\"lazy\"><figcaption>Сечение конуса и две касательные из точки B.</figcaption></figure>",
+            "en": "<p>If the particle passed \\(C\\) at time \\(t\\), its wave has radius \\(c(t_1-t)/n\\) at \\(t_1\\), while \\(CB=v(t_1-t)\\). The radius is a fixed fraction of \\(CB\\), so all circles in the section are scaled copies about \\(B\\). The two tangents from \\(B\\) to the circle centred at \\(A\\) are tangent to every intermediate circle.</p>\n<figure><img src=\"/assets/practice/ipho-2008/q2/sfig1.png\" alt=\"Cone section and the two tangents from B.\" style=\"width:min(100%,375px);height:auto\" loading=\"lazy\"><figcaption>Cone section and the two tangents from B.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Фронт — конус с вершиной \\(B\\), сечение — две его образующие \\(BD\\) и \\(BD'\\).</p>",
+        "en": "<p>The front is a cone with apex \\(B\\). Its section consists of the two generators \\(BD\\) and \\(BD'\\).</p>"
+      }
+    },
+    {
+      "id": "T2-1.2",
+      "label": "1.2",
+      "max": 0.5,
+      "title": {
+        "ru": "Угол конуса",
+        "en": "Cone angle"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Угол конуса",
+            "en": "Cone angle"
+          },
+          "body": {
+            "ru": "<p>Радиус \\(AD\\) перпендикулярен касательной \\(BD\\). В прямоугольном треугольнике \\(ABD\\) отношение \\(AD/AB\\) равно \\((ct_1/n)/(vt_1)\\). Световой луч направлен по нормали к фронту.</p>",
+            "en": "<p>Radius \\(AD\\) is perpendicular to tangent \\(BD\\). In right triangle \\(ABD\\), the ratio \\(AD/AB\\) is \\((ct_1/n)/(vt_1)\\). A light ray runs along the normal to the front.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\varphi=\\arcsin\\frac1{n\\beta}=\\frac{\\pi}{2}-\\theta.\\]</div>",
+        "en": "<div>\\[\\varphi=\\arcsin\\frac1{n\\beta}=\\frac{\\pi}{2}-\\theta.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2",
+      "label": "2",
+      "max": 1.5,
+      "title": {
+        "ru": "Центр и радиус кольца",
+        "en": "Centre and radius of the ring"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.5,
+          "label": {
+            "ru": "Центр и радиус кольца",
+            "en": "Centre and radius of the ring"
+          },
+          "body": {
+            "ru": "<p>Параллельные лучи одного направления собираются в одной точке фокальной плоскости. Для построения этой точки проведём через \\(C\\) прямую, параллельную лучам. Для направления пучка эта прямая пересечёт фокальную плоскость в \\(O\\). Так как \\(CF=f\\), расстояние от фокуса до \\(O\\) равно \\(f\\tan\\alpha\\).</p>\n<p>Лучи на двух сторонах черенковского конуса отклонены от \\(CO\\) на \\(\\theta\\) и дают точки \\(M\\) и \\(N\\) на расстоянии \\(f\\theta\\) от \\(O\\) в первом порядке. При изменении азимута сохраняется это расстояние, и получается окружность.</p>\n<figure><img src=\"/assets/practice/ipho-2008/q2/sfig2.png\" alt=\"Отражённые лучи и кольцо в фокальной плоскости.\" style=\"width:min(100%,490px);height:auto\" loading=\"lazy\"><figcaption>Отражённые лучи и кольцо в фокальной плоскости.</figcaption></figure>",
+            "en": "<p>Parallel rays with one direction focus at one point of the focal plane. Draw a line through \\(C\\) parallel to these rays to locate that point. For the beam direction it intersects the plane at \\(O\\). Since \\(CF=f\\), the offset from the focus is \\(f\\tan\\alpha\\).</p>\n<p>The two rays on opposite sides of the cone make angle \\(\\theta\\) with \\(CO\\). To first order their image points \\(M\\) and \\(N\\) are a distance \\(f\\theta\\) from \\(O\\). Changing the azimuth leaves this distance fixed and traces a circle.</p>\n<figure><img src=\"/assets/practice/ipho-2008/q2/sfig2.png\" alt=\"Reflected rays and the ring in the focal plane.\" style=\"width:min(100%,490px);height:auto\" loading=\"lazy\"><figcaption>Reflected rays and the ring in the focal plane.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[CO\\parallel IS,\\qquad FO\\simeq f\\alpha,\\qquad r\\simeq f\\theta.\\]</div>",
+        "en": "<div>\\[CO\\parallel IS,\\qquad FO\\simeq f\\alpha,\\qquad r\\simeq f\\theta.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-3.1",
+      "label": "3.1",
+      "max": 1.25,
+      "title": {
+        "ru": "Пороги трёх частиц",
+        "en": "Thresholds for the three particles"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.25,
+          "label": {
+            "ru": "Пороги трёх частиц",
+            "en": "Thresholds for the three particles"
+          },
+          "body": {
+            "ru": "<p>При пороговом давлении \\(n\\beta=1\\). Введём \\(K=Mc/p\\). Из \\(E^2=p^2c^2+M^2c^4\\) и \\(\\beta=pc/E\\) следует \\(1/\\beta=\\sqrt{1+K^2}\\). Для протонов, каонов и пионов \\(K\\) равен соответственно \\(0{,}094\\), \\(0{,}050\\), \\(0{,}014\\).</p>\n<div>\\[P_{\\min}=\\frac{\\sqrt{1+K^2}-1}{a}\\simeq\\frac{K^2}{2a}.\\]</div>",
+            "en": "<p>At threshold \\(n\\beta=1\\). Put \\(K=Mc/p\\). From \\(E^2=p^2c^2+M^2c^4\\) and \\(\\beta=pc/E\\) one gets \\(1/\\beta=\\sqrt{1+K^2}\\). For protons, kaons and pions \\(K\\) is \\(0.094\\), \\(0.050\\) and \\(0.014\\), respectively.</p>\n<div>\\[P_{\\min}=\\frac{\\sqrt{1+K^2}-1}{a}\\simeq\\frac{K^2}{2a}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_p\\simeq16\\,\\mathrm{atm},\\qquad P_K\\simeq4{,}6\\,\\mathrm{atm},\\qquad P_\\pi\\simeq0{,}36\\,\\mathrm{atm}.\\]</div>",
+        "en": "<div>\\[P_p\\simeq16\\,\\mathrm{atm},\\qquad P_K\\simeq4.6\\,\\mathrm{atm},\\qquad P_\\pi\\simeq0.36\\,\\mathrm{atm}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-3.2",
+      "label": "3.2",
+      "max": 1.25,
+      "title": {
+        "ru": "Два радиуса в отношении один к двум",
+        "en": "Two radii in a 1:2 ratio"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Давление",
+            "en": "Pressure"
+          },
+          "body": {
+            "ru": "<p>При малых углах первый ненулевой член в \\(\\cos\\theta\\) квадратичен. Из \\(\\cos\\theta=\\sqrt{1+K^2}/(1+aP)\\) следует \\(\\theta^2\\simeq2aP-K^2\\). Подставим \\(\\theta_\\pi=2\\theta_K\\).</p>\n<div>\\[P_{1/2}\\simeq\\frac{4K_K^2-K_\\pi^2}{6a}\\simeq6{,}0\\,\\mathrm{atm}.\\]</div>",
+            "en": "<p>At small angles the leading change in \\(\\cos\\theta\\) is quadratic. Expanding \\(\\cos\\theta=\\sqrt{1+K^2}/(1+aP)\\) gives \\(\\theta^2\\simeq2aP-K^2\\). Set \\(\\theta_\\pi=2\\theta_K\\).</p>\n<div>\\[P_{1/2}\\simeq\\frac{4K_K^2-K_\\pi^2}{6a}\\simeq6.0\\,\\mathrm{atm}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.25,
+          "label": {
+            "ru": "Каонное кольцо",
+            "en": "Kaon angle"
+          },
+          "body": {
+            "ru": "<p>Подставляем давление в \\(\\theta_K\\simeq\\sqrt{2aP-K_K^2}\\). Полученный в радианах угол переводим в градусы.</p>\n<div>\\[\\theta_K\\simeq1{,}6^\\circ.\\]</div>",
+            "en": "<p>Insert the pressure in \\(\\theta_K\\simeq\\sqrt{2aP-K_K^2}\\) and convert from radians to degrees.</p>\n<div>\\[\\theta_K\\simeq1.6^\\circ.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.25,
+          "label": {
+            "ru": "Пионное кольцо",
+            "en": "Pion angle"
+          },
+          "body": {
+            "ru": "<p>Удвоение радиуса при одном и том же \\(f\\) соответствует удвоению угла.</p>\n<div>\\[\\theta_\\pi=2\\theta_K\\simeq3{,}2^\\circ.\\]</div>",
+            "en": "<p>At fixed \\(f\\), doubling the radius doubles the angle.</p>\n<div>\\[\\theta_\\pi=2\\theta_K\\simeq3.2^\\circ.\\]</div>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.25,
+          "label": {
+            "ru": "Протонный порог",
+            "en": "Proton threshold"
+          },
+          "body": {
+            "ru": "<p>Давление \\(6\\,\\mathrm{atm}\\) ниже найденного для протонов порога \\(16\\,\\mathrm{atm}\\), поэтому они не излучают.</p>",
+            "en": "<p>The pressure of \\(6\\,\\mathrm{atm}\\) lies below the proton threshold of \\(16\\,\\mathrm{atm}\\), so protons do not radiate.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>\\(P_{1/2}\\simeq6{,}0\\,\\mathrm{atm}\\), \\(\\theta_K\\simeq1{,}6^\\circ\\), \\(\\theta_\\pi\\simeq3{,}2^\\circ\\). Протонного кольца нет.</p>",
+        "en": "<p>\\(P_{1/2}\\simeq6.0\\,\\mathrm{atm}\\), \\(\\theta_K\\simeq1.6^\\circ\\), \\(\\theta_\\pi\\simeq3.2^\\circ\\). There is no proton ring.</p>"
+      }
+    },
+    {
+      "id": "T2-4.1",
+      "label": "4.1",
+      "max": 1.0,
+      "title": {
+        "ru": "Угловая чувствительность",
+        "en": "Angular sensitivity"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Угловая чувствительность",
+            "en": "Angular sensitivity"
+          },
+          "body": {
+            "ru": "<p>При постоянном \\(n\\) дифференцируем \\(n\\cos\\theta=\\sqrt{1+K^2}\\). Поскольку \\(dK/dp=-K/p\\), получаем производную ниже. Формула даёт угол в радианах. Подставляем \\(p=10\\,\\mathrm{GeV}/c\\) и углы для двух колец, затем умножаем на \\(180/\\pi\\).</p>\n<div>\\[\\frac{d\\theta}{dp}=\\frac{K^2}{p(1+K^2)\\tan\\theta}\\simeq\\frac{K^2}{p\\theta}.\\]</div>",
+            "en": "<p>At fixed \\(n\\), differentiate \\(n\\cos\\theta=\\sqrt{1+K^2}\\) and use \\(dK/dp=-K/p\\). The derivative below gives radians. Insert \\(p=10\\,\\mathrm{GeV}/c\\) and the corresponding ring angles, then multiply by \\(180/\\pi\\).</p>\n<div>\\[\\frac{d\\theta}{dp}=\\frac{K^2}{p(1+K^2)\\tan\\theta}\\simeq\\frac{K^2}{p\\theta}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{\\Delta\\theta_K}{\\Delta p}\\simeq\\frac{0{,}51^\\circ}{\\mathrm{GeV}/c},\\qquad \\frac{\\Delta\\theta_\\pi}{\\Delta p}\\simeq\\frac{0{,}020^\\circ}{\\mathrm{GeV}/c}.\\]</div>",
+        "en": "<div>\\[\\frac{\\Delta\\theta_K}{\\Delta p}\\simeq\\frac{0.51^\\circ}{\\mathrm{GeV}/c},\\qquad \\frac{\\Delta\\theta_\\pi}{\\Delta p}\\simeq\\frac{0.020^\\circ}{\\mathrm{GeV}/c}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-4.2",
+      "label": "4.2",
+      "max": 1.0,
+      "title": {
+        "ru": "Различимость колец",
+        "en": "Separating the rings"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Различимость колец",
+            "en": "Separating the rings"
+          },
+          "body": {
+            "ru": "<p>Разность углов равна \\(1{,}6^\\circ\\). Суммарная полуширина на единицу разброса импульса равна \\(0{,}53^\\circ/(\\mathrm{GeV}/c)\\). Она должна давать менее \\(0{,}16^\\circ\\).</p>",
+            "en": "<p>The angular separation is \\(1.6^\\circ\\). The combined half-width per unit momentum spread is \\(0.53^\\circ/(\\mathrm{GeV}/c)\\). Its product with \\(\\Delta p\\) must be less than \\(0.16^\\circ\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta p&lt;\\frac{0{,}16}{0{,}53}\\,\\mathrm{GeV}/c\\simeq0{,}30\\,\\mathrm{GeV}/c.\\]</div>",
+        "en": "<div>\\[\\Delta p&lt;\\frac{0.16}{0.53}\\,\\mathrm{GeV}/c\\simeq0.30\\,\\mathrm{GeV}/c.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-5.1",
+      "label": "5.1",
+      "max": 1.0,
+      "title": {
+        "ru": "Пороговая кинетическая энергия",
+        "en": "Kinetic-energy threshold"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Пороговая кинетическая энергия",
+            "en": "Kinetic-energy threshold"
+          },
+          "body": {
+            "ru": "<p>На пороге \\(\\beta=1/n\\). Из полной энергии \\(E=\\gamma Mc^2\\) вычитаем энергию покоя частицы.</p>",
+            "en": "<p>At threshold \\(\\beta=1/n\\). Subtract the rest energy from the total energy \\(E=\\gamma Mc^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_{\\min}=Mc^2\\left(\\frac{1}{\\sqrt{1-n^{-2}}}-1\\right)\\simeq0{,}517\\,Mc^2.\\]</div>",
+        "en": "<div>\\[T_{\\min}=Mc^2\\left(\\frac{1}{\\sqrt{1-n^{-2}}}-1\\right)\\simeq0.517\\,Mc^2.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-5.2",
+      "label": "5.2",
+      "max": 0.75,
+      "title": {
+        "ru": "Источник свечения",
+        "en": "Origin of the light"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.25,
+          "label": {
+            "ru": "Ядро гелия",
+            "en": "Helium nucleus"
+          },
+          "body": {
+            "ru": "<p>Умножаем энергию покоя ядра на пороговый множитель \\(0{,}517\\).</p>\n<div>\\[T_{\\min,\\alpha}\\simeq1{,}96\\,\\mathrm{GeV}.\\]</div>",
+            "en": "<p>Multiply the nuclear rest energy by the threshold factor \\(0.517\\).</p>\n<div>\\[T_{\\min,\\alpha}\\simeq1.96\\,\\mathrm{GeV}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.25,
+          "label": {
+            "ru": "Электрон",
+            "en": "Electron"
+          },
+          "body": {
+            "ru": "<p>Тот же множитель относится к электронной энергии покоя, указанной в МэВ.</p>\n<div>\\[T_{\\min,e}\\simeq0{,}264\\,\\mathrm{MeV}.\\]</div>",
+            "en": "<p>The same factor applies to the electron rest energy, here stated in MeV.</p>\n<div>\\[T_{\\min,e}\\simeq0.264\\,\\mathrm{MeV}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.25,
+          "label": {
+            "ru": "Сравнение с энергией источника",
+            "en": "Comparison with the source"
+          },
+          "body": {
+            "ru": "<p>Электронный порог ниже нескольких МэВ. Для ядра гелия потребовалась бы энергия около двух ГэВ.</p>",
+            "en": "<p>The electron threshold lies below a few MeV. A helium nucleus would need nearly two GeV.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>\\(T_{\\min,\\alpha}\\simeq1{,}96\\,\\mathrm{GeV}\\), \\(T_{\\min,e}\\simeq0{,}264\\,\\mathrm{MeV}\\). Свет испускают электроны.</p>",
+        "en": "<p>\\(T_{\\min,\\alpha}\\simeq1.96\\,\\mathrm{GeV}\\) and \\(T_{\\min,e}\\simeq0.264\\,\\mathrm{MeV}\\). Electrons produce the light.</p>"
+      }
+    },
+    {
+      "id": "T2-6.1",
+      "label": "6.1",
+      "max": 0.5,
+      "title": {
+        "ru": "Размах углов по спектру",
+        "en": "Angular span across the spectrum"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Размах углов по спектру",
+            "en": "Angular span across the spectrum"
+          },
+          "body": {
+            "ru": "<p>При фиксированной скорости дифференцируем \\(n\\cos\\theta=1/\\beta\\). Получаем \\(\\tan\\theta\\,\\delta\\theta=\\delta n/n\\). Здесь \\(\\delta n=0{,}02(n-1)\\), \\(n=1{,}00162\\), \\(\\theta_\\pi\\simeq3{,}2^\\circ\\). Результат в радианах переводим в градусы.</p>",
+            "en": "<p>At fixed speed, differentiate \\(n\\cos\\theta=1/\\beta\\). This gives \\(\\tan\\theta\\,\\delta\\theta=\\delta n/n\\). Use \\(\\delta n=0.02(n-1)\\), \\(n=1.00162\\) and \\(\\theta_\\pi\\simeq3.2^\\circ\\), then convert from radians to degrees.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\delta\\theta=\\frac{0{,}02(n-1)}{n\\tan\\theta_\\pi}\\simeq0{,}033^\\circ.\\]</div>",
+        "en": "<div>\\[\\delta\\theta=\\frac{0.02(n-1)}{n\\tan\\theta_\\pi}\\simeq0.033^\\circ.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-6.2.1",
+      "label": "6.2.1",
+      "max": 0.5,
+      "title": {
+        "ru": "Два вклада в ширину",
+        "en": "Two contributions to the width"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.25,
+          "label": {
+            "ru": "Дисперсия",
+            "en": "Dispersion"
+          },
+          "body": {
+            "ru": "<p>Предыдущий пункт даёт полный размах углов между двумя краями видимого диапазона. Полуширина составляет его половину.</p>\n<div>\\[\\Delta\\theta_{\\mathrm{disp}}\\simeq\\delta\\theta/2\\simeq0{,}017^\\circ.\\]</div>",
+            "en": "<p>The preceding result is the full span between the ends of the visible band. Its half-width is half that value.</p>\n<div>\\[\\Delta\\theta_{\\mathrm{disp}}\\simeq\\delta\\theta/2\\simeq0.017^\\circ.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.25,
+          "label": {
+            "ru": "Разброс импульсов",
+            "en": "Momentum spread"
+          },
+          "body": {
+            "ru": "<p>Умножаем найденную для пионов чувствительность на полуширину пучка.</p>\n<div>\\[\\Delta\\theta_p\\simeq0{,}020^\\circ\\times0{,}3=0{,}006^\\circ.\\]</div>",
+            "en": "<p>Multiply the pion angular sensitivity by the beam momentum half-width.</p>\n<div>\\[\\Delta\\theta_p\\simeq0.020^\\circ\\times0.3=0.006^\\circ.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta\\theta_{\\mathrm{disp}}\\simeq0{,}017^\\circ,\\qquad\\Delta\\theta_p\\simeq0{,}006^\\circ.\\]</div>",
+        "en": "<div>\\[\\Delta\\theta_{\\mathrm{disp}}\\simeq0.017^\\circ,\\qquad\\Delta\\theta_p\\simeq0.006^\\circ.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-6.2.2",
+      "label": "6.2.2",
+      "max": 0.25,
+      "title": {
+        "ru": "Цвет от центра к краю",
+        "en": "Colour from inner to outer edge"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.25,
+          "label": {
+            "ru": "Цвет от центра к краю",
+            "en": "Colour from inner to outer edge"
+          },
+          "body": {
+            "ru": "<p>Для красного света \\(n\\) меньше, поэтому меньше угол \\(\\theta\\) и радиус кольца. В середине цвета перекрываются. Сине-фиолетовый свет имеет наибольший показатель преломления и достигает наружного края. Разброс импульсов сглаживает границы.</p>",
+            "en": "<p>Red light has smaller \\(n\\), hence smaller \\(\\theta\\) and a smaller ring radius. The colours overlap in the middle. Blue-violet light has the largest refractive index and reaches the outer edge. Momentum spread softens the boundaries.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Красный внутренний край, белая середина, синий наружный край.</p>",
+        "en": "<p>Red inner edge, white middle, blue outer edge.</p>"
+      }
+    }
+  ]
+}

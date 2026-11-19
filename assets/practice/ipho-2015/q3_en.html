@@ -1,0 +1,34 @@
+<article id="T3" class="exam-problem" lang="en">
+<h2>Problem T3 [10 pts]. The design of a nuclear reactor</h2>
+<p>In natural uranium dioxide, \(0.720\%\) of uranium atoms are \(^{235}\mathrm U\). A fission event releases two or three fast neutrons. Slowing them increases their probability of inducing further fission. A power reactor transfers the resulting heat to a coolant.</p>
+<p>A cylindrical vessel of height \(H\) and radius \(R\) contains a moderator. Vertical fuel channels run along a square lattice. Each houses several solid cylindrical \(\mathrm{UO_2}\) pins of length \(H\). Neutrons lose energy in the moderator between channels, while coolant flows along the pins.</p>
+<figure><img src="/assets/practice/ipho-2015/q3/reactor.png" alt="Figs. I–II. Pins (1) within a channel, and channels (2) in the vessel." loading="lazy" style="width:min(100%,400px);height:auto"><figcaption>Figs. I–II. Pins (1) within a channel, and channels (2) in the vessel.</figcaption></figure>
+<figure><img src="/assets/practice/ipho-2015/q3/channels.png" alt="Fig. III. Plan view of the channel lattice (3) with representative neutron paths (4)." loading="lazy" style="width:min(100%,330px);height:auto"><figcaption>Fig. III. Plan view of the channel lattice (3) with representative neutron paths (4).</figcaption></figure>
+<section id="T3-A">
+<h3>T3-A [4 pts]. Fuel pin</h3>
+<p>For the fuel, use molar mass \(M_w=0.270\,\mathrm{kg/mol}\), density \(\rho=1.060\times10^4\,\mathrm{kg/m^3}\), melting temperature \(T_m=3.138\times10^3\,\mathrm K\) and thermal conductivity \(\lambda=3.280\,\mathrm{W/(m\,K)}\). Use \(N_A=6.022\times10^{23}\,\mathrm{mol^{-1}}\) for Avogadro’s constant.</p>
+<p>A stationary nucleus absorbs a neutron of negligible kinetic energy. Ignore the charge imbalance in the following reaction model.</p>
+<div>\[{}^{235}\mathrm U+n\longrightarrow{}^{94}\mathrm{Zr}+{}^{140}\mathrm{Ce}+2n+\Delta E.\]</div>
+<div class="exam-question" id="T3-A1" data-points="0.8"><p><strong>T3-A1 [0.8 pts].</strong> Estimate \(\Delta E\) in MeV. The uranium, zirconium and cerium nuclear masses are \(235.044\), \(93.9063\) and \(139.905\) atomic mass units, respectively. The neutron has mass \(1.00867\,\mathrm u\), where \(1\,\mathrm u=931.502\,\mathrm{MeV}/c^2\).</p></div>
+<div class="exam-question" id="T3-A2" data-points="0.5"><p><strong>T3-A2 [0.5 pts].</strong> Find the number \(N\) of \(^{235}\mathrm U\) nuclei per unit volume of natural \(\mathrm{UO_2}\).</p></div>
+<div class="exam-question" id="T3-A3" data-points="1.2"><p><strong>T3-A3 [1.2 pts].</strong> The fuel sees a uniform neutron flux \(\varphi=2.000\times10^{18}\,\mathrm{m^{-2}s^{-1}}\). The fission cross section is \(\sigma_f=5.400\times10^{-26}\,\mathrm{m^2}\). With \(80.00\%\) of the fission energy becoming heat, determine the heat production rate \(Q\) per unit volume of fuel. Use \(1\,\mathrm{MeV}=1.602\times10^{-13}\,\mathrm J\).</p></div>
+<div class="exam-question" id="T3-A4" data-points="0.5"><p><strong>T3-A4 [0.5 pts].</strong> At steady state the centre and surface temperatures obey \(T_c-T_s=\tfrac14 F(Q,a,\lambda)\), with pin radius \(a\). Find \(F\) by dimensional analysis.</p></div>
+<div class="exam-question" id="T3-A5" data-points="1"><p><strong>T3-A5 [1 pt].</strong> The coolant maintains the pin surface at \(5.770\times10^2\,\mathrm K\). Estimate the largest radius \(a_u\) for which the fuel remains solid.</p></div>
+</section>
+<section id="T3-B">
+<h3>T3-B [3.5 pts]. Elastic scattering in the moderator</h3>
+<p>A neutron of mass \(1\,\mathrm u\) undergoes a two-dimensional elastic collision with a stationary atom of mass \(A\,\mathrm u\). All speeds are nonrelativistic. In the lab, \(\mathbf v_b,\mathbf v_a\) are the neutron velocities before and after impact and \(\mathbf v_m\) is the centre-of-mass velocity. The neutron scattering angles in the lab and centre-of-mass frames are \(\theta_L\) and \(\theta\).</p>
+<figure><img src="/assets/practice/ipho-2015/q3/lab.png" alt="Fig. IV. Lab-frame neutron before (1) and after (2) impact, and atom before (3) and after (4) impact." loading="lazy" style="width:min(100%,325px);height:auto"><figcaption>Fig. IV. Lab-frame neutron before (1) and after (2) impact, and atom before (3) and after (4) impact.</figcaption></figure>
+<div class="exam-question" id="T3-B1" data-points="1"><p><strong>T3-B1 [1 pt].</strong> Draw the collision in the centre-of-mass frame. Mark \(\theta\) and label velocities 1, 2 and 3 using \(\mathbf v_b,\mathbf v_a,\mathbf v_m\).</p></div>
+<div class="exam-question" id="T3-B2" data-points="1"><p><strong>T3-B2 [1 pt].</strong> Express the final centre-of-mass speeds of the neutron \(v\) and the atom \(V\) using \(A\) and \(v_b\).</p></div>
+<div class="exam-question" id="T3-B3" data-points="1"><p><strong>T3-B3 [1 pt].</strong> The neutron’s lab kinetic energies before and after impact are \(E_b,E_a\). Obtain \(G(\alpha,\theta)=E_a/E_b\), with \(\alpha=[(A-1)/(A+1)]^2\).</p></div>
+<div class="exam-question" id="T3-B4" data-points="0.5"><p><strong>T3-B4 [0.5 pts].</strong> Apply the same model to a heavy-water molecule \(\mathrm{D_2O}\) of mass \(20\,\mathrm u\). What is the largest fraction \(f_l=(E_b-E_a)/E_b\) of its energy that the neutron can lose in one collision?</p></div>
+</section>
+<section id="T3-C">
+<h3>T3-C [2.5 pts]. Cylindrical geometry</h3>
+<p>At constant flux \(\psi\), excess production balances neutron leakage. In the cylindrical model the two rates are</p>
+<div>\[\Gamma_{\mathrm{leak}}=k_1\left[\left(\frac{2.405}{R}\right)^2+\left(\frac{\pi}{H}\right)^2\right]\psi,\qquad \Gamma_{\mathrm{prod}}=k_2\psi.\]</div>
+<div class="exam-question" id="T3-C1" data-points="1.5"><p><strong>T3-C1 [1.5 pts].</strong> Minimise leakage at fixed volume. Find the steady-state values of \(R,H\) for \(k_1=1.021\times10^{-2}\,\mathrm m\) and \(k_2=8.787\times10^{-3}\,\mathrm{m^{-1}}\).</p></div>
+<div class="exam-question" id="T3-C2" data-points="1"><p><strong>T3-C2 [1 pt].</strong> The square lattice has a nearest-neighbour spacing of \(0.286\,\mathrm m\). The fuel in one channel has the cross-sectional area of a solid cylinder of radius \(3.617\times10^{-2}\,\mathrm m\). Estimate the number of channels \(F_n\) and the total fuel mass \(M\).</p></div>
+</section>
+</article>

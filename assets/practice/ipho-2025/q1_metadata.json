@@ -1,0 +1,117 @@
+{
+  "id": "T1",
+  "title": "Водород и галактики",
+  "points": 10,
+  "sourceFile": "IPhO_2025_T1_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "subtasks": [
+    {
+      "id": "T1-A1",
+      "points": 0.2
+    },
+    {
+      "id": "T1-A2",
+      "points": 0.5
+    },
+    {
+      "id": "T1-A3",
+      "points": 0.5
+    },
+    {
+      "id": "T1-A4",
+      "points": 0.5
+    },
+    {
+      "id": "T1-A5",
+      "points": 0.5
+    },
+    {
+      "id": "T1-B1",
+      "points": 0.2
+    },
+    {
+      "id": "T1-B2",
+      "points": 0.5
+    },
+    {
+      "id": "T1-B3",
+      "points": 1.8
+    },
+    {
+      "id": "T1-C1",
+      "points": 0.5
+    },
+    {
+      "id": "T1-C2",
+      "points": 0.6
+    },
+    {
+      "id": "T1-C3",
+      "points": 0.7
+    },
+    {
+      "id": "T1-C4",
+      "points": 0.6
+    },
+    {
+      "id": "T1-C5",
+      "points": 0.6
+    },
+    {
+      "id": "T1-D1",
+      "points": 0.4
+    },
+    {
+      "id": "T1-D2",
+      "points": 0.2
+    },
+    {
+      "id": "T1-D3",
+      "points": 0.8
+    },
+    {
+      "id": "T1-D4",
+      "points": 0.9
+    }
+  ],
+  "sections": [
+    {
+      "id": "T1-A",
+      "title": "Атом водорода",
+      "points": 2.2
+    },
+    {
+      "id": "T1-B",
+      "title": "Кривые вращения галактик",
+      "points": 2.5
+    },
+    {
+      "id": "T1-C",
+      "title": "Распределение массы в Млечном Пути",
+      "points": 3.0
+    },
+    {
+      "id": "T1-D",
+      "title": "Закон Талли — Фишера и MOND",
+      "points": 2.3
+    }
+  ],
+  "figures": [
+    "fig1",
+    "fig2",
+    "fig3",
+    "fig4"
+  ],
+  "solutionsAvailable": true,
+  "translationStatus": "bilingual",
+  "solutionData": "/assets/practice/ipho-2025/solutions/t1.json",
+  "solutionPdf": "/assets/practice/ipho-2025/IPhO_2025_S1_EN.pdf",
+  "stepScoring": "official-subpart-maximum-grouped-criteria"
+}

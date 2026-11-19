@@ -1,0 +1,76 @@
+{
+  "id": "T1",
+  "title": "Гравитационная волна GW150914",
+  "points": 10,
+  "sourceFile": "/assets/practice/ipho-2018/IPhO_2018_T1_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "translationStatus": "editorial-adaptation",
+  "sections": [
+    {
+      "id": "T1-A",
+      "title": "Ньютоновские орбиты",
+      "points": 3.0
+    },
+    {
+      "id": "T1-B",
+      "title": "Потери энергии на гравитационные волны",
+      "points": 7.0
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T1-A1",
+      "points": 1.0
+    },
+    {
+      "id": "T1-A2",
+      "points": 1.0
+    },
+    {
+      "id": "T1-A3",
+      "points": 1.0
+    },
+    {
+      "id": "T1-B1",
+      "points": 1.0
+    },
+    {
+      "id": "T1-B2",
+      "points": 1.0
+    },
+    {
+      "id": "T1-B3",
+      "points": 1.0
+    },
+    {
+      "id": "T1-B4",
+      "points": 2.0
+    },
+    {
+      "id": "T1-B5",
+      "points": 1.0
+    },
+    {
+      "id": "T1-B6",
+      "points": 1.0
+    }
+  ],
+  "figures": [
+    "strain"
+  ],
+  "solutionsAvailable": true,
+  "stepScoring": "published-additive-criteria",
+  "solutionData": "/assets/practice/ipho-2018/solutions/t1.json",
+  "solutionPdf": "/assets/practice/ipho-2018/IPhO_2018_S1_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2018/IPhO_2018_M1_EN.pdf",
+  "sourceLinks": {
+    "problem": "https://olimpiadas.spf.pt/docs/2018/TRANSLATION_T1_Q_Official_english.pdf",
+    "solution": "https://olimpiadas.spf.pt/docs/2018/ST1-IPhO2018.pdf",
+    "marking": "https://natuurkundeolympiade.nl/wp-content/uploads/sites/225/2018/07/2018itheo_uitw.pdf"
+  }
+}

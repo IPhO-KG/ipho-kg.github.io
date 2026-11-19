@@ -1,0 +1,281 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Капельница Кельвина",
+    "en": "Kelvin water dropper"
+  },
+  "max": 8.0,
+  "sourcePdf": "/assets/practice/ipho-2012/IPhO_2012_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-A1",
+      "max": 1.2,
+      "label": "A-i",
+      "title": {
+        "ru": "Радиус в момент отрыва",
+        "en": "Radius at detachment"
+      },
+      "steps": [
+        {
+          "id": "a1-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Вес капли",
+            "en": "Weight of the drop"
+          },
+          "body": {
+            "ru": "<p>При \\(d\\ll r\\) капля почти сферическая. Её вес непосредственно перед отрывом равен \\((4\\pi/3)\\rho g r_{\\max}^3\\).</p>",
+            "en": "<p>For \\(d\\ll r\\) the drop is nearly spherical. Its weight just before detachment is \\((4\\pi/3)\\rho g r_{\\max}^3\\).</p>"
+          }
+        },
+        {
+          "id": "a1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Сила в области шейки",
+            "en": "Force at the neck"
+          },
+          "body": {
+            "ru": "<p>В момент отрыва касательная к поверхности тонкой шейки почти вертикальна. Натяжение действует по окружности длины \\(\\pi d\\), давая максимальную вертикальную силу \\(\\pi d\\sigma\\). Поправка от давления на площадку сопла мала при \\(d\\ll r\\).</p>",
+            "en": "<p>At detachment the surface tangent at the narrow neck is almost vertical. Surface tension acts around a circumference \\(\\pi d\\), giving a maximum upward force \\(\\pi d\\sigma\\). The pressure correction across the nozzle area is negligible for \\(d\\ll r\\).</p>"
+          }
+        },
+        {
+          "id": "a1-3",
+          "points": 0.4,
+          "label": {
+            "ru": "Условие отрыва",
+            "en": "Balance at detachment"
+          },
+          "body": {
+            "ru": "<p>Приравниваем вес капли максимальной удерживающей силе. Кубический корень появляется потому, что вес пропорционален объёму, а периметр сопла остаётся постоянным.</p>",
+            "en": "<p>Equate the drop's weight to the largest supporting force. The cube root follows because the weight scales with drop volume while the nozzle perimeter is fixed.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r_{\\max}=\\left(\\frac{3\\sigma d}{4\\rho g}\\right)^{1/3}.\\]</div>",
+        "en": "<div>\\[r_{\\max}=\\left(\\frac{3\\sigma d}{4\\rho g}\\right)^{1/3}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A2",
+      "max": 1.2,
+      "label": "A-ii",
+      "title": {
+        "ru": "Заряд проводящей капли",
+        "en": "Charge on a conducting drop"
+      },
+      "steps": [
+        {
+          "id": "a2-1",
+          "points": 1.0,
+          "label": {
+            "ru": "Потенциал поверхности",
+            "en": "Surface potential"
+          },
+          "body": {
+            "ru": "<p>Капля и металлическая трубка находятся под одним потенциалом \\(\\varphi\\). Вклад узкого сопла в ёмкость капли мал. Снаружи сферы поле совпадает с полем точечного заряда, так что \\(\\varphi=Q/(4\\pi\\epsilon_0r)\\).</p>",
+            "en": "<p>The drop and the metal pipe share the potential \\(\\varphi\\). The narrow nozzle has a negligible effect on the drop capacitance. Outside a sphere the field is that of a point charge, giving \\(\\varphi=Q/(4\\pi\\epsilon_0r)\\).</p>"
+          }
+        },
+        {
+          "id": "a2-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Заряд и ёмкость",
+            "en": "Charge and capacitance"
+          },
+          "body": {
+            "ru": "<p>Ёмкость капли равна \\(4\\pi\\epsilon_0r\\). Заряд имеет тот же знак, что и потенциал относительно окружения.</p>",
+            "en": "<p>The drop capacitance is \\(4\\pi\\epsilon_0r\\). Its charge has the sign of its potential relative to its surroundings.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[Q=4\\pi\\epsilon_0r\\varphi.\\]</div>",
+        "en": "<div>\\[Q=4\\pi\\epsilon_0r\\varphi.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A3",
+      "max": 1.6,
+      "label": "A-iii",
+      "title": {
+        "ru": "Порог неустойчивости",
+        "en": "Instability threshold"
+      },
+      "steps": [
+        {
+          "id": "a3-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Капиллярное давление",
+            "en": "Capillary pressure"
+          },
+          "body": {
+            "ru": "<p>Для сферической поверхности дополнительное внутреннее давление равно \\(2\\sigma/r\\). Это также следует из равенства \\(\\Delta p\\,dV=\\sigma\\,dS\\) при малом изменении радиуса.</p>",
+            "en": "<p>A spherical surface gives an excess internal pressure \\(2\\sigma/r\\). This also follows from \\(\\Delta p\\,dV=\\sigma\\,dS\\) under a small change of radius.</p>"
+          }
+        },
+        {
+          "id": "a3-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Электростатическое давление",
+            "en": "Electric pressure"
+          },
+          "body": {
+            "ru": "<p>Внутри проводника поле отсутствует, непосредственно снаружи \\(E=\\varphi/r\\). Поле вытягивает поверхность наружу с давлением \\(\\epsilon_0E^2/2\\). Множитель \\(1/2\\) возникает потому, что поверхностный заряд не действует своей собственной частью поля на себя.</p>",
+            "en": "<p>The field is zero inside the conductor and \\(E=\\varphi/r\\) just outside. Electric stress pulls the surface outward with pressure \\(\\epsilon_0E^2/2\\). The factor of one half excludes the surface charge's own field from the force on that charge.</p>"
+          }
+        },
+        {
+          "id": "a3-3",
+          "points": 0.5,
+          "label": {
+            "ru": "Нулевое избыточное давление",
+            "en": "Vanishing excess pressure"
+          },
+          "body": {
+            "ru": "<p>Эффекты действуют в противоположных направлениях. На пороге внутреннее давление совпадает с атмосферным, так что \\(2\\sigma/r=\\epsilon_0\\varphi_{\\max}^2/(2r^2)\\).</p>",
+            "en": "<p>The two stresses oppose each other. At threshold the interior and atmosphere have equal pressures, requiring \\(2\\sigma/r=\\epsilon_0\\varphi_{\\max}^2/(2r^2)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\lvert\\varphi_{\\max}\\rvert=2\\sqrt{\\frac{\\sigma r}{\\epsilon_0}}.\\]</div>",
+        "en": "<div>\\[\\lvert\\varphi_{\\max}\\rvert=2\\sqrt{\\frac{\\sigma r}{\\epsilon_0}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B1",
+      "max": 1.2,
+      "label": "B-i",
+      "title": {
+        "ru": "Индуцированный заряд",
+        "en": "Induced charge"
+      },
+      "steps": [
+        {
+          "id": "b1-1",
+          "points": 0.8,
+          "label": {
+            "ru": "Потенциал окружения капли",
+            "en": "Potential surrounding the drop"
+          },
+          "body": {
+            "ru": "<p>По симметрии электроды имеют противоположные потенциалы \\(\\pm U/2\\). Длинный цилиндр экранирует внешнее поле, а вода заземлена. У сопла внутри отрицательного электрода потенциал капли относительно электрода равен \\(0-(-U/2)=U/2\\).</p>",
+            "en": "<p>By symmetry the electrode potentials are \\(\\pm U/2\\). The long cylinder shields the surroundings and the water is grounded. Within the negative electrode the drop's potential relative to its surroundings is \\(0-(-U/2)=U/2\\).</p>"
+          }
+        },
+        {
+          "id": "b1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Заряд в момент отрыва",
+            "en": "Charge at release"
+          },
+          "body": {
+            "ru": "<p>Подставим \\(\\varphi=U/2\\) и \\(r=r_{\\max}\\) в A-ii. Напряжение конденсатора равно \\(U=q/C\\). Капли второй ветви имеют такой же по величине заряд противоположного знака.</p>",
+            "en": "<p>Use \\(\\varphi=U/2\\) and \\(r=r_{\\max}\\) in A-ii, with capacitor voltage \\(U=q/C\\). Drops in the other branch carry equal and opposite charge.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[Q_0=\\frac{2\\pi\\epsilon_0r_{\\max}}{C}\\,q.\\]</div>",
+        "en": "<div>\\[Q_0=\\frac{2\\pi\\epsilon_0r_{\\max}}{C}\\,q.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B2",
+      "max": 1.5,
+      "label": "B-ii",
+      "title": {
+        "ru": "Рост заряда",
+        "en": "Growth of capacitor charge"
+      },
+      "steps": [
+        {
+          "id": "b2-1",
+          "points": 0.8,
+          "label": {
+            "ru": "Заряд, переносимый каплями",
+            "en": "Charge delivered by droplets"
+          },
+          "body": {
+            "ru": "<p>Перекрёстное соединение направляет положительную каплю в положительную чашу, отрицательную — в отрицательную. За \\(dt\\) каждая чаша получает \\(n\\,dt\\) капель. Заряд одной обкладки возрастает на \\(dq=Q_0n\\,dt\\). Удвоения здесь нет, поскольку \\(q\\) относится к одной обкладке.</p>",
+            "en": "<p>The cross-connection sends positive drops to the positive bowl and negative ones to the negative bowl. Each bowl receives \\(n\\,dt\\) drops in time \\(dt\\). Thus \\(dq=Q_0n\\,dt\\) for one plate. The definition of \\(q\\) on a single plate already accounts for both streams.</p>"
+          }
+        },
+        {
+          "id": "b2-2",
+          "points": 0.7,
+          "label": {
+            "ru": "Экспоненциальный закон",
+            "en": "Exponential law"
+          },
+          "body": {
+            "ru": "<p>Из B-i следует \\(\\dot q=\\Gamma q\\), где \\(\\Gamma=2\\pi\\epsilon_0nr_{\\max}/C\\). Интегрируем \\(dq/q=\\Gamma\\,dt\\) от \\(q_0\\) до \\(q(t)\\). Смысл начального дисбаланса в том, что при строго нулевом \\(q_0\\) заряд не начал бы расти.</p>",
+            "en": "<p>B-i gives \\(\\dot q=\\Gamma q\\) with \\(\\Gamma=2\\pi\\epsilon_0nr_{\\max}/C\\). Integrate \\(dq/q=\\Gamma\\,dt\\) from \\(q_0\\) to \\(q(t)\\). The initial imbalance is essential since an exactly zero charge would remain zero.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[q(t)=q_0e^{\\Gamma t},\\qquad \\Gamma=\\frac{\\pi\\epsilon_0 n}{C}\\left(\\frac{6\\sigma d}{\\rho g}\\right)^{1/3}.\\]</div>",
+        "en": "<div>\\[q(t)=q_0e^{\\Gamma t},\\qquad \\Gamma=\\frac{\\pi\\epsilon_0 n}{C}\\left(\\frac{6\\sigma d}{\\rho g}\\right)^{1/3}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B3",
+      "max": 1.3,
+      "label": "B-iii",
+      "title": {
+        "ru": "Предел по отталкиванию капли",
+        "en": "Limit imposed by repulsion"
+      },
+      "steps": [
+        {
+          "id": "b3-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Работа электрического поля",
+            "en": "Electrostatic energy barrier"
+          },
+          "body": {
+            "ru": "<p>После отрыва заряд капли постоянен. Для положительной капли внешний потенциал возрастает от \\(-U/2\\) возле сопла до \\(+U/2\\) в чаше. Собственный потенциал капли в работу внешнего поля не входит. Изменение электрической энергии равно \\(Q_0 U\\).</p>",
+            "en": "<p>Once detached, the drop has fixed charge. For a positive drop, the external potential rises from \\(-U/2\\) near the nozzle to \\(+U/2\\) at the bowl. Its own potential does not enter the external work. The increase of electrical energy is \\(Q_0U\\).</p>"
+          }
+        },
+        {
+          "id": "b3-2",
+          "points": 0.5,
+          "label": {
+            "ru": "Предельная высота падения",
+            "en": "Threshold for reaching the bowl"
+          },
+          "body": {
+            "ru": "<p>При падении на \\(H\\) освобождается энергия \\(mgH\\). На пределе капля достигает чаши с нулевой кинетической энергией, поэтому вся эта энергия уходит на преодоление отталкивания.</p>",
+            "en": "<p>Falling through \\(H\\) releases \\(mgH\\). At threshold the drop arrives with zero kinetic energy, so gravity just supplies the entire electrical barrier.</p>"
+          }
+        },
+        {
+          "id": "b3-3",
+          "points": 0.2,
+          "label": {
+            "ru": "Исключение массы и заряда",
+            "en": "Eliminate the mass and charge"
+          },
+          "body": {
+            "ru": "<p>Приравниваем \\(Q_0U=mgH\\). Воспользуемся \\(Q_0=2\\pi\\epsilon_0r_{\\max}U\\) и условием отрыва \\(mg=\\pi\\sigma d\\).</p>",
+            "en": "<p>Set \\(Q_0U=mgH\\). Use \\(Q_0=2\\pi\\epsilon_0r_{\\max}U\\) from B-i and the release condition \\(mg=\\pi\\sigma d\\) from A-i.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[U_{\\max}=\\sqrt{\\frac{H\\sigma d}{2\\epsilon_0 r_{\\max}}}=\\left(\\frac{H^3g\\sigma^2\\rho d^2}{6\\epsilon_0^3}\\right)^{1/6}.\\]</div>",
+        "en": "<div>\\[U_{\\max}=\\sqrt{\\frac{H\\sigma d}{2\\epsilon_0 r_{\\max}}}=\\left(\\frac{H^3g\\sigma^2\\rho d^2}{6\\epsilon_0^3}\\right)^{1/6}.\\]</div>"
+      }
+    }
+  ]
+}

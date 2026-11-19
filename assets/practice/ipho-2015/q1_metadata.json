@@ -1,0 +1,90 @@
+{
+  "id": "T1",
+  "title": "Частицы от Солнца",
+  "points": 10,
+  "sourceFile": "IPhO_2015_T1_EN.pdf",
+  "solutionPdf": "/assets/practice/ipho-2015/IPhO_2015_S1_EN.pdf",
+  "solutionData": "/assets/practice/ipho-2015/solutions/t1.json",
+  "subtasks": [
+    {
+      "id": "T1-A1",
+      "points": 0.3
+    },
+    {
+      "id": "T1-A2",
+      "points": 0.3
+    },
+    {
+      "id": "T1-A3",
+      "points": 0.2
+    },
+    {
+      "id": "T1-A4",
+      "points": 1.0
+    },
+    {
+      "id": "T1-A5",
+      "points": 0.2
+    },
+    {
+      "id": "T1-A6",
+      "points": 1.0
+    },
+    {
+      "id": "T1-A7",
+      "points": 1.0
+    },
+    {
+      "id": "T1-A8",
+      "points": 0.2
+    },
+    {
+      "id": "T1-A9",
+      "points": 0.3
+    },
+    {
+      "id": "T1-A10",
+      "points": 0.5
+    },
+    {
+      "id": "T1-B1",
+      "points": 0.6
+    },
+    {
+      "id": "T1-B2",
+      "points": 0.4
+    },
+    {
+      "id": "T1-B3",
+      "points": 2.0
+    },
+    {
+      "id": "T1-B4",
+      "points": 2.0
+    }
+  ],
+  "sections": [
+    {
+      "id": "T1-A",
+      "title": "Солнечное излучение",
+      "points": 5.0
+    },
+    {
+      "id": "T1-B",
+      "title": "Солнечные нейтрино",
+      "points": 5.0
+    }
+  ],
+  "figures": [],
+  "solutionsAvailable": true,
+  "stepScoring": "editorial-grouping-of-published-subpart-maxima",
+  "sourceLinks": {
+    "problem": "https://ipho2015.hbcse.tifr.res.in/images/qna/ind/T1-Questions.pdf",
+    "solution": "https://ipho2015.hbcse.tifr.res.in/images/qna/ind/T1-Solutions.pdf"
+  },
+  "sourcePages": [
+    1,
+    2
+  ],
+  "translationStatus": "bilingual"
+}

@@ -1,0 +1,371 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Изображение заряда в металлической сфере",
+    "en": "An image charge in a conducting sphere"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2010/IPhO_2010_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-1a",
+      "label": "1(a)",
+      "max": 0.3,
+      "title": {
+        "ru": "Потенциал поверхности",
+        "en": "Surface potential"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Заземление",
+            "en": "Grounding"
+          },
+          "body": {
+            "ru": "<p>Металл эквипотенциален. Соединение с Землёй задаёт всему проводнику выбранный нулевой потенциал, даже когда на поверхности перераспределяется заряд.</p>",
+            "en": "<p>A conductor in equilibrium is equipotential. Its connection to Earth fixes that potential at the chosen zero while surface charge redistributes.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\varphi(R)=0.\\]</div>",
+        "en": "<div>\\[\\varphi(R)=0.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1b",
+      "label": "1(b)",
+      "max": 1.9,
+      "title": {
+        "ru": "Величина и положение изображения",
+        "en": "Magnitude and location of the image"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Граничное условие в двух точках",
+            "en": "Boundary condition at two points"
+          },
+          "body": {
+            "ru": "<p>Положим \\(k=1/(4\\pi\\varepsilon_0)\\). Пусть изображение лежит между центром и реальным зарядом. В ближайшей и дальней точках оси на поверхности сферы условие нулевого потенциала принимает вид</p>\n<div>\\[\\frac{q}{d-R}+\\frac{q'}{R-d'}=0,\\qquad \\frac{q}{d+R}+\\frac{q'}{R+d'}=0.\\]</div>",
+            "en": "<p>Write \\(k=1/(4\\pi\\varepsilon_0)\\). Place a trial image between the centre and the real charge. Requiring zero potential at the near and far ends of the axial diameter gives</p>\n<div>\\[\\frac{q}{d-R}+\\frac{q'}{R-d'}=0,\\qquad \\frac{q}{d+R}+\\frac{q'}{R+d'}=0.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 1.1,
+          "label": {
+            "ru": "Определение заряда и проверка всей сферы",
+            "en": "Solving for the image and verifying the sphere"
+          },
+          "body": {
+            "ru": "<p>Деление уравнений исключает \\(q'\\). После перемножения получаем \\(dd'=R^2\\), а подстановка в любое из уравнений даёт \\(q'/q=-R/d\\). Для произвольной точки поверхности \\(B\\) теорема косинусов теперь даёт \\(BQ'=(R/d)BQ\\), где \\(Q,Q'\\) обозначают положения зарядов. Поэтому потенциал обнуляется на всей сфере.</p>\n<figure><img src=\"/assets/practice/ipho-2010/q1/image-geometry.png\" alt=\"Расстояния от точки поверхности до зарядов.\" loading=\"lazy\" style=\"width:min(100%,395px);height:auto\"><figcaption>Расстояния от точки поверхности до зарядов.</figcaption></figure>",
+            "en": "<p>Divide the equations to eliminate \\(q'\\). Cross multiplication gives \\(dd'=R^2\\), and either equation then gives \\(q'/q=-R/d\\). At any surface point \\(B\\), the cosine rule now gives \\(BQ'=(R/d)BQ\\), where \\(Q,Q'\\) are the charge positions. The potential thus vanishes everywhere on the sphere.</p>\n<figure><img src=\"/assets/practice/ipho-2010/q1/image-geometry.png\" alt=\"Distances from a surface point to the two charges.\" loading=\"lazy\" style=\"width:min(100%,395px);height:auto\"><figcaption>Distances from a surface point to the two charges.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[d'=\\frac{R^2}{d},\\qquad q'=-q\\,\\frac Rd .\\]</div>",
+        "en": "<div>\\[d'=\\frac{R^2}{d},\\qquad q'=-q\\,\\frac Rd .\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1c",
+      "label": "1(c)",
+      "max": 0.5,
+      "title": {
+        "ru": "Сила со стороны сферы",
+        "en": "Force exerted by the sphere"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Кулоновская сила со стороны изображения",
+            "en": "Coulomb force of the image"
+          },
+          "body": {
+            "ru": "<p>Вне сферы поле индуцированных зарядов совпадает с полем изображения. Расстояние между \\(q\\) и \\(q'\\) равно \\((d^2-R^2)/d\\). Их знаки противоположны, поэтому сила направлена от \\(q\\) к центру сферы.</p>",
+            "en": "<p>Outside the sphere the induced charges produce exactly the field of the image. The separation between \\(q\\) and \\(q'\\) is \\((d^2-R^2)/d\\). Their signs are opposite, so the force points from \\(q\\) towards the sphere’s centre.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F=k\\,\\frac{q^2Rd}{(d^2-R^2)^2}.\\]</div>",
+        "en": "<div>\\[F=k\\,\\frac{q^2Rd}{(d^2-R^2)^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-2a",
+      "label": "2(a)",
+      "max": 0.6,
+      "title": {
+        "ru": "Поле на оси",
+        "en": "Field on the axis"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Поля двух зарядов на оси",
+            "en": "Superposing the axial fields"
+          },
+          "body": {
+            "ru": "<p>За положительное направление \\(\\hat{\\mathbf r}\\) примем направление от \\(q\\) к \\(A\\). Тогда реальный заряд отстоит от \\(A\\) на \\(r\\), а изображение — на \\(r-d+d'\\). Складываем два поля с учётом знака \\(q'\\).</p>",
+            "en": "<p>Take \\(\\hat{\\mathbf r}\\) from \\(q\\) towards \\(A\\). The real charge and the image are respectively \\(r\\) and \\(r-d+d'\\) from \\(A\\). Add their fields, retaining the sign of \\(q'\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathbf E_A=kq\\left[\\frac{1}{r^2}-\\frac{R/d}{(r-d+R^2/d)^2}\\right]\\hat{\\mathbf r}.\\]</div>",
+        "en": "<div>\\[\\mathbf E_A=kq\\left[\\frac{1}{r^2}-\\frac{R/d}{(r-d+R^2/d)^2}\\right]\\hat{\\mathbf r}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-2b",
+      "label": "2(b)",
+      "max": 0.6,
+      "title": {
+        "ru": "Дальний предел",
+        "en": "Far field"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Разложение по обратному расстоянию",
+            "en": "Expansion in inverse distance"
+          },
+          "body": {
+            "ru": "<p>Обозначим смещение изображения от реального заряда через \\(s=d-R^2/d\\). Во втором члене выделяем \\(r^{-2}\\) и разлагаем \\((1-s/r)^{-2}\\simeq1+2s/r\\). Ведущий член отвечает суммарному заряду \\(q+q'\\).</p>",
+            "en": "<p>Let \\(s=d-R^2/d\\) be the image displacement from the real charge. Factor \\(r^{-2}\\) out of the image term and expand \\((1-s/r)^{-2}\\simeq1+2s/r\\). The leading term corresponds to the total charge \\(q+q'\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathbf E_A\\simeq\\frac{kq}{r^2}\\left(1-\\frac Rd-\\frac{2R}{dr}\\left[d-\\frac{R^2}{d}\\right]\\right)\\hat{\\mathbf r}.\\]</div>",
+        "en": "<div>\\[\\mathbf E_A\\simeq\\frac{kq}{r^2}\\left(1-\\frac Rd-\\frac{2R}{dr}\\left[d-\\frac{R^2}{d}\\right]\\right)\\hat{\\mathbf r}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-2c",
+      "label": "2(c)",
+      "max": 0.3,
+      "title": {
+        "ru": "Полное экранирование",
+        "en": "Complete shielding"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Совпадение зарядов в пределе",
+            "en": "Coinciding charge positions in the limit"
+          },
+          "body": {
+            "ru": "<p>При приближении \\(q\\) к поверхности \\(q'\\) стремится к \\(-q\\), а \\(d'\\) стремится к \\(R\\). Расстояния от обоих зарядов до \\(A\\) становятся одинаковыми, и точное выражение из 2(a) даёт нуль.</p>",
+            "en": "<p>As \\(q\\) approaches the surface, \\(q'\\) tends to \\(-q\\) while \\(d'\\) tends to \\(R\\). The two charges become equidistant from \\(A\\), and their exact fields in 2(a) cancel.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[d\\to R^+:\\qquad \\mathbf E_A\\to\\mathbf 0 .\\]</div>",
+        "en": "<div>\\[d\\to R^+:\\qquad \\mathbf E_A\\to\\mathbf 0 .\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3a",
+      "label": "3(a)",
+      "max": 0.8,
+      "title": {
+        "ru": "Сила при отклонении",
+        "en": "Force at a displacement"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Расстояние до центра и направление силы",
+            "en": "Distance to the centre and force direction"
+          },
+          "body": {
+            "ru": "<p>Центр сферы, подвес и груз образуют треугольник. По теореме косинусов \\(d(\\alpha)=\\sqrt{l^2+L^2-2lL\\cos\\alpha}\\). Изображение всегда лежит на прямой от груза к центру. Поэтому в 1(c) достаточно подставить текущее расстояние \\(d(\\alpha)\\).</p>\n<figure><img src=\"/assets/practice/ipho-2010/q1/pendulum.png\" alt=\"Геометрия маятника и линия, соединяющая груз с центром сферы.\" loading=\"lazy\" style=\"width:min(100%,415px);height:auto\"><figcaption>Геометрия маятника и линия, соединяющая груз с центром сферы.</figcaption></figure>\n<figure><img src=\"/assets/practice/ipho-2010/q1/force.png\" alt=\"Сила на грузе направлена к центру сферы.\" loading=\"lazy\" style=\"width:min(100%,350px);height:auto\"><figcaption>Сила на грузе направлена к центру сферы.</figcaption></figure>",
+            "en": "<p>The centre, support and bob form a triangle. By the cosine rule \\(d(\\alpha)=\\sqrt{l^2+L^2-2lL\\cos\\alpha}\\). The image always lies on the line from the bob to the centre. Insert the instantaneous distance \\(d(\\alpha)\\) into 1(c).</p>\n<figure><img src=\"/assets/practice/ipho-2010/q1/pendulum.png\" alt=\"Pendulum geometry and the line from the bob to the sphere centre.\" loading=\"lazy\" style=\"width:min(100%,415px);height:auto\"><figcaption>Pendulum geometry and the line from the bob to the sphere centre.</figcaption></figure>\n<figure><img src=\"/assets/practice/ipho-2010/q1/force.png\" alt=\"The force on the bob points towards the centre of the sphere.\" loading=\"lazy\" style=\"width:min(100%,350px);height:auto\"><figcaption>The force on the bob points towards the centre of the sphere.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F(\\alpha)=\\frac{kq^2R\\sqrt{l^2+L^2-2lL\\cos\\alpha}}{(l^2+L^2-2lL\\cos\\alpha-R^2)^2}.\\]</div>",
+        "en": "<div>\\[F(\\alpha)=\\frac{kq^2R\\sqrt{l^2+L^2-2lL\\cos\\alpha}}{(l^2+L^2-2lL\\cos\\alpha-R^2)^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3b",
+      "label": "3(b)",
+      "max": 0.8,
+      "title": {
+        "ru": "Касательная составляющая",
+        "en": "Tangential component"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Проекция центральной силы",
+            "en": "Projection of the central force"
+          },
+          "body": {
+            "ru": "<p>За положительную касательную примем направление роста \\(\\alpha\\). При малом смещении \\(L\\,d\\alpha\\) работа силы равна \\(-F\\,dd\\), так как сила направлена к центру. Дифференцирование \\(d^2=l^2+L^2-2lL\\cos\\alpha\\) даёт \\(dd/d\\alpha=lL\\sin\\alpha/d\\).</p>",
+            "en": "<p>Take the positive tangent towards increasing \\(\\alpha\\). For a displacement \\(L\\,d\\alpha\\) the force does work \\(-F\\,dd\\), since it points towards the centre. Differentiating \\(d^2=l^2+L^2-2lL\\cos\\alpha\\) gives \\(dd/d\\alpha=lL\\sin\\alpha/d\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_{\\mathrm t}=-\\frac{kq^2Rl\\sin\\alpha}{(l^2+L^2-2lL\\cos\\alpha-R^2)^2}.\\]</div>",
+        "en": "<div>\\[F_{\\mathrm t}=-\\frac{kq^2Rl\\sin\\alpha}{(l^2+L^2-2lL\\cos\\alpha-R^2)^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3c",
+      "label": "3(c)",
+      "max": 1.0,
+      "title": {
+        "ru": "Частота малых колебаний",
+        "en": "Small-oscillation frequency"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Линеаризация касательной силы",
+            "en": "Linearising the tangential force"
+          },
+          "body": {
+            "ru": "<p>При \\(\\alpha\\simeq0\\) расстояние до центра равно \\(d_0=l-L\\) с точностью до членов порядка \\(\\alpha^2\\). В числителе оставляем \\(\\sin\\alpha\\simeq\\alpha\\). Уравнение \\(mL\\ddot\\alpha=F_{\\mathrm t}\\) становится линейным.</p>\n<div>\\[\\ddot\\alpha+\\frac{kq^2Rl}{mL(d_0^2-R^2)^2}\\,\\alpha=0 .\\]</div>",
+            "en": "<p>At small \\(\\alpha\\), the distance from the centre equals \\(d_0=l-L\\) up to terms of order \\(\\alpha^2\\). Keep \\(\\sin\\alpha\\simeq\\alpha\\) in the numerator. Then \\(mL\\ddot\\alpha=F_{\\mathrm t}\\) becomes linear.</p>\n<div>\\[\\ddot\\alpha+\\frac{kq^2Rl}{mL(d_0^2-R^2)^2}\\,\\alpha=0 .\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Переход от циклической частоты к частоте",
+            "en": "Angular frequency and frequency"
+          },
+          "body": {
+            "ru": "<p>Коэффициент при \\(\\alpha\\) равен \\(\\omega^2\\). Для обычной частоты делим \\(\\omega\\) на \\(2\\pi\\). Геометрия задачи даёт \\(l-L&gt;R\\).</p>",
+            "en": "<p>The coefficient of \\(\\alpha\\) is \\(\\omega^2\\). Divide \\(\\omega\\) by \\(2\\pi\\) to obtain cycles per second. In the stated geometry \\(l-L&gt;R\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega=\\frac{\\lvert q\\rvert}{(l-L)^2-R^2}\\sqrt{\\frac{kRl}{mL}},\\qquad f=\\frac{\\omega}{2\\pi}.\\]</div>",
+        "en": "<div>\\[\\omega=\\frac{\\lvert q\\rvert}{(l-L)^2-R^2}\\sqrt{\\frac{kRl}{mL}},\\qquad f=\\frac{\\omega}{2\\pi}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-4a",
+      "label": "4(a)",
+      "max": 1.0,
+      "title": {
+        "ru": "Взаимодействие с внешним зарядом",
+        "en": "Interaction with the external charge"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Потенциал индуцированного заряда в точке q",
+            "en": "Induced potential at the external charge"
+          },
+          "body": {
+            "ru": "<p>Взаимодействие \\(q\\) с поверхностью учитывает каждую пару «внешний заряд — элемент поверхности» один раз. Поэтому его энергия равна \\(q\\varphi_{\\mathrm{ind}}(q)\\). Потенциал в этой точке можно вычислить по изображению: \\(\\varphi_{\\mathrm{ind}}(q)=kq'/(d-d')\\).</p>",
+            "en": "<p>Each pair consisting of \\(q\\) and an element of surface charge occurs once. Their interaction energy is therefore \\(q\\varphi_{\\mathrm{ind}}(q)\\). The image gives the induced potential at this point as \\(\\varphi_{\\mathrm{ind}}(q)=kq'/(d-d')\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[U_{\\mathrm{ext}}=-\\frac{kq^2R}{d^2-R^2}.\\]</div>",
+        "en": "<div>\\[U_{\\mathrm{ext}}=-\\frac{kq^2R}{d^2-R^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-4b",
+      "label": "4(b)",
+      "max": 1.2,
+      "title": {
+        "ru": "Взаимодействие индуцированных зарядов",
+        "en": "Interaction among induced charges"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Потенциал на металле",
+            "en": "Potential on the metal"
+          },
+          "body": {
+            "ru": "<p>Разобьём заряд поверхности на элементы \\(dq_s\\). На металле потенциалы взаимно компенсируются, поэтому \\(\\varphi_{\\mathrm{ind}}=-\\varphi_q\\). Энергия зарядов поверхности между собой равна половине интеграла их собственного потенциала по заряду.</p>\n<div>\\[U_{\\mathrm{surf}}=\\frac12\\int\\varphi_{\\mathrm{ind}}\\,dq_s=-\\frac12\\int\\varphi_q\\,dq_s .\\]</div>",
+            "en": "<p>Split the surface charge into elements \\(dq_s\\). On the metal the two potentials cancel, so \\(\\varphi_{\\mathrm{ind}}=-\\varphi_q\\). The mutual energy of the surface charges is one half of their own potential integrated over that charge.</p>\n<div>\\[U_{\\mathrm{surf}}=\\frac12\\int\\varphi_{\\mathrm{ind}}\\,dq_s=-\\frac12\\int\\varphi_q\\,dq_s .\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Парный подсчёт",
+            "en": "Counting charge pairs"
+          },
+          "body": {
+            "ru": "<p>Последний интеграл без множителя \\(-1/2\\) есть взаимодействие внешнего заряда с поверхностью, найденное в 4(a). Поэтому взаимная энергия индуцированных зарядов положительна.</p>",
+            "en": "<p>The integral without the factor \\(-1/2\\) equals the external–surface interaction found in 4(a). The energy among the induced charges is consequently positive.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[U_{\\mathrm{surf}}=-\\frac12U_{\\mathrm{ext}}=\\frac{kq^2R}{2(d^2-R^2)}.\\]</div>",
+        "en": "<div>\\[U_{\\mathrm{surf}}=-\\frac12U_{\\mathrm{ext}}=\\frac{kq^2R}{2(d^2-R^2)}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-4c",
+      "label": "4(c)",
+      "max": 1.0,
+      "title": {
+        "ru": "Полная энергия взаимодействия",
+        "en": "Total interaction energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Сумма двух вкладов",
+            "en": "Adding both contributions"
+          },
+          "body": {
+            "ru": "<p>Складываем взаимодействие с внешним зарядом и собственную энергию поверхностного распределения. Половина отрицательного первого вклада компенсируется вторым. При \\(d\\to\\infty\\) энергия стремится к нулю, как требуется для разделённых тел.</p>",
+            "en": "<p>Add the external–surface interaction and the mutual energy of the surface charge. The positive contribution cancels half of the negative one. The result tends to zero as \\(d\\to\\infty\\), as expected for separated objects.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[U_{\\mathrm{tot}}=U_{\\mathrm{ext}}+U_{\\mathrm{surf}}=-\\frac{kq^2R}{2(d^2-R^2)}.\\]</div>",
+        "en": "<div>\\[U_{\\mathrm{tot}}=U_{\\mathrm{ext}}+U_{\\mathrm{surf}}=-\\frac{kq^2R}{2(d^2-R^2)}.\\]</div>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Частицы от Солнца",
+    "en": "Particles from the Sun"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2015/IPhO_2015_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-A1",
+      "max": 0.3,
+      "title": {
+        "ru": "Температура фотосферы",
+        "en": "Photosphere temperature"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Поток с поверхности Солнца",
+            "en": "Flux from the solar surface"
+          },
+          "body": {
+            "ru": "<p>Каждый квадратный метр фотосферы излучает мощность \\(\\sigma T_s^4\\). Площадь излучающей сферы равна \\(4\\pi R_\\odot^2\\), поэтому \\(L_\\odot=4\\pi R_\\odot^2\\sigma T_s^4\\).</p>",
+            "en": "<p>Each square metre of the photosphere radiates power \\(\\sigma T_s^4\\). Multiplying by its spherical area gives \\(L_\\odot=4\\pi R_\\odot^2\\sigma T_s^4\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_s=\\left(\\frac{L_\\odot}{4\\pi R_\\odot^2\\sigma}\\right)^{1/4}\\simeq5{,}76\\times10^3\\,\\mathrm K.\\]</div>",
+        "en": "<div>\\[T_s=\\left(\\frac{L_\\odot}{4\\pi R_\\odot^2\\sigma}\\right)^{1/4}\\simeq5.76\\times10^3\\,\\mathrm K.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A2",
+      "max": 0.3,
+      "title": {
+        "ru": "Падающая мощность",
+        "en": "Incident power"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Интеграл по спектру",
+            "en": "Integrating the spectrum"
+          },
+          "body": {
+            "ru": "<p>Суммируем мощность по всем частотам. В безразмерной переменной \\(x=h\\nu/(k_BT_s)\\) множитель \\(\\nu^3\\,d\\nu\\) превращается в \\((k_BT_s/h)^4x^3\\,dx\\). Оставшийся интеграл равен \\(\\int_0^\\infty x^3e^{-x}dx=6\\).</p>",
+            "en": "<p>Sum the incident power over frequency. With \\(x=h\\nu/(k_BT_s)\\), the factor \\(\\nu^3\\,d\\nu\\) becomes \\((k_BT_s/h)^4x^3\\,dx\\). The remaining integral is \\(\\int_0^\\infty x^3e^{-x}dx=6\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_{\\mathrm{in}}=\\frac{12\\pi A R_\\odot^2(k_BT_s)^4}{c^2d_\\odot^2h^3}.\\]</div>",
+        "en": "<div>\\[P_{\\mathrm{in}}=\\frac{12\\pi A R_\\odot^2(k_BT_s)^4}{c^2d_\\odot^2h^3}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A3",
+      "max": 0.2,
+      "title": {
+        "ru": "Спектр числа фотонов",
+        "en": "Photon arrival spectrum"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Энергия одного фотона",
+            "en": "Energy per photon"
+          },
+          "body": {
+            "ru": "<p>В узкой полосе частот все фотоны несут практически одинаковую энергию \\(h\\nu\\). Число фотонов за секунду в этой полосе равно \\(u(\\nu)d\\nu/(h\\nu)\\). Деление на \\(d\\nu\\) даёт искомую плотность.</p>",
+            "en": "<p>Within a narrow band each photon carries energy \\(h\\nu\\). Dividing the power in the band by this energy gives \\(u(\\nu)d\\nu/(h\\nu)\\) photons per second. Divide by \\(d\\nu\\) to obtain the spectrum.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[n_\\gamma(\\nu)=\\frac{2\\pi A R_\\odot^2}{c^2d_\\odot^2}\\,\\nu^2e^{-h\\nu/(k_BT_s)}.\\]</div>",
+        "en": "<div>\\[n_\\gamma(\\nu)=\\frac{2\\pi A R_\\odot^2}{c^2d_\\odot^2}\\,\\nu^2e^{-h\\nu/(k_BT_s)}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A4",
+      "max": 1.0,
+      "title": {
+        "ru": "Полезная мощность",
+        "en": "Useful output power"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Число фотонов выше порога",
+            "en": "Counting above-threshold photons"
+          },
+          "body": {
+            "ru": "<p>Каждый возбуждённый электрон даёт элементу энергию \\(E_g\\). Поэтому интегрировать нужно число подходящих фотонов, присваивая каждому одну и ту же полезную энергию.</p>\n<div>\\[P_{\\mathrm{out}}=E_g\\int_{\\nu_g}^\\infty n_\\gamma(\\nu)\\,d\\nu .\\]</div>",
+            "en": "<p>Each excited electron delivers energy \\(E_g\\) to the cell. Count all photons capable of exciting one, weighting each by this same energy.</p>\n<div>\\[P_{\\mathrm{out}}=E_g\\int_{\\nu_g}^\\infty n_\\gamma(\\nu)\\,d\\nu .\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Интегрирование от границы зоны",
+            "en": "Integration from the band edge"
+          },
+          "body": {
+            "ru": "<p>При замене \\(x=h\\nu/(k_BT_s)\\) нижний предел становится \\(x_g\\), а \\(E_g=k_BT_sx_g\\). Дважды интегрируя по частям, находим</p>\n<div>\\[\\int_{x_g}^\\infty x^2e^{-x}\\,dx=(x_g^2+2x_g+2)e^{-x_g}.\\]</div>",
+            "en": "<p>Set \\(x=h\\nu/(k_BT_s)\\), so the lower limit is \\(x_g\\) and \\(E_g=k_BT_sx_g\\). Two integrations by parts give</p>\n<div>\\[\\int_{x_g}^\\infty x^2e^{-x}\\,dx=(x_g^2+2x_g+2)e^{-x_g}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_{\\mathrm{out}}=\\frac{2\\pi A R_\\odot^2(k_BT_s)^4}{c^2d_\\odot^2h^3}\\,x_g(x_g^2+2x_g+2)e^{-x_g}.\\]</div>",
+        "en": "<div>\\[P_{\\mathrm{out}}=\\frac{2\\pi A R_\\odot^2(k_BT_s)^4}{c^2d_\\odot^2h^3}\\,x_g(x_g^2+2x_g+2)e^{-x_g}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A5",
+      "max": 0.2,
+      "title": {
+        "ru": "КПД элемента",
+        "en": "Cell efficiency"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Отношение мощностей",
+            "en": "Ratio of powers"
+          },
+          "body": {
+            "ru": "<p>Разделим результат A4 на падающую мощность из A2. Площадь элемента и геометрическое ослабление света сокращаются. Температура входит только через \\(x_g\\).</p>",
+            "en": "<p>Divide the useful power in A4 by the incident power in A2. The collection area and the geometrical dilution cancel, leaving the temperature only through \\(x_g\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\eta(x_g)=\\frac{x_g(x_g^2+2x_g+2)}{6}\\,e^{-x_g}.\\]</div>",
+        "en": "<div>\\[\\eta(x_g)=\\frac{x_g(x_g^2+2x_g+2)}{6}\\,e^{-x_g}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A6",
+      "max": 1.0,
+      "title": {
+        "ru": "График КПД",
+        "en": "Shape of the efficiency curve"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Поведение у начала координат",
+            "en": "Behaviour near the origin"
+          },
+          "body": {
+            "ru": "<p>При малом \\(x_g\\) выражение A5 начинается с \\(x_g/3\\). График выходит из начала координат с наклоном \\(1/3\\). Нулевая ширина зоны означает, что полезная энергия одного фотона равна нулю.</p>",
+            "en": "<p>At small \\(x_g\\) the leading term in A5 is \\(x_g/3\\). The curve therefore starts at the origin with slope \\(1/3\\). A zero band gap gives zero useful energy per photon.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Форма кривой и дальний предел",
+            "en": "Sketch and large-gap limit"
+          },
+          "body": {
+            "ru": "<p>При большом \\(x_g\\) почти нет фотонов выше порога. Экспонента подавляет любой полиномиальный множитель, так что и КПД, и его наклон стремятся к нулю. Между двумя пределами кривая проходит через единственный максимум, найденный в A7.</p>",
+            "en": "<p>At large \\(x_g\\) there are very few photons above threshold. The exponential dominates every polynomial, so the efficiency and its slope both tend to zero. Between these limits the curve has the single maximum found in A7.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<figure><img src=\"/assets/practice/ipho-2015/q1/efficiency.png\" alt=\"КПД в зависимости от безразмерной ширины запрещённой зоны.\" loading=\"lazy\" style=\"width:min(100%,405px);height:auto\"><figcaption>КПД в зависимости от безразмерной ширины запрещённой зоны.</figcaption></figure>",
+        "en": "<figure><img src=\"/assets/practice/ipho-2015/q1/efficiency.png\" alt=\"Efficiency against dimensionless band gap.\" loading=\"lazy\" style=\"width:min(100%,405px);height:auto\"><figcaption>Efficiency against dimensionless band gap.</figcaption></figure>"
+      }
+    },
+    {
+      "id": "T1-A7",
+      "max": 1.0,
+      "title": {
+        "ru": "Оптимальная ширина зоны",
+        "en": "Optimum band gap"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Условие стационарности",
+            "en": "Stationary point"
+          },
+          "body": {
+            "ru": "<p>После дифференцирования A5 общий множитель \\(e^{-x}/6\\) остаётся положительным. Производная обращается в нуль, когда обращается в нуль следующий многочлен.</p>\n<div>\\[\\eta'(x)=-\\frac{e^{-x}}{6}\\,p(x),\\qquad p(x)=x^3-x^2-2x-2.\\]</div>",
+            "en": "<p>Differentiate A5. The overall factor \\(e^{-x}/6\\) is positive, so the stationary point is a root of the following polynomial.</p>\n<div>\\[\\eta'(x)=-\\frac{e^{-x}}{6}\\,p(x),\\qquad p(x)=x^3-x^2-2x-2.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Корень и максимальный КПД",
+            "en": "Root and peak efficiency"
+          },
+          "body": {
+            "ru": "<p>В коэффициентах \\(p(x)\\) ровно одна перемена знака, поэтому положительный корень единственный. Значения \\(p(2{,}25)&lt;0\\) и \\(p(2{,}30)&gt;0\\) ограничивают его с двух сторон. Из A6 это максимум. Подставим корень в A5.</p>",
+            "en": "<p>There is one change of sign in the coefficients of \\(p\\), hence at most one positive root. The opposite signs of \\(p(2.25)\\) and \\(p(2.30)\\) bracket it. The endpoint behaviour in A6 makes it a maximum. Substitute the root into A5.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x_0^3-x_0^2-2x_0-2=0,\\qquad x_0\\simeq2{,}27,\\qquad \\eta_{\\max}\\simeq0{,}457.\\]</div>",
+        "en": "<div>\\[x_0^3-x_0^2-2x_0-2=0,\\qquad x_0\\simeq2.27,\\qquad \\eta_{\\max}\\simeq0.457.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A8",
+      "max": 0.2,
+      "title": {
+        "ru": "Кремниевый элемент",
+        "en": "Silicon cell"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Ширина зоны в тепловых единицах",
+            "en": "Band gap in thermal units"
+          },
+          "body": {
+            "ru": "<p>При температуре фотосферы \\(k_BT_s\\simeq0{,}496\\,\\mathrm{eV}\\). Отсюда \\(x_g=1{,}11/0{,}496\\simeq2{,}24\\), близко к оптимальному значению A7. Подстановка в A5 даёт</p>",
+            "en": "<p>At the photospheric temperature \\(k_BT_s\\simeq0.496\\,\\mathrm{eV}\\). This puts \\(x_g=1.11/0.496\\simeq2.24\\), close to the optimum in A7. A5 then gives</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\eta_{\\mathrm{Si}}\\simeq45{,}7\\%.\\]</div>",
+        "en": "<div>\\[\\eta_{\\mathrm{Si}}\\simeq45.7\\%.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A9",
+      "max": 0.3,
+      "title": {
+        "ru": "Энергия тяготения",
+        "en": "Gravitational binding energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Сборка сферы из оболочек",
+            "en": "Assembling the sphere in shells"
+          },
+          "body": {
+            "ru": "<p>Для однородной сферы масса внутри радиуса \\(r\\) равна \\(m(r)=M_\\odot(r/R_\\odot)^3\\). Перенос оболочки \\(dm\\) из бесконечности к радиусу \\(r\\) меняет энергию на \\(-Gm(r)\\,dm/r\\). Каждая пара элементов массы учитывается ровно один раз.</p>\n<div>\\[\\Omega=-\\frac{3GM_\\odot^2}{R_\\odot^6}\\int_0^{R_\\odot} r^4\\,dr .\\]</div>",
+            "en": "<p>In a uniform sphere the enclosed mass is \\(m(r)=M_\\odot(r/R_\\odot)^3\\). Bringing a shell \\(dm\\) from infinity to radius \\(r\\) changes the energy by \\(-Gm(r)\\,dm/r\\). This counts each mass pair once.</p>\n<div>\\[\\Omega=-\\frac{3GM_\\odot^2}{R_\\odot^6}\\int_0^{R_\\odot} r^4\\,dr .\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Omega=-\\frac{3GM_\\odot^2}{5R_\\odot}.\\]</div>",
+        "en": "<div>\\[\\Omega=-\\frac{3GM_\\odot^2}{5R_\\odot}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A10",
+      "max": 0.5,
+      "title": {
+        "ru": "Время гравитационного сжатия",
+        "en": "Contraction timescale"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Запас гравитационной энергии",
+            "en": "Available gravitational energy"
+          },
+          "body": {
+            "ru": "<p>У исходного разреженного облака потенциальная энергия близка к нулю. На излучение могло уйти самое большее \\(-\\Omega\\). При постоянной светимости этот запас соответствует времени \\(-\\Omega/L_\\odot\\).</p>",
+            "en": "<p>The diffuse cloud initially had nearly zero potential energy. At most \\(-\\Omega\\) could have been radiated. At constant luminosity this reservoir lasts for \\(-\\Omega/L_\\odot\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tau_{\\mathrm{KH}}=\\frac{3GM_\\odot^2}{5R_\\odot L_\\odot}\\simeq5{,}94\\times10^{14}\\,\\mathrm s .\\]</div>\n<p>Это примерно \\(1{,}88\\times10^7\\) лет.</p>",
+        "en": "<div>\\[\\tau_{\\mathrm{KH}}=\\frac{3GM_\\odot^2}{5R_\\odot L_\\odot}\\simeq5.94\\times10^{14}\\,\\mathrm s .\\]</div>\n<p>This is approximately \\(1.88\\times10^7\\) years.</p>"
+      }
+    },
+    {
+      "id": "T1-B1",
+      "max": 0.6,
+      "title": {
+        "ru": "Поток нейтрино на Земле",
+        "en": "Neutrino flux at Earth"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Поток через сферу у Земли",
+            "en": "Flux through a sphere at Earth"
+          },
+          "body": {
+            "ru": "<p>Для поддержания светимости в секунду должно происходить \\(L_\\odot/\\Delta E\\) реакций. Каждая даёт два нейтрино. Они проходят через сферу радиуса \\(d_\\odot\\), так что их число в секунду нужно разделить на площадь этой сферы.</p>",
+            "en": "<p>The Sun needs \\(L_\\odot/\\Delta E\\) reactions per second to sustain its luminosity. Each makes two neutrinos. Divide their emission rate by the area of a sphere at the Earth–Sun distance.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Phi_\\nu=\\frac{2 L_\\odot}{4\\pi d_\\odot^2\\Delta E}\\simeq6{,}8\\times10^{14}\\,\\mathrm{m^{-2}s^{-1}}.\\]</div>",
+        "en": "<div>\\[\\Phi_\\nu=\\frac{2 L_\\odot}{4\\pi d_\\odot^2\\Delta E}\\simeq6.8\\times10^{14}\\,\\mathrm{m^{-2}s^{-1}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B2",
+      "max": 0.4,
+      "title": {
+        "ru": "Изменение типа нейтрино",
+        "en": "Neutrino conversion"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Сумма зарегистрированных событий",
+            "en": "Adding the detected events"
+          },
+          "body": {
+            "ru": "<p>Непревращённая доля даёт \\((1-f)N_1\\) событий. Остальные нейтрино дают \\(fN_1/6\\) событий с учётом меньшей эффективности. Приравняем сумму к \\(N_2\\) и выразим \\(f\\).</p>",
+            "en": "<p>The unconverted fraction yields \\((1-f)N_1\\) counts. The converted fraction contributes \\(fN_1/6\\) because of its lower detection efficiency. Set the sum equal to \\(N_2\\) and solve for \\(f\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f=\\frac65\\left(1-\\frac{N_2}{N_1}\\right).\\]</div>",
+        "en": "<div>\\[f=\\frac65\\left(1-\\frac{N_2}{N_1}\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B3",
+      "max": 2.0,
+      "title": {
+        "ru": "Порог излучения Черенкова",
+        "en": "Cherenkov threshold"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Кинетическая энергия в конце свечения",
+            "en": "Kinetic energy when emission ceases"
+          },
+          "body": {
+            "ru": "<p>Излучение прекращается при \\(v=c/n\\). В этот момент электрон ещё движется. Его остаточную кинетическую энергию нужно найти релятивистски.</p>\n<div>\\[K_{\\mathrm{end}}=m_ec^2\\left(\\frac{1}{\\sqrt{1-n^{-2}}}-1\\right).\\]</div>",
+            "en": "<p>The emission ends at \\(v=c/n\\). The electron is still moving then, and its residual kinetic energy requires the relativistic expression.</p>\n<div>\\[K_{\\mathrm{end}}=m_ec^2\\left(\\frac{1}{\\sqrt{1-n^{-2}}}-1\\right).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 1.0,
+          "label": {
+            "ru": "Энергия, потерянная за время свечения",
+            "en": "Energy lost during emission"
+          },
+          "body": {
+            "ru": "<p>До столкновения электрон покоился. Сразу после столкновения его кинетическая энергия превышала \\(K_{\\mathrm{end}}\\) на \\(\\alpha\\Delta t\\) — столько электрон потерял до исчезновения черенковского конуса.</p>",
+            "en": "<p>The electron began at rest. Just after the collision its kinetic energy exceeded \\(K_{\\mathrm{end}}\\) by \\(\\alpha\\Delta t\\), the energy it lost before the Cherenkov cone vanished.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E_{\\mathrm{imparted}}=\\alpha\\Delta t+m_ec^2\\left(\\frac{n}{\\sqrt{n^2-1}}-1\\right).\\]</div>",
+        "en": "<div>\\[E_{\\mathrm{imparted}}=\\alpha\\Delta t+m_ec^2\\left(\\frac{n}{\\sqrt{n^2-1}}-1\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B4",
+      "max": 2.0,
+      "title": {
+        "ru": "Температура солнечного ядра",
+        "en": "Temperature of the solar core"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Доплеровская ширина линии",
+            "en": "Doppler width"
+          },
+          "body": {
+            "ru": "<p>В первом порядке по скорости относительное смещение энергии равно проекции скорости источника на направление наблюдения, делённой на \\(c\\). При изотропном движении \\(\\langle v_z^2\\rangle=\\langle v^2\\rangle/3\\).</p>\n<div>\\[V_{\\mathrm{Be}}=\\sqrt3\\,c\\,\\frac{\\Delta E_{\\mathrm{rms}}}{E_\\nu}.\\]</div>",
+            "en": "<p>To first order in speed, the fractional energy shift is the line-of-sight source velocity divided by \\(c\\). Isotropic motion gives \\(\\langle v_z^2\\rangle=\\langle v^2\\rangle/3\\).</p>\n<div>\\[V_{\\mathrm{Be}}=\\sqrt3\\,c\\,\\frac{\\Delta E_{\\mathrm{rms}}}{E_\\nu}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 1.0,
+          "label": {
+            "ru": "Температура из тепловой скорости",
+            "en": "Temperature from thermal speed"
+          },
+          "body": {
+            "ru": "<p>Равнораспределение энергии по трём поступательным степеням свободы даёт \\(m_{\\mathrm{Be}}V_{\\mathrm{Be}}^2=3k_BT_c\\). В этом равенстве нужна полная среднеквадратичная скорость, полученная на предыдущем шаге.</p>",
+            "en": "<p>Equipartition over the three translational degrees of freedom gives \\(m_{\\mathrm{Be}}V_{\\mathrm{Be}}^2=3k_BT_c\\). This relation uses the full three-dimensional rms speed found above.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V_{\\mathrm{Be}}\\simeq2{,}00\\times10^5\\,\\mathrm{m/s},\\qquad T_c\\simeq1{,}12\\times10^7\\,\\mathrm K.\\]</div>",
+        "en": "<div>\\[V_{\\mathrm{Be}}\\simeq2.00\\times10^5\\,\\mathrm{m/s},\\qquad T_c\\simeq1.12\\times10^7\\,\\mathrm K.\\]</div>"
+      }
+    }
+  ]
+}

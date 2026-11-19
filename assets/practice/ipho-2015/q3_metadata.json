@@ -1,0 +1,87 @@
+{
+  "id": "T3",
+  "title": "Физика энергетического реактора",
+  "points": 10,
+  "sourceFile": "IPhO_2015_T3_EN.pdf",
+  "solutionPdf": "/assets/practice/ipho-2015/IPhO_2015_S3_EN.pdf",
+  "solutionData": "/assets/practice/ipho-2015/solutions/t3.json",
+  "subtasks": [
+    {
+      "id": "T3-A1",
+      "points": 0.8
+    },
+    {
+      "id": "T3-A2",
+      "points": 0.5
+    },
+    {
+      "id": "T3-A3",
+      "points": 1.2
+    },
+    {
+      "id": "T3-A4",
+      "points": 0.5
+    },
+    {
+      "id": "T3-A5",
+      "points": 1.0
+    },
+    {
+      "id": "T3-B1",
+      "points": 1.0
+    },
+    {
+      "id": "T3-B2",
+      "points": 1.0
+    },
+    {
+      "id": "T3-B3",
+      "points": 1.0
+    },
+    {
+      "id": "T3-B4",
+      "points": 0.5
+    },
+    {
+      "id": "T3-C1",
+      "points": 1.5
+    },
+    {
+      "id": "T3-C2",
+      "points": 1.0
+    }
+  ],
+  "sections": [
+    {
+      "id": "T3-A",
+      "title": "Топливный стержень",
+      "points": 4.0
+    },
+    {
+      "id": "T3-B",
+      "title": "Упругое рассеяние в замедлителе",
+      "points": 3.5
+    },
+    {
+      "id": "T3-C",
+      "title": "Цилиндрическая геометрия",
+      "points": 2.5
+    }
+  ],
+  "figures": [
+    "reactor",
+    "channels",
+    "lab"
+  ],
+  "solutionsAvailable": true,
+  "stepScoring": "editorial-grouping-of-published-subpart-maxima",
+  "sourceLinks": {
+    "problem": "https://ipho2015.hbcse.tifr.res.in/images/qna/ind/T3-Questions.pdf",
+    "solution": "https://ipho2015.hbcse.tifr.res.in/images/qna/ind/T3-Solutions.pdf"
+  },
+  "sourcePages": [
+    1,
+    2
+  ],
+  "translationStatus": "bilingual"
+}

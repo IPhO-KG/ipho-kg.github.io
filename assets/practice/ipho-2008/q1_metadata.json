@@ -1,0 +1,103 @@
+{
+  "id": "T1",
+  "title": "Водяная рисорушка",
+  "points": 10,
+  "sourceFile": "/assets/practice/ipho-2008/IPhO_2008_T1_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "translationStatus": "editorial-adaptation",
+  "sections": [
+    {
+      "id": "T1-I",
+      "title": "Геометрия и равновесие",
+      "points": 3.0
+    },
+    {
+      "id": "T1-II",
+      "title": "Рабочий цикл",
+      "points": 3.5
+    },
+    {
+      "id": "T1-III",
+      "title": "Поднятый пест",
+      "points": 3.5
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T1-1.1",
+      "label": "1.1",
+      "points": 1.0
+    },
+    {
+      "id": "T1-1.2",
+      "label": "1.2",
+      "points": 0.5
+    },
+    {
+      "id": "T1-1.3",
+      "label": "1.3",
+      "points": 1.5
+    },
+    {
+      "id": "T1-2.1",
+      "label": "2.1",
+      "points": 2.0
+    },
+    {
+      "id": "T1-2.2",
+      "label": "2.2",
+      "points": 0.7
+    },
+    {
+      "id": "T1-2.3",
+      "label": "2.3",
+      "points": 0.8
+    },
+    {
+      "id": "T1-3.1.1",
+      "label": "3.1.1",
+      "points": 0.5
+    },
+    {
+      "id": "T1-3.1.2",
+      "label": "3.1.2",
+      "points": 0.2
+    },
+    {
+      "id": "T1-3.1.3",
+      "label": "3.1.3",
+      "points": 0.8
+    },
+    {
+      "id": "T1-3.2",
+      "label": "3.2",
+      "points": 1.5
+    },
+    {
+      "id": "T1-3.3",
+      "label": "3.3",
+      "points": 0.5
+    }
+  ],
+  "figures": [
+    "qfig1",
+    "qfig2",
+    "qfig3"
+  ],
+  "solutionsAvailable": true,
+  "stepScoring": "official-subtask-maxima",
+  "solutionData": "/assets/practice/ipho-2008/solutions/t1.json",
+  "solutionPdf": "/assets/practice/ipho-2008/IPhO_2008_S1_EN.pdf",
+  "sourceLinks": {
+    "problem": "https://olimpicos.net/files/ipho/IPhO_2008_Q1.pdf",
+    "solution": "https://olimpicos.net/files/ipho/IPhO_2008_S1.pdf",
+    "marking": "https://www.jpho.jp/international/media-download/247/f3354c043de901ff/PDF/"
+  }
+}

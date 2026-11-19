@@ -1,0 +1,94 @@
+<article class="exam-problem" id="T3" lang="en"><h2>QUESTION T3 [10 pts]. Champagne!</h2>
+<p><strong>Warning:</strong> Excessive alcohol consumption is harmful to health and drinking alcohol below legal age is prohibited.</p>
+<p>Champagne is a French sparkling wine. Fermentation of sugars produces carbon dioxide (\(\mathrm{CO_2}\)) in the bottle. The molar concentration of \(\mathrm{CO_2}\) in the liquid phase \(c_\ell\) and the partial pressure \(P_{\mathrm{CO_2}}\) in the gas phase are related by \(c_\ell = k_\mathrm{H}P_{\mathrm{CO_2}}\), known as Henry’s law and where \(k_\mathrm{H}\) is called Henry’s constant.</p>
+<p><strong>Data</strong></p>
+<ul>
+<li><p>Surface tension of champagne \(\sigma = 47 \times 10^{-3}\,\mathrm{J\cdot m^{-2}}\)</p></li>
+<li><p>Density of the liquid \(\rho_\ell = 1.0 \times 10^3\,\mathrm{kg\cdot m^{-3}}\)</p></li>
+<li><p>Henry’s constant at \(T_0 = 20\,^\circ\mathrm{C}\), \(k_\mathrm{H}(20\,^\circ\mathrm{C}) = 3.3 \times 10^{-4}\,\mathrm{mol\cdot m^{-3}\cdot Pa^{-1}}\)</p></li>
+<li><p>Henry’s constant at \(T_0 = 6\,^\circ\mathrm{C}\), \(k_\mathrm{H}(6\,^\circ\mathrm{C}) = 5.4 \times 10^{-4}\,\mathrm{mol\cdot m^{-3}\cdot Pa^{-1}}\)</p></li>
+<li><p>Atmospheric pressure \(P_0 = 1\,\mathrm{bar} = 1.0 \times 10^5\,\mathrm{Pa}\)</p></li>
+<li><p>Gases are ideal with an adiabatic coefficient \(\gamma = 1.3\)</p></li>
+</ul>
+
+<figure><img src="/assets/practice/ipho-2025/q3/fig1.png" alt="Fig. 1. A glass filled with champagne."><figcaption><strong>Fig. 1</strong>. A glass filled with champagne.</figcaption>
+
+</figure>
+
+
+<section id="T3-A"><h3>T3-A [4.3 pts]. Nucleation, growth and rise of bubbles</h3>
+<p>Immediately after opening a bottle of champagne at temperature \(T_0 = 20\,^\circ\mathrm{C}\) , we fill a glass. The pressure in the liquid is \(P_0\) and its temperature stays constant at \(T_0\). The concentration \(c_\ell\) of dissolved \(\mathrm{CO_2}\) exceeds the equilibrium concentration and we study the nucleation of a \(\mathrm{CO_2}\) bubble. We note \(a\) its radius and \(P_\mathrm{b}\) its inner pressure.</p>
+<div class="exam-question" id="T3-A1"><strong>T3-A1 [0.2 pts].</strong> Express the pressure \(P_\mathrm{b}\) in terms of \(P_0\), \(a\) and \(\sigma\).</div>
+<p>In the liquid, the concentration of dissolved \(\mathrm{CO_2}\) depends on the distance to the bubble. At long distance we recover the value \(c_\ell\) and we note \(c_\mathrm{b}\) the concentration close to the bubble surface. According to Henry’s law, \(c_\mathrm{b} = k_\mathrm{H}P_\mathrm{b}\). We furthermore assume in all the problem that bubbles contain only \(\mathrm{CO_2}\).</p>
+<p>Since \(c_\ell \neq c_\mathrm{b}\), \(\mathrm{CO_2}\) molecules diffuse from areas of high to low concentration. We assume also that any molecule from the liquid phase reaching the bubble surface is transferred to the vapour.</p>
+<div class="exam-question" id="T3-A2"><strong>T3-A2 [0.5 pts].</strong> Express the critical radius \(a_\mathrm{c}\) above which a bubble is expected to grow in terms of \(P_0,\sigma,c_\ell\) and \(c_0\) where \(c_0 = k_\mathrm{H}P_0\). Calculate numerically \(a_\mathrm{c}\) for \(c_\ell = 4c_0\).</div>
+<p>In practice, bubbles mainly grow from pre-existing gas cavities. Consider then a bubble with initial radius \(a_0 \approx 40\,\mu\mathrm{m}\). The number of moles of \(\mathrm{CO_2}\) transferred at the bubble’s surface per unit area and time is noted \(j\). Two models are possible for \(j\).</p>
+<ul>
+<li><p>model (1) \(j = \dfrac{D}{a}(c_\ell - c_\mathrm{b})\) where \(D\) is the diffusion coefficient of \(\mathrm{CO_2}\) in the liquid.</p></li>
+<li><p>model (2) \(j = K(c_\ell - c_\mathrm{b})\) where \(K\) is a constant here.</p></li>
+</ul>
+<p>Experimentally, the bubble radius \(a(t)\) is found to depend on time as shown in <strong>Fig. 2</strong>. Here \(c_\ell \approx 4c_0\), and since bubbles are large enough to be visible, the excess pressure due to surface tension can be neglected and \(P_\mathrm{b} \approx P_0\).</p>
+<div class="exam-question" id="T3-A3"><strong>T3-A3 [1.2 pts].</strong> Express the number of \(\mathrm{CO_2}\) moles in the bubble \(n_\mathrm{c}\) in terms of \(a, P_0, T_0\) and ideal gas constant \(R\). Find \(a(t)\) for both models. Indicate which model explains the experimental results in <strong>Fig. 2</strong>. Depending on your answer, calculate numerically \(K\) or \(D\).</div>
+
+<figure><img src="/assets/practice/ipho-2025/q3/fig2.png" alt="Fig. 2. Time evolution of  bubble radius in a glass of champagne (adapted from [1])."><figcaption><strong>Fig. 2.</strong> Time evolution of \(\mathrm{CO_2}\) bubble radius in a glass of champagne (<em>adapted from [1]</em>).</figcaption>
+
+</figure>
+
+
+<p>Eventually bubbles detach from the bottom of the glass and continue to grow while rising. <strong>Fig. 3</strong>. shows a train of bubbles. The bubbles of the train have the same initial radius and are emitted at a constant frequency \(f_\mathrm{b} = 20\,\mathrm{Hz}\).</p>
+
+<figure><img src="/assets/practice/ipho-2025/q3/fig3.png" alt="Fig. 3. A train of bubbles. The photo is rotated horizontally for the page layout (adapted from [1])."><figcaption><strong>Fig. 3.</strong> A train of bubbles. The photo is rotated horizontally for the page layout <em>(adapted from [1]).</em></figcaption>
+
+</figure>
+
+
+<p>For the range of velocities studied here, the drag force \(F\) on a bubble of radius \(a\) moving at velocity \(v\) in a liquid of dynamic viscosity \(\eta\) is given by Stokes’ law \(F = 6\pi\eta av\). Measurements show that at any moment in time, the bubble can be assumed to be travelling at its terminal velocity.</p>
+<div class="exam-question" id="T3-A4"><strong>T3-A4 [0.8 pts].</strong> Give the expression of the main forces exerted on a vertically rising bubble. Obtain the expression of \(v(a)\). Give a numerical estimate of \(\eta\) using \(\rho_\ell\), \(g_0\) and quantities measured on <strong>Fig. 3.</strong></div>
+<p>The quasi-stationary growth of bubbles with rate \(q_a = \frac{\mathrm{d}a}{\mathrm{d}t}\) still applies during bubble rise.</p>
+<div class="exam-question" id="T3-A5"><strong>T3-A5 [0.5 pts].</strong> Express the radius \(a_{H_\ell}\) of a bubble reaching the free surface in terms of height travelled \(H_\ell\), growth rate \(q_a = \frac{\mathrm{d}a}{\mathrm{d}t}\), and any constants you may need. Assume \(a_{H_\ell} \gg a_0\) and \(q_a\) constant, and give the numerical value of \(a_{H_\ell}\) with \(H_\ell = 10\,\mathrm{cm}\) and \(q_a\) corresponding to <strong>Fig. 2</strong>.</div>
+<p>There are \(N_\mathrm{b}\) nucleation sites of bubbles. Assume that the bubbles are nucleated at a constant frequency \(f_\mathrm{b}\) at the bottom of a glass of champagne (height \(H_\ell\) for a volume \(V_\ell\)), with \(a_0\) still negligible. Neglect diffusion of \(\mathrm{CO_2}\) at the free surface.</p>
+<div class="exam-question" id="T3-A6"><strong>T3-A6 [1.1 pts].</strong> Write the differential equation for \(c_\ell(t)\). Obtain from this equation the characteristic time \(\tau\) for the decay of the concentration of dissolved \(\mathrm{CO_2}\) in the liquid.</div>
+</section><section id="T3-B"><h3>T3-B [3.3 pts]. Acoustic emission of a bursting bubble</h3>
+<p>Small bubbles are nearly spherical as they reach the free surface. Once the liquid film separating the bubble from the air thins out sufficiently, a circular hole of radius \(r\) forms in the film and, driven by surface tension, opens very quickly (<strong>Fig. 4.</strong> left). The hole opens at constant speed \(v_\mathrm{f}\) (<strong>Fig. 4.</strong> right). The film outside the rim remains still, with constant thickness \(h\).</p>
+
+<figure><img src="/assets/practice/ipho-2025/q3/fig4.png" alt="Fig. 4. (Left)  Bubble at the surface: (1) liquid, (2) air at pressure  and (3),  at pressure ,  and  retraction of the liquid film, where the rim is in dark blue,  bubble collapse. (Right) Retraction of the liquid film at time . Top: sketch of the pierced film seen from above. Bottom: cross-section of the rim and the retracting film. During  the rim accumulates nearby liquid (dotted)."><figcaption><strong>Fig. 4</strong>. <em>(Left)</em> \((\alpha)\) Bubble at the surface: (1) liquid, (2) air at pressure \(P_0\) and (3), \(\mathrm{CO_2}\) at pressure \(P_\mathrm{b}\), \((\beta)\) and \((\gamma)\) retraction of the liquid film, where the rim is in dark blue, \((\delta)\) bubble collapse. <em>(Right)</em> Retraction of the liquid film at time \(t\). Top: sketch of the pierced film seen from above. Bottom: cross-section of the rim and the retracting film. During \(\mathrm{d}t\) the rim accumulates nearby liquid (dotted).</figcaption>
+</figure>
+
+<p>Due to dissipative processes, only half of the difference of the surface energy between \(t\) and \(t+\mathrm{d}t\) of the rim and the accumulated liquid is transformed into kinetic energy. We further assume that the variation of the surface of the rim is negligible compared to that of the film.</p>
+<div class="exam-question" id="T3-B1"><strong>T3-B1 [1.1 pts].</strong> Express \(v_\mathrm{f}\) in terms of \(\rho_\ell,\sigma\) and \(h\).</div>
+
+<figure><img src="/assets/practice/ipho-2025/q3/fig5.png" alt="Fig. 5. (Left) a Helmholtz resonator. (Right) a bubble as an oscillator."><figcaption><strong>Fig. 5</strong>. <em>(Left)</em> a Helmholtz resonator. <em>(Right)</em> a bubble as an oscillator.</figcaption>
+
+</figure>
+
+
+<p>When the film bursts, it releases internal pressure and emits a sound. We model this acoustic emission by a Helmholtz resonator: a cavity open to the atmosphere at \(P_0\) through a bottleneck aperture of area \(S\) (<strong>Fig. 5</strong>. left). In the neck, a mass \(m_\mathrm{p}\) makes small amplitude position oscillations due to the pressure forces it experiences as the gas in the cavity expands or compresses adiabatically. The gravity force on \(m_\mathrm{p}\) is negligible compared to pressure forces. Let \(V_0\) be the volume of gas under the mass \(m_\mathrm{p}\) for \(P = P_0\) as \(z = 0\).</p>
+<div class="exam-question" id="T3-B2"><strong>T3-B2 [1.1 pts].</strong> Express the frequency of oscillation \(f_0\) of \(m_\mathrm{p}\). Hint: for \(\varepsilon \ll 1\), \((1 + \varepsilon)^\alpha \approx 1 +
+\alpha\varepsilon\).</div>
+<p>The Helmholtz model may be used for a bubble of radius \(a\). \(V_0\) is the volume of the closed bubble. From litterature, the mass of the equivalent of the piston is \(m_p = 8\rho_g r^3/3\) where \(r\) is the radius of the circular aperture and \(\rho_g = 1.8\,\mathrm{kg\cdot m^{-3}}\) is the density of the gas (<strong>Fig. 5</strong>. right). During the bursting process, \(r\) goes from 0 to \(r_\mathrm{c}\), given by \(r_\mathrm{c} = \dfrac{2}{\sqrt{3}}a^2\sqrt{\dfrac{\rho_\ell g_0}{\sigma}}\). At the same time, the frequency of emitted sound increases until a maximum value of \(40\,\mathrm{kHz}\) and the bursting time is \(t_b = 3 \times 10^{-2}\,\mathrm{ms}\).</p>
+<div class="exam-question" id="T3-B3"><strong>T3-B3 [1.1 pts].</strong> Find the radius \(a\) and the thickness \(h\) of the champagne film separating the bubble from the atmosphere.</div>
+</section><section id="T3-C"><h3>T3-C [2.4 pts]. Popping champagne</h3>
+<p>In a bottle, the total quantity of \(\mathrm{CO_2}\) is \(n_\mathrm{T} = 0.2\,\mathrm{mol}\), either dissolved in the volume \(V_\mathrm{L} = 750\,\mathrm{mL}\) of liquid champagne, or as a gas in the volume \(V_\mathrm{G} = 25\,\mathrm{mL}\) under the cork (<strong>Fig. 6.</strong> left). \(V_\mathrm{G}\) contains only \(\mathrm{CO_2}\). The equilibrium between both \(\mathrm{CO_2}\) phases follows Henry’s Law. We suppose that the fast gaseous \(\mathrm{CO_2}\) expansion when the bottle is opened, is adiabatic and reversible. Ambient temperature \(T_0\) and pressure \(P_0 = 1\,\mathrm{bar}\) are constant.</p>
+
+<figure><img src="/assets/practice/ipho-2025/q3/fig6.png" alt="Fig. 6. Left: traditional bottleneck: (1) surrounding air, (2) cork stopper, (3) headspace, (4) liquid champagne. Right: Two phenomena observed while opening the bottle at two different temperatures (adapted from [2])."><figcaption><strong>Fig. 6.</strong> <em>Left:</em> traditional bottleneck: (1) surrounding air, (2) cork stopper, (3) headspace, (4) liquid champagne. <em>Right</em>: Two phenomena observed while opening the bottle at two different temperatures (adapted from <em>[2]</em>).</figcaption>
+</figure>
+
+<div class="exam-question" id="T3-C1"><strong>T3-C1 [0.4 pts].</strong> Give the numerical value of the pressure \(P_\mathrm{i}\) of gaseous \(\mathrm{CO_2}\) in the bottle for \(T_0 = 6\,^\circ\mathrm{C}\) and \(T_0 = 20\,^\circ\mathrm{C}\).</div>
+<p>Another step of champagne production (not described here) leads to the following values of \(P_i\) that we will use for the next questions: \(P_\mathrm{i} = 4.69\,\mathrm{bar}\) at \(T_0 = 6\,^\circ\mathrm{C}\) and \(P_\mathrm{i} = 7.45\,\mathrm{bar}\) at \(T_0 = 20\,^\circ\mathrm{C}\).</p>
+<p>During bottle opening, two different phenomena can be observed, depending on \(T_0\) (Fig. 6. right).</p>
+<ul>
+<li><p>either a blue fog appears, due to the formation of solid \(\mathrm{CO_2}\) crystals (but water condensation is inhibited);</p></li>
+<li><p>or a grey-white fog appears, due to water vapor condensation in the air surrounding the bottleneck. In this latter case, there is no formation of \(\mathrm{CO_2}\) solid crystals.</p></li>
+</ul>
+<p>The saturated vapor pressure \(P_\mathrm{sat}^{\mathrm{CO_2}}\) for the \(\mathrm{CO_2}\) solid/gas transition follows : \(\log_{10}\left(\dfrac{P_\mathrm{sat}^{\mathrm{CO_2}}}{P_0}\right) = A -
+\dfrac{B}{T + C}\) with \(T\) in \(\mathrm{K}\), \(A = 6.81\), \(B = 1.30 \times 10^3\,\mathrm{K}\) and \(C = -3.49\,\mathrm{K}\).</p>
+<div class="exam-question" id="T3-C2"><strong>T3-C2 [0.7 pts].</strong> Give the numerical value \(T_\mathrm{f}\) of the \(\mathrm{CO_2}\) gas at the end of the expansion, after opening a bottle, if \(T_0 = 6\,^\circ\mathrm{C}\) and if \(T_0 = 20\,^\circ\mathrm{C}\), if no phase transition occured. Choose which statements are true (several statements possible):<br>
+1. At \(T_0 = 6\,^\circ\mathrm{C}\) a grey-white fog appears while opening the bottle.<br>
+2. At \(T_0 = 6\,^\circ\mathrm{C}\) a blue fog appears while opening the bottle.<br>
+3. At \(T_0 = 20\,^\circ\mathrm{C}\) a grey-white fog appears while opening the bottle.<br>
+4. At \(T_0 = 20\,^\circ\mathrm{C}\) a blue fog appears while opening the bottle.</div>
+<p>During bottle opening, the cork stopper pops out. We now determine the maximum height \(H_\mathrm{c}\) it reaches. Assume that the friction force \(F\) due to the bottleneck on the cork stopper is \(F = \alpha A\) where \(A\) is the area of contact and \(\alpha\) is a constant to determine. Initially, the pressure force slightly overcomes the friction force. The cork’s mass is \(m = 10\,\mathrm{g}\), its diameter \(d = 1.8\,\mathrm{cm}\) and the length of the cylindrical part initially stuck in the bottleneck is \(\ell_0 = 2.5\,\mathrm{cm}\). Once the cork has left the bottleneck, you can neglect the net pressure force.</p>
+<div class="exam-question" id="T3-C3"><strong>T3-C3 [1.3 pts].</strong> Give the numerical value of \(H_\mathrm{c}\) if the external temperature is \(T_0 = 6\,^\circ\mathrm{C}\).</div>
+<p>[1] Liger-Belair <em>et al,</em> Am. J. Enol. Vitic., Vol. 50, No. 3 (1999).</p>
+<p>[2] Liger-Belair <em>et al.</em>, <em>Sc. Reports</em> <strong>7</strong>, 10938 (2017).</p>
+</section></article>

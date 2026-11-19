@@ -1,0 +1,38 @@
+<article id="T1" class="exam-problem" lang="ru">
+<h2>Задача T1 [10 баллов]. Спутник на незапланированной орбите</h2>
+<p>Спутник связи массы \(m\) движется по круговой экваториальной геосинхронной орбите радиуса \(r_0\). Её период совпадает со звёздными сутками. Обычно двигатель меняет скорость по касательной, но здесь предстоит рассмотреть радиальный импульс. Для расчётов примите</p>
+<div>\[R_T=6{,}37\times10^6\,\mathrm m,\quad g=9{,}81\,\mathrm{m/s^2},\quad T_0=24{,}0\,\mathrm h.\]</div>
+<figure><img src="/assets/practice/ipho-2005/q1/spacecraft.png" alt="Спутник связи. Иллюстрация ESA из условия." loading="lazy" style="width:min(100%,220px);height:auto"><figcaption>Спутник связи. Иллюстрация ESA из условия.</figcaption></figure>
+<section id="T1-part1">
+<h3 class="paper-part-heading"><span class="paper-part-meta"><span class="paper-id">1</span> <span class="paper-points">1,5 балла</span></span> <span class="paper-part-name">Круговая орбита</span></h3>
+<div class="exam-question" id="T1-1.1" data-points="0.3"><p><strong class="paper-question-label"><span class="paper-id">1.1</span> <span class="paper-points">0,3 б.</span></strong> Вычислите радиус орбиты \(r_0\) от центра Земли.</p></div>
+<div class="exam-question" id="T1-1.2" data-points="0.4"><p><strong class="paper-question-label"><span class="paper-id">1.2</span> <span class="paper-points">0,4 б.</span></strong> Выразите скорость \(v_0\) через \(g,R_T,r_0\) и найдите её численное значение.</p></div>
+<div class="exam-question" id="T1-1.3" data-points="0.8"><p><strong class="paper-question-label"><span class="paper-id">1.3</span> <span class="paper-points">0,8 б.</span></strong> Выразите модуль момента импульса \(L_0\) и полную механическую энергию \(E_0\) спутника через \(v_0,m,g,R_T\). Потенциальную энергию отсчитывайте от бесконечности.</p></div>
+</section>
+<section id="T1-part2">
+<h3 class="paper-part-heading"><span class="paper-part-meta"><span class="paper-id">2</span> <span class="paper-points">3,8 балла</span></span> <span class="paper-part-name">Радиальный импульс и эллипс</span></h3>
+<p>По ошибке на рабочей орбите включается двигатель. Импульс направлен к центру Земли и сообщает спутнику радиальное приращение скорости \(\Delta v\). Время включения пренебрежимо мало по сравнению с орбитальным периодом. Обозначим \(\beta=\Delta v/v_0\). В этой части \(0&lt;\beta&lt;1\).</p>
+<figure><img src="/assets/practice/ipho-2005/q1/impulse.png" alt="F-1. Круговая орбита перед импульсом." loading="lazy" style="width:min(100%,265px);height:auto"><figcaption>F-1. Круговая орбита перед импульсом.</figcaption></figure>
+<div class="exam-question" id="T1-2.1" data-points="0.9"><p><strong class="paper-question-label"><span class="paper-id">2.1</span> <span class="paper-points">0,9 б.</span></strong> Найдите фокальный параметр \(l\) и эксцентриситет \(\varepsilon\) новой орбиты через \(r_0,\beta\). Ниже приведены соотношения для конических сечений.</p></div>
+<div class="exam-question" id="T1-2.2" data-points="1"><p><strong class="paper-question-label"><span class="paper-id">2.2</span> <span class="paper-points">1 б.</span></strong> Какой угол \(\alpha\) образует большая ось эллипса с радиус-вектором спутника в момент импульса?</p></div>
+<div class="exam-question" id="T1-2.3" data-points="1.2"><p><strong class="paper-question-label"><span class="paper-id">2.3</span> <span class="paper-points">1,2 б.</span></strong> Получите расстояния до центра Земли в перигее \(r_{\min}\) и апогее \(r_{\max}\) через \(r_0,\beta\). Вычислите оба при \(\beta=1/4\).</p></div>
+<div class="exam-question" id="T1-2.4" data-points="0.7"><p><strong class="paper-question-label"><span class="paper-id">2.4</span> <span class="paper-points">0,7 б.</span></strong> Получите период \(T\) через \(T_0,\beta\) и вычислите его для \(\beta=1/4\).</p></div>
+</section>
+<section id="T1-part3">
+<h3 class="paper-part-heading"><span class="paper-part-meta"><span class="paper-id">3</span> <span class="paper-points">1,5 балла</span></span> <span class="paper-part-name">Граница ухода от Земли</span></h3>
+<div class="exam-question" id="T1-3.1" data-points="0.5"><p><strong class="paper-question-label"><span class="paper-id">3.1</span> <span class="paper-points">0,5 б.</span></strong> При каком наименьшем \(\beta_{\mathrm{esc}}\) спутник может покинуть гравитационное поле Земли?</p></div>
+<div class="exam-question" id="T1-3.2" data-points="1"><p><strong class="paper-question-label"><span class="paper-id">3.2</span> <span class="paper-points">1 б.</span></strong> При этом предельном импульсе найдите наименьшее расстояние \(r'_{\min}\) от спутника до центра Земли через \(r_0\).</p></div>
+</section>
+<section id="T1-part4">
+<h3 class="paper-part-heading"><span class="paper-part-meta"><span class="paper-id">4</span> <span class="paper-points">3,2 балла</span></span> <span class="paper-part-name">Уход по гиперболе</span></h3>
+<p>Пусть \(\beta&gt;\beta_{\mathrm{esc}}\). Рассмотрите свободную орбиту в поле Земли, показанную на рисунке.</p>
+<figure><img src="/assets/practice/ipho-2005/q1/asymptote.png" alt="F-2. Направление ухода, угол φ и прицельный параметр b." loading="lazy" style="width:min(100%,275px);height:auto"><figcaption>F-2. Направление ухода, угол φ и прицельный параметр b.</figcaption></figure>
+<div class="exam-question" id="T1-4.1" data-points="1"><p><strong class="paper-question-label"><span class="paper-id">4.1</span> <span class="paper-points">1 б.</span></strong> Выразите скорость \(v_\infty\), с которой спутник удаляется на бесконечность, через \(v_0,\beta\).</p></div>
+<div class="exam-question" id="T1-4.2" data-points="1"><p><strong class="paper-question-label"><span class="paper-id">4.2</span> <span class="paper-points">1 б.</span></strong> Найдите \(b\) — расстояние от центра Земли до асимптоты уходящей ветви — через \(r_0,\beta\).</p></div>
+<div class="exam-question" id="T1-4.3" data-points="1.2"><p><strong class="paper-question-label"><span class="paper-id">4.3</span> <span class="paper-points">1,2 б.</span></strong> Определите обозначенный на F-2 угол \(\phi\) через \(\beta\). Найдите его численно при \(\beta=\tfrac32\beta_{\mathrm{esc}}\).</p></div>
+<p>Для центральной силы обратных квадратов орбиту описывает коническое сечение. При \(m\ll M\) тело массы \(M\) находится в фокусе. В системе отсчёта углов на F-3 радиус-вектор выражается через фокальный параметр \(l\) и эксцентриситет \(\varepsilon\) следующим образом.</p>
+<div>\[r(\theta)=\frac{l}{1-\varepsilon\cos\theta},\qquad l=\frac{L^2}{GMm^2},\qquad \varepsilon=\sqrt{1+\frac{2EL^2}{G^2M^2m^3}} .\]</div>
+<figure><img src="/assets/practice/ipho-2005/q1/conic.png" alt="F-3. Угол θ в полярном уравнении орбиты." loading="lazy" style="width:min(100%,315px);height:auto"><figcaption>F-3. Угол θ в полярном уравнении орбиты.</figcaption></figure>
+<p>Здесь \(L\) — модуль момента импульса относительно фокуса, \(E\) — механическая энергия при нуле на бесконечности. При \(0\leq\varepsilon&lt;1\) орбита эллиптическая (окружность при \(\varepsilon=0\)), при \(\varepsilon=1\) параболическая, при \(\varepsilon&gt;1\) гиперболическая.</p>
+</section>
+</article>

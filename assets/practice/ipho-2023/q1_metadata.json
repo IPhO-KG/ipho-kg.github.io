@@ -1,0 +1,101 @@
+{
+  "id": "T1",
+  "title": "Свойства почвенных коллоидов",
+  "points": 10,
+  "sourceFile": "IPhO_2023_Q1.pdf",
+  "sourcePdf": "/assets/practice/ipho-2023/IPhO_2023_T1_EN.pdf",
+  "solutionPdf": "/assets/practice/ipho-2023/IPhO_2023_S1_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2023/IPhO_2023_M1_EN.pdf",
+  "sections": [
+    {
+      "id": "T1-A",
+      "title": "Движение коллоидной частицы",
+      "points": 1.6
+    },
+    {
+      "id": "T1-B",
+      "title": "Дискретная модель движения",
+      "points": 1.8
+    },
+    {
+      "id": "T1-C",
+      "title": "Электрофорез",
+      "points": 2.7
+    },
+    {
+      "id": "T1-D",
+      "title": "Средний квадрат смещения",
+      "points": 2.4
+    },
+    {
+      "id": "T1-E",
+      "title": "Коагуляция и очистка воды",
+      "points": 1.5
+    }
+  ],
+  "figures": [
+    "q1f1",
+    "q1f2",
+    "q1f3",
+    "q1f4",
+    "q1f5",
+    "q1f6"
+  ],
+  "subtasks": [
+    {
+      "id": "T1-A1",
+      "points": 0.8
+    },
+    {
+      "id": "T1-A2",
+      "points": 0.8
+    },
+    {
+      "id": "T1-B1",
+      "points": 1.0
+    },
+    {
+      "id": "T1-B2",
+      "points": 0.8
+    },
+    {
+      "id": "T1-C1",
+      "points": 0.5
+    },
+    {
+      "id": "T1-C2",
+      "points": 0.7
+    },
+    {
+      "id": "T1-C3",
+      "points": 0.5
+    },
+    {
+      "id": "T1-C4",
+      "points": 0.5
+    },
+    {
+      "id": "T1-C5",
+      "points": 0.5
+    },
+    {
+      "id": "T1-D1",
+      "points": 1.0
+    },
+    {
+      "id": "T1-D2",
+      "points": 0.8
+    },
+    {
+      "id": "T1-D3",
+      "points": 0.6
+    },
+    {
+      "id": "T1-E1",
+      "points": 1.5
+    }
+  ],
+  "solutionsAvailable": true,
+  "solutionData": "/assets/practice/ipho-2023/solutions/t1.json",
+  "stepScoring": "official-criteria"
+}

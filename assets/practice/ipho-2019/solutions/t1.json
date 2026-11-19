@@ -1,0 +1,313 @@
+{
+  "id": "T1",
+  "max": 10,
+  "title": {
+    "ru": "Пружины с нулевой эффективной длиной и слинки",
+    "en": "Zero-length springs and slinky coils"
+  },
+  "sourcePdf": "/assets/practice/ipho-2019/IPhO_2019_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-A1",
+      "max": 0.5,
+      "title": {
+        "ru": "Растяжение участка",
+        "en": "Stretch of a segment"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Одинаковое относительное растяжение",
+            "en": "Uniform stretch"
+          },
+          "body": {
+            "ru": "<p>По всей пружине натяжение одинаково. Доля участка в полной длине сохраняется, поэтому \\(\\Delta y/\\Delta\\ell=L/L_0\\). Для разомкнутых витков \\(L=F/k\\).</p>",
+            "en": "<p>Tension is uniform. The segment occupies the same fraction of the stretched and original lengths, so \\(\\Delta y/\\Delta\\ell=L/L_0\\). Open turns give \\(L=F/k\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Порог раскрытия витков",
+            "en": "Opening threshold"
+          },
+          "body": {
+            "ru": "<p>Если \\(F&lt;kL_0\\), витки остаются в контакте. Вместе с растянутой ветвью это даёт единое выражение.</p>",
+            "en": "<p>Below \\(kL_0\\) the contacts remain closed. Combining this regime with the stretched branch gives the result.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta y=\\Delta\\ell\\max\\!\\left(1,\\frac{F}{kL_0}\\right).\\]</div>",
+        "en": "<div>\\[\\Delta y=\\Delta\\ell\\max\\!\\left(1,\\frac{F}{kL_0}\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A2",
+      "max": 0.5,
+      "title": {
+        "ru": "Работа растяжения",
+        "en": "Stretching work"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Площадь под графиком силы",
+            "en": "Area under the force curve"
+          },
+          "body": {
+            "ru": "<p>Пока витки соприкасаются, смещения нет. При текущей длине участка \\(x&gt;\\Delta\\ell\\) сила равна \\(kL_0x/\\Delta\\ell\\). Проинтегрируем её по фактической длине.</p>\n<div>\\[\\Delta W=\\int_{\\Delta\\ell}^{\\Delta y}\\frac{kL_0}{\\Delta\\ell}\\,x\\,dx.\\]</div>",
+            "en": "<p>No displacement occurs while contacts are closed. At a segment length \\(x&gt;\\Delta\\ell\\), the tension is \\(kL_0x/\\Delta\\ell\\). Integrate over the actual length.</p>\n<div>\\[\\Delta W=\\int_{\\Delta\\ell}^{\\Delta y}\\frac{kL_0}{\\Delta\\ell}\\,x\\,dx.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Пределы интегрирования",
+            "en": "Evaluating the integral"
+          },
+          "body": {
+            "ru": "<p>Начальная длина конечна. Её вклад сохраняется и обеспечивает нулевую работу при \\(\\Delta y=\\Delta\\ell\\).</p>",
+            "en": "<p>The lower limit is finite and ensures zero work for \\(\\Delta y=\\Delta\\ell\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta W=\\frac{kL_0}{2\\Delta\\ell}\\left[(\\Delta y)^2-(\\Delta\\ell)^2\\right].\\]</div>",
+        "en": "<div>\\[\\Delta W=\\frac{kL_0}{2\\Delta\\ell}\\left[(\\Delta y)^2-(\\Delta\\ell)^2\\right].\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A3",
+      "max": 2.0,
+      "title": {
+        "ru": "Длина висящей пружины",
+        "en": "Hanging length"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Граница сомкнутого участка",
+            "en": "Boundary of the closed turns"
+          },
+          "body": {
+            "ru": "<p>На метке \\(\\ell\\) натяжение уравновешивает вес нижней части, поэтому \\(F(\\ell)=Mg\\ell/L_0\\). Витки размыкаются, когда \\(F=kL_0\\). Отсюда граница \\(\\ell_0=\\alpha L_0\\). Ниже неё фактическая длина равна исходной.</p>",
+            "en": "<p>At label \\(\\ell\\) the tension supports the lower mass, so \\(F(\\ell)=Mg\\ell/L_0\\). The turns just separate where \\(F=kL_0\\), giving \\(\\ell_0=\\alpha L_0\\). Below this label, length is unchanged.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Суммирование длин",
+            "en": "Adding the segment lengths"
+          },
+          "body": {
+            "ru": "<p>Обозначим через \\(y\\) высоту над нижним концом. Выше границы \\(dy=(\\ell/\\ell_0)d\\ell\\) по A1. Складываем длины нижней и верхней частей.</p>\n<div>\\[H=\\ell_0+\\int_{\\ell_0}^{L_0}\\frac{\\ell}{\\ell_0}\\,d\\ell.\\]</div>",
+            "en": "<p>Let \\(y\\) be the height above the bottom. Above the boundary A1 gives \\(dy=(\\ell/\\ell_0)d\\ell\\). Add the closed lower part and stretched upper part.</p>\n<div>\\[H=\\ell_0+\\int_{\\ell_0}^{L_0}\\frac{\\ell}{\\ell_0}\\,d\\ell.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.7,
+          "label": {
+            "ru": "Полная длина",
+            "en": "Total length"
+          },
+          "body": {
+            "ru": "<p>После интегрирования \\(H=(L_0^2+\\ell_0^2)/(2\\ell_0)\\). Подставим положение границы.</p>",
+            "en": "<p>Integration gives \\(H=(L_0^2+\\ell_0^2)/(2\\ell_0)\\). Substitute the boundary position.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[H=\\frac{L_0}{2}\\left(\\alpha+\\frac1\\alpha\\right).\\]</div>",
+        "en": "<div>\\[H=\\frac{L_0}{2}\\left(\\alpha+\\frac1\\alpha\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B1",
+      "max": 2.5,
+      "title": {
+        "ru": "Время схлопывания",
+        "en": "Time to collapse"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.5,
+          "label": {
+            "ru": "Начальная высота центра масс",
+            "en": "Initial centre of mass"
+          },
+          "body": {
+            "ru": "<p>Ниже \\(\\ell_0\\) имеем \\(y(\\ell)=\\ell\\), а выше интегрирование A3 даёт \\(y(\\ell)=(\\ell^2+\\ell_0^2)/(2\\ell_0)\\). Для усреднения по массе используем \\(dm=M\\,d\\ell/L_0\\).</p>\n<div>\\[y_{\\rm cm}(0)=\\frac1{L_0}\\left[\\int_0^{\\ell_0}\\ell\\,d\\ell+\\int_{\\ell_0}^{L_0}\\frac{\\ell^2+\\ell_0^2}{2\\ell_0}\\,d\\ell\\right].\\]</div>\n<div>\\[y_{\\rm cm}(0)=L_0\\left(\\frac1{6\\alpha}+\\frac{\\alpha}{2}-\\frac{\\alpha^2}{6}\\right).\\]</div>",
+            "en": "<p>Below \\(\\ell_0\\), \\(y(\\ell)=\\ell\\). Above it, integrating A3 gives \\(y(\\ell)=(\\ell^2+\\ell_0^2)/(2\\ell_0)\\). Mass averaging uses \\(dm=M\\,d\\ell/L_0\\).</p>\n<div>\\[y_{\\rm cm}(0)=\\frac1{L_0}\\left[\\int_0^{\\ell_0}\\ell\\,d\\ell+\\int_{\\ell_0}^{L_0}\\frac{\\ell^2+\\ell_0^2}{2\\ell_0}\\,d\\ell\\right].\\]</div>\n<div>\\[y_{\\rm cm}(0)=L_0\\left(\\frac1{6\\alpha}+\\frac{\\alpha}{2}-\\frac{\\alpha^2}{6}\\right).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 1.0,
+          "label": {
+            "ru": "Свободное падение центра масс",
+            "en": "Free fall of the centre of mass"
+          },
+          "body": {
+            "ru": "<p>Единственная внешняя сила — тяжесть. Когда все витки сомкнутся, нижний конец ещё на прежней высоте, а центр масс расположен на \\(L_0/2\\) выше него. Поэтому \\(gt_c^2/2=y_{\\rm cm}(0)-L_0/2\\). При указанных данных \\(\\alpha\\simeq0{,}0285\\).</p>",
+            "en": "<p>Gravity is the only external force. At complete collapse the bottom is still at its original height and the centre of mass is \\(L_0/2\\) above it. Thus \\(gt_c^2/2=y_{\\rm cm}(0)-L_0/2\\). The data give \\(\\alpha\\simeq0.0285\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[t_c=\\sqrt{\\frac{L_0(1-\\alpha)^3}{3g\\alpha}}\\simeq0{,}245\\,\\mathrm{s}.\\]</div>",
+        "en": "<div>\\[t_c=\\sqrt{\\frac{L_0(1-\\alpha)^3}{3g\\alpha}}\\simeq0.245\\,\\mathrm{s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B2",
+      "max": 2.5,
+      "title": {
+        "ru": "Скорость движущейся части",
+        "en": "Speed of the moving bundle"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.2,
+          "label": {
+            "ru": "Импульс пружины",
+            "en": "Momentum balance"
+          },
+          "body": {
+            "ru": "<p>Неподвижная часть не несёт импульса. При положительном направлении вниз полный импульс равен \\(mv\\), где \\(m=M(L_0-\\ell)/L_0\\) и \\(v=v_{\\rm I}\\). Внешняя сила постоянна даже при захвате новых витков.</p>\n<div>\\[Mg\\,dt=m\\,dv+v\\,dm.\\]</div>",
+            "en": "<p>The stationary part carries no momentum. Downward momentum of the whole spring is \\(mv\\), where \\(m=M(L_0-\\ell)/L_0\\) and \\(v=v_{\\rm I}\\). The external force stays constant as turns are collected.</p>\n<div>\\[Mg\\,dt=m\\,dv+v\\,dm.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.7,
+          "label": {
+            "ru": "Движение фронта",
+            "en": "Front kinematics"
+          },
+          "body": {
+            "ru": "<p>Высота верхнего конца равна \\(y(\\ell)+L_0-\\ell\\). Учитывая \\(y&#x27;(\\ell)=\\ell/\\ell_0\\), получаем \\(v\\,dt=-(\\ell/\\ell_0-1)d\\ell\\). Подставим в уравнение импульса и положим \\(w=v^2\\).</p>\n<div>\\[(L_0-\\ell)w&#x27;-2w=-2gL_0(\\ell/\\ell_0-1).\\]</div>",
+            "en": "<p>The top is at height \\(y(\\ell)+L_0-\\ell\\). Since \\(y&#x27;(\\ell)=\\ell/\\ell_0\\), its downward displacement is \\(v\\,dt=-(\\ell/\\ell_0-1)d\\ell\\). Substitute into the momentum balance and put \\(w=v^2\\).</p>\n<div>\\[(L_0-\\ell)w&#x27;-2w=-2gL_0(\\ell/\\ell_0-1).\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Коэффициенты и конечность скорости",
+            "en": "Coefficients and regularity"
+          },
+          "body": {
+            "ru": "<p>Ищем частное решение \\(w=A\\ell+B\\). Приравнивание коэффициентов при \\(\\ell\\) и свободных членов даёт значения ниже. Общее решение могло бы дополнительно содержать \\(C/(L_0-\\ell)^2\\). При отпускании масса пачки стремится к нулю, и её начальный импульс должен исчезать, поэтому \\(C=0\\).</p>",
+            "en": "<p>Seek a particular solution \\(w=A\\ell+B\\). Equating the linear and constant coefficients gives the values below. The homogeneous term would be \\(C/(L_0-\\ell)^2\\). At release the bundle has vanishing mass and must have vanishing momentum, hence \\(C=0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_{\\rm I}(\\ell)=\\sqrt{A\\ell+B},\\qquad A=\\frac{2g}{3\\alpha},\\qquad B=gL_0\\!\\left(\\frac{1}{3\\alpha}-1\\right).\\]</div>",
+        "en": "<div>\\[v_{\\rm I}(\\ell)=\\sqrt{A\\ell+B},\\qquad A=\\frac{2g}{3\\alpha},\\qquad B=gL_0\\!\\left(\\frac{1}{3\\alpha}-1\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B3",
+      "max": 0.5,
+      "title": {
+        "ru": "Минимальная скорость",
+        "en": "Minimum speed"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Скорость перед последним захватом",
+            "en": "Speed before the final contact"
+          },
+          "body": {
+            "ru": "<p>Коэффициент \\(A&gt;0\\), а \\(\\ell\\) уменьшается. В конце непрерывной стадии скорость достигает \\(\\sqrt{A\\ell_0+B}\\). Нижний пакет массы \\(\\alpha M\\) всё ещё неподвижен.</p>",
+            "en": "<p>Since \\(A&gt;0\\) and \\(\\ell\\) decreases, the speed falls to \\(\\sqrt{A\\ell_0+B}\\) at the end of the continuous stage. The lower bundle of mass \\(\\alpha M\\) is still stationary.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Неупругий захват",
+            "en": "Inelastic capture"
+          },
+          "body": {
+            "ru": "<p>За мгновение присоединения нижних витков импульс сохраняется. Затем вся пружина ускоряется вниз, поэтому минимум достигается сразу после присоединения.</p>",
+            "en": "<p>Momentum is conserved across the instantaneous final capture. The fully closed spring accelerates downwards afterwards, so the minimum occurs just after capture.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_{\\min}=(1-\\alpha)\\sqrt{A\\alpha L_0+B}.\\]</div>",
+        "en": "<div>\\[v_{\\min}=(1-\\alpha)\\sqrt{A\\alpha L_0+B}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-C1",
+      "max": 1.5,
+      "title": {
+        "ru": "Потеря механической энергии",
+        "en": "Loss of mechanical energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Движение центра масс",
+            "en": "Centre-of-mass energy"
+          },
+          "body": {
+            "ru": "<p>Уменьшение гравитационной энергии в точности равно приросту кинетической энергии центра масс. Перед ударом относительного движения витков уже нет. Следовательно, \\(Q\\) равно начальной энергии упругой деформации.</p>",
+            "en": "<p>The loss of gravitational energy equals the gain in centre-of-mass kinetic energy. There is no internal motion just before impact. Hence the energy dissipated equals the initial elastic energy.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.8,
+          "label": {
+            "ru": "Энергия раскрытых витков",
+            "en": "Energy of the open turns"
+          },
+          "body": {
+            "ru": "<p>У нижней части отсутствует дополнительная деформация. В открытой части A2 с \\(dy/d\\ell=\\ell/\\ell_0\\) даёт интеграл энергии.</p>\n<div>\\[Q=\\frac{kL_0}{2}\\int_{\\ell_0}^{L_0}\\left(\\frac{\\ell^2}{\\ell_0^2}-1\\right)d\\ell.\\]</div>",
+            "en": "<p>The bottom remains at its natural length. In the open part, A2 and \\(dy/d\\ell=\\ell/\\ell_0\\) give the stored energy integral.</p>\n<div>\\[Q=\\frac{kL_0}{2}\\int_{\\ell_0}^{L_0}\\left(\\frac{\\ell^2}{\\ell_0^2}-1\\right)d\\ell.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.3,
+          "label": {
+            "ru": "Подстановка параметров",
+            "en": "Substitution"
+          },
+          "body": {
+            "ru": "<p>Вычислим первообразную \\(\\ell^3/(3\\ell_0^2)-\\ell\\) на границах и заменим \\(\\ell_0=\\alpha L_0\\), \\(kL_0=\\alpha Mg\\).</p>",
+            "en": "<p>Evaluate \\(\\ell^3/(3\\ell_0^2)-\\ell\\) at the two limits and put \\(\\ell_0=\\alpha L_0\\), \\(kL_0=\\alpha Mg\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[Q=\\frac{MgL_0}{6\\alpha}(1-\\alpha)^2(1+2\\alpha).\\]</div>",
+        "en": "<div>\\[Q=\\frac{MgL_0}{6\\alpha}(1-\\alpha)^2(1+2\\alpha).\\]</div>"
+      }
+    }
+  ]
+}

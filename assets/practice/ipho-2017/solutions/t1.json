@@ -1,0 +1,477 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Тёмная материя",
+    "en": "Dark matter"
+  },
+  "max": 10.0,
+  "sourcePdf": "/assets/practice/ipho-2017/IPhO_2017_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-A1",
+      "max": 1.0,
+      "title": {
+        "ru": "Энергия однородного скопления",
+        "en": "Binding energy of a uniform cluster"
+      },
+      "steps": [
+        {
+          "id": "a1-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Энергия одного слоя",
+            "en": "Energy of one shell"
+          },
+          "body": {
+            "ru": "<p>Собираем шар из тонких сферических слоёв. Чтобы перенести массу \\(dm\\) из бесконечности на радиус \\(r\\), нужно совершить работу \\(dU=-GM(r)\\,dm/r\\).</p>",
+            "en": "<p>Build the sphere shell by shell. Bringing an element \\(dm\\) from infinity to radius \\(r\\) changes the energy by \\(dU=-GM(r)\\,dm/r\\).</p>"
+          }
+        },
+        {
+          "id": "a1-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Интеграл по радиусу",
+            "en": "Radial integral"
+          },
+          "body": {
+            "ru": "<p>При однородной плотности \\(M(r)=M(r/R)^3\\), а \\(dm=3Mr^2dr/R^3\\). Поэтому </p><div>\\[U=-\\frac{3GM^2}{R^6}\\int_0^R r^4\\,dr.\\]</div>",
+            "en": "<p>Uniform density gives \\(M(r)=M(r/R)^3\\) and \\(dm=3Mr^2dr/R^3\\). Hence </p><div>\\[U=-\\frac{3GM^2}{R^6}\\int_0^R r^4\\,dr.\\]</div>"
+          }
+        },
+        {
+          "id": "a1-3",
+          "points": 0.2,
+          "label": {
+            "ru": "Полная энергия",
+            "en": "Total energy"
+          },
+          "body": {
+            "ru": "<p>Интеграл равен \\(R^5/5\\). Отрицательный знак означает, что при сборке выделяется энергия.</p>",
+            "en": "<p>The integral is \\(R^5/5\\). The negative sign expresses the release of energy during assembly.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[U=-\\frac{3GM^2}{5R}.\\]</div>",
+        "en": "<div>\\[U=-\\frac{3GM^2}{5R}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A2",
+      "max": 0.5,
+      "title": {
+        "ru": "Скорость удаления скопления",
+        "en": "Mean recession velocity"
+      },
+      "steps": [
+        {
+          "id": "a2-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Доплеровский сдвиг",
+            "en": "Doppler shift"
+          },
+          "body": {
+            "ru": "<p>При удалении галактики частота уменьшается. В первом порядке по скорости \\(V_{ri}/c=1-f_i/f_0\\).</p>",
+            "en": "<p>Recession lowers the observed frequency. To first order in velocity, \\(V_{ri}/c=1-f_i/f_0\\).</p>"
+          }
+        },
+        {
+          "id": "a2-2",
+          "points": 0.3,
+          "label": {
+            "ru": "Средняя частота линии",
+            "en": "Mean line frequency"
+          },
+          "body": {
+            "ru": "<p>Внутренние движения исчезают при усреднении. Обозначим \\(\\bar f=N^{-1}\\sum_i f_i\\) и усредним доплеровскую скорость.</p>",
+            "en": "<p>The mean removes internal motions. With \\(\\bar f=N^{-1}\\sum_i f_i\\), average the Doppler velocity over the galaxies.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V_{cr}=c\\left(1-\\frac{\\bar f}{f_0}\\right).\\]</div>",
+        "en": "<div>\\[V_{cr}=c\\left(1-\\frac{\\bar f}{f_0}\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A3",
+      "max": 1.5,
+      "title": {
+        "ru": "Разброс скоростей и энергия галактики",
+        "en": "Velocity dispersion and kinetic energy"
+      },
+      "steps": [
+        {
+          "id": "a3-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Три компоненты скорости",
+            "en": "Three velocity components"
+          },
+          "body": {
+            "ru": "<p>Относительно центра скопления лучевая скорость равна \\(u_i=V_{ri}-V_{cr}\\). Изотропия означает равенство трёх средних квадратов проекций, так что \\(v_{\\rm rms}^2=3\\langle u^2\\rangle\\).</p>",
+            "en": "<p>The line-of-sight speed in the cluster frame is \\(u_i=V_{ri}-V_{cr}\\). Isotropy makes the three component variances equal, giving \\(v_{\\rm rms}^2=3\\langle u^2\\rangle\\).</p>"
+          }
+        },
+        {
+          "id": "a3-2",
+          "points": 0.7,
+          "label": {
+            "ru": "Дисперсия частот",
+            "en": "Frequency variance"
+          },
+          "body": {
+            "ru": "<p>Из доплеровского сдвига \\(u_i=c(\\bar f-f_i)/f_0\\). Возводим разность в квадрат до усреднения. Это сохраняет вклад галактик по обе стороны от центра линии.</p>",
+            "en": "<p>The Doppler shift gives \\(u_i=c(\\bar f-f_i)/f_0\\). Squaring before averaging keeps the contributions from both sides of the line centre.</p>"
+          }
+        },
+        {
+          "id": "a3-3",
+          "points": 0.3,
+          "label": {
+            "ru": "Средняя энергия",
+            "en": "Mean kinetic energy"
+          },
+          "body": {
+            "ru": "<p>Для средней массы галактики вместе с её тёмной материей \\(m\\) усреднение \\(mv^2/2\\) непосредственно даёт искомую энергию в системе скопления.</p>",
+            "en": "<p>Averaging \\(mv^2/2\\) gives the energy per galaxy of mean mass \\(m\\) including its associated dark matter in the cluster frame.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_{\\rm rms}=\\frac c{f_0}\\sqrt{\\frac3N\\sum_{i=1}^{N}(f_i-\\bar f)^2},\\qquad \\bar K=\\frac12mv_{\\rm rms}^2.\\]</div>",
+        "en": "<div>\\[v_{\\rm rms}=\\frac c{f_0}\\sqrt{\\frac3N\\sum_{i=1}^{N}(f_i-\\bar f)^2},\\qquad \\bar K=\\frac12mv_{\\rm rms}^2.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A4",
+      "max": 1.7,
+      "title": {
+        "ru": "Теорема вириала",
+        "en": "Virial theorem"
+      },
+      "steps": [
+        {
+          "id": "a4-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Производная вириала",
+            "en": "Differentiate the virial"
+          },
+          "body": {
+            "ru": "<p>По правилу произведения для \\(\\Gamma=\\sum_i\\mathbf p_i\\cdot\\mathbf r_i\\) получаем </p><div>\\[\\dot\\Gamma=2K+\\sum_i\\mathbf F_i\\cdot\\mathbf r_i.\\]</div>",
+            "en": "<p>Differentiating each term of \\(\\Gamma=\\sum_i\\mathbf p_i\\cdot\\mathbf r_i\\) gives </p><div>\\[\\dot\\Gamma=2K+\\sum_i\\mathbf F_i\\cdot\\mathbf r_i.\\]</div>"
+          }
+        },
+        {
+          "id": "a4-2",
+          "points": 0.9,
+          "label": {
+            "ru": "Вклад пары частиц",
+            "en": "Contribution of a pair"
+          },
+          "body": {
+            "ru": "<p>Силы каждой пары противоположны. Их совместный вклад равен \\(\\mathbf F_{ij}\\cdot(\\mathbf r_i-\\mathbf r_j)=-Gm_im_j/r_{ij}\\). При суммировании по различным парам получается потенциальная энергия \\(U\\).</p>",
+            "en": "<p>The two forces within each pair are opposite. Together they contribute \\(\\mathbf F_{ij}\\cdot(\\mathbf r_i-\\mathbf r_j)=-Gm_im_j/r_{ij}\\). Summing once over pairs yields the potential energy \\(U\\).</p>"
+          }
+        },
+        {
+          "id": "a4-3",
+          "points": 0.2,
+          "label": {
+            "ru": "Усреднение по времени",
+            "en": "Time average"
+          },
+          "body": {
+            "ru": "<p>Для ограниченной системы средняя производная вириала равна нулю. Значит \\(2\\langle K\\rangle_t+\\langle U\\rangle_t=0\\).</p>",
+            "en": "<p>For a bound system the time-averaged virial derivative vanishes. Thus \\(2\\langle K\\rangle_t+\\langle U\\rangle_t=0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\gamma=\\tfrac12.\\]</div>",
+        "en": "<div>\\[\\gamma=\\tfrac12.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A5",
+      "max": 0.5,
+      "title": {
+        "ru": "Масса тёмного вещества",
+        "en": "Dark mass of the cluster"
+      },
+      "steps": [
+        {
+          "id": "a5-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Динамическая масса",
+            "en": "Dynamical mass"
+          },
+          "body": {
+            "ru": "<p>Оба компонента имеют одинаковый разброс скоростей, поэтому \\(2K=Mv_{\\rm rms}^2\\). Подставив энергию однородного шара в соотношение вириала, получаем \\(M=5Rv_{\\rm rms}^2/(3G)\\).</p>",
+            "en": "<p>Both components have the same velocity dispersion, so \\(2K=Mv_{\\rm rms}^2\\). Using the uniform-sphere energy in the virial relation gives \\(M=5Rv_{\\rm rms}^2/(3G)\\).</p>"
+          }
+        },
+        {
+          "id": "a5-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Исключение видимой массы",
+            "en": "Subtract the visible mass"
+          },
+          "body": {
+            "ru": "<p>Видимые галактики дают суммарную массу \\(Nm_g\\). Разность между динамической и видимой массой относится к тёмному веществу.</p>",
+            "en": "<p>The visible galaxies account for \\(Nm_g\\). The dark component supplies the difference between this and the dynamical mass.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[M_{\\rm dm}=\\frac{5Rv_{\\rm rms}^2}{3G}-Nm_g.\\]</div>",
+        "en": "<div>\\[M_{\\rm dm}=\\frac{5Rv_{\\rm rms}^2}{3G}-Nm_g.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B1",
+      "max": 0.8,
+      "title": {
+        "ru": "Вращение без тёмной материи",
+        "en": "Rotation supported by stars alone"
+      },
+      "steps": [
+        {
+          "id": "b1-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Круговая орбита",
+            "en": "Circular orbit"
+          },
+          "body": {
+            "ru": "<p>Сферические слои снаружи орбиты не создают поля внутри. Для массы \\(M(r)\\) внутри орбиты условие кругового движения даёт \\(v^2=GM(r)/r\\).</p>",
+            "en": "<p>Exterior spherical shells exert no net force. If \\(M(r)\\) is the enclosed mass, a circular orbit requires \\(v^2=GM(r)/r\\).</p>"
+          }
+        },
+        {
+          "id": "b1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Внутренняя и внешняя области",
+            "en": "Inner and outer branches"
+          },
+          "body": {
+            "ru": "<p>Внутри видимого края \\(M(r)=4\\pi nm_sr^3/3\\). За краем \\(M(r)=M(R_g)\\), поскольку вклад редких пробных звёзд пренебрежимо мал.</p>",
+            "en": "<p>Within the visible radius, \\(M(r)=4\\pi nm_sr^3/3\\). Beyond it \\(M(r)=M(R_g)\\) because the tracer stars carry negligible mass.</p>"
+          }
+        },
+        {
+          "id": "b1-3",
+          "points": 0.1,
+          "label": {
+            "ru": "Вид кривой",
+            "en": "Shape of the curve"
+          },
+          "body": {
+            "ru": "<p>Скорость линейно растёт до \\(R_g\\), а затем непрерывно переходит в убывающую ветвь \\(v\\propto r^{-1/2}\\).</p><figure><img src=\"/assets/practice/ipho-2017/figures/s1f1.png\" alt=\"Кривая при постоянной плотности звёзд и отсутствии гало.\" style=\"width:min(100%,370px)\" loading=\"lazy\"><figcaption>Кривая при постоянной плотности звёзд и отсутствии гало.</figcaption></figure>",
+            "en": "<p>The speed rises linearly to \\(R_g\\) and joins continuously to a decreasing \\(v\\propto r^{-1/2}\\) branch.</p><figure><img src=\"/assets/practice/ipho-2017/figures/s1f1.png\" alt=\"Rotation curve for a uniform stellar sphere without a halo.\" style=\"width:min(100%,370px)\" loading=\"lazy\"><figcaption>Rotation curve for a uniform stellar sphere without a halo.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v(r)=\\sqrt{\\frac{4\\pi Gnm_s}{3}}\\begin{cases}r,&amp;r\\le R_g,\\\\ \\sqrt{R_g^3/r},&amp;r&gt;R_g.\\end{cases}\\]</div>",
+        "en": "<div>\\[v(r)=\\sqrt{\\frac{4\\pi Gnm_s}{3}}\\begin{cases}r,&amp;r\\le R_g,\\\\ \\sqrt{R_g^3/r},&amp;r&gt;R_g.\\end{cases}\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B2",
+      "max": 0.5,
+      "title": {
+        "ru": "Масса внутри видимого радиуса",
+        "en": "Mass inside the visible edge"
+      },
+      "steps": [
+        {
+          "id": "b2-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Скорость у края",
+            "en": "Speed at the edge"
+          },
+          "body": {
+            "ru": "<p>При \\(r=R_g\\) на пробную звезду действует всё заключённое внутри вещество. Приравниваем ускорения \\(v_0^2/R_g=Gm_R/R_g^2\\).</p>",
+            "en": "<p>At \\(R_g\\) the tracer feels all the enclosed mass. Equating its centripetal and gravitational accelerations gives \\(v_0^2/R_g=Gm_R/R_g^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[m_R=\\frac{v_0^2R_g}{G}.\\]</div>",
+        "en": "<div>\\[m_R=\\frac{v_0^2R_g}{G}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B3",
+      "max": 1.5,
+      "title": {
+        "ru": "Профиль тёмного гало",
+        "en": "Density profile of the halo"
+      },
+      "steps": [
+        {
+          "id": "b3-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Масса по кривой вращения",
+            "en": "Mass from the rotation curve"
+          },
+          "body": {
+            "ru": "<p>Зависимость \\(M=rv^2/G\\) переводит каждую ветвь наблюдаемой кривой в распределение массы. Внутри \\(M=v_0^2r^3/(GR_g^2)\\), снаружи \\(M=v_0^2r/G\\).</p>",
+            "en": "<p>Use \\(M=rv^2/G\\) on each measured branch. The inner mass is \\(M=v_0^2r^3/(GR_g^2)\\) and the outer mass is \\(M=v_0^2r/G\\).</p>"
+          }
+        },
+        {
+          "id": "b3-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Видимая область",
+            "en": "Stellar region"
+          },
+          "body": {
+            "ru": "<p>Масса тонкого сферического слоя равна \\(4\\pi r^2\\rho_{\\rm tot}\\,dr\\). Дифференцируя внутреннюю ветвь, находим постоянную полную плотность. Из неё нужно вычесть звёздную плотность \\(nm_s\\).</p>",
+            "en": "<p>A thin shell contains \\(4\\pi r^2\\rho_{\\rm tot}\\,dr\\). Differentiating the inner mass gives a uniform total density. Subtract the stellar contribution \\(nm_s\\).</p>"
+          }
+        },
+        {
+          "id": "b3-3",
+          "points": 0.5,
+          "label": {
+            "ru": "Внешняя область",
+            "en": "Exterior halo"
+          },
+          "body": {
+            "ru": "<p>За видимым краем \\(dM/dr=v_0^2/G\\) и почти всё вещество тёмное. Постоянная масса на единицу радиуса соответствует плотности, убывающей как \\(r^{-2}\\).</p>",
+            "en": "<p>Outside the edge \\(dM/dr=v_0^2/G\\), and almost all the mass is dark. Constant mass per unit radius means the density falls as \\(r^{-2}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\rho_{\\rm dm}(r)=\\begin{cases}\\dfrac{3v_0^2}{4\\pi G R_g^2}-nm_s,&amp;r&lt;R_g,\\\\[4pt]\\dfrac{v_0^2}{4\\pi Gr^2},&amp;r\\ge R_g.\\end{cases}\\]</div>",
+        "en": "<div>\\[\\rho_{\\rm dm}(r)=\\begin{cases}\\dfrac{3v_0^2}{4\\pi G R_g^2}-nm_s,&amp;r&lt;R_g,\\\\[4pt]\\dfrac{v_0^2}{4\\pi Gr^2},&amp;r\\ge R_g.\\end{cases}\\]</div>"
+      }
+    },
+    {
+      "id": "T1-C1",
+      "max": 0.5,
+      "title": {
+        "ru": "Гидростатическое равновесие",
+        "en": "Hydrostatic balance"
+      },
+      "steps": [
+        {
+          "id": "c1-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Силы на тонкий слой",
+            "en": "Forces on a thin element"
+          },
+          "body": {
+            "ru": "<p>Выделим элемент площади \\(S\\) и толщины \\(dr\\). Вес равен \\(nm_pS\\,dr\\,Gm'(r)/r^2\\) и направлен к центру. Его уравновешивает разность сил давления \\(-S\\,dP\\).</p><figure><img src=\"/assets/practice/ipho-2017/figures/s1f2.png\" alt=\"Давление на грани элемента газа.\" style=\"width:min(100%,260px)\" loading=\"lazy\"><figcaption>Давление на грани элемента газа.</figcaption></figure>",
+            "en": "<p>Take an element of area \\(S\\) and thickness \\(dr\\). Its weight \\(nm_pS\\,dr\\,Gm'(r)/r^2\\) points inward and balances the outward pressure force \\(-S\\,dP\\).</p><figure><img src=\"/assets/practice/ipho-2017/figures/s1f2.png\" alt=\"Pressure on the faces of a gas element.\" style=\"width:min(100%,260px)\" loading=\"lazy\"><figcaption>Pressure on the faces of a gas element.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "c1-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Градиент давления",
+            "en": "Pressure gradient"
+          },
+          "body": {
+            "ru": "<p>Сокращаем площадь и делим на толщину. Отрицательный знак соответствует убыванию давления к периферии.</p>",
+            "en": "<p>Cancel the area and divide by the thickness. The negative sign corresponds to an outward decrease in pressure.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{dP}{dr}=-n(r)m_p\\frac{Gm'(r)}{r^2}.\\]</div>",
+        "en": "<div>\\[\\frac{dP}{dr}=-n(r)m_p\\frac{Gm'(r)}{r^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-C2",
+      "max": 0.5,
+      "title": {
+        "ru": "Масса по температуре и концентрации",
+        "en": "Mass from density and temperature"
+      },
+      "steps": [
+        {
+          "id": "c2-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Производная давления газа",
+            "en": "Gas pressure derivative"
+          },
+          "body": {
+            "ru": "<p>Из \\(P=nk_BT\\) следует \\(dP/dr=k_B(T\\,dn/dr+n\\,dT/dr)\\). Уравнение равновесия из C1 теперь определяет заключённую массу в каждой точке наблюдаемого профиля.</p>",
+            "en": "<p>Since \\(P=nk_BT\\), the pressure gradient is \\(dP/dr=k_B(T\\,dn/dr+n\\,dT/dr)\\). Use C1 to solve for the enclosed mass at each radius.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[m'(r)=-\\frac{k_Br^2}{Gm_p}\\left(\\frac{dT}{dr}+\\frac{T}{n}\\frac{dn}{dr}\\right).\\]</div>",
+        "en": "<div>\\[m'(r)=-\\frac{k_Br^2}{Gm_p}\\left(\\frac{dT}{dr}+\\frac{T}{n}\\frac{dn}{dr}\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T1-C3",
+      "max": 1.0,
+      "title": {
+        "ru": "Гало изотермической галактики",
+        "en": "Halo of an isothermal galaxy"
+      },
+      "steps": [
+        {
+          "id": "c3-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Наклон профиля газа",
+            "en": "Logarithmic gas slope"
+          },
+          "body": {
+            "ru": "<p>При постоянной \\(T_0\\) остаётся только градиент концентрации. Заданный профиль даёт \\(d\\ln n/dr=-1/r-2/(r+\\beta)\\), откуда </p><div>\\[m'(r)=\\frac{k_BT_0}{Gm_p}\\frac{r(3r+\\beta)}{r+\\beta}.\\]</div>",
+            "en": "<p>At fixed \\(T_0\\) only the density gradient remains. The given profile has \\(d\\ln n/dr=-1/r-2/(r+\\beta)\\), and hence </p><div>\\[m'(r)=\\frac{k_BT_0}{Gm_p}\\frac{r(3r+\\beta)}{r+\\beta}.\\]</div>"
+          }
+        },
+        {
+          "id": "c3-2",
+          "points": 0.3,
+          "label": {
+            "ru": "Полная и газовая плотности",
+            "en": "Total and gas densities"
+          },
+          "body": {
+            "ru": "<p>Отношение прироста заключённой массы к объёму оболочки даёт \\(\\rho_{\\rm tot}=(4\\pi r^2)^{-1}dm'(r)/dr\\). Газ вносит \\(\\rho_g=m_p n(r)\\).</p>",
+            "en": "<p>Dividing the change of enclosed mass by shell volume gives \\(\\rho_{\\rm tot}=(4\\pi r^2)^{-1}dm'(r)/dr\\). The gas contributes \\(\\rho_g=m_pn(r)\\).</p>"
+          }
+        },
+        {
+          "id": "c3-3",
+          "points": 0.3,
+          "label": {
+            "ru": "Вычитание газа",
+            "en": "Subtract the gas"
+          },
+          "body": {
+            "ru": "<p>Производная функции \\(r(3r+\\beta)/(r+\\beta)\\) равна \\((3r^2+6r\\beta+\\beta^2)/(r+\\beta)^2\\). Вычитаем плотность газа из полной.</p>",
+            "en": "<p>The derivative of \\(r(3r+\\beta)/(r+\\beta)\\) is \\((3r^2+6r\\beta+\\beta^2)/(r+\\beta)^2\\). Subtract the gas from the total density.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\rho_{\\rm dm}=\\frac{k_BT_0(3r^2+6r\\beta+\\beta^2)}{4\\pi Gm_pr^2(r+\\beta)^2}-\\frac{\\alpha m_p}{r(r+\\beta)^2}.\\]</div>",
+        "en": "<div>\\[\\rho_{\\rm dm}=\\frac{k_BT_0(3r^2+6r\\beta+\\beta^2)}{4\\pi Gm_pr^2(r+\\beta)^2}-\\frac{\\alpha m_p}{r(r+\\beta)^2}.\\]</div>"
+      }
+    }
+  ]
+}

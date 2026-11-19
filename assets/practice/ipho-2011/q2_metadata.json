@@ -1,0 +1,67 @@
+{
+  "id": "T2",
+  "title": "Заряженный мыльный пузырь",
+  "points": 10,
+  "sourceFile": "IPhO_2011_T2_EN.pdf",
+  "sourcePages": [
+    1,
+    2
+  ],
+  "sections": [
+    {
+      "id": "T2",
+      "title": "Заряженный мыльный пузырь",
+      "points": 10
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-2.1",
+      "label": "2.1",
+      "points": 1.7
+    },
+    {
+      "id": "T2-2.2",
+      "label": "2.2",
+      "points": 0.4
+    },
+    {
+      "id": "T2-2.3",
+      "label": "2.3",
+      "points": 2
+    },
+    {
+      "id": "T2-2.4",
+      "label": "2.4",
+      "points": 1.6
+    },
+    {
+      "id": "T2-2.5",
+      "label": "2.5",
+      "points": 0.4
+    },
+    {
+      "id": "T2-2.6",
+      "label": "2.6",
+      "points": 2
+    },
+    {
+      "id": "T2-2.7",
+      "label": "2.7",
+      "points": 0.7
+    },
+    {
+      "id": "T2-2.8",
+      "label": "2.8",
+      "points": 1.2
+    }
+  ],
+  "figures": [],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "published-subpart-maxima-and-grouped-official-criteria",
+  "solutionData": "/assets/practice/ipho-2011/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2011/IPhO_2011_S2_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2011/IPhO_2011_M2_EN.pdf"
+}

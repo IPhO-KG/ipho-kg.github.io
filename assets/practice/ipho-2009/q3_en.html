@@ -1,0 +1,46 @@
+<article class="exam-problem" id="T3" lang="en"><h2>Question T3 [10 pts]. Why are stars so large?</h2>
+<p>Most stars shine by fusing hydrogen into helium in their cores. Estimate the temperature and pressure this requires and how they constrain a star&#x27;s radius and mass. Give numerical results to two significant figures.</p>
+<figure><img src="/assets/practice/ipho-2009/figures/t3-f1.png" loading="lazy" alt="Fig. 1. Nuclear fusion in the core powers the Sun." style="max-width:min(100%,355px)"><figcaption>Fig. 1. Nuclear fusion in the core powers the Sun.</figcaption></figure>
+<p>Use the following constants and solar parameters.</p>
+<table class="paper-table"><tbody>
+<tr><th scope="row">Gravitational constant</th><td>\(G=6.7\cdot10^{-11}\,\mathrm{m^3\,kg^{-1}\,s^{-2}}\)</td></tr>
+<tr><th scope="row">Boltzmann constant</th><td>\(k=1.4\cdot10^{-23}\,\mathrm{J\,K^{-1}}\)</td></tr>
+<tr><th scope="row">Planck constant</th><td>\(h=6.6\cdot10^{-34}\,\mathrm{J\,s}\)</td></tr>
+<tr><th scope="row">Proton mass</th><td>\(m_p=1.7\cdot10^{-27}\,\mathrm{kg}\)</td></tr>
+<tr><th scope="row">Electron mass</th><td>\(m_e=9.1\cdot10^{-31}\,\mathrm{kg}\)</td></tr>
+<tr><th scope="row">Elementary charge</th><td>\(q=1.6\cdot10^{-19}\,\mathrm C\)</td></tr>
+<tr><th scope="row">Vacuum permittivity</th><td>\(\varepsilon_0=8.9\cdot10^{-12}\,\mathrm{C^2\,N^{-1}\,m^{-2}}\)</td></tr>
+<tr><th scope="row">Solar radius</th><td>\(R_{\odot}=7.0\cdot10^8\,\mathrm m\)</td></tr>
+<tr><th scope="row">Solar mass</th><td>\(M_{\odot}=2.0\cdot10^{30}\,\mathrm{kg}\)</td></tr>
+</tbody></table>
+<section id="T3-1"><h3 class="paper-part-heading"><span class="paper-part-meta"><span class="paper-id">1</span> <span class="paper-points">1.5 pts</span></span> <span class="paper-part-name">Classical temperature estimate</span></h3>
+<p>Model the star as an ideal gas of pure ionised hydrogen. Two point protons approach each other head-on, each at the proton rms speed \(v_{\rm rms}\). They must overcome Coulomb repulsion and reach a separation \(d_c=10^{-15}\,\mathrm m\) before the attractive strong interaction dominates.</p>
+<div class="exam-question" id="T3-1a" data-label="1a" data-points="1.5"><strong class="paper-question-label"><span class="paper-id">1a</span> <span class="paper-points">1.5 pts</span></strong> At what temperature \(T_c\) is the distance of closest approach equal to \(d_c\)?</div>
+</section><section id="T3-2"><h3 class="paper-part-heading"><span class="paper-part-meta"><span class="paper-id">2</span> <span class="paper-points">2 pts</span></span> <span class="paper-part-name">Hydrostatic cross-check</span></h3>
+<p>In equilibrium the pressure difference across a thin gas layer supports its weight. At radius \(r\) the enclosed mass is \(M_r\) and the local gas density is \(\rho_r\).</p>
+<div>\[\frac{\Delta P}{\Delta r}=-\frac{GM_r\rho_r}{r^2}.\]</div>
+<figure><img src="/assets/practice/ipho-2009/figures/t3-f2.png" loading="lazy" alt="Fig. 2. Pressure and gravity in a gas layer." style="max-width:min(100%,330px)"><figcaption>Fig. 2. Pressure and gravity in a gas layer.</figcaption></figure>
+<p>For an order-of-magnitude estimate take \(\Delta P=P_{\rm surf}-P_c\simeq-P_c\), \(r\simeq\Delta r\simeq R\), \(M_r\simeq M\) and \(\rho_r\simeq\rho_c\). Here \(M,R\) are the stellar mass and radius, and the subscript \(c\) denotes the centre. Use the ideal-gas equation of state.</p>
+<div class="exam-question" id="T3-2a" data-label="2a" data-points="0.5"><strong class="paper-question-label"><span class="paper-id">2a</span> <span class="paper-points">0.5 pts</span></strong> Express \(T_c\) in terms of \(M\), \(R\) and physical constants.</div>
+<div class="exam-question" id="T3-2b" data-label="2b" data-points="0.5"><strong class="paper-question-label"><span class="paper-id">2b</span> <span class="paper-points">0.5 pts</span></strong> Write \(M/R\) using \(T_c\) and physical constants.</div>
+<div class="exam-question" id="T3-2c" data-label="2c" data-points="0.5"><strong class="paper-question-label"><span class="paper-id">2c</span> <span class="paper-points">0.5 pts</span></strong> Insert the temperature from 1a and calculate \(M/R\).</div>
+<div class="exam-question" id="T3-2d" data-label="2d" data-points="0.5"><strong class="paper-question-label"><span class="paper-id">2d</span> <span class="paper-points">0.5 pts</span></strong> Calculate \(M_{\odot}/R_{\odot}\) and compare it with 2c.</div>
+</section><section id="T3-3"><h3 class="paper-part-heading"><span class="paper-part-meta"><span class="paper-id">3</span> <span class="paper-points">2 pts</span></span> <span class="paper-part-name">Quantum temperature estimate</span></h3>
+<p>Include the wave character of protons. In this model fusion becomes possible when their wave packets overlap at closest approach. Set \(d_c=\lambda_p/\sqrt2\), where \(\lambda_p\) is the de Broglie wavelength at speed \(v_{\rm rms}\).</p>
+<div class="exam-question" id="T3-3a" data-label="3a" data-points="1.0"><strong class="paper-question-label"><span class="paper-id">3a</span> <span class="paper-points">1 pts</span></strong> Obtain a new estimate for \(T_c\) in terms of physical constants only.</div>
+<div class="exam-question" id="T3-3b" data-label="3b" data-points="0.5"><strong class="paper-question-label"><span class="paper-id">3b</span> <span class="paper-points">0.5 pts</span></strong> Calculate the new temperature.</div>
+<div class="exam-question" id="T3-3c" data-label="3c" data-points="0.5"><strong class="paper-question-label"><span class="paper-id">3c</span> <span class="paper-points">0.5 pts</span></strong> Insert 3b into 2b, calculate \(M/R\) and compare it with the solar ratio.</div>
+</section><section id="T3-4"><h3 class="paper-part-heading"><span class="paper-part-meta"><span class="paper-id">4</span> <span class="paper-points">0.5 pts</span></span> <span class="paper-part-name">Stellar mass-to-radius ratio</span></h3>
+<p>For hydrogen-burning main-sequence stars the model roughly reproduces their characteristic mass-to-radius ratio.</p>
+<div class="exam-question" id="T3-4a" data-label="4a" data-points="0.5"><strong class="paper-question-label"><span class="paper-id">4a</span> <span class="paper-points">0.5 pts</span></strong> Show that the predicted \(M/R\) for hydrogen fusion contains only physical constants. Write this expression.</div>
+</section><section id="T3-5"><h3 class="paper-part-heading"><span class="paper-part-meta"><span class="paper-id">5</span> <span class="paper-points">3.5 pts</span></span> <span class="paper-part-name">The smallest hydrogen-burning star</span></h3>
+<p>At fixed \(M/R\), shrinking the radius increases the density. The electron gas becomes degenerate when the electron wavelength is comparable to the particle spacing. For this estimate take a uniform density, use \(T_c\) throughout and neglect the electron mass when computing the mass of the star.</p>
+<div class="exam-question" id="T3-5a" data-label="5a" data-points="0.5"><strong class="paper-question-label"><span class="paper-id">5a</span> <span class="paper-points">0.5 pts</span></strong> Find the mean electron number density \(n_e\).</div>
+<div class="exam-question" id="T3-5b" data-label="5b" data-points="0.5"><strong class="paper-question-label"><span class="paper-id">5b</span> <span class="paper-points">0.5 pts</span></strong> Find the characteristic electron spacing \(d_e\).</div>
+<div class="exam-question" id="T3-5c" data-label="5c" data-points="1.5"><strong class="paper-question-label"><span class="paper-id">5c</span> <span class="paper-points">1.5 pts</span></strong> Require \(d_e\ge\lambda_e/\sqrt2\) for nondegenerate electrons. Derive the minimum stellar radius.</div>
+<div class="exam-question" id="T3-5d" data-label="5d" data-points="0.5"><strong class="paper-question-label"><span class="paper-id">5d</span> <span class="paper-points">0.5 pts</span></strong> Calculate the radius in metres and in solar radii.</div>
+<div class="exam-question" id="T3-5e" data-label="5e" data-points="0.5"><strong class="paper-question-label"><span class="paper-id">5e</span> <span class="paper-points">0.5 pts</span></strong> Find the corresponding mass in kilograms and in solar masses.</div>
+</section><section id="T3-6"><h3 class="paper-part-heading"><span class="paper-part-meta"><span class="paper-id">6</span> <span class="paper-points">0.5 pts</span></span> <span class="paper-part-name">Helium fusion</span></h3>
+<p>A star that has exhausted the hydrogen in its core may fuse helium into heavier nuclei. A helium nucleus has charge \(2q\) and mass \(m_{\rm He}\simeq4m_p\).</p>
+<div class="exam-question" id="T3-6a" data-label="6a" data-points="0.5"><strong class="paper-question-label"><span class="paper-id">6a</span> <span class="paper-points">0.5 pts</span></strong> State the overlap condition for helium nuclei. Find their rms speed and the helium-fusion temperature in this model.</div>
+</section></article>

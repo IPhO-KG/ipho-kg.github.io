@@ -1,0 +1,426 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Гравитационная волна GW150914",
+    "en": "The gravitational wave GW150914"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2018/IPhO_2018_S1_EN.pdf",
+  "markingSchemePdf": "/assets/practice/ipho-2018/IPhO_2018_M1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-A1",
+      "max": 1.0,
+      "title": {
+        "ru": "Ускорение первой звезды",
+        "en": "Acceleration of the first star"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Направление силы",
+            "en": "Gravitational acceleration"
+          },
+          "body": {
+            "ru": "<p>Ускорение направлено от первой звезды ко второй. Векторный закон тяготения даёт</p>\n<div>\\[ \\ddot{\\mathbf r}_1=GM_2\\frac{\\mathbf r_2-\\mathbf r_1}{\\lvert\\mathbf r_2-\\mathbf r_1\\rvert^3}.\\]</div>",
+            "en": "<p>Gravity accelerates the first star towards the second. In vector form,</p>\n<div>\\[ \\ddot{\\mathbf r}_1=GM_2\\frac{\\mathbf r_2-\\mathbf r_1}{\\lvert\\mathbf r_2-\\mathbf r_1\\rvert^3}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Положение центра масс",
+            "en": "Centre-of-mass constraint"
+          },
+          "body": {
+            "ru": "<p>Из условия на центр масс находим \\(\\mathbf r_2=-(M_1/M_2)\\mathbf r_1\\). Поэтому вектор от первой звезды ко второй равен \\(-(M_1+M_2)\\mathbf r_1/M_2\\).</p>",
+            "en": "<p>The centre-of-mass condition gives \\(\\mathbf r_2=-(M_1/M_2)\\mathbf r_1\\). The displacement to the second star is thus \\(-(M_1+M_2)\\mathbf r_1/M_2\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Коэффициент в законе ускорения",
+            "en": "Coefficient in the force law"
+          },
+          "body": {
+            "ru": "<p>В числителе этот множитель входит в первой степени, в знаменателе — в третьей. После сокращения остаётся множитель \\(M_2^2/(M_1+M_2)^2\\) перед \\(GM_2\\).</p>",
+            "en": "<p>The displacement factor enters once in the numerator and three times in the denominator. Its net contribution is \\(M_2^2/(M_1+M_2)^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[n=3,\\qquad \\alpha=\\frac{GM_2^3}{(M_1+M_2)^2}.\\]</div>",
+        "en": "<div>\\[n=3,\\qquad \\alpha=\\frac{GM_2^3}{(M_1+M_2)^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A2",
+      "max": 1.0,
+      "title": {
+        "ru": "Энергия кругового движения",
+        "en": "Energy of circular motion"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Кинетическая энергия звёзд",
+            "en": "Kinetic energies"
+          },
+          "body": {
+            "ru": "<p>Обе звезды поворачиваются на один и тот же угол за одно и то же время. Их скорости равны \\(\\Omega r_1\\) и \\(\\Omega r_2\\), поэтому \\(A=\\Omega^2(M_1r_1^2+M_2r_2^2)/2\\).</p>",
+            "en": "<p>Both stars sweep out the same angle in the same time. Their speeds are \\(\\Omega r_1\\) and \\(\\Omega r_2\\), so \\(A=\\Omega^2(M_1r_1^2+M_2r_2^2)/2\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Приведённая масса",
+            "en": "Reduced mass"
+          },
+          "body": {
+            "ru": "<p>Заменим радиусы на \\(r_1=M_2L/M\\), \\(r_2=M_1L/M\\). Момент инерции системы относительно центра масс становится \\(M_1r_1^2+M_2r_2^2=\\mu L^2\\).</p>",
+            "en": "<p>Substitute \\(r_1=M_2L/M\\) and \\(r_2=M_1L/M\\). The moment of inertia about the centre of mass reduces to \\(M_1r_1^2+M_2r_2^2=\\mu L^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[A=\\frac12\\mu L^2\\Omega^2.\\]</div>",
+        "en": "<div>\\[A=\\frac12\\mu L^2\\Omega^2.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A3",
+      "max": 1.0,
+      "title": {
+        "ru": "Энергия связи",
+        "en": "Binding energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Условие круговой орбиты",
+            "en": "Circular orbit condition"
+          },
+          "body": {
+            "ru": "<p>Вторая звезда сообщает первой ускорение \\(\\Omega^2r_1=GM_2/L^2\\). Подстановка \\(r_1=M_2L/M\\) даёт \\(\\Omega^2L^3=GM\\).</p>",
+            "en": "<p>The gravitational acceleration of star 1 is \\(\\Omega^2r_1=GM_2/L^2\\). Inserting \\(r_1=M_2L/M\\) gives \\(\\Omega^2L^3=GM\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Сумма двух энергий",
+            "en": "Adding kinetic and potential energy"
+          },
+          "body": {
+            "ru": "<p>Кинетическая энергия равна \\(GM\\mu/(2L)\\), а потенциальная равна \\(-GM\\mu/L\\). Знак суммы соответствует связанному движению.</p>",
+            "en": "<p>The kinetic energy is \\(GM\\mu/(2L)\\) and the potential energy is \\(-GM\\mu/L\\). Their sum is negative, as expected for a bound orbit.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E=-\\frac{GM\\mu}{2L},\\qquad \\beta=-\\frac12.\\]</div>",
+        "en": "<div>\\[E=-\\frac{GM\\mu}{2L},\\qquad \\beta=-\\frac12.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B1",
+      "max": 1.0,
+      "title": {
+        "ru": "Компоненты квадрупольного момента",
+        "en": "Quadrupole components"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Координаты на орбите",
+            "en": "Orbital coordinates"
+          },
+          "body": {
+            "ru": "<p>Выберем ось \\(x\\) вдоль линии центров при \\(t=0\\) и зададим \\(\\phi=\\Omega t\\). Векторы двух звёзд равны \\(r_1(\\cos\\phi,\\sin\\phi)\\) и \\(-r_2(\\cos\\phi,\\sin\\phi)\\).</p>",
+            "en": "<p>Choose the initial line of centres along \\(x\\) and let \\(\\phi=\\Omega t\\). The position vectors are \\(r_1(\\cos\\phi,\\sin\\phi)\\) and \\(-r_2(\\cos\\phi,\\sin\\phi)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Массовые суммы",
+            "en": "Mass-weighted sums"
+          },
+          "body": {
+            "ru": "<p>Квадраты и произведения координат содержат общий множитель \\(\\sum M_A r_A^2=\\mu L^2\\). Например, \\(Q_{11}=\\mu L^2(3\\cos^2\\phi-1)/3\\), а \\(Q_{12}=\\mu L^2\\sin\\phi\\cos\\phi\\).</p>",
+            "en": "<p>Every coordinate product carries the common radial factor \\(\\sum M_A r_A^2=\\mu L^2\\). In particular, \\(Q_{11}=\\mu L^2(3\\cos^2\\phi-1)/3\\) and \\(Q_{12}=\\mu L^2\\sin\\phi\\cos\\phi\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.3,
+          "label": {
+            "ru": "Удвоение частоты",
+            "en": "Double-angle terms"
+          },
+          "body": {
+            "ru": "<p>Разложение квадратов через \\(\\cos2\\phi\\) даёт противоположные переменные части у \\(Q_{11}\\) и \\(Q_{22}\\). Компонента \\(Q_{33}\\) постоянна. Для остальных недиагональных пар \\(c_{ij}=0\\).</p>",
+            "en": "<p>The double-angle identities give opposite oscillating terms in \\(Q_{11}\\) and \\(Q_{22}\\). The component \\(Q_{33}\\) is constant. All off-diagonal coefficients other than \\(c_{12}\\) and \\(c_{21}\\) vanish.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[k=2\\Omega,\\qquad (a_i)=\\left(\\tfrac13,\\tfrac13,-\\tfrac23\\right),\\qquad(b_i)=(1,-1,0),\\]</div>\n<div>\\[c_{12}=c_{21}=1,\\qquad c_{13}=c_{31}=c_{23}=c_{32}=0.\\]</div>",
+        "en": "<div>\\[k=2\\Omega,\\qquad (a_i)=\\left(\\tfrac13,\\tfrac13,-\\tfrac23\\right),\\qquad(b_i)=(1,-1,0),\\]</div>\n<div>\\[c_{12}=c_{21}=1,\\qquad c_{13}=c_{31}=c_{23}=c_{32}=0.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B2",
+      "max": 1.0,
+      "title": {
+        "ru": "Мощность волн",
+        "en": "Wave luminosity"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Третьи производные",
+            "en": "Third derivatives"
+          },
+          "body": {
+            "ru": "<p>Три дифференцирования дают амплитуду \\(D=\\mu L^2(2\\Omega)^3/2\\). Две диагональные компоненты пропорциональны \\(\\pm D\\sin(2\\Omega t)\\), а две недиагональные — \\(-D\\cos(2\\Omega t)\\).</p>",
+            "en": "<p>Differentiating three times gives the amplitude \\(D=\\mu L^2(2\\Omega)^3/2\\). Two diagonal derivatives are \\(\\pm D\\sin(2\\Omega t)\\) and two off-diagonal derivatives are \\(-D\\cos(2\\Omega t)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Сумма квадратов",
+            "en": "Sum of squares"
+          },
+          "body": {
+            "ru": "<p>В сумме по \\(i,j\\) входят и \\(Q_{12}\\), и \\(Q_{21}\\). Поэтому сумма квадратов равна \\(2D^2\\), а зависимость от фазы орбиты исчезает.</p>",
+            "en": "<p>Both \\(Q_{12}\\) and \\(Q_{21}\\) occur in the double sum. The sum of squares equals \\(2D^2\\), independent of orbital phase.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathcal P=\\frac{32G}{5c^5}\\mu^2L^4\\Omega^6,\\qquad \\xi=\\frac{32}{5}.\\]</div>",
+        "en": "<div>\\[\\mathcal P=\\frac{32G}{5c^5}\\mu^2L^4\\Omega^6,\\qquad \\xi=\\frac{32}{5}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B3",
+      "max": 1.0,
+      "title": {
+        "ru": "Чирп-масса двойной системы",
+        "en": "Chirp mass"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Энергетический баланс",
+            "en": "Energy balance"
+          },
+          "body": {
+            "ru": "<p>В каждый момент \\(E=-GM\\mu/(2L)\\). Производная \\(\\dot E=(GM\\mu/2L^2)\\dot L\\) отрицательна, так как из системы уходит мощность \\(\\mathcal P\\): \\(\\dot E=-\\mathcal P\\).</p>",
+            "en": "<p>Along the sequence \\(E=-GM\\mu/(2L)\\), so \\(\\dot E=(GM\\mu/2L^2)\\dot L\\). Radiation carries positive power out of the orbit, hence \\(\\dot E=-\\mathcal P\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Исключение радиуса орбиты",
+            "en": "Eliminating the separation"
+          },
+          "body": {
+            "ru": "<p>Из закона Кеплера \\(L=(GM/\\Omega^2)^{1/3}\\) и \\(\\dot L=-2L\\dot\\Omega/(3\\Omega)\\). Уменьшение \\(L\\) сопровождается ростом \\(\\Omega\\).</p>",
+            "en": "<p>Kepler's law gives \\(L=(GM/\\Omega^2)^{1/3}\\) and \\(\\dot L=-2L\\dot\\Omega/(3\\Omega)\\). The angular speed increases as the separation falls.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Массовая комбинация",
+            "en": "Combining the masses"
+          },
+          "body": {
+            "ru": "<p>Подставив \\(\\dot L\\) и мощность из B2 в баланс энергии, получим \\(\\dot\\Omega=3\\xi G^{5/3}\\mu M^{2/3}\\Omega^{11/3}/c^5\\). После возведения в куб в выражении остаётся произведение \\(\\mu^3M^2\\).</p>",
+            "en": "<p>Insert \\(\\dot L\\) and the luminosity from B2 into the energy balance to obtain \\(\\dot\\Omega=3\\xi G^{5/3}\\mu M^{2/3}\\Omega^{11/3}/c^5\\). Cubing leaves the mass combination \\(\\mu^3M^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\dot\\Omega^3=(3\\xi)^3\\frac{\\Omega^{11}(GM_c)^5}{c^{15}},\\]</div>\n<div>\\[M_c=(\\mu^3M^2)^{1/5}.\\]</div>",
+        "en": "<div>\\[\\dot\\Omega^3=(3\\xi)^3\\frac{\\Omega^{11}(GM_c)^5}{c^{15}},\\]</div>\n<div>\\[M_c=(\\mu^3M^2)^{1/5}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B4",
+      "max": 2.0,
+      "title": {
+        "ru": "Изменение частоты сигнала",
+        "en": "The chirp in frequency"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Частота орбиты и волны",
+            "en": "Orbital and wave frequencies"
+          },
+          "body": {
+            "ru": "<p>За один оборот квадрупольный момент дважды возвращается к исходному состоянию. Поэтому \\(f_{\\mathrm{GW}}=2\\Omega/(2\\pi)=\\Omega/\\pi\\).</p>",
+            "en": "<p>The quadrupole repeats twice per orbit, so \\(f_{\\mathrm{GW}}=2\\Omega/(2\\pi)=\\Omega/\\pi\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Уравнение эволюции",
+            "en": "Evolution equation"
+          },
+          "body": {
+            "ru": "<p>Корень третьей степени из результата B3 даёт \\(\\dot\\Omega=\\chi\\Omega^{11/3}\\), где \\(\\chi=3\\xi(GM_c)^{5/3}/c^5\\).</p>",
+            "en": "<p>Taking the cube root of B3 gives \\(\\dot\\Omega=\\chi\\Omega^{11/3}\\) with \\(\\chi=3\\xi(GM_c)^{5/3}/c^5\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 1.0,
+          "label": {
+            "ru": "Интегрирование и показатель",
+            "en": "Integration and the exponent"
+          },
+          "body": {
+            "ru": "<p>Поскольку \\(\\mathrm d(\\Omega^{-8/3})/\\mathrm dt=-8\\chi/3\\), получаем \\(\\Omega^{-8/3}=(8\\chi/3)(t_0-t)\\). После замены \\(\\Omega=\\pi f_{\\mathrm{GW}}\\) степень времени равна единице.</p>",
+            "en": "<p>Since \\(\\mathrm d(\\Omega^{-8/3})/\\mathrm dt=-8\\chi/3\\), integration gives \\(\\Omega^{-8/3}=(8\\chi/3)(t_0-t)\\). Substituting \\(\\Omega=\\pi f_{\\mathrm{GW}}\\) leaves the first power of the remaining time.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f_{\\mathrm{GW}}^{-8/3}=8\\pi^{8/3}\\xi\\left(\\frac{GM_c}{c^3}\\right)^{5/3}(t_0-t),\\qquad p=1.\\]</div>",
+        "en": "<div>\\[f_{\\mathrm{GW}}^{-8/3}=8\\pi^{8/3}\\xi\\left(\\frac{GM_c}{c^3}\\right)^{5/3}(t_0-t),\\qquad p=1.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B5",
+      "max": 1.0,
+      "title": {
+        "ru": "Массы по сигналу детектора",
+        "en": "Masses from detector data"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Полупериоды сигнала",
+            "en": "Reading half-periods"
+          },
+          "body": {
+            "ru": "<p>В каждом из интервалов \\(AB\\) и \\(CD\\) сигнал проходит между соседними пересечениями нулевого уровня. Это половина периода. Получаем \\(t_1=0{,}0045\\,\\mathrm s\\), \\(t_2=0{,}037\\,\\mathrm s\\), \\(f_1=1/(2\\times0{,}009\\,\\mathrm s)\\simeq56\\,\\mathrm{Hz}\\) и \\(f_2\\simeq83\\,\\mathrm{Hz}\\).</p>",
+            "en": "<p>Each interval, \\(AB\\) or \\(CD\\), extends between consecutive zero crossings and spans half a period. Thus \\(t_1=0.0045\\,\\mathrm s\\), \\(t_2=0.037\\,\\mathrm s\\), \\(f_1=1/(2\\times0.009\\,\\mathrm s)\\simeq56\\,\\mathrm{Hz}\\) and \\(f_2\\simeq83\\,\\mathrm{Hz}\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Момент слияния",
+            "en": "Merger time"
+          },
+          "body": {
+            "ru": "<p>Разделим два соотношения B4. Отношение \\(A=(f_1/f_2)^{-8/3}\\simeq2{,}95\\) равно \\((t_0-t_1)/(t_0-t_2)\\), откуда \\(t_0=(At_2-t_1)/(A-1)\\simeq0{,}054\\,\\mathrm s\\).</p>",
+            "en": "<p>Divide the two instances of B4. The ratio \\(A=(f_1/f_2)^{-8/3}\\simeq2.95\\) equals \\((t_0-t_1)/(t_0-t_2)\\), giving \\(t_0=(At_2-t_1)/(A-1)\\simeq0.054\\,\\mathrm s\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Чирп-масса и сумма масс",
+            "en": "Chirp and total masses"
+          },
+          "body": {
+            "ru": "<p>Из B4 следует \\(M_c=(c^3/G)[f_1^{-8/3}/(8\\pi^{8/3}\\xi(t_0-t_1))]^{3/5}\\). Подставим частоту без промежуточного округления. При равных массах \\(\\mu=M/4\\), поэтому \\(M=4^{3/5}M_c\\).</p>",
+            "en": "<p>B4 gives \\(M_c=(c^3/G)[f_1^{-8/3}/(8\\pi^{8/3}\\xi(t_0-t_1))]^{3/5}\\). Use the unrounded frequency. For equal components \\(\\mu=M/4\\), hence \\(M=4^{3/5}M_c\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f_{\\mathrm{GW}}(t_{AB})\\simeq56\\,\\mathrm{Hz},\\qquad f_{\\mathrm{GW}}(t_{CD})\\simeq83\\,\\mathrm{Hz},\\]</div>\n<div>\\[M_c\\simeq30M_\\odot,\\qquad M\\simeq69M_\\odot.\\]</div>",
+        "en": "<div>\\[f_{\\mathrm{GW}}(t_{AB})\\simeq56\\,\\mathrm{Hz},\\qquad f_{\\mathrm{GW}}(t_{CD})\\simeq83\\,\\mathrm{Hz},\\]</div>\n<div>\\[M_c\\simeq30M_\\odot,\\qquad M\\simeq69M_\\odot.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B6",
+      "max": 1.0,
+      "title": {
+        "ru": "Размер и скорость компонентов",
+        "en": "Size and speed of each object"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Угловая скорость перед слиянием",
+            "en": "Angular speed before merger"
+          },
+          "body": {
+            "ru": "<p>В середине интервала \\(CD\\) угловая скорость орбиты равна \\(\\Omega=\\pi f_2\\simeq2{,}6\\times10^2\\,\\mathrm{s^{-1}}\\).</p>",
+            "en": "<p>At the midpoint of \\(CD\\), the orbital angular speed is \\(\\Omega=\\pi f_2\\simeq2.6\\times10^2\\,\\mathrm{s^{-1}}\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Расстояние и предельный радиус",
+            "en": "Separation and radius bound"
+          },
+          "body": {
+            "ru": "<p>Закон Кеплера даёт \\(L=(GM/\\Omega^2)^{1/3}\\simeq5\\times10^2\\,\\mathrm{km}\\). Пока компоненты ещё раздельны, радиус каждого не больше \\(L/2\\).</p>",
+            "en": "<p>Kepler's law yields \\(L=(GM/\\Omega^2)^{1/3}\\simeq5\\times10^2\\,\\mathrm{km}\\). The two bodies remain distinct, so each radius is at most \\(L/2\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Линейная скорость",
+            "en": "Linear speed"
+          },
+          "body": {
+            "ru": "<p>Каждый центр движется на расстоянии \\(L/2\\) от центра масс. Значит, \\(v_{\\mathrm{col}}=\\Omega L/2\\simeq7\\times10^4\\,\\mathrm{km/s}\\). Большая доля \\(c\\) также указывает предел точности ньютоновской оценки.</p>",
+            "en": "<p>Each centre moves at radius \\(L/2\\) about the centre of mass, giving \\(v_{\\mathrm{col}}=\\Omega L/2\\simeq7\\times10^4\\,\\mathrm{km/s}\\). Such a large fraction of \\(c\\) also illustrates the limit of the Newtonian estimate.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[L\\simeq5\\times10^2\\,\\mathrm{km},\\qquad R_{\\max}\\simeq250\\,\\mathrm{km},\\]</div>\n<div>\\[R_\\odot/R_{\\max}\\simeq3\\times10^3,\\qquad v_{\\mathrm{col}}/c\\simeq0{,}22.\\]</div>",
+        "en": "<div>\\[L\\simeq5\\times10^2\\,\\mathrm{km},\\qquad R_{\\max}\\simeq250\\,\\mathrm{km},\\]</div>\n<div>\\[R_\\odot/R_{\\max}\\simeq3\\times10^3,\\qquad v_{\\mathrm{col}}/c\\simeq0.22.\\]</div>"
+      }
+    }
+  ]
+}

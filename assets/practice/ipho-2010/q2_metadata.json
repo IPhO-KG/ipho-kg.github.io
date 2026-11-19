@@ -1,0 +1,104 @@
+{
+  "id": "T2",
+  "title": "Физика дымовой трубы",
+  "points": 10,
+  "sourceFile": "IPhO_2010_T2_EN.pdf",
+  "solutionPdf": "/assets/practice/ipho-2010/IPhO_2010_S2_EN.pdf",
+  "solutionData": "/assets/practice/ipho-2010/solutions/t2.json",
+  "subtasks": [
+    {
+      "id": "T2-1a",
+      "label": "1(a)",
+      "points": 3.5
+    },
+    {
+      "id": "T2-1b",
+      "label": "1(b)",
+      "points": 0.5
+    },
+    {
+      "id": "T2-1c",
+      "label": "1(c)",
+      "points": 0.6
+    },
+    {
+      "id": "T2-1d",
+      "label": "1(d)",
+      "points": 0.5
+    },
+    {
+      "id": "T2-2a",
+      "label": "2(a)",
+      "points": 2.0
+    },
+    {
+      "id": "T2-2b",
+      "label": "2(b)",
+      "points": 0.4
+    },
+    {
+      "id": "T2-3a",
+      "label": "3(a)",
+      "points": 0.3
+    },
+    {
+      "id": "T2-3b",
+      "label": "3(b)",
+      "points": 0.4
+    },
+    {
+      "id": "T2-3c",
+      "label": "3(c)",
+      "points": 0.3
+    },
+    {
+      "id": "T2-4a",
+      "label": "4(a)",
+      "points": 1.0
+    },
+    {
+      "id": "T2-4b",
+      "label": "4(b)",
+      "points": 0.5
+    }
+  ],
+  "sections": [
+    {
+      "id": "T2-part1",
+      "title": "Тяга и высота трубы",
+      "points": 5.1
+    },
+    {
+      "id": "T2-part2",
+      "title": "Солнечная электростанция",
+      "points": 2.4
+    },
+    {
+      "id": "T2-part3",
+      "title": "Опытная станция в Мансанаресе",
+      "points": 1.0
+    },
+    {
+      "id": "T2-part4",
+      "title": "Температура и расход воздуха",
+      "points": 1.5
+    }
+  ],
+  "figures": [
+    "fig1",
+    "fig2"
+  ],
+  "solutionsAvailable": true,
+  "stepScoring": "editorial-grouping-of-published-subpart-maxima",
+  "sourceLinks": {
+    "problem": "https://olimpicos.net/files/ipho/IPhO_2010_Q2.pdf",
+    "solution": "https://olimpicos.net/files/ipho/IPhO_2010_S2.pdf"
+  },
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "translationStatus": "bilingual"
+}

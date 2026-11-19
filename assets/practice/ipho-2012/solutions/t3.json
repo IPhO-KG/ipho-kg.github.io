@@ -1,0 +1,269 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Образование протозвезды",
+    "en": "Protostar formation"
+  },
+  "max": 9.0,
+  "sourcePdf": "/assets/practice/ipho-2012/IPhO_2012_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-i",
+      "max": 0.8,
+      "label": "i",
+      "title": {
+        "ru": "Давление при двукратном сжатии",
+        "en": "Pressure when the radius halves"
+      },
+      "steps": [
+        {
+          "id": "i-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Изотермическое сжатие",
+            "en": "Isothermal contraction"
+          },
+          "body": {
+            "ru": "<p>Выделившаяся теплота беспрепятственно уходит, поэтому газ остаётся при \\(T_0\\). Число молей фиксировано. Из уравнения идеального газа следует \\(pV=mRT_0/\\mu=\\mathrm{const}\\).</p>",
+            "en": "<p>Heat escapes freely, leaving the gas at \\(T_0\\). The number of moles is fixed. The ideal gas law then gives \\(pV=mRT_0/\\mu=\\mathrm{const}\\).</p>"
+          }
+        },
+        {
+          "id": "i-2",
+          "points": 0.3,
+          "label": {
+            "ru": "Изменение объёма",
+            "en": "Change of volume"
+          },
+          "body": {
+            "ru": "<p>Объём сферического облака пропорционален \\(r^3\\), а давление — \\(r^{-3}\\). Уменьшение радиуса вдвое уменьшает объём в восемь раз.</p>",
+            "en": "<p>The volume of the spherical cloud scales as \\(r^3\\), so pressure scales as \\(r^{-3}\\). Halving the radius reduces the volume by a factor of eight.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[n=\\frac{p(r_0/2)}{p(r_0)}=8.\\]</div>",
+        "en": "<div>\\[n=\\frac{p(r_0/2)}{p(r_0)}=8.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-ii",
+      "max": 1.0,
+      "label": "ii",
+      "title": {
+        "ru": "Начальное время сжатия",
+        "en": "Early contraction time"
+      },
+      "steps": [
+        {
+          "id": "ii-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Поле на границе облака",
+            "en": "Field at the surface"
+          },
+          "body": {
+            "ru": "<p>По теореме о сферическом слое поле на поверхности создаётся всей массой так, словно она находится в центре. По условию за первые 5% сжатия принимаем \\(g\\simeq Gm/r_0^2\\).</p>",
+            "en": "<p>At the surface the shell theorem gives the field of the whole mass concentrated at the centre. For the first 5% of contraction the prescribed approximation is \\(g\\simeq Gm/r_0^2\\).</p>"
+          }
+        },
+        {
+          "id": "ii-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Падение из состояния покоя",
+            "en": "Fall from rest"
+          },
+          "body": {
+            "ru": "<p>Поверхностный слой падает из состояния покоя с почти постоянным ускорением. Полагаем \\(r_0-r_2=gt_2^2/2\\) и подставляем \\(r_2=0{,}95r_0\\).</p>",
+            "en": "<p>The outer layer starts from rest with almost constant acceleration. Set \\(r_0-r_2=gt_2^2/2\\) and substitute \\(r_2=0.95r_0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[t_2\\simeq\\sqrt{\\frac{r_0^3}{10Gm}}.\\]</div>",
+        "en": "<div>\\[t_2\\simeq\\sqrt{\\frac{r_0^3}{10Gm}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-iii",
+      "max": 2.5,
+      "label": "iii",
+      "title": {
+        "ru": "Время свободного коллапса",
+        "en": "Free-fall time"
+      },
+      "steps": [
+        {
+          "id": "iii-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Центральное поле",
+            "en": "Central field"
+          },
+          "body": {
+            "ru": "<p>По сферической симметрии внешний слой всё время притягивается как пробное тело к точечной массе \\(m\\). Поэтому его движение подчиняется законам Кеплера.</p>",
+            "en": "<p>Spherical symmetry makes the outer shell fall as a test particle in the field of a point mass \\(m\\). Its motion therefore obeys Kepler's laws.</p>"
+          }
+        },
+        {
+          "id": "iii-2",
+          "points": 1.5,
+          "label": {
+            "ru": "Вырожденный эллипс",
+            "en": "Degenerate ellipse"
+          },
+          "body": {
+            "ru": "<p>Радиальное падение — предел движения по эллипсу с апоцентром \\(r_0\\) и перицентром, стремящимся к нулю. Большая полуось равна \\(a=r_0/2\\). Согласно третьему закону Кеплера период зависит лишь от \\(a\\) и совпадает с периодом круговой орбиты того же радиуса.</p><figure><img src=\"/assets/practice/ipho-2012/figures/s3f1.png\" alt=\"Вытянутая орбита в пределе радиального движения.\" style=\"width:min(100%,435px)\" loading=\"lazy\"><figcaption>Вытянутая орбита в пределе радиального движения.</figcaption></figure>",
+            "en": "<p>Radial infall is the limiting ellipse whose apocentre is \\(r_0\\) and whose pericentre tends to zero. Its semimajor axis is \\(a=r_0/2\\). By Kepler's third law its period depends only on \\(a\\) and is that of a circular orbit with the same radius.</p><figure><img src=\"/assets/practice/ipho-2012/figures/s3f1.png\" alt=\"The eccentric orbit approaching radial infall.\" style=\"width:min(100%,435px)\" loading=\"lazy\"><figcaption>The eccentric orbit approaching radial infall.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "iii-3",
+          "points": 0.5,
+          "label": {
+            "ru": "Половина орбитального периода",
+            "en": "Half the orbital period"
+          },
+          "body": {
+            "ru": "<p>Орбитальный период равен \\(2\\pi\\sqrt{a^3/(Gm)}\\). От дальнего конца эллипса до центра облака проходит половина периода.</p>",
+            "en": "<p>The orbital period is \\(2\\pi\\sqrt{a^3/(Gm)}\\). The trip from apocentre to the cloud centre takes half a period.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[t_{r\\to0}=\\pi\\sqrt{\\frac{r_0^3}{8Gm}}.\\]</div>",
+        "en": "<div>\\[t_{r\\to0}=\\pi\\sqrt{\\frac{r_0^3}{8Gm}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-iv",
+      "max": 1.7,
+      "label": "iv",
+      "title": {
+        "ru": "Теплота, ушедшая с излучением",
+        "en": "Radiated heat"
+      },
+      "steps": [
+        {
+          "id": "iv-1",
+          "points": 1.0,
+          "label": {
+            "ru": "Первое начало термодинамики",
+            "en": "First law of thermodynamics"
+          },
+          "body": {
+            "ru": "<p>До \\(r_3\\) сжатие изотермическое. Внутренняя энергия идеального газа не меняется, поэтому теплота, ушедшая с излучением, равна работе сжатия. Остальная высвобождаемая гравитационная энергия идёт в направленное движение газа.</p>",
+            "en": "<p>Before \\(r_3\\) the contraction is isothermal. The gas internal energy is constant, so radiated heat equals the compression work. The rest of the gravitational energy released feeds the bulk infall.</p>"
+          }
+        },
+        {
+          "id": "iv-2",
+          "points": 0.7,
+          "label": {
+            "ru": "Интегрирование работы",
+            "en": "Integrate the work"
+          },
+          "body": {
+            "ru": "<p>Используем \\(p=mRT_0/(\\mu V)\\). Работа над газом \\(-\\int_{V_0}^{V_3}p\\,dV\\) положительна. Отношение объёмов равно \\((r_0/r_3)^3\\).</p>",
+            "en": "<p>Use \\(p=mRT_0/(\\mu V)\\). The work done on the gas, \\(-\\int_{V_0}^{V_3}p\\,dV\\), is positive. The volume ratio is \\((r_0/r_3)^3\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[Q=\\frac{3mRT_0}{\\mu}\\ln\\frac{r_0}{r_3}.\\]</div>",
+        "en": "<div>\\[Q=\\frac{3mRT_0}{\\mu}\\ln\\frac{r_0}{r_3}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-v",
+      "max": 1.0,
+      "label": "v",
+      "title": {
+        "ru": "Нагрев непрозрачного облака",
+        "en": "Heating of the opaque cloud"
+      },
+      "steps": [
+        {
+          "id": "v-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Адиабатический закон",
+            "en": "Adiabatic law"
+          },
+          "body": {
+            "ru": "<p>При дальнейшем сжатии тепло перестаёт уходить, и применимо \\(pV^\\gamma=\\mathrm{const}\\). Устраняя давление по уравнению идеального газа, находим \\(TV^{\\gamma-1}=\\mathrm{const}\\).</p>",
+            "en": "<p>Further contraction traps the heat, so \\(pV^\\gamma=\\mathrm{const}\\). Eliminate pressure with the ideal gas law to obtain \\(TV^{\\gamma-1}=\\mathrm{const}\\).</p>"
+          }
+        },
+        {
+          "id": "v-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Нормировка при потере прозрачности",
+            "en": "Normalize at the opacity threshold"
+          },
+          "body": {
+            "ru": "<p>При переходе к адиабатическому режиму \\(T=T_0\\), \\(r=r_3\\). Подставляем отношение объёмов \\(V_3/V=(r_3/r)^3\\).</p>",
+            "en": "<p>At the onset of adiabatic evolution, \\(T=T_0\\) and \\(r=r_3\\). Insert the volume ratio \\(V_3/V=(r_3/r)^3\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T(r)=T_0\\left(\\frac{r_3}{r}\\right)^{3(\\gamma-1)}.\\]</div>",
+        "en": "<div>\\[T(r)=T_0\\left(\\frac{r_3}{r}\\right)^{3(\\gamma-1)}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-vi",
+      "max": 2.0,
+      "label": "vi",
+      "title": {
+        "ru": "Остановка коллапса",
+        "en": "Halting the collapse"
+      },
+      "steps": [
+        {
+          "id": "vi-1",
+          "points": 0.9,
+          "label": {
+            "ru": "Опорное давление",
+            "en": "Pressure support"
+          },
+          "body": {
+            "ru": "<p>В конце сжатия перепад давления поддерживает облако в собственном поле. Оценим поле у края как \\(g_4\\sim Gm/r_4^2\\), а необходимое давление на масштабе облака как \\(p_{\\rm grav}\\sim\\rho g_4 r_4\\). Температура по предыдущему пункту равна \\(T_0(r_3/r_4)^{3(\\gamma-1)}\\).</p>",
+            "en": "<p>At the end, a pressure gradient supports the cloud against gravity. Estimate the surface field by \\(g_4\\sim Gm/r_4^2\\), and the pressure needed across the cloud by \\(p_{\\rm grav}\\sim\\rho g_4r_4\\). The preceding part gives \\(T_4=T_0(r_3/r_4)^{3(\\gamma-1)}\\).</p>"
+          }
+        },
+        {
+          "id": "vi-2",
+          "points": 0.9,
+          "label": {
+            "ru": "Условие остановки",
+            "en": "Condition for support"
+          },
+          "body": {
+            "ru": "<p>Газ создаёт давление \\(p\\sim\\rho RT_4/\\mu\\). Приравниваем его гравитационной оценке. Плотность сокращается и получается </p><div>\\[\\frac{RT_4}{\\mu}\\sim\\frac{Gm}{r_4}.\\]</div>",
+            "en": "<p>The ideal gas supplies pressure \\(p\\sim\\rho RT_4/\\mu\\). Equate this to the gravitational estimate. Cancelling the density leaves </p><div>\\[\\frac{RT_4}{\\mu}\\sim\\frac{Gm}{r_4}.\\]</div>"
+          }
+        },
+        {
+          "id": "vi-3",
+          "points": 0.2,
+          "label": {
+            "ru": "Радиус и температура",
+            "en": "Radius and temperature"
+          },
+          "body": {
+            "ru": "<p>Введём безразмерный параметр \\(\\xi=RT_0r_3/(\\mu Gm)\\ll1\\). После подстановки \\(T_4\\) получаем \\((r_4/r_3)^{3\\gamma-4}\\sim\\xi\\). Поскольку \\(\\gamma&gt;4/3\\), давление при сжатии растёт достаточно быстро, чтобы остановить коллапс.</p>",
+            "en": "<p>Introduce \\(\\xi=RT_0r_3/(\\mu Gm)\\ll1\\). Substitution of \\(T_4\\) gives \\((r_4/r_3)^{3\\gamma-4}\\sim\\xi\\). Since \\(\\gamma&gt;4/3\\), pressure grows fast enough during contraction to halt the collapse.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r_4\\sim r_3\\,\\xi^{1/(3\\gamma-4)},\\qquad T_4\\sim T_0\\,\\xi^{-3(\\gamma-1)/(3\\gamma-4)}.\\]</div>",
+        "en": "<div>\\[r_4\\sim r_3\\,\\xi^{1/(3\\gamma-4)},\\qquad T_4\\sim T_0\\,\\xi^{-3(\\gamma-1)/(3\\gamma-4)}.\\]</div>"
+      }
+    }
+  ]
+}

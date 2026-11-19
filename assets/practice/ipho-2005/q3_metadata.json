@@ -1,0 +1,64 @@
+{
+  "id": "T3",
+  "title": "Нейтроны в гравитационном поле",
+  "points": 10,
+  "sourceFile": "IPhO_2005_T3_EN.pdf",
+  "solutionPdf": "/assets/practice/ipho-2005/IPhO_2005_S3_EN.pdf",
+  "solutionData": "/assets/practice/ipho-2005/solutions/t3.json",
+  "subtasks": [
+    {
+      "id": "T3-1",
+      "label": "1",
+      "points": 1.5
+    },
+    {
+      "id": "T3-2",
+      "label": "2",
+      "points": 1.5
+    },
+    {
+      "id": "T3-3",
+      "label": "3",
+      "points": 2.5
+    },
+    {
+      "id": "T3-4",
+      "label": "4",
+      "points": 2.5
+    },
+    {
+      "id": "T3-5",
+      "label": "5",
+      "points": 2.0
+    }
+  ],
+  "sections": [
+    {
+      "id": "T3-part1",
+      "title": "Классическое движение",
+      "points": 5.5
+    },
+    {
+      "id": "T3-part2",
+      "title": "Квантование вертикального движения",
+      "points": 4.5
+    }
+  ],
+  "figures": [
+    "apparatus",
+    "transmission"
+  ],
+  "solutionsAvailable": true,
+  "stepScoring": "official-marking-scheme",
+  "sourceLinks": {
+    "problem": "https://olimpicos.net/files/ipho/IPhO_2005_Q3.pdf",
+    "solution": "https://olimpicos.net/files/ipho/IPhO_2005_S3.pdf"
+  },
+  "sourcePages": [
+    1,
+    2,
+    3
+  ],
+  "translationStatus": "bilingual",
+  "markingPdf": "/assets/practice/ipho-2005/IPhO_2005_M3_EN.pdf"
+}

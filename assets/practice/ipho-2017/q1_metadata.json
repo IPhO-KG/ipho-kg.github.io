@@ -1,0 +1,79 @@
+{
+  "id": "T1",
+  "title": "Тёмная материя",
+  "points": 10.0,
+  "sourceFile": "IPhO_2017_T1_EN.pdf",
+  "sourcePdf": "/assets/practice/ipho-2017/IPhO_2017_T1_EN.pdf",
+  "sections": [
+    {
+      "id": "T1-A",
+      "title": "Скопление галактик",
+      "points": 5.2
+    },
+    {
+      "id": "T1-B",
+      "title": "Кривая вращения галактики",
+      "points": 2.8
+    },
+    {
+      "id": "T1-C",
+      "title": "Межзвёздный газ",
+      "points": 2.0
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T1-A1",
+      "points": 1.0
+    },
+    {
+      "id": "T1-A2",
+      "points": 0.5
+    },
+    {
+      "id": "T1-A3",
+      "points": 1.5
+    },
+    {
+      "id": "T1-A4",
+      "points": 1.7
+    },
+    {
+      "id": "T1-A5",
+      "points": 0.5
+    },
+    {
+      "id": "T1-B1",
+      "points": 0.8
+    },
+    {
+      "id": "T1-B2",
+      "points": 0.5
+    },
+    {
+      "id": "T1-B3",
+      "points": 1.5
+    },
+    {
+      "id": "T1-C1",
+      "points": 0.5
+    },
+    {
+      "id": "T1-C2",
+      "points": 0.5
+    },
+    {
+      "id": "T1-C3",
+      "points": 1.0
+    }
+  ],
+  "figures": [
+    "q1f1"
+  ],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "official-criteria-grouped",
+  "solutionData": "/assets/practice/ipho-2017/solutions/t1.json",
+  "solutionPdf": "/assets/practice/ipho-2017/IPhO_2017_S1_EN.pdf"
+}

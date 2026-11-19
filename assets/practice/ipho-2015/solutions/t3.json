@@ -1,0 +1,357 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Физика энергетического реактора",
+    "en": "The design of a nuclear reactor"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2015/IPhO_2015_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-A1",
+      "max": 0.8,
+      "title": {
+        "ru": "Энергия деления",
+        "en": "Fission energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Дефект массы",
+            "en": "Mass defect"
+          },
+          "body": {
+            "ru": "<p>Один нейтрон присутствует в начальном состоянии, два — в конечном. После сокращения одной массы нейтрона разность масс равна \\(\\Delta m=m_{\\mathrm{U}}-m_{\\mathrm{Zr}}-m_{\\mathrm{Ce}}-m_n=0{,}22403\\,\\mathrm u\\). Начальная кинетическая энергия пренебрежимо мала, поэтому выделившаяся энергия определяется этим дефектом массы.</p>",
+            "en": "<p>There is one neutron on the initial side and two on the final side. Cancelling one neutron mass leaves \\(\\Delta m=m_{\\mathrm{U}}-m_{\\mathrm{Zr}}-m_{\\mathrm{Ce}}-m_n=0.22403\\,\\mathrm u\\). With negligible initial kinetic energy, this mass defect determines the energy release.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta E=\\Delta m\\,c^2\\simeq208{,}7\\,\\mathrm{MeV}.\\]</div>",
+        "en": "<div>\\[\\Delta E=\\Delta m\\,c^2\\simeq208.7\\,\\mathrm{MeV}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A2",
+      "max": 0.5,
+      "title": {
+        "ru": "Концентрация урана-235",
+        "en": "Uranium-235 number density"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Число ядер в единице объёма",
+            "en": "Nuclei per unit volume"
+          },
+          "body": {
+            "ru": "<p>В кубическом метре топлива содержится \\(\\rho/M_w\\) молей \\(\\mathrm{UO_2}\\). На каждую формульную единицу приходится один атом урана, а доля нужного изотопа равна \\(0{,}00720\\).</p>",
+            "en": "<p>There are \\(\\rho/M_w\\) moles of \\(\\mathrm{UO_2}\\) per cubic metre. Each formula unit contains one uranium atom, and \\(0.00720\\) of these atoms are the required isotope.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[N=0{,}00720\\,\\frac{\\rho N_A}{M_w}\\simeq1{,}70\\times10^{26}\\,\\mathrm{m^{-3}}.\\]</div>",
+        "en": "<div>\\[N=0.00720\\,\\frac{\\rho N_A}{M_w}\\simeq1.70\\times10^{26}\\,\\mathrm{m^{-3}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A3",
+      "max": 1.2,
+      "title": {
+        "ru": "Объёмная мощность тепловыделения",
+        "en": "Volumetric heating rate"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Число делений за секунду",
+            "en": "Fission event rate"
+          },
+          "body": {
+            "ru": "<p>Поток \\(\\varphi\\) через эффективное сечение \\(\\sigma_f\\) даёт частоту делений одного ядра. Умножив на число доступных ядер в единице объёма, получим число событий в кубическом метре за секунду.</p>\n<div>\\[\\dot n_f=N\\varphi\\sigma_f\\simeq1{,}84\\times10^{19}\\,\\mathrm{m^{-3}s^{-1}} .\\]</div>",
+            "en": "<p>The flux \\(\\varphi\\) through effective area \\(\\sigma_f\\) gives the fission rate per nucleus. Multiplication by the number density of eligible nuclei gives the event rate per cubic metre.</p>\n<div>\\[\\dot n_f=N\\varphi\\sigma_f\\simeq1.84\\times10^{19}\\,\\mathrm{m^{-3}s^{-1}} .\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Тепло от одного деления",
+            "en": "Heat per fission"
+          },
+          "body": {
+            "ru": "<p>В одном событии выделяется \\(\\Delta E\\simeq3{,}34\\times10^{-11}\\,\\mathrm J\\). Тепловой вклад одного деления составляет \\(0{,}8000\\,\\Delta E\\), что и надо умножить на объёмную частоту событий.</p>",
+            "en": "<p>One event releases \\(\\Delta E\\simeq3.34\\times10^{-11}\\,\\mathrm J\\). Its heat contribution is \\(0.8000\\,\\Delta E\\), to be multiplied by the event rate per unit volume.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[Q=0{,}8000\\,\\Delta E\\,N\\varphi\\sigma_f\\simeq4{,}92\\times10^8\\,\\mathrm{W/m^3}.\\]</div>",
+        "en": "<div>\\[Q=0.8000\\,\\Delta E\\,N\\varphi\\sigma_f\\simeq4.92\\times10^8\\,\\mathrm{W/m^3}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A4",
+      "max": 0.5,
+      "title": {
+        "ru": "Радиальный перепад температуры",
+        "en": "Radial temperature difference"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Размерность температуры",
+            "en": "Dimension of temperature"
+          },
+          "body": {
+            "ru": "<p>У отношения \\(Q/\\lambda\\) размерность \\(\\mathrm{K/m^2}\\), поскольку \\([Q]=\\mathrm{W/m^3}\\) и \\([\\lambda]=\\mathrm{W/(m\\,K)}\\). Единственная заданная длина — радиус \\(a\\). Вторая степень радиуса устраняет оставшуюся размерность длины.</p>",
+            "en": "<p>The ratio \\(Q/\\lambda\\) has units \\(\\mathrm{K/m^2}\\) since \\([Q]=\\mathrm{W/m^3}\\) and \\([\\lambda]=\\mathrm{W/(m\\,K)}\\). The only available length is \\(a\\). A factor of \\(a^2\\) removes the remaining length dimension.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F(Q,a,\\lambda)=\\frac{Qa^2}{\\lambda},\\qquad T_c-T_s=\\frac{Qa^2}{4\\lambda}.\\]</div>",
+        "en": "<div>\\[F(Q,a,\\lambda)=\\frac{Qa^2}{\\lambda},\\qquad T_c-T_s=\\frac{Qa^2}{4\\lambda}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A5",
+      "max": 1.0,
+      "title": {
+        "ru": "Предельный радиус стержня",
+        "en": "Radius limit"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Условие плавления в центре",
+            "en": "Melting condition at the centre"
+          },
+          "body": {
+            "ru": "<p>Самая горячая точка находится на оси стержня. На пределе в центре \\(T_c=T_m\\), а поверхность поддерживается при \\(T_s=577\\,\\mathrm K\\). Следовательно, допустимый перепад равен \\(2561\\,\\mathrm K\\). Решаем уравнение A4 относительно радиуса.</p>",
+            "en": "<p>The centreline is the hottest part of the pin. At the limiting radius \\(T_c=T_m\\), while the surface remains at \\(T_s=577\\,\\mathrm K\\). The allowed rise is thus \\(2561\\,\\mathrm K\\). Solve A4 for the radius.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[a_u=\\sqrt{\\frac{4\\lambda(T_m-T_s)}{Q}}\\simeq8{,}27\\,\\mathrm{mm}.\\]</div>",
+        "en": "<div>\\[a_u=\\sqrt{\\frac{4\\lambda(T_m-T_s)}{Q}}\\simeq8.27\\,\\mathrm{mm}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B1",
+      "max": 1.0,
+      "title": {
+        "ru": "Столкновение в системе центра масс",
+        "en": "Centre-of-mass diagram"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Переход к системе центра масс",
+            "en": "Transformation to the centre-of-mass frame"
+          },
+          "body": {
+            "ru": "<p>Из каждой лабораторной скорости вычитаем \\(\\mathbf v_m\\). Тогда стрелки 1 и 2 направлены вдоль \\(\\mathbf v_b-\\mathbf v_m\\) и \\(\\mathbf v_a-\\mathbf v_m\\), а скорость первоначально покоившегося атома (3) равна \\(-\\mathbf v_m\\). Отметим \\(\\theta\\) между продолжением стрелки 1 и стрелкой 2. В системе центра масс полный импульс равен нулю, поэтому после удара стрелки частиц противоположны.</p>",
+            "en": "<p>Subtract \\(\\mathbf v_m\\) from every lab velocity. Arrows 1 and 2 follow \\(\\mathbf v_b-\\mathbf v_m\\) and \\(\\mathbf v_a-\\mathbf v_m\\). The initially stationary atom (3) moves at \\(-\\mathbf v_m\\). Mark \\(\\theta\\) between the forward continuation of arrow 1 and arrow 2. Zero total momentum requires the outgoing particles to move in opposite directions.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<figure><img src=\"/assets/practice/ipho-2015/q3/cm.png\" alt=\"Скорости частиц в системе центра масс до и после столкновения.\" loading=\"lazy\" style=\"width:min(100%,460px);height:auto\"><figcaption>Скорости частиц в системе центра масс до и после столкновения.</figcaption></figure>",
+        "en": "<figure><img src=\"/assets/practice/ipho-2015/q3/cm.png\" alt=\"Centre-of-mass velocities of both particles before and after impact.\" loading=\"lazy\" style=\"width:min(100%,460px);height:auto\"><figcaption>Centre-of-mass velocities of both particles before and after impact.</figcaption></figure>"
+      }
+    },
+    {
+      "id": "T3-B2",
+      "max": 1.0,
+      "title": {
+        "ru": "Скорости после удара",
+        "en": "Speeds after impact"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Скорости до столкновения",
+            "en": "Incoming speeds"
+          },
+          "body": {
+            "ru": "<p>Полный лабораторный импульс равен импульсу падающего нейтрона. Деление на полную массу даёт скорость центра масс \\(v_m=v_b/(A+1)\\). До удара модули скоростей нейтрона и атома в этой системе равны \\(v_b-v_m\\) и \\(v_m\\).</p>",
+            "en": "<p>The initial lab momentum is entirely that of the neutron. Divide by the total mass to find the centre-of-mass speed \\(v_m=v_b/(A+1)\\). In that frame the initial neutron and atom speeds are \\(v_b-v_m\\) and \\(v_m\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Сохранение модулей скоростей",
+            "en": "Why the speeds are unchanged"
+          },
+          "body": {
+            "ru": "<p>До и после столкновения импульсы частиц противоположны и равны по модулю. Кинетическая энергия в системе центра масс пропорциональна квадрату этого общего модуля. Поскольку столкновение упругое, меняются только направления импульсов.</p>",
+            "en": "<p>Before and after impact, the momenta in this frame are equal in magnitude and opposite. The kinetic energy is proportional to the square of that common magnitude. Elasticity therefore changes only the directions of the momenta.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v=\\frac{A v_b}{A+1},\\qquad V=\\frac{v_b}{A+1}.\\]</div>",
+        "en": "<div>\\[v=\\frac{A v_b}{A+1},\\qquad V=\\frac{v_b}{A+1}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B3",
+      "max": 1.0,
+      "title": {
+        "ru": "Энергия после рассеяния",
+        "en": "Energy after scattering"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Возврат в лабораторную систему",
+            "en": "Returning to the lab frame"
+          },
+          "body": {
+            "ru": "<p>Лабораторная скорость рассеянного нейтрона получается векторным сложением его скорости в системе центра масс и \\(\\mathbf v_m\\). Угол между этими векторами равен \\(\\theta\\). Подставим результат B2 в квадрат суммы.</p>\n<div>\\[v_a^2=v^2+v_m^2+2vv_m\\cos\\theta .\\]</div>\n<div>\\[\\frac{v_a^2}{v_b^2}=\\frac{A^2+1+2A\\cos\\theta}{(A+1)^2}.\\]</div>",
+            "en": "<p>Add the outgoing neutron velocity in the centre-of-mass frame to \\(\\mathbf v_m\\). The angle between them is \\(\\theta\\). Square the vector sum and insert B2.</p>\n<div>\\[v_a^2=v^2+v_m^2+2vv_m\\cos\\theta .\\]</div>\n<div>\\[\\frac{v_a^2}{v_b^2}=\\frac{A^2+1+2A\\cos\\theta}{(A+1)^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Выражение через параметр массы",
+            "en": "Expressing the result through the mass parameter"
+          },
+          "body": {
+            "ru": "<p>Отношение энергий равно отношению квадратов скоростей. Из определения \\(\\alpha\\) получаем \\(1+\\alpha=2(A^2+1)/(A+1)^2\\) и \\(1-\\alpha=4A/(A+1)^2\\), что позволяет заменить оба коэффициента.</p>",
+            "en": "<p>The energy ratio equals the squared-speed ratio. The definition of \\(\\alpha\\) gives \\(1+\\alpha=2(A^2+1)/(A+1)^2\\) and \\(1-\\alpha=4A/(A+1)^2\\). These identities replace both coefficients.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[G(\\alpha,\\theta)=\\frac{1+\\alpha+(1-\\alpha)\\cos\\theta}{2}.\\]</div>",
+        "en": "<div>\\[G(\\alpha,\\theta)=\\frac{1+\\alpha+(1-\\alpha)\\cos\\theta}{2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B4",
+      "max": 0.5,
+      "title": {
+        "ru": "Наибольшая потеря энергии",
+        "en": "Maximum energy loss"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Обратное рассеяние",
+            "en": "Backscattering"
+          },
+          "body": {
+            "ru": "<p>После лобового столкновения нейтрон разворачивается в системе центра масс на \\(\\theta=\\pi\\). Тогда \\(G=\\alpha\\) минимально. Для молекулы массы \\(20\\,\\mathrm u\\) максимальная потеря равна \\(1-(19/21)^2\\).</p>",
+            "en": "<p>In a head-on collision the neutron reverses direction in the centre-of-mass frame, so \\(\\theta=\\pi\\). This minimises \\(G\\) at \\(\\alpha\\). For a molecule of mass \\(20\\,\\mathrm u\\), the largest loss is \\(1-(19/21)^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f_{l,\\max}=1-\\alpha=\\frac{80}{441}\\simeq0{,}181.\\]</div>",
+        "en": "<div>\\[f_{l,\\max}=1-\\alpha=\\frac{80}{441}\\simeq0.181.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-C1",
+      "max": 1.5,
+      "title": {
+        "ru": "Размеры цилиндра",
+        "en": "Cylinder dimensions"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Минимум утечки при данном объёме",
+            "en": "Minimum leakage at fixed volume"
+          },
+          "body": {
+            "ru": "<p>Обозначим объём через \\(\\mathcal V=\\pi R^2H\\). Заменяя \\(R^2\\) на \\(\\mathcal V/(\\pi H)\\), выразим геометрический множитель утечки через высоту. Первый член растёт с \\(H\\), второй убывает.</p>\n<div>\\[g(H)=\\frac{2{,}405^2\\pi H}{\\mathcal V}+\\frac{\\pi^2}{H^2}.\\]</div>\n<p>Условие \\(g'(H)=0\\) даёт \\((2{,}405/R)^2=2(\\pi/H)^2\\). Вторая производная положительна, так что это минимум.</p>",
+            "en": "<p>Let \\(\\mathcal V=\\pi R^2H\\). Substitute \\(R^2=\\mathcal V/(\\pi H)\\) to write the geometrical leakage factor in terms of height. Its first term rises with height and its second term falls.</p>\n<div>\\[g(H)=\\frac{2.405^2\\pi H}{\\mathcal V}+\\frac{\\pi^2}{H^2}.\\]</div>\n<p>Setting \\(g'(H)=0\\) gives \\((2.405/R)^2=2(\\pi/H)^2\\). The positive second derivative verifies a minimum.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.7,
+          "label": {
+            "ru": "Стационарный баланс",
+            "en": "Steady-state balance"
+          },
+          "body": {
+            "ru": "<p>В стационарном режиме \\(g=k_2/k_1\\). Подставив найденное соотношение, получаем \\(3(\\pi/H)^2=k_2/k_1\\). Теперь можно определить и высоту, и радиус.</p>",
+            "en": "<p>Balance requires \\(g=k_2/k_1\\). Substitution of the optimum aspect ratio gives \\(3(\\pi/H)^2=k_2/k_1\\), fixing first the height and then the radius.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[H=\\pi\\sqrt{\\frac{3k_1}{k_2}}\\simeq5{,}87\\,\\mathrm m,\\qquad R=2{,}405\\sqrt{\\frac{3k_1}{2k_2}}\\simeq3{,}18\\,\\mathrm m .\\]</div>",
+        "en": "<div>\\[H=\\pi\\sqrt{\\frac{3k_1}{k_2}}\\simeq5.87\\,\\mathrm m,\\qquad R=2.405\\sqrt{\\frac{3k_1}{2k_2}}\\simeq3.18\\,\\mathrm m .\\]</div>"
+      }
+    },
+    {
+      "id": "T3-C2",
+      "max": 1.0,
+      "title": {
+        "ru": "Каналы и масса топлива",
+        "en": "Channels and fuel mass"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Площадь ячейки",
+            "en": "Area per lattice site"
+          },
+          "body": {
+            "ru": "<p>Каналу соответствует квадрат площади \\(p^2\\), где \\(p=0{,}286\\,\\mathrm m\\). Делим площадь сечения бака на площадь ячейки и округляем оценку до целого. При таком подсчёте краевые ячейки учитываются приближённо.</p>\n<div>\\[F_n\\simeq\\frac{\\pi R^2}{p^2}\\simeq387 .\\]</div>",
+            "en": "<p>Each channel occupies one square cell of area \\(p^2\\), with \\(p=0.286\\,\\mathrm m\\). Divide the vessel cross-sectional area by the cell area and round to an integer. This area estimate treats boundary cells approximately.</p>\n<div>\\[F_n\\simeq\\frac{\\pi R^2}{p^2}\\simeq387 .\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Масса топлива во всех каналах",
+            "en": "Total fuel mass"
+          },
+          "body": {
+            "ru": "<p>Эффективный радиус \\(r=0{,}03617\\,\\mathrm m\\) уже учитывает промежутки между стержнями. Поэтому объём самого топлива внутри одного канала равен \\(\\pi r^2H\\). Для общей массы умножим его на число каналов и плотность.</p>",
+            "en": "<p>The effective radius \\(r=0.03617\\,\\mathrm m\\) accounts for the gaps between pins. The fuel volume inside one channel is therefore \\(\\pi r^2H\\). Multiply it by the number of channels and the fuel density.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_n\\simeq387,\\qquad M=F_n\\pi r^2H\\rho\\simeq9{,}89\\times10^4\\,\\mathrm{kg}.\\]</div>",
+        "en": "<div>\\[F_n\\simeq387,\\qquad M=F_n\\pi r^2H\\rho\\simeq9.89\\times10^4\\,\\mathrm{kg}.\\]</div>"
+      }
+    }
+  ]
+}

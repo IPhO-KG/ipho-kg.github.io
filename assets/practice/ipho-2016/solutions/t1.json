@@ -1,0 +1,565 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Две задачи по механике",
+    "en": "Two problems in mechanics"
+  },
+  "sourcePdf": "/assets/practice/ipho-2016/IPhO_2016_S1_EN.pdf",
+  "max": 10,
+  "parts": [
+    {
+      "id": "T1-A1",
+      "max": 0.8,
+      "title": {
+        "ru": "Смещение центра масс",
+        "en": "Centre-of-mass offset"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Условие равновесия",
+            "en": "Condition for equilibrium"
+          },
+          "body": {
+            "ru": "<p>Обозначим центр масс через \\(C\\), точку контакта через \\(P\\). Реакция опоры приложена в \\(P\\). В равновесии момент силы тяжести относительно \\(P\\) равен нулю, поэтому вертикаль через \\(C\\) проходит через \\(P\\).</p>",
+            "en": "<p>Let \\(C\\) denote the centre of mass and \\(P\\) the point of contact. The support force acts at \\(P\\). Since gravity has zero torque about \\(P\\) at equilibrium, the vertical through \\(C\\) passes through \\(P\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Проекции на горизонталь",
+            "en": "Horizontal projections"
+          },
+          "body": {
+            "ru": "<p>Центр цилиндра \\(S\\) находится на расстоянии \\(r_1\\) от \\(P\\) по нормали к наклонной плоскости. Горизонтальное расстояние от \\(S\\) до вертикали через \\(P\\) равно \\(r_1\\sin\\Theta\\). Проекция смещения \\(SC\\) на ту же горизонталь равна \\(b\\sin\\phi\\).</p>",
+            "en": "<p>The geometric centre \\(S\\) is one radius \\(r_1\\) from \\(P\\), along the normal to the incline. Its horizontal distance from the vertical through \\(P\\) is \\(r_1\\sin\\Theta\\). The horizontal projection of \\(SC\\) spans the same distance and equals \\(b\\sin\\phi\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Расстояние от оси",
+            "en": "Offset from the axis"
+          },
+          "body": {
+            "ru": "<p>Приравниваем проекции и делим обе стороны на \\(\\sin\\phi\\).</p>",
+            "en": "<p>Equate the projections and divide by \\(\\sin\\phi\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[b=\\frac{r_1\\sin\\Theta}{\\sin\\phi}.\\]</div>",
+        "en": "<div>\\[b=\\frac{r_1\\sin\\Theta}{\\sin\\phi}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A2",
+      "max": 0.5,
+      "title": {
+        "ru": "Момент инерции по периоду",
+        "en": "Moment of inertia from the period"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Возвращающий момент",
+            "en": "Restoring torque"
+          },
+          "body": {
+            "ru": "<p>При повороте на угол \\(\\varphi\\) от положения равновесия плечо силы тяжести равно \\(b\\sin\\varphi\\). Относительно закреплённой оси \\(S\\) уравнение вращения имеет вид</p><div>\\[I_S\\ddot\\varphi=-Mgb\\sin\\varphi.\\]</div>",
+            "en": "<p>When the cylinder turns through \\(\\varphi\\) from equilibrium, gravity has a lever arm \\(b\\sin\\varphi\\). About the fixed axis \\(S\\) the rotational equation is</p><div>\\[I_S\\ddot\\varphi=-Mgb\\sin\\varphi.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Предел малых углов",
+            "en": "Small-angle limit"
+          },
+          "body": {
+            "ru": "<p>Для малых углов \\(\\sin\\varphi\\simeq\\varphi\\). Сравнение с уравнением гармонического осциллятора даёт \\((2\\pi/T)^2=Mgb/I_S\\).</p>",
+            "en": "<p>At small amplitude \\(\\sin\\varphi\\simeq\\varphi\\). Comparing with the harmonic oscillator equation gives \\((2\\pi/T)^2=Mgb/I_S\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\ddot\\varphi+\\frac{Mgb}{I_S}\\varphi=0,\\qquad I_S=\\frac{MgbT^2}{4\\pi^2}.\\]</div>",
+        "en": "<div>\\[\\ddot\\varphi+\\frac{Mgb}{I_S}\\varphi=0,\\qquad I_S=\\frac{MgbT^2}{4\\pi^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A3",
+      "max": 0.4,
+      "title": {
+        "ru": "Положение вставки",
+        "en": "Position of the insert"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Избыточная масса",
+            "en": "Excess mass"
+          },
+          "body": {
+            "ru": "<p>Мысленно заполним весь цилиндр деревом. Его масса \\(m_0=\\pi\\rho_1r_1^2h_1\\) сосредоточена в среднем в \\(S\\). Замена дерева вставкой добавляет массу \\(\\mu=M-m_0\\) с центром на оси вставки.</p>",
+            "en": "<p>First fill the entire cylinder with wood. This gives mass \\(m_0=\\pi\\rho_1r_1^2h_1\\) centred at \\(S\\). Replacing the wood in the inclusion adds excess mass \\(\\mu=M-m_0\\) centred on the axis of the insert.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Первый момент массы",
+            "en": "First moment of mass"
+          },
+          "body": {
+            "ru": "<p>В проекции на прямую от \\(S\\) к оси вставки первый момент равен \\(\\mu d\\). Он же равен \\(Mb\\) для всего тела.</p>",
+            "en": "<p>Along the line from \\(S\\) to the insert axis, the first moment is \\(\\mu d\\). For the complete body the same moment equals \\(Mb\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[d=\\frac{Mb}{M-\\pi\\rho_1r_1^2h_1}.\\]</div>",
+        "en": "<div>\\[d=\\frac{Mb}{M-\\pi\\rho_1r_1^2h_1}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A4",
+      "max": 0.7,
+      "title": {
+        "ru": "Инерция составного цилиндра",
+        "en": "Inertia of the composite cylinder"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Деревянный цилиндр",
+            "en": "Wooden cylinder"
+          },
+          "body": {
+            "ru": "<p>Представим тело как полный деревянный цилиндр массы \\(m_0=\\pi\\rho_1r_1^2h_1\\) и цилиндрическую добавку массы \\(\\mu=M-m_0\\). Дерево даёт относительно \\(S\\) вклад \\(m_0r_1^2/2\\).</p>",
+            "en": "<p>Represent the body by a complete wooden cylinder of mass \\(m_0=\\pi\\rho_1r_1^2h_1\\) and an excess cylinder of mass \\(\\mu=M-m_0\\). The wooden cylinder contributes \\(m_0r_1^2/2\\) about \\(S\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Перенос оси",
+            "en": "Parallel-axis theorem"
+          },
+          "body": {
+            "ru": "<p>Собственный момент добавки равен \\(\\mu r_2^2/2\\). Её ось отстоит от \\(S\\) на \\(d\\), поэтому нужно прибавить \\(\\mu d^2\\).</p>",
+            "en": "<p>The excess cylinder has axial inertia \\(\\mu r_2^2/2\\). Its centre lies a distance \\(d\\) from \\(S\\), adding \\(\\mu d^2\\) by the parallel-axis theorem.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.3,
+          "label": {
+            "ru": "Исключение смещения",
+            "en": "Eliminating the offset"
+          },
+          "body": {
+            "ru": "<p>Из равенства \\(\\mu d=Mb\\) следует \\(\\mu d^2=M^2b^2/\\mu\\). Складываем три вклада.</p>",
+            "en": "<p>The first moment gives \\(\\mu d=Mb\\), hence \\(\\mu d^2=M^2b^2/\\mu\\). Add the three contributions.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I_S=\\frac{m_0r_1^2}{2}+\\frac{\\mu r_2^2}{2}+\\frac{M^2b^2}{\\mu}.\\]</div>",
+        "en": "<div>\\[I_S=\\frac{m_0r_1^2}{2}+\\frac{\\mu r_2^2}{2}+\\frac{M^2b^2}{\\mu}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A5",
+      "max": 1.1,
+      "title": {
+        "ru": "Радиус и высота вставки",
+        "en": "Radius and height of the insert"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Баланс массы",
+            "en": "Mass balance"
+          },
+          "body": {
+            "ru": "<p>Измеренная масса определяет избыток массы вставки над удалённым деревом:</p><div>\\[\\mu=M-m_0=\\pi(\\rho_2-\\rho_1)r_2^2h_2,\\qquad m_0=\\pi\\rho_1r_1^2h_1.\\]</div>",
+            "en": "<p>The measured mass fixes how much mass the insert adds over the displaced wood:</p><div>\\[\\mu=M-m_0=\\pi(\\rho_2-\\rho_1)r_2^2h_2,\\qquad m_0=\\pi\\rho_1r_1^2h_1.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Радиус по измеренному периоду",
+            "en": "Radius from the measured period"
+          },
+          "body": {
+            "ru": "<p>Вычитаем из \\(I_S\\) вклад дерева и слагаемое переноса оси. Оставшаяся часть равна \\(\\mu r_2^2/2\\). Подставляем измеренное значение \\(I_S=MgbT^2/(4\\pi^2)\\) и берём положительный корень.</p>",
+            "en": "<p>Subtract the wooden-cylinder inertia and the parallel-axis contribution from \\(I_S\\). The remainder is \\(\\mu r_2^2/2\\). Insert the measured value \\(I_S=MgbT^2/(4\\pi^2)\\) and take the positive root.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Высота по объёму",
+            "en": "Height from the volume"
+          },
+          "body": {
+            "ru": "<p>При известном радиусе формула для \\(\\mu\\) определяет высоту. Если нужно выразить всё через углы, используем \\(b=r_1\\sin\\Theta/\\sin\\phi\\).</p>",
+            "en": "<p>With the radius known, the mass balance fixes the height. The measured angles give the offset through \\(b=r_1\\sin\\Theta/\\sin\\phi\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r_2=\\sqrt{\\frac{2}{\\mu}\\left(\\frac{MgbT^2}{4\\pi^2}-\\frac{m_0r_1^2}{2}-\\frac{M^2b^2}{\\mu}\\right)}.\\]</div><div>\\[h_2=\\frac{\\mu}{\\pi(\\rho_2-\\rho_1)r_2^2}.\\]</div>",
+        "en": "<div>\\[r_2=\\sqrt{\\frac{2}{\\mu}\\left(\\frac{MgbT^2}{4\\pi^2}-\\frac{m_0r_1^2}{2}-\\frac{M^2b^2}{\\mu}\\right)}.\\]</div><div>\\[h_2=\\frac{\\mu}{\\pi(\\rho_2-\\rho_1)r_2^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B1",
+      "max": 0.5,
+      "title": {
+        "ru": "Искусственная тяжесть",
+        "en": "Artificial gravity"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Ускорение на ободе",
+            "en": "Acceleration at the rim"
+          },
+          "body": {
+            "ru": "<p>Точка пола движется по окружности с центростремительным ускорением \\(\\omega_{\\rm ss}^2 R\\). Неподвижный относительно станции наблюдатель ощущает равное по модулю ускорение к ободу.</p>",
+            "en": "<p>A point on the floor has centripetal acceleration \\(\\omega_{\\rm ss}^2R\\). In the station frame the corresponding effective gravitational acceleration points out towards the rim.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Угловая скорость",
+            "en": "Angular speed"
+          },
+          "body": {
+            "ru": "<p>Для земного веса на уровне пола требуется \\(\\omega_{\\rm ss}^2R=g_{\\rm E}\\).</p>",
+            "en": "<p>Earth-like weight at floor level requires \\(\\omega_{\\rm ss}^2R=g_{\\rm E}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_{\\rm ss}=\\sqrt{\\frac{g_{\\rm E}}{R}}.\\]</div>",
+        "en": "<div>\\[\\omega_{\\rm ss}=\\sqrt{\\frac{g_{\\rm E}}{R}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B2",
+      "max": 0.2,
+      "title": {
+        "ru": "Пружина в однородном поле",
+        "en": "Spring in a uniform field"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Колебания около равновесия",
+            "en": "Oscillations about equilibrium"
+          },
+          "body": {
+            "ru": "<p>Постоянная сила тяжести смещает равновесие на \\(mg_{\\rm E}/k\\). При смещении \\(u\\) от этого положения добавочная сила равна \\(-ku\\), поэтому \\(m\\ddot u+ku=0\\).</p>",
+            "en": "<p>Constant gravity shifts the equilibrium by \\(mg_{\\rm E}/k\\). A displacement \\(u\\) from this position produces a net force \\(-ku\\), so \\(m\\ddot u+ku=0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_{\\rm E}=\\sqrt{\\frac{k}{m}}.\\]</div>",
+        "en": "<div>\\[\\omega_{\\rm E}=\\sqrt{\\frac{k}{m}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B3",
+      "max": 0.6,
+      "title": {
+        "ru": "Пружина на станции",
+        "en": "Spring on the station"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Изменение центробежной силы",
+            "en": "Change of centrifugal force"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(u\\) направлено радиально наружу и отсчитывается от равновесия. Центробежная сила при таком смещении возрастает на \\(m\\omega_{\\rm ss}^2u\\), а упругая меняется на \\(-ku\\). Вдоль направляющей действует их сумма.</p>",
+            "en": "<p>Measure \\(u\\) radially outwards from equilibrium. Moving out increases the centrifugal force by \\(m\\omega_{\\rm ss}^2u\\) and changes the spring force by \\(-ku\\). Their sum is the force along the guide.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Частота в направляющей",
+            "en": "Frequency along the guide"
+          },
+          "body": {
+            "ru": "<p>Из \\(m\\ddot u=-(k-m\\omega_{\\rm ss}^2)u\\) находим частоту. Поперечную реакцию направляющей в это уравнение включать не нужно.</p>",
+            "en": "<p>The radial equation is \\(m\\ddot u=-(k-m\\omega_{\\rm ss}^2)u\\). The transverse reaction of the guide does not enter it.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega=\\sqrt{\\frac{k}{m}-\\omega_{\\rm ss}^2}.\\]</div>",
+        "en": "<div>\\[\\omega=\\sqrt{\\frac{k}{m}-\\omega_{\\rm ss}^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B4",
+      "max": 0.8,
+      "title": {
+        "ru": "Изменение тяжести с высотой",
+        "en": "Variation of gravity with height"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Градиент земного поля",
+            "en": "Earth’s gravitational gradient"
+          },
+          "body": {
+            "ru": "<p>На малой высоте \\(h\\) над поверхностью</p><div>\\[g(h)=g_{\\rm E}(1+h/R_{\\rm E})^{-2}\\simeq g_{\\rm E}\\left(1-\\frac{2h}{R_{\\rm E}}\\right).\\]</div><p>При подъёме вес уменьшается, что ослабляет возвращающую силу.</p>",
+            "en": "<p>At a small height \\(h\\) above the surface,</p><div>\\[g(h)=g_{\\rm E}(1+h/R_{\\rm E})^{-2}\\simeq g_{\\rm E}\\left(1-\\frac{2h}{R_{\\rm E}}\\right).\\]</div><p>Moving upwards reduces the weight and weakens the restoring force.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Линеаризованная частота",
+            "en": "Linearised frequency"
+          },
+          "body": {
+            "ru": "<p>Для направленного вверх отклонения \\(u\\) результирующая добавка силы равна \\(-ku+2mg_{\\rm E}u/R_{\\rm E}\\). Деление на массу даёт квадрат частоты.</p>",
+            "en": "<p>For an upward displacement \\(u\\), the net force increment is \\(-ku+2mg_{\\rm E}u/R_{\\rm E}\\). Divide the effective spring constant by the mass.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\widetilde{\\omega}_{\\rm E}=\\sqrt{\\frac{k}{m}-\\frac{2g_{\\rm E}}{R_{\\rm E}}}.\\]</div>",
+        "en": "<div>\\[\\widetilde{\\omega}_{\\rm E}=\\sqrt{\\frac{k}{m}-\\frac{2g_{\\rm E}}{R_{\\rm E}}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B5",
+      "max": 0.3,
+      "title": {
+        "ru": "Радиус эквивалентной станции",
+        "en": "Radius of the equivalent station"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.1,
+          "label": {
+            "ru": "Равенство частот",
+            "en": "Matching the frequencies"
+          },
+          "body": {
+            "ru": "<p>Частоты на станции и у поверхности Земли совпадают при \\(\\omega_{\\rm ss}^2=2g_{\\rm E}/R_{\\rm E}\\).</p>",
+            "en": "<p>The station and Earth frequencies agree when \\(\\omega_{\\rm ss}^2=2g_{\\rm E}/R_{\\rm E}\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Условие на радиус",
+            "en": "Radius condition"
+          },
+          "body": {
+            "ru": "<p>На полу одновременно должно выполняться \\(\\omega_{\\rm ss}^2=g_{\\rm E}/R\\). Исключаем \\(\\omega_{\\rm ss}\\).</p>",
+            "en": "<p>At the same time Earth-like floor gravity requires \\(\\omega_{\\rm ss}^2=g_{\\rm E}/R\\). Eliminate \\(\\omega_{\\rm ss}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[R=\\frac{R_{\\rm E}}{2}.\\]</div>",
+        "en": "<div>\\[R=\\frac{R_{\\rm E}}{2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B6",
+      "max": 1.1,
+      "title": {
+        "ru": "Отклонение падающего тела",
+        "en": "Deflection of a falling mass"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Свободное падение",
+            "en": "Radial free fall"
+          },
+          "body": {
+            "ru": "<p>Для \\(H\\ll R\\) используем постоянное \\(g_{\\rm E}=\\omega_{\\rm ss}^2R\\). За время \\(t\\) тело набирает радиальную скорость \\(g_{\\rm E}t\\) наружу, а пола достигает при \\(t_*=\\sqrt{2H/g_{\\rm E}}\\).</p>",
+            "en": "<p>For \\(H\\ll R\\) use constant \\(g_{\\rm E}=\\omega_{\\rm ss}^2R\\). The outward radial velocity is \\(g_{\\rm E}t\\), and the floor is reached at \\(t_*=\\sqrt{2H/g_{\\rm E}}\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Скорость вдоль пола",
+            "en": "Velocity along the floor"
+          },
+          "body": {
+            "ru": "<p>Направим ось \\(x\\) по вращению. Кориолисово ускорение направлено назад: \\(a_x=-2\\omega_{\\rm ss} g_{\\rm E}t\\). Отсюда \\(v_x=-\\omega_{\\rm ss} g_{\\rm E}t^2\\), в момент удара \\(v_x=-2\\omega_{\\rm ss} H\\).</p>",
+            "en": "<p>Take \\(x\\) in the direction of rotation. The Coriolis acceleration points backwards: \\(a_x=-2\\omega_{\\rm ss} g_{\\rm E}t\\). Integration gives \\(v_x=-\\omega_{\\rm ss} g_{\\rm E}t^2\\), hence \\(v_x=-2\\omega_{\\rm ss} H\\) at impact.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.5,
+          "label": {
+            "ru": "Смещение точки падения",
+            "en": "Shift of the landing point"
+          },
+          "body": {
+            "ru": "<p>Ещё одно интегрирование даёт \\(x=-\\omega_{\\rm ss} g_{\\rm E}t^3/3\\). Подставляем \\(t_*\\) и выражаем смещение через \\(H\\) и \\(R\\).</p>",
+            "en": "<p>A second integration gives \\(x=-\\omega_{\\rm ss} g_{\\rm E}t^3/3\\). Substitute \\(t_*\\) and express the displacement in terms of \\(H\\) and \\(R\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_x=-2\\omega_{\\rm ss}H,\\qquad d_x=-\\frac{2H}{3}\\sqrt{\\frac{2H}{R}}.\\]</div><p>Тело отстаёт от точки прямо под местом отпускания.</p>",
+        "en": "<div>\\[v_x=-2\\omega_{\\rm ss}H,\\qquad d_x=-\\frac{2H}{3}\\sqrt{\\frac{2H}{R}}.\\]</div><p>The mass lands behind the point initially below it.</p>"
+      }
+    },
+    {
+      "id": "T1-B7",
+      "max": 1.3,
+      "title": {
+        "ru": "Падение в исходную точку пола",
+        "en": "Landing on the original floor marker"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Движение в инерциальной системе",
+            "en": "Motion in an inertial frame"
+          },
+          "body": {
+            "ru": "<p>До отпускания тело находилось на радиусе \\(r_0=R-H\\). В инерциальной системе оно сохраняет касательную скорость \\(\\omega_{\\rm ss} r_0\\). Если начальные координаты равны \\((r_0,0)\\), то в момент удара они равны \\((r_0,r_0\\alpha)\\), где \\(\\alpha=\\omega_{\\rm ss} t\\).</p>",
+            "en": "<p>At release the mass is at radius \\(r_0=R-H\\). In an inertial frame its tangential velocity remains \\(\\omega_{\\rm ss} r_0\\). Starting from \\((r_0,0)\\), it reaches \\((r_0,r_0\\alpha)\\) at impact, where \\(\\alpha=\\omega_{\\rm ss} t\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Условие встречи",
+            "en": "Condition for coincidence"
+          },
+          "body": {
+            "ru": "<p>Метка пола имеет координаты \\((R\\cos\\alpha,R\\sin\\alpha)\\). Приравняв обе координаты, получаем \\(\\tan\\alpha=\\alpha\\) и \\(H/R=1-\\cos\\alpha\\). Необходимо \\(\\cos\\alpha&gt;0\\) и \\(\\sin\\alpha&gt;0\\).</p>",
+            "en": "<p>The marker is at \\((R\\cos\\alpha,R\\sin\\alpha)\\). Matching both coordinates gives \\(\\tan\\alpha=\\alpha\\) and \\(H/R=1-\\cos\\alpha\\). We need both \\(\\cos\\alpha&gt;0\\) and \\(\\sin\\alpha&gt;0\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Первый допустимый корень",
+            "en": "First admissible root"
+          },
+          "body": {
+            "ru": "<p>Корень \\(\\alpha=0\\) соответствует \\(H=0\\), а при \\(\\alpha\\simeq4{,}49\\) косинус отрицателен. Первый допустимый корень после полного оборота равен \\(7{,}7253\\). У более высоких корней \\(\\cos\\alpha=1/\\sqrt{1+\\alpha^2}\\) меньше, значит высота больше.</p>",
+            "en": "<p>The zero root corresponds to \\(H=0\\). The root near \\(4.49\\) has negative cosine. The first admissible root after one revolution is \\(7.7253\\). At higher admissible roots \\(\\cos\\alpha=1/\\sqrt{1+\\alpha^2}\\) is smaller, so the height is greater.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[H_{\\min}\\simeq0{,}872R.\\]</div><p>Допустимых высот бесконечно много.</p>",
+        "en": "<div>\\[H_{\\min}\\simeq0.872R.\\]</div><p>There are infinitely many admissible heights.</p>"
+      }
+    },
+    {
+      "id": "T1-B8",
+      "max": 1.7,
+      "title": {
+        "ru": "Траектория осциллятора",
+        "en": "Trajectory of the oscillator"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Вертикальное движение",
+            "en": "Vertical motion"
+          },
+          "body": {
+            "ru": "<p>Направим \\(y\\) вверх от равновесия. При отпускании из нижней крайней точки \\(y(0)=-d\\), поэтому \\(y(t)=-d\\cos\\omega t\\) и \\(\\dot y=d\\omega\\sin\\omega t\\).</p>",
+            "en": "<p>Measure \\(y\\) upwards from equilibrium. Release at the lower turning point gives \\(y(0)=-d\\), so \\(y(t)=-d\\cos\\omega t\\) and \\(\\dot y=d\\omega\\sin\\omega t\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.7,
+          "label": {
+            "ru": "Горизонтальное движение",
+            "en": "Horizontal motion"
+          },
+          "body": {
+            "ru": "<p>Выберем \\(x\\) так, что кориолисово ускорение равно \\(-2\\omega_{\\rm ss}\\dot y\\). При \\(\\dot x(0)=0\\) получаем \\(\\dot x=2\\omega_{\\rm ss} d(\\cos\\omega t-1)\\). Введём \\(a=2\\omega_{\\rm ss} d/\\omega\\).</p>",
+            "en": "<p>Choose \\(x\\) such that the Coriolis acceleration is \\(-2\\omega_{\\rm ss}\\dot y\\). With \\(\\dot x(0)=0\\), integration gives \\(\\dot x=2\\omega_{\\rm ss} d(\\cos\\omega t-1)\\). Write \\(a=2\\omega_{\\rm ss} d/\\omega\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Форма и размеры дуг",
+            "en": "Shape and dimensions"
+          },
+          "body": {
+            "ru": "<p>За период тело поднимается от \\(-d\\) до \\(+d\\) и возвращается вниз, продвинувшись вбок на \\(2\\pi a\\). В нижней точке обе компоненты скорости исчезают, образуя остриё. Следующая дуга повторяет предыдущую.</p>",
+            "en": "<p>Over one period the mass rises from \\(-d\\) to \\(+d\\) and returns, drifting horizontally by \\(2\\pi a\\). At each lower turning point both velocity components vanish, producing a cusp. The next arch repeats the first.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x(t)=a(\\sin\\omega t-\\omega t),\\qquad y(t)=-d\\cos\\omega t.\\]</div><figure><img src=\"/assets/practice/ipho-2016/figures/s1-f5.png\" alt=\"Траектория за несколько периодов.\" loading=\"lazy\" style=\"max-width:min(100%,510px)\"><figcaption>Траектория за несколько периодов.</figcaption></figure>",
+        "en": "<div>\\[x(t)=a(\\sin\\omega t-\\omega t),\\qquad y(t)=-d\\cos\\omega t.\\]</div><figure><img src=\"/assets/practice/ipho-2016/figures/s1-f5.png\" alt=\"Trajectory over several periods.\" loading=\"lazy\" style=\"max-width:min(100%,510px)\"><figcaption>Trajectory over several periods.</figcaption></figure>"
+      }
+    }
+  ]
+}

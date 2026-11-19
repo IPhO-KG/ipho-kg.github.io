@@ -1,0 +1,42 @@
+<article id="T1" class="exam-problem" lang="en">
+<h2>Problem T1 [10 pts]. Particles from the Sun</h2>
+<p>Light from the photosphere and neutrinos from the core provide two different solar thermometers. Use the following mass, radius, luminosity and Earth–Sun distance.</p>
+<div>\[M_\odot=2.00\times10^{30}\,\mathrm{kg},\quad R_\odot=7.00\times10^{8}\,\mathrm m,\]</div>
+<div>\[L_\odot=3.85\times10^{26}\,\mathrm W,\quad d_\odot=1.50\times10^{11}\,\mathrm m.\]</div>
+<p>For numerical estimates use the following constants.</p>
+<div>\[\sigma=5.67\times10^{-8}\,\mathrm{W\,m^{-2}K^{-4}},\quad k_B=1.38\times10^{-23}\,\mathrm{J/K},\quad G=6.67\times10^{-11}\,\mathrm{m^3kg^{-1}s^{-2}}.\]</div>
+<div>\[c=3.00\times10^8\,\mathrm{m/s},\quad h=6.63\times10^{-34}\,\mathrm{J\,s},\quad 1\,\mathrm{eV}=1.60\times10^{-19}\,\mathrm J.\]</div>
+<p>The following antiderivatives may be used. An arbitrary constant is understood.</p>
+<div>\[\int xe^{ax}\,dx=e^{ax}\left(\frac{x}{a}-\frac{1}{a^2}\right),\]</div>
+<div>\[\int x^2e^{ax}\,dx=e^{ax}\left(\frac{x^2}{a}-\frac{2x}{a^2}+\frac{2}{a^3}\right),\]</div>
+<div>\[\int x^3e^{ax}\,dx=e^{ax}\left(\frac{x^3}{a}-\frac{3x^2}{a^2}+\frac{6x}{a^3}-\frac{6}{a^4}\right).\]</div>
+<section id="T1-A">
+<h3>T1-A [5 pts]. Solar radiation</h3>
+<div class="exam-question" id="T1-A1" data-points="0.3"><p><strong>T1-A1 [0.3 pts].</strong> Treat the solar surface as a blackbody. Determine its temperature \(T_s\).</p></div>
+<p>A thin solar cell of area \(A\) on Earth faces the Sun. Let \(u(\nu)\,d\nu\) be the power it receives in a frequency band \(d\nu\). In the Wien model,</p>
+<div>\[u(\nu)=A\frac{R_\odot^2}{d_\odot^2}\frac{2\pi h}{c^2}\nu^3\exp\!\left(-\frac{h\nu}{k_BT_s}\right).\]</div>
+<div class="exam-question" id="T1-A2" data-points="0.3"><p><strong>T1-A2 [0.3 pts].</strong> Integrate this spectrum to find the incident power \(P_{\mathrm{in}}\) in terms of \(A,R_\odot,d_\odot,T_s,c,h,k_B\).</p></div>
+<div class="exam-question" id="T1-A3" data-points="0.2"><p><strong>T1-A3 [0.2 pts].</strong> Find the arrival rate of photons per unit frequency, \(n_\gamma(\nu)\), using the same quantities and \(\nu\).</p></div>
+<p>The band gap is \(E_g=h\nu_g\). A photon at or above this threshold excites one electron, yielding useful energy \(E_g\). Excess energy becomes heat. Below threshold the useful output is zero.</p>
+<div class="exam-question" id="T1-A4" data-points="1"><p><strong>T1-A4 [1 pt].</strong> With \(x_g=h\nu_g/(k_BT_s)\), determine \(P_{\mathrm{out}}\) from \(x_g,A,R_\odot,d_\odot,T_s\) and fundamental constants.</p></div>
+<div class="exam-question" id="T1-A5" data-points="0.2"><p><strong>T1-A5 [0.2 pts].</strong> Express the efficiency \(\eta\) as a function of \(x_g\).</p></div>
+<div class="exam-question" id="T1-A6" data-points="1"><p><strong>T1-A6 [1 pt].</strong> Sketch \(\eta(x_g)\), marking the value and the slope both at zero and in the limit \(x_g\to\infty\).</p></div>
+<div class="exam-question" id="T1-A7" data-points="1"><p><strong>T1-A7 [1 pt].</strong> Derive a cubic for the position \(x_0\) of the maximum. Estimate \(x_0\) to within \(\pm0.25\) and find the maximum efficiency.</p></div>
+<div class="exam-question" id="T1-A8" data-points="0.2"><p><strong>T1-A8 [0.2 pts].</strong> Use \(E_g=1.11\,\mathrm{eV}\) for pure silicon to calculate \(\eta_{\mathrm{Si}}\).</p></div>
+<p>In the Kelvin–Helmholtz hypothesis, slow contraction powers the Sun. Its initial cloud had the same mass but negligible density.</p>
+<div class="exam-question" id="T1-A9" data-points="0.3"><p><strong>T1-A9 [0.3 pts].</strong> For a uniform present-day Sun, obtain its gravitational potential energy \(\Omega\) in terms of \(G,M_\odot,R_\odot\).</p></div>
+<div class="exam-question" id="T1-A10" data-points="0.5"><p><strong>T1-A10 [0.5 pts].</strong> At constant luminosity \(L_\odot\), estimate the longest possible duration \(\tau_{\mathrm{KH}}\) of contraction-powered emission, in years.</p></div>
+</section>
+<section id="T1-B">
+<h3>T1-B [5 pts]. Solar neutrinos</h3>
+<p>Meteorite dating gives a solar system older than the timescale in A10. Consider fusion in the solar core, with net reaction</p>
+<div>\[4\,{}^1\mathrm H\longrightarrow{}^4\mathrm{He}+2e^++2\nu_e.\]</div>
+<p>Treat the escaping electron neutrinos as massless and neglect the energy they carry in the solar power budget.</p>
+<div class="exam-question" id="T1-B1" data-points="0.6"><p><strong>T1-B1 [0.6 pts].</strong> Each reaction releases \(\Delta E=4.0\times10^{-12}\,\mathrm J\). If these reactions supply the full luminosity, find the neutrino number flux \(\Phi_\nu\) at Earth in \(\mathrm{m^{-2}\,s^{-1}}\).</p></div>
+<div class="exam-question" id="T1-B2" data-points="0.4"><p><strong>T1-B2 [0.4 pts].</strong> Some \(\nu_e\) convert to a different flavour \(\nu_x\). The detector accepts \(\nu_x\) with one sixth of its efficiency for \(\nu_e\). The expected annual count with no conversion is \(N_1\), while the combined observed count is \(N_2\). Find the conversion fraction \(f\).</p></div>
+<div class="exam-question" id="T1-B3" data-points="2"><p><strong>T1-B3 [2 pts].</strong> A neutrino sets an initially stationary electron moving in water of refractive index \(n\). The Cherenkov cone is visible while the electron travels faster than light in water. It loses energy at a constant rate \(\alpha\) and emits Cherenkov light for \(\Delta t\). Determine the energy transferred to the electron in terms of \(\alpha,\Delta t,n,m_e,c\).</p></div>
+<p>In an intermediate solar reaction a beryllium nucleus captures an electron. The daughter lithium nucleus has a smaller rest mass.</p>
+<div>\[{}^7\mathrm{Be}+e^-\longrightarrow{}^7\mathrm{Li}+\nu_e.\]</div>
+<div class="exam-question" id="T1-B4" data-points="2"><p><strong>T1-B4 [2 pts].</strong> A stationary nucleus and electron give a neutrino energy \(E_\nu=1.44\times10^{-13}\,\mathrm J\). Thermal motion of nuclei of mass \(m_{\mathrm{Be}}=11.65\times10^{-27}\,\mathrm{kg}\) produces an rms energy shift \(\Delta E_{\mathrm{rms}}=5.54\times10^{-17}\,\mathrm J\). Find their rms speed \(V_{\mathrm{Be}}\) and the core temperature \(T_c\). Consider the line-of-sight component of the source velocity.</p></div>
+</section>
+</article>

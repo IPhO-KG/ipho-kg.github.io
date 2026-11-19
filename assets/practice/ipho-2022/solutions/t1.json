@@ -1,0 +1,439 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Постоянные магниты",
+    "en": "Permanent magnets"
+  },
+  "max": 10.0,
+  "sourcePdf": "/assets/practice/ipho-2022/IPhO_2022_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-A1",
+      "max": 0.6,
+      "title": {
+        "ru": "Притяжение удалённых дисков",
+        "en": "Attraction between distant disks"
+      },
+      "steps": [
+        {
+          "id": "dipoles",
+          "points": 0.3,
+          "label": {
+            "ru": "Моменты и энергия",
+            "en": "Dipoles and energy"
+          },
+          "body": {
+            "ru": "<p>На расстоянии \\(L\\gg d\\) каждый диск создаёт поле диполя с моментом \\(m=J\\pi d^2h/4\\). На оси первого диска \\(B=\\mu_0m/(2\\pi L^3)\\). Энергия второго диска в этом поле равна \\(U=-mB\\).</p>",
+            "en": "<p>At \\(L\\gg d\\) each disk acts as a dipole of moment \\(m=J\\pi d^2h/4\\). The first disk produces the axial field \\(B=\\mu_0m/(2\\pi L^3)\\) at the second, whose energy is \\(U=-mB\\).</p>"
+          }
+        },
+        {
+          "id": "pull",
+          "points": 0.3,
+          "label": {
+            "ru": "Сила притяжения",
+            "en": "Attractive force"
+          },
+          "body": {
+            "ru": "<p>При увеличении расстояния энергия растёт. Модуль силы притяжения равен \\(dU/dL\\). Подстановка \\(m=0{,}75\\,\\mathrm{А\\,м^2}\\) даёт</p>",
+            "en": "<p>Increasing the separation raises the energy. The pull has magnitude \\(dU/dL\\). Substituting \\(m=0.75\\,\\mathrm{A\\,m^2}\\) gives</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_1=\\frac{3\\mu_0m^2}{2\\pi L^4}\\approx0{,}21\\,\\mathrm{мН}.\\]</div>",
+        "en": "<div>\\[F_1=\\frac{3\\mu_0m^2}{2\\pi L^4}\\approx0.21\\,\\mathrm{mN}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A2",
+      "max": 0.4,
+      "title": {
+        "ru": "Ток вдоль обода",
+        "en": "Current around the rim"
+      },
+      "steps": [
+        {
+          "id": "rim",
+          "points": 0.2,
+          "label": {
+            "ru": "Эквивалентный виток",
+            "en": "Equivalent loop"
+          },
+          "body": {
+            "ru": "<p>При однородной намагниченности токи соседних микроскопических контуров в объёме компенсируются. Остаётся ток по боковой поверхности. Для тонкого диска это виток площадью \\(S=\\pi d^2/4\\) с моментом \\(IS\\).</p>",
+            "en": "<p>For uniform magnetization the microscopic currents cancel in the bulk, leaving a current around the rim. A thin disk thus acts as a loop of area \\(S=\\pi d^2/4\\) and moment \\(IS\\).</p>"
+          }
+        },
+        {
+          "id": "current",
+          "points": 0.2,
+          "label": {
+            "ru": "Величина тока",
+            "en": "Current magnitude"
+          },
+          "body": {
+            "ru": "<p>У магнита того же объёма момент равен \\(JSh\\). Приравнивая моменты, находим ток.</p>",
+            "en": "<p>The disk has moment \\(JSh\\). Equating the two expressions determines the current.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I=Jh\\approx2{,}4\\,\\mathrm{кА}.\\]</div>",
+        "en": "<div>\\[I=Jh\\approx2.4\\,\\mathrm{kA}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A3",
+      "max": 1.0,
+      "title": {
+        "ru": "Притяжение близких дисков",
+        "en": "Attraction between nearby disks"
+      },
+      "steps": [
+        {
+          "id": "field",
+          "points": 0.6,
+          "label": {
+            "ru": "Поле соседнего участка",
+            "en": "Field of the neighbouring rim"
+          },
+          "body": {
+            "ru": "<p>На масштабе зазора \\(L\\ll d\\) соседние участки ободов почти прямые. Один из них создаёт у другого поле \\(B\\simeq\\mu_0I/(2\\pi L)\\).</p>",
+            "en": "<p>On the scale of the small gap \\(L\\ll d\\), neighbouring portions of the rims are nearly straight. The field of one rim at the other is approximately \\(B=\\mu_0 I/(2\\pi L)\\).</p>"
+          }
+        },
+        {
+          "id": "force",
+          "points": 0.4,
+          "label": {
+            "ru": "Сила по всей окружности",
+            "en": "Force around the circumference"
+          },
+          "body": {
+            "ru": "<p>Токи сонаправлены и притягиваются. Вклад элемента \\(ds\\) равен \\(IB\\,ds\\), а длина всего обода равна \\(\\pi d\\).</p>",
+            "en": "<p>The currents flow the same way and attract. Each element \\(ds\\) contributes \\(IB\\,ds\\) and the rim has length \\(\\pi d\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_2\\simeq\\frac{\\mu_0 I^2d}{2L}\\approx14\\,\\mathrm{Н}.\\]</div>",
+        "en": "<div>\\[F_2\\simeq\\frac{\\mu_0 I^2d}{2L}\\approx14\\,\\mathrm N.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A4",
+      "max": 1.0,
+      "title": {
+        "ru": "Предельная длина цепочки",
+        "en": "Maximum chain length"
+      },
+      "steps": [
+        {
+          "id": "load",
+          "points": 0.4,
+          "label": {
+            "ru": "Нагрузка в верхнем контакте",
+            "en": "Load at the upper contact"
+          },
+          "body": {
+            "ru": "<p>Верхний шар должен удерживать все \\(N\\) шаров под ним. Если масса одного шара \\(M=\\rho\\pi\\delta^3/6\\), нагрузка на этот контакт равна \\(NMg\\).</p>",
+            "en": "<p>The top sphere must support all \\(N\\) spheres below it. A sphere has mass \\(M=\\rho\\pi\\delta^3/6\\), so this contact carries a load \\(NMg\\).</p>"
+          }
+        },
+        {
+          "id": "sum",
+          "points": 0.4,
+          "label": {
+            "ru": "Притяжение остальных шаров",
+            "en": "Pull of the other spheres"
+          },
+          "body": {
+            "ru": "<p>Момент шара равен \\(m=J\\pi\\delta^3/6\\). Расстояние до \\(n\\)-го соседа равно \\(n\\delta\\), поэтому его притяжение убывает как \\(n^{-4}\\). Для длинной цепочки</p><div>\\[F=\\frac{3\\mu_0m^2}{2\\pi\\delta^4}\\sum_{n=1}^{\\infty}\\frac{1}{n^4},\\qquad \\sum_{n=1}^{\\infty}\\frac{1}{n^4}=\\frac{\\pi^4}{90}.\\]</div>",
+            "en": "<p>Each sphere has moment \\(m=J\\pi\\delta^3/6\\). The \\(n\\)th sphere is \\(n\\delta\\) away, so its pull falls as \\(n^{-4}\\). For a long chain</p><div>\\[F=\\frac{3\\mu_0m^2}{2\\pi\\delta^4}\\sum_{n=1}^{\\infty}\\frac{1}{n^4},\\qquad \\sum_{n=1}^{\\infty}n^{-4}=\\frac{\\pi^4}{90}.\\]</div>"
+          }
+        },
+        {
+          "id": "length",
+          "points": 0.2,
+          "label": {
+            "ru": "Длина при отрыве",
+            "en": "Length at separation"
+          },
+          "body": {
+            "ru": "<p>Из \\(NMg=F\\) получаем около 1320 шаров. При таком \\(N\\) замена конечной суммы бесконечной оправдана.</p>",
+            "en": "<p>Setting \\(NMg=F\\) gives about 1320 spheres, consistent with using the infinite sum.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\ell\\simeq N\\delta=\\frac{\\mu_0m^2\\pi^3}{60Mg\\delta^3}\\approx6{,}6\\,\\mathrm{м}.\\]</div>",
+        "en": "<div>\\[\\ell\\simeq N\\delta=\\frac{\\mu_0m^2\\pi^3}{60Mg\\delta^3}\\approx6.6\\,\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A5",
+      "max": 1.5,
+      "title": {
+        "ru": "Поле у конца цепочки",
+        "en": "Field near the end"
+      },
+      "steps": [
+        {
+          "id": "poles",
+          "points": 0.8,
+          "label": {
+            "ru": "Модель дипольной цепочки",
+            "en": "A chain of dipoles"
+          },
+          "body": {
+            "ru": "<p>На расстоянии \\(r\\gg\\delta\\) шар можно представить парой противоположных фиктивных полюсов на расстоянии \\(\\delta\\), выбрав \\(q\\delta=m\\). В точках контакта полюса соседних шаров компенсируются. Остаются два конца цепочки.</p>",
+            "en": "<p>At \\(r\\gg\\delta\\) a sphere can be represented by two fictitious opposite poles a distance \\(\\delta\\) apart, with \\(q\\delta=m\\). Poles at adjacent contacts cancel, leaving just the ends.</p>"
+          }
+        },
+        {
+          "id": "field",
+          "points": 0.7,
+          "label": {
+            "ru": "Поле ближайшего конца",
+            "en": "Nearest-end field"
+          },
+          "body": {
+            "ru": "<p>Дальний конец находится на расстоянии \\(\\ell\\gg r\\). Поле ближайшего конца радиально, а его модуль \\(\\mu_0q/(4\\pi r^2)\\) не зависит от угла наблюдения.</p>",
+            "en": "<p>The far end is a distance \\(\\ell\\gg r\\) away. The near end gives a radial field of magnitude \\(\\mu_0q/(4\\pi r^2)\\) independent of observation angle.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[B=\\frac{\\mu_0J\\delta^2}{24r^2}.\\]</div>",
+        "en": "<div>\\[B=\\frac{\\mu_0J\\delta^2}{24r^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B1",
+      "max": 1.0,
+      "title": {
+        "ru": "Линии поля у пластины",
+        "en": "Field lines at a plate"
+      },
+      "steps": [
+        {
+          "id": "line-one",
+          "points": 0.2,
+          "label": {
+            "ru": "Линия 1 вне пластины",
+            "en": "Line 1 outside the plate"
+          },
+          "body": {
+            "ru": "<p>На границе непрерывны нормальная компонента \\(\\mathbf B\\) и касательная компонента \\(\\mathbf H\\). Линия через точку 1 описывает замкнутую петлю вблизи шара и не касается пластины.</p>",
+            "en": "<p>The normal component of \\(\\mathbf B\\) and the tangential component of \\(\\mathbf H\\) are continuous at the interface. The line through point 1 closes near the sphere without touching the plate.</p>"
+          }
+        },
+        {
+          "id": "line-two",
+          "points": 0.4,
+          "label": {
+            "ru": "Линия 2 в глубине пластины",
+            "en": "Line 2 inside the plate"
+          },
+          "body": {
+            "ru": "<p>У материала с большой проницаемостью линии снаружи подходят к границе почти по нормали и поворачивают внутри. Линия 2 продолжается вдоль пластины за границу рисунка. Продолжаем её и с другой стороны шара до края рисунка.</p>",
+            "en": "<p>For a highly permeable material the exterior lines meet the surface almost normally and bend inside it. Line 2 extends along the plate beyond the drawing. Continue its branch on the far side of the sphere to the edge of the drawing as well.</p>"
+          }
+        },
+        {
+          "id": "line-three",
+          "points": 0.4,
+          "label": {
+            "ru": "Замыкание линии 3",
+            "en": "Closure of line 3"
+          },
+          "body": {
+            "ru": "<p>Линия 3 возвращается через ближнюю поверхность пластины, не доходя до противоположной грани. Вместе с участком в шаре она образует замкнутую петлю.</p><figure><img style=\"width:min(100%,30rem)\" src=\"/assets/practice/ipho-2022/figures/IPhO_2022_S1_fig2.png\" alt=\"Линии поля в сечении шара и ферромагнитной пластины\" loading=\"lazy\"></figure>",
+            "en": "<p>Line 3 returns through the near face of the plate without reaching the opposite face. Its path through the sphere completes a closed loop.</p><figure><img style=\"width:min(100%,30rem)\" src=\"/assets/practice/ipho-2022/figures/IPhO_2022_S1_fig2.png\" alt=\"Field lines around the sphere and the plate\" loading=\"lazy\"></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Засчитываются три траектории, показанные на рисунке. В бланке та же геометрия повёрнута на четверть оборота.</p>",
+        "en": "<p>The diagram shows the three paths. The answer sheet uses the same geometry rotated by a quarter turn.</p>"
+      }
+    },
+    {
+      "id": "T1-B2",
+      "max": 1.0,
+      "title": {
+        "ru": "Магнитное изображение шара",
+        "en": "Magnetic image of a sphere"
+      },
+      "steps": [
+        {
+          "id": "image",
+          "points": 0.5,
+          "label": {
+            "ru": "Диполь по другую сторону границы",
+            "en": "Dipole across the interface"
+          },
+          "body": {
+            "ru": "<p>Заменим пластину зеркальным диполем. Нормальная составляющая момента изображения совпадает с нормальной составляющей исходного момента, а касательная меняет знак. Тогда касательное поле на поверхности исчезает, как и требуется.</p>",
+            "en": "<p>Replace the plate by an image dipole. Its moment has the same normal component as the original and the opposite tangential component. The tangential field then vanishes on the surface.</p>"
+          }
+        },
+        {
+          "id": "orientation",
+          "points": 0.2,
+          "label": {
+            "ru": "Устойчивые направления",
+            "en": "Stable orientations"
+          },
+          "body": {
+            "ru": "<p>Диполь стремится повернуться вдоль поля своего изображения. Устойчивы обе ориентации по нормали к пластине. В бланке это первые клетки обоих рядов.</p><p>В этой части критерия каждая правильная отметка приносит 0,1 балла, каждая лишняя снимает 0,1. Результат за выбор направлений лежит между 0 и 0,2 балла.</p>",
+            "en": "<p>The dipole rotates toward the field of its image. Either direction along the surface normal is stable. These are the first boxes in both rows of the answer sheet.</p><p>Each correct direction earns 0.1 and an incorrect choice deducts 0.1. The orientation subtotal stays between 0 and 0.2.</p>"
+          }
+        },
+        {
+          "id": "pull",
+          "points": 0.3,
+          "label": {
+            "ru": "Сила контакта",
+            "en": "Contact force"
+          },
+          "body": {
+            "ru": "<p>В равновесии моменты двух диполей соосны, а их центры разделяет диаметр шара \\(\\delta\\). Применим результат A1 при \\(L=\\delta\\).</p>",
+            "en": "<p>In equilibrium the moments are coaxial and their centres are one diameter \\(\\delta\\) apart. Use A1 with \\(L=\\delta\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F=\\frac{3\\mu_0m^2}{2\\pi\\delta^4}\\approx5{,}9\\,\\mathrm{Н}.\\]</div>",
+        "en": "<div>\\[F=\\frac{3\\mu_0m^2}{2\\pi\\delta^4}\\approx5.9\\,\\mathrm N.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B3",
+      "max": 1.5,
+      "title": {
+        "ru": "Сила на пластину",
+        "en": "Force on a plate"
+      },
+      "steps": [
+        {
+          "id": "flux",
+          "points": 0.9,
+          "label": {
+            "ru": "Поле в диске и зазоре",
+            "en": "Field in the disk and gap"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(A=\\pi d^2/4\\). Поток в диске возвращается через кольцо площадью \\(3A\\). В узком зазоре поля почти однородны и перпендикулярны пластинам. Из сохранения потока \\(B_1=3B_2\\). Циркуляция поля по контуру через диск и зазор даёт \\((B_1+B_2)h=\\mu_0I\\), где \\(I=Jh\\). Отсюда \\(B_1=3\\mu_0J/4\\), \\(B_2=\\mu_0J/4\\).</p>",
+            "en": "<p>Put \\(A=\\pi d^2/4\\). The flux in the disk returns through an annulus of area \\(3A\\). Both fields are nearly uniform and normal to the plates. Flux continuity gives \\(B_1=3B_2\\). Circulation around a loop crossing the disk and the gap yields \\((B_1+B_2)h=\\mu_0I\\) with \\(I=Jh\\). Thus \\(B_1=3\\mu_0J/4\\) and \\(B_2=\\mu_0J/4\\).</p>"
+          }
+        },
+        {
+          "id": "stress",
+          "points": 0.6,
+          "label": {
+            "ru": "Магнитное давление",
+            "en": "Magnetic pressure"
+          },
+          "body": {
+            "ru": "<p>Нормальное поле создаёт давление \\(B^2/(2\\mu_0)\\). Хотя потоки внутри диска и снаружи противоположны, обе области притягивают пластину. Складываем силы \\(AB_1^2/(2\\mu_0)\\) и \\(3AB_2^2/(2\\mu_0)\\).</p><p>Тот же результат даёт виртуальное смещение пластины на \\(dx\\). Заменим магнит эквивалентным сверхпроводящим витком с тем же начальным полем. При смещении сохраняется поток, и добавочный объём поля запасает энергию \\(dW=(AB_1^2+3AB_2^2)\\,dx/(2\\mu_0)\\). Сила равна \\(dW/dx\\).</p>",
+            "en": "<p>A normal field exerts a pressure \\(B^2/(2\\mu_0)\\). The two fluxes have opposite directions, but both regions pull on the plate. Add \\(AB_1^2/(2\\mu_0)\\) and \\(3AB_2^2/(2\\mu_0)\\).</p><p>The same pressure follows by a virtual displacement \\(dx\\). Replace the magnet by a superconducting loop giving the same initial field. Flux stays fixed during the displacement, so the added field volume stores energy \\(dW=(AB_1^2+3AB_2^2)\\,dx/(2\\mu_0)\\). The pull is \\(dW/dx\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F=\\frac{3\\pi}{32}\\mu_0J^2d^2\\approx210\\,\\mathrm{Н}.\\]</div>",
+        "en": "<div>\\[F=\\frac{3\\pi}{32}\\mu_0J^2d^2\\approx210\\,\\mathrm N.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-C1",
+      "max": 0.8,
+      "title": {
+        "ru": "Порядок на квадратной решётке",
+        "en": "Order on a square lattice"
+      },
+      "steps": [
+        {
+          "id": "order",
+          "points": 0.5,
+          "label": {
+            "ru": "Устойчивое расположение",
+            "en": "A stable arrangement"
+          },
+          "body": {
+            "ru": "<p>Направим диполи вдоль рядов, чередуя направление от ряда к ряду. Горизонтальные соседи притягиваются как соосные диполи, вертикальные как антипараллельные поперечные. Поле четырёх соседей сонаправлено с центральным моментом, обеспечивая устойчивость к малому повороту.</p><figure><img style=\"width:min(100%,27rem)\" src=\"/assets/practice/ipho-2022/figures/IPhO_2022_S1_fig5.png\" alt=\"Антипараллельные цепочки в квадратной решётке\" loading=\"lazy\"></figure>",
+            "en": "<p>Align the dipoles within each row and reverse alternate rows. Along a row the coaxial dipoles attract. Across rows the antiparallel side-by-side dipoles also attract. The net field of the four neighbours points along the central moment, restoring it after a small rotation.</p><figure><img style=\"width:min(100%,27rem)\" src=\"/assets/practice/ipho-2022/figures/IPhO_2022_S1_fig5.png\" alt=\"Alternating chains on the square lattice\" loading=\"lazy\"></figure>"
+          }
+        },
+        {
+          "id": "work",
+          "points": 0.3,
+          "label": {
+            "ru": "Работа извлечения",
+            "en": "Extraction work"
+          },
+          "body": {
+            "ru": "<p>Обозначим \\(b=\\mu_0m/(4\\pi\\delta^3)\\). Два соседа по ряду создают по \\(2b\\), два других по \\(b\\). Для удаления центрального шара из данного поля требуется работа \\(mB\\).</p>",
+            "en": "<p>Write \\(b=\\mu_0m/(4\\pi\\delta^3)\\). Each neighbour in the row contributes \\(2b\\) and each transverse neighbour contributes \\(b\\). Taking the sphere out costs \\(mB\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Антиферромагнитный порядок.</p><div>\\[W=\\frac{3\\mu_0m^2}{2\\pi\\delta^3}\\approx29\\,\\mathrm{мДж}.\\]</div>",
+        "en": "<p>Antiferromagnetic order.</p><div>\\[W=\\frac{3\\mu_0m^2}{2\\pi\\delta^3}\\approx29\\,\\mathrm{mJ}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-C2",
+      "max": 1.2,
+      "title": {
+        "ru": "Порядок на треугольной решётке",
+        "en": "Order on a triangular lattice"
+      },
+      "steps": [
+        {
+          "id": "field",
+          "points": 0.5,
+          "label": {
+            "ru": "Поле шести соседей",
+            "en": "Field of six neighbours"
+          },
+          "body": {
+            "ru": "<p>Направим все моменты вдоль ряда. Для соседа под углом \\(\\alpha\\) продольное поле равно \\(b(3\\cos^2\\alpha-1)\\), где \\(b=\\mu_0m/(4\\pi\\delta^3)\\). Складываются два вклада \\(2b\\) и четыре по \\(-b/4\\). Результирующее поле \\(3b\\) сонаправлено с моментом.</p>",
+            "en": "<p>Align all moments along a row. A neighbour at angle \\(\\alpha\\) contributes \\(b(3\\cos^2\\alpha-1)\\) along the row, where \\(b=\\mu_0m/(4\\pi\\delta^3)\\). Two axial neighbours contribute \\(2b\\) each and four oblique ones contribute \\(-b/4\\) each. Their net field \\(3b\\) aligns the moment.</p>"
+          }
+        },
+        {
+          "id": "stability",
+          "points": 0.5,
+          "label": {
+            "ru": "Притяжение между рядами",
+            "en": "Attraction between rows"
+          },
+          "body": {
+            "ru": "<p>Пусть нижние соседи находятся на расстоянии \\(l\\) от верхнего шара. Горизонтальное смещение каждого равно \\(\\delta/2\\). Энергия пары связей равна \\(U=2(\\mu_0m^2/4\\pi)[l^{-3}-3\\delta^2/(4l^5)]\\). При \\(l=\\delta\\) производная \\(dU/dl\\) положительна. Раздвигая ряды, мы увеличиваем энергию. Следовательно, ряды притягиваются.</p><figure><img style=\"width:min(100%,27rem)\" src=\"/assets/practice/ipho-2022/figures/IPhO_2022_S1_fig8.png\" alt=\"Параллельные диполи в треугольной решётке\" loading=\"lazy\"></figure>",
+            "en": "<p>Let \\(l\\) be the distance from a sphere to either of its two neighbours in the row below. Each is displaced horizontally by \\(\\delta/2\\). The two interaction energies sum to \\(U=2(\\mu_0m^2/4\\pi)[l^{-3}-3\\delta^2/(4l^5)]\\). At contact, \\(l=\\delta\\) and \\(dU/dl\\) is positive. Separating the rows raises the energy, so they attract.</p><figure><img style=\"width:min(100%,27rem)\" src=\"/assets/practice/ipho-2022/figures/IPhO_2022_S1_fig8.png\" alt=\"Parallel dipoles on the triangular lattice\" loading=\"lazy\"></figure>"
+          }
+        },
+        {
+          "id": "work",
+          "points": 0.2,
+          "label": {
+            "ru": "Работа извлечения",
+            "en": "Extraction work"
+          },
+          "body": {
+            "ru": "<p>В начальном положении энергия выбранного шара равна \\(-3mb\\). На бесконечности она обращается в нуль.</p>",
+            "en": "<p>The chosen sphere starts at energy \\(-3mb\\) and ends at zero energy at infinity.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Ферромагнитный порядок.</p><div>\\[W=\\frac{3\\mu_0m^2}{4\\pi\\delta^3}\\approx15\\,\\mathrm{мДж}.\\]</div>",
+        "en": "<p>Ferromagnetic order.</p><div>\\[W=\\frac{3\\mu_0m^2}{4\\pi\\delta^3}\\approx15\\,\\mathrm{mJ}.\\]</div>"
+      }
+    }
+  ]
+}

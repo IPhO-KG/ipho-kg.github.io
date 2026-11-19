@@ -1,0 +1,659 @@
+{
+  "id": "T1",
+  "max": 10,
+  "title": {
+    "ru": "Эволюция системы Земля — Луна",
+    "en": "Evolution of the Earth–Moon system"
+  },
+  "sourcePdf": "/assets/practice/ipho-2009/IPhO_2009_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-1a",
+      "max": 0.2,
+      "title": {
+        "ru": "Момент импульса сегодня",
+        "en": "Present angular momentum"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Сложение вдоль общей оси",
+            "en": "Adding components along one axis"
+          },
+          "body": {
+            "ru": "<p>Оба движения дают положительные проекции момента на одну ось. Для каждого движения эта проекция равна произведению момента инерции на угловую скорость.</p>",
+            "en": "<p>Both motions have positive angular momentum along the same axis. Each contribution is its inertia times its angular speed.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[L_1=I_E\\omega_{E1}+I_{M1}\\omega_{M1}.\\]</div>",
+        "en": "<div>\\[L_1=I_E\\omega_{E1}+I_{M1}\\omega_{M1}.\\]</div>"
+      },
+      "label": "1a"
+    },
+    {
+      "id": "T1-1b",
+      "max": 0.2,
+      "title": {
+        "ru": "Синхронное состояние",
+        "en": "Synchronous state"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Общая угловая скорость",
+            "en": "Common angular speed"
+          },
+          "body": {
+            "ru": "<p>Моменты инерции остаются разными, но множитель \\(\\omega_2\\) теперь общий для двух вкладов.</p>",
+            "en": "<p>The two inertias differ, but the angular speed is now common to both terms.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[L_2=(I_E+I_{M2})\\omega_2.\\]</div>",
+        "en": "<div>\\[L_2=(I_E+I_{M2})\\omega_2.\\]</div>"
+      },
+      "label": "1b"
+    },
+    {
+      "id": "T1-1c",
+      "max": 0.3,
+      "title": {
+        "ru": "Баланс при слабом конечном вращении Земли",
+        "en": "Balance with negligible final spin"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Внутренний приливный момент",
+            "en": "Internal tidal torque"
+          },
+          "body": {
+            "ru": "<p>Приливный момент перераспределяет момент импульса внутри системы. При отсутствии внешнего момента \\(L_1=L_2\\), а в принятом приближении \\(L_2\\simeq I_{M2}\\omega_2\\).</p>",
+            "en": "<p>Tidal torque transfers angular momentum within the system. With zero external torque \\(L_1=L_2\\), and the final total reduces to \\(I_{M2}\\omega_2\\) to this accuracy.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I_E\\omega_{E1}+I_{M1}\\omega_{M1}\\simeq I_{M2}\\omega_2.\\]</div>",
+        "en": "<div>\\[I_E\\omega_{E1}+I_{M1}\\omega_{M1}\\simeq I_{M2}\\omega_2.\\]</div>"
+      },
+      "label": "1c"
+    },
+    {
+      "id": "T1-2a",
+      "max": 0.2,
+      "title": {
+        "ru": "Условие круговой орбиты",
+        "en": "Circular-orbit condition"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Радиальное ускорение",
+            "en": "Radial acceleration"
+          },
+          "body": {
+            "ru": "<p>Гравитационное ускорение на расстоянии \\(D_2\\) равно центростремительному ускорению \\(\\omega_2^2D_2\\).</p>",
+            "en": "<p>At distance \\(D_2\\) the gravitational acceleration equals the centripetal acceleration \\(\\omega_2^2D_2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_2^2D_2^3=GM_E.\\]</div>",
+        "en": "<div>\\[\\omega_2^2D_2^3=GM_E.\\]</div>"
+      },
+      "label": "2a"
+    },
+    {
+      "id": "T1-2b",
+      "max": 0.5,
+      "title": {
+        "ru": "Радиус орбиты через момент",
+        "en": "Orbital radius from angular momentum"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Исключение скорости",
+            "en": "Eliminating the angular speed"
+          },
+          "body": {
+            "ru": "<p>Для точечной Луны \\(I_{M2}=M_M D_2^2\\). Исключая скорость по 2a, получаем \\(L_1\\simeq M_M\\sqrt{GM_E D_2}\\).</p>",
+            "en": "<p>A point-like Moon has \\(I_{M2}=M_M D_2^2\\). Inserting the angular speed from 2a gives \\(L_1\\simeq M_M\\sqrt{GM_E D_2}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[D_2\\simeq\\frac{L_1^2}{GM_E M_M^2}.\\]</div>",
+        "en": "<div>\\[D_2\\simeq\\frac{L_1^2}{GM_E M_M^2}.\\]</div>"
+      },
+      "label": "2b"
+    },
+    {
+      "id": "T1-2c",
+      "max": 0.5,
+      "title": {
+        "ru": "Угловая скорость через момент",
+        "en": "Angular speed from angular momentum"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Подстановка радиуса",
+            "en": "Inserting the final radius"
+          },
+          "body": {
+            "ru": "<p>Подставляем \\(D_2\\) из 2b в \\(\\omega_2=\\sqrt{GM_E/D_2^3}\\) и берём положительный корень.</p>",
+            "en": "<p>Insert 2b into \\(\\omega_2=\\sqrt{GM_E/D_2^3}\\) and take the positive root.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_2\\simeq\\frac{G^2 M_E^2 M_M^3}{L_1^3}.\\]</div>",
+        "en": "<div>\\[\\omega_2\\simeq\\frac{G^2 M_E^2 M_M^3}{L_1^3}.\\]</div>"
+      },
+      "label": "2c"
+    },
+    {
+      "id": "T1-2d",
+      "max": 0.5,
+      "title": {
+        "ru": "Момент инерции двухслойной Земли",
+        "en": "Inertia of the two-layer Earth"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Наложение двух шаров",
+            "en": "Superposing two spheres"
+          },
+          "body": {
+            "ru": "<p>Начнём с шара радиуса \\(r_o\\) и плотности \\(\\rho_o\\). В области ядра добавим плотность \\(\\rho_i-\\rho_o\\). Каждый однородный шар вносит \\(2Mr^2/5\\) с массой \\(M=4\\pi\\rho r^3/3\\).</p>",
+            "en": "<p>Start with a sphere of radius \\(r_o\\) and density \\(\\rho_o\\). Add a central sphere of density \\(\\rho_i-\\rho_o\\). Each contributes \\(2Mr^2/5\\) with \\(M=4\\pi\\rho r^3/3\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I_E=\\frac{8\\pi}{15}\\left[\\rho_o r_o^5+(\\rho_i-\\rho_o)r_i^5\\right].\\]</div>",
+        "en": "<div>\\[I_E=\\frac{8\\pi}{15}\\left[\\rho_o r_o^5+(\\rho_i-\\rho_o)r_i^5\\right].\\]</div>"
+      },
+      "label": "2d"
+    },
+    {
+      "id": "T1-2e",
+      "max": 0.2,
+      "title": {
+        "ru": "Численное значение момента инерции",
+        "en": "Numerical inertia"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Вклад внешней области и ядра",
+            "en": "Outer sphere and core correction"
+          },
+          "body": {
+            "ru": "<p>В формуле 2d вклады внешнего шара и добавочной плотности ядра составляют примерно \\(7{,}2\\cdot10^{37}\\) и \\(0{,}79\\cdot10^{37}\\,\\mathrm{kg\\,m^2}\\).</p>",
+            "en": "<p>In 2d the outer sphere and core density correction contribute about \\(7.2\\cdot10^{37}\\) and \\(0.79\\cdot10^{37}\\,\\mathrm{kg\\,m^2}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I_E\\simeq8{,}0\\cdot10^{37}\\,\\mathrm{kg\\,m^2}.\\]</div>",
+        "en": "<div>\\[I_E\\simeq8.0\\cdot10^{37}\\,\\mathrm{kg\\,m^2}.\\]</div>"
+      },
+      "label": "2e"
+    },
+    {
+      "id": "T1-2f",
+      "max": 0.2,
+      "title": {
+        "ru": "Момент импульса системы",
+        "en": "System angular momentum"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Вращение и обращение",
+            "en": "Spin and orbit"
+          },
+          "body": {
+            "ru": "<p>В 1a подставляем \\(I_E\\) из 2e и \\(I_{M1}=M_M D_1^2\\). Орбитальный вклад Луны примерно в пять раз больше собственного момента Земли.</p>",
+            "en": "<p>Insert \\(I_E\\) from 2e and \\(I_{M1}=M_M D_1^2\\) into 1a. The lunar orbital contribution is about five times the Earth&#x27;s spin contribution.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[L_1\\simeq3{,}4\\cdot10^{34}\\,\\mathrm{kg\\,m^2/s}.\\]</div>",
+        "en": "<div>\\[L_1\\simeq3.4\\cdot10^{34}\\,\\mathrm{kg\\,m^2/s}.\\]</div>"
+      },
+      "label": "2f"
+    },
+    {
+      "id": "T1-2g",
+      "max": 0.3,
+      "title": {
+        "ru": "Конечное расстояние",
+        "en": "Final separation"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Масштаб изменения орбиты",
+            "en": "Change in orbital scale"
+          },
+          "body": {
+            "ru": "<p>Как в разборе жюри, подставляем округлённое \\(L_1=3{,}4\\cdot10^{34}\\,\\mathrm{kg\\,m^2/s}\\) в 2b и делим найденное расстояние на \\(3{,}8\\cdot10^8\\,\\mathrm m\\).</p>",
+            "en": "<p>Following the published rounding, insert \\(L_1=3.4\\cdot10^{34}\\,\\mathrm{kg\\,m^2/s}\\) into 2b and divide the result by \\(3.8\\cdot10^8\\,\\mathrm m\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[D_2\\simeq5{,}4\\cdot10^8\\,\\mathrm m\\simeq1{,}4D_1.\\]</div>",
+        "en": "<div>\\[D_2\\simeq5.4\\cdot10^8\\,\\mathrm m\\simeq1.4D_1.\\]</div>"
+      },
+      "label": "2g"
+    },
+    {
+      "id": "T1-2h",
+      "max": 0.3,
+      "title": {
+        "ru": "Длительность конечных суток",
+        "en": "Final day length"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Период синхронного вращения",
+            "en": "Synchronous period"
+          },
+          "body": {
+            "ru": "<p>Используем округлённый радиус 2g. Общая скорость равна \\(\\sqrt{GM_E/D_2^3}\\). Делим \\(2\\pi\\) на эту скорость, а затем выражаем период в сутках по \\(86400\\,\\mathrm s\\).</p>",
+            "en": "<p>Using the rounded radius from 2g gives a common angular speed of \\(\\sqrt{GM_E/D_2^3}\\). Divide \\(2\\pi\\) by it, then convert the period into units of \\(86400\\,\\mathrm s\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_2\\simeq1{,}6\\cdot10^{-6}\\,\\mathrm{s^{-1}},\\qquad P_2\\simeq46\\,\\mathrm d.\\]</div>",
+        "en": "<div>\\[\\omega_2\\simeq1.6\\cdot10^{-6}\\,\\mathrm{s^{-1}},\\qquad P_2\\simeq46\\,\\mathrm d.\\]</div>"
+      },
+      "label": "2h"
+    },
+    {
+      "id": "T1-2i",
+      "max": 0.2,
+      "title": {
+        "ru": "Проверка приближения",
+        "en": "Checking the approximation"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Отношение моментов инерции",
+            "en": "Ratio of inertias"
+          },
+          "body": {
+            "ru": "<p>В синхронном состоянии сокращается общая угловая скорость. Полученная малая доля оправдывает приближение 1c.</p>",
+            "en": "<p>In the synchronous state the common angular speed cancels. The small fraction justifies the approximation made in 1c.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{L_{E2}}{L_{M2}}=\\frac{I_E}{M_M D_2^2}\\simeq3{,}8\\cdot10^{-3}\\simeq\\frac1{260}.\\]</div>",
+        "en": "<div>\\[\\frac{L_{E2}}{L_{M2}}=\\frac{I_E}{M_M D_2^2}\\simeq3.8\\cdot10^{-3}\\simeq\\frac1{260}.\\]</div>"
+      },
+      "label": "2i"
+    },
+    {
+      "id": "T1-3a",
+      "max": 0.4,
+      "title": {
+        "ru": "Притяжение ближайшего выступа",
+        "en": "Attraction by the near bulge"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Расстояние до ближайшей массы",
+            "en": "Distance to the nearer mass"
+          },
+          "body": {
+            "ru": "<p>Обозначим это расстояние через \\(s_c\\). Из теоремы косинусов \\(s_c^2=D_1^2+r_o^2-2D_1r_o\\cos\\theta\\). Используем закон тяготения.</p>",
+            "en": "<p>Let the distance be \\(s_c\\). The cosine rule gives \\(s_c^2=D_1^2+r_o^2-2D_1r_o\\cos\\theta\\). Apply Newton&#x27;s inverse-square law.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_c=\\frac{GmM_M}{D_1^2+r_o^2-2D_1r_o\\cos\\theta}.\\]</div>",
+        "en": "<div>\\[F_c=\\frac{GmM_M}{D_1^2+r_o^2-2D_1r_o\\cos\\theta}.\\]</div>"
+      },
+      "label": "3a"
+    },
+    {
+      "id": "T1-3b",
+      "max": 0.4,
+      "title": {
+        "ru": "Притяжение дальнего выступа",
+        "en": "Attraction by the far bulge"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Расстояние до дальней массы",
+            "en": "Distance to the farther mass"
+          },
+          "body": {
+            "ru": "<p>Угол у центра Земли равен \\(\\pi-\\theta\\), поэтому знак смешанного члена в квадрате расстояния \\(s_f\\) меняется.</p>",
+            "en": "<p>The included angle at the Earth&#x27;s centre is \\(\\pi-\\theta\\), reversing the sign of the cross term in the squared distance \\(s_f^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_f=\\frac{GmM_M}{D_1^2+r_o^2+2D_1r_o\\cos\\theta}.\\]</div>",
+        "en": "<div>\\[F_f=\\frac{GmM_M}{D_1^2+r_o^2+2D_1r_o\\cos\\theta}.\\]</div>"
+      },
+      "label": "3b"
+    },
+    {
+      "id": "T1-3c",
+      "max": 0.4,
+      "title": {
+        "ru": "Момент ближней силы",
+        "en": "Near-side torque"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Поперечная сила",
+            "en": "Tangential force"
+          },
+          "body": {
+            "ru": "<p>Поперечная составляющая равна \\(F_c r_o\\sin\\theta/s_c\\). Умножаем её на плечо \\(D_1\\), подставляя расстояние из 3a.</p>",
+            "en": "<p>The transverse component is \\(F_c r_o\\sin\\theta/s_c\\). Multiply by lever arm \\(D_1\\) and insert the near-side distance from 3a.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tau_c=\\frac{GmM_M D_1r_o\\sin\\theta}{(D_1^2+r_o^2-2D_1r_o\\cos\\theta)^{3/2}}.\\]</div>",
+        "en": "<div>\\[\\tau_c=\\frac{GmM_M D_1r_o\\sin\\theta}{(D_1^2+r_o^2-2D_1r_o\\cos\\theta)^{3/2}}.\\]</div>"
+      },
+      "label": "3c"
+    },
+    {
+      "id": "T1-3d",
+      "max": 0.4,
+      "title": {
+        "ru": "Момент дальней силы",
+        "en": "Far-side torque"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Противоположное направление",
+            "en": "Opposite torque direction"
+          },
+          "body": {
+            "ru": "<p>Поперечный сдвиг имеет тот же модуль \\(r_o\\sin\\theta\\), но противоположный знак. Для модуля момента используем \\(s_f\\) из 3b.</p>",
+            "en": "<p>The transverse displacement has the same magnitude \\(r_o\\sin\\theta\\) and the opposite sign. For the torque magnitude use the distance \\(s_f\\) from 3b.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tau_f=\\frac{GmM_M D_1r_o\\sin\\theta}{(D_1^2+r_o^2+2D_1r_o\\cos\\theta)^{3/2}}.\\]</div>",
+        "en": "<div>\\[\\tau_f=\\frac{GmM_M D_1r_o\\sin\\theta}{(D_1^2+r_o^2+2D_1r_o\\cos\\theta)^{3/2}}.\\]</div>"
+      },
+      "label": "3d"
+    },
+    {
+      "id": "T1-3e",
+      "max": 1.0,
+      "title": {
+        "ru": "Суммарный приливный момент",
+        "en": "Net tidal torque"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Разность обратных кубов",
+            "en": "Difference of inverse cubes"
+          },
+          "body": {
+            "ru": "<p>Требуется разность модулей \\(\\tau_c-\\tau_f\\). При \\(u=r_o/D_1\\) получаем \\(s_c^{-3}\\simeq D_1^{-3}(1+3u\\cos\\theta)\\) и \\(s_f^{-3}\\simeq D_1^{-3}(1-3u\\cos\\theta)\\). Общий нулевой член сокращается.</p>",
+            "en": "<p>The net magnitude is \\(\\tau_c-\\tau_f\\). With \\(u=r_o/D_1\\), expand \\(s_c^{-3}\\simeq D_1^{-3}(1+3u\\cos\\theta)\\) and \\(s_f^{-3}\\simeq D_1^{-3}(1-3u\\cos\\theta)\\). Their constant parts cancel.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tau\\simeq\\frac{6GmM_M r_o^2}{D_1^3}\\sin\\theta\\cos\\theta.\\]</div>",
+        "en": "<div>\\[\\tau\\simeq\\frac{6GmM_M r_o^2}{D_1^3}\\sin\\theta\\cos\\theta.\\]</div>"
+      },
+      "label": "3e"
+    },
+    {
+      "id": "T1-3f",
+      "max": 0.5,
+      "title": {
+        "ru": "Численное значение момента",
+        "en": "Numerical tidal torque"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Подстановка угла и массы",
+            "en": "Substitution of the angle and mass"
+          },
+          "body": {
+            "ru": "<p>В выражении 3e \\(\\sin 3^\\circ\\cos 3^\\circ\\simeq0{,}0523\\). Ближний выступ опережает направление на Луну и увеличивает её орбитальный момент.</p>",
+            "en": "<p>In 3e \\(\\sin 3^\\circ\\cos 3^\\circ\\simeq0.0523\\). The near bulge leads the Moon and adds to its orbital angular momentum.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tau\\simeq4{,}1\\cdot10^{16}\\,\\mathrm{N\\,m}.\\]</div>",
+        "en": "<div>\\[\\tau\\simeq4.1\\cdot10^{16}\\,\\mathrm{N\\,m}.\\]</div>"
+      },
+      "label": "3f"
+    },
+    {
+      "id": "T1-3g",
+      "max": 1.0,
+      "title": {
+        "ru": "Увеличение расстояния за год",
+        "en": "Annual increase in separation"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Изменение момента вдоль круговых орбит",
+            "en": "Angular momentum along circular orbits"
+          },
+          "body": {
+            "ru": "<p>По 2a орбитальный момент равен \\(L_M=M_M\\sqrt{GM_E D_1}\\). Дифференцируя и пользуясь \\(\\dot L_M=\\tau\\), получаем \\(\\dot D_1=(2\\tau/M_M)\\sqrt{D_1/(GM_E)}\\). Для согласования с числом жюри берём длительность года \\(\\Delta t=3{,}1\\cdot10^7\\,\\mathrm s\\).</p>",
+            "en": "<p>By 2a the orbital momentum is \\(L_M=M_M\\sqrt{GM_E D_1}\\). Differentiate and set \\(\\dot L_M=\\tau\\) to get \\(\\dot D_1=(2\\tau/M_M)\\sqrt{D_1/(GM_E)}\\). The published value uses a year rounded to \\(\\Delta t=3.1\\cdot10^7\\,\\mathrm s\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta D_1\\simeq0{,}034\\,\\mathrm m\\quad(\\Delta t=1\\,\\mathrm{yr}).\\]</div>",
+        "en": "<div>\\[\\Delta D_1\\simeq0.034\\,\\mathrm m\\quad(\\Delta t=1\\,\\mathrm{yr}).\\]</div>"
+      },
+      "label": "3g"
+    },
+    {
+      "id": "T1-3h",
+      "max": 1.0,
+      "title": {
+        "ru": "Удлинение суток",
+        "en": "Lengthening of the day"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Противоположный момент на Земле",
+            "en": "Opposite torque on the Earth"
+          },
+          "body": {
+            "ru": "<p>Земля испытывает момент \\(-\\tau\\), поэтому \\(\\Delta\\omega_{E1}=-\\tau\\Delta t/I_E\\). Для периода \\(P=2\\pi/\\omega_{E1}\\) имеем \\(\\Delta P/P=-\\Delta\\omega_{E1}/\\omega_{E1}\\).</p>",
+            "en": "<p>The Earth experiences torque \\(-\\tau\\), so \\(\\Delta\\omega_{E1}=-\\tau\\Delta t/I_E\\). Differentiating \\(P=2\\pi/\\omega_{E1}\\) gives \\(\\Delta P/P=-\\Delta\\omega_{E1}/\\omega_{E1}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta\\omega_{E1}\\simeq-1{,}6\\cdot10^{-14}\\,\\mathrm{s^{-1}},\\qquad \\Delta P\\simeq1{,}9\\cdot10^{-5}\\,\\mathrm s.\\]</div>",
+        "en": "<div>\\[\\Delta\\omega_{E1}\\simeq-1.6\\cdot10^{-14}\\,\\mathrm{s^{-1}},\\qquad \\Delta P\\simeq1.9\\cdot10^{-5}\\,\\mathrm s.\\]</div>"
+      },
+      "label": "3h"
+    },
+    {
+      "id": "T1-4a",
+      "max": 0.4,
+      "title": {
+        "ru": "Современная механическая энергия",
+        "en": "Present mechanical energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Энергия круговой орбиты",
+            "en": "Circular orbital energy"
+          },
+          "body": {
+            "ru": "<p>У Луны \\(K_M=GM_E M_M/(2D_1)\\), а потенциальная энергия вдвое больше по модулю и отрицательна. К их сумме добавляем энергию вращения Земли.</p>",
+            "en": "<p>The Moon has \\(K_M=GM_E M_M/(2D_1)\\) and negative potential energy of twice that magnitude. Add the Earth&#x27;s spin energy to their sum.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E=\\tfrac12 I_E\\omega_{E1}^2-\\frac{GM_E M_M}{2D_1}.\\]</div>",
+        "en": "<div>\\[E=\\tfrac12 I_E\\omega_{E1}^2-\\frac{GM_E M_M}{2D_1}.\\]</div>"
+      },
+      "label": "4a"
+    },
+    {
+      "id": "T1-4b",
+      "max": 0.4,
+      "title": {
+        "ru": "Изменение энергии за год",
+        "en": "Annual energy change"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Изменения орбитальной и вращательной энергии",
+            "en": "Orbital and spin energy changes"
+          },
+          "body": {
+            "ru": "<p>Дифференцируем 4a. Орбитальная энергия слегка растёт при удалении Луны, но потеря энергии вращения Земли больше.</p>",
+            "en": "<p>Differentiate 4a. Orbital energy rises slightly as the Moon recedes, while the Earth&#x27;s rotational loss is larger.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta E\\simeq I_E\\omega_{E1}\\Delta\\omega_{E1}+\\frac{GM_E M_M}{2D_1^2}\\Delta D_1\\simeq-9{,}0\\cdot10^{19}\\,\\mathrm J.\\]</div>",
+        "en": "<div>\\[\\Delta E\\simeq I_E\\omega_{E1}\\Delta\\omega_{E1}+\\frac{GM_E M_M}{2D_1^2}\\Delta D_1\\simeq-9.0\\cdot10^{19}\\,\\mathrm J.\\]</div>"
+      },
+      "label": "4b"
+    },
+    {
+      "id": "T1-4c",
+      "max": 0.2,
+      "title": {
+        "ru": "Масса слоя воды",
+        "en": "Mass of the water layer"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Объём тонкого слоя",
+            "en": "Thin-shell volume"
+          },
+          "body": {
+            "ru": "<p>Поскольку \\(h\\ll r_o\\), объём слоя равен площади поверхности Земли, умноженной на его толщину.</p>",
+            "en": "<p>Since \\(h\\ll r_o\\), the shell volume is the Earth&#x27;s surface area times its depth.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[M_w\\simeq4\\pi r_o^2h\\rho_w\\simeq2{,}6\\cdot10^{17}\\,\\mathrm{kg}.\\]</div>",
+        "en": "<div>\\[M_w\\simeq4\\pi r_o^2h\\rho_w\\simeq2.6\\cdot10^{17}\\,\\mathrm{kg}.\\]</div>"
+      },
+      "label": "4c"
+    },
+    {
+      "id": "T1-4d",
+      "max": 0.3,
+      "title": {
+        "ru": "Тепло, выделяемое приливами",
+        "en": "Heat released by tides"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Число приливных циклов",
+            "en": "Counting tidal cycles"
+          },
+          "body": {
+            "ru": "<p>За один цикл выделяется \\(0{,}10\\,M_wg(0{,}5\\,\\mathrm m)\\). В году около \\(730\\) таких циклов. В подстановке жюри использована округлённая масса слоя \\(M_w=2{,}6\\cdot10^{17}\\,\\mathrm{kg}\\). Теплота близка по модулю к механической потере из 4b.</p>",
+            "en": "<p>Each cycle releases \\(0.10\\,M_wg(0.5\\,\\mathrm m)\\). There are about \\(730\\) cycles in a year. The published calculation uses the rounded shell mass \\(M_w=2.6\\cdot10^{17}\\,\\mathrm{kg}\\). The heat is close to the magnitude of the mechanical loss in 4b.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[Q_{\\rm yr}\\simeq9{,}3\\cdot10^{19}\\,\\mathrm J\\simeq|\\Delta E|.\\]</div>",
+        "en": "<div>\\[Q_{\\rm yr}\\simeq9.3\\cdot10^{19}\\,\\mathrm J\\simeq|\\Delta E|.\\]</div>"
+      },
+      "label": "4d"
+    }
+  ]
+}

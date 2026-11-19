@@ -1,0 +1,103 @@
+{
+  "id": "T2",
+  "title": "Уравнение состояния Ван-дер-Ваальса",
+  "points": 11,
+  "sourceFile": "IPhO_2014_T2_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3
+  ],
+  "sections": [
+    {
+      "id": "T2-A",
+      "points": 2.0,
+      "title": "Уравнение состояния реального газа"
+    },
+    {
+      "id": "T2-B",
+      "points": 6.0,
+      "title": "Свойства пара и жидкости"
+    },
+    {
+      "id": "T2-C",
+      "points": 3.0,
+      "title": "Равновесие жидкости и пара"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-A1",
+      "points": 0.3
+    },
+    {
+      "id": "T2-A2",
+      "points": 1.3
+    },
+    {
+      "id": "T2-A3",
+      "points": 0.2
+    },
+    {
+      "id": "T2-A4",
+      "points": 0.2
+    },
+    {
+      "id": "T2-B1",
+      "points": 0.8
+    },
+    {
+      "id": "T2-B2",
+      "points": 0.3
+    },
+    {
+      "id": "T2-B3",
+      "points": 0.7
+    },
+    {
+      "id": "T2-B4",
+      "points": 1.0
+    },
+    {
+      "id": "T2-B5",
+      "points": 0.3
+    },
+    {
+      "id": "T2-B6",
+      "points": 0.6
+    },
+    {
+      "id": "T2-B7",
+      "points": 1.1
+    },
+    {
+      "id": "T2-B8",
+      "points": 1.2
+    },
+    {
+      "id": "T2-C1",
+      "points": 1.3
+    },
+    {
+      "id": "T2-C2",
+      "points": 1.7
+    }
+  ],
+  "figures": [
+    "t2-f1",
+    "t2-f2",
+    "t2-f3"
+  ],
+  "solutionData": "/assets/practice/ipho-2014/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2014/IPhO_2014_S2_EN.pdf",
+  "solutionsAvailable": true,
+  "stepScoring": "official-part-maxima-editorial-step-weights",
+  "translationStatus": "editorial-adaptation",
+  "scoreSourceNotes": [
+    {
+      "id": "T2-B5",
+      "source": "https://www.sciencesalecole.org/wp-content/uploads/2016/06/2014_%C3%A9preuve-th%C3%A9orique-2014-partie-2.pdf",
+      "note": "B5 is 0.3 in the French delegation paper and 0.5 in the English paper. The French value agrees with the printed Part B maximum of 6.0."
+    }
+  ]
+}

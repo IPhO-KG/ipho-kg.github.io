@@ -1,0 +1,99 @@
+{
+  "id": "T3",
+  "title": "Простая модель атомного ядра",
+  "points": 10,
+  "sourceFile": "IPhO_2010_T3_EN.pdf",
+  "solutionPdf": "/assets/practice/ipho-2010/IPhO_2010_S3_EN.pdf",
+  "solutionData": "/assets/practice/ipho-2010/solutions/t3.json",
+  "subtasks": [
+    {
+      "id": "T3-1a",
+      "label": "1(a)",
+      "points": 0.3
+    },
+    {
+      "id": "T3-1b",
+      "label": "1(b)",
+      "points": 1.0
+    },
+    {
+      "id": "T3-2",
+      "label": "2",
+      "points": 1.9
+    },
+    {
+      "id": "T3-3a",
+      "label": "3(a)",
+      "points": 0.4
+    },
+    {
+      "id": "T3-3b",
+      "label": "3(b)",
+      "points": 0.3
+    },
+    {
+      "id": "T3-4a",
+      "label": "4(a)",
+      "points": 1.3
+    },
+    {
+      "id": "T3-4b",
+      "label": "4(b)",
+      "points": 1.0
+    },
+    {
+      "id": "T3-5a",
+      "label": "5(a)",
+      "points": 2.2
+    },
+    {
+      "id": "T3-5b",
+      "label": "5(b)",
+      "points": 1.6
+    }
+  ],
+  "sections": [
+    {
+      "id": "T3-part1",
+      "title": "Упаковка нуклонов",
+      "points": 1.3
+    },
+    {
+      "id": "T3-part2",
+      "title": "Объёмная и поверхностная энергии связи",
+      "points": 1.9
+    },
+    {
+      "id": "T3-part3",
+      "title": "Кулоновская поправка",
+      "points": 0.7
+    },
+    {
+      "id": "T3-part4",
+      "title": "Деление на равные осколки",
+      "points": 2.3
+    },
+    {
+      "id": "T3-part5",
+      "title": "Реакция передачи кластера",
+      "points": 3.8
+    }
+  ],
+  "figures": [
+    "fig1",
+    "fig2",
+    "fig3"
+  ],
+  "solutionsAvailable": true,
+  "stepScoring": "editorial-grouping-of-published-subpart-maxima",
+  "sourceLinks": {
+    "problem": "https://olimpicos.net/files/ipho/IPhO_2010_Q3.pdf",
+    "solution": "https://olimpicos.net/files/ipho/IPhO_2010_S3.pdf"
+  },
+  "sourcePages": [
+    1,
+    2,
+    3
+  ],
+  "translationStatus": "bilingual"
+}

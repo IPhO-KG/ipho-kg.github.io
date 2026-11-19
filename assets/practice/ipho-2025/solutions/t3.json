@@ -1,0 +1,567 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Шампанское!",
+    "en": "Champagne!"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2025/IPhO_2025_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-A1",
+      "max": 0.2,
+      "title": {
+        "ru": "Давление в пузырьке",
+        "en": "Pressure inside a bubble"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Разность давлений на сферической поверхности",
+            "en": "Pressure jump across a sphere"
+          },
+          "body": {
+            "ru": "<p>Мысленно разрежем пузырёк плоскостью через центр. Перепад давления действует на диск площади \\(\\pi a^2\\), а натяжение — вдоль окружности длиной \\(2\\pi a\\). Из равновесия полусферы следует \\((P_b-P_0)\\pi a^2=2\\pi a\\sigma\\).</p>",
+            "en": "<p>Consider one half of the bubble. The pressure difference acts on its circular cross-section \\(\\pi a^2\\). Surface tension pulls along the equatorial circumference \\(2\\pi a\\). Equilibrium requires \\((P_b-P_0)\\pi a^2=2\\pi a\\sigma\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_b=P_0+\\frac{2\\sigma}{a}.\\]</div>",
+        "en": "<div>\\[P_b=P_0+\\frac{2\\sigma}{a}.\\]</div>"
+      },
+      "sourcePages": [
+        1
+      ]
+    },
+    {
+      "id": "T3-A2",
+      "max": 0.5,
+      "title": {
+        "ru": "Критический радиус",
+        "en": "Critical radius"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Условие роста",
+            "en": "Condition for growth"
+          },
+          "body": {
+            "ru": "<p>Для притока газа к поверхности необходимо \\(c_\\ell&gt;c_b\\). На границе роста поток равен нулю. Закон Генри и результат A1 дают</p>\n<div>\\[c_\\ell=k_H\\left(P_0+\\frac{2\\sigma}{a_c}\\right).\\]</div>",
+            "en": "<p>The inward flux is positive when \\(c_\\ell&gt;c_b\\). At the threshold the flux vanishes. Henry’s law and A1 therefore give</p>\n<div>\\[c_\\ell=k_H\\left(P_0+\\frac{2\\sigma}{a_c}\\right).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Радиус при заданной концентрации",
+            "en": "Radius at the specified concentration"
+          },
+          "body": {
+            "ru": "<p>Поделим обе части на \\(c_0\\) и выразим \\(a_c\\). При четырёхкратном пересыщении парциальное давление у поверхности превышает атмосферное на \\(3P_0\\).</p>",
+            "en": "<p>Divide by \\(c_0\\) and solve for \\(a_c\\). At fourfold supersaturation, the pressure excess at the threshold is \\(3P_0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[a_c=\\frac{2\\sigma}{P_0(c_\\ell/c_0-1)}\\simeq0.31\\,\\mu\\mathrm m.\\]</div>",
+        "en": "<div>\\[a_c=\\frac{2\\sigma}{P_0(c_\\ell/c_0-1)}\\simeq0.31\\,\\mu\\mathrm m.\\]</div>"
+      },
+      "sourcePages": [
+        2
+      ]
+    },
+    {
+      "id": "T3-A3",
+      "max": 1.2,
+      "title": {
+        "ru": "Закон роста пузырька",
+        "en": "Bubble growth law"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Количество газа и баланс потока",
+            "en": "Gas inventory and flux balance"
+          },
+          "body": {
+            "ru": "<p>Давление внутри равно \\(P_0\\), поэтому \\(c_b\\simeq c_0\\) и \\(n_c=4\\pi a^3P_0/(3RT_0)\\). Производная \\(n_c\\) по времени равна потоку через всю поверхность: \\(\\dot n_c=4\\pi a^2j\\). После сокращения площади остаётся</p>\n<div>\\[\\dot a=\\frac{RT_0}{P_0}j.\\]</div>",
+            "en": "<p>With pressure \\(P_0\\), the surface concentration is \\(c_b\\simeq c_0\\) and \\(n_c=4\\pi a^3P_0/(3RT_0)\\). The rate of change equals the influx across the entire surface, \\(\\dot n_c=4\\pi a^2j\\). Cancelling the surface area gives</p>\n<div>\\[\\dot a=\\frac{RT_0}{P_0}j.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Радиус в двух моделях",
+            "en": "Radius for the two models"
+          },
+          "body": {
+            "ru": "<p>Обозначим \\(b=RT_0(c_\\ell-c_0)/P_0\\). В первой модели интегрируем \\(a\\,da=bD\\,dt\\), во второй — \\(da=bK\\,dt\\). Начальный радиус в обеих моделях равен \\(a_0\\).</p>\n<div>\\[a_1(t)=\\sqrt{a_0^2+2bDt},\\qquad a_2(t)=a_0+bKt.\\]</div>",
+            "en": "<p>Write \\(b=RT_0(c_\\ell-c_0)/P_0\\). In model 1 integrate \\(a\\,da=bD\\,dt\\). In model 2 integrate \\(da=bK\\,dt\\). In both cases the initial radius is \\(a_0\\).</p>\n<div>\\[a_1(t)=\\sqrt{a_0^2+2bDt},\\qquad a_2(t)=a_0+bKt.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Наклон экспериментальной прямой",
+            "en": "Slope of the measured line"
+          },
+          "body": {
+            "ru": "<p>Точки ложатся на прямую. По графику прирост радиуса около \\(150\\,\\mu\\mathrm m\\) за \\(0.62\\,\\mathrm s\\), то есть \\(\\dot a\\simeq0.24\\,\\mathrm{mm\\,s^{-1}}\\). Полученный наклон делим на \\(b\\), используя \\(c_\\ell-c_0\\simeq3k_HP_0\\).</p>",
+            "en": "<p>The data form a straight line. A rise of about \\(150\\,\\mu\\mathrm m\\) in \\(0.62\\,\\mathrm s\\) gives \\(\\dot a\\simeq0.24\\,\\mathrm{mm\\,s^{-1}}\\). Divide the slope by \\(b\\), using \\(c_\\ell-c_0\\simeq3k_HP_0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Модель 2, \\(K\\simeq1.0\\times10^{-4}\\,\\mathrm{m\\,s^{-1}}\\).</p>",
+        "en": "<p>Model 2, \\(K\\simeq1.0\\times10^{-4}\\,\\mathrm{m\\,s^{-1}}\\).</p>"
+      },
+      "sourcePages": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "T3-A4",
+      "max": 0.8,
+      "title": {
+        "ru": "Скорость всплытия и вязкость",
+        "en": "Rise velocity and viscosity"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Равновесие сил",
+            "en": "Balance of forces"
+          },
+          "body": {
+            "ru": "<p>Сила Архимеда \\(4\\pi a^3\\rho_\\ell g_0/3\\) направлена вверх, вязкое сопротивление — вниз. Вес газа мал по сравнению с весом вытесненной жидкости. Приравнивая силы, получим</p>\n<div>\\[v(a)=\\frac{2\\rho_\\ell g_0a^2}{9\\eta}.\\]</div>",
+            "en": "<p>Buoyancy \\(4\\pi a^3\\rho_\\ell g_0/3\\) acts upwards and drag acts downwards. The gas weight is small compared with that of the displaced liquid. Balancing buoyancy and drag gives</p>\n<div>\\[v(a)=\\frac{2\\rho_\\ell g_0a^2}{9\\eta}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Измерения по фотографии",
+            "en": "Measurements on the photograph"
+          },
+          "body": {
+            "ru": "<p>Временной интервал между соседними пузырьками равен \\(1/f_b=0.050\\,\\mathrm s\\). Для предпоследнего по масштабу фотографии \\(a\\simeq0.19\\,\\mathrm{mm}\\). Расстояние между двумя его соседями около \\(4.5\\,\\mathrm{mm}\\), что за \\(2/f_b\\) даёт местную скорость \\(0.045\\,\\mathrm{m\\,s^{-1}}\\).</p>",
+            "en": "<p>Adjacent bubbles differ in age by \\(1/f_b=0.050\\,\\mathrm s\\). From the scale bar, the penultimate bubble has radius about \\(0.19\\,\\mathrm{mm}\\). Its two neighbours are about \\(4.5\\,\\mathrm{mm}\\) apart, giving a local speed of \\(0.045\\,\\mathrm{m\\,s^{-1}}\\) over \\(2/f_b\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Оценка вязкости",
+            "en": "Viscosity estimate"
+          },
+          "body": {
+            "ru": "<p>Используем радиус и скорость, измеренные для одного и того же пузырька, и обращаем зависимость \\(v(a)\\).</p>",
+            "en": "<p>Use the radius and speed of the same bubble and invert the terminal-velocity relation.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\eta=\\frac{2\\rho_\\ell g_0a^2}{9v}\\simeq2\\times10^{-3}\\,\\mathrm{Pa\\,s}.\\]</div>",
+        "en": "<div>\\[\\eta=\\frac{2\\rho_\\ell g_0a^2}{9v}\\simeq2\\times10^{-3}\\,\\mathrm{Pa\\,s}.\\]</div>"
+      },
+      "sourcePages": [
+        4
+      ]
+    },
+    {
+      "id": "T3-A5",
+      "max": 0.5,
+      "title": {
+        "ru": "Радиус у поверхности",
+        "en": "Radius at the free surface"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Высота как функция радиуса",
+            "en": "Height as a function of radius"
+          },
+          "body": {
+            "ru": "<p>Разделим \\(dz/dt=v(a)\\) на \\(da/dt=q_a\\) и проинтегрируем от \\(a_0\\) до конечного радиуса. Получим</p>\n<div>\\[H_\\ell=\\frac{2\\rho_\\ell g_0}{27\\eta q_a}\\left(a_{H_\\ell}^{\\,3}-a_0^3\\right).\\]</div>",
+            "en": "<p>Divide \\(dz/dt=v(a)\\) by \\(da/dt=q_a\\) and integrate from \\(a_0\\) to the final radius. This gives</p>\n<div>\\[H_\\ell=\\frac{2\\rho_\\ell g_0}{27\\eta q_a}\\left(a_{H_\\ell}^{\\,3}-a_0^3\\right).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Численное значение",
+            "en": "Numerical radius"
+          },
+          "body": {
+            "ru": "<p>Начальным объёмом можно пренебречь. Подставим вязкость из A4 и наклон графика из A3. Точность результата ограничена измерениями по двум рисункам.</p>",
+            "en": "<p>Neglect the initial volume. Use the viscosity estimate from A4 and the slope in A3. The precision is limited by measurements from the two figures.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[a_{H_\\ell}\\simeq\\left(\\frac{27\\eta q_a H_\\ell}{2\\rho_\\ell g_0}\\right)^{1/3}\\simeq0.4\\,\\mathrm{mm}.\\]</div>",
+        "en": "<div>\\[a_{H_\\ell}\\simeq\\left(\\frac{27\\eta q_a H_\\ell}{2\\rho_\\ell g_0}\\right)^{1/3}\\simeq0.4\\,\\mathrm{mm}.\\]</div>"
+      },
+      "sourcePages": [
+        5
+      ]
+    },
+    {
+      "id": "T3-A6",
+      "max": 1.1,
+      "title": {
+        "ru": "Как быстро уходит растворённый газ",
+        "en": "Decay of the dissolved gas concentration"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Объём уходящих пузырьков",
+            "en": "Volume carried away"
+          },
+          "body": {
+            "ru": "<p>За секунду у поверхности лопается \\(N_bf_b\\) пузырьков. Умножим это число на объём пузырька и воспользуемся результатом A5.</p>\n<div>\\[\\dot V_g=N_bf_b\\frac{4\\pi a_{H_\\ell}^3}{3}=\\frac{18\\pi N_bf_b\\eta H_\\ell}{\\rho_\\ell g_0}q_a.\\]</div>",
+            "en": "<p>Each second \\(N_bf_b\\) bubbles burst at the surface. Multiply by the final volume per bubble and substitute A5.</p>\n<div>\\[\\dot V_g=N_bf_b\\frac{4\\pi a_{H_\\ell}^3}{3}=\\frac{18\\pi N_bf_b\\eta H_\\ell}{\\rho_\\ell g_0}q_a.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Баланс углекислого газа",
+            "en": "Balance of carbon dioxide"
+          },
+          "body": {
+            "ru": "<p>Из A3 следует \\(q_a=KRT_0(c_\\ell-c_0)/P_0\\). При давлении \\(P_0\\) уходящий газ содержит \\(P_0\\dot V_g/(RT_0)\\) молей в секунду. Столько же теряет жидкость, поэтому</p>\n<div>\\[\\frac{dc_\\ell}{dt}=-\\frac{18\\pi N_bf_b\\eta KH_\\ell}{\\rho_\\ell g_0V_\\ell}(c_\\ell-c_0).\\]</div>",
+            "en": "<p>A3 gives \\(q_a=KRT_0(c_\\ell-c_0)/P_0\\). At pressure \\(P_0\\) the escaping gas carries away \\(P_0\\dot V_g/(RT_0)\\) moles per second. The dissolved inventory falls at this rate, hence</p>\n<div>\\[\\frac{dc_\\ell}{dt}=-\\frac{18\\pi N_bf_b\\eta KH_\\ell}{\\rho_\\ell g_0V_\\ell}(c_\\ell-c_0).\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Время релаксации",
+            "en": "Relaxation time"
+          },
+          "body": {
+            "ru": "<p>Убывает именно избыток концентрации: \\(c_\\ell(t)-c_0=[c_\\ell(0)-c_0]\\exp(-t/\\tau)\\). Обратный коэффициент при этом избытке определяет \\(\\tau\\).</p>",
+            "en": "<p>The excess concentration obeys \\(c_\\ell(t)-c_0=[c_\\ell(0)-c_0]\\exp(-t/\\tau)\\). The inverse coefficient of the excess in the differential equation gives \\(\\tau\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tau=\\frac{\\rho_\\ell g_0 V_\\ell}{18\\pi N_bf_b\\eta K H_\\ell}.\\]</div>",
+        "en": "<div>\\[\\tau=\\frac{\\rho_\\ell g_0 V_\\ell}{18\\pi N_bf_b\\eta K H_\\ell}.\\]</div>"
+      },
+      "sourcePages": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "T3-B1",
+      "max": 1.1,
+      "title": {
+        "ru": "Скорость края отверстия",
+        "en": "Opening speed of the hole"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Масса, которую набирает ободок",
+            "en": "Mass swept up by the rim"
+          },
+          "body": {
+            "ru": "<p>При радиусе \\(r\\) за время \\(dt\\) исчезает кольцо площади \\(dA=2\\pi r v_f\\,dt\\). Ободок захватывает массу \\(\\rho_\\ell h\\,dA\\), которой сообщает скорость \\(v_f\\). Кинетическая энергия возрастает на \\(\\tfrac12\\rho_\\ell h v_f^2\\,dA\\).</p>",
+            "en": "<p>At radius \\(r\\), an annulus of area \\(dA=2\\pi r v_f\\,dt\\) disappears in time \\(dt\\). The rim picks up mass \\(\\rho_\\ell h\\,dA\\) and accelerates it to \\(v_f\\). Its kinetic energy increases by \\(\\tfrac12\\rho_\\ell h v_f^2\\,dA\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Уменьшение поверхностной энергии",
+            "en": "Loss of surface energy"
+          },
+          "body": {
+            "ru": "<p>У плёнки две поверхности. Исчезновение кольца освобождает энергию \\(2\\sigma\\,dA\\), из которой в движение ободка переходит \\(\\sigma\\,dA\\).</p>",
+            "en": "<p>The film has two surfaces. Removing the annulus releases \\(2\\sigma\\,dA\\) of energy, of which \\(\\sigma\\,dA\\) goes into motion of the rim.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Баланс энергии",
+            "en": "Energy balance"
+          },
+          "body": {
+            "ru": "<p>Приравнивая полученную энергию к приросту кинетической и сокращая \\(dA\\), найдём скорость. Радиус отверстия из результата исчезает.</p>",
+            "en": "<p>Equate the available energy to the kinetic-energy increase and cancel \\(dA\\). The hole radius drops out of the result.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_f=\\sqrt{\\frac{2\\sigma}{\\rho_\\ell h}}.\\]</div>",
+        "en": "<div>\\[v_f=\\sqrt{\\frac{2\\sigma}{\\rho_\\ell h}}.\\]</div>"
+      },
+      "sourcePages": [
+        7
+      ]
+    },
+    {
+      "id": "T3-B2",
+      "max": 1.1,
+      "title": {
+        "ru": "Частота резонатора",
+        "en": "Resonance frequency"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Давление при смещении поршня",
+            "en": "Pressure at a displaced piston"
+          },
+          "body": {
+            "ru": "<p>При смещении наружу на \\(z\\) объём равен \\(V_0+Sz\\), а сила в этом направлении равна \\(S(P-P_0)\\). Для обратимой адиабаты \\(PV^\\gamma=P_0V_0^\\gamma\\), поэтому</p>\n<div>\\[P=P_0\\left(1+\\frac{Sz}{V_0}\\right)^{-\\gamma}.\\]</div>",
+            "en": "<p>At displacement \\(z\\) outwards the cavity volume is \\(V_0+Sz\\), and the outward force is \\(S(P-P_0)\\). The reversible adiabat obeys \\(PV^\\gamma=P_0V_0^\\gamma\\), giving</p>\n<div>\\[P=P_0\\left(1+\\frac{Sz}{V_0}\\right)^{-\\gamma}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Возвращающая сила",
+            "en": "Restoring force"
+          },
+          "body": {
+            "ru": "<p>В первом порядке по \\(z\\) изменение давления равно \\(-\\gamma P_0 Sz/V_0\\). Сила пропорциональна смещению и направлена к равновесию.</p>\n<div>\\[F=-\\frac{\\gamma P_0S^2}{V_0}z.\\]</div>",
+            "en": "<p>To first order in \\(z\\) the pressure change is \\(-\\gamma P_0 Sz/V_0\\). The resulting force is proportional to displacement and points back towards equilibrium.</p>\n<div>\\[F=-\\frac{\\gamma P_0S^2}{V_0}z.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Уравнение осциллятора",
+            "en": "Oscillator equation"
+          },
+          "body": {
+            "ru": "<p>Подстановка \\(F=m_p\\ddot z\\) даёт уравнение гармонического осциллятора. Коэффициент при \\(z\\) после деления на \\(m_p\\) равен квадрату угловой частоты.</p>",
+            "en": "<p>With \\(F=m_p\\ddot z\\) this is a harmonic oscillator. After division by \\(m_p\\), the coefficient of \\(z\\) gives the angular frequency squared.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f_0=\\frac{S}{2\\pi}\\sqrt{\\frac{\\gamma P_0}{m_pV_0}}.\\]</div>",
+        "en": "<div>\\[f_0=\\frac{S}{2\\pi}\\sqrt{\\frac{\\gamma P_0}{m_pV_0}}.\\]</div>"
+      },
+      "sourcePages": [
+        8
+      ]
+    },
+    {
+      "id": "T3-B3",
+      "max": 1.1,
+      "title": {
+        "ru": "Размер пузырька и толщина плёнки",
+        "en": "Bubble size and film thickness"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Радиус из максимальной частоты",
+            "en": "Radius from the peak frequency"
+          },
+          "body": {
+            "ru": "<p>В формуле B2 положим \\(S=\\pi r^2\\), \\(V_0=4\\pi a^3/3\\) и подставим эффективную массу. Получим \\(f^2=9\\gamma P_0r/(128\\pi\\rho_g a^3)\\). Максимум соответствует \\(r=r_c\\). После исключения \\(r_c\\) имеем</p>\n<div>\\[a=\\frac{9\\gamma P_0}{64\\sqrt3\\,\\pi\\rho_g f_{\\max}^2}\\sqrt{\\frac{\\rho_\\ell g_0}{\\sigma}}\\simeq0.53\\,\\mathrm{mm}.\\]</div>",
+            "en": "<p>In B2 use \\(S=\\pi r^2\\), \\(V_0=4\\pi a^3/3\\) and the specified effective mass. This gives \\(f^2=9\\gamma P_0r/(128\\pi\\rho_g a^3)\\). The maximum occurs at \\(r=r_c\\). Eliminating \\(r_c\\) gives</p>\n<div>\\[a=\\frac{9\\gamma P_0}{64\\sqrt3\\,\\pi\\rho_g f_{\\max}^2}\\sqrt{\\frac{\\rho_\\ell g_0}{\\sigma}}\\simeq0.53\\,\\mathrm{mm}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Толщина из времени разрыва",
+            "en": "Thickness from the bursting time"
+          },
+          "body": {
+            "ru": "<p>Радиусу пузырька соответствует \\(r_c\\simeq0.15\\,\\mathrm{mm}\\). За время \\(t_b\\) край проходит это расстояние, поэтому \\(v_f=r_c/t_b\\simeq5.0\\,\\mathrm{m\\,s^{-1}}\\). Теперь обратим формулу B1.</p>",
+            "en": "<p>The bubble radius gives \\(r_c\\simeq0.15\\,\\mathrm{mm}\\). The rim covers this distance in time \\(t_b\\), so \\(v_f=r_c/t_b\\simeq5.0\\,\\mathrm{m\\,s^{-1}}\\). Inverting B1 gives the film thickness.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[a\\simeq0.53\\,\\mathrm{mm},\\qquad h=\\frac{2\\sigma t_b^2}{\\rho_\\ell r_c^2}\\simeq3.7\\,\\mu\\mathrm m.\\]</div>",
+        "en": "<div>\\[a\\simeq0.53\\,\\mathrm{mm},\\qquad h=\\frac{2\\sigma t_b^2}{\\rho_\\ell r_c^2}\\simeq3.7\\,\\mu\\mathrm m.\\]</div>"
+      },
+      "sourcePages": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "T3-C1",
+      "max": 0.4,
+      "title": {
+        "ru": "Равновесное давление",
+        "en": "Equilibrium pressure"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Распределение газа между фазами",
+            "en": "Partition of gas between phases"
+          },
+          "body": {
+            "ru": "<p>В газовой фазе находится \\(P_iV_G/(RT_0)\\) молей, в жидкости — \\(k_H(T_0)P_iV_L\\). Суммарное количество \\(n_T\\) известно. Следовательно,</p>\n<div>\\[P_i=\\frac{n_T}{V_G/(RT_0)+k_H(T_0)V_L}.\\]</div>",
+            "en": "<p>The headspace contains \\(P_iV_G/(RT_0)\\) moles and the liquid contains \\(k_H(T_0)P_iV_L\\). Their sum is the known inventory \\(n_T\\). Hence</p>\n<div>\\[P_i=\\frac{n_T}{V_G/(RT_0)+k_H(T_0)V_L}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Две температуры",
+            "en": "Evaluation at the two temperatures"
+          },
+          "body": {
+            "ru": "<p>В каждом расчёте возьмём соответствующий коэффициент Генри, объёмы в кубометрах и абсолютную температуру. При нагревании растворимость падает и давление растёт.</p>",
+            "en": "<p>Use the Henry constant for each temperature, volumes in cubic metres and temperatures in kelvins. Warming reduces the solubility and raises the pressure.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_i(6^\\circ\\mathrm C)=4.81\\,\\mathrm{bar},\\qquad P_i(20^\\circ\\mathrm C)=7.76\\,\\mathrm{bar}.\\]</div>",
+        "en": "<div>\\[P_i(6^\\circ\\mathrm C)=4.81\\,\\mathrm{bar},\\qquad P_i(20^\\circ\\mathrm C)=7.76\\,\\mathrm{bar}.\\]</div>"
+      },
+      "sourcePages": [
+        10
+      ]
+    },
+    {
+      "id": "T3-C2",
+      "max": 0.7,
+      "title": {
+        "ru": "Какого цвета облако",
+        "en": "Colour of the fog"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Конечная температура на адиабате",
+            "en": "End temperature on the adiabat"
+          },
+          "body": {
+            "ru": "<p>Газ расширяется до атмосферного давления. Из соотношения \\(T^\\gamma P^{1-\\gamma}=\\mathrm{const}\\) получаем температуру. Для холодной бутылки она равна \\(195.3\\,\\mathrm K\\), для тёплой — \\(184.3\\,\\mathrm K\\).</p>\n<div>\\[T_f=T_0\\left(\\frac{P_0}{P_i}\\right)^{(\\gamma-1)/\\gamma}.\\]</div>",
+            "en": "<p>The gas expands to atmospheric pressure. Use \\(T^\\gamma P^{1-\\gamma}=\\mathrm{const}\\) to obtain the temperature. The colder bottle gives \\(195.3\\,\\mathrm K\\) and the warmer one gives \\(184.3\\,\\mathrm K\\).</p>\n<div>\\[T_f=T_0\\left(\\frac{P_0}{P_i}\\right)^{(\\gamma-1)/\\gamma}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Сравнение с границей сублимации",
+            "en": "Comparison with the sublimation boundary"
+          },
+          "body": {
+            "ru": "<p>При \\(P_{\\rm sat}=P_0\\) граничная температура \\(T_s=B/A-C=194.4\\,\\mathrm K\\). Для холодной бутылки \\(T_f&gt;T_s\\) и газ остаётся газом. Для тёплой \\(T_f&lt;T_s\\), поэтому образуются кристаллы углекислого газа.</p>",
+            "en": "<p>At \\(P_{\\rm sat}=P_0\\) the transition occurs at \\(T_s=B/A-C=194.4\\,\\mathrm K\\). The colder bottle gives \\(T_f&gt;T_s\\), so carbon dioxide stays gaseous. The warmer bottle gives \\(T_f&lt;T_s\\) and carbon dioxide crystals form.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Верны 1 и 4. При \\(6^\\circ\\mathrm C\\) облако серо-белое, при \\(20^\\circ\\mathrm C\\) — голубое.</p>",
+        "en": "<p>Statements 1 and 4. The fog is grey-white at \\(6^\\circ\\mathrm C\\) and blue at \\(20^\\circ\\mathrm C\\).</p>"
+      },
+      "sourcePages": [
+        11
+      ]
+    },
+    {
+      "id": "T3-C3",
+      "max": 1.3,
+      "title": {
+        "ru": "Высота подъёма пробки",
+        "en": "Maximum height of the cork"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Работа трения",
+            "en": "Work of friction"
+          },
+          "body": {
+            "ru": "<p>Обозначим \\(S=\\pi d^2/4\\). Вначале \\(\\alpha\\pi d\\ell_0=(P_i-P_0)S\\). При смещении \\(x\\) длина контакта равна \\(\\ell_0-x\\), поэтому сила трения линейно падает до нуля. Её работа равна</p>\n<div>\\[W_f=-\\tfrac12(P_i-P_0)S\\ell_0.\\]</div>",
+            "en": "<p>Write \\(S=\\pi d^2/4\\). Initially \\(\\alpha\\pi d\\ell_0=(P_i-P_0)S\\). At displacement \\(x\\) the contact length is \\(\\ell_0-x\\), so friction falls linearly to zero. Its work is</p>\n<div>\\[W_f=-\\tfrac12(P_i-P_0)S\\ell_0.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Работа расширяющегося газа",
+            "en": "Work of the expanding gas"
+          },
+          "body": {
+            "ru": "<p>Пока пробка находится в горлышке, объём возрастает от \\(V_G\\) до \\(V_1=V_G+S\\ell_0\\). Интегрируем давление \\(P=P_i(V_G/V)^\\gamma\\) по этому интервалу объёма.</p>\n<div>\\[W_i=\\frac{P_i V_G}{\\gamma-1}\\left[1-\\left(\\frac{V_G}{V_1}\\right)^{\\gamma-1}\\right].\\]</div>",
+            "en": "<p>While the cork remains in the neck, volume grows from \\(V_G\\) to \\(V_1=V_G+S\\ell_0\\). Integrate the pressure \\(P=P_i(V_G/V)^\\gamma\\) over this volume interval.</p>\n<div>\\[W_i=\\frac{P_i V_G}{\\gamma-1}\\left[1-\\left(\\frac{V_G}{V_1}\\right)^{\\gamma-1}\\right].\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.5,
+          "label": {
+            "ru": "Баланс энергии до верхней точки",
+            "en": "Energy balance up to the highest point"
+          },
+          "body": {
+            "ru": "<p>Атмосфера совершает работу \\(W_e=-P_0S\\ell_0\\). До верхней точки скорости в начале и в конце равны нулю. Суммарная работа сил давления и трения превращается в прирост потенциальной энергии. При \\(P_i=4.69\\,\\mathrm{bar}\\) внутренний газ совершает около \\(2.56\\,\\mathrm J\\).</p>",
+            "en": "<p>The atmosphere does work \\(W_e=-P_0S\\ell_0\\). Initial and final speeds are both zero. The net work of pressure and friction becomes gravitational potential energy. At \\(P_i=4.69\\,\\mathrm{bar}\\) the internal gas does about \\(2.56\\,\\mathrm J\\) of work.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[H_c=\\frac{W_i+W_e+W_f}{mg_0}\\simeq7.7\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[H_c=\\frac{W_i+W_e+W_f}{mg_0}\\simeq7.7\\,\\mathrm m.\\]</div>"
+      },
+      "sourcePages": [
+        12,
+        13
+      ]
+    }
+  ]
+}

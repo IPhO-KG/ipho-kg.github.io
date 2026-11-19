@@ -1,0 +1,32 @@
+<article class="exam-problem" id="T2" lang="en">
+<h2>Question T2 [10 points]. Trapping ions and cooling atoms</h2>
+<p>Explore how a rapidly varying field confines an ion and how two light beams remove kinetic energy from an atom.</p>
+<section id="T2-A">
+<h3>T2-A [5.6 points]. The Paul trap</h3>
+<p>A circular ring of radius \(R\) is centred at the origin in the \(xy\) plane. It carries a uniform positive charge per unit length \(\lambda\). A particle of mass \(m\) with charge \(Q&gt;0\) is near its centre.</p>
+<figure><img src="/assets/practice/ipho-2024/q2/ring.png" alt="The charged ring and the coordinate axes." loading="lazy" style="width:min(100%,490px);height:auto"><figcaption>The charged ring and the coordinate axes.</figcaption></figure>
+<div class="exam-question" id="T2-A1" data-points="1.5"><p><strong>T2-A1 [1.5 points].</strong> Obtain the Cartesian field to first order in \(x/R,y/R,z/R\). In which directions is the equilibrium stable, and what is the angular oscillation frequency?</p></div>
+<p>Now drive the ring with \(\lambda(t)=\lambda_0+u\cos\Omega t\). Ignore radiation and define \(a,k\) by the axial equation</p>
+<div>\[\ddot z=(k^2+a\Omega^2\cos\Omega t)\,z.\]</div>
+<div class="exam-question" id="T2-A2" data-points="0.4"><p><strong>T2-A2 [0.4 points].</strong> Express \(k\) and \(a\) in terms of the given ring, particle and drive parameters.</p></div>
+<p>Assume \(a\ll1,\ \Omega\gg k,\ a\Omega^2\gg k^2\). Write \(z=p+q\), with the slowly changing \(p(t)\) effectively constant over several periods of the small, fast, zero-mean part \(q(t)\).</p>
+<figure><img src="/assets/practice/ipho-2024/q2/micromotion.png" alt="The slow trajectory and fast oscillations about it." loading="lazy" style="width:min(100%,490px);height:auto"><figcaption>The slow trajectory and fast oscillations about it.</figcaption></figure>
+<div class="exam-question" id="T2-A3" data-points="1.8"><p><strong>T2-A3 [1.8 points].</strong> Derive an equation for \(q\) in terms of \(a,\Omega,p\), then solve it subject to the required properties of the fast motion.</p></div>
+<div class="exam-question" id="T2-A4" data-points="1.5"><p><strong>T2-A4 [1.5 points].</strong> Average over the fast motion, derive the effective equation for \(p\), and find the stability condition.</p></div>
+<div class="exam-question" id="T2-A5" data-points="0.4"><p><strong>T2-A5 [0.4 points].</strong> For a singly charged ion of mass \(100m_H\), take \(\lambda_0=8\times10^{-9}\,\mathrm{C/m}\) and \(R=0.10\,\mathrm m\). Estimate \(k\) and the lowest stabilising \(\Omega\) for \(a=0.04\).</p></div>
+</section>
+<section id="T2-B">
+<h3>T2-B [4.4 points]. Doppler cooling</h3>
+<p>A trapped atom of mass \(m\) has two levels separated by \(\hbar\omega_A\). The excited state has mean lifetime \(\tau\). Most spontaneously emitted photons have angular frequencies in the interval \(\omega_A\pm\Gamma\).</p>
+<div class="exam-question" id="T2-B1" data-points="0.5"><p><strong>T2-B1 [0.5 points].</strong> Estimate \(\Gamma\) using the uncertainty principle.</p></div>
+<p>Two equal counterpropagating lasers along \(x\) have frequency \(\omega_L\) slightly below \(\omega_A\), within the absorption line. Take \(v\ll c\), \(m\gg\hbar\omega_A/c^2\) and Doppler shifts small compared with the detuning. The rest-frame absorption rate near the operating point is \(s(\omega)=s_L+\alpha(\omega-\omega_L)\). Emission at the same frequency is equally likely in either direction.</p>
+<figure><img src="/assets/practice/ipho-2024/q2/absorption.png" alt="The absorption line and the laser operating point." loading="lazy" style="width:min(100%,490px);height:auto"><figcaption>The absorption line and the laser operating point.</figcaption></figure>
+<div class="exam-question" id="T2-B2" data-points="1.7"><p><strong>T2-B2 [1.7 points].</strong> The atom moves at \(v=v_x\) in the laboratory. In its rest frame find the two absorption rates \(s_\pm\) and momentum-transfer rates \(\pi_\pm\). The \(+\) beam opposes the atom for \(v&gt;0\). Assuming \(s_L\ll\alpha\omega_L\), derive the laboratory force using \(v,k_L=\omega_L/c,\hbar,\alpha\).</p></div>
+<div class="exam-question" id="T2-B3" data-points="1.0"><p><strong>T2-B3 [1 point].</strong> An atom initially at rest absorbs and re-emits a photon once per time \(\tau\). For a given incident direction find the two possible recoil momenta and calculate the mean mechanical power gained.</p></div>
+<div class="exam-question" id="T2-B4" data-points="0.8"><p><strong>T2-B4 [0.8 points].</strong> Calculate the mechanical power of the force from B2. Determine the equilibrium \(\langle v^2\rangle\) at which cooling balances heating and estimate the temperature.</p></div>
+<div class="exam-question" id="T2-B5" data-points="0.4"><p><strong>T2-B5 [0.4 points].</strong> Evaluate \(T\) for \(m=100m_H,\ \omega_L=2\times10^{16}\,\mathrm{rad/s},\ \tau=5\times10^{-9}\,\mathrm s,\ \alpha=4\).</p></div>
+<p>Constants</p>
+<div>\[m_H=1.674\times10^{-27}\,\mathrm{kg},\quad e=1.602\times10^{-19}\,\mathrm C,\quad \varepsilon_0=8.854\times10^{-12}\,\mathrm{F/m}.\]</div>
+<div>\[k_B=1.381\times10^{-23}\,\mathrm{J/K},\qquad \hbar=1.055\times10^{-34}\,\mathrm{J\,s}.\]</div>
+</section>
+</article>
