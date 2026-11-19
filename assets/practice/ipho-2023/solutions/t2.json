@@ -1,0 +1,427 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Нейтронные звёзды",
+    "en": "Neutron stars"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2023/IPhO_2023_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-A1",
+      "max": 0.9,
+      "title": {
+        "ru": "Максимум связи на нуклон",
+        "en": "Maximum binding per nucleon"
+      },
+      "steps": [
+        {
+          "id": "a1-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Энергия на один нуклон",
+            "en": "Energy per nucleon"
+          },
+          "body": {
+            "ru": "<p>Положим \\(Z=N=A/2\\). Тогда вклад симметрии нулевой, а</p><div>\\[B/A=a_V-a_S A^{-1/3}-\\tfrac14a_C A^{2/3}.\\]</div>",
+            "en": "<p>Putting \\(Z=N=A/2\\) removes the symmetry term. Per nucleon the remaining expression is</p><div>\\[B/A=a_V-a_S A^{-1/3}-\\tfrac14a_C A^{2/3}.\\]</div>"
+          }
+        },
+        {
+          "id": "a1-2",
+          "points": 0.3,
+          "label": {
+            "ru": "Условие экстремума",
+            "en": "Stationarity condition"
+          },
+          "body": {
+            "ru": "<p>При непрерывном изменении \\(A\\) производная в точке максимума обращается в нуль:</p><div>\\[\\frac{a_S}{3}A^{-4/3}-\\frac{a_C}{6}A^{-1/3}=0.\\]</div>",
+            "en": "<p>Treat \\(A\\) as continuous before selecting the nearest allowed integer. At the maximum</p><div>\\[\\frac{a_S}{3}A^{-4/3}-\\frac{a_C}{6}A^{-1/3}=0.\\]</div>"
+          }
+        },
+        {
+          "id": "a1-3",
+          "points": 0.4,
+          "label": {
+            "ru": "Массовое число",
+            "en": "Mass number"
+          },
+          "body": {
+            "ru": "<p>Умножение на \\(6A^{4/3}\\) даёт \\(2a_S=a_CA\\). Знак производной меняется с плюса на минус; ближайшее чётное число равно 50.</p>",
+            "en": "<p>Multiply by \\(6A^{4/3}\\) to obtain \\(2a_S=a_CA\\). The derivative changes from positive to negative, and the nearest even integer is 50.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[A=\\frac{2a_S}{a_C}\\simeq 50.\\]</div>",
+        "en": "<div>\\[A=\\frac{2a_S}{a_C}\\simeq 50.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A2",
+      "max": 0.9,
+      "title": {
+        "ru": "Устойчивый изобар",
+        "en": "Most stable isobar"
+      },
+      "steps": [
+        {
+          "id": "a2-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Изменение энергии с зарядом",
+            "en": "Varying the charge"
+          },
+          "body": {
+            "ru": "<p>Теперь \\(N=A-Z\\); по \\(Z\\) меняются лишь кулоновское слагаемое и член симметрии. Условие максимума имеет вид</p><div>\\[-2a_CZA^{-1/3}+4a_{\\mathrm{sym}}(A-2Z)/A=0.\\]</div>",
+            "en": "<p>With \\(N=A-Z\\) only the Coulomb and symmetry terms vary. Setting their combined derivative to zero gives</p><div>\\[-2a_CZA^{-1/3}+4a_{\\mathrm{sym}}(A-2Z)/A=0.\\]</div>"
+          }
+        },
+        {
+          "id": "a2-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Решение и округление",
+            "en": "Solving for the atomic number"
+          },
+          "body": {
+            "ru": "<p>Собирая члены с \\(Z\\), получаем \\(Z(2+a_CA^{2/3}/(2a_{\\mathrm{sym}}))=A\\). Непрерывный максимум лежит около \\(78.6\\), поэтому выбираем \\(Z=79\\).</p>",
+            "en": "<p>Collect terms in \\(Z\\) to obtain \\(Z(2+a_CA^{2/3}/(2a_{\\mathrm{sym}}))=A\\). The continuous maximum is about \\(78.6\\), giving integer \\(Z=79\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[Z^*=\\frac{A}{2\\left(1+\\dfrac{a_C A^{2/3}}{4a_{\\mathrm{sym}}}\\right)}\\simeq79.\\]</div>",
+        "en": "<div>\\[Z^*=\\frac{A}{2\\left(1+\\dfrac{a_C A^{2/3}}{4a_{\\mathrm{sym}}}\\right)}\\simeq79.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A3",
+      "max": 0.7,
+      "title": {
+        "ru": "Распад на два равных фрагмента",
+        "en": "Separation into equal fragments"
+      },
+      "steps": [
+        {
+          "id": "a3-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Изменение энергии связи",
+            "en": "Change in binding energy"
+          },
+          "body": {
+            "ru": "<p>В разности \\(2B(Z/2,N/2)-B(Z,N)\\) объёмный член и энергия симметрии сокращаются. Поверхностная потеря составляет \\((2^{1/3}-1)a_SA^{2/3}\\), а кулоновский выигрыш — \\((1-2^{-2/3})a_C Z^2/A^{1/3}\\).</p>",
+            "en": "<p>The volume and symmetry contributions cancel in \\(2B(Z/2,N/2)-B(Z,N)\\). Creating surface costs \\((2^{1/3}-1)a_SA^{2/3}\\); reduced electrostatic repulsion gains \\((1-2^{-2/3})a_CZ^2/A^{1/3}\\).</p>"
+          }
+        },
+        {
+          "id": "a3-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Энергетическое условие",
+            "en": "Energetic condition"
+          },
+          "body": {
+            "ru": "<p>Разделение понижает массу, когда кулоновский выигрыш больше поверхностной потери. Делим это неравенство на \\((1-2^{-2/3})a_CA^{2/3}\\) и вычисляем оставшийся численный коэффициент.</p>",
+            "en": "<p>Separation lowers the total mass when the Coulomb gain exceeds the surface cost. Divide by \\((1-2^{-2/3})a_CA^{2/3}\\) and evaluate the remaining coefficient.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[C_{\\mathrm{fission}}=\\frac{2^{1/3}-1}{1-2^{-2/3}}\\simeq0.70.\\]</div>",
+        "en": "<div>\\[C_{\\mathrm{fission}}=\\frac{2^{1/3}-1}{1-2^{-2/3}}\\simeq0.70.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B1",
+      "max": 1.5,
+      "title": {
+        "ru": "Гравитационная связь",
+        "en": "Gravitational binding"
+      },
+      "steps": [
+        {
+          "id": "b1-1",
+          "points": 0.8,
+          "label": {
+            "ru": "Гравитационный коэффициент",
+            "en": "Gravity coefficient"
+          },
+          "body": {
+            "ru": "<p>Степень \\(A^{5/3}\\) получается из отношения \\(A^2/A^{1/3}\\). Оставшийся коэффициент удобно считать непосредственно в МэВ:</p><div>\\[a_{\\mathrm{grav}}=\\frac{3\\hbar c}{5R_0}\\left(\\frac{m_Nc^2}{M_Pc^2}\\right)^2.\\]</div>",
+            "en": "<p>The power \\(A^{5/3}\\) follows from \\(A^2/A^{1/3}\\). Use energy units consistently by writing</p><div>\\[a_{\\mathrm{grav}}=\\frac{3\\hbar c}{5R_0}\\left(\\frac{m_Nc^2}{M_Pc^2}\\right)^2.\\]</div>"
+          }
+        },
+        {
+          "id": "b1-2",
+          "points": 0.7,
+          "label": {
+            "ru": "Порог положительной связи",
+            "en": "Threshold for positive binding"
+          },
+          "body": {
+            "ru": "<p>При \\(Z=0\\) кулоновский член исчезает, а \\(B/A=a_V-a_{\\mathrm{sym}}+a_{\\mathrm{grav}}A^{2/3}\\). В точке \\(B=0\\) отсюда получается</p><div>\\[A_c=\\left(\\frac{a_{\\mathrm{sym}}-a_V}{a_{\\mathrm{grav}}}\\right)^{3/2}.\\]</div>",
+            "en": "<p>With no protons the Coulomb term vanishes, and \\(B/A=a_V-a_{\\mathrm{sym}}+a_{\\mathrm{grav}}A^{2/3}\\). At the threshold \\(B=0\\), so</p><div>\\[A_c=\\left(\\frac{a_{\\mathrm{sym}}-a_V}{a_{\\mathrm{grav}}}\\right)^{3/2}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[a_{\\mathrm{grav}}\\simeq6\\times10^{-37}\\,\\mathrm{MeV},\\qquad A_c\\simeq4\\times10^{55}.\\]</div>",
+        "en": "<div>\\[a_{\\mathrm{grav}}\\simeq6\\times10^{-37}\\,\\mathrm{MeV},\\qquad A_c\\simeq4\\times10^{55}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C1",
+      "max": 1.0,
+      "title": {
+        "ru": "Гравитационное замедление времени",
+        "en": "Clock rates at two heights"
+      },
+      "steps": [
+        {
+          "id": "c1-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Скорость при встрече",
+            "en": "Relative speed"
+          },
+          "body": {
+            "ru": "<p>Пройдя высоту \\(\\Delta h\\), часы F приобретают скорость \\(v\\) с \\(v^2=2g\\Delta h=2\\Delta\\phi\\). В системе F часы II движутся с той же по модулю скоростью.</p>",
+            "en": "<p>After falling through \\(\\Delta h\\), clock F has \\(v^2=2g\\Delta h=2\\Delta\\phi\\). Clock II has the same relative speed in the F frame.</p>"
+          }
+        },
+        {
+          "id": "c1-2",
+          "points": 0.5,
+          "label": {
+            "ru": "Лоренцев множитель",
+            "en": "Lorentz factor"
+          },
+          "body": {
+            "ru": "<p>Движущиеся часы II отсчитывают меньший собственный интервал: \\(\\Delta\\tau_{\\mathrm{II}}=\\Delta\\tau_{\\mathrm{I}}\\sqrt{1-v^2/c^2}\\) в описанном мысленном эксперименте.</p>",
+            "en": "<p>In the prescribed falling-frame comparison the moving clock accumulates \\(\\Delta\\tau_{\\mathrm{II}}=\\Delta\\tau_{\\mathrm{I}}\\sqrt{1-v^2/c^2}\\).</p>"
+          }
+        },
+        {
+          "id": "c1-3",
+          "points": 0.2,
+          "label": {
+            "ru": "Первый порядок",
+            "en": "First-order term"
+          },
+          "body": {
+            "ru": "<p>Разложение квадратного корня даёт относительное отставание \\(v^2/(2c^2)=\\Delta\\phi/c^2\\).</p>",
+            "en": "<p>Expanding the square root gives a fractional lag of \\(v^2/(2c^2)=\\Delta\\phi/c^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta\\tau_{\\mathrm{II}}\\simeq\\left(1-\\frac{\\Delta\\phi}{c^2}\\right)\\Delta\\tau_{\\mathrm{I}}.\\]</div>",
+        "en": "<div>\\[\\Delta\\tau_{\\mathrm{II}}\\simeq\\left(1-\\frac{\\Delta\\phi}{c^2}\\right)\\Delta\\tau_{\\mathrm{I}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C2",
+      "max": 1.8,
+      "title": {
+        "ru": "Задержка сигнала",
+        "en": "Gravitational travel-time delay"
+      },
+      "steps": [
+        {
+          "id": "c2-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Время прохождения луча",
+            "en": "Flight time"
+          },
+          "body": {
+            "ru": "<p>Время определяется интегралом \\(t=\\int_{x_N}^{x_E}dx/c_{\\mathrm{eff}}(x)\\). Потенциал на оси луча создаёт карлик на расстоянии \\(\\sqrt{x^2+d^2}\\).</p>",
+            "en": "<p>Integrate the inverse speed along the ray: \\(t=\\int_{x_N}^{x_E}dx/c_{\\mathrm{eff}}(x)\\). The dwarf lies at distance \\(\\sqrt{x^2+d^2}\\) from a point on the ray.</p>"
+          }
+        },
+        {
+          "id": "c2-2",
+          "points": 0.7,
+          "label": {
+            "ru": "Поправка слабого поля",
+            "en": "Weak-field correction"
+          },
+          "body": {
+            "ru": "<p>При \\(\\phi=-GM_{\\mathrm{WD}}/\\sqrt{x^2+d^2}\\) первый член разложения \\(1/c_{\\mathrm{eff}}\\) равен \\(1/c\\). После вычитания времени без поля остаётся</p><div>\\[\\Delta t=\\frac{2GM_{\\mathrm{WD}}}{c^3}\\int_{x_N}^{x_E}\\frac{dx}{\\sqrt{x^2+d^2}}.\\]</div>",
+            "en": "<p>Use \\(\\phi=-GM_{\\mathrm{WD}}/\\sqrt{x^2+d^2}\\) and expand the reciprocal speed. The constant \\(1/c\\) gives the unperturbed travel time, leaving</p><div>\\[\\Delta t=\\frac{2GM_{\\mathrm{WD}}}{c^3}\\int_{x_N}^{x_E}\\frac{dx}{\\sqrt{x^2+d^2}}.\\]</div>"
+          }
+        },
+        {
+          "id": "c2-3",
+          "points": 0.6,
+          "label": {
+            "ru": "Пределы логарифма",
+            "en": "Logarithm at the endpoints"
+          },
+          "body": {
+            "ru": "<p>У верхнего предела \\(x_E+\\sqrt{x_E^2+d^2}\\simeq2x_E\\). При \\(x_N&lt;0\\) главные члены сокращаются: рационализация даёт \\(x_N+\\sqrt{x_N^2+d^2}\\simeq d^2/(2|x_N|)\\). Логарифм отношения этих двух величин положителен.</p>",
+            "en": "<p>At Earth, \\(x_E+\\sqrt{x_E^2+d^2}\\simeq2x_E\\). At the negative endpoint the leading terms cancel; rationalization gives \\(x_N+\\sqrt{x_N^2+d^2}\\simeq d^2/(2|x_N|)\\). The log of their ratio is positive.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta t\\simeq\\frac{2GM_{\\mathrm{WD}}}{c^3}\\ln\\!\\frac{4|x_N|x_E}{d^2}.\\]</div>",
+        "en": "<div>\\[\\Delta t\\simeq\\frac{2GM_{\\mathrm{WD}}}{c^3}\\ln\\!\\frac{4|x_N|x_E}{d^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C3",
+      "max": 1.8,
+      "title": {
+        "ru": "Размах задержки за оборот",
+        "en": "Range over one orbit"
+      },
+      "steps": [
+        {
+          "id": "c3-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Пульсар за карликом",
+            "en": "Pulsar on the far side"
+          },
+          "body": {
+            "ru": "<p>При соединении \\(d\\simeq L\\varepsilon\\). В формуле C2 аргумент логарифма в максимуме равен \\(4x_E/(L\\varepsilon^2)\\).</p>",
+            "en": "<p>At conjunction \\(d\\simeq L\\varepsilon\\). Substitution into C2 gives the maximum delay with logarithm argument \\(4x_E/(L\\varepsilon^2)\\).</p>"
+          }
+        },
+        {
+          "id": "c3-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Пульсар перед карликом",
+            "en": "Pulsar on the near side"
+          },
+          "body": {
+            "ru": "<p>При \\(x_N\\simeq L&gt;0\\) начальная точка имеет \\(x_N+\\sqrt{x_N^2+d^2}\\simeq2L\\). Аргумент логарифма в минимуме равен \\(x_E/L\\).</p>",
+            "en": "<p>For \\(x_N\\simeq L&gt;0\\) the lower endpoint is \\(x_N+\\sqrt{x_N^2+d^2}\\simeq2L\\). The logarithm argument now becomes \\(x_E/L\\).</p>"
+          }
+        },
+        {
+          "id": "c3-3",
+          "points": 0.6,
+          "label": {
+            "ru": "Разность времён",
+            "en": "Difference of delays"
+          },
+          "body": {
+            "ru": "<p>Вычитание логарифмов означает деление их аргументов. Расстояния до системы и между звёздами сокращаются, остаётся \\(4/\\varepsilon^2\\).</p>",
+            "en": "<p>Subtracting logarithms divides their arguments. Both \\(x_E\\) and \\(L\\) cancel, leaving \\(4/\\varepsilon^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta t_{\\max}-\\Delta t_{\\min}\\simeq\\frac{2GM_{\\mathrm{WD}}}{c^3}\\ln\\!\\frac{4}{\\varepsilon^2}.\\]</div>",
+        "en": "<div>\\[\\Delta t_{\\max}-\\Delta t_{\\min}\\simeq\\frac{2GM_{\\mathrm{WD}}}{c^3}\\ln\\!\\frac{4}{\\varepsilon^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C4",
+      "max": 0.8,
+      "title": {
+        "ru": "Масса белого карлика",
+        "en": "White-dwarf mass"
+      },
+      "steps": [
+        {
+          "id": "c4-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Угол орбиты",
+            "en": "Orbital angle"
+          },
+          "body": {
+            "ru": "<p>Для малого угла \\(\\varepsilon^2\\simeq2(1-\\cos\\varepsilon)=2.2\\times10^{-4}\\).</p>",
+            "en": "<p>The small-angle cosine expansion gives \\(\\varepsilon^2\\simeq2(1-\\cos\\varepsilon)=2.2\\times10^{-4}\\).</p>"
+          }
+        },
+        {
+          "id": "c4-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Размах на графике",
+            "en": "Graph reading"
+          },
+          "body": {
+            "ru": "<p>Разность высот пика и нижнего уровня составляет примерно \\(50\\,\\mu\\mathrm s\\).</p>",
+            "en": "<p>The peak sits approximately \\(50\\,\\mu\\mathrm s\\) above the bottom of the measured curve.</p>"
+          }
+        },
+        {
+          "id": "c4-3",
+          "points": 0.4,
+          "label": {
+            "ru": "Оценка массы",
+            "en": "Mass estimate"
+          },
+          "body": {
+            "ru": "<p>Из C3 отношение масс равно \\(50/[10\\ln(4/0.00022)]\\simeq0.51\\). Размерные множители времени сокращаются.</p>",
+            "en": "<p>Using C3 the mass ratio is \\(50/[10\\ln(4/0.00022)]\\simeq0.51\\). The numerator and denominator are both in microseconds.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[M_{\\mathrm{WD}}/M_\\odot\\simeq0.5.\\]</div>",
+        "en": "<div>\\[M_{\\mathrm{WD}}/M_\\odot\\simeq0.5.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C5",
+      "max": 0.4,
+      "title": {
+        "ru": "Частота круговой орбиты",
+        "en": "Circular orbital frequency"
+      },
+      "steps": [
+        {
+          "id": "c5-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Третий закон Кеплера",
+            "en": "Kepler scaling"
+          },
+          "body": {
+            "ru": "<p>При неизменных массах сила тяготения пропорциональна \\(R^{-2}\\), тогда как центростремительная сила пропорциональна \\(R\\omega^2\\). Следовательно, \\(R^3\\omega^2=\\mathrm{const}\\).</p>",
+            "en": "<p>For fixed masses gravity scales as \\(R^{-2}\\), whereas the required centripetal force scales as \\(R\\omega^2\\). Hence \\(R^3\\omega^2\\) stays constant.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p=-\\tfrac32.\\]</div>",
+        "en": "<div>\\[p=-\\tfrac32.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C6",
+      "max": 0.2,
+      "title": {
+        "ru": "Форма сигнала перед слиянием",
+        "en": "Signal before merger"
+      },
+      "steps": [
+        {
+          "id": "c6-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Рост частоты и амплитуды",
+            "en": "Frequency and amplitude increase"
+          },
+          "body": {
+            "ru": "<p>При потере орбитальной энергии \\(R\\) уменьшается. По C5 частота растёт как \\(R^{-3/2}\\), а амплитуда — как \\(R^{-1}\\). Обе особенности есть у графика (b).</p>",
+            "en": "<p>As the system loses orbital energy its radius decreases. C5 gives frequency proportional to \\(R^{-3/2}\\) and amplitude proportional to \\(R^{-1}\\). Trace (b) shows both trends.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>График (b).</p>",
+        "en": "<p>Trace (b).</p>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "T3",
+  "title": "Температура, устойчивость атмосферы и загрязнение воздуха",
+  "points": 10,
+  "sourceFile": "/assets/practice/ipho-2008/IPhO_2008_T3_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "translationStatus": "editorial-adaptation",
+  "sections": [
+    {
+      "id": "T3-I",
+      "title": "Давление с высотой",
+      "points": 1.5
+    },
+    {
+      "id": "T3-II",
+      "title": "Адиабатическое движение воздушной частицы",
+      "points": 3.25
+    },
+    {
+      "id": "T3-III",
+      "title": "Устойчивость атмосферы",
+      "points": 2.25
+    },
+    {
+      "id": "T3-IV",
+      "title": "Высота перемешивания в Ханое",
+      "points": 1.75
+    },
+    {
+      "id": "T3-V",
+      "title": "Утреннее загрязнение воздуха в Ханое",
+      "points": 1.25
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T3-1.1",
+      "label": "1.1",
+      "points": 0.5
+    },
+    {
+      "id": "T3-1.2.1",
+      "label": "1.2.1",
+      "points": 0.5
+    },
+    {
+      "id": "T3-1.2.2",
+      "label": "1.2.2",
+      "points": 0.5
+    },
+    {
+      "id": "T3-2.1",
+      "label": "2.1",
+      "points": 1.0
+    },
+    {
+      "id": "T3-2.2.1",
+      "label": "2.2.1",
+      "points": 0.5
+    },
+    {
+      "id": "T3-2.2.2",
+      "label": "2.2.2",
+      "points": 0.25
+    },
+    {
+      "id": "T3-2.2.3",
+      "label": "2.2.3",
+      "points": 0.25
+    },
+    {
+      "id": "T3-2.3",
+      "label": "2.3",
+      "points": 1.0
+    },
+    {
+      "id": "T3-2.4",
+      "label": "2.4",
+      "points": 0.25
+    },
+    {
+      "id": "T3-3.1",
+      "label": "3.1",
+      "points": 1.25
+    },
+    {
+      "id": "T3-3.2",
+      "label": "3.2",
+      "points": 1.0
+    },
+    {
+      "id": "T3-4.1",
+      "label": "4.1",
+      "points": 0.75
+    },
+    {
+      "id": "T3-4.2",
+      "label": "4.2",
+      "points": 1.0
+    },
+    {
+      "id": "T3-5.1",
+      "label": "5.1",
+      "points": 0.5
+    },
+    {
+      "id": "T3-5.2",
+      "label": "5.2",
+      "points": 0.5
+    },
+    {
+      "id": "T3-5.3",
+      "label": "5.3",
+      "points": 0.25
+    }
+  ],
+  "figures": [
+    "qfig1"
+  ],
+  "solutionsAvailable": true,
+  "stepScoring": "official-subtask-maxima",
+  "solutionData": "/assets/practice/ipho-2008/solutions/t3.json",
+  "solutionPdf": "/assets/practice/ipho-2008/IPhO_2008_S3_EN.pdf",
+  "sourceLinks": {
+    "problem": "https://olimpicos.net/files/ipho/IPhO_2008_Q3.pdf",
+    "solution": "https://olimpicos.net/files/ipho/IPhO_2008_S3.pdf",
+    "marking": "https://www.jpho.jp/international/media-download/247/f3354c043de901ff/PDF/"
+  }
+}

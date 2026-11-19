@@ -1,0 +1,93 @@
+{
+  "id": "T3",
+  "title": "Шампанское!",
+  "points": 10,
+  "sourceFile": "IPhO_2025_T3_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "subtasks": [
+    {
+      "id": "T3-A1",
+      "points": 0.2
+    },
+    {
+      "id": "T3-A2",
+      "points": 0.5
+    },
+    {
+      "id": "T3-A3",
+      "points": 1.2
+    },
+    {
+      "id": "T3-A4",
+      "points": 0.8
+    },
+    {
+      "id": "T3-A5",
+      "points": 0.5
+    },
+    {
+      "id": "T3-A6",
+      "points": 1.1
+    },
+    {
+      "id": "T3-B1",
+      "points": 1.1
+    },
+    {
+      "id": "T3-B2",
+      "points": 1.1
+    },
+    {
+      "id": "T3-B3",
+      "points": 1.1
+    },
+    {
+      "id": "T3-C1",
+      "points": 0.4
+    },
+    {
+      "id": "T3-C2",
+      "points": 0.7
+    },
+    {
+      "id": "T3-C3",
+      "points": 1.3
+    }
+  ],
+  "sections": [
+    {
+      "id": "T3-A",
+      "title": "Образование, рост и всплытие пузырьков",
+      "points": 4.3
+    },
+    {
+      "id": "T3-B",
+      "title": "Звук лопающегося пузырька",
+      "points": 3.3
+    },
+    {
+      "id": "T3-C",
+      "title": "При открытии бутылки",
+      "points": 2.4
+    }
+  ],
+  "figures": [
+    "fig1",
+    "fig2",
+    "fig3",
+    "fig4",
+    "fig5",
+    "fig6"
+  ],
+  "solutionsAvailable": true,
+  "translationStatus": "bilingual",
+  "solutionData": "/assets/practice/ipho-2025/solutions/t3.json",
+  "solutionPdf": "/assets/practice/ipho-2025/IPhO_2025_S3_EN.pdf",
+  "stepScoring": "official-subpart-maximum-grouped-criteria"
+}

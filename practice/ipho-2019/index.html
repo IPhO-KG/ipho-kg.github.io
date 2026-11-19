@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IPhO 2019 — теория · NPhO</title><meta name="description" content="Туры международных физических олимпиад для самостоятельной работы."><link rel="icon" href="/favicon.png"><script>try{const t=localStorage.getItem('npho-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch{}</script><script src="/assets/js/i18n.js?v=20261120-practice"></script><script src="/assets/js/i18n-fallback.js?v=20261120-practice"></script><link rel="stylesheet" href="/assets/css/results.css?v=20261117-controls"><link rel="stylesheet" href="/assets/css/practice.css?v=20261120-editions"><link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-controls"><script defer src="/assets/js/site-ui.js?v=20261117-controls"></script><script defer src="/assets/js/practice-i18n.js?v=20261120-practice"></script><script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      postFilters: [({math, data}) => {
+        if (!math.start.node?.parentElement?.closest('#review-panel')) return;
+        data.root.attributes.set('overflow', 'scroll');
+        if (!math.display) {
+          data.root.walkTree(node => {
+            if (node.kind === 'mo' || node.kind === 'mspace') node.attributes.set('linebreak', 'nobreak');
+          });
+        }
+      }]
+    },
+    svg: {fontCache: 'global'},
+    output: {
+      displayOverflow: 'linebreak',
+      postFilters: [({math, data}) => {
+        if (!math.start.node?.parentElement?.closest('#review-panel')) return;
+        const svg = data.querySelector(':scope > svg');
+        const width = svg?.getAttribute('width');
+        if (!width?.endsWith('ex')) return;
+        data.classList.add('review-equation');
+        data.style.setProperty('--formula-width', width);
+        if (!math.display) data.style.setProperty('--formula-baseline', svg.style.verticalAlign || 'baseline');
+      }]
+    },
+    startup: {typeset: false}
+  };
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script><script defer src="/assets/js/practice-engine.js?v=20261120-tours"></script><script defer src="/assets/js/practice-review-model.js?v=20261120-tours"></script><script defer src="/assets/js/practice-review-ui.js?v=20261120-tours"></script><script defer src="/assets/js/practice-page.js?v=20261120-archive15"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/npho-reading-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-controls"></head><body data-practice-page="reader" data-edition="ipho-2019"><nav aria-label="NPhO"><a class="logo" href="/" data-site-link="/"><span class="logo-dot"></span>NPhO</a><div class="nav-right"><div class="nav-links"><a class="nl"  href="/" data-site-link="/" data-i18n="nav.home">Главная</a><a class="nl"  href="/#problems" data-site-link="/#problems" data-i18n="nav.problems">Банк задач</a><a class="nl"  href="/results/2026/" data-site-link="/results/2026/" data-i18n="nav.results">Результаты</a><a class="nl active" aria-current="page" href="/practice/" data-site-link="/practice/" data-i18n="nav.practice">Практика</a><a class="nl"  href="/#about" data-site-link="/#about" data-i18n="nav.about">Об олимпиаде</a></div><select class="lang-select" data-lang-select onchange="NPHO_I18N.setLang(this.value)" aria-label="Язык"><option value="ky">Кыргызча</option><option value="ru">Русский</option><option value="en">English</option></select><button class="theme-toggle" id="theme-toggle" type="button" data-i18n-attr="aria-label:theme.toggle"><span class="theme-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1a9 9 0 1 0 9.9 9.9Z"/></svg></span><span class="theme-label"></span></button></div></nav><main class="practice-main practice-reader">
+  <div data-practice-i18n="storage" id="storage-warning" class="notice" role="status" hidden>Не удалось включить локальное сохранение. Не закрывай эту вкладку: после её закрытия прогресс может быть потерян.</div>
+  <a class="back-link" href="/practice/ipho/" data-site-link="/practice/ipho/"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg> <span data-practice-i18n="backYears">Годы IPhO</span></a>
+  <section id="setup-panel" class="setup-panel">
+    <div class="setup-intro">
+      <div class="setup-edition"><span class="edition-mark"><img src="/assets/practice/ipho-2019-logo.png" width="88" height="88" alt="IPhO 2019"></span><div><h1>IPhO 2019</h1><p class="lead" data-practice-i18n="host2019">Тель-Авив, Израиль</p><p class="setup-round" data-practice-i18n="theory">Теоретический тур</p></div></div>
+      <p class="setup-facts" data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</p>
+      <div class="setup-materials"><a href="/assets/practice/ipho-2019/IPhO_2019_Theory_RU.pdf" download class="text-link">PDF · Русский</a><a href="/assets/practice/ipho-2019/IPhO_2019_Theory_EN.pdf" download class="text-link">PDF · English</a></div>
+    </div>
+    <form id="start-form" class="start-form">
+      <fieldset><legend data-practice-i18n="mode">Режим работы</legend>
+        <label class="mode-choice"><input type="radio" name="mode" value="exam" checked><span><strong data-practice-i18n="exam">Экзамен</strong><small data-practice-i18n="examHint">5 часов без паузы. Отсчёт продолжается после закрытия страницы.</small></span></label>
+        <label class="mode-choice"><input type="radio" name="mode" value="training"><span><strong data-practice-i18n="training">Тренировка</strong><small data-practice-i18n="trainingHint">Своё время и возможность поставить таймер на паузу.</small></span></label>
+      </fieldset>
+      <label id="duration-control" class="duration-control" hidden><span data-practice-i18n="minutes">Время, минуты</span><input id="duration-minutes" type="number" min="1" max="1440" step="1" value="300" required></label>
+      <div class="start-actions"><button class="pbtn primary" type="submit"><span data-practice-i18n="start">Начать</span></button><button class="pbtn" type="button" id="read-only"><span data-practice-i18n="read">Читать условия</span></button></div>
+    </form>
+  </section>
+  <section id="session-panel" hidden>
+    <div id="exam-toolbar" class="exam-toolbar">
+      <div class="exam-identity"><strong>IPhO 2019</strong><span id="session-mode"></span><span id="session-status" class="session-status" role="status"></span></div>
+      <div id="timer-group" class="timer-group"><span id="timer-label" class="timer-label"></span><span id="timer" class="timer" role="timer" aria-live="off">05:00:00</span><button type="button" id="toggle-timer" class="icon-button" data-practice-label="hideTimer"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+      <div class="exam-actions"><button id="pause-attempt" class="pbtn small" type="button" hidden><span data-practice-i18n="pause">Пауза</span></button><button id="finish-attempt" class="pbtn small" type="button"><span data-practice-i18n="finish">Завершить</span></button></div>
+    </div>
+    <p id="cross-tab-note" class="notice" data-practice-i18n="crossTab" hidden>В другой вкладке начат новый тур. Здесь доступен только просмотр.</p>
+    <div class="exam-workspace">
+
+      <div class="document-column">
+        <section id="conditions-panel" role="tabpanel" aria-labelledby="show-conditions"><div id="task-content" class="task-content" lang="ru"></div></section>
+        <section id="review-panel" class="review-panel" role="tabpanel" aria-labelledby="show-review" hidden></section>
+      </div>
+      <aside class="task-sidebar control-panel"><div class="control-panel-heading"><strong>IPhO 2019</strong></div>
+        <div class="reader-view-tabs" role="tablist" data-practice-label="reviewViews"><button id="show-conditions" type="button" role="tab" aria-selected="true" aria-controls="conditions-panel" data-practice-i18n="conditions">Условия</button><button id="show-review" type="button" role="tab" aria-selected="false" aria-controls="review-panel" data-practice-i18n="reviewTitle">Решение</button></div>
+        <div id="document-toolbar" class="document-toolbar sidebar-tools">
+          <label class="font-control material-control"><span data-practice-i18n="materials">Условия</span><select id="material-language" aria-label="Условия" data-practice-label="materials"><option value="ru">Русский</option><option value="en">English</option></select></label>
+          <div class="document-tools">
+            <details id="reader-settings" class="reader-settings"><summary id="reader-settings-summary" data-practice-label="settings"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h7m4 0h5M4 17h3m4 0h9"/><circle cx="13" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg><span data-practice-i18n="settings">Настройки</span><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="reader-settings-panel">
+              <label class="font-control settings-field" id="font-control"><span data-practice-i18n="font">Размер текста</span><select id="font-size" aria-label="Размер текста" data-practice-label="font"><option value="17">17</option><option value="19" selected>19</option><option value="21">21</option></select></label>
+              <div class="settings-actions"><button id="focus-mode" type="button" class="pbtn small" aria-pressed="false"><span data-practice-i18n="focus">Фокус</span></button><button id="fullscreen" type="button" class="pbtn small" data-practice-label="fullscreen"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg><span data-practice-i18n="fullscreen">Во весь экран</span></button></div>
+            </div></details>
+            <a id="download-task" class="text-link document-download" href="/assets/practice/ipho-2019/IPhO_2019_T1_RU.pdf" download><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg><span data-practice-i18n="download">Скачать условия</span><small class="document-format">PDF</small></a>
+            <a id="download-solution" class="text-link document-download" download hidden><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg><span data-practice-i18n="officialSolution">Официальное решение</span><small class="document-format">PDF</small></a>
+            <a id="download-marking" class="text-link document-download" download hidden><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg><span data-practice-i18n="markingScheme">Критерии оценивания</span><small class="document-format">PDF</small></a>
+          </div>
+        </div>
+        <div id="review-tour-total" class="sidebar-round-total" hidden>
+          <span id="review-tour-label" class="sidebar-round-label"></span>
+          <span class="sidebar-round-points" data-review-tour-score><strong id="review-tour-earned" hidden></strong><span id="review-tour-divider" aria-hidden="true" hidden>/</span><span id="review-tour-max"></span><small data-practice-i18n="reviewPointUnit">б.</small></span>
+        </div>
+        <section id="control-task-list" class="control-task-list">
+          <h2 class="task-sidebar-title" data-practice-i18n="tasks">Задачи</h2>
+          <div class="task-buttons">
+        <details class="task-entry" data-task-entry="T1"><summary class="task-button" data-task="T1"><span>T1</span><small class="task-score" data-task-score="T1" data-max="10">10 баллов</small><small class="score-divider" aria-hidden="true" hidden>/</small><small class="score-limit"></small><small class="score-unit" data-practice-i18n="reviewPointUnit">б.</small></summary><nav id="review-navigation-T1" class="review-navigation" data-review-navigation="T1" aria-label="Части T1" hidden></nav></details>
+        <details class="task-entry" data-task-entry="T2"><summary class="task-button" data-task="T2"><span>T2</span><small class="task-score" data-task-score="T2" data-max="10">10 баллов</small><small class="score-divider" aria-hidden="true" hidden>/</small><small class="score-limit"></small><small class="score-unit" data-practice-i18n="reviewPointUnit">б.</small></summary><nav id="review-navigation-T2" class="review-navigation" data-review-navigation="T2" aria-label="Части T2" hidden></nav></details>
+        <details class="task-entry" data-task-entry="T3"><summary class="task-button" data-task="T3"><span>T3</span><small class="task-score" data-task-score="T3" data-max="10">10 баллов</small><small class="score-divider" aria-hidden="true" hidden>/</small><small class="score-limit"></small><small class="score-unit" data-practice-i18n="reviewPointUnit">б.</small></summary><nav id="review-navigation-T3" class="review-navigation" data-review-navigation="T3" aria-label="Части T3" hidden></nav></details>
+      </div></section></aside>
+    </div>
+  </section>
+  <noscript><p><a href="/assets/practice/ipho-2019/IPhO_2019_Theory_RU.pdf" download>PDF · Русский</a> · <a href="/assets/practice/ipho-2019/IPhO_2019_Theory_EN.pdf" download>PDF · English</a></p></noscript>
+</main><dialog id="finish-dialog" class="practice-dialog"><form method="dialog"><h2 data-practice-i18n="finishQuestion" >Завершить тур?</h2><p data-practice-i18n="finishWarning" >Таймер остановится, и откроются решения задач.</p><div class="dialog-actions"><button class="pbtn" value="cancel"><span data-practice-i18n="cancel" >Продолжить работу</span></button><button class="pbtn primary" value="finish"><span data-practice-i18n="finish" >Завершить</span></button></div></form></dialog><dialog id="image-dialog" class="image-dialog"><button class="pbtn small" type="button" id="close-image"><span data-practice-i18n="close" >Закрыть</span></button><img id="enlarged-image" alt=""></dialog><div class="sr-only" aria-live="polite" id="live-message"></div></body></html>

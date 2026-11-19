@@ -1,0 +1,278 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Рассеяние иона на нейтральном атоме",
+    "en": "Scattering of an ion by a neutral atom"
+  },
+  "sourcePdf": "/assets/practice/ipho-2011/IPhO_2011_S3_EN.pdf",
+  "max": 10,
+  "parts": [
+    {
+      "id": "T3-3.1",
+      "max": 1.2,
+      "label": "3.1",
+      "title": {
+        "ru": "Поле на оси диполя",
+        "en": "Field on the dipole axis"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Сложение полей двух зарядов",
+            "en": "Superposition of the two fields"
+          },
+          "body": {
+            "ru": "<p>Обозначим \\(k=1/(4\\pi\\varepsilon_0)\\). Закон Кулона даёт модуль поля точечного заряда \\(kq/d^2\\). В точке на оси за положительным зарядом поля противоположны. Ближайший заряд \\(+q\\) создаёт большее поле, направленное вдоль \\(\\mathbf p\\).</p>",
+            "en": "<p>Write \\(k=1/(4\\pi\\varepsilon_0)\\). Coulomb’s law gives field magnitude \\(kq/d^2\\) for a point charge. Beyond the positive charge on the axis the fields oppose each other. The nearer charge \\(+q\\) gives the larger contribution, in the direction of \\(\\mathbf p\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Расстояния до зарядов",
+            "en": "Distances to the charges"
+          },
+          "body": {
+            "ru": "<p>Расстояния до \\(+q\\) и \\(-q\\) равны \\(r-a\\) и \\(r+a\\). Поэтому вдоль оси</p><div>\\[E_p=kq\\left[\\frac{1}{(r-a)^2}-\\frac{1}{(r+a)^2}\\right].\\]</div>",
+            "en": "<p>The distances to \\(+q\\) and \\(-q\\) are \\(r-a\\) and \\(r+a\\). The axial component is thus</p><div>\\[E_p=kq\\left[\\frac{1}{(r-a)^2}-\\frac{1}{(r+a)^2}\\right].\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.3,
+          "label": {
+            "ru": "Дипольный предел",
+            "en": "Dipole limit"
+          },
+          "body": {
+            "ru": "<p>При \\(a/r\\ll1\\) разность в скобках равна \\(4a/r^3\\) в первом порядке. Подстановка \\(p=2aq\\) даёт векторное поле.</p>",
+            "en": "<p>For \\(a/r\\ll1\\) the bracket is \\(4a/r^3\\) to first order. Set \\(p=2aq\\) to obtain the vector field.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathbf E_p=\\frac{2k\\mathbf p}{r^3},\\qquad k=\\frac{1}{4\\pi\\varepsilon_0}.\\]</div>",
+        "en": "<div>\\[\\mathbf E_p=\\frac{2k\\mathbf p}{r^3},\\qquad k=\\frac{1}{4\\pi\\varepsilon_0}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.2",
+      "max": 3,
+      "label": "3.2",
+      "title": {
+        "ru": "Притяжение к поляризованному атому",
+        "en": "Attraction to the polarised atom"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.9,
+          "label": {
+            "ru": "Поле иона у атома",
+            "en": "Ion field at the atom"
+          },
+          "body": {
+            "ru": "<p>Направим \\(\\hat{\\mathbf r}\\) от атома к иону. В точке, где находится атом, радиус-вектор относительно иона направлен противоположно, поэтому</p><div>\\[\\mathbf E_{\\rm ion}=-\\frac{kQ}{r^2}\\hat{\\mathbf r}.\\]</div>",
+            "en": "<p>Let \\(\\hat{\\mathbf r}\\) point from the atom towards the ion. At the atom the displacement from the ion points the other way, giving</p><div>\\[\\mathbf E_{\\rm ion}=-\\frac{kQ}{r^2}\\hat{\\mathbf r}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.7,
+          "label": {
+            "ru": "Поле наведённого диполя",
+            "en": "Field of the induced dipole"
+          },
+          "body": {
+            "ru": "<p>Момент атома следует за полем: \\(\\mathbf p=\\alpha\\mathbf E_{\\rm ion}\\). Ион лежит на оси этого диполя. С обеих сторон осевое поле направлено вдоль \\(\\mathbf p\\), поэтому подстановка в результат 3.1 даёт</p><div>\\[\\mathbf E_p=-\\frac{2\\alpha k^2Q}{r^5}\\hat{\\mathbf r}.\\]</div>",
+            "en": "<p>The atomic dipole follows the field: \\(\\mathbf p=\\alpha\\mathbf E_{\\rm ion}\\). The ion lies on the dipole axis. On either side its axial field points along \\(\\mathbf p\\), so part 3.1 gives</p><div>\\[\\mathbf E_p=-\\frac{2\\alpha k^2Q}{r^5}\\hat{\\mathbf r}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 1,
+          "label": {
+            "ru": "Сила на ионе",
+            "en": "Force on the ion"
+          },
+          "body": {
+            "ru": "<p>На ион действует поле атома. Умножаем осевое поле \\(\\mathbf E_p=2k\\mathbf p/r^3\\) на заряд \\(Q\\). При подстановке наведённого момента получаем множитель \\(Q^2\\) и зависимость \\(r^{-5}\\).</p>",
+            "en": "<p>The ion experiences the field of the atom. Multiply the axial field \\(\\mathbf E_p=2k\\mathbf p/r^3\\) by the charge \\(Q\\). Substituting the induced moment produces a factor \\(Q^2\\) and an inverse-fifth-power radial dependence.</p>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.4,
+          "label": {
+            "ru": "Направление при смене знака",
+            "en": "Direction for either charge sign"
+          },
+          "body": {
+            "ru": "<p>При положительной поляризуемости радиальная проекция силы отрицательна. Смена знака \\(Q\\) переворачивает диполь, но одновременно меняет знак заряда, на который действует поле. Сила остаётся направленной к атому.</p>",
+            "en": "<p>For positive polarisability the radial force component is negative. Reversing \\(Q\\) reverses the dipole as well as the charge on which its field acts. The force still points towards the atom.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathbf f=-\\frac{2\\alpha k^2Q^2}{r^5}\\hat{\\mathbf r}.\\]</div>",
+        "en": "<div>\\[\\mathbf f=-\\frac{2\\alpha k^2Q^2}{r^5}\\hat{\\mathbf r}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.3",
+      "max": 0.9,
+      "label": "3.3",
+      "title": {
+        "ru": "Энергия поляризационного взаимодействия",
+        "en": "Polarisation potential energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Работа радиальной силы",
+            "en": "Work of the radial force"
+          },
+          "body": {
+            "ru": "<p>Выберем \\(U(\\infty)=0\\). Для центральной силы \\(f_r=-dU/dr\\), следовательно,</p><div>\\[U(r)=-\\int_\\infty^r f_r(s)\\,ds.\\]</div>",
+            "en": "<p>Choose \\(U(\\infty)=0\\). A central force obeys \\(f_r=-dU/dr\\), hence</p><div>\\[U(r)=-\\int_\\infty^r f_r(s)\\,ds.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Интегрирование",
+            "en": "Integration"
+          },
+          "body": {
+            "ru": "<p>Подставляем \\(f_r(s)=-2\\alpha k^2Q^2/s^5\\). Первообразная \\(s^{-5}\\) равна \\(-1/(4s^4)\\), поэтому состояние на конечном расстоянии имеет отрицательную энергию.</p>",
+            "en": "<p>Substitute \\(f_r(s)=-2\\alpha k^2Q^2/s^5\\). Since the antiderivative of \\(s^{-5}\\) is \\(-1/(4s^4)\\), the interaction energy at finite separation is negative.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[U(r)=-\\frac{C_4}{r^4},\\qquad C_4=\\frac{\\alpha k^2Q^2}{2}.\\]</div>",
+        "en": "<div>\\[U(r)=-\\frac{C_4}{r^4},\\qquad C_4=\\frac{\\alpha k^2Q^2}{2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.4",
+      "max": 2.4,
+      "label": "3.4",
+      "title": {
+        "ru": "Расстояние наибольшего сближения",
+        "en": "Closest approach"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Момент импульса в точке поворота",
+            "en": "Angular momentum at the turning point"
+          },
+          "body": {
+            "ru": "<p>Сила центральна, поэтому \\(L=mv_0b\\) постоянно. В ближайшей точке скорость \\(v_*\\) направлена по касательной, и момент импульса равен \\(mv_*r_{\\min}\\). Отсюда \\(v_*=v_0b/r_{\\min}\\).</p>",
+            "en": "<p>The central force conserves \\(L=mv_0b\\). The speed \\(v_*\\) at closest approach is purely tangential, giving angular momentum \\(mv_*r_{\\min}\\). Thus \\(v_*=v_0b/r_{\\min}\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Энергия в ближайшей точке",
+            "en": "Energy at closest approach"
+          },
+          "body": {
+            "ru": "<p>На бесконечности полная энергия равна \\(mv_0^2/2\\). На расстоянии \\(r_{\\min}\\) к кинетической энергии добавляется энергия \\(-C_4/r_{\\min}^4\\):</p><div>\\[\\frac{mv_0^2}{2}=\\frac{mv_*^2}{2}-\\frac{C_4}{r_{\\min}^4}.\\]</div>",
+            "en": "<p>At infinity the total energy is \\(mv_0^2/2\\). At \\(r_{\\min}\\) the kinetic energy is accompanied by potential energy \\(-C_4/r_{\\min}^4\\):</p><div>\\[\\frac{mv_0^2}{2}=\\frac{mv_*^2}{2}-\\frac{C_4}{r_{\\min}^4}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.5,
+          "label": {
+            "ru": "Квадратное уравнение",
+            "en": "Quadratic in the squared distance"
+          },
+          "body": {
+            "ru": "<p>Исключим \\(v_*\\) и обозначим \\(z=r_{\\min}^2\\). После умножения на \\(2z^2/(mv_0^2)\\) уравнение приобретает вид</p><div>\\[z^2-b^2z+\\frac{2C_4}{mv_0^2}=0.\\]</div><p>Его корни равны \\((b^2\\pm\\sqrt{b^4-8C_4/(mv_0^2)})/2\\).</p>",
+            "en": "<p>Eliminate \\(v_*\\) and put \\(z=r_{\\min}^2\\). Multiplying the energy equation by \\(2z^2/(mv_0^2)\\) gives</p><div>\\[z^2-b^2z+\\frac{2C_4}{mv_0^2}=0.\\]</div><p>The roots are \\((b^2\\pm\\sqrt{b^4-8C_4/(mv_0^2)})/2\\).</p>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.7,
+          "label": {
+            "ru": "Выбор внешнего корня",
+            "en": "Selecting the outer root"
+          },
+          "body": {
+            "ru": "<p>Ион летит издалека и первым достигает большего из двух радиусов. Проверка в пределе \\(Q\\to0\\) даёт тот же выбор: прямая траектория проходит на расстоянии \\(b\\) от атома, и только корень со знаком плюс стремится к \\(b^2\\).</p>",
+            "en": "<p>An ion arriving from infinity meets the larger radius first. The limit \\(Q\\to0\\) gives an independent check: a straight track passes the atom at distance \\(b\\), and only the plus root tends to \\(b^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r_{\\min}=\\frac{b}{\\sqrt2}\\sqrt{1+\\sqrt{1-\\frac{8C_4}{mv_0^2b^4}}},\\qquad C_4=\\frac{\\alpha k^2Q^2}{2}.\\]</div>",
+        "en": "<div>\\[r_{\\min}=\\frac{b}{\\sqrt2}\\sqrt{1+\\sqrt{1-\\frac{8C_4}{mv_0^2b^4}}},\\qquad C_4=\\frac{\\alpha k^2Q^2}{2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.5",
+      "max": 2.5,
+      "label": "3.5",
+      "title": {
+        "ru": "Сечение перезарядки",
+        "en": "Charge-exchange cross section"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.4,
+          "label": {
+            "ru": "Исчезновение точки поворота",
+            "en": "Disappearance of the turning point"
+          },
+          "body": {
+            "ru": "<p>Для рассеяния должен существовать вещественный положительный корень уравнения 3.4. Если \\(b^4&lt;8C_4/(mv_0^2)\\), дискриминант отрицателен. Тогда радиальная скорость не обращается в нуль и ион продолжает сближаться с атомом.</p>",
+            "en": "<p>A scattering trajectory requires a real positive root of the turning-point equation in 3.4. When \\(b^4&lt;8C_4/(mv_0^2)\\) the discriminant is negative. The radial velocity never vanishes and the ion continues inward.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.7,
+          "label": {
+            "ru": "Критический прицельный параметр",
+            "en": "Critical impact parameter"
+          },
+          "body": {
+            "ru": "<p>На границе захвата два корня совпадают. Отсюда</p><div>\\[b_0=\\left(\\frac{8C_4}{mv_0^2}\\right)^{1/4}.\\]</div><p>Все налетающие траектории внутри круга \\(b&lt;b_0\\) дают перезарядку в принятой модели.</p>",
+            "en": "<p>At the capture boundary the two roots coalesce, giving</p><div>\\[b_0=\\left(\\frac{8C_4}{mv_0^2}\\right)^{1/4}.\\]</div><p>In the model all incoming trajectories inside the disk \\(b&lt;b_0\\) lead to charge exchange.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Площадь сечения",
+            "en": "Area of the capture disk"
+          },
+          "body": {
+            "ru": "<p>Умножаем \\(b_0^2\\) на \\(\\pi\\) и подставляем \\(C_4=\\alpha k^2Q^2/2\\), \\(k=1/(4\\pi\\varepsilon_0)\\). Сечение обратно пропорционально скорости налёта.</p>",
+            "en": "<p>Multiply \\(b_0^2\\) by \\(\\pi\\), then substitute \\(C_4=\\alpha k^2Q^2/2\\) and \\(k=1/(4\\pi\\varepsilon_0)\\). The cross section varies inversely with the incident speed.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[A=\\pi\\sqrt{\\frac{8C_4}{mv_0^2}}=\\frac{|Q|}{2\\varepsilon_0v_0}\\sqrt{\\frac{\\alpha}{m}}.\\]</div>",
+        "en": "<div>\\[A=\\pi\\sqrt{\\frac{8C_4}{mv_0^2}}=\\frac{|Q|}{2\\varepsilon_0v_0}\\sqrt{\\frac{\\alpha}{m}}.\\]</div>"
+      }
+    }
+  ]
+}

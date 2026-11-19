@@ -1,0 +1,90 @@
+{
+  "id": "T3",
+  "title": "Термоакустический двигатель",
+  "points": 10,
+  "sourceFile": "IPhO_2019_T3_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "sections": [
+    {
+      "id": "T3-A",
+      "points": 3.7,
+      "title": "Стоячая волна в закрытой трубе"
+    },
+    {
+      "id": "T3-B",
+      "points": 6.3,
+      "title": "Усиление звука при теплообмене"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T3-A1",
+      "points": 0.3
+    },
+    {
+      "id": "T3-A2",
+      "points": 0.5
+    },
+    {
+      "id": "T3-A3",
+      "points": 0.7
+    },
+    {
+      "id": "T3-A4",
+      "points": 0.3
+    },
+    {
+      "id": "T3-A5",
+      "points": 0.7
+    },
+    {
+      "id": "T3-A6",
+      "points": 1.2
+    },
+    {
+      "id": "T3-B1",
+      "points": 0.4
+    },
+    {
+      "id": "T3-B2",
+      "points": 1.0
+    },
+    {
+      "id": "T3-B3",
+      "points": 0.8
+    },
+    {
+      "id": "T3-B4",
+      "points": 1.9
+    },
+    {
+      "id": "T3-B5",
+      "points": 0.8
+    },
+    {
+      "id": "T3-B6",
+      "points": 0.8
+    },
+    {
+      "id": "T3-B7",
+      "points": 0.6
+    }
+  ],
+  "figures": [
+    "t3-f1",
+    "t3-f2",
+    "t3-f3"
+  ],
+  "solutionData": "/assets/practice/ipho-2019/solutions/t3.json",
+  "solutionPdf": "/assets/practice/ipho-2019/IPhO_2019_S3_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2019/IPhO_2019_M3_EN.pdf",
+  "solutionsAvailable": true,
+  "stepScoring": "grouped-official-criteria",
+  "translationStatus": "editorial-adaptation"
+}

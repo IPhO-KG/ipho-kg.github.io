@@ -1,19 +1,405 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IPhO — годы · NPhO</title><meta name="description" content="Туры международных физических олимпиад для самостоятельной работы."><link rel="icon" href="/favicon.png"><script>try{const t=localStorage.getItem('npho-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch{}</script><script src="/assets/js/i18n.js?v=20261119-izho"></script><script src="/assets/js/i18n-fallback.js?v=20261119-izho"></script><link rel="stylesheet" href="/assets/css/results.css?v=20261117-controls"><link rel="stylesheet" href="/assets/css/practice.css?v=20261117-controls"><link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-controls"><script defer src="/assets/js/site-ui.js?v=20261117-controls"></script><script defer src="/assets/js/practice-i18n.js?v=20261119-izho"></script><script defer src="/assets/js/practice-engine.js?v=20261117-controls"></script><script defer src="/assets/js/practice-page.js?v=20261117-controls"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-controls"></head><body data-practice-page="years"><nav aria-label="NPhO"><a class="logo" href="/" data-site-link="/"><span class="logo-dot"></span>NPhO</a><div class="nav-right"><div class="nav-links"><a class="nl"  href="/" data-site-link="/" data-i18n="nav.home">Главная</a><a class="nl"  href="/#problems" data-site-link="/#problems" data-i18n="nav.problems">Банк задач</a><a class="nl"  href="/results/2026/" data-site-link="/results/2026/" data-i18n="nav.results">Результаты</a><a class="nl active" aria-current="page" href="/practice/" data-site-link="/practice/" data-i18n="nav.practice">Практика</a><a class="nl"  href="/#about" data-site-link="/#about" data-i18n="nav.about">Об олимпиаде</a></div><select class="lang-select" data-lang-select onchange="NPHO_I18N.setLang(this.value)" aria-label="Язык"><option value="ky">Кыргызча</option><option value="ru">Русский</option><option value="en">English</option></select><button class="theme-toggle" id="theme-toggle" type="button" data-i18n-attr="aria-label:theme.toggle"><span class="theme-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1a9 9 0 1 0 9.9 9.9Z"/></svg></span><span class="theme-label"></span></button></div></nav><main class="practice-main practice-catalog">
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IPhO — годы · NPhO</title><meta name="description" content="Туры международных физических олимпиад для самостоятельной работы."><link rel="icon" href="/favicon.png"><script>try{const t=localStorage.getItem('npho-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch{}</script><script src="/assets/js/i18n.js?v=20261120-practice"></script><script src="/assets/js/i18n-fallback.js?v=20261120-practice"></script><link rel="stylesheet" href="/assets/css/results.css?v=20261117-controls"><link rel="stylesheet" href="/assets/css/practice.css?v=20261120-editions"><link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-controls"><script defer src="/assets/js/site-ui.js?v=20261117-controls"></script><script defer src="/assets/js/practice-i18n.js?v=20261120-practice"></script><script defer src="/assets/js/practice-engine.js?v=20261120-tours"></script><script defer src="/assets/js/practice-page.js?v=20261120-tours"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-controls"></head><body data-practice-page="years"><nav aria-label="NPhO"><a class="logo" href="/" data-site-link="/"><span class="logo-dot"></span>NPhO</a><div class="nav-right"><div class="nav-links"><a class="nl"  href="/" data-site-link="/" data-i18n="nav.home">Главная</a><a class="nl"  href="/#problems" data-site-link="/#problems" data-i18n="nav.problems">Банк задач</a><a class="nl"  href="/results/2026/" data-site-link="/results/2026/" data-i18n="nav.results">Результаты</a><a class="nl active" aria-current="page" href="/practice/" data-site-link="/practice/" data-i18n="nav.practice">Практика</a><a class="nl"  href="/#about" data-site-link="/#about" data-i18n="nav.about">Об олимпиаде</a></div><select class="lang-select" data-lang-select onchange="NPHO_I18N.setLang(this.value)" aria-label="Язык"><option value="ky">Кыргызча</option><option value="ru">Русский</option><option value="en">English</option></select><button class="theme-toggle" id="theme-toggle" type="button" data-i18n-attr="aria-label:theme.toggle"><span class="theme-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1a9 9 0 1 0 9.9 9.9Z"/></svg></span><span class="theme-label"></span></button></div></nav><main class="practice-main practice-catalog">
   <div data-practice-i18n="storage" id="storage-warning" class="notice" role="status" hidden>Не удалось включить локальное сохранение. Не закрывай эту вкладку: после её закрытия прогресс может быть потерян.</div>
   <a class="back-link" href="/practice/" data-site-link="/practice/"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg> <span data-practice-i18n="back">Все олимпиады</span></a>
   <header class="practice-heading competition-heading"><span class="competition-mark"><img src="/assets/practice/ipho-logo.png" width="76" height="72" alt="IPhO"></span><div><h1>IPhO</h1><p class="lead" data-practice-i18n="iphoName">Международная физическая олимпиада</p></div></header>
   <h2 class="catalog-label" data-practice-i18n="years">Годы проведения</h2>
-  <div class="library-grid">
-    <details class="edition-card edition-expand" id="ipho-2026-card">
-      <summary class="edition-link"><span class="edition-mark"><img src="/assets/practice/ipho-2026-logo.png" width="88" height="88" alt="IPhO 2026"></span><div><h2>2026</h2><p data-practice-i18n="colombia">Букараманга, Колумбия</p><p class="edition-round" data-practice-i18n="theory">Теоретический тур</p><small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div><span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+  <div class="library-grid edition-grid">
+    <details data-edition="ipho-2026" class="edition-card edition-expand" id="ipho-2026-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2026-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2026</h2><p data-practice-i18n="colombia">Букараманга, Колумбия</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
       <div class="edition-options">
-        <a href="/practice/ipho-2026/?view=read" class="pbtn" data-site-link="/practice/ipho-2026/?view=read"><span data-practice-i18n="read">Читать условия</span></a>
-        <a id="edition-continue" class="pbtn primary" hidden href="/practice/ipho-2026/">Продолжить тур</a>
+        <a href="/practice/ipho-2026/?view=read" class="pbtn" data-site-link="/practice/ipho-2026/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue" class="pbtn primary" hidden href="/practice/ipho-2026/">Продолжить тур</a>
         <form class="edition-start-form" id="edition-start-form" action="/practice/ipho-2026/" method="get">
           <input type="hidden" name="lang" id="edition-language" value="ru">
           <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
           <label class="edition-duration" id="edition-duration" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2025" class="edition-card edition-expand" id="ipho-2025-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2025-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2025</h2><p data-practice-i18n="host2025">Париж, Франция</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2025/?view=read" class="pbtn" data-site-link="/practice/ipho-2025/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2025" class="pbtn primary" hidden href="/practice/ipho-2025/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2025" action="/practice/ipho-2025/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2025" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2025" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2025" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2024" class="edition-card edition-expand" id="ipho-2024-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2024-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2024</h2><p data-practice-i18n="host2024">Исфахан, Иран</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2024/?view=read" class="pbtn" data-site-link="/practice/ipho-2024/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2024" class="pbtn primary" hidden href="/practice/ipho-2024/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2024" action="/practice/ipho-2024/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2024" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2024" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2024" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2023" class="edition-card edition-expand" id="ipho-2023-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2023-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2023</h2><p data-practice-i18n="host2023">Токио, Япония</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2023/?view=read" class="pbtn" data-site-link="/practice/ipho-2023/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2023" class="pbtn primary" hidden href="/practice/ipho-2023/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2023" action="/practice/ipho-2023/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2023" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2023" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2023" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2022" class="edition-card edition-expand" id="ipho-2022-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2022-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2022</h2><p data-practice-i18n="host2022">Швейцария · онлайн</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2022/?view=read" class="pbtn" data-site-link="/practice/ipho-2022/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2022" class="pbtn primary" hidden href="/practice/ipho-2022/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2022" action="/practice/ipho-2022/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2022" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2022" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2022" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2021" class="edition-card edition-expand" id="ipho-2021-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2021-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2021</h2><p data-practice-i18n="host2021">Вильнюс, Литва</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2021/?view=read" class="pbtn" data-site-link="/practice/ipho-2021/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2021" class="pbtn primary" hidden href="/practice/ipho-2021/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2021" action="/practice/ipho-2021/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2021" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2021" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2021" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2019" class="edition-card edition-expand" id="ipho-2019-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2019-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2019</h2><p data-practice-i18n="host2019">Тель-Авив, Израиль</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2019/?view=read" class="pbtn" data-site-link="/practice/ipho-2019/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2019" class="pbtn primary" hidden href="/practice/ipho-2019/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2019" action="/practice/ipho-2019/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2019" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2019" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2019" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2018" class="edition-card edition-expand" id="ipho-2018-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2018-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2018</h2><p data-practice-i18n="host2018">Лиссабон, Португалия</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2018/?view=read" class="pbtn" data-site-link="/practice/ipho-2018/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2018" class="pbtn primary" hidden href="/practice/ipho-2018/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2018" action="/practice/ipho-2018/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2018" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2018" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2018" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2017" class="edition-card edition-expand" id="ipho-2017-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2017-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2017</h2><p data-practice-i18n="host2017">Джокьякарта, Индонезия</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2017/?view=read" class="pbtn" data-site-link="/practice/ipho-2017/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2017" class="pbtn primary" hidden href="/practice/ipho-2017/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2017" action="/practice/ipho-2017/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2017" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2017" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2017" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2016" class="edition-card edition-expand" id="ipho-2016-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2016-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2016</h2><p data-practice-i18n="venue2016">Цюрих, Швейцария</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2016/?view=read" class="pbtn" data-site-link="/practice/ipho-2016/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2016" class="pbtn primary" hidden href="/practice/ipho-2016/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2016" action="/practice/ipho-2016/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2016" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2016" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2016" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2015" class="edition-card edition-expand" id="ipho-2015-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2015-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2015</h2><p data-practice-i18n="host2015">Мумбаи, Индия</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2015/?view=read" class="pbtn" data-site-link="/practice/ipho-2015/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2015" class="pbtn primary" hidden href="/practice/ipho-2015/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2015" action="/practice/ipho-2015/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2015" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2015" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2015" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2014" class="edition-card edition-expand" id="ipho-2014-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2014-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2014</h2><p data-practice-i18n="host2014">Астана, Казахстан</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2014/?view=read" class="pbtn" data-site-link="/practice/ipho-2014/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2014" class="pbtn primary" hidden href="/practice/ipho-2014/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2014" action="/practice/ipho-2014/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2014" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2014" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2014" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2013" class="edition-card edition-expand" id="ipho-2013-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2013-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2013</h2><p data-practice-i18n="host2013">Копенгаген, Дания</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2013/?view=read" class="pbtn" data-site-link="/practice/ipho-2013/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2013" class="pbtn primary" hidden href="/practice/ipho-2013/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2013" action="/practice/ipho-2013/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2013" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2013" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2013" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2012" class="edition-card edition-expand" id="ipho-2012-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2012-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2012</h2><p data-practice-i18n="host2012">Таллин и Тарту, Эстония</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2012/?view=read" class="pbtn" data-site-link="/practice/ipho-2012/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2012" class="pbtn primary" hidden href="/practice/ipho-2012/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2012" action="/practice/ipho-2012/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2012" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2012" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2012" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2011" class="edition-card edition-expand" id="ipho-2011-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2011-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2011</h2><p data-practice-i18n="host2011">Бангкок, Таиланд</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2011/?view=read" class="pbtn" data-site-link="/practice/ipho-2011/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2011" class="pbtn primary" hidden href="/practice/ipho-2011/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2011" action="/practice/ipho-2011/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2011" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2011" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2011" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2010" class="edition-card edition-expand" id="ipho-2010-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2010-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2010</h2><p data-practice-i18n="host2010">Загреб, Хорватия</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2010/?view=read" class="pbtn" data-site-link="/practice/ipho-2010/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2010" class="pbtn primary" hidden href="/practice/ipho-2010/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2010" action="/practice/ipho-2010/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2010" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2010" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2010" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2009" class="edition-card edition-expand" id="ipho-2009-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2009-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2009</h2><p data-practice-i18n="host2009">Мерида, Мексика</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2009/?view=read" class="pbtn" data-site-link="/practice/ipho-2009/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2009" class="pbtn primary" hidden href="/practice/ipho-2009/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2009" action="/practice/ipho-2009/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2009" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2009" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2009" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2008" class="edition-card edition-expand" id="ipho-2008-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2008-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2008</h2><p data-practice-i18n="host2008">Ханой, Вьетнам</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2008/?view=read" class="pbtn" data-site-link="/practice/ipho-2008/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2008" class="pbtn primary" hidden href="/practice/ipho-2008/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2008" action="/practice/ipho-2008/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2008" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2008" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2008" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2007" class="edition-card edition-expand" id="ipho-2007-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2007-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2007</h2><p data-practice-i18n="host2007">Исфахан, Иран</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2007/?view=read" class="pbtn" data-site-link="/practice/ipho-2007/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2007" class="pbtn primary" hidden href="/practice/ipho-2007/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2007" action="/practice/ipho-2007/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2007" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2007" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2007" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2006" class="edition-card edition-expand" id="ipho-2006-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2006-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2006</h2><p data-practice-i18n="host2006">Сингапур</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2006/?view=read" class="pbtn" data-site-link="/practice/ipho-2006/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2006" class="pbtn primary" hidden href="/practice/ipho-2006/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2006" action="/practice/ipho-2006/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2006" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2006" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2006" min="1" max="1440" step="1" value="300" required disabled></label>
+          <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
+        </form>
+      </div>
+    </details>
+    <details data-edition="ipho-2005" class="edition-card edition-expand" id="ipho-2005-card">
+      <summary class="edition-link">
+        <span class="edition-mark"><img src="/assets/practice/ipho-2005-logo.png" alt="" width="88" height="88"></span>
+        <div><h2>2005</h2><p data-practice-i18n="host2005">Саламанка, Испания</p>
+          <p class="edition-round" data-practice-i18n="theory">Теоретический тур</p>
+          <small data-practice-i18n="facts">3 задачи · 5 часов · 30 баллов</small></div>
+        <span class="card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
+      </summary>
+      <div class="edition-options">
+        <a href="/practice/ipho-2005/?view=read" class="pbtn" data-site-link="/practice/ipho-2005/?view=read"><span data-practice-i18n="conditions">Условия</span></a>
+        <a data-continue id="edition-continue-2005" class="pbtn primary" hidden href="/practice/ipho-2005/">Продолжить тур</a>
+        <form class="edition-start-form" id="edition-start-form-2005" action="/practice/ipho-2005/" method="get">
+          <input type="hidden" name="lang" id="edition-language-2005" value="ru">
+          <fieldset class="edition-mode-options"><legend class="sr-only" data-practice-i18n="mode">Режим работы</legend><label><input type="radio" name="start" value="exam" checked><span data-practice-i18n="exam">Экзамен</span></label><label><input type="radio" name="start" value="training"><span data-practice-i18n="training">Тренировка</span></label></fieldset>
+          <label class="edition-duration" id="edition-duration-2005" hidden><span data-practice-i18n="minutes">Время, минуты</span><input type="number" name="minutes" id="edition-duration-minutes-2005" min="1" max="1440" step="1" value="300" required disabled></label>
           <button class="pbtn primary" type="submit" data-practice-i18n="start">Начать</button>
         </form>
       </div>

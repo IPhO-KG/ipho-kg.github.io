@@ -1,0 +1,41 @@
+<article class="exam-problem" id="T2" data-problem-id="T2" lang="en"><h2>Question T2 [12 points]. James Webb Space Telescope</h2>
+<p>Light entering the James Webb Space Telescope is collected by a primary mirror of area \(A=25\,\mathrm{m^2}\) and then reflected by a secondary mirror. The system brings it to focus on a CCD detector. The effective focal length is \(f=130\,\mathrm m\).</p>
+<figure><img style="width:min(100%,29.0rem)" src="/assets/practice/ipho-2022/figures/IPhO_2022_Q2_fig1.png" alt="James Webb Space Telescope, NASA illustration" loading="lazy"></figure>
+<p>Image credit: NASA.</p>
+<section id="T2-A"><h3>T2-A [1.8 points]. Imaging a star</h3>
+<p>Consider a red giant of diameter \(d_o=1.7\times10^{11}\,\mathrm m\) at a distance \(D_o=89\) light years. Its surface temperature is \(T_\star=3600\,\mathrm K\).</p>
+<section class="exam-subtask" id="T2-A1" data-points="0.4"><p><strong>T2-A1 [0.4 points].</strong> Find the diameter of the geometrical image of the star at the detector.</p></section>
+<section class="exam-subtask" id="T2-A2" data-points="0.4"><p><strong>T2-A2 [0.4 points].</strong> The red giant emits most strongly near \(\lambda=800\,\mathrm{nm}\). Estimate the diameter of the central diffraction maximum in the focal plane.</p></section>
+<section class="exam-subtask" id="T2-A3" data-points="1"><p><strong>T2-A3 [1 point].</strong> An uncooled detector reaches equilibrium by radiating as a blackbody from its front face alone. Derive an expression for the temperature where the star image falls and give a numerical estimate.</p></section>
+</section>
+<section id="T2-B"><h3>T2-B [1.8 points]. Counting photons</h3>
+<p>Every absorbed photon with energy at least \(\Delta E_g\) produces a charge carrier in the CCD. Thermal excitations also produce electrons, giving a dark current \(i_d\) in electrons per second. The temperature dependence is</p><div>\[i_d=i_0\exp\!\left(-\frac{\lvert\Delta E_g\rvert}{6k_BT}\right),\]</div><p>with constant \(i_0\).</p>
+<figure><img style="width:min(100%,29.0rem)" src="/assets/practice/ipho-2022/figures/IPhO_2022_Q2_fig2.png" alt="Dark current versus inverse temperature" loading="lazy"></figure>
+<section class="exam-subtask" id="T2-B1" data-points="0.4"><p><strong>T2-B1 [0.4 points].</strong> Use the graph to estimate the order of magnitude of the temperature of a distant thermal source whose photons just excite the detector.</p></section>
+<p>Electrons accumulate on a capacitor during an exposure of length \(\tau\). The mean dark count is subtracted from the total. Dark counts and photon counts fluctuate independently with Poisson statistics. There is also a fixed independent readout noise. The variance of a Poisson count equals its mean.</p>
+<section class="exam-subtask" id="T2-B2" data-points="0.4"><p><strong>T2-B2 [0.4 points].</strong> Express the standard uncertainty \(\sigma_t\) of the corrected count in terms of readout noise \(\sigma_r\), dark current \(i_d\), incident photon rate \(p\) and exposure time \(\tau\).</p></section>
+<p>Use \(\tau=10^4\,\mathrm s\) and \(\sigma_r=14\) electrons in B3 and B4.</p>
+<section class="exam-subtask" id="T2-B3" data-points="0.5"><p><strong>T2-B3 [0.5 points].</strong> At the operating temperature \(T_p=7.5\,\mathrm K\), what minimum photon rate gives a signal equal to ten standard uncertainties?</p></section>
+<section class="exam-subtask" id="T2-B4" data-points="0.5"><p><strong>T2-B4 [0.5 points].</strong> Suppose the photons in B3 all have threshold energy. Find the irradiance at the primary mirror in \(\mathrm{W/m^2}\).</p></section>
+</section>
+<section id="T2-C"><h3>T2-C [4.4 points]. Passive cooling</h3>
+<p>A five-sheet shield limits solar heating. Each thin square sheet has area \(A_s=200\,\mathrm{m^2}\). Neighbouring sheets are parallel and \(h=25\,\mathrm{cm}\) apart, leaving the edges open to space. All reflections are diffuse. Both faces of a sheet are at the same uniform temperature and have low emissivity \(\epsilon\). Neglect the background temperature of space.</p>
+<figure><img style="width:min(100%,28.0rem)" src="/assets/practice/ipho-2022/figures/IPhO_2022_Q2_fig3.png" alt="Radiative energy flow through five sheets" loading="lazy"></figure>
+<figure><img style="width:min(100%,28.0rem)" src="/assets/practice/ipho-2022/figures/IPhO_2022_Q2_fig4.png" alt="Open perimeter between two neighbouring sheets" loading="lazy"></figure>
+<p>A fraction \(\alpha\) of the radiation emitted toward the next sheet is absorbed there. If the net radiative power exchanged by two sheets is \(\alpha Q_{12}\), approximate the power escaping at the open edges between them as \(\beta Q_{12}\) with \(\beta&lt;1\).</p>
+<section class="exam-subtask" id="T2-C1" data-points="2.4"><p><strong>T2-C1 [2.4 points].</strong> Derive the steady temperatures of the first, sunlit sheet and of the fifth sheet in terms of incident irradiance \(I_0\), \(\alpha\), \(\beta\) and physical constants. Auxiliary variables may be introduced.</p></section>
+<section class="exam-subtask" id="T2-C2" data-points="1.6"><p><strong>T2-C2 [1.6 points].</strong> Use the geometry to estimate \(\alpha\) and \(\beta\) for \(\epsilon=0.05\). The open area around each gap may be modelled as a perfect absorber.</p></section>
+<section class="exam-subtask" id="T2-C3" data-points="0.4"><p><strong>T2-C3 [0.4 points].</strong> Evaluate both sheet temperatures for \(I_0=1360\,\mathrm{W/m^2}\).</p></section>
+</section>
+<section id="T2-D"><h3>T2-D [4 points]. Cryo-cooler</h3>
+<p>The final refrigerator passes helium gas continuously through a porous plug from an upstream pipe held at \(P_1\) to a downstream pipe held at \(P_2\). There is considerable viscous friction in the narrow channels and no heat is exchanged with the surroundings. The downstream gas cools the CCD and is pumped back upstream. Its speed at the outlet is only slightly greater than at the inlet. Helium remains a nonideal gas throughout.</p>
+<figure><img style="width:min(100%,29.0rem)" src="/assets/practice/ipho-2022/figures/IPhO_2022_Q2_fig5.png" alt="Porous plug in the helium circuit" loading="lazy"></figure>
+<section class="exam-subtask" id="T2-D1" data-points="1"><p><strong>T2-D1 [1 point].</strong> Compare one mole upstream and downstream in terms of internal energy \(U\), temperature \(T\), entropy \(S\), pressure \(P\) and volume \(V\). For each pair indicate \(&gt;\), \(&lt;\), \(=\), or \(?\) if its order cannot be determined.</p></section>
+<section class="exam-subtask" id="T2-D2" data-points="0.6"><p><strong>T2-D2 [0.6 points].</strong> Derive a combination of \(U\), \(P\) and \(V\) that is conserved as one mole passes through the plug.</p></section>
+<p>The helium diagram plots specific internal energy \(u\) against specific volume \(v\). The descending solid curves are isentropes and the rising dashed curves are isotherms. Temperatures are marked on selected isotherms.</p>
+<section class="exam-subtask" id="T2-D3" data-points="1.4"><p><strong>T2-D3 [1.4 points].</strong> For the downstream state \(v_2=0.100\,\mathrm{m^3/kg}\) and \(T_2=7.5\,\mathrm K\), read the conserved quantity in D2 per unit mass. Show the construction on the diagram.</p></section>
+<figure><img style="width:min(100%,43rem)" src="/assets/practice/ipho-2022/figures/A_helium.png" alt="Construction grid" loading="lazy"></figure>
+<section class="exam-subtask" id="T2-D4" data-points="0.8"><p><strong>T2-D4 [0.8 points].</strong> Construct the largest possible upstream temperature \(T_1\) compatible with this outlet state.</p></section>
+<section class="exam-subtask" id="T2-D5" data-points="0.2"><p><strong>T2-D5 [0.2 points].</strong> For the greatest \(T_1\) found in D4, determine the inlet pressure \(P_1\) from the diagram.</p></section>
+</section>
+</article>

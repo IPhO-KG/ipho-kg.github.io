@@ -1,0 +1,505 @@
+{
+  "id": "T3",
+  "max": 10,
+  "title": {
+    "ru": "Термоакустический двигатель",
+    "en": "Thermoacoustic Engine"
+  },
+  "sourcePdf": "/assets/practice/ipho-2019/IPhO_2019_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-A1",
+      "max": 0.3,
+      "title": {
+        "ru": "Основная мода",
+        "en": "Fundamental mode"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Узлы на концах трубы",
+            "en": "Nodes at the tube ends"
+          },
+          "body": {
+            "ru": "<p>Газ у жёстких стенок неподвижен, поэтому \\(u(0,t)=u(L,t)=0\\). Второе условие требует \\(\\sin(kL)=0\\).</p>",
+            "en": "<p>Gas cannot move through either end, so \\(u(0,t)=u(L,t)=0\\). The second condition requires \\(\\sin(kL)=0\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Наибольшая длина волны",
+            "en": "Longest wavelength"
+          },
+          "body": {
+            "ru": "<p>Наименьшее ненулевое волновое число соответствует \\(kL=\\pi\\).</p>",
+            "en": "<p>The smallest nonzero wave number satisfies \\(kL=\\pi\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\lambda_{\\max}=2L.\\]</div>",
+        "en": "<div>\\[\\lambda_{\\max}=2L.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A2",
+      "max": 0.5,
+      "title": {
+        "ru": "Изменение объёма слоя",
+        "en": "Change of parcel volume"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Смещение двух границ",
+            "en": "Displacements of the two faces"
+          },
+          "body": {
+            "ru": "<p>Длина слоя меняется на \\(u(x+\\Delta x,t)-u(x,t)\\simeq\\Delta x\\,\\partial_xu\\). Умножая на площадь, получаем \\(V-V_0=V_0\\partial_xu\\).</p>",
+            "en": "<p>The change in length is \\(u(x+\\Delta x,t)-u(x,t)\\simeq\\Delta x\\,\\partial_xu\\). Multiplication by the area gives \\(V-V_0=V_0\\partial_xu\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Пространственная амплитуда",
+            "en": "Spatial amplitude"
+          },
+          "body": {
+            "ru": "<p>Дифференцируем профиль смещения по координате и берём коэффициент при \\(\\cos\\omega t\\).</p>",
+            "en": "<p>Differentiate the displacement profile in space and read off the coefficient of \\(\\cos\\omega t\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V_1(x)=V_0 ak\\cos(kx).\\]</div>",
+        "en": "<div>\\[V_1(x)=V_0 ak\\cos(kx).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A3",
+      "max": 0.7,
+      "title": {
+        "ru": "Колебания давления",
+        "en": "Pressure oscillation"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Равнодействующая давления",
+            "en": "Net pressure force"
+          },
+          "body": {
+            "ru": "<p>Слева сила равна \\(Sp(x,t)\\), справа — \\(-Sp(x+\\Delta x,t)\\). Их сумма есть \\(-S\\Delta x\\,\\partial_xp\\).</p>",
+            "en": "<p>The left face experiences \\(Sp(x,t)\\) and the right face \\(-Sp(x+\\Delta x,t)\\). The total is \\(-S\\Delta x\\,\\partial_xp\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Пространственный профиль давления",
+            "en": "Pressure profile"
+          },
+          "body": {
+            "ru": "<p>Делим на массу \\(\\rho_0 S\\Delta x\\) и подставляем ускорение слоя. Интегрирование по \\(x\\) даёт профиль с нулевой средней добавкой давления.</p>\n<div>\\[\\partial_xp=-\\rho_0\\partial_t^2u=\\rho_0 a\\omega^2\\sin(kx)\\cos(\\omega t).\\]</div>",
+            "en": "<p>Divide by the mass \\(\\rho_0 S\\Delta x\\) and insert the parcel acceleration. Integrate in \\(x\\), taking the oscillatory pressure perturbation to have zero spatial mean.</p>\n<div>\\[\\partial_xp=-\\rho_0\\partial_t^2u=\\rho_0 a\\omega^2\\sin(kx)\\cos(\\omega t).\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p_1(x)=\\frac{\\rho_0a\\omega^2}{k}\\cos(kx).\\]</div>",
+        "en": "<div>\\[p_1(x)=\\frac{\\rho_0a\\omega^2}{k}\\cos(kx).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A4",
+      "max": 0.3,
+      "title": {
+        "ru": "Скорость звука",
+        "en": "Sound speed"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Линеаризация адиабаты",
+            "en": "Linearized adiabatic relation"
+          },
+          "body": {
+            "ru": "<p>Из \\(\\delta p/p_0=-\\gamma\\,\\delta V/V_0\\) и знаков амплитуд следует \\(p_1/p_0=\\gamma V_1/V_0\\). Подставляем A2 и A3 и сокращаем общий пространственный множитель.</p>",
+            "en": "<p>Linearizing gives \\(\\delta p/p_0=-\\gamma\\,\\delta V/V_0\\). The chosen phase signs give \\(p_1/p_0=\\gamma V_1/V_0\\). Substitute A2 and A3 and cancel the common spatial factor.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[c=\\sqrt{\\frac{\\gamma p_0}{\\rho_0}}.\\]</div>",
+        "en": "<div>\\[c=\\sqrt{\\frac{\\gamma p_0}{\\rho_0}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A5",
+      "max": 0.7,
+      "title": {
+        "ru": "Температура газа",
+        "en": "Gas temperature"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Связь температуры с объёмом и давлением",
+            "en": "Relating temperature to pressure and volume"
+          },
+          "body": {
+            "ru": "<p>Для одной и той же массы идеального газа \\(T/T_0=(p/p_0)(V/V_0)\\). Разлагаем произведение в первом порядке.</p>",
+            "en": "<p>For a fixed amount of ideal gas \\(T/T_0=(p/p_0)(V/V_0)\\). Expand the product to first order.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Колебательная часть температуры",
+            "en": "Oscillatory temperature"
+          },
+          "body": {
+            "ru": "<p>Коэффициент с принятым знаком равен \\(T_1/T_0=p_1/p_0-V_1/V_0\\). По A4 это \\((\\gamma-1)V_1/V_0\\).</p>",
+            "en": "<p>With the chosen phase sign, \\(T_1/T_0=p_1/p_0-V_1/V_0\\). By A4 this reduces to \\((\\gamma-1)V_1/V_0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_1(x)=(\\gamma-1)T_0ak\\cos(kx).\\]</div>",
+        "en": "<div>\\[T_1(x)=(\\gamma-1)T_0ak\\cos(kx).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A6",
+      "max": 1.2,
+      "title": {
+        "ru": "Нагрев стенок",
+        "en": "Heating of the walls"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Тепло переносится к концам",
+            "en": "Heat is carried towards the ends"
+          },
+          "body": {
+            "ru": "<p>В левой половине трубы слой холоднее при смещении вправо, а в правой половине — при смещении влево. В обоих случаях газ холоднее стенки на той стороне своего пути, которая ближе к середине трубы, и получает от стенки тепло.</p>",
+            "en": "<p>In the left half a parcel is colder on the right side of its excursion. In the right half it is colder on the left side. Thus each parcel takes heat from the wall on the side closer to the centre.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Изменения во всех трёх точках",
+            "en": "Changes at all three points"
+          },
+          "body": {
+            "ru": "<p>На противоположном конце каждой экскурсии газ теплее и отдаёт тепло стенке. Симметрия трубы требует одинакового результата у A и C. По критериям жюри два верных знака дают 0,6 балла, три — 1,2.</p>",
+            "en": "<p>At the other end of each excursion the gas is warmer and releases heat to the wall. Symmetry gives the same result at A and C. The jury awards 0.6 points for two correct signs and 1.2 for three.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>A и C нагреваются, B охлаждается.</p>",
+        "en": "<p>A and C warm up, while B cools down.</p>"
+      }
+    },
+    {
+      "id": "T3-B1",
+      "max": 0.4,
+      "title": {
+        "ru": "Температура вблизи слоя",
+        "en": "Temperature next to a moving parcel"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Температура в текущей координате",
+            "en": "Temperature at the displaced coordinate"
+          },
+          "body": {
+            "ru": "<p>Подставляем в профиль пластины фактическое положение \\(x_0+u(x_0,t)\\). Получаем \\(T_{\\mathrm{env}}-T_0=-(\\tau/\\ell)u(x_0,t)\\).</p>",
+            "en": "<p>Evaluate the plate profile at the instantaneous position \\(x_0+u(x_0,t)\\). This gives \\(T_{\\mathrm{env}}-T_0=-(\\tau/\\ell)u(x_0,t)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Амплитуда изменения",
+            "en": "Oscillation amplitude"
+          },
+          "body": {
+            "ru": "<p>В точке \\(x_0=L/4\\) имеем \\(kx_0=\\pi/4\\).</p>",
+            "en": "<p>At \\(x_0=L/4\\), the phase coordinate is \\(kx_0=\\pi/4\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_{\\mathrm{st}}=\\frac{a\\tau}{\\sqrt{2}\\,\\ell}.\\]</div>",
+        "en": "<div>\\[T_{\\mathrm{st}}=\\frac{a\\tau}{\\sqrt{2}\\,\\ell}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B2",
+      "max": 1.0,
+      "title": {
+        "ru": "Критический перепад температур",
+        "en": "Critical temperature difference"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Условие направления теплопереноса",
+            "en": "Direction of heat transport"
+          },
+          "body": {
+            "ru": "<p>Слева газ должен получить тепло, справа — отдать. Значит, на левом конце экскурсии пластина теплее газа, а на правом — холоднее. Это возможно при \\(T_{\\mathrm{st}}&gt;T_1(x_0)\\).</p>",
+            "en": "<p>The gas must take in heat on the left and release it on the right. The plate must then be hotter than the parcel at the left of its excursion and colder at the right. This requires \\(T_{\\mathrm{st}}&gt;T_1(x_0)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Порог перепада",
+            "en": "Threshold"
+          },
+          "body": {
+            "ru": "<p>На границе режима амплитуды равны. В точке \\(x_0\\) значения синуса и косинуса одинаковы и сокращаются при подстановке A5 и B1.</p>",
+            "en": "<p>At threshold the amplitudes match. The sine and cosine at \\(x_0\\) are equal, so they cancel on substituting A5 and B1.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tau_{\\mathrm{cr}}=(\\gamma-1)T_0 k\\ell,\\qquad \\tau&gt;\\tau_{\\mathrm{cr}}.\\]</div>",
+        "en": "<div>\\[\\tau_{\\mathrm{cr}}=(\\gamma-1)T_0 k\\ell,\\qquad \\tau&gt;\\tau_{\\mathrm{cr}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B3",
+      "max": 0.8,
+      "title": {
+        "ru": "Тепловой поток в газ",
+        "en": "Heat input to a parcel"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Первое начало и внутренняя энергия",
+            "en": "First law and internal energy"
+          },
+          "body": {
+            "ru": "<p>Тепло идёт на изменение внутренней энергии и работу расширения, \\(\\dot Q=\\dot U+p\\dot V\\). Для идеального газа \\(U=\\nu c_VT=pV/(\\gamma-1)\\).</p>",
+            "en": "<p>Heat supplies internal energy and expansion work, so \\(\\dot Q=\\dot U+p\\dot V\\). For the ideal gas \\(U=\\nu c_VT=pV/(\\gamma-1)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Линейное приближение",
+            "en": "Linear approximation"
+          },
+          "body": {
+            "ru": "<p>В производной произведения \\(pV\\) множители при производных заменяем их равновесными значениями.</p>",
+            "en": "<p>Differentiate \\(pV\\) and use equilibrium values in the coefficients of the derivatives.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\dot Q=\\frac{V_0\\dot p+\\gamma p_0\\dot V}{\\gamma-1}.\\]</div>",
+        "en": "<div>\\[\\dot Q=\\frac{V_0\\dot p+\\gamma p_0\\dot V}{\\gamma-1}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B4",
+      "max": 1.9,
+      "title": {
+        "ru": "Фазовый сдвиг объёма",
+        "en": "Volume phase shift"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Компонента в фазе со смещением",
+            "en": "Component in phase with displacement"
+          },
+          "body": {
+            "ru": "<p>Подставляем производные давления и объёма в B3. Тепловой поток не имеет синусной компоненты, поэтому \\(V_0p_b-\\gamma p_0V_b=0\\).</p>",
+            "en": "<p>Insert the pressure and volume derivatives into B3. The heat input has no sine component, so \\(V_0p_b-\\gamma p_0V_b=0\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.8,
+          "label": {
+            "ru": "Компонента со сдвигом на четверть периода",
+            "en": "Quadrature component"
+          },
+          "body": {
+            "ru": "<p>Для коэффициентов при \\(\\cos\\omega t\\) баланс имеет вид</p>\n<div>\\[\\omega(V_0p_a+\\gamma p_0V_a)=-(\\gamma-1)\\beta V_0(T_{\\mathrm{st}}-T_1).\\]</div>",
+            "en": "<p>For the coefficients of \\(\\cos\\omega t\\) the balance is</p>\n<div>\\[\\omega(V_0p_a+\\gamma p_0V_a)=-(\\gamma-1)\\beta V_0(T_{\\mathrm{st}}-T_1).\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Подстановка разности температурных амплитуд",
+            "en": "Inserting the temperature amplitude difference"
+          },
+          "body": {
+            "ru": "<p>По B1 и B2 разность амплитуд равна \\(a(\\tau-\\tau_{\\mathrm{cr}})/(\\sqrt2\\,\\ell)\\). Подставляем её в уравнение для \\(V_a\\).</p>",
+            "en": "<p>From B1 and B2 the temperature amplitude difference is \\(a(\\tau-\\tau_{\\mathrm{cr}})/(\\sqrt2\\,\\ell)\\). Insert it into the equation for \\(V_a\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V_b=\\frac{V_0p_b}{\\gamma p_0}.\\]</div>\n<div>\\[V_a=-\\frac{V_0}{\\gamma p_0}\\left[p_a+\\frac{(\\gamma-1)\\beta a(\\tau-\\tau_{\\mathrm{cr}})}{\\sqrt{2}\\,\\ell\\omega}\\right].\\]</div>",
+        "en": "<div>\\[V_b=\\frac{V_0p_b}{\\gamma p_0}.\\]</div>\n<div>\\[V_a=-\\frac{V_0}{\\gamma p_0}\\left[p_a+\\frac{(\\gamma-1)\\beta a(\\tau-\\tau_{\\mathrm{cr}})}{\\sqrt{2}\\,\\ell\\omega}\\right].\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B5",
+      "max": 0.8,
+      "title": {
+        "ru": "Акустическая работа за цикл",
+        "en": "Acoustic work per cycle"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Интеграл по замкнутому циклу",
+            "en": "Closed-cycle work integral"
+          },
+          "body": {
+            "ru": "<p>Работа одного слоя равна \\(\\oint p\\,\\mathrm dV=\\int p\\dot V\\,\\mathrm dt\\). Смешанные произведения синуса и косинуса в среднем равны нулю, а их квадраты дают \\(1/2\\). Отсюда работа слоя равна \\(-\\pi(p_aV_b+p_bV_a)\\).</p>",
+            "en": "<p>For one parcel \\(\\oint p\\,\\mathrm dV=\\int p\\dot V\\,\\mathrm dt\\). Mixed sine–cosine products average to zero and each squared term averages to \\(1/2\\). The parcel work is therefore \\(-\\pi(p_aV_b+p_bV_a)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Работа всего пакета",
+            "en": "Work across the stack"
+          },
+          "body": {
+            "ru": "<p>Делим на \\(V_0\\) и умножаем на \\(S\\ell\\). При подстановке B4 слагаемые с \\(p_a\\) сокращаются. Оставшийся множитель \\(p_b\\) берём в нулевом приближении, \\(p_b\\simeq p_1(x_0)=\\gamma p_0ak/\\sqrt2\\).</p>",
+            "en": "<p>Divide by \\(V_0\\) and multiply by \\(S\\ell\\). Inserting B4 cancels the terms containing \\(p_a\\). In the remaining term take the leading value \\(p_b\\simeq p_1(x_0)=\\gamma p_0ak/\\sqrt2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[w=-\\frac{\\pi}{V_0}(p_aV_b+p_bV_a).\\]</div>\n<div>\\[W_{\\mathrm{tot}}=\\frac{\\pi}{2\\omega}(\\gamma-1)\\beta(\\tau-\\tau_{\\mathrm{cr}})ka^2 S.\\]</div>",
+        "en": "<div>\\[w=-\\frac{\\pi}{V_0}(p_aV_b+p_bV_a).\\]</div>\n<div>\\[W_{\\mathrm{tot}}=\\frac{\\pi}{2\\omega}(\\gamma-1)\\beta(\\tau-\\tau_{\\mathrm{cr}})ka^2 S.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B6",
+      "max": 0.8,
+      "title": {
+        "ru": "Перенос тепла через середину пакета",
+        "en": "Heat carried across the stack midpoint"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Теплосодержание и скорость газа",
+            "en": "Heat content and gas velocity"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(Q(t)\\) — изменение теплосодержания слоя объёма \\(V_0=S\\Delta x\\). Интегрируем заданный поток по времени. Постоянная интегрирования не создаёт переноса за замкнутый цикл.</p>\n<div>\\[Q(t)=Q_0-\\frac{\\beta V_0}{\\omega}(T_{\\mathrm{st}}-T_1)\\sin(\\omega t),\\qquad \\dot u=-\\frac{a\\omega}{\\sqrt2}\\sin(\\omega t).\\]</div>",
+            "en": "<p>Let \\(Q(t)\\) be the heat accumulated by a parcel of volume \\(V_0=S\\Delta x\\). Integrate the given heat input in time. A constant offset makes no contribution over a complete displacement cycle.</p>\n<div>\\[Q(t)=Q_0-\\frac{\\beta V_0}{\\omega}(T_{\\mathrm{st}}-T_1)\\sin(\\omega t),\\qquad \\dot u=-\\frac{a\\omega}{\\sqrt2}\\sin(\\omega t).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Перенос за полный период",
+            "en": "Transport over the full period"
+          },
+          "body": {
+            "ru": "<p>Через сечение проходит объём \\(S\\dot u\\,\\mathrm dt\\) с теплом на единицу объёма \\(Q/V_0\\). В произведении \\(Q\\dot u\\) остаётся квадрат синуса, его интеграл за период равен \\(\\pi/\\omega\\). Используем разность амплитуд из B4.</p>",
+            "en": "<p>The volume \\(S\\dot u\\,\\mathrm dt\\) crossing the plane has heat content \\(Q/V_0\\) per unit volume. In \\(Q\\dot u\\) the surviving sine-squared term integrates to \\(\\pi/\\omega\\). Insert the temperature difference from B4.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[Q_{\\mathrm{tot}}=\\frac{S}{V_0}\\oint Q\\dot u\\,\\mathrm dt=\\frac{\\pi\\beta a^2 S}{2\\omega\\ell}(\\tau-\\tau_{\\mathrm{cr}}).\\]</div>",
+        "en": "<div>\\[Q_{\\mathrm{tot}}=\\frac{S}{V_0}\\oint Q\\dot u\\,\\mathrm dt=\\frac{\\pi\\beta a^2 S}{2\\omega\\ell}(\\tau-\\tau_{\\mathrm{cr}}).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B7",
+      "max": 0.6,
+      "title": {
+        "ru": "КПД двигателя",
+        "en": "Engine efficiency"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Отношение работы к теплу",
+            "en": "Work-to-heat ratio"
+          },
+          "body": {
+            "ru": "<p>Делим B5 на B6. Получаем \\(\\eta=(\\gamma-1)k\\ell=\\tau_{\\mathrm{cr}}/T_0\\).</p>",
+            "en": "<p>Divide B5 by B6. The result is \\(\\eta=(\\gamma-1)k\\ell=\\tau_{\\mathrm{cr}}/T_0\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Связь с циклом Карно",
+            "en": "Relation to Carnot efficiency"
+          },
+          "body": {
+            "ru": "<p>Поскольку \\(\\tau\\ll T_0\\), имеем \\(\\eta_c=\\tau/T_H\\simeq\\tau/T_0\\). Подставляем это отношение в КПД двигателя.</p>",
+            "en": "<p>Since \\(\\tau\\ll T_0\\), the Carnot efficiency is \\(\\eta_c=\\tau/T_H\\simeq\\tau/T_0\\). Substitute this ratio into the engine efficiency.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\eta\\simeq\\frac{\\tau_{\\mathrm{cr}}}{\\tau}\\,\\eta_c.\\]</div>",
+        "en": "<div>\\[\\eta\\simeq\\frac{\\tau_{\\mathrm{cr}}}{\\tau}\\,\\eta_c.\\]</div>"
+      }
+    }
+  ]
+}

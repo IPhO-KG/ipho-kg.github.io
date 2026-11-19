@@ -1,0 +1,130 @@
+{
+  "id": "T3",
+  "title": "Пять физических оценок",
+  "points": 10,
+  "sourceFile": "IPhO_2006_T3_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "sections": [
+    {
+      "id": "T3-camera",
+      "points": 2.5,
+      "title": "Цифровая камера"
+    },
+    {
+      "id": "T3-egg",
+      "points": 2,
+      "title": "Нагрев яйца"
+    },
+    {
+      "id": "T3-lightning",
+      "points": 2,
+      "title": "Молния"
+    },
+    {
+      "id": "T3-capillaries",
+      "points": 1.5,
+      "title": "Капилляры"
+    },
+    {
+      "id": "T3-skyscraper",
+      "points": 2,
+      "title": "Температура у вершины небоскрёба"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T3-3.1",
+      "label": "3.1",
+      "points": 1
+    },
+    {
+      "id": "T3-3.2",
+      "label": "3.2",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.3",
+      "label": "3.3",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.4",
+      "label": "3.4",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.5",
+      "label": "3.5",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.6",
+      "label": "3.6",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.7",
+      "label": "3.7",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.8",
+      "label": "3.8",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.9",
+      "label": "3.9",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.10",
+      "label": "3.10",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.11",
+      "label": "3.11",
+      "points": 1
+    },
+    {
+      "id": "T3-3.12",
+      "label": "3.12",
+      "points": 1
+    },
+    {
+      "id": "T3-3.13",
+      "label": "3.13",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.14",
+      "label": "3.14",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.15",
+      "label": "3.15",
+      "points": 0.5
+    },
+    {
+      "id": "T3-3.16",
+      "label": "3.16",
+      "points": 1
+    }
+  ],
+  "figures": [
+    "t3-f1.png"
+  ],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "official-answer-script-weights",
+  "solutionData": "/assets/practice/ipho-2006/solutions/t3.json",
+  "solutionPdf": "/assets/practice/ipho-2006/IPhO_2006_S3_EN.pdf"
+}

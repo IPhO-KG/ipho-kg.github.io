@@ -1,0 +1,443 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Двойные звёзды",
+    "en": "Binary stars"
+  },
+  "max": 10.0,
+  "sourcePdf": "/assets/practice/ipho-2007/IPhO_2007_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-1.1",
+      "max": 0.8,
+      "label": "1.1",
+      "title": {
+        "ru": "Орбитальный период",
+        "en": "Orbital period"
+      },
+      "steps": [
+        {
+          "id": "1.1-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Чтение периода по кривой блеска",
+            "en": "Read the orbital period"
+          },
+          "body": {
+            "ru": "<p>На графике соседние минимумы различаются по глубине. Один полный оборот отделяет два последовательных глубоких минимума или два последовательных неглубоких. Этот интервал равен 3,0 суткам.</p>",
+            "en": "<p>Adjacent dips have different depths. One full orbit separates consecutive deep dips, or consecutive shallow dips. Their spacing is 3.0 days.</p>"
+          }
+        },
+        {
+          "id": "1.1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Перевод в секунды и угловая частота",
+            "en": "Seconds and angular frequency"
+          },
+          "body": {
+            "ru": "<p>Умножаем период на 86400 с/сут и используем \\(\\omega=2\\pi/P\\). Для следующих вычислений удобно сохранить \\(P=259200\\) с до округления.</p>",
+            "en": "<p>Multiply by 86400 seconds per day and use \\(\\omega=2\\pi/P\\). Retain the unrounded \\(P=259200\\) s for subsequent calculations.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P\\simeq2.6\\times10^5\\ \\mathrm s,\\qquad \\omega\\simeq2.4\\times10^{-5}\\ \\mathrm{rad/s}.\\]</div>",
+        "en": "<div>\\[P\\simeq2.6\\times10^5\\ \\mathrm s,\\qquad \\omega\\simeq2.4\\times10^{-5}\\ \\mathrm{rad/s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-1.2",
+      "max": 1.6,
+      "label": "1.2",
+      "title": {
+        "ru": "Температуры и радиусы по затмениям",
+        "en": "Temperatures and radii from eclipses"
+      },
+      "steps": [
+        {
+          "id": "1.2-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Неглубокий минимум",
+            "en": "Shallow minimum"
+          },
+          "body": {
+            "ru": "<p>Когда меньшая холодная звезда скрыта за горячей, виден лишь диск звезды 1. Нормируем максимальный поток на единицу. Тогда горячая звезда даёт 0,90, а холодная — 0,10.</p>",
+            "en": "<p>When the smaller, cooler star is behind the hotter one, only star 1 is visible. Normalize maximum flux to unity. The hot star then supplies 0.90 and the cool star 0.10.</p>"
+          }
+        },
+        {
+          "id": "1.2-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Глубокий минимум",
+            "en": "Deep minimum"
+          },
+          "body": {
+            "ru": "<p>Когда холодная звезда проходит перед горячей, сама она остаётся видимой. Потерянный поток \\(1-0{,}63=0{,}37\\) соответствует участку горячего диска площади \\(\\pi R_2^2\\).</p>",
+            "en": "<p>During the cool star's transit it remains visible. The missing flux \\(1-0.63=0.37\\) comes from a patch of the hot disc with area \\(\\pi R_2^2\\).</p>"
+          }
+        },
+        {
+          "id": "1.2-3",
+          "points": 0.8,
+          "label": {
+            "ru": "Поверхностные яркости и площади",
+            "en": "Surface brightnesses and areas"
+          },
+          "body": {
+            "ru": "<p>Одной площади \\(\\pi R_2^2\\) соответствуют потоки 0,37 при \\(T_1\\) и 0,10 при \\(T_2\\), поэтому \\((T_1/T_2)^4=0{,}37/0{,}10\\). Сравнение двух площадей при температуре \\(T_1\\) даёт \\((R_1/R_2)^2=0{,}90/0{,}37\\).</p>",
+            "en": "<p>For the same area \\(\\pi R_2^2\\), the flux is 0.37 at \\(T_1\\) and 0.10 at \\(T_2\\), so \\((T_1/T_2)^4=0.37/0.10\\). Comparing areas at the hot star's temperature gives \\((R_1/R_2)^2=0.90/0.37\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_1/T_2\\simeq1.4,\\qquad R_1/R_2\\simeq1.6.\\]</div>",
+        "en": "<div>\\[T_1/T_2\\simeq1.4,\\qquad R_1/R_2\\simeq1.6.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-2.1",
+      "max": 1.8,
+      "label": "2.1",
+      "title": {
+        "ru": "Скорости из доплеровского сдвига",
+        "en": "Speeds from the Doppler shifts"
+      },
+      "steps": [
+        {
+          "id": "2.1-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Лучевая скорость и длина волны",
+            "en": "Radial velocity and wavelength"
+          },
+          "body": {
+            "ru": "<p>Для малых скоростей \\(\\Delta\\lambda/\\lambda_0=v_{\\rm los}/c\\). Плоскость орбит проходит через наблюдателя, поэтому экстремальные лучевые скорости равны \\(\\pm v_i\\).</p>",
+            "en": "<p>For small velocities \\(\\Delta\\lambda/\\lambda_0=v_{\\rm los}/c\\). The orbits are edge-on, so the extreme line-of-sight velocities are \\(\\pm v_i\\).</p>"
+          }
+        },
+        {
+          "id": "2.1-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Размах спектральной линии",
+            "en": "Peak-to-peak wavelength range"
+          },
+          "body": {
+            "ru": "<p>Линия звезды 1 меняется от 5894,1 до 5897,7 Å, полный размах 3,6 Å. У звезды 2 крайние значения 5892,8 и 5899,0 Å дают размах 6,2 Å.</p>",
+            "en": "<p>Star 1 ranges from 5894.1 to 5897.7 Å, a spread of 3.6 Å. Star 2 ranges from 5892.8 to 5899.0 Å, a spread of 6.2 Å.</p>"
+          }
+        },
+        {
+          "id": "2.1-3",
+          "points": 0.8,
+          "label": {
+            "ru": "Полуамплитуда",
+            "en": "Use the semiamplitude"
+          },
+          "body": {
+            "ru": "<p>Одна орбитальная скорость соответствует половине размаха, так что \\(v_i=c(\\lambda_{i,\\max}-\\lambda_{i,\\min})/(2\\lambda_0)\\). Делим полуамплитуды 1,8 и 3,1 Å на \\(\\lambda_0\\) и умножаем на \\(c\\).</p>",
+            "en": "<p>A single orbital speed corresponds to half the spread, giving \\(v_i=c(\\lambda_{i,\\max}-\\lambda_{i,\\min})/(2\\lambda_0)\\). Divide the semiamplitudes 1.8 and 3.1 Å by \\(\\lambda_0\\) and multiply by \\(c\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_1\\simeq9.2\\times10^4\\ \\mathrm{m/s},\\qquad v_2\\simeq1.6\\times10^5\\ \\mathrm{m/s}.\\]</div>",
+        "en": "<div>\\[v_1\\simeq9.2\\times10^4\\ \\mathrm{m/s},\\qquad v_2\\simeq1.6\\times10^5\\ \\mathrm{m/s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-2.2",
+      "max": 0.7,
+      "label": "2.2",
+      "title": {
+        "ru": "Отношение масс",
+        "en": "Mass ratio"
+      },
+      "steps": [
+        {
+          "id": "2.2-1",
+          "points": 0.7,
+          "label": {
+            "ru": "Импульс в системе центра масс",
+            "en": "Momentum in the centre-of-mass frame"
+          },
+          "body": {
+            "ru": "<p>В центре масс импульсы противоположно направлены и равны по модулю. Поэтому \\(m_1v_1=m_2v_2\\). В отношении скоростей сокращаются и \\(c\\), и лабораторная длина волны.</p>",
+            "en": "<p>The two momenta in the centre-of-mass frame are opposite and equal in magnitude. Thus \\(m_1v_1=m_2v_2\\). Both \\(c\\) and the laboratory wavelength cancel in the speed ratio.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{m_1}{m_2}=\\frac{v_2}{v_1}=\\frac{3.1}{1.8}\\simeq1.7.\\]</div>",
+        "en": "<div>\\[\\frac{m_1}{m_2}=\\frac{v_2}{v_1}=\\frac{3.1}{1.8}\\simeq1.7.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-2.3",
+      "max": 0.8,
+      "label": "2.3",
+      "title": {
+        "ru": "Радиусы орбит",
+        "en": "Orbital radii"
+      },
+      "steps": [
+        {
+          "id": "2.3-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Равномерное круговое движение",
+            "en": "Uniform circular motion"
+          },
+          "body": {
+            "ru": "<p>Обе звезды совершают оборот за один период, поэтому \\(v_i=\\omega r_i\\). Радиус орбиты относится к центру масс системы, в отличие от радиуса самой звезды.</p>",
+            "en": "<p>Both stars complete an orbit in the same period, so \\(v_i=\\omega r_i\\). This is the distance to the system barycentre, distinct from the radius of the stellar disc.</p>"
+          }
+        },
+        {
+          "id": "2.3-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Численные значения",
+            "en": "Numerical radii"
+          },
+          "body": {
+            "ru": "<p>Делим обе скорости из 2.1 на \\(2\\pi/(3\\cdot86400\\ \\mathrm s)\\). Более быстрая звезда движется по большей орбите.</p>",
+            "en": "<p>Divide each speed from 2.1 by \\(2\\pi/(3\\cdot86400\\ \\mathrm s)\\). The faster star occupies the larger orbit.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r_1\\simeq3.8\\times10^9\\ \\mathrm m,\\qquad r_2\\simeq6.5\\times10^9\\ \\mathrm m.\\]</div>",
+        "en": "<div>\\[r_1\\simeq3.8\\times10^9\\ \\mathrm m,\\qquad r_2\\simeq6.5\\times10^9\\ \\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-2.4",
+      "max": 0.2,
+      "label": "2.4",
+      "title": {
+        "ru": "Расстояние между звёздами",
+        "en": "Stellar separation"
+      },
+      "steps": [
+        {
+          "id": "2.4-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Геометрия двух орбит",
+            "en": "Two-orbit geometry"
+          },
+          "body": {
+            "ru": "<p>Звёзды всегда лежат на одной прямой по разные стороны от центра масс. Их расстояние равно сумме орбитальных радиусов.</p>",
+            "en": "<p>The stars always lie on opposite sides of their common centre along one line. Their separation is the sum of the barycentric radii.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r=r_1+r_2\\simeq1.0\\times10^{10}\\ \\mathrm m.\\]</div>",
+        "en": "<div>\\[r=r_1+r_2\\simeq1.0\\times10^{10}\\ \\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.1",
+      "max": 1.2,
+      "label": "3.1",
+      "title": {
+        "ru": "Массы по орбитальному движению",
+        "en": "Dynamical masses"
+      },
+      "steps": [
+        {
+          "id": "3.1-1",
+          "points": 0.7,
+          "label": {
+            "ru": "Тяготение и центростремительное ускорение",
+            "en": "Gravitation and centripetal acceleration"
+          },
+          "body": {
+            "ru": "<p>Каждая звезда движется за счёт притяжения другой. Для звезды 1 имеем \\(Gm_2/r^2=\\omega^2r_1\\), а для звезды 2 — \\(Gm_1/r^2=\\omega^2r_2\\). Используется общее расстояние \\(r\\), а ускорения относятся к разным орбитам.</p>",
+            "en": "<p>Each star is accelerated by its companion. For star 1, \\(Gm_2/r^2=\\omega^2r_1\\). For star 2, \\(Gm_1/r^2=\\omega^2r_2\\). The separation in the gravitational term is the same for both; the orbital radii in the accelerations differ.</p>"
+          }
+        },
+        {
+          "id": "3.1-2",
+          "points": 0.5,
+          "label": {
+            "ru": "Подстановка наблюдений",
+            "en": "Insert the observations"
+          },
+          "body": {
+            "ru": "<p>Сохраняя цифры в радиусах до конца, находим \\(m_1=6{,}04\\cdot10^{30}\\) кг и \\(m_2=3{,}51\\cdot10^{30}\\) кг. Вторая масса близка к границе округления до одной значащей цифры. Если ранее округлить радиусы, как в ключе жюри, получается \\(3\\cdot10^{30}\\) кг.</p>",
+            "en": "<p>Retaining digits in the orbital radii gives \\(m_1=6.04\\times10^{30}\\) kg and \\(m_2=3.51\\times10^{30}\\) kg. The second value is near the rounding boundary for one significant figure. Rounding intermediate quantities, as in the jury key, gives \\(3\\times10^{30}\\) kg instead.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[m_1\\simeq6\\times10^{30}\\ \\mathrm{kg},\\qquad m_2\\simeq4\\times10^{30}\\ \\mathrm{kg}.\\]</div><p>В официальном ключе для второй звезды принято \\(3\\cdot10^{30}\\) кг.</p>",
+        "en": "<div>\\[m_1\\simeq6\\times10^{30}\\ \\mathrm{kg},\\qquad m_2\\simeq4\\times10^{30}\\ \\mathrm{kg}.\\]</div><p>The official key gives \\(3\\times10^{30}\\) kg for star 2.</p>"
+      }
+    },
+    {
+      "id": "T3-4.1",
+      "max": 0.6,
+      "label": "4.1",
+      "title": {
+        "ru": "Наклон зависимости светимости",
+        "en": "Slope of the mass–luminosity relation"
+      },
+      "steps": [
+        {
+          "id": "4.1-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Логарифмическая шкала",
+            "en": "Logarithmic axes"
+          },
+          "body": {
+            "ru": "<p>Логарифмирование даёт \\(\\ln(L/L_\\odot)=\\alpha\\ln(M/M_\\odot)\\). По двум точкам на прямой видно, что при росте массы на один десятичный порядок светимость увеличивается примерно на четыре. Значит, угловой коэффициент равен приблизительно четырём.</p><figure><img src=\"/assets/practice/ipho-2007/figures/s3f1.png\" alt=\"Определение показателя по наклону прямой.\" style=\"width:min(100%,400px)\" loading=\"lazy\"><figcaption>Определение показателя по наклону прямой.</figcaption></figure>",
+            "en": "<p>Taking logarithms gives \\(\\ln(L/L_\\odot)=\\alpha\\ln(M/M_\\odot)\\). Two points on the line show that a one-decade increase in mass raises luminosity by about four decades. The slope is therefore about four.</p><figure><img src=\"/assets/practice/ipho-2007/figures/s3f1.png\" alt=\"Reading the exponent from the slope.\" style=\"width:min(100%,400px)\" loading=\"lazy\"><figcaption>Reading the exponent from the slope.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\alpha\\simeq4.\\]</div>",
+        "en": "<div>\\[\\alpha\\simeq4.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-4.2",
+      "max": 0.6,
+      "label": "4.2",
+      "title": {
+        "ru": "Светимости компонентов",
+        "en": "Component luminosities"
+      },
+      "steps": [
+        {
+          "id": "4.2-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Солнечная нормировка",
+            "en": "Solar normalization"
+          },
+          "body": {
+            "ru": "<p>При \\(\\alpha=4\\) для каждого компонента имеем \\(L_i=L_\\odot(m_i/M_\\odot)^4\\). В этой степенной зависимости промежуточное округление массы заметно влияет на светимость.</p>",
+            "en": "<p>With \\(\\alpha=4\\), each component has \\(L_i=L_\\odot(m_i/M_\\odot)^4\\). Prematurely rounding the masses has an appreciable effect on this fourth power.</p>"
+          }
+        },
+        {
+          "id": "4.2-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Оценка для обеих звёзд",
+            "en": "Evaluate both stars"
+          },
+          "body": {
+            "ru": "<p>Берём массы из расчёта 3.1 до округления до одной цифры: они равны примерно 3,02 и 1,75 солнечных масс. После возведения в четвёртую степень умножаем на \\(3{,}9\\cdot10^{26}\\) Вт.</p>",
+            "en": "<p>Using the unrounded dynamical masses gives about 3.02 and 1.75 solar masses. Raise each ratio to the fourth power before multiplying by \\(3.9\\times10^{26}\\) W.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[L_1\\simeq3\\times10^{28}\\ \\mathrm W,\\qquad L_2\\simeq4\\times10^{27}\\ \\mathrm W.\\]</div>",
+        "en": "<div>\\[L_1\\simeq3\\times10^{28}\\ \\mathrm W,\\qquad L_2\\simeq4\\times10^{27}\\ \\mathrm W.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-4.3",
+      "max": 0.9,
+      "label": "4.3",
+      "title": {
+        "ru": "Расстояние до системы",
+        "en": "Distance to the binary"
+      },
+      "steps": [
+        {
+          "id": "4.3-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Закон обратных квадратов",
+            "en": "Inverse-square flux"
+          },
+          "body": {
+            "ru": "<p>Вне затмений обе звезды видны целиком. Общая мощность \\(L_1+L_2\\) распределена по сфере площадью \\(4\\pi d^2\\), поэтому \\(I_0=(L_1+L_2)/(4\\pi d^2)\\).</p>",
+            "en": "<p>Outside eclipses both stars are fully visible. Their total power \\(L_1+L_2\\) spreads over a sphere of area \\(4\\pi d^2\\), giving \\(I_0=(L_1+L_2)/(4\\pi d^2)\\).</p>"
+          }
+        },
+        {
+          "id": "4.3-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Световые годы",
+            "en": "Convert to light years"
+          },
+          "body": {
+            "ru": "<p>Из неокруглённых светимостей получаем \\(d\\simeq7{,}7\\cdot10^{17}\\) м. Один световой год равен \\(c\\times1\\) год, или примерно \\(9{,}46\\cdot10^{15}\\) м. Оценка жюри с округлением до порядка величины составляет 100 световых лет.</p>",
+            "en": "<p>The unrounded luminosities give \\(d\\simeq7.7\\times10^{17}\\) m. A light year is \\(c\\) times one year, approximately \\(9.46\\times10^{15}\\) m. The jury gives the order-of-magnitude estimate of 100 light years.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[d=\\sqrt{\\frac{L_1+L_2}{4\\pi I_0}}\\simeq82\\ \\text{св. года}.\\]</div>",
+        "en": "<div>\\[d=\\sqrt{\\frac{L_1+L_2}{4\\pi I_0}}\\simeq82\\ \\mathrm{ly}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-4.4",
+      "max": 0.4,
+      "label": "4.4",
+      "title": {
+        "ru": "Максимальное угловое расстояние",
+        "en": "Maximum angular separation"
+      },
+      "steps": [
+        {
+          "id": "4.4-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Проекция на картинную плоскость",
+            "en": "Projection on the sky"
+          },
+          "body": {
+            "ru": "<p>Наибольшее видимое расстояние получается, когда отрезок между звёздами перпендикулярен лучу зрения. Его проекция тогда равна \\(r\\). При \\(r\\ll d\\) угол равен \\(r/d\\) в радианах.</p>",
+            "en": "<p>The apparent separation is largest when the line joining the stars is perpendicular to the line of sight. Its projected length is then \\(r\\). Since \\(r\\ll d\\), the angle in radians is \\(r/d\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\theta_{\\max}\\simeq\\frac{r}{d}\\simeq1.3\\times10^{-8}\\ \\mathrm{rad}.\\]</div>",
+        "en": "<div>\\[\\theta_{\\max}\\simeq\\frac{r}{d}\\simeq1.3\\times10^{-8}\\ \\mathrm{rad}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-4.5",
+      "max": 0.4,
+      "label": "4.5",
+      "title": {
+        "ru": "Диаметр объектива",
+        "en": "Telescope aperture"
+      },
+      "steps": [
+        {
+          "id": "4.5-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Дифракционное разрешение",
+            "en": "Diffraction limit"
+          },
+          "body": {
+            "ru": "<p>Для круглой апертуры критерий Рэлея даёт \\(\\theta_{\\rm lim}=1{,}22\\lambda/D\\). Возьмём наблюдаемую линию \\(\\lambda=589{,}59\\) нм и потребуем \\(\\theta_{\\rm lim}\\le\\theta_{\\max}\\). Приближённая формула \\(\\lambda/D\\) даёт тот же масштаб.</p>",
+            "en": "<p>For a circular aperture the Rayleigh criterion is \\(\\theta_{\\rm lim}=1.22\\lambda/D\\). Use the observed line at \\(\\lambda=589.59\\) nm and require \\(\\theta_{\\rm lim}\\le\\theta_{\\max}\\). The simpler estimate \\(\\lambda/D\\) gives the same scale.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[D_{\\min}\\simeq\\frac{1.22\\lambda}{\\theta_{\\max}}\\simeq54\\ \\mathrm m\\ \\sim50\\ \\mathrm m.\\]</div>",
+        "en": "<div>\\[D_{\\min}\\simeq\\frac{1.22\\lambda}{\\theta_{\\max}}\\simeq54\\ \\mathrm m\\ \\sim50\\ \\mathrm m.\\]</div>"
+      }
+    }
+  ]
+}

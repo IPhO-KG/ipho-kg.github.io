@@ -4,7 +4,11 @@
   const L = window.NPHO_PRACTICE_I18N;
   const t = (key, vars) => L.t(key, vars);
   const I = window.NPHO_I18N;
-  const PREFIX = 'npho-practice-v1:ipho-2026:';
+  const edition = document.body.dataset.edition || 'ipho-2026';
+  const year = edition.slice(-4);
+  const assetRoot = '/assets/practice/' + edition;
+  const storagePrefix = pack => 'npho-practice-v1:' + pack + ':';
+  const PREFIX = storagePrefix(edition);
   const ACTIVE = PREFIX + 'active';
   const memory = new Map();
   const $ = id => document.getElementById(id);
@@ -25,15 +29,15 @@
     memory.set(key, value);
     if (canStore) { try { localStorage.setItem(key, value); } catch { storageWarning(); } }
   }
-  function attemptKey(id) { return PREFIX + 'attempt:' + id; }
+  function attemptKey(id, pack = edition) { return storagePrefix(pack) + 'attempt:' + id; }
   function readerKey() { return PREFIX + 'reader:' + (current?.id || 'read-only'); }
-  function load(id) {
+  function load(id, pack = edition) {
     if (!id || !/^[a-zA-Z0-9_-]{1,100}$/.test(id)) return null;
-    try { const state = JSON.parse(get(attemptKey(id))); return E.validate(state) && state.id === id ? state : null; } catch { return null; }
+    try { const state = JSON.parse(get(attemptKey(id, pack))); return E.validate(state) && state.id === id && state.pack === pack ? state : null; } catch { return null; }
   }
-  function save(state) { put(attemptKey(state.id), JSON.stringify(state)); }
-  function normalized(id) {
-    const stored = load(id); if (!stored) return null;
+  function save(state) { put(attemptKey(state.id, state.pack), JSON.stringify(state)); }
+  function normalized(id, pack = edition) {
+    const stored = load(id, pack); if (!stored) return null;
     const next = E.normalize(stored, Date.now()); if (next !== stored) save(next); return next;
   }
   function saveReader() {
@@ -55,7 +59,7 @@
         if (positions[target] && !/:(ru|en)$/.test(key)) continue;
         positions[target] = {
           y: Number.isFinite(pos.y) ? Math.max(0, pos.y) : 0,
-          anchor: typeof pos.anchor === 'string' && /^T[123](?:-[A-Za-z0-9]+)*$/.test(pos.anchor) ? pos.anchor : '',
+          anchor: typeof pos.anchor === 'string' && /^T[123](?:-[A-Za-z0-9]+(?:\.[A-Za-z0-9]+)*)*$/.test(pos.anchor) ? pos.anchor : '',
           offset: Number.isFinite(pos.offset) ? Math.max(-2000, Math.min(2000, pos.offset)) : 0
         };
       }
@@ -109,11 +113,19 @@
     });
   }
   function renderResume() {
-    const form = $('edition-start-form'), link = $('edition-continue');
-    if (!form || !link) return;
-    const active = normalized(get(ACTIVE)), continuing = !!active && !E.terminal(active);
-    form.hidden = continuing; link.hidden = !continuing;
-    if (continuing) { link.href = href('/practice/ipho-2026/?attempt=' + encodeURIComponent(active.id)); link.textContent = t('resumeCta'); }
+    for (const card of document.querySelectorAll('.edition-expand')) {
+      const pack = card.dataset.edition;
+      const form = card.querySelector('.edition-start-form'), link = card.querySelector('[data-continue]');
+      const active = normalized(get(storagePrefix(pack) + 'active'), pack);
+      const continuing = !!active && !E.terminal(active);
+      form.hidden = continuing;
+      link.hidden = !continuing;
+      form.querySelector('[name="lang"]').value = I?.lang || 'ru';
+      if (continuing) {
+        link.href = href(form.getAttribute('action') + '?attempt=' + encodeURIComponent(active.id));
+        link.textContent = t('resumeCta');
+      }
+    }
   }
   function refreshState() {
     if (!current) return;
@@ -163,7 +175,14 @@
     if (persist) saveReader();
   }
   function updateMaterials() {
-    $('download-task').href = '/assets/practice/ipho-2026/IPhO_2026_' + task + '_' + material.toUpperCase() + '.pdf';
+    $('download-task').href = assetRoot + '/IPhO_' + year + '_' + task + '_' + material.toUpperCase() + '.pdf';
+    const sheet = $('download-answer-sheet');
+    if (sheet) {
+      const available = sheet.dataset.tasks.split(' ').includes(task);
+      sheet.hidden = !available;
+      if (available) sheet.href = assetRoot + '/IPhO_' + year + '_A' + task.slice(1) + '_' + (sheet.dataset.language || 'EN') + '.pdf';
+      else sheet.removeAttribute('href');
+    }
     $('task-content').lang = material;
   }
 
@@ -175,12 +194,13 @@
   function loadRoundMetadata() {
     if (roundMetadata || metadataRequest) return;
     metadataRequest = Promise.all(['q1', 'q2', 'q3'].map(async id => {
-      const response = await fetch('/assets/practice/ipho-2026/' + id + '_metadata.json');
+      const response = await fetch(assetRoot + '/' + id + '_metadata.json');
       if (!response.ok) throw new Error('Missing task metadata');
       return JSON.parse(await response.text());
     })).then(papers => {
       roundMetadata = {
         files: Object.fromEntries(papers.map(paper => [paper.id, paper.solutionPdf])),
+        markingFiles: Object.fromEntries(papers.map(paper => [paper.id, paper.markingPdf])),
         specs: papers.flatMap(paper => paper.subtasks.map(part => ({id: part.id, max: part.points, stepIds: []})))
       };
       renderTaskScores();
@@ -197,7 +217,7 @@
     const context = reviewContext();
     const visible = reviewSelected && reviewAuthorized && context.allowed;
     const showResults = (current || readOnly) && context.allowed && (!reviewSelected || reviewAuthorized);
-    if (showResults && !reviewSummary) loadRoundMetadata();
+    if (showResults && (!reviewSummary || $('download-marking'))) loadRoundMetadata();
     const format = value => window.NPHO_REVIEW_MODEL.formatScore(value, I?.lang || 'ru');
     const tour = showResults ? reviewSummary?.tour || savedRoundTotal(context.recordKey) : null;
     $('review-tour-total').hidden = !tour;
@@ -214,6 +234,13 @@
     solutionLink.hidden = !sourcePdf;
     if (sourcePdf) solutionLink.href = sourcePdf;
     else solutionLink.removeAttribute('href');
+    const markingLink = $('download-marking');
+    if (markingLink) {
+      const pdf = showResults && roundMetadata?.markingFiles[task];
+      markingLink.hidden = !pdf;
+      if (pdf) markingLink.href = pdf;
+      else markingLink.removeAttribute('href');
+    }
     $('control-task-list').classList.toggle('has-scores', visible && !!reviewSummary);
     document.querySelectorAll('[data-task-score]').forEach(label => {
       const id = label.dataset.taskScore;
@@ -227,7 +254,7 @@
         button.querySelector('.score-limit').textContent = maximum;
         description = (assessed ? t('reviewEarnedHeading') + ' ' + label.textContent : t('reviewUnscored')) + ', ' + t('reviewMaximum', { n: maximum });
       } else {
-        label.textContent = '10 ' + t('points');
+        label.textContent = (label.dataset.max || '10') + ' ' + t('points');
         button.querySelector('.score-limit').textContent = '';
         description = label.textContent;
       }
@@ -268,7 +295,7 @@
   }
   function formatTaskHeading(holder, id) {
     const heading = holder.querySelector('h2'); if (!heading) return;
-    const match = heading.textContent.trim().match(/^(?:Задача|Question)\s+(T[123])\s*\[([^\]]+)\]\s*\.?\s*(.+)$/iu);
+    const match = heading.textContent.trim().match(/^(?:Задача|Question|Problem)\s+(T[123])\s*\[([^\]]+)\]\s*\.?\s*(.+)$/iu);
     if (!match || match[1].toUpperCase() !== id) return;
     const title = document.createElement('span');
     title.className = 'exam-heading-title'; title.textContent = match[3].trim();
@@ -293,7 +320,7 @@
       return amount.toLocaleString(language) + '\u00a0' + unit;
     };
     for (const heading of holder.querySelectorAll('h3')) {
-      const match = heading.textContent.trim().match(/^(T[123]-[ABC])\s*\[([\d.,]+)[^\]]*\]\.?\s+(.+)$/u);
+      const match = heading.textContent.trim().match(/^([^\[\]]+?)\s*\[([\d.,]+)[^\]]*\]\.?\s+(.+)$/u);
       if (!match) continue;
       heading.classList.add('paper-part-heading');
       const meta = document.createElement('span');
@@ -303,10 +330,10 @@
     }
     for (const question of holder.querySelectorAll('.exam-question, .exam-subtask')) {
       const label = question.querySelector('strong');
-      const match = label?.textContent.trim().match(/^(T[123]-[ABC]\d+)\s*\[([\d.,]+)[^\]]*\]\.?$/u);
-      if (!match || question.id !== match[1]) continue;
+      const match = label?.textContent.trim().match(/^([^\[\]]+?)\s*\[([\d.,]+)[^\]]*\]\.?$/u);
+      if (!match) continue;
       label.classList.add('paper-question-label');
-      label.replaceChildren(span('paper-id', match[1]), ' ', span('paper-points', points(match[2])));
+      label.replaceChildren(span('paper-id', question.dataset.label || match[1]), ' ', span('paper-points', points(match[2])));
     }
     for (const caption of holder.querySelectorAll('figcaption')) {
       const match = caption.textContent.trim().match(/^(Fig\.|Рис\.)\s*(\d+[a-z])\.$/u);
@@ -324,7 +351,7 @@
     const token = ++loadingNumber, holder = $('task-content'); holder.setAttribute('aria-busy', 'true'); holder.innerHTML = '<p class="loading"></p>'; holder.firstElementChild.textContent = t('loading');
     try {
       let html = contentCache.get(cacheKey);
-      if (!html) { const response = await fetch('/assets/practice/ipho-2026/q' + id.slice(1) + (language === 'en' ? '_en' : '') + '.html'); if (!response.ok) throw new Error('Missing task'); html = await response.text(); contentCache.set(cacheKey, html); }
+      if (!html) { const response = await fetch(assetRoot + '/q' + id.slice(1) + (language === 'en' ? '_en' : '') + '.html'); if (!response.ok) throw new Error('Missing task'); html = await response.text(); contentCache.set(cacheKey, html); }
       if (token !== loadingNumber) return;
       window.MathJax?.typesetClear?.([holder]); holder.innerHTML = html; formatTaskHeading(holder, id); formatPaperParts(holder, language);
       holder.querySelectorAll('img').forEach(img => {
@@ -358,7 +385,7 @@
     if (active && !E.terminal(active)) { openAttempt(active); announce(t('continued')); return true; }
     if (!['exam', 'training'].includes(mode) || (mode === 'training' && (!Number.isInteger(minutes) || minutes < 1 || minutes > 1440))) return false;
     const id = typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : Date.now().toString(36) + '-' + Math.random().toString(36).slice(2);
-    const state = E.create(id, mode, (mode === 'exam' ? 300 : minutes) * 60000, Date.now());
+    const state = E.create(id, mode, (mode === 'exam' ? 300 : minutes) * 60000, Date.now(), edition);
     save(state); put(ACTIVE, state.id); openAttempt(state); announce(t('began')); return true;
   }
   function startAttempt(event) {
@@ -377,22 +404,23 @@
     return minutes >= 1 && minutes <= 1440 ? { mode: 'training', minutes } : null;
   }
   function initEditionChooser() {
-    const form = $('edition-start-form'); if (!form) return;
-    const duration = $('edition-duration'), input = $('edition-duration-minutes');
-    const sync = () => {
-      const training = form.querySelector('input[name="start"]:checked')?.value === 'training';
-      if (duration) duration.hidden = !training;
-      if (input) input.disabled = !training;
-    };
-    form.querySelectorAll('input[name="start"]').forEach(radio => radio.addEventListener('change', sync));
-    form.addEventListener('submit', () => {
-      if (input && !input.disabled) {
-        const minutes = Number(input.value);
-        if (Number.isInteger(minutes) && minutes >= 1 && minutes <= 1440) input.value = String(minutes);
-      }
-      if ($('edition-language')) $('edition-language').value = I?.lang || 'ru';
-    });
-    sync();
+    for (const form of document.querySelectorAll('.edition-start-form')) {
+      const duration = form.querySelector('.edition-duration'), input = form.querySelector('[name="minutes"]');
+      const sync = () => {
+        const training = form.querySelector('input[name="start"]:checked')?.value === 'training';
+        duration.hidden = !training;
+        input.disabled = !training;
+      };
+      form.querySelectorAll('input[name="start"]').forEach(radio => radio.addEventListener('change', sync));
+      form.addEventListener('submit', () => {
+        if (!input.disabled) {
+          const minutes = Number(input.value);
+          if (Number.isInteger(minutes) && minutes >= 1 && minutes <= 1440) input.value = String(minutes);
+        }
+        form.querySelector('[name="lang"]').value = I?.lang || 'ru';
+      });
+      sync();
+    }
   }
   function tick() {
     if (!current || readOnly) return;
@@ -411,10 +439,10 @@
     if (document.body.dataset.practicePage === 'reader') {
       if (current || readOnly) { renderSession(); applyFocus(false); updateMaterials(); }
       $('finish-attempt').textContent = t('finish');
-    } else { renderResume(); if ($('edition-language')) $('edition-language').value = I?.lang || 'ru'; }
+    } else { renderResume(); }
   }
   function initReader() {
-    reviewUI = window.NPHO_PRACTICE_REVIEW?.create({ holder: $('review-panel'), navigation: id => $('review-navigation-' + id), selectTask: id => selectTask(id), onSummary: summary => { reviewSummary = summary; renderTaskScores(); }, t, getContext: reviewContext, read: get, write: put, announce });
+    reviewUI = window.NPHO_PRACTICE_REVIEW?.create({ assetRoot, holder: $('review-panel'), navigation: id => $('review-navigation-' + id), selectTask: id => selectTask(id), onSummary: summary => { reviewSummary = summary; renderTaskScores(); }, t, getContext: reviewContext, read: get, write: put, announce });
     $('show-conditions').addEventListener('click', () => choosePanel(false));
     $('show-review').addEventListener('click', () => choosePanel(true));
     [$('show-conditions'), $('show-review')].forEach((button, index, tabs) => button.addEventListener('keydown', event => {
@@ -471,6 +499,6 @@
   try { const probe = PREFIX + 'probe'; localStorage.setItem(probe, '1'); localStorage.removeItem(probe); } catch { storageWarning(); }
   initTheme();
   if (document.body.dataset.practicePage === 'reader') initReader();
-  else { initEditionChooser(); renderResume(); window.addEventListener('storage', event => { if (event.key === ACTIVE || event.key?.startsWith(PREFIX + 'attempt:')) renderResume(); }); window.addEventListener('pageshow', renderResume); }
+  else { initEditionChooser(); window.addEventListener('storage', event => { if (!event.key || event.key.startsWith('npho-practice-v1:')) renderResume(); }); window.addEventListener('pageshow', renderResume); }
   syncLanguage(); document.addEventListener('npho:langchange', syncLanguage);
 })();

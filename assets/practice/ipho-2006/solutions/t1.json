@@ -1,0 +1,212 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Гравитация в нейтронном интерферометре",
+    "en": "Gravity in a neutron interferometer"
+  },
+  "sourcePdf": "/assets/practice/ipho-2006/IPhO_2006_S1_EN.pdf",
+  "max": 10,
+  "parts": [
+    {
+      "id": "T1-1.1",
+      "max": 1,
+      "label": "1.1",
+      "title": {
+        "ru": "Площадь контура",
+        "en": "Area enclosed by the paths"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1,
+          "label": {
+            "ru": "Диагонали ромба",
+            "en": "Diagonals of the diamond"
+          },
+          "body": {
+            "ru": "<p>По рисунку горизонтальная полудиагональ равна \\(a\\). Сторона ромба составляет с ней угол \\(\\theta\\), поэтому вертикальная полудиагональ равна \\(a\\tan\\theta\\). Площадь ромба равна половине произведения диагоналей. Наклон установки меняет ориентацию контура, сохраняя его площадь.</p>",
+            "en": "<p>The horizontal half-diagonal in the diagram is \\(a\\). Each side makes angle \\(\\theta\\) with it, so the other half-diagonal is \\(a\\tan\\theta\\). The area is half the product of the diagonals. Tilting the apparatus rotates the diamond without changing its area.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[A=2a^2\\tan\\theta.\\]</div>",
+        "en": "<div>\\[A=2a^2\\tan\\theta.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.2",
+      "max": 1,
+      "label": "1.2",
+      "title": {
+        "ru": "Высота выходного пучка",
+        "en": "Height of the outgoing beam"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1,
+          "label": {
+            "ru": "Проекция поперечного расстояния",
+            "en": "Projecting the transverse separation"
+          },
+          "body": {
+            "ru": "<p>Входное направление и линия выхода OUT1 лежат на продолжениях параллельных сторон. Длина стороны \\(s=a/\\cos\\theta\\), поэтому расстояние между этими прямыми в плоскости ромба равно \\(d=s\\sin2\\theta=2a\\sin\\theta\\). При повороте вокруг входящего пучка вертикальная проекция \\(d\\) становится \\(d\\sin\\phi\\).</p>",
+            "en": "<p>The incident direction and the OUT1 beam lie on extensions of parallel sides. A side has length \\(s=a/\\cos\\theta\\), so the in-plane distance between the lines is \\(d=s\\sin2\\theta=2a\\sin\\theta\\). Rotation about the incident beam gives that separation the vertical component \\(d\\sin\\phi\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[H=2a\\sin\\theta\\sin\\phi.\\]</div>",
+        "en": "<div>\\[H=2a\\sin\\theta\\sin\\phi.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.3",
+      "max": 3,
+      "label": "1.3",
+      "title": {
+        "ru": "Разность оптических длин",
+        "en": "Optical path difference"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 3,
+          "label": {
+            "ru": "Фаза нейтрона в поле тяжести",
+            "en": "Neutron phase in the gravitational field"
+          },
+          "body": {
+            "ru": "<p>Наклонные участки ветвей проходят один и тот же набор высот, и их вклады в разность сокращаются. Остаются два участка длины \\(s=a/\\cos\\theta\\) на высотах \\(0\\) и \\(H\\). Обозначим длину волны наверху через \\(\\lambda_1\\) и вычтем верхний вклад из нижнего:</p><div>\\[\\Delta N_{\\rm opt}=s\\left(\\frac1{\\lambda_0}-\\frac1{\\lambda_1}\\right).\\]</div><p>Из \\(p=h/\\lambda\\) и сохранения энергии \\(p_1^2=p_0^2-2M^2gH\\). Следовательно,</p><div>\\[\\frac{\\lambda_0}{\\lambda_1}=\\sqrt{1-\\frac{2M^2gH\\lambda_0^2}{h^2}}\\simeq1-\\frac{M^2gH\\lambda_0^2}{h^2}.\\]</div><p>Подставим \\(s\\) и \\(H=2a\\sin\\theta\\sin\\phi\\).</p>",
+            "en": "<p>The sloping segments cover the same heights and cancel in the difference. Two segments of length \\(s=a/\\cos\\theta\\) remain at heights zero and \\(H\\). Let \\(\\lambda_1\\) be the upper wavelength and subtract the upper contribution from the lower:</p><div>\\[\\Delta N_{\\rm opt}=s\\left(\\frac1{\\lambda_0}-\\frac1{\\lambda_1}\\right).\\]</div><p>With \\(p=h/\\lambda\\), energy conservation gives \\(p_1^2=p_0^2-2M^2gH\\). Hence</p><div>\\[\\frac{\\lambda_0}{\\lambda_1}=\\sqrt{1-\\frac{2M^2gH\\lambda_0^2}{h^2}}\\simeq1-\\frac{M^2gH\\lambda_0^2}{h^2}.\\]</div><p>Substitute the side length \\(s\\) and the height \\(H=2a\\sin\\theta\\sin\\phi\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta N_{\\rm opt}\\simeq\\frac{2gM^2a^2\\lambda_0}{h^2}\\tan\\theta\\sin\\phi.\\]</div>",
+        "en": "<div>\\[\\Delta N_{\\rm opt}\\simeq\\frac{2gM^2a^2\\lambda_0}{h^2}\\tan\\theta\\sin\\phi.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.4",
+      "max": 1,
+      "label": "1.4",
+      "title": {
+        "ru": "Объёмный параметр",
+        "en": "Volume parameter"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Разность хода через площадь",
+            "en": "Path difference in terms of area"
+          },
+          "body": {
+            "ru": "<p>Произведение \\(2a^2\\tan\\theta\\) равно площади ромба. Оставшийся коэффициент \\(gM^2/h^2\\) — обратная величина объёмного параметра \\(V\\). Поэтому разность хода определяется произведением длины волны и вертикальной проекции площади.</p>",
+            "en": "<p>The combination \\(2a^2\\tan\\theta\\) is the area of the diamond. The remaining coefficient \\(gM^2/h^2\\) is \\(1/V\\). Thus the path difference is proportional to wavelength times the projected area \\(A\\sin\\phi\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Численное значение",
+            "en": "Numerical value"
+          },
+          "body": {
+            "ru": "<p>В единицах СИ параметр \\(V=h^2/(gM^2)\\) равен \\(1{,}597\\times10^{-14}\\,\\mathrm{m^3}\\). Для обработки данных удобно использовать \\(1\\,\\mathrm{nm\\,cm^2}=10^{-13}\\,\\mathrm{m^3}\\).</p>",
+            "en": "<p>In SI, \\(V=h^2/(gM^2)\\) evaluates to \\(1.597\\times10^{-14}\\,\\mathrm{m^3}\\). To use the experimental units directly, note that \\(1\\,\\mathrm{nm\\,cm^2}=10^{-13}\\,\\mathrm{m^3}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta N_{\\rm opt}\\simeq\\frac{\\lambda_0A}{V}\\sin\\phi,\\qquad V=0{,}1597\\,\\mathrm{nm\\,cm^2}.\\]</div>",
+        "en": "<div>\\[\\Delta N_{\\rm opt}\\simeq\\frac{\\lambda_0A}{V}\\sin\\phi,\\qquad V=0.1597\\,\\mathrm{nm\\,cm^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.5",
+      "max": 2,
+      "label": "1.5",
+      "title": {
+        "ru": "Число периодов интенсивности",
+        "en": "Number of intensity cycles"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 2,
+          "label": {
+            "ru": "Изменение фазы при повороте",
+            "en": "Phase sweep on tilting"
+          },
+          "body": {
+            "ru": "<p>Сдвиг \\(\\Delta N_{\\rm opt}\\) на единицу изменяет относительную фазу на \\(2\\pi\\), то есть даёт один полный период интенсивности. За поворот от \\(-90^\\circ\\) до \\(90^\\circ\\) величина \\(\\sin\\phi\\) монотонно меняется от \\(-1\\) до \\(+1\\). Полный фазовый сдвиг в единицах периода равен разности конечного и начального значений \\(\\Delta N_{\\rm opt}\\).</p>",
+            "en": "<p>A unit increase of \\(\\Delta N_{\\rm opt}\\) advances the relative phase by \\(2\\pi\\), one complete intensity cycle. From \\(-90^\\circ\\) to \\(90^\\circ\\), \\(\\sin\\phi\\) increases monotonically from \\(-1\\) to \\(+1\\). The full phase sweep in cycles is the final minus initial optical path difference.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[n=\\frac{2\\lambda_0 A}{V}.\\]</div>",
+        "en": "<div>\\[n=\\frac{2\\lambda_0 A}{V}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.6",
+      "max": 1,
+      "label": "1.6",
+      "title": {
+        "ru": "Длина волны в эксперименте",
+        "en": "Experimental neutron wavelength"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1,
+          "label": {
+            "ru": "Площадь измеренного контура",
+            "en": "Area of the measured diamond"
+          },
+          "body": {
+            "ru": "<p>По размерам интерферометра \\(A=2a^2\\tan\\theta=10{,}53\\,\\mathrm{cm^2}\\). Из числа периодов \\(n=19{,}00\\) находим \\(\\lambda_0=nV/(2A)\\). При подстановке \\(V\\) в \\(\\mathrm{nm\\,cm^2}\\) ответ сразу получается в нанометрах.</p>",
+            "en": "<p>The measured geometry gives \\(A=2a^2\\tan\\theta=10.53\\,\\mathrm{cm^2}\\). The \\(n=19.00\\) cycles then give \\(\\lambda_0=nV/(2A)\\). Using \\(V\\) in \\(\\mathrm{nm\\,cm^2}\\) gives the wavelength directly in nanometres.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\lambda_0=\\frac{nV}{2A}\\simeq0{,}1441\\,\\mathrm{nm}.\\]</div>",
+        "en": "<div>\\[\\lambda_0=\\frac{nV}{2A}\\simeq0.1441\\,\\mathrm{nm}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.7",
+      "max": 1,
+      "label": "1.7",
+      "title": {
+        "ru": "Площадь второго интерферометра",
+        "en": "Area of the second interferometer"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1,
+          "label": {
+            "ru": "Площадь по числу полос",
+            "en": "Area from the fringe count"
+          },
+          "body": {
+            "ru": "<p>В новом опыте длина волны известна, а площадь неизвестна. Разрешим соотношение \\(n=2\\lambda_0A/V\\) относительно площади. Подставляем \\(n=30{,}00\\) и \\(\\lambda_0=0{,}2000\\,\\mathrm{nm}\\).</p>",
+            "en": "<p>The second experiment specifies the wavelength instead of the area. Solve \\(n=2\\lambda_0A/V\\) for \\(A\\), and insert \\(n=30.00\\) and \\(\\lambda_0=0.2000\\,\\mathrm{nm}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[A=\\frac{nV}{2\\lambda_0}\\simeq11{,}98\\,\\mathrm{cm^2}.\\]</div>",
+        "en": "<div>\\[A=\\frac{nV}{2\\lambda_0}\\simeq11.98\\,\\mathrm{cm^2}.\\]</div>"
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-/* Self-assessment: step checks share each part maximum equally; manual scores remain editable. */
+/* Historical rubrics can specify step weights. Legacy self-checks divide the maximum evenly. */
 (function (root) {
   'use strict';
 
@@ -33,7 +33,17 @@
       ids.add(spec.id);
       total += cents(spec.max);
       if (!Number.isSafeInteger(total)) throw new RangeError('Review total is too large');
-      return { id: spec.id, max: fromCents(cents(spec.max)), stepIds: [...steps] };
+      const normalized = { id: spec.id, max: fromCents(cents(spec.max)), stepIds: [...steps] };
+      if (spec.stepPoints !== undefined) {
+        const weights = spec.stepPoints;
+        if (!Array.isArray(weights) || weights.length !== steps.size ||
+            !weights.every(n => Number.isFinite(n) && n >= 0) ||
+            weights.reduce((sum, n) => sum + cents(n), 0) !== cents(spec.max)) {
+          throw new RangeError('Step points must add up to the part maximum');
+        }
+        normalized.stepPoints = weights;
+      }
+      return normalized;
     });
   }
 
@@ -85,7 +95,10 @@
       if (action.value) checked.add(action.stepId); else checked.delete(action.stepId);
       part.checked = spec.stepIds.filter(id => checked.has(id));
       const maximum = cents(spec.max);
-      part.score = fromCents(Math.min(maximum, Math.round(maximum * (part.checked.length / spec.stepIds.length))));
+      const earned = spec.stepPoints
+        ? spec.stepIds.reduce((sum, id, i) => sum + (checked.has(id) ? cents(spec.stepPoints[i]) : 0), 0)
+        : Math.round(maximum * (part.checked.length / spec.stepIds.length));
+      part.score = fromCents(Math.min(maximum, earned));
     } else if (action.type === 'uncertain') {
       if (typeof action.value !== 'boolean') throw new TypeError('An uncertainty flag must be boolean');
       part.uncertain = action.value;

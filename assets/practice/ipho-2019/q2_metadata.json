@@ -1,0 +1,89 @@
+{
+  "id": "T2",
+  "title": "Физика микроволновой печи",
+  "points": 10,
+  "sourceFile": "IPhO_2019_T2_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "sections": [
+    {
+      "id": "T2-A",
+      "points": 6.6,
+      "title": "Магнетрон"
+    },
+    {
+      "id": "T2-B",
+      "points": 3.4,
+      "title": "Поглощение микроволн водой"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-A1",
+      "points": 0.4
+    },
+    {
+      "id": "T2-A2",
+      "points": 1.5
+    },
+    {
+      "id": "T2-A3",
+      "points": 0.4
+    },
+    {
+      "id": "T2-A4",
+      "points": 1.2
+    },
+    {
+      "id": "T2-A5",
+      "points": 1.2
+    },
+    {
+      "id": "T2-A6",
+      "points": 0.8
+    },
+    {
+      "id": "T2-A7",
+      "points": 1.1
+    },
+    {
+      "id": "T2-B1",
+      "points": 0.5
+    },
+    {
+      "id": "T2-B2",
+      "points": 0.5
+    },
+    {
+      "id": "T2-B3",
+      "points": 1.1
+    },
+    {
+      "id": "T2-B4",
+      "points": 0.6
+    },
+    {
+      "id": "T2-B5",
+      "points": 0.7
+    }
+  ],
+  "figures": [
+    "t2-f1",
+    "t2-f2",
+    "t2-f3",
+    "t2-f4",
+    "t2-f5"
+  ],
+  "solutionData": "/assets/practice/ipho-2019/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2019/IPhO_2019_S2_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2019/IPhO_2019_M2_EN.pdf",
+  "solutionsAvailable": true,
+  "stepScoring": "grouped-official-criteria",
+  "translationStatus": "editorial-adaptation"
+}

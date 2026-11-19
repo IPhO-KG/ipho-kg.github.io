@@ -1,0 +1,656 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Пульсар «Чёрная вдова»",
+    "en": "Black widow pulsar"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2024/IPhO_2024_S3_EN.pdf",
+  "markingSchemePdf": "/assets/practice/ipho-2024/IPhO_2024_M3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-A1",
+      "max": 1.0,
+      "title": {
+        "ru": "Эффективный потенциал",
+        "en": "Effective potential"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Поля двух звёзд",
+            "en": "Two gravitational terms"
+          },
+          "body": {
+            "ru": "<p>Запишем \\(M=M_1+M_2\\). Из условия центра масс координаты звёзд \\(x_1=-aM_2/M\\), \\(x_2=aM_1/M\\). Обозначим \\(r_i=\\sqrt{(x-x_i)^2+y^2}\\). Потенциалы точечных масс складываются.</p>\n<div>\\[\\varphi_g=-GM_1/r_1-GM_2/r_2.\\]</div>",
+            "en": "<p>Put \\(M=M_1+M_2\\). From the centre-of-mass condition the stellar coordinates are \\(x_1=-aM_2/M\\) and \\(x_2=aM_1/M\\). Let \\(r_i=\\sqrt{(x-x_i)^2+y^2}\\). Sum the point-mass potentials.</p>\n<div>\\[\\varphi_g=-GM_1/r_1-GM_2/r_2.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Вращение системы",
+            "en": "Rotating frame"
+          },
+          "body": {
+            "ru": "<p>Центробежное ускорение равно \\(+\\Omega^2(x,y)\\), поэтому его потенциал убывает наружу. Для относительного кругового движения \\(\\Omega^2=GM/a^3\\).</p>\n<div>\\[\\varphi_{\\rm cf}=-\\frac{GM}{2a^3}(x^2+y^2).\\]</div>",
+            "en": "<p>The centrifugal acceleration is \\(+\\Omega^2(x,y)\\), so the potential decreases outwards. Relative circular motion gives \\(\\Omega^2=GM/a^3\\).</p>\n<div>\\[\\varphi_{\\rm cf}=-\\frac{GM}{2a^3}(x^2+y^2).\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\varphi=-\\frac{GM_1}{r_1}-\\frac{GM_2}{r_2}-\\frac{G(M_1+M_2)}{2a^3}(x^2+y^2).\\]</div>",
+        "en": "<div>\\[\\varphi=-\\frac{GM_1}{r_1}-\\frac{GM_2}{r_2}-\\frac{G(M_1+M_2)}{2a^3}(x^2+y^2).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A2",
+      "max": 0.7,
+      "title": {
+        "ru": "Профиль потенциала",
+        "en": "Shape of the potential"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.1,
+          "label": {
+            "ru": "Дальняя область",
+            "en": "Far from the binary"
+          },
+          "body": {
+            "ru": "<p>При больших \\(|x|\\) главную роль играет член \\(-\\Omega^2x^2/2\\), поэтому оба конца графика уходят вниз.</p>",
+            "en": "<p>For large \\(|x|\\), the centrifugal term \\(-\\Omega^2x^2/2\\) dominates. Both tails fall without bound.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Две особенности",
+            "en": "The two singularities"
+          },
+          "body": {
+            "ru": "<p>При подходе к координате любой звезды с любой стороны соответствующий гравитационный потенциал уходит в \\(-\\infty\\).</p>",
+            "en": "<p>Approaching either star from either side sends its gravitational potential to negative infinity.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.3,
+          "label": {
+            "ru": "Три максимума",
+            "en": "Three maxima"
+          },
+          "body": {
+            "ru": "<p>В каждом из трёх промежутков все члены имеют отрицательную вторую производную. На обоих концах каждого промежутка потенциал уходит вниз, поэтому внутри ровно один максимум.</p>",
+            "en": "<p>Each term has a negative second derivative on each interval excluding the singularities. Both ends of each interval descend without bound, so each interval contains exactly one maximum.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div><figure><img src=\"/assets/practice/ipho-2024/q3/potential.png\" alt=\"Три максимума и две вертикальные асимптоты эффективного потенциала\"><figcaption>Профиль вдоль прямой, соединяющей звёзды.</figcaption></figure></div>",
+        "en": "<div><figure><img src=\"/assets/practice/ipho-2024/q3/potential.png\" alt=\"Three maxima and two vertical asymptotes of the effective potential\"><figcaption>Effective potential on the line joining the stars.</figcaption></figure></div>"
+      }
+    },
+    {
+      "id": "T3-A3",
+      "max": 0.5,
+      "title": {
+        "ru": "Точка перетекания газа",
+        "en": "Inner overflow point"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Внутренняя стационарная точка",
+            "en": "Inner stationary point"
+          },
+          "body": {
+            "ru": "<p>Перетекание начинается, когда газ достигает максимума потенциала между звёздами. Для \\(\\xi=x/a\\) массы расположены в точках \\(-1/4\\) и \\(3/4\\). Приравнивая производную к нулю и выбирая корень внутри этого интервала, получаем \\(\\xi\\simeq0{,}361\\).</p>\n<div>\\[\\frac{3}{4(\\xi+1/4)^2}-\\frac{1}{4(3/4-\\xi)^2}-\\xi=0.\\]</div>",
+            "en": "<p>Overflow begins at the inner maximum of the axial potential. In units \\(\\xi=x/a\\), the stars lie at \\(-1/4\\) and \\(3/4\\). Set the derivative to zero and solve for its root between the stars, giving \\(\\xi\\simeq0.361\\).</p>\n<div>\\[\\frac{3}{4(\\xi+1/4)^2}-\\frac{1}{4(3/4-\\xi)^2}-\\xi=0.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x_0/a\\simeq0{,}36.\\]</div>",
+        "en": "<div>\\[x_0/a\\simeq0.36.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A4",
+      "max": 0.6,
+      "title": {
+        "ru": "Эволюция орбиты",
+        "en": "Evolution of the orbit"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Сохранение момента",
+            "en": "Conservation of angular momentum"
+          },
+          "body": {
+            "ru": "<p>При постоянной \\(M=M_1+M_2\\) орбитальный момент \\(J=(M_1M_2/M)\\sqrt{GMa}\\). Взяв логарифмическую производную и используя \\(\\dot M_2=-\\beta\\), получим изменение расстояния.</p>\n<div>\\[\\dot a=2\\beta a(1/M_2-1/M_1).\\]</div>",
+            "en": "<p>For constant \\(M=M_1+M_2\\), the orbital angular momentum is \\(J=(M_1M_2/M)\\sqrt{GMa}\\). Take its logarithmic derivative and use \\(\\dot M_2=-\\beta\\).</p>\n<div>\\[\\dot a=2\\beta a(1/M_2-1/M_1).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Закон Кеплера",
+            "en": "Kepler’s law"
+          },
+          "body": {
+            "ru": "<p>Из \\(P=2\\pi\\sqrt{a^3/(GM)}\\) следует \\(\\dot P/P=3\\dot a/(2a)\\).</p>\n<div>\\[\\dot P=6\\pi\\beta\\sqrt{\\frac{a^3}{GM}}\\,(1/M_2-1/M_1).\\]</div>",
+            "en": "<p>From \\(P=2\\pi\\sqrt{a^3/(GM)}\\) one gets \\(\\dot P/P=3\\dot a/(2a)\\).</p>\n<div>\\[\\dot P=6\\pi\\beta\\sqrt{\\frac{a^3}{GM}}\\,(1/M_2-1/M_1).\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{\\dot a}{a}=2\\beta\\left(\\frac1{M_2}-\\frac1{M_1}\\right),\\qquad \\frac{\\dot P}{P}=\\frac32\\frac{\\dot a}{a}.\\]</div>",
+        "en": "<div>\\[\\frac{\\dot a}{a}=2\\beta\\left(\\frac1{M_2}-\\frac1{M_1}\\right),\\qquad \\frac{\\dot P}{P}=\\frac32\\frac{\\dot a}{a}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A5",
+      "max": 1.0,
+      "title": {
+        "ru": "Температурный профиль диска",
+        "en": "Disc temperature profile"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Энергия газа в кольце",
+            "en": "Energy released in an annulus"
+          },
+          "body": {
+            "ru": "<p>Удельная энергия круговой орбиты \\(e=-GM_1/(2r)\\). Поток газа, переходя от \\(r+dr\\) к \\(r\\), отдаёт энергию со скоростью \\(\\beta(de/dr)dr\\).</p>\n<div>\\[dL=\\frac{GM_1\\beta}{2r^2}\\,dr.\\]</div>",
+            "en": "<p>The specific circular-orbit energy is \\(e=-GM_1/(2r)\\). As gas moves from \\(r+dr\\) to \\(r\\), the annulus receives power \\(\\beta(de/dr)dr\\).</p>\n<div>\\[dL=\\frac{GM_1\\beta}{2r^2}\\,dr.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Излучение с двух сторон",
+            "en": "Two emitting faces"
+          },
+          "body": {
+            "ru": "<p>Суммарная площадь граней кольца \\(4\\pi r\\,dr\\). Приравниваем \\(dL\\) к произведению этой площади на \\(\\sigma T^4\\).</p>\n<div>\\[T(r)=\\left(\\frac{GM_1\\beta}{8\\pi\\sigma r^3}\\right)^{1/4}.\\]</div>",
+            "en": "<p>The two faces have total area \\(4\\pi r\\,dr\\). Equate \\(dL\\) to this area times \\(\\sigma T^4\\).</p>\n<div>\\[T(r)=\\left(\\frac{GM_1\\beta}{8\\pi\\sigma r^3}\\right)^{1/4}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T(r)=\\left(\\frac{GM_1\\beta}{8\\pi\\sigma r^3}\\right)^{1/4}.\\]</div>",
+        "en": "<div>\\[T(r)=\\left(\\frac{GM_1\\beta}{8\\pi\\sigma r^3}\\right)^{1/4}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A6",
+      "max": 0.5,
+      "title": {
+        "ru": "Температура в системе пульсара",
+        "en": "Temperature in the pulsar binary"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Радиус из периода",
+            "en": "Separation from the period"
+          },
+          "body": {
+            "ru": "<p>По известным массам и периоду находим масштаб орбиты.</p>\n<div>\\[a^3=\\frac{GP^2(M_1+M_2)}{4\\pi^2}.\\]</div>",
+            "en": "<p>The period and total mass determine the orbital separation.</p>\n<div>\\[a^3=\\frac{GP^2(M_1+M_2)}{4\\pi^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Подстановка радиуса",
+            "en": "Insert the disc radius"
+          },
+          "body": {
+            "ru": "<p>Подставим \\(r^3=a^3/1000\\) в результат A5. Гравитационная постоянная сокращается.</p>\n<div>\\[T=\\left[\\frac{500\\pi M_1\\beta}{\\sigma P^2(M_1+M_2)}\\right]^{1/4}.\\]</div>",
+            "en": "<p>Set \\(r^3=a^3/1000\\) in A5. The gravitational constant cancels.</p>\n<div>\\[T=\\left[\\frac{500\\pi M_1\\beta}{\\sigma P^2(M_1+M_2)}\\right]^{1/4}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.1,
+          "label": {
+            "ru": "Температура в кельвинах",
+            "en": "Numerical temperature"
+          },
+          "body": {
+            "ru": "<p>Переведём период в секунды, а темп аккреции — в килограммы в секунду.</p>\n<div>\\[T\\simeq9\\times10^3\\,\\mathrm K.\\]</div>",
+            "en": "<p>Convert the period to seconds and the accretion rate to kilograms per second.</p>\n<div>\\[T\\simeq9\\times10^3\\,\\mathrm K.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T(a/10)\\simeq9\\times10^3\\,\\mathrm K.\\]</div>",
+        "en": "<div>\\[T(a/10)\\simeq9\\times10^3\\,\\mathrm K.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A7",
+      "max": 0.7,
+      "title": {
+        "ru": "Условие связанной орбиты",
+        "en": "Survival of the binary"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Энергия относительного движения",
+            "en": "Relative orbital energy"
+          },
+          "body": {
+            "ru": "<p>Сразу после выброса расстояние остаётся \\(a\\). Для связанных орбит энергия на единицу приведённой массы отрицательна.</p>\n<div>\\[\\frac12v^{\\prime2}-\\frac{G(M_1^\\prime+M_2)}{a}&lt;0.\\]</div>",
+            "en": "<p>The separation is still \\(a\\) immediately afterwards. A bound orbit requires negative energy per unit reduced mass.</p>\n<div>\\[\\frac12v^{\\prime2}-\\frac{G(M_1^\\prime+M_2)}{a}&lt;0.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Скорость убегания",
+            "en": "Escape threshold"
+          },
+          "body": {
+            "ru": "<p>При нулевой энергии орбита становится параболической. Это граница допустимых скоростей.</p>\n<div>\\[v^\\prime_{\\rm lim}=\\sqrt{\\frac{2G(M_1^\\prime+M_2)}a}.\\]</div>",
+            "en": "<p>The zero-energy parabolic case separates bound from unbound orbits.</p>\n<div>\\[v^\\prime_{\\rm lim}=\\sqrt{\\frac{2G(M_1^\\prime+M_2)}a}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Отсутствие отдачи",
+            "en": "No recoil"
+          },
+          "body": {
+            "ru": "<p>Изотропный выброс не сообщает остатку импульса отдачи, поэтому мгновенная относительная скорость прежняя.</p>\n<div>\\[v^{\\prime2}=\\frac{G(M_1+M_2)}a.\\]</div>",
+            "en": "<p>An isotropic ejection gives the remnant no kick, so the original relative orbital speed is retained.</p>\n<div>\\[v^{\\prime2}=\\frac{G(M_1+M_2)}a.\\]</div>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.1,
+          "label": {
+            "ru": "Минимальная остаточная масса",
+            "en": "Lower mass limit"
+          },
+          "body": {
+            "ru": "<p>Теперь подставим прежнюю скорость в условие связи.</p>\n<div>\\[M_1^\\prime&gt;(M_1-M_2)/2.\\]</div>",
+            "en": "<p>Insert the unchanged speed into the bound-orbit inequality.</p>\n<div>\\[M_1^\\prime&gt;(M_1-M_2)/2.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v^\\prime&lt;v^\\prime_{\\rm lim},\\qquad M_1^\\prime&gt;\\frac{M_1-M_2}{2}\\quad\\text{(изотропный выброс)}.\\]</div>",
+        "en": "<div>\\[v^\\prime&lt;v^\\prime_{\\rm lim},\\qquad M_1^\\prime&gt;\\frac{M_1-M_2}{2}\\quad\\text{(isotropic)}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B1",
+      "max": 0.2,
+      "title": {
+        "ru": "Поле в центре",
+        "en": "Gravity near the centre"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Масса внутри оболочки",
+            "en": "Enclosed mass"
+          },
+          "body": {
+            "ru": "<p>В малой центральной области плотность почти равна \\(\\rho_c\\). Внешние сферические слои не создают здесь поля.</p>\n<div>\\[M(r)\\simeq\\frac{4\\pi}3\\rho_cr^3,\\qquad g=-GM(r)/r^2.\\]</div>",
+            "en": "<p>The central density is nearly uniform and outer spherical shells exert no force inside.</p>\n<div>\\[M(r)\\simeq\\frac{4\\pi}3\\rho_cr^3,\\qquad g=-GM(r)/r^2.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[g(r)\\simeq-\\frac{4\\pi}3G\\rho_cr.\\]</div>",
+        "en": "<div>\\[g(r)\\simeq-\\frac{4\\pi}3G\\rho_cr.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B2",
+      "max": 0.6,
+      "title": {
+        "ru": "Уравнение гидростатики",
+        "en": "Hydrostatic equation"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Равновесие тонкого слоя",
+            "en": "Balance of a thin shell"
+          },
+          "body": {
+            "ru": "<p>Равнодействующая сил давления уравновешивает тяготение. Свяжем массу с плотностью дифференцированием по радиусу.</p>\n<div>\\[\\frac{dp}{dr}=-\\frac{GM(r)\\rho}{r^2},\\qquad \\frac{dM}{dr}=4\\pi r^2\\rho.\\]</div>",
+            "en": "<p>The pressure-gradient force balances inward gravity. The enclosed mass changes according to the local density.</p>\n<div>\\[\\frac{dp}{dr}=-\\frac{GM(r)\\rho}{r^2},\\qquad \\frac{dM}{dr}=4\\pi r^2\\rho.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Исключение массы",
+            "en": "Eliminate the enclosed mass"
+          },
+          "body": {
+            "ru": "<p>Подставляем \\(dp/dr=K\\gamma\\rho^{\\gamma-1}\\rho^\\prime\\), выражаем \\(M\\) из первого уравнения и дифференцируем.</p>\n<div>\\[\\frac{d}{dr}(r^2\\rho^{\\gamma-2}\\rho^\\prime)+\\frac{4\\pi G}{K\\gamma}r^2\\rho=0.\\]</div>",
+            "en": "<p>Use \\(dp/dr=K\\gamma\\rho^{\\gamma-1}\\rho^\\prime\\), isolate \\(M\\) in the first relation and differentiate.</p>\n<div>\\[\\frac{d}{dr}(r^2\\rho^{\\gamma-2}\\rho^\\prime)+\\frac{4\\pi G}{K\\gamma}r^2\\rho=0.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[h_1=r^2\\rho^{\\gamma-2},\\qquad h_2=\\frac{4\\pi G r^2}{K\\gamma}.\\]</div>",
+        "en": "<div>\\[h_1=r^2\\rho^{\\gamma-2},\\qquad h_2=\\frac{4\\pi G r^2}{K\\gamma}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B3",
+      "max": 0.4,
+      "title": {
+        "ru": "Масштаб радиуса",
+        "en": "Length scale"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Сопоставление размерностей",
+            "en": "Match the dimensions"
+          },
+          "body": {
+            "ru": "<p>Отношение \\(p_c/\\rho_c\\) имеет размерность квадрата скорости, а \\(G\\rho_c\\) — обратного квадрата времени. Их частное имеет размерность квадрата длины.</p>\n<div>\\[r_0^2=\\frac{p_c}{G\\rho_c^2}.\\]</div>",
+            "en": "<p>The ratio \\(p_c/\\rho_c\\) has units of speed squared, and \\(G\\rho_c\\) has units of inverse time squared. Their ratio has units of length squared.</p>\n<div>\\[r_0^2=\\frac{p_c}{G\\rho_c^2}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r_0=\\sqrt{\\frac{p_c}{G\\rho_c^2}},\\qquad(\\ell,m,n)=(-1/2,1/2,-1).\\]</div>",
+        "en": "<div>\\[r_0=\\sqrt{\\frac{p_c}{G\\rho_c^2}},\\qquad(\\ell,m,n)=(-1/2,1/2,-1).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B4",
+      "max": 0.3,
+      "title": {
+        "ru": "Безразмерный профиль",
+        "en": "Dimensionless profile"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Масштабирование уравнения",
+            "en": "Rescale the differential equation"
+          },
+          "body": {
+            "ru": "<p>Заменяем производную по \\(r\\) на \\(r_0^{-1}d/dx\\). После деления на \\(\\rho_c^{\\gamma-1}\\) воспользуемся \\(p_c=K\\rho_c^\\gamma\\) и определением \\(r_0\\).</p>\n<div>\\[\\frac{d}{dx}(x^2u^{\\gamma-2}u^\\prime)+\\frac{4\\pi}{\\gamma}x^2u=0.\\]</div>",
+            "en": "<p>Replace the radial derivative by \\(r_0^{-1}d/dx\\). Divide by \\(\\rho_c^{\\gamma-1}\\) and use \\(p_c=K\\rho_c^\\gamma\\) with the definition of \\(r_0\\).</p>\n<div>\\[\\frac{d}{dx}(x^2u^{\\gamma-2}u^\\prime)+\\frac{4\\pi}{\\gamma}x^2u=0.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[A_1=x^2u^{\\gamma-2},\\qquad A_2=4\\pi x^2/\\gamma.\\]</div>",
+        "en": "<div>\\[A_1=x^2u^{\\gamma-2},\\qquad A_2=4\\pi x^2/\\gamma.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B5",
+      "max": 0.6,
+      "title": {
+        "ru": "Профиль при показателе два",
+        "en": "Profile for index two"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Уравнение для числителя",
+            "en": "Equation for the numerator"
+          },
+          "body": {
+            "ru": "<p>В уравнении B4 имеем \\(x^2u^\\prime=xf^\\prime-f\\). Подстановка даёт \\(f^{\\prime\\prime}+2\\pi f=0\\).</p>\n<div>\\[f=A\\sin(\\sqrt{2\\pi}\\,x)+B\\cos(\\sqrt{2\\pi}\\,x).\\]</div>",
+            "en": "<p>In B4, \\(x^2u^\\prime=xf^\\prime-f\\). Substitution gives \\(f^{\\prime\\prime}+2\\pi f=0\\).</p>\n<div>\\[f=A\\sin(\\sqrt{2\\pi}\\,x)+B\\cos(\\sqrt{2\\pi}\\,x).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Конечность плотности",
+            "en": "Regularity"
+          },
+          "body": {
+            "ru": "<p>Чтобы \\(f/x\\) не расходилось в нуле, требуется \\(f(0)=0\\), то есть \\(B=0\\).</p>",
+            "en": "<p>Finiteness of \\(f/x\\) requires \\(f(0)=0\\), hence \\(B=0\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Центральная нормировка",
+            "en": "Central normalisation"
+          },
+          "body": {
+            "ru": "<p>Поскольку \\(\\rho(0)=\\rho_c\\), имеем \\(\\lim_{x\\to0}f(x)/x=f^\\prime(0)=1\\). Получаем \\(A=1/\\sqrt{2\\pi}\\).</p>",
+            "en": "<p>Since \\(\\rho(0)=\\rho_c\\), the limit \\(f(x)/x\\) is \\(f^\\prime(0)=1\\). This fixes \\(A=1/\\sqrt{2\\pi}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f(x)=\\frac{\\sin(\\sqrt{2\\pi}\\,x)}{\\sqrt{2\\pi}}.\\]</div>",
+        "en": "<div>\\[f(x)=\\frac{\\sin(\\sqrt{2\\pi}\\,x)}{\\sqrt{2\\pi}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B6",
+      "max": 0.8,
+      "title": {
+        "ru": "Показатель по наклону графика",
+        "en": "Index from the central slope"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.1,
+          "label": {
+            "ru": "Условие в центре",
+            "en": "Central boundary condition"
+          },
+          "body": {
+            "ru": "<p>Гладкий сферически-симметричный профиль не выделяет направление в центре, поэтому \\(u(0)=1\\) и \\(u^\\prime(0)=0\\).</p>",
+            "en": "<p>A smooth spherical profile has no distinguished gradient direction at the centre. Thus \\(u(0)=1\\) and \\(u^\\prime(0)=0\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Предел производной",
+            "en": "Slope of the derivative"
+          },
+          "body": {
+            "ru": "<p>Поскольку \\(u^\\prime(0)=0\\), в пределе \\(u^\\prime(x)/x\\to u^{\\prime\\prime}(0)\\). Левая часть B4 содержит три одинаковых вклада \\(u^{\\prime\\prime}(0)\\) после деления на \\(x^2\\) и перехода к нулю.</p>",
+            "en": "<p>As \\(u^\\prime(0)=0\\), \\(u^\\prime(x)/x\\to u^{\\prime\\prime}(0)\\). Divide the B4 equation by \\(x^2\\) and take its central limit. The derivative term supplies \\(u^{\\prime\\prime}(0)+2u^{\\prime\\prime}(0)\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Связь с показателем",
+            "en": "Relation to the index"
+          },
+          "body": {
+            "ru": "<p>В точке \\(u=1\\) уравнение сводится к \\(3u^{\\prime\\prime}(0)+4\\pi/\\gamma=0\\).</p>\n<div>\\[\\gamma=-\\frac{4\\pi}{3u^{\\prime\\prime}(0)}.\\]</div>",
+            "en": "<p>At \\(u=1\\) the equation reduces to \\(3u^{\\prime\\prime}(0)+4\\pi/\\gamma=0\\).</p>\n<div>\\[\\gamma=-\\frac{4\\pi}{3u^{\\prime\\prime}(0)}.\\]</div>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.1,
+          "label": {
+            "ru": "Считывание касательной",
+            "en": "Read the tangent"
+          },
+          "body": {
+            "ru": "<p>Касательная к \\(u^\\prime(x)\\) у начала координат даёт наклон примерно \\(-2{,}52\\). Точность ограничена толщиной линии на рисунке.</p>\n<div>\\[\\gamma\\simeq1{,}66.\\]</div>",
+            "en": "<p>The tangent to \\(u^\\prime(x)\\) at the origin has slope about \\(-2.52\\). The line thickness limits the precision.</p>\n<div>\\[\\gamma\\simeq1.66.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\gamma\\simeq1{,}66.\\]</div>",
+        "en": "<div>\\[\\gamma\\simeq1.66.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B7",
+      "max": 0.9,
+      "title": {
+        "ru": "Изменение плотности и поля",
+        "en": "Perturbed density and field"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Сохранение массы слоя",
+            "en": "Shell mass conservation"
+          },
+          "body": {
+            "ru": "<p>Все линейные размеры в центральной области меняются в \\(1+\\epsilon\\) раз. При постоянной массе плотность обратно пропорциональна объёму.</p>\n<div>\\[\\widetilde\\rho=\\rho(1+\\epsilon)^{-3}\\simeq\\rho(1-3\\epsilon).\\]</div>",
+            "en": "<p>All lengths near the centre scale by \\(1+\\epsilon\\). Conserved mass implies inverse-volume scaling.</p>\n<div>\\[\\widetilde\\rho=\\rho(1+\\epsilon)^{-3}\\simeq\\rho(1-3\\epsilon).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Изменение гравитационного ускорения",
+            "en": "Change in gravitational acceleration"
+          },
+          "body": {
+            "ru": "<p>Масса внутри слоя прежняя, а знаменатель в законе тяготения пропорционален \\(\\widetilde r^2\\).</p>\n<div>\\[\\widetilde g=g(1+\\epsilon)^{-2}\\simeq g(1-2\\epsilon).\\]</div>",
+            "en": "<p>The enclosed mass is unchanged; the denominator in the gravitational acceleration scales as \\(\\widetilde r^2\\).</p>\n<div>\\[\\widetilde g=g(1+\\epsilon)^{-2}\\simeq g(1-2\\epsilon).\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\widetilde\\rho\\simeq\\rho(1-3\\epsilon),\\qquad\\widetilde g\\simeq g(1-2\\epsilon).\\]</div>",
+        "en": "<div>\\[\\widetilde\\rho\\simeq\\rho(1-3\\epsilon),\\qquad\\widetilde g\\simeq g(1-2\\epsilon).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B8",
+      "max": 0.6,
+      "title": {
+        "ru": "Ускорение смещённого слоя",
+        "en": "Acceleration of a displaced shell"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Силы на единицу массы",
+            "en": "Forces per unit mass"
+          },
+          "body": {
+            "ru": "<p>Сложим гравитационное ускорение и ускорение от градиента давления. Во втором члене используем \\(\\widetilde p=K\\widetilde\\rho^\\gamma\\).</p>\n<div>\\[\\ddot{\\widetilde r}=\\widetilde g-\\frac1{\\widetilde\\rho}\\frac{\\partial\\widetilde p}{\\partial\\widetilde r}.\\]</div>",
+            "en": "<p>Add gravity to the pressure-gradient force per unit mass, substituting \\(\\widetilde p=K\\widetilde\\rho^\\gamma\\) in the latter.</p>\n<div>\\[\\ddot{\\widetilde r}=\\widetilde g-\\frac1{\\widetilde\\rho}\\frac{\\partial\\widetilde p}{\\partial\\widetilde r}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\ddot{\\widetilde r}=\\widetilde g-K\\gamma\\widetilde\\rho^{\\gamma-2}\\frac{\\partial\\widetilde\\rho}{\\partial\\widetilde r}.\\]</div>",
+        "en": "<div>\\[\\ddot{\\widetilde r}=\\widetilde g-K\\gamma\\widetilde\\rho^{\\gamma-2}\\frac{\\partial\\widetilde\\rho}{\\partial\\widetilde r}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B9",
+      "max": 0.6,
+      "title": {
+        "ru": "Граница радиальной устойчивости",
+        "en": "Radial stability threshold"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Линеаризация сил",
+            "en": "Linearise the restoring force"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(s=1+\\epsilon\\). Новое тяготение равно \\(gs^{-2}\\). Величины \\(\\rho,p\\) масштабируются как \\(s^{-3}\\) и \\(s^{-3\\gamma}\\), а пространственная производная привносит множитель \\(s^{-1}\\). Ускорение от давления, равное в равновесии \\(-g\\), становится \\(-gs^{2-3\\gamma}\\). Поэтому \\(r\\ddot\\epsilon\\simeq g(3\\gamma-4)\\epsilon\\). Используем \\(g/r\\) из B1.</p>\n<div>\\[\\ddot\\epsilon=-\\frac{4\\pi G\\rho_c}{3}(3\\gamma-4)\\epsilon.\\]</div>",
+            "en": "<p>Let \\(s=1+\\epsilon\\). Gravity scales as \\(gs^{-2}\\). Density and pressure scale as \\(s^{-3}\\) and \\(s^{-3\\gamma}\\), and a spatial derivative adds \\(s^{-1}\\). The equilibrium pressure acceleration \\(-g\\) becomes \\(-gs^{2-3\\gamma}\\). Thus \\(r\\ddot\\epsilon\\simeq g(3\\gamma-4)\\epsilon\\). Insert \\(g/r\\) from B1.</p>\n<div>\\[\\ddot\\epsilon=-\\frac{4\\pi G\\rho_c}{3}(3\\gamma-4)\\epsilon.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Порог устойчивости",
+            "en": "Stability condition"
+          },
+          "body": {
+            "ru": "<p>Возвращающее ускорение требует \\(3\\gamma-4&gt;0\\). В самой граничной точке частота обращается в нуль.</p>\n<div>\\[\\gamma_{\\rm crit}=4/3.\\]</div>",
+            "en": "<p>A restoring acceleration requires \\(3\\gamma-4&gt;0\\). At the boundary the frequency vanishes.</p>\n<div>\\[\\gamma_{\\rm crit}=4/3.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.1,
+          "label": {
+            "ru": "Угловая частота",
+            "en": "Angular frequency"
+          },
+          "body": {
+            "ru": "<p>Положительный коэффициент перед \\(-\\epsilon\\) равен квадрату угловой частоты.</p>\n<div>\\[\\omega=\\sqrt{\\frac{4\\pi G\\rho_c}{3}(3\\gamma-4)}.\\]</div>",
+            "en": "<p>The positive coefficient multiplying \\(-\\epsilon\\) gives the squared angular frequency.</p>\n<div>\\[\\omega=\\sqrt{\\frac{4\\pi G\\rho_c}{3}(3\\gamma-4)}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\gamma&gt;\\frac43,\\qquad \\omega^2=\\frac{4\\pi G\\rho_c}{3}(3\\gamma-4).\\]</div>",
+        "en": "<div>\\[\\gamma&gt;\\frac43,\\qquad \\omega^2=\\frac{4\\pi G\\rho_c}{3}(3\\gamma-4).\\]</div>"
+      }
+    }
+  ]
+}

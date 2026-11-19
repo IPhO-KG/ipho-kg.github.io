@@ -1,0 +1,565 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Космологическая инфляция",
+    "en": "Cosmic inflation"
+  },
+  "max": 10.0,
+  "sourcePdf": "/assets/practice/ipho-2017/IPhO_2017_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-A1",
+      "max": 1.3,
+      "title": {
+        "ru": "Коэффициент в уравнении расширения",
+        "en": "Coefficient in the expansion equation"
+      },
+      "steps": [
+        {
+          "id": "a1-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Движение границы",
+            "en": "Motion of the boundary"
+          },
+          "body": {
+            "ru": "<p>Выделим сферу, расширяющуюся вместе с веществом. Пробное тело на её границе испытывает притяжение только внутренней массы \\(M_s\\), поэтому \\(\\ddot R=-GM_s/R^2\\).</p>",
+            "en": "<p>Follow a sphere comoving with the matter. By the shell theorem a test body at its boundary feels the enclosed mass \\(M_s\\), giving \\(\\ddot R=-GM_s/R^2\\).</p>"
+          }
+        },
+        {
+          "id": "a1-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Первый интеграл",
+            "en": "Energy integral"
+          },
+          "body": {
+            "ru": "<p>Умножим уравнение на \\(\\dot R\\) и проинтегрируем по времени при постоянной массе внутри сферы. Удельная энергия \\(E\\) сохраняется, так что </p><div>\\[\\tfrac12\\dot R^2=\\frac{GM_s}{R}+E.\\]</div>",
+            "en": "<p>Multiply by \\(\\dot R\\) and integrate in time at fixed enclosed mass. The specific energy \\(E\\) is conserved, giving </p><div>\\[\\tfrac12\\dot R^2=\\frac{GM_s}{R}+E.\\]</div>"
+          }
+        },
+        {
+          "id": "a1-3",
+          "points": 0.5,
+          "label": {
+            "ru": "Переход к масштабному фактору",
+            "en": "Scale-factor equation"
+          },
+          "body": {
+            "ru": "<p>Подставим \\(M_s=4\\pi R^3\\rho/3\\) и \\(R=R_s a\\). После деления на \\(R^2\\) получаем \\(H^2=(8\\pi G/3)\\rho+2E/(R_s^2a^2)\\). Второй член соответствует кривизне.</p>",
+            "en": "<p>Substitute \\(M_s=4\\pi R^3\\rho/3\\) and \\(R=R_sa\\). Dividing through by \\(R^2\\) gives \\(H^2=(8\\pi G/3)\\rho+2E/(R_s^2a^2)\\). The integration constant supplies the curvature term.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[A_1=\\frac{8\\pi G}{3}.\\]</div>",
+        "en": "<div>\\[A_1=\\frac{8\\pi G}{3}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A2",
+      "max": 0.9,
+      "title": {
+        "ru": "Энергия в расширяющемся объёме",
+        "en": "Energy of a comoving volume"
+      },
+      "steps": [
+        {
+          "id": "a2-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Адиабатическая работа",
+            "en": "Adiabatic work"
+          },
+          "body": {
+            "ru": "<p>В сопутствующем объёме \\(V\\propto a^3\\) заключена энергия \\(E=\\rho c^2V\\). Первое начало термодинамики при адиабатическом расширении даёт \\(\\dot E=-p\\dot V\\), причём \\(\\dot V/V=3H\\).</p>",
+            "en": "<p>The comoving volume \\(V\\propto a^3\\) holds energy \\(E=\\rho c^2V\\). The first law for adiabatic expansion gives \\(\\dot E=-p\\dot V\\), where \\(\\dot V/V=3H\\).</p>"
+          }
+        },
+        {
+          "id": "a2-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Уравнение непрерывности",
+            "en": "Continuity equation"
+          },
+          "body": {
+            "ru": "<p>Раскроем производную энергии и разделим баланс на \\(Vc^2\\). Получается \\(\\dot\\rho+3H(\\rho+p/c^2)=0\\).</p>",
+            "en": "<p>Expand the derivative of the energy and divide the balance by \\(Vc^2\\). This gives \\(\\dot\\rho+3H(\\rho+p/c^2)=0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[A_2=3.\\]</div>",
+        "en": "<div>\\[A_2=3.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A3",
+      "max": 1.2,
+      "title": {
+        "ru": "Уравнения состояния",
+        "en": "Equations of state"
+      },
+      "steps": [
+        {
+          "id": "a3-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Общее масштабирование",
+            "en": "General scaling"
+          },
+          "body": {
+            "ru": "<p>При \\(p=w\\rho c^2\\) уравнение непрерывности даёт \\(d\\ln\\rho=-3(1+w)d\\ln a\\). Поэтому \\(\\rho\\propto a^{-3(1+w)}\\).</p>",
+            "en": "<p>With \\(p=w\\rho c^2\\), continuity gives \\(d\\ln\\rho=-3(1+w)d\\ln a\\). Thus \\(\\rho\\propto a^{-3(1+w)}\\).</p>"
+          }
+        },
+        {
+          "id": "a3-2",
+          "points": 0.3,
+          "label": {
+            "ru": "Излучение",
+            "en": "Radiation"
+          },
+          "body": {
+            "ru": "<p>Число фотонов на единицу объёма падает как \\(a^{-3}\\), энергия каждого фотона — как \\(a^{-1}\\) вследствие растяжения длины волны. Плотность энергии пропорциональна \\(a^{-4}\\).</p>",
+            "en": "<p>Photon number density falls as \\(a^{-3}\\), while stretching each wavelength reduces its photon energy by another factor \\(a^{-1}\\). Radiation energy density scales as \\(a^{-4}\\).</p>"
+          }
+        },
+        {
+          "id": "a3-3",
+          "points": 0.3,
+          "label": {
+            "ru": "Нерелятивистское вещество",
+            "en": "Cold matter"
+          },
+          "body": {
+            "ru": "<p>Преобладает энергия покоя. Энергия частицы постоянна, и остаётся только разбавление частиц при расширении, \\(\\rho\\propto a^{-3}\\).</p>",
+            "en": "<p>Rest energy dominates and the energy per particle is essentially fixed. Number dilution alone gives \\(\\rho\\propto a^{-3}\\).</p>"
+          }
+        },
+        {
+          "id": "a3-4",
+          "points": 0.3,
+          "label": {
+            "ru": "Постоянная плотность",
+            "en": "Constant density"
+          },
+          "body": {
+            "ru": "<p>Чтобы плотность не менялась при увеличении объёма, показатель \\(-3(1+w)\\) должен обратиться в нуль.</p>",
+            "en": "<p>For constant density in the expanding volume the exponent \\(-3(1+w)\\) must vanish.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[w_{\\rm rad}=\\tfrac13,\\qquad w_{\\rm m}=0,\\qquad w_\\Lambda=-1.\\]</div>",
+        "en": "<div>\\[w_{\\rm rad}=\\tfrac13,\\qquad w_{\\rm m}=0,\\qquad w_\\Lambda=-1.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A4",
+      "max": 1.2,
+      "title": {
+        "ru": "Три закона расширения",
+        "en": "Three expansion laws"
+      },
+      "steps": [
+        {
+          "id": "a4-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Радиационная эпоха",
+            "en": "Radiation era"
+          },
+          "body": {
+            "ru": "<p>При \\(k=0\\) имеем \\(H^2/H_0^2=\\rho/\\rho_0\\). Для излучения \\(\\dot a/a=H_0/a^2\\), и интегрирование \\(a\\,da=H_0\\,dt\\) при \\(a(0)=0\\) даёт \\(a^2=2H_0t\\).</p>",
+            "en": "<p>For \\(k=0\\), \\(H^2/H_0^2=\\rho/\\rho_0\\). Radiation gives \\(\\dot a/a=H_0/a^2\\). Integrating \\(a\\,da=H_0\\,dt\\) from \\(a(0)=0\\) yields \\(a^2=2H_0t\\).</p>"
+          }
+        },
+        {
+          "id": "a4-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Эпоха вещества",
+            "en": "Matter era"
+          },
+          "body": {
+            "ru": "<p>Для вещества \\(\\dot a=H_0a^{-1/2}\\). Интегрирование от начала расширения даёт \\(a^{3/2}=3H_0t/2\\).</p>",
+            "en": "<p>For matter \\(\\dot a=H_0a^{-1/2}\\). Integrating from the beginning of expansion gives \\(a^{3/2}=3H_0t/2\\).</p>"
+          }
+        },
+        {
+          "id": "a4-3",
+          "points": 0.4,
+          "label": {
+            "ru": "Постоянная плотность",
+            "en": "Constant density"
+          },
+          "body": {
+            "ru": "<p>При неизменной плотности неизменен и \\(H=H_0\\). Интегрируем \\(d\\ln a=H_0\\,dt\\) относительно эпохи \\(t_0\\), когда \\(a=1\\).</p>",
+            "en": "<p>A constant density makes \\(H=H_0\\) constant. Integrate \\(d\\ln a=H_0\\,dt\\) relative to the epoch \\(t_0\\) for which \\(a=1\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[a_{\\rm rad}=(2H_0t)^{1/2},\\qquad a_{\\rm m}=(3H_0t/2)^{2/3}.\\]</div><div>\\[a_\\Lambda=e^{H_0(t-t_0)}.\\]</div>",
+        "en": "<div>\\[a_{\\rm rad}=(2H_0t)^{1/2},\\qquad a_{\\rm m}=(3H_0t/2)^{2/3}.\\]</div><div>\\[a_\\Lambda=e^{H_0(t-t_0)}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A5",
+      "max": 0.1,
+      "title": {
+        "ru": "Кривизна и критическая плотность",
+        "en": "Curvature and critical density"
+      },
+      "steps": [
+        {
+          "id": "a5-1",
+          "points": 0.1,
+          "label": {
+            "ru": "Нормировка на критическую плотность",
+            "en": "Normalize to critical density"
+          },
+          "body": {
+            "ru": "<p>Для плоского пространства \\(A_1\\rho_c=H^2\\). Поэтому \\(A_1\\rho=H^2\\Omega\\). Подставим это равенство в уравнение Фридмана и перенесём член с кривизной в другую часть.</p>",
+            "en": "<p>A flat universe has \\(A_1\\rho_c=H^2\\), so \\(A_1\\rho=H^2\\Omega\\). Insert this into the Friedmann equation and isolate the curvature term.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[k=\\left(\\frac{R_0aH}{c}\\right)^2(\\Omega-1).\\]</div>",
+        "en": "<div>\\[k=\\left(\\frac{R_0aH}{c}\\right)^2(\\Omega-1).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A6",
+      "max": 0.3,
+      "title": {
+        "ru": "Знак кривизны",
+        "en": "Sign of curvature"
+      },
+      "steps": [
+        {
+          "id": "a6-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Три геометрии",
+            "en": "Three geometries"
+          },
+          "body": {
+            "ru": "<p>Множитель перед \\(\\Omega-1\\) положителен. Плотность выше критической соответствует замкнутой геометрии, ниже критической — открытой, а равная ей — плоской.</p>",
+            "en": "<p>The prefactor of \\(\\Omega-1\\) is positive. Supercritical density means closed geometry, subcritical density open geometry, and equality flat geometry.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[k=+1:\\ \\Omega&gt;1,\\qquad k=0:\\ \\Omega=1,\\qquad k=-1:\\ \\Omega&lt;1.\\]</div>",
+        "en": "<div>\\[k=+1:\\ \\Omega&gt;1,\\qquad k=0:\\ \\Omega=1,\\qquad k=-1:\\ \\Omega&lt;1.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B1",
+      "max": 0.5,
+      "title": {
+        "ru": "Отклонение от плоскостности",
+        "en": "Departure from flatness"
+      },
+      "steps": [
+        {
+          "id": "b1-1",
+          "points": 0.1,
+          "label": {
+            "ru": "Связь с темпом расширения",
+            "en": "Dependence on expansion rate"
+          },
+          "body": {
+            "ru": "<p>Из A5 следует \\(\\Omega-1=kc^2/(R_0^2\\dot a^2)\\). Изменение отклонения поэтому определяется одной величиной \\(\\dot a\\).</p>",
+            "en": "<p>By A5, \\(\\Omega-1=kc^2/(R_0^2\\dot a^2)\\). Its evolution is determined by \\(\\dot a\\) alone.</p>"
+          }
+        },
+        {
+          "id": "b1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Излучение и вещество",
+            "en": "Radiation and matter eras"
+          },
+          "body": {
+            "ru": "<p>Пока вклад кривизны мал, применим законы из A4. При \\(a\\propto t^q\\) получаем \\(\\Omega-1\\propto t^{2(1-q)}\\). Для излучения \\(q=1/2\\), для вещества \\(q=2/3\\).</p>",
+            "en": "<p>While curvature is subdominant, use the scale factors from A4. For \\(a\\propto t^q\\) one gets \\(\\Omega-1\\propto t^{2(1-q)}\\). Radiation has \\(q=1/2\\), and matter \\(q=2/3\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Излучение: \\(\\Omega-1\\propto t\\). Вещество: \\(\\Omega-1\\propto t^{2/3}\\).</p>",
+        "en": "<p>Radiation gives \\(\\Omega-1\\propto t\\). Matter gives \\(\\Omega-1\\propto t^{2/3}\\).</p>"
+      }
+    },
+    {
+      "id": "T3-B2",
+      "max": 0.3,
+      "title": {
+        "ru": "Приближение к плоской геометрии",
+        "en": "Approach to flatness"
+      },
+      "steps": [
+        {
+          "id": "b2-1",
+          "points": 0.1,
+          "label": {
+            "ru": "Почти постоянный параметр Хаббла",
+            "en": "Nearly constant Hubble rate"
+          },
+          "body": {
+            "ru": "<p>При доминировании постоянной плотности \\(H\\) практически не меняется, поэтому \\(a=a_i e^{H(t-t_i)}\\).</p>",
+            "en": "<p>When constant energy density dominates, \\(H\\) is nearly constant and \\(a=a_ie^{H(t-t_i)}\\).</p>"
+          }
+        },
+        {
+          "id": "b2-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Затухание кривизны",
+            "en": "Decay of curvature"
+          },
+          "body": {
+            "ru": "<p>В A5 отклонение обратно пропорционально \\((aH)^2\\). За каждую e-складку расширения его модуль уменьшается в \\(e^2\\) раз.</p>",
+            "en": "<p>In A5 the departure is inversely proportional to \\((aH)^2\\). Each e-fold of expansion reduces its magnitude by a factor \\(e^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Omega(t)-1=[\\Omega(t_i)-1]e^{-2H(t-t_i)}.\\]</div>",
+        "en": "<div>\\[\\Omega(t)-1=[\\Omega(t_i)-1]e^{-2H(t-t_i)}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B3",
+      "max": 0.9,
+      "title": {
+        "ru": "Признаки инфляции",
+        "en": "Conditions for inflation"
+      },
+      "steps": [
+        {
+          "id": "b3-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Давление",
+            "en": "Pressure"
+          },
+          "body": {
+            "ru": "<p>Почти постоянной плотности соответствует \\(w\\simeq-1\\). Следовательно, \\(p\\simeq-\\rho c^2\\).</p>",
+            "en": "<p>Nearly constant density requires \\(w\\simeq-1\\), giving \\(p\\simeq-\\rho c^2\\).</p>"
+          }
+        },
+        {
+          "id": "b3-2",
+          "points": 0.5,
+          "label": {
+            "ru": "Ускоренное расширение",
+            "en": "Accelerated expansion"
+          },
+          "body": {
+            "ru": "<p>Продифференцируем \\(\\dot a^2=A_1\\rho a^2-kc^2/R_0^2\\) и воспользуемся уравнением непрерывности. Тогда </p><div>\\[\\frac{\\ddot a}{a}=-\\frac{4\\pi G}{3}\\left(\\rho+\\frac{3p}{c^2}\\right).\\]</div><p>При \\(p&lt;-\\rho c^2/3\\) правая часть положительна.</p>",
+            "en": "<p>Differentiate \\(\\dot a^2=A_1\\rho a^2-kc^2/R_0^2\\) and use the continuity equation. The result is </p><div>\\[\\frac{\\ddot a}{a}=-\\frac{4\\pi G}{3}\\left(\\rho+\\frac{3p}{c^2}\\right).\\]</div><p>The right-hand side is positive for \\(p&lt;-\\rho c^2/3\\).</p>"
+          }
+        },
+        {
+          "id": "b3-3",
+          "points": 0.2,
+          "label": {
+            "ru": "Сопутствующий радиус",
+            "en": "Comoving radius"
+          },
+          "body": {
+            "ru": "<p>Поскольку \\(aH=\\dot a\\), возрастание скорости расширения означает убывание \\((aH)^{-1}\\).</p>",
+            "en": "<p>Since \\(aH=\\dot a\\), an increasing expansion speed implies a decreasing \\((aH)^{-1}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p&lt;-\\rho c^2/3,\\qquad \\ddot a&gt;0,\\qquad \\frac{d}{dt}(aH)^{-1}&lt;0.\\]</div>",
+        "en": "<div>\\[p&lt;-\\rho c^2/3,\\qquad \\ddot a&gt;0,\\qquad \\frac{d}{dt}(aH)^{-1}&lt;0.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B4",
+      "max": 0.2,
+      "title": {
+        "ru": "Условие на параметр медленного скатывания",
+        "en": "Condition on the slow-roll parameter"
+      },
+      "steps": [
+        {
+          "id": "b4-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Производная радиуса",
+            "en": "Differentiate the radius"
+          },
+          "body": {
+            "ru": "<p>Раскрываем производную \\((aH)^{-1}\\) и используем \\(\\dot a=aH\\). Получаем \\(d(aH)^{-1}/dt=-(1+\\dot H/H^2)/a\\). Поскольку \\(a&gt;0\\), знак определяется только \\(\\epsilon-1\\).</p>",
+            "en": "<p>Differentiate \\((aH)^{-1}\\) and use \\(\\dot a=aH\\). The result is \\(d(aH)^{-1}/dt=-(1+\\dot H/H^2)/a\\). With \\(a&gt;0\\) the sign is determined solely by \\(\\epsilon-1\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{d(aH)^{-1}}{dt}=\\frac{\\epsilon-1}{a}&lt;0\\quad\\Longleftrightarrow\\quad\\epsilon&lt;1.\\]</div>",
+        "en": "<div>\\[\\frac{d(aH)^{-1}}{dt}=\\frac{\\epsilon-1}{a}&lt;0\\quad\\Longleftrightarrow\\quad\\epsilon&lt;1.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-C1",
+      "max": 1.7,
+      "title": {
+        "ru": "Параметры медленного скатывания",
+        "en": "Slow-roll parameters"
+      },
+      "steps": [
+        {
+          "id": "c1-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Изменение параметра Хаббла",
+            "en": "Evolution of the Hubble rate"
+          },
+          "body": {
+            "ru": "<p>Продифференцируем полную энергию поля в уравнении Фридмана. Уравнение движения заменяет \\(\\ddot\\phi+V'\\) на \\(-3H\\dot\\phi\\). Так получаем </p><div>\\[\\dot H=-\\frac{\\dot\\phi^2}{2M_{\\rm pl}^2},\\qquad \\epsilon=\\frac{\\dot\\phi^2}{2M_{\\rm pl}^2H^2}.\\]</div>",
+            "en": "<p>Differentiate the field energy in the Friedmann equation. The field equation replaces \\(\\ddot\\phi+V'\\) by \\(-3H\\dot\\phi\\). This gives </p><div>\\[\\dot H=-\\frac{\\dot\\phi^2}{2M_{\\rm pl}^2},\\qquad \\epsilon=\\frac{\\dot\\phi^2}{2M_{\\rm pl}^2H^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "c1-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Наклон потенциала",
+            "en": "Potential slope"
+          },
+          "body": {
+            "ru": "<p>Доминирование потенциальной энергии даёт \\(H^2\\simeq V/(3M_{\\rm pl}^2)\\). Пренебрегая ускорением поля, получаем \\(3H\\dot\\phi\\simeq-V'\\). Подставляем оба соотношения в \\(\\epsilon\\).</p>",
+            "en": "<p>Potential domination gives \\(H^2\\simeq V/(3M_{\\rm pl}^2)\\). Neglecting the field acceleration gives \\(3H\\dot\\phi\\simeq-V'\\). Insert both relations into \\(\\epsilon\\).</p>"
+          }
+        },
+        {
+          "id": "c1-3",
+          "points": 0.4,
+          "label": {
+            "ru": "Кривизна потенциала",
+            "en": "Potential curvature"
+          },
+          "body": {
+            "ru": "<p>Дифференцируем \\(3H\\dot\\phi\\simeq-V'\\) по времени. После деления на \\(3H^2\\dot\\phi\\) получаем \\(\\delta+\\epsilon\\simeq V''/(3H^2)\\).</p>",
+            "en": "<p>Differentiate \\(3H\\dot\\phi\\simeq-V'\\) in time. Dividing through by \\(3H^2\\dot\\phi\\) yields \\(\\delta+\\epsilon\\simeq V''/(3H^2)\\).</p>"
+          }
+        },
+        {
+          "id": "c1-4",
+          "points": 0.3,
+          "label": {
+            "ru": "Число e-складок",
+            "en": "Number of e-folds"
+          },
+          "body": {
+            "ru": "<p>Из \\(dN=H\\,dt\\) находим \\(dN/d\\phi=H/\\dot\\phi\\). Используем выражения для \\(H\\) и \\(\\dot\\phi\\) в приближении медленного скатывания.</p>",
+            "en": "<p>From \\(dN=H\\,dt\\) one has \\(dN/d\\phi=H/\\dot\\phi\\). Substitute the slow-roll expressions for \\(H\\) and \\(\\dot\\phi\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\epsilon\\simeq\\frac{M_{\\rm pl}^2}{2}\\left(\\frac{V'}{V}\\right)^2,\\qquad \\eta_V\\simeq M_{\\rm pl}^2\\frac{V''}{V}.\\]</div><div>\\[\\frac{dN}{d\\phi}\\simeq-\\frac{V}{M_{\\rm pl}^2V'}.\\]</div>",
+        "en": "<div>\\[\\epsilon\\simeq\\frac{M_{\\rm pl}^2}{2}\\left(\\frac{V'}{V}\\right)^2,\\qquad \\eta_V\\simeq M_{\\rm pl}^2\\frac{V''}{V}.\\]</div><div>\\[\\frac{dN}{d\\phi}\\simeq-\\frac{V}{M_{\\rm pl}^2V'}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-D1",
+      "max": 0.5,
+      "title": {
+        "ru": "Конец инфляции",
+        "en": "End of inflation"
+      },
+      "steps": [
+        {
+          "id": "d1-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Единичное значение параметра",
+            "en": "Set the slow-roll parameter to one"
+          },
+          "body": {
+            "ru": "<p>Для степенного потенциала \\(V'/V=n/\\phi\\). Конец медленного скатывания наступает при \\(\\epsilon=(nM_{\\rm pl}/\\phi)^2/2=1\\). На положительной ветви при \\(n&gt;0\\) берём положительный корень.</p>",
+            "en": "<p>The power-law potential gives \\(V'/V=n/\\phi\\). Slow roll ends when \\(\\epsilon=(nM_{\\rm pl}/\\phi)^2/2=1\\). Choose the positive root on the positive-field branch for \\(n&gt;0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\phi_{\\rm end}=\\frac{n}{\\sqrt2}M_{\\rm pl}.\\]</div>",
+        "en": "<div>\\[\\phi_{\\rm end}=\\frac{n}{\\sqrt2}M_{\\rm pl}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-D2",
+      "max": 0.9,
+      "title": {
+        "ru": "Степень потенциала и наблюдения",
+        "en": "Potential power and observational limits"
+      },
+      "steps": [
+        {
+          "id": "d2-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Поле за 60 e-складок до конца",
+            "en": "Field value before the end"
+          },
+          "body": {
+            "ru": "<p>По принятому в условии знаку \\(N=\\ln(a/a_{\\rm end})\\) раньше конца отрицательно. Запись «60 e-складок» в оригинале относится к модулю этой величины. Обозначим число оставшихся e-складок через \\(N_b=-N\\). Интегрируем C1 от \\(\\phi_{\\rm end}\\) до \\(\\phi\\) и находим </p><div>\\[\\phi^2/M_{\\rm pl}^2=2nN_b+n^2/2.\\]</div>",
+            "en": "<p>The stated convention gives \\(N=\\ln(a/a_{\\rm end})&lt;0\\) before the end. The original paper uses 60 for the magnitude of this interval. Let \\(N_b=-N\\) count the positive number of remaining e-folds. Integrating C1 from \\(\\phi_{\\rm end}\\) to \\(\\phi\\) gives </p><div>\\[\\phi^2/M_{\\rm pl}^2=2nN_b+n^2/2.\\]</div>"
+          }
+        },
+        {
+          "id": "d2-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Параметры для степенного потенциала",
+            "en": "Parameters for a power law"
+          },
+          "body": {
+            "ru": "<p>Обозначим \\(D=4N_b+n=n-4N\\). Из C1 получаем \\(\\epsilon=n/D\\) и \\(\\eta_V=2(n-1)/D\\), поскольку \\(V''/V=n(n-1)/\\phi^2\\).</p>",
+            "en": "<p>Write \\(D=4N_b+n=n-4N\\). C1 yields \\(\\epsilon=n/D\\) and \\(\\eta_V=2(n-1)/D\\), since \\(V''/V=n(n-1)/\\phi^2\\).</p>"
+          }
+        },
+        {
+          "id": "d2-3",
+          "points": 0.2,
+          "label": {
+            "ru": "Наклон и доля тензорных мод",
+            "en": "Tilt and tensor fraction"
+          },
+          "body": {
+            "ru": "<p>Наблюдаемые величины выражаются как \\(r=16\\epsilon\\) и \\(n_s=1-6\\epsilon+2\\eta_V\\). Обе теперь зависят только от \\(n\\) и числа e-складок.</p>",
+            "en": "<p>The observables are \\(r=16\\epsilon\\) and \\(n_s=1-6\\epsilon+2\\eta_V\\). Both now depend only on \\(n\\) and the number of e-folds.</p>"
+          }
+        },
+        {
+          "id": "d2-4",
+          "points": 0.1,
+          "label": {
+            "ru": "Сравнение с данными",
+            "en": "Compare with the bounds"
+          },
+          "body": {
+            "ru": "<p>При \\(N_b=60\\) линейный потенциал даёт \\(r=0{,}0664\\), \\(n_s=0{,}9751\\), чуть выше верхней границы 0,974. Квадратичный потенциал даёт \\(n_s=0{,}9669\\), но \\(r=0{,}1322\\) уже больше 0,12. При больших \\(n\\) значение \\(r\\) растёт. Обе границы одновременно не выполняются ни для одной положительной целой степени. При \\(n=0\\) инфляция в этой модели не заканчивается, а при \\(n&lt;0\\) поле скатывается в сторону убывания \\(\\epsilon\\).</p>",
+            "en": "<p>At \\(N_b=60\\) a linear potential gives \\(r=0.0664\\) and \\(n_s=0.9751\\), just above 0.974. A quadratic potential gives \\(n_s=0.9669\\) but \\(r=0.1322\\), above 0.12. Larger powers increase \\(r\\). No positive integer power satisfies both limits. For \\(n=0\\) inflation never ends in this model, while for \\(n&lt;0\\) slow roll drives \\(\\epsilon\\) down, away from its end value.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r=\\frac{16n}{n-4N},\\qquad n_s=1-\\frac{2(n+2)}{n-4N},\\qquad N=-60.\\]</div>",
+        "en": "<div>\\[r=\\frac{16n}{n-4N},\\qquad n_s=1-\\frac{2(n+2)}{n-4N},\\qquad N=-60.\\]</div>"
+      }
+    }
+  ]
+}

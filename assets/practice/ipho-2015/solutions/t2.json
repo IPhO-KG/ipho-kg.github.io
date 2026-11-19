@@ -1,0 +1,409 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Принцип экстремума",
+    "en": "The extremum principle"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2015/IPhO_2015_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-A1",
+      "max": 0.2,
+      "title": {
+        "ru": "Скорость за границей",
+        "en": "Speed beyond the boundary"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Сохранение энергии",
+            "en": "Energy conservation"
+          },
+          "body": {
+            "ru": "<p>При переходе потенциальная энергия увеличивается на \\(V_0\\). Уменьшение кинетической энергии на ту же величину даёт \\(\\tfrac12mv_1^2=\\tfrac12mv_2^2+V_0\\).</p>",
+            "en": "<p>Crossing the step raises the potential energy by \\(V_0\\). The kinetic energy falls by the same amount, giving \\(\\tfrac12mv_1^2=\\tfrac12mv_2^2+V_0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_2=\\sqrt{v_1^2-\\frac{2V_0}{m}}.\\]</div>",
+        "en": "<div>\\[v_2=\\sqrt{v_1^2-\\frac{2V_0}{m}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A2",
+      "max": 0.3,
+      "title": {
+        "ru": "Угол выхода",
+        "en": "Direction after crossing"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Импульс вдоль границы",
+            "en": "Momentum parallel to the boundary"
+          },
+          "body": {
+            "ru": "<p>Потенциал зависит только от \\(x\\). Сила на границе не имеет проекции на ось \\(y\\), поэтому \\(mv_1\\sin\\theta_1=mv_2\\sin\\theta_2\\).</p>",
+            "en": "<p>The potential depends only on \\(x\\). The boundary therefore imparts no \\(y\\) impulse, and \\(mv_1\\sin\\theta_1=mv_2\\sin\\theta_2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_2=v_1\\frac{\\sin\\theta_1}{\\sin\\theta_2}.\\]</div>",
+        "en": "<div>\\[v_2=v_1\\frac{\\sin\\theta_1}{\\sin\\theta_2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A3",
+      "max": 1.0,
+      "title": {
+        "ru": "Варьирование точки перехода",
+        "en": "Varying the crossing point"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Действие на ломаной",
+            "en": "Action on the two segments"
+          },
+          "body": {
+            "ru": "<p>Длины прямолинейных участков равны \\(\\ell_1=\\sqrt{x_1^2+\\alpha^2}\\) и \\(\\ell_2=\\sqrt{(x_0-x_1)^2+(y_0-\\alpha)^2}\\). На каждом скорость постоянна, так что интеграл действия сводится к сумме.</p>\n<div>\\[A(\\alpha)=m(v_1\\ell_1+v_2\\ell_2).\\]</div>",
+            "en": "<p>The segments have lengths \\(\\ell_1=\\sqrt{x_1^2+\\alpha^2}\\) and \\(\\ell_2=\\sqrt{(x_0-x_1)^2+(y_0-\\alpha)^2}\\). Since the speeds are constant on them, the action is a sum.</p>\n<div>\\[A(\\alpha)=m(v_1\\ell_1+v_2\\ell_2).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Стационарность относительно координаты перехода",
+            "en": "Stationarity with respect to the crossing coordinate"
+          },
+          "body": {
+            "ru": "<p>Сдвинем точку перехода вверх, оставляя концы пути на месте. Первый участок удлиняется, второй укорачивается. При действительном пути их вклады в производную действия компенсируются.</p>\n<div>\\[\\frac{1}{m}\\frac{dA}{d\\alpha}=\\frac{v_1\\alpha}{\\ell_1}-\\frac{v_2(y_0-\\alpha)}{\\ell_2}=0 .\\]</div>",
+            "en": "<p>Move the crossing point upwards with both endpoints held fixed. The first segment lengthens and the second shortens. On the actual path the two contributions to the action derivative cancel.</p>\n<div>\\[\\frac{1}{m}\\frac{dA}{d\\alpha}=\\frac{v_1\\alpha}{\\ell_1}-\\frac{v_2(y_0-\\alpha)}{\\ell_2}=0 .\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{v_1}{v_2}=\\frac{(y_0-\\alpha)\\sqrt{x_1^2+\\alpha^2}}{\\alpha\\sqrt{(x_0-x_1)^2+(y_0-\\alpha)^2}}.\\]</div>",
+        "en": "<div>\\[\\frac{v_1}{v_2}=\\frac{(y_0-\\alpha)\\sqrt{x_1^2+\\alpha^2}}{\\alpha\\sqrt{(x_0-x_1)^2+(y_0-\\alpha)^2}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B1",
+      "max": 0.5,
+      "title": {
+        "ru": "Преломление на плоской границе",
+        "en": "Refraction at a flat interface"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Стационарное время распространения",
+            "en": "Stationary travel time"
+          },
+          "body": {
+            "ru": "<p>Пусть точка преломления смещена вправо на \\(\\delta x\\). При фиксированных концах длины двух участков меняются на \\(\\sin i_1\\,\\delta x\\) и \\(-\\sin i_2\\,\\delta x\\). Скорости света равны \\(c/n_1,c/n_2\\). Тогда \\(c\\,\\delta t=(n_1\\sin i_1-n_2\\sin i_2)\\delta x\\). По принципу Ферма коэффициент при \\(\\delta x\\) равен нулю.</p>",
+            "en": "<p>Shift the crossing point to the right by \\(\\delta x\\) while keeping the endpoints fixed. The two lengths change by \\(\\sin i_1\\,\\delta x\\) and \\(-\\sin i_2\\,\\delta x\\). Using speeds \\(c/n_1,c/n_2\\) gives \\(c\\,\\delta t=(n_1\\sin i_1-n_2\\sin i_2)\\delta x\\). Fermat’s principle sets the coefficient of \\(\\delta x\\) to zero.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[n_1\\sin i_1=n_2\\sin i_2.\\]</div>",
+        "en": "<div>\\[n_1\\sin i_1=n_2\\sin i_2.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B2",
+      "max": 1.5,
+      "title": {
+        "ru": "Наклон луча",
+        "en": "Ray slope"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.7,
+          "label": {
+            "ru": "Инвариант слоистой среды",
+            "en": "Invariant of horizontal layers"
+          },
+          "body": {
+            "ru": "<p>Разобьём жидкость на горизонтальные слои. Через каждую границу сохраняется величина \\(n\\sin i\\), а значит, она постоянна на всём луче. В начале луч горизонтален, так что \\(i=\\pi/2\\) и постоянная равна \\(n_0\\).</p>\n<div>\\[n(y)\\sin i=n_0.\\]</div>",
+            "en": "<p>Divide the liquid into horizontal layers. Across each boundary \\(n\\sin i\\) has the same value, making it constant along the ray. Initially the ray is horizontal, so \\(i=\\pi/2\\) and the constant is \\(n_0\\).</p>\n<div>\\[n(y)\\sin i=n_0.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.8,
+          "label": {
+            "ru": "Наклон нисходящей ветви",
+            "en": "Slope on the descending branch"
+          },
+          "body": {
+            "ru": "<p>Угол отсчитывается от вертикали. Для луча, идущего вправо и вниз, \\(dx/ds=\\sin i\\) и \\(dy/ds=-\\cos i\\). Отношение этих производных даёт \\(dy/dx=-\\cot i\\).</p>",
+            "en": "<p>The angle is measured from the vertical. Along the downward, rightward path, \\(dx/ds=\\sin i\\) and \\(dy/ds=-\\cos i\\), giving \\(dy/dx=-\\cot i\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{dy}{dx}=-\\sqrt{\\left(\\frac{n(y)}{n_0}\\right)^2-1}.\\]</div>",
+        "en": "<div>\\[\\frac{dy}{dx}=-\\sqrt{\\left(\\frac{n(y)}{n_0}\\right)^2-1}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B3",
+      "max": 1.2,
+      "title": {
+        "ru": "Траектория в градиентной среде",
+        "en": "Trajectory in a graded index"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Подстановка показателя преломления",
+            "en": "Index as the integration variable"
+          },
+          "body": {
+            "ru": "<p>Выразим \\(dx\\) через \\(dy\\) по B2 и введём \\(u=n(y)/n_0=1-ky/n_0\\). При движении вниз \\(u\\) возрастает от единицы. Условие \\(x(0)=0\\) задаёт нижний предел.</p>\n<div>\\[x(y)=\\frac{n_0}{k}\\int_1^{1-ky/n_0}\\frac{du}{\\sqrt{u^2-1}} .\\]</div>",
+            "en": "<p>Use B2 to express \\(dx\\) in terms of \\(dy\\). Introduce \\(u=n(y)/n_0=1-ky/n_0\\), which increases from one as the light travels down. The condition \\(x(0)=0\\) fixes the lower limit.</p>\n<div>\\[x(y)=\\frac{n_0}{k}\\int_1^{1-ky/n_0}\\frac{du}{\\sqrt{u^2-1}} .\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Интеграл траектории",
+            "en": "Trajectory integral"
+          },
+          "body": {
+            "ru": "<p>Первообразная равна \\(\\ln(u+\\sqrt{u^2-1})\\). При \\(u=1\\) логарифм обращается в нуль. Через обратный гиперболический косинус результат записывается компактно.</p>",
+            "en": "<p>The antiderivative is \\(\\ln(u+\\sqrt{u^2-1})\\), which vanishes at \\(u=1\\). The inverse hyperbolic cosine gives a compact equivalent expression.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x(y)=\\frac{n_0}{k}\\operatorname{arcosh}\\!\\left(1-\\frac{ky}{n_0}\\right),\\qquad y\\leq0 .\\]</div>",
+        "en": "<div>\\[x(y)=\\frac{n_0}{k}\\operatorname{arcosh}\\!\\left(1-\\frac{ky}{n_0}\\right),\\qquad y\\leq0 .\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B4",
+      "max": 0.8,
+      "title": {
+        "ru": "Точка на дне резервуара",
+        "en": "Point on the tank floor"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Пересечение траектории с дном",
+            "en": "Intersection with the floor"
+          },
+          "body": {
+            "ru": "<p>На дне \\(y=-10{,}0\\,\\mathrm{cm}\\). Тогда \\(n_0/k=30{,}0\\,\\mathrm{cm}\\), а аргумент обратного гиперболического косинуса равен \\(1+ky_0/n_0=4/3\\).</p>",
+            "en": "<p>At the floor \\(y=-10.0\\,\\mathrm{cm}\\). The length scale is \\(n_0/k=30.0\\,\\mathrm{cm}\\) and the argument of the inverse hyperbolic cosine is \\(1+ky_0/n_0=4/3\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x_0=\\frac{n_0}{k}\\ln\\!\\left(\\frac{4+\\sqrt7}{3}\\right)\\simeq23{,}9\\,\\mathrm{cm}.\\]</div>",
+        "en": "<div>\\[x_0=\\frac{n_0}{k}\\ln\\!\\left(\\frac{4+\\sqrt7}{3}\\right)\\simeq23.9\\,\\mathrm{cm}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C1",
+      "max": 0.6,
+      "title": {
+        "ru": "Приращение фазы",
+        "en": "Phase increment"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Набег фазы на элементе пути",
+            "en": "Phase acquired on a path element"
+          },
+          "body": {
+            "ru": "<p>Волна набирает фазу \\(2\\pi\\) за одну длину волны. Для нерелятивистской частицы \\(\\lambda=h/(mv)\\), а на малом участке \\(\\Delta A=mv\\,\\Delta s\\). Подстановка этих двух соотношений в \\(\\Delta\\varphi=2\\pi\\Delta s/\\lambda\\) даёт</p>",
+            "en": "<p>The phase advances by \\(2\\pi\\) per wavelength. For a nonrelativistic particle \\(\\lambda=h/(mv)\\), and on an infinitesimal segment \\(\\Delta A=mv\\,\\Delta s\\). Insert both expressions into \\(\\Delta\\varphi=2\\pi\\Delta s/\\lambda\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta\\varphi=\\frac{2\\pi}{h}\\,\\Delta A=\\frac{\\Delta A}{\\hbar}.\\]</div>",
+        "en": "<div>\\[\\Delta\\varphi=\\frac{2\\pi}{h}\\,\\Delta A=\\frac{\\Delta A}{\\hbar}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C2",
+      "max": 1.2,
+      "title": {
+        "ru": "Фазы соседних путей",
+        "en": "Phases of neighbouring paths"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Разность фаз по обе стороны щели",
+            "en": "Contributions from the two regions"
+          },
+          "body": {
+            "ru": "<p>Проекция расстояния \\(d\\) на направление луча даёт изменение длины пути. При смене края щели один участок удлиняется на \\(d\\sin\\theta_1\\), другой укорачивается на \\(d\\sin\\theta_2\\). У каждого своя длина волны.</p>\n<figure><img src=\"/assets/practice/ipho-2015/q2/edges.png\" alt=\"Проекции расстояния между краями щели.\" loading=\"lazy\" style=\"width:min(100%,350px);height:auto\"><figcaption>Проекции расстояния между краями щели.</figcaption></figure>\n<div>\\[\\Delta\\varphi_{\\mathrm{CD}}=\\frac{md}{\\hbar}\\bigl(v_1\\sin\\theta_1-v_2\\sin\\theta_2\\bigr)+O(d^2).\\]</div>",
+            "en": "<p>Project the edge separation \\(d\\) onto the ray directions. Changing edges adds \\(d\\sin\\theta_1\\) to one segment and subtracts \\(d\\sin\\theta_2\\) from the other. The two contributions have different wavelengths.</p>\n<figure><img src=\"/assets/practice/ipho-2015/q2/edges.png\" alt=\"Projections of the separation of the slit edges.\" loading=\"lazy\" style=\"width:min(100%,350px);height:auto\"><figcaption>Projections of the separation of the slit edges.</figcaption></figure>\n<div>\\[\\Delta\\varphi_{\\mathrm{CD}}=\\frac{md}{\\hbar}\\bigl(v_1\\sin\\theta_1-v_2\\sin\\theta_2\\bigr)+O(d^2).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Стационарная фаза классического пути",
+            "en": "Stationary phase of the classical path"
+          },
+          "body": {
+            "ru": "<p>Для классического пути выражение в скобках обращается в нуль по A2. Вклад первого порядка исчезает, поэтому близкие к классическому пути волны приходят почти в фазе.</p>",
+            "en": "<p>A2 makes the bracket vanish on the classical path. There is no first-order change, so waves on nearby paths arrive with nearly the same phase.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta\\varphi_{\\mathrm{CD}}=O(d^2).\\]</div>",
+        "en": "<div>\\[\\Delta\\varphi_{\\mathrm{CD}}=O(d^2).\\]</div>"
+      }
+    },
+    {
+      "id": "T2-D1",
+      "max": 0.3,
+      "title": {
+        "ru": "Ускоряющее напряжение",
+        "en": "Accelerating potential"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Работа ускоряющего поля",
+            "en": "Work of the accelerating field"
+          },
+          "body": {
+            "ru": "<p>Работа \\(eU_1\\) равна кинетической энергии электрона, поскольку он покинул источник из состояния покоя. Здесь \\(e\\) — модуль его заряда.</p>",
+            "en": "<p>The field does work \\(eU_1\\), equal to the kinetic energy gained by an electron starting at rest. Here \\(e\\) is the magnitude of its charge.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[U_1=\\frac{m_ev_1^2}{2e}\\simeq1{,}14\\times10^3\\,\\mathrm V .\\]</div>",
+        "en": "<div>\\[U_1=\\frac{m_ev_1^2}{2e}\\simeq1.14\\times10^3\\,\\mathrm V .\\]</div>"
+      }
+    },
+    {
+      "id": "T2-D2",
+      "max": 0.8,
+      "title": {
+        "ru": "Фаза в точке наблюдения",
+        "en": "Phase at the observation point"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Две длины волны на одной прямой",
+            "en": "Two wavelengths on the same line"
+          },
+          "body": {
+            "ru": "<p>В точке \\(P\\) падающий и выходящий лучи составляют с горизонталью один и тот же угол \\(\\theta\\). Геометрические разности хода по обе стороны равны по модулю \\(d\\sin\\theta\\), но имеют противоположные знаки. В единицах периода разность фаз равна \\(d\\sin\\theta(1/\\lambda_1-1/\\lambda_2)\\).</p>",
+            "en": "<p>At \\(P\\) the incident and emergent directions both make angle \\(\\theta\\) with the horizontal. The two geometrical path differences have the same magnitude \\(d\\sin\\theta\\) and opposite signs. In cycles, the phase difference is \\(d\\sin\\theta(1/\\lambda_1-1/\\lambda_2)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\beta=\\frac{m_ed}{h}(v_1-v_2)\\sin\\theta\\simeq5{,}13.\\]</div>",
+        "en": "<div>\\[\\beta=\\frac{m_ed}{h}(v_1-v_2)\\sin\\theta\\simeq5.13.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-D3",
+      "max": 1.2,
+      "title": {
+        "ru": "Ближайший минимум",
+        "en": "Nearest dark fringe"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Порядок ближайшей тёмной полосы",
+            "en": "Order of the nearest dark fringe"
+          },
+          "body": {
+            "ru": "<p>Минимуму соответствует полуцелое число периодов. К \\(5{,}13\\) ближе всего \\(5{,}5\\). Сместим точку наблюдения так, чтобы угол выходящего луча стал \\(\\theta+\\delta\\). Фаза падающей волны у щелей при этом не меняется.</p>\n<div>\\[\\frac{m_ed}{h}\\bigl[v_1\\sin\\theta-v_2\\sin(\\theta+\\delta)\\bigr]=5{,}5 .\\]</div>\n<figure><img src=\"/assets/practice/ipho-2015/q2/fringes.png\" alt=\"Углы для точки наблюдения и соседнего минимума.\" loading=\"lazy\" style=\"width:min(100%,335px);height:auto\"><figcaption>Углы для точки наблюдения и соседнего минимума.</figcaption></figure>",
+            "en": "<p>A dark fringe requires a half-integer number of cycles. The nearest such number to \\(5.13\\) is \\(5.5\\). Move the observation point so that the outgoing angle becomes \\(\\theta+\\delta\\). The incident phase at the slits is unchanged.</p>\n<div>\\[\\frac{m_ed}{h}\\bigl[v_1\\sin\\theta-v_2\\sin(\\theta+\\delta)\\bigr]=5.5 .\\]</div>\n<figure><img src=\"/assets/practice/ipho-2015/q2/fringes.png\" alt=\"Angles to the observation point and its neighbouring minimum.\" loading=\"lazy\" style=\"width:min(100%,335px);height:auto\"><figcaption>Angles to the observation point and its neighbouring minimum.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Смещение на экране",
+            "en": "Position on the screen"
+          },
+          "body": {
+            "ru": "<p>Вычитая выражение D2 и раскладывая синус, получаем \\(\\delta=(\\beta-5{,}5)h/(m_edv_2\\cos\\theta)\\simeq-6{,}3\\times10^{-5}\\,\\mathrm{rad}\\). Из геометрии экрана \\(\\Delta y=L[\\tan(\\theta+\\delta)-\\tan\\theta]\\simeq L\\delta/\\cos^2\\theta\\). Отрицательный знак указывает направление вниз.</p>",
+            "en": "<p>Subtract D2 and expand the sine to obtain \\(\\delta=(\\beta-5.5)h/(m_edv_2\\cos\\theta)\\simeq-6.3\\times10^{-5}\\,\\mathrm{rad}\\). Screen geometry gives \\(\\Delta y=L[\\tan(\\theta+\\delta)-\\tan\\theta]\\simeq L\\delta/\\cos^2\\theta\\). The negative sign places the fringe below \\(P\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Ближайший минимум расположен примерно на \\(16\\,\\mu\\mathrm m\\) ниже точки \\(P\\).</p>",
+        "en": "<p>The nearest dark fringe is about \\(16\\,\\mu\\mathrm m\\) below \\(P\\).</p>"
+      }
+    },
+    {
+      "id": "T2-D4",
+      "max": 0.4,
+      "title": {
+        "ru": "Плотность потока электронов",
+        "en": "Electron flux density"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Среднее число электронов в установке",
+            "en": "Mean occupancy of the apparatus"
+          },
+          "body": {
+            "ru": "<p>За секунду в пучок входит \\(IS\\) электронов, где \\(S=(500\\,\\mathrm{nm})^2\\). Время пролёта установки длины \\(\\ell\\) равно примерно \\(\\ell/v\\) при \\(v\\simeq2{,}0\\times10^7\\,\\mathrm{m/s}\\). Среднее число электронов равно произведению этих величин. На пороге оно равно единице.</p>",
+            "en": "<p>The entry rate is \\(IS\\), where \\(S=(500\\,\\mathrm{nm})^2\\). Transit through length \\(\\ell\\) takes approximately \\(\\ell/v\\), with \\(v\\simeq2.0\\times10^7\\,\\mathrm{m/s}\\). The product of entry rate and transit time is the mean occupancy. Set it to one.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I_{\\min}\\simeq\\frac{v}{S\\ell}=4{,}0\\times10^{19}\\,\\mathrm{m^{-2}s^{-1}}.\\]</div>",
+        "en": "<div>\\[I_{\\min}\\simeq\\frac{v}{S\\ell}=4.0\\times10^{19}\\,\\mathrm{m^{-2}s^{-1}}.\\]</div>"
+      }
+    }
+  ]
+}

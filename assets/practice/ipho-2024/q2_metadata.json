@@ -1,0 +1,75 @@
+{
+  "id": "T2",
+  "title": "Ловушка для ионов и охлаждение атомов",
+  "points": 10,
+  "sourceFile": "/assets/practice/ipho-2024/IPhO_2024_T2_EN.pdf",
+  "sections": [
+    {
+      "id": "T2-A",
+      "title": "Ловушка Пауля",
+      "points": 5.6
+    },
+    {
+      "id": "T2-B",
+      "title": "Доплеровское охлаждение",
+      "points": 4.4
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-A1",
+      "points": 1.5
+    },
+    {
+      "id": "T2-A2",
+      "points": 0.4
+    },
+    {
+      "id": "T2-A3",
+      "points": 1.8
+    },
+    {
+      "id": "T2-A4",
+      "points": 1.5
+    },
+    {
+      "id": "T2-A5",
+      "points": 0.4
+    },
+    {
+      "id": "T2-B1",
+      "points": 0.5
+    },
+    {
+      "id": "T2-B2",
+      "points": 1.7
+    },
+    {
+      "id": "T2-B3",
+      "points": 1.0
+    },
+    {
+      "id": "T2-B4",
+      "points": 0.8
+    },
+    {
+      "id": "T2-B5",
+      "points": 0.4
+    }
+  ],
+  "figures": [
+    "ring",
+    "micromotion",
+    "absorption"
+  ],
+  "solutionPdf": "/assets/practice/ipho-2024/IPhO_2024_S2_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2024/IPhO_2024_M2_EN.pdf",
+  "solutionsAvailable": true,
+  "stepScoring": "published-additive-criteria",
+  "solutionData": "/assets/practice/ipho-2024/solutions/t2.json",
+  "sourceLinks": {
+    "problem": "https://olimpicos.net/files/ipho/IPhO_2024_Q2.pdf",
+    "solution": "https://olimpicos.net/files/ipho/IPhO_2024_S2.pdf",
+    "marking": "https://olimpicos.net/files/ipho/IPhO_2024_M2.pdf"
+  }
+}

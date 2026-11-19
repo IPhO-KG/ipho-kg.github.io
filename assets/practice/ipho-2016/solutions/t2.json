@@ -1,0 +1,465 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Нелинейная динамика электрических цепей",
+    "en": "Nonlinear electrical circuits"
+  },
+  "sourcePdf": "/assets/practice/ipho-2016/IPhO_2016_S2_EN.pdf",
+  "max": 10,
+  "parts": [
+    {
+      "id": "T2-A1",
+      "max": 0.4,
+      "title": {
+        "ru": "Ветви вольт-амперной характеристики",
+        "en": "Branches of the current–voltage curve"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Две омические ветви",
+            "en": "Two ohmic branches"
+          },
+          "body": {
+            "ru": "<p>Для прямой, проходящей через начало координат, сопротивление равно \\(U/I\\). Верхняя ветвь проходит через \\((4\\,\\mathrm V,4\\,\\mathrm A)\\), нижняя через \\((10\\,\\mathrm V,1\\,\\mathrm A)\\).</p>",
+            "en": "<p>For a straight line through the origin, the resistance is \\(U/I\\). The upper branch passes through \\((4\\,\\mathrm V,4\\,\\mathrm A)\\) and the lower branch through \\((10\\,\\mathrm V,1\\,\\mathrm A)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Наклон средней ветви",
+            "en": "Slope of the middle branch"
+          },
+          "body": {
+            "ru": "<p>Между этими точками ток уменьшается на \\(3\\,\\mathrm A\\) при увеличении напряжения на \\(6\\,\\mathrm V\\). Отсюда \\(R_{\\rm int}=2\\,\\Omega\\) и \\(I_0=I+U/R_{\\rm int}=6\\,\\mathrm A\\).</p>",
+            "en": "<p>Between these points the current falls by \\(3\\,\\mathrm A\\) as the voltage rises by \\(6\\,\\mathrm V\\). Thus \\(R_{\\rm int}=2\\,\\Omega\\) and \\(I_0=I+U/R_{\\rm int}=6\\,\\mathrm A\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[R_{\\rm on}=1\\,\\Omega,\\qquad R_{\\rm off}=10\\,\\Omega.\\]</div><div>\\[R_{\\rm int}=2\\,\\Omega,\\qquad I_0=6\\,\\mathrm A.\\]</div>",
+        "en": "<div>\\[R_{\\rm on}=1\\,\\Omega,\\qquad R_{\\rm off}=10\\,\\Omega.\\]</div><div>\\[R_{\\rm int}=2\\,\\Omega,\\qquad I_0=6\\,\\mathrm A.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A2",
+      "max": 1,
+      "title": {
+        "ru": "Число стационарных состояний",
+        "en": "Number of stationary states"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Нагрузочная прямая",
+            "en": "Load line"
+          },
+          "body": {
+            "ru": "<p>При постоянном токе напряжение на катушке равно нулю. Поэтому \\(I=(\\mathcal E-U)/R\\). Каждая точка пересечения этой прямой с характеристикой элемента задаёт стационарное состояние.</p>",
+            "en": "<p>The inductor has zero voltage at constant current. Hence \\(I=(\\mathcal E-U)/R\\). Every intersection of this line with the element characteristic is a stationary state.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Сопротивление три ома",
+            "en": "Three-ohm resistor"
+          },
+          "body": {
+            "ru": "<p>Вдоль характеристики величина \\(U+RI\\) при \\(R=3\\,\\Omega\\) монотонно растёт с током. На средней ветви её производная по току равна \\(R-R_{\\rm int}&gt;0\\). Каждой ЭДС соответствует одно пересечение.</p>",
+            "en": "<p>For \\(R=3\\,\\Omega\\), the quantity \\(U+RI\\) increases monotonically with current along the characteristic. Even on the middle branch its derivative is \\(R-R_{\\rm int}&gt;0\\). Each source voltage gives one intersection.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Сопротивление один ом",
+            "en": "One-ohm resistor"
+          },
+          "body": {
+            "ru": "<p>При \\(R=1\\,\\Omega\\) на средней ветви наклон меняет знак. В точках поворота \\(U+RI\\) равно \\(8\\) и \\(11\\,\\mathrm V\\). Между ними есть три решения, на границах два, вне интервала одно.</p>",
+            "en": "<p>For \\(R=1\\,\\Omega\\) the middle branch reverses slope. The two turning points have \\(U+RI\\) equal to \\(8\\) and \\(11\\,\\mathrm V\\). There are three solutions between them, two at either endpoint, and one outside.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>\\(R=3\\,\\Omega\\) — одно состояние. При \\(R=1\\,\\Omega\\) возможны одно, два или три состояния.</p>",
+        "en": "<p>\\(R=3\\,\\Omega\\) gives one state. With \\(R=1\\,\\Omega\\) there can be one, two or three states.</p>"
+      }
+    },
+    {
+      "id": "T2-A3",
+      "max": 0.6,
+      "title": {
+        "ru": "Ток и напряжение в рабочей точке",
+        "en": "Current and voltage at the operating point"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Пересечение со средней ветвью",
+            "en": "Intersection with the middle branch"
+          },
+          "body": {
+            "ru": "<p>Для средней ветви \\(U=R_{\\rm int}(I_0-I)\\). Подстановка в \\(\\mathcal E=RI+U\\) даёт</p><div>\\[I=\\frac{\\mathcal E-R_{\\rm int}I_0}{R-R_{\\rm int}}.\\]</div><p>При заданных значениях ток равен \\(3\\,\\mathrm A\\) и лежит в пределах этой ветви.</p>",
+            "en": "<p>On the middle branch \\(U=R_{\\rm int}(I_0-I)\\). Substitution into \\(\\mathcal E=RI+U\\) gives</p><div>\\[I=\\frac{\\mathcal E-R_{\\rm int}I_0}{R-R_{\\rm int}}.\\]</div><p>The data give \\(3\\,\\mathrm A\\), within this branch.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Напряжение элемента",
+            "en": "Element voltage"
+          },
+          "body": {
+            "ru": "<p>Вычитаем падение напряжения \\(RI\\) из ЭДС источника.</p>",
+            "en": "<p>Subtract the resistor drop \\(RI\\) from the source voltage.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I_{\\rm st}=3\\,\\mathrm A,\\qquad U_{\\rm st}=6\\,\\mathrm V.\\]</div>",
+        "en": "<div>\\[I_{\\rm st}=3\\,\\mathrm A,\\qquad U_{\\rm st}=6\\,\\mathrm V.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A4",
+      "max": 1,
+      "title": {
+        "ru": "Устойчивость рабочей точки",
+        "en": "Stability of the operating point"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Уравнение возмущения",
+            "en": "Perturbation equation"
+          },
+          "body": {
+            "ru": "<p>При изменении тока на \\(\\delta I\\) напряжение элемента меняется на \\(-R_{\\rm int}\\delta I\\). Вычитая стационарное уравнение из закона Кирхгофа, получаем</p><div>\\[L\\frac{d\\,\\delta I}{dt}=-(R-R_{\\rm int})\\delta I.\\]</div>",
+            "en": "<p>A perturbation \\(\\delta I\\) changes the element voltage by \\(-R_{\\rm int}\\delta I\\). Subtract the stationary loop equation from Kirchhoff’s law to obtain</p><div>\\[L\\frac{d\\,\\delta I}{dt}=-(R-R_{\\rm int})\\delta I.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Возврат к равновесию",
+            "en": "Return to equilibrium"
+          },
+          "body": {
+            "ru": "<p>Здесь \\(R-R_{\\rm int}=1\\,\\Omega&gt;0\\). При избытке тока производная отрицательна, при недостатке положительна. Отклонение затухает за характерное время \\(L/(R-R_{\\rm int})\\).</p>",
+            "en": "<p>Here \\(R-R_{\\rm int}=1\\,\\Omega&gt;0\\). A positive perturbation has negative derivative, and a negative perturbation has positive derivative. It decays with time constant \\(L/(R-R_{\\rm int})\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Стационарное состояние устойчиво.</p>",
+        "en": "<p>The stationary state is stable.</p>"
+      }
+    },
+    {
+      "id": "T2-B1",
+      "max": 1.8,
+      "title": {
+        "ru": "Цикл переключения",
+        "en": "Switching cycle"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Эволюция напряжения",
+            "en": "Voltage evolution"
+          },
+          "body": {
+            "ru": "<p>На омической ветви \\(j\\) ток конденсатора равен разности токов в резисторе и в элементе:</p><div>\\[C\\dot U=\\frac{\\mathcal E-U}{R}-\\frac{U}{R_j}.\\]</div><p>Каждая ветвь стремилась бы к напряжению \\(U_j=\\mathcal E R_j/(R+R_j)\\).</p>",
+            "en": "<p>On ohmic branch \\(j\\) the capacitor current is the difference between the resistor and element currents:</p><div>\\[C\\dot U=\\frac{\\mathcal E-U}{R}-\\frac{U}{R_j}.\\]</div><p>Each branch would tend towards \\(U_j=\\mathcal E R_j/(R+R_j)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Нижняя ветвь и верхний порог",
+            "en": "Lower branch and upper threshold"
+          },
+          "body": {
+            "ru": "<p>На нижней ветви \\(U_{\\rm off}\\simeq11{,}54\\,\\mathrm V\\), выше порога \\(U_{\\rm th}=10\\,\\mathrm V\\). Напряжение растёт от \\(4\\) до \\(10\\,\\mathrm V\\). В момент переключения напряжение конденсатора непрерывно, поэтому ток скачком переходит вверх при постоянном \\(U\\).</p>",
+            "en": "<p>The off-branch equilibrium \\(U_{\\rm off}\\simeq11.54\\,\\mathrm V\\) exceeds \\(U_{\\rm th}=10\\,\\mathrm V\\). The voltage rises from \\(4\\) to \\(10\\,\\mathrm V\\). Capacitor voltage is continuous at switching, so the current jumps vertically upwards.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Верхняя ветвь и замыкание цикла",
+            "en": "Upper branch and return"
+          },
+          "body": {
+            "ru": "<p>На верхней ветви \\(U_{\\rm on}=3{,}75\\,\\mathrm V\\) лежит ниже \\(U_{\\rm h}=4\\,\\mathrm V\\). Напряжение убывает до \\(4\\,\\mathrm V\\), после чего ток скачком переходит на нижнюю ветвь.</p>",
+            "en": "<p>The on-branch equilibrium \\(U_{\\rm on}=3.75\\,\\mathrm V\\) lies below \\(U_{\\rm h}=4\\,\\mathrm V\\). The voltage decreases to \\(4\\,\\mathrm V\\), where the current jumps down to the lower branch.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Цикл обходится против часовой стрелки.</p><figure><img src=\"/assets/practice/ipho-2016/figures/s2-f1.png\" alt=\"Направление обхода в координатах напряжение — ток.\" loading=\"lazy\" style=\"max-width:min(100%,420px)\"><figcaption>Направление обхода в координатах напряжение — ток.</figcaption></figure>",
+        "en": "<p>The cycle is traversed anticlockwise.</p><figure><img src=\"/assets/practice/ipho-2016/figures/s2-f1.png\" alt=\"Cycle on the current–voltage plane.\" loading=\"lazy\" style=\"max-width:min(100%,420px)\"><figcaption>Cycle on the current–voltage plane.</figcaption></figure>"
+      }
+    },
+    {
+      "id": "T2-B2",
+      "max": 1.9,
+      "title": {
+        "ru": "Продолжительность цикла",
+        "en": "Duration of the cycle"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Постоянная времени ветви",
+            "en": "Branch time constant"
+          },
+          "body": {
+            "ru": "<p>Уравнение для напряжения можно записать как \\(\\dot U=(U_j-U)/\\tau_j\\), где</p><div>\\[\\tau_j=C\\frac{RR_j}{R+R_j},\\qquad U_j=\\frac{\\mathcal E R_j}{R+R_j}.\\]</div>",
+            "en": "<p>The voltage equation takes the form \\(\\dot U=(U_j-U)/\\tau_j\\), where</p><div>\\[\\tau_j=C\\frac{RR_j}{R+R_j},\\qquad U_j=\\frac{\\mathcal E R_j}{R+R_j}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Переход между порогами",
+            "en": "Travel between the thresholds"
+          },
+          "body": {
+            "ru": "<p>При начальном напряжении \\(U_i\\) решение равно \\(U(t)=U_j+(U_i-U_j)e^{-t/\\tau_j}\\). Поэтому время достижения \\(U_f\\) равно \\(\\tau_j\\ln[(U_i-U_j)/(U_f-U_j)]\\).</p>",
+            "en": "<p>Starting from \\(U_i\\), the solution is \\(U(t)=U_j+(U_i-U_j)e^{-t/\\tau_j}\\). The time to reach \\(U_f\\) is therefore \\(\\tau_j\\ln[(U_i-U_j)/(U_f-U_j)]\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Разряд на верхней ветви",
+            "en": "Discharge on the upper branch"
+          },
+          "body": {
+            "ru": "<p>На верхней ветви напряжение падает от \\(U_{\\rm th}\\) до \\(U_{\\rm h}\\). При \\(\\tau_{\\rm on}=0{,}75\\,\\mu\\mathrm s\\) получаем</p><div>\\[t_{\\rm on}=\\tau_{\\rm on}\\ln\\frac{U_{\\rm th}-U_{\\rm on}}{U_{\\rm h}-U_{\\rm on}}\\simeq2{,}41\\,\\mu\\mathrm s.\\]</div>",
+            "en": "<p>On the upper branch the voltage falls from \\(U_{\\rm th}\\) to \\(U_{\\rm h}\\). With \\(\\tau_{\\rm on}=0.75\\,\\mu\\mathrm s\\),</p><div>\\[t_{\\rm on}=\\tau_{\\rm on}\\ln\\frac{U_{\\rm th}-U_{\\rm on}}{U_{\\rm h}-U_{\\rm on}}\\simeq2.41\\,\\mu\\mathrm s.\\]</div>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.5,
+          "label": {
+            "ru": "Заряд на нижней ветви",
+            "en": "Charge on the lower branch"
+          },
+          "body": {
+            "ru": "<p>На нижней ветви пороги проходятся в обратном порядке. Поскольку скачки мгновенны, период равен сумме двух времён.</p><div>\\[t_{\\rm off}=\\tau_{\\rm off}\\ln\\frac{U_{\\rm off}-U_{\\rm h}}{U_{\\rm off}-U_{\\rm th}}\\simeq3{,}71\\,\\mu\\mathrm s.\\]</div>",
+            "en": "<p>On the lower branch the thresholds are crossed in reverse order. The jumps take negligible time, so the period is the sum of the two branch times.</p><div>\\[t_{\\rm off}=\\tau_{\\rm off}\\ln\\frac{U_{\\rm off}-U_{\\rm h}}{U_{\\rm off}-U_{\\rm th}}\\simeq3.71\\,\\mu\\mathrm s.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T=t_{\\rm on}+t_{\\rm off}\\simeq6{,}12\\,\\mu\\mathrm s.\\]</div>",
+        "en": "<div>\\[T=t_{\\rm on}+t_{\\rm off}\\simeq6.12\\,\\mu\\mathrm s.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B3",
+      "max": 0.7,
+      "title": {
+        "ru": "Средняя рассеиваемая мощность",
+        "en": "Mean dissipated power"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Характерная мощность",
+            "en": "Characteristic power"
+          },
+          "body": {
+            "ru": "<p>На каждой ветви мгновенная мощность равна \\(U^2/R_j\\). При одинаковом напряжении верхняя ветвь рассеивает в десять раз больше нижней. Для оценки берём середину интервала напряжений \\(U_*\\simeq7\\,\\mathrm V\\).</p>",
+            "en": "<p>On each branch the instantaneous power is \\(U^2/R_j\\). At a given voltage the upper branch dissipates ten times as much as the lower. For an estimate use the midpoint \\(U_*\\simeq7\\,\\mathrm V\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Доля периода",
+            "en": "Duty fraction"
+          },
+          "body": {
+            "ru": "<p>Элемент проводит на верхней ветви долю \\(t_{\\rm on}/T\\simeq0{,}39\\) периода. Её вклад в среднюю мощность равен примерно \\(49\\times0{,}39\\,\\mathrm W\\). Нижняя ветвь даёт ещё несколько ватт при такой оценке.</p>",
+            "en": "<p>The on branch occupies a fraction \\(t_{\\rm on}/T\\simeq0.39\\) of the period. Its contribution to the mean is about \\(49\\times0.39\\,\\mathrm W\\). At this level of approximation the lower branch adds a few watts.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\overline P\\sim20\\,\\mathrm W.\\]</div>",
+        "en": "<div>\\[\\overline P\\sim20\\,\\mathrm W.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B4",
+      "max": 0.6,
+      "title": {
+        "ru": "Длина антенны",
+        "en": "Antenna length"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Граничные условия",
+            "en": "Boundary conditions"
+          },
+          "body": {
+            "ru": "<p>Свободный конец провода — узел тока, а подключённый конец — пучность. Расстояние между ними равно нечётному числу четвертей длины волны.</p>",
+            "en": "<p>The open end is a current node and the driven end is a current antinode. Their separation must be an odd number of quarter wavelengths.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Выбор разрешённой длины",
+            "en": "Allowed resonant length"
+          },
+          "body": {
+            "ru": "<p>При \\(\\lambda=cT\\) первая резонансная длина равна \\(cT/4\\). Следующая длина втрое больше и уже превышает один километр.</p>",
+            "en": "<p>With \\(\\lambda=cT\\), the shortest resonant length is \\(cT/4\\). The next possibility is three times longer and exceeds one kilometre.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[s=\\frac{cT}{4}\\simeq459\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[s=\\frac{cT}{4}\\simeq459\\,\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C1",
+      "max": 1.2,
+      "title": {
+        "ru": "Отклик на импульс",
+        "en": "Response to a pulse"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Подпороговый импульс",
+            "en": "Subthreshold pulse"
+          },
+          "body": {
+            "ru": "<p>До импульса элемент находится на нижней ветви при \\(U_*=\\mathcal E^{\\prime}R_{\\rm off}/(R+R_{\\rm off})\\simeq9{,}23\\,\\mathrm V\\). Ток сначала растёт к новому равновесию. Если питание вернулось раньше достижения \\(10\\,\\mathrm V\\), ток плавно снижается к начальному.</p>",
+            "en": "<p>Before the pulse the element is on the off branch at \\(U_*=\\mathcal E^{\\prime}R_{\\rm off}/(R+R_{\\rm off})\\simeq9.23\\,\\mathrm V\\). The current initially rises towards a new equilibrium. If the supply returns before \\(10\\,\\mathrm V\\) is reached, the current decays smoothly back to its initial value.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.8,
+          "label": {
+            "ru": "Надпороговый импульс",
+            "en": "Suprathreshold pulse"
+          },
+          "body": {
+            "ru": "<p>Достижение \\(10\\,\\mathrm V\\) вызывает скачок тока с \\(1\\) до \\(10\\,\\mathrm A\\). Ток убывает по верхней ветви до \\(4\\,\\mathrm A\\), затем скачком падает до \\(0{,}4\\,\\mathrm A\\). На нижней ветви он возвращается к исходному значению снизу.</p>",
+            "en": "<p>Reaching \\(10\\,\\mathrm V\\) triggers a jump from \\(1\\) to \\(10\\,\\mathrm A\\). The current decreases on the upper branch to \\(4\\,\\mathrm A\\), then jumps down to \\(0.4\\,\\mathrm A\\). It approaches its initial value from below on the lower branch.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Слева по времени начинается импульс. Полный выброс тока возникает только после пересечения порога.</p><figure><img src=\"/assets/practice/ipho-2016/figures/s2-f2.png\" alt=\"Короткий импульс.\" loading=\"lazy\" style=\"max-width:min(100%,360px)\"><figcaption>Короткий импульс.</figcaption></figure><figure><img src=\"/assets/practice/ipho-2016/figures/s2-f3.png\" alt=\"Импульс с переключением.\" loading=\"lazy\" style=\"max-width:min(100%,420px)\"><figcaption>Импульс с переключением.</figcaption></figure>",
+        "en": "<p>The pulse begins at the left of each trace. A full current spike appears only when the threshold is crossed.</p><figure><img src=\"/assets/practice/ipho-2016/figures/s2-f2.png\" alt=\"Subthreshold pulse.\" loading=\"lazy\" style=\"max-width:min(100%,360px)\"><figcaption>Subthreshold pulse.</figcaption></figure><figure><img src=\"/assets/practice/ipho-2016/figures/s2-f3.png\" alt=\"Suprathreshold pulse.\" loading=\"lazy\" style=\"max-width:min(100%,420px)\"><figcaption>Suprathreshold pulse.</figcaption></figure>"
+      }
+    },
+    {
+      "id": "T2-C2",
+      "max": 0.6,
+      "title": {
+        "ru": "Пороговая длительность",
+        "en": "Threshold duration"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Заряд до порога",
+            "en": "Charging to threshold"
+          },
+          "body": {
+            "ru": "<p>Критический импульс заканчивается ровно при \\(U=U_{\\rm th}\\). До этого элемент остаётся на нижней ветви, и</p><div>\\[U(t)=U_{\\rm off}+(U_*-U_{\\rm off})e^{-t/\\tau_{\\rm off}}.\\]</div><p>Здесь \\(U_*\\) соответствует источнику \\(12\\,\\mathrm V\\), а \\(U_{\\rm off}\\) — источнику \\(15\\,\\mathrm V\\).</p>",
+            "en": "<p>The critical pulse ends just as \\(U=U_{\\rm th}\\). Until then the element remains on the off branch, with</p><div>\\[U(t)=U_{\\rm off}+(U_*-U_{\\rm off})e^{-t/\\tau_{\\rm off}}.\\]</div><p>Here \\(U_*\\) belongs to the \\(12\\,\\mathrm V\\) supply and \\(U_{\\rm off}\\) to the \\(15\\,\\mathrm V\\) supply.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Момент переключения",
+            "en": "Switching time"
+          },
+          "body": {
+            "ru": "<p>Подставляем \\(U_{\\rm th}=10\\,\\mathrm V\\), \\(U_*=120/13\\,\\mathrm V\\), \\(U_{\\rm off}=150/13\\,\\mathrm V\\) и \\(\\tau_{\\rm off}=30/13\\,\\mu\\mathrm s\\).</p>",
+            "en": "<p>Insert \\(U_{\\rm th}=10\\,\\mathrm V\\), \\(U_*=120/13\\,\\mathrm V\\), \\(U_{\\rm off}=150/13\\,\\mathrm V\\) and \\(\\tau_{\\rm off}=30/13\\,\\mu\\mathrm s\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tau_{\\rm crit}=\\tau_{\\rm off}\\ln\\frac{U_{\\rm off}-U_*}{U_{\\rm off}-U_{\\rm th}}\\simeq0{,}936\\,\\mu\\mathrm s.\\]</div>",
+        "en": "<div>\\[\\tau_{\\rm crit}=\\tau_{\\rm off}\\ln\\frac{U_{\\rm off}-U_*}{U_{\\rm off}-U_{\\rm th}}\\simeq0.936\\,\\mu\\mathrm s.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C3",
+      "max": 0.2,
+      "title": {
+        "ru": "Одиночный отклик",
+        "en": "Single-spike response"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Сравнение с порогом",
+            "en": "Threshold comparison"
+          },
+          "body": {
+            "ru": "<p>Длительность \\(1{,}00\\,\\mu\\mathrm s\\) больше \\(\\tau_{\\rm crit}\\) и меньше периода. Цепь совершает один полный цикл и возвращается в исходное состояние.</p>",
+            "en": "<p>The pulse duration \\(1.00\\,\\mu\\mathrm s\\) exceeds \\(\\tau_{\\rm crit}\\) and is shorter than the period. The circuit completes one cycle and returns to the original state.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Да, в этом режиме цепь работает как нейристор.</p>",
+        "en": "<p>Yes, in this regime the circuit acts as a neuristor.</p>"
+      }
+    }
+  ]
+}

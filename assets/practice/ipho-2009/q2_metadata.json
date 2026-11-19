@@ -1,0 +1,208 @@
+{
+  "id": "T2",
+  "title": "Доплеровское лазерное охлаждение и оптическая патока",
+  "points": 10,
+  "sourceFile": "IPhO_2009_T2_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "sections": [
+    {
+      "id": "T2-1",
+      "points": 0.6,
+      "title": "Поглощение фотона"
+    },
+    {
+      "id": "T2-2",
+      "points": 0.8,
+      "title": "Излучение вдоль −x"
+    },
+    {
+      "id": "T2-3",
+      "points": 0.8,
+      "title": "Излучение вдоль +x"
+    },
+    {
+      "id": "T2-4",
+      "points": 0.8,
+      "title": "Средние величины после излучения"
+    },
+    {
+      "id": "T2-5",
+      "points": 0.4,
+      "title": "Перенос энергии и импульса"
+    },
+    {
+      "id": "T2-6",
+      "points": 0.6,
+      "title": "Попутный лазерный пучок"
+    },
+    {
+      "id": "T2-7",
+      "points": 1.5,
+      "title": "Сила двух пучков"
+    },
+    {
+      "id": "T2-8",
+      "points": 2.5,
+      "title": "Малые скорости"
+    },
+    {
+      "id": "T2-9",
+      "points": 2.0,
+      "title": "Оптическая патока"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-1a",
+      "points": 0.2,
+      "label": "1a"
+    },
+    {
+      "id": "T2-1b",
+      "points": 0.2,
+      "label": "1b"
+    },
+    {
+      "id": "T2-1c",
+      "points": 0.2,
+      "label": "1c"
+    },
+    {
+      "id": "T2-2a",
+      "points": 0.2,
+      "label": "2a"
+    },
+    {
+      "id": "T2-2b",
+      "points": 0.2,
+      "label": "2b"
+    },
+    {
+      "id": "T2-2c",
+      "points": 0.2,
+      "label": "2c"
+    },
+    {
+      "id": "T2-2d",
+      "points": 0.2,
+      "label": "2d"
+    },
+    {
+      "id": "T2-3a",
+      "points": 0.2,
+      "label": "3a"
+    },
+    {
+      "id": "T2-3b",
+      "points": 0.2,
+      "label": "3b"
+    },
+    {
+      "id": "T2-3c",
+      "points": 0.2,
+      "label": "3c"
+    },
+    {
+      "id": "T2-3d",
+      "points": 0.2,
+      "label": "3d"
+    },
+    {
+      "id": "T2-4a",
+      "points": 0.2,
+      "label": "4a"
+    },
+    {
+      "id": "T2-4b",
+      "points": 0.2,
+      "label": "4b"
+    },
+    {
+      "id": "T2-4c",
+      "points": 0.2,
+      "label": "4c"
+    },
+    {
+      "id": "T2-4d",
+      "points": 0.2,
+      "label": "4d"
+    },
+    {
+      "id": "T2-5a",
+      "points": 0.2,
+      "label": "5a"
+    },
+    {
+      "id": "T2-5b",
+      "points": 0.2,
+      "label": "5b"
+    },
+    {
+      "id": "T2-6a",
+      "points": 0.3,
+      "label": "6a"
+    },
+    {
+      "id": "T2-6b",
+      "points": 0.3,
+      "label": "6b"
+    },
+    {
+      "id": "T2-7a",
+      "points": 1.5,
+      "label": "7a"
+    },
+    {
+      "id": "T2-8a",
+      "points": 1.5,
+      "label": "8a"
+    },
+    {
+      "id": "T2-8b",
+      "points": 0.25,
+      "label": "8b"
+    },
+    {
+      "id": "T2-8c",
+      "points": 0.25,
+      "label": "8c"
+    },
+    {
+      "id": "T2-8d",
+      "points": 0.25,
+      "label": "8d"
+    },
+    {
+      "id": "T2-8e",
+      "points": 0.25,
+      "label": "8e"
+    },
+    {
+      "id": "T2-9a",
+      "points": 1.5,
+      "label": "9a"
+    },
+    {
+      "id": "T2-9b",
+      "points": 0.5,
+      "label": "9b"
+    }
+  ],
+  "figures": [
+    "t2-f1",
+    "t2-f2",
+    "t2-f3"
+  ],
+  "solutionData": "/assets/practice/ipho-2009/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2009/IPhO_2009_S2_EN.pdf",
+  "solutionsAvailable": true,
+  "stepScoring": "official-subpart-maxima-editorial-step-weights",
+  "translationStatus": "editorial-adaptation"
+}

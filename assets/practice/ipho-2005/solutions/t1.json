@@ -1,0 +1,408 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Спутник на незапланированной орбите",
+    "en": "An ill-fated satellite"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2005/IPhO_2005_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-1.1",
+      "label": "1.1",
+      "max": 0.3,
+      "title": {
+        "ru": "Радиус орбиты",
+        "en": "Orbital radius"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Период кругового движения",
+            "en": "Period of circular motion"
+          },
+          "body": {
+            "ru": "<p>Из ускорения свободного падения на поверхности Земли находим гравитационный параметр \\(\\mu=GM_T=gR_T^2\\). На круговой орбите тяготение сообщает спутнику центростремительное ускорение. Угловая скорость равна \\(2\\pi/T_0\\), поэтому</p>\n<div>\\[\\frac{\\mu}{r_0^2}=\\left(\\frac{2\\pi}{T_0}\\right)^2r_0 .\\]</div>\n<p>Подставляем \\(T_0=86400\\,\\mathrm{s}\\). Радиус отсчитывается от центра Земли.</p>",
+            "en": "<p>The surface acceleration gives Earth’s gravitational parameter \\(\\mu=GM_T=gR_T^2\\). Gravity supplies the centripetal acceleration in an orbit with angular speed \\(2\\pi/T_0\\), so</p>\n<div>\\[\\frac{\\mu}{r_0^2}=\\left(\\frac{2\\pi}{T_0}\\right)^2r_0 .\\]</div>\n<p>Insert \\(T_0=86400\\,\\mathrm{s}\\). The radius is measured from Earth’s centre.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r_0=\\left(\\frac{g R_T^2 T_0^2}{4\\pi^2}\\right)^{1/3}\\simeq4{,}22\\times10^7\\,\\mathrm{m}.\\]</div>",
+        "en": "<div>\\[r_0=\\left(\\frac{g R_T^2 T_0^2}{4\\pi^2}\\right)^{1/3}\\simeq4.22\\times10^7\\,\\mathrm{m}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.2",
+      "label": "1.2",
+      "max": 0.4,
+      "title": {
+        "ru": "Круговая скорость",
+        "en": "Circular speed"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Скорость из уравнения движения",
+            "en": "Speed from the circular-orbit condition"
+          },
+          "body": {
+            "ru": "<p>Центростремительное ускорение \\(v_0^2/r_0\\) равно \\(\\mu/r_0^2\\). Исключая \\(\\mu\\) через ускорение на поверхности, получаем</p>\n<div>\\[v_0=R_T\\sqrt{\\frac{g}{r_0}} .\\]</div>",
+            "en": "<p>The centripetal acceleration \\(v_0^2/r_0\\) equals \\(\\mu/r_0^2\\). Expressing \\(\\mu\\) in terms of the surface acceleration gives</p>\n<div>\\[v_0=R_T\\sqrt{\\frac{g}{r_0}} .\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Численное значение",
+            "en": "Numerical value"
+          },
+          "body": {
+            "ru": "<p>При \\(r_0=4{,}22\\times10^7\\,\\mathrm{m}\\) скорость составляет около трёх километров в секунду.</p>",
+            "en": "<p>With \\(r_0=4.22\\times10^7\\,\\mathrm{m}\\) the orbital speed is just over three kilometres per second.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_0\\simeq3{,}07\\times10^3\\,\\mathrm{m/s}.\\]</div>",
+        "en": "<div>\\[v_0\\simeq3.07\\times10^3\\,\\mathrm{m/s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.3",
+      "label": "1.3",
+      "max": 0.8,
+      "title": {
+        "ru": "Момент импульса и энергия",
+        "en": "Angular momentum and energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Момент импульса относительно центра Земли",
+            "en": "Angular momentum about Earth’s centre"
+          },
+          "body": {
+            "ru": "<p>Скорость перпендикулярна радиусу, поэтому \\(L_0=mr_0v_0\\). Условие круговой орбиты \\(r_0v_0^2=gR_T^2\\) позволяет исключить \\(r_0\\).</p>\n<div>\\[L_0=\\frac{mgR_T^2}{v_0}.\\]</div>",
+            "en": "<p>The velocity is perpendicular to the radius, so \\(L_0=mr_0v_0\\). The circular-orbit condition \\(r_0v_0^2=gR_T^2\\) eliminates \\(r_0\\).</p>\n<div>\\[L_0=\\frac{mgR_T^2}{v_0}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Кинетическая и потенциальная энергии",
+            "en": "Kinetic and potential energies"
+          },
+          "body": {
+            "ru": "<p>При нуле потенциала на бесконечности потенциальная энергия спутника равна \\(-\\mu m/r_0=-mv_0^2\\). Добавив кинетическую энергию, получаем отрицательную полную энергию связанной орбиты.</p>",
+            "en": "<p>With the potential zero at infinity, the satellite’s potential energy is \\(-\\mu m/r_0=-mv_0^2\\). Adding the kinetic energy gives the negative total energy of the bound orbit.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[L_0=\\frac{mgR_T^2}{v_0},\\qquad E_0=-\\frac12 mv_0^2 .\\]</div>",
+        "en": "<div>\\[L_0=\\frac{mgR_T^2}{v_0},\\qquad E_0=-\\frac12 mv_0^2 .\\]</div>"
+      }
+    },
+    {
+      "id": "T1-2.1",
+      "label": "2.1",
+      "max": 0.9,
+      "title": {
+        "ru": "Параметр орбиты и эксцентриситет",
+        "en": "Semi-latus rectum and eccentricity"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Радиальный импульс сохраняет момент импульса",
+            "en": "A radial impulse preserves angular momentum"
+          },
+          "body": {
+            "ru": "<p>Радиальное приращение скорости не даёт вклада в момент импульса. По обе стороны от импульса \\(L=L_0=mr_0v_0\\). В формуле для фокального параметра используем \\(\\mu=r_0v_0^2\\).</p>\n<div>\\[l=\\frac{L_0^2}{\\mu m^2}=r_0 .\\]</div>",
+            "en": "<p>The radial velocity increment contributes no angular momentum. On either side of the burn \\(L=L_0=mr_0v_0\\). In the semi-latus rectum formula use \\(\\mu=r_0v_0^2\\).</p>\n<div>\\[l=\\frac{L_0^2}{\\mu m^2}=r_0 .\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Энергия задаёт эксцентриситет",
+            "en": "Eccentricity from orbital energy"
+          },
+          "body": {
+            "ru": "<p>Радиальная и касательная скорости взаимно перпендикулярны. Потенциальная энергия за время короткого импульса не меняется, и новая механическая энергия равна</p>\n<div>\\[E=E_0+\\frac12m(\\Delta v)^2=\\frac12mv_0^2(\\beta^2-1).\\]</div>\n<p>Подставляем \\(E\\) и \\(L_0\\) в формулу конического сечения. Выражение под корнем сокращается до \\(\\beta^2\\).</p>",
+            "en": "<p>The radial and tangential velocity components are perpendicular. The short burn leaves the potential energy unchanged, giving the new mechanical energy</p>\n<div>\\[E=E_0+\\frac12m(\\Delta v)^2=\\frac12mv_0^2(\\beta^2-1).\\]</div>\n<p>Substitute \\(E\\) and \\(L_0\\) into the eccentricity formula for a conic. The expression under the square root reduces to \\(\\beta^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[l=r_0,\\qquad \\varepsilon=\\beta .\\]</div>",
+        "en": "<div>\\[l=r_0,\\qquad \\varepsilon=\\beta .\\]</div>"
+      }
+    },
+    {
+      "id": "T1-2.2",
+      "label": "2.2",
+      "max": 1.0,
+      "title": {
+        "ru": "Направление большой оси",
+        "en": "Direction of the major axis"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Положение спутника на новом эллипсе",
+            "en": "Location of the burn on the new ellipse"
+          },
+          "body": {
+            "ru": "<p>В точке импульса \\(r=r_0=l\\). В полярном уравнении орбиты знаменатель в этой точке должен равняться единице.</p>\n<div>\\[1-\\beta\\cos\\theta=1 .\\]</div>\n<p>Так как \\(\\beta&gt;0\\), радиус-вектор перпендикулярен полярной оси. Она совпадает с большой осью эллипса.</p>\n<figure><img src=\"/assets/practice/ipho-2005/q1/ellipse.png\" alt=\"Эллиптическая орбита после радиального импульса.\" loading=\"lazy\" style=\"width:min(100%,330px);height:auto\"><figcaption>Эллиптическая орбита после радиального импульса.</figcaption></figure>",
+            "en": "<p>At the burn the radius is \\(r=r_0=l\\). The denominator in the polar equation must therefore equal one at this point.</p>\n<div>\\[1-\\beta\\cos\\theta=1 .\\]</div>\n<p>Since \\(\\beta&gt;0\\), the radius vector is perpendicular to the polar axis, which is the major axis of the ellipse.</p>\n<figure><img src=\"/assets/practice/ipho-2005/q1/ellipse.png\" alt=\"Elliptical orbit after the radial impulse.\" loading=\"lazy\" style=\"width:min(100%,330px);height:auto\"><figcaption>Elliptical orbit after the radial impulse.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\alpha=\\frac{\\pi}{2}.\\]</div>",
+        "en": "<div>\\[\\alpha=\\frac{\\pi}{2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-2.3",
+      "label": "2.3",
+      "max": 1.2,
+      "title": {
+        "ru": "Перигей и апогей",
+        "en": "Perigee and apogee"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Экстремальные радиусы эллипса",
+            "en": "Extremal radii of the ellipse"
+          },
+          "body": {
+            "ru": "<p>В уравнении \\(r=r_0/(1-\\beta\\cos\\theta)\\) минимальный радиус соответствует наибольшему знаменателю, при \\(\\cos\\theta=-1\\). Для максимального радиуса \\(\\cos\\theta=1\\).</p>\n<div>\\[r_{\\min}=\\frac{r_0}{1+\\beta},\\qquad r_{\\max}=\\frac{r_0}{1-\\beta}.\\]</div>",
+            "en": "<p>In \\(r=r_0/(1-\\beta\\cos\\theta)\\) the smallest radius occurs at the largest denominator, where \\(\\cos\\theta=-1\\). The greatest radius occurs at \\(\\cos\\theta=1\\).</p>\n<div>\\[r_{\\min}=\\frac{r_0}{1+\\beta},\\qquad r_{\\max}=\\frac{r_0}{1-\\beta}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Расстояния при заданном импульсе",
+            "en": "Distances for the specified impulse"
+          },
+          "body": {
+            "ru": "<p>При \\(\\beta=1/4\\) ближайшее и самое далёкое расстояния до центра Земли равны соответственно \\(4r_0/5\\) и \\(4r_0/3\\).</p>",
+            "en": "<p>For \\(\\beta=1/4\\) the nearest and farthest distances from Earth’s centre are \\(4r_0/5\\) and \\(4r_0/3\\), respectively.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r_{\\min}\\simeq3{,}38\\times10^7\\,\\mathrm{m},\\qquad r_{\\max}\\simeq5{,}63\\times10^7\\,\\mathrm{m}.\\]</div>",
+        "en": "<div>\\[r_{\\min}\\simeq3.38\\times10^7\\,\\mathrm{m},\\qquad r_{\\max}\\simeq5.63\\times10^7\\,\\mathrm{m}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-2.4",
+      "label": "2.4",
+      "max": 0.7,
+      "title": {
+        "ru": "Новый период",
+        "en": "New orbital period"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Большая полуось и третий закон Кеплера",
+            "en": "Semi-major axis and Kepler’s third law"
+          },
+          "body": {
+            "ru": "<p>Сумма расстояний в апогее и перигее равна длине большой оси. Полуось новой орбиты равна</p>\n<div>\\[a=\\frac{r_{\\max}+r_{\\min}}{2}=\\frac{r_0}{1-\\beta^2}.\\]</div>\n<p>Для орбит вокруг одной и той же Земли \\(T^2/T_0^2=a^3/r_0^3\\).</p>",
+            "en": "<p>The sum of the apogee and perigee distances is the full major axis. The semi-major axis of the new orbit is</p>\n<div>\\[a=\\frac{r_{\\max}+r_{\\min}}{2}=\\frac{r_0}{1-\\beta^2}.\\]</div>\n<p>For orbits about the same Earth, \\(T^2/T_0^2=a^3/r_0^3\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Период при заданном импульсе",
+            "en": "Period for the specified impulse"
+          },
+          "body": {
+            "ru": "<p>При \\(\\beta=1/4\\) отношение полуосей равно \\(16/15\\). Возводим его в степень \\(3/2\\) и умножаем на исходные 24 часа.</p>",
+            "en": "<p>At \\(\\beta=1/4\\) the ratio of semi-major axes is \\(16/15\\). Raise it to the power \\(3/2\\) and multiply by the original 24-hour period.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T=\\frac{T_0}{(1-\\beta^2)^{3/2}}\\simeq26{,}4\\,\\mathrm{h}.\\]</div>",
+        "en": "<div>\\[T=\\frac{T_0}{(1-\\beta^2)^{3/2}}\\simeq26.4\\,\\mathrm{h}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3.1",
+      "label": "3.1",
+      "max": 0.5,
+      "title": {
+        "ru": "Минимальный импульс ухода",
+        "en": "Minimum escape impulse"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Нулевая энергия на пороге ухода",
+            "en": "Zero orbital energy at the escape threshold"
+          },
+          "body": {
+            "ru": "<p>Предельная незамкнутая орбита достигает бесконечности с нулевой скоростью. Поэтому \\(E=0\\). В выражении \\(E=mv_0^2(\\beta^2-1)/2\\) это условие задаёт величину минимального импульса.</p>",
+            "en": "<p>The limiting unbound orbit reaches infinity with zero speed, so \\(E=0\\). In \\(E=mv_0^2(\\beta^2-1)/2\\) this fixes the magnitude of the smallest escape impulse.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\beta_{\\mathrm{esc}}=1 .\\]</div>",
+        "en": "<div>\\[\\beta_{\\mathrm{esc}}=1 .\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3.2",
+      "label": "3.2",
+      "max": 1.0,
+      "title": {
+        "ru": "Ближайшая точка параболы",
+        "en": "Closest point on the parabola"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Перигей предельной орбиты",
+            "en": "Perigee of the limiting orbit"
+          },
+          "body": {
+            "ru": "<p>При \\(\\beta=1\\) эксцентриситет достигает единицы, а фокальный параметр по-прежнему равен \\(r_0\\). Для этой параболы знаменатель \\(1-\\cos\\theta\\) достигает наибольшего значения 2.</p>",
+            "en": "<p>At \\(\\beta=1\\) the eccentricity reaches unity and the semi-latus rectum is still \\(r_0\\). On this parabola the largest value of the denominator \\(1-\\cos\\theta\\) is two.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r'_{\\min}=\\frac{r_0}{2}.\\]</div>",
+        "en": "<div>\\[r'_{\\min}=\\frac{r_0}{2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-4.1",
+      "label": "4.1",
+      "max": 1.0,
+      "title": {
+        "ru": "Скорость на бесконечности",
+        "en": "Speed at infinity"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Сохранение энергии на уходящей ветви",
+            "en": "Energy conservation on the outgoing branch"
+          },
+          "body": {
+            "ru": "<p>При удалении на бесконечность потенциальная энергия стремится к нулю. Оставшаяся кинетическая энергия равна полной энергии сразу после импульса.</p>\n<div>\\[\\frac12mv_\\infty^2=\\frac12mv_0^2(\\beta^2-1).\\]</div>",
+            "en": "<p>The potential energy tends to zero at infinity. The remaining kinetic energy equals the total energy immediately after the impulse.</p>\n<div>\\[\\frac12mv_\\infty^2=\\frac12mv_0^2(\\beta^2-1).\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_\\infty=v_0\\sqrt{\\beta^2-1}.\\]</div>",
+        "en": "<div>\\[v_\\infty=v_0\\sqrt{\\beta^2-1}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-4.2",
+      "label": "4.2",
+      "max": 1.0,
+      "title": {
+        "ru": "Прицельный параметр",
+        "en": "Impact parameter"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Момент импульса вдоль асимптоты",
+            "en": "Angular momentum along the asymptote"
+          },
+          "body": {
+            "ru": "<p>Вдали от Земли траектория приближается к прямой на расстоянии \\(b\\) от её центра. Это плечо асимптотического импульса \\(mv_\\infty\\). Момент импульса относительно центра Земли сохраняется.</p>\n<div>\\[mbv_\\infty=mr_0v_0 .\\]</div>",
+            "en": "<p>Far from Earth the path approaches a line whose perpendicular distance from the centre is \\(b\\). This is the lever arm of the asymptotic momentum \\(mv_\\infty\\). Angular momentum about Earth’s centre is conserved.</p>\n<div>\\[mbv_\\infty=mr_0v_0 .\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[b=\\frac{r_0}{\\sqrt{\\beta^2-1}}.\\]</div>",
+        "en": "<div>\\[b=\\frac{r_0}{\\sqrt{\\beta^2-1}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-4.3",
+      "label": "4.3",
+      "max": 1.2,
+      "title": {
+        "ru": "Угол асимптоты",
+        "en": "Asymptotic angle"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Направление асимптоты",
+            "en": "Direction of the asymptote"
+          },
+          "body": {
+            "ru": "<p>При \\(r\\to\\infty\\) знаменатель полярного уравнения стремится к нулю. Острый угол между уходящей асимптотой и осью гиперболы определяется равенством</p>\n<div>\\[\\cos\\theta_\\infty=\\frac{1}{\\beta}.\\]</div>\n<p>Ось гиперболы перпендикулярна радиус-вектору в точке импульса. По обозначениям F-2 угол \\(\\phi\\) больше \\(\\theta_\\infty\\) на прямой угол.</p>\n<figure><img src=\"/assets/practice/ipho-2005/q1/hyperbola.png\" alt=\"Гиперболическая орбита и направление её асимптоты.\" loading=\"lazy\" style=\"width:min(100%,330px);height:auto\"><figcaption>Гиперболическая орбита и направление её асимптоты.</figcaption></figure>",
+            "en": "<p>As \\(r\\to\\infty\\) the denominator of the polar equation approaches zero. The acute angle between the outgoing asymptote and the hyperbola axis satisfies</p>\n<div>\\[\\cos\\theta_\\infty=\\frac{1}{\\beta}.\\]</div>\n<p>The hyperbola axis is perpendicular to the radius at the burn. With the angle convention of F-2, \\(\\phi\\) exceeds \\(\\theta_\\infty\\) by one right angle.</p>\n<figure><img src=\"/assets/practice/ipho-2005/q1/hyperbola.png\" alt=\"Hyperbolic orbit and direction of its asymptote.\" loading=\"lazy\" style=\"width:min(100%,330px);height:auto\"><figcaption>Hyperbolic orbit and direction of its asymptote.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Угол при полутора пороговых импульсах",
+            "en": "Angle at one and a half times the escape impulse"
+          },
+          "body": {
+            "ru": "<p>При \\(\\beta=3/2\\) косинус острого угла равен \\(2/3\\). Тогда \\(\\phi=90^\\circ+\\arccos(2/3)\\).</p>",
+            "en": "<p>For \\(\\beta=3/2\\) the acute angle has cosine \\(2/3\\). Add \\(90^\\circ\\) to that angle.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\phi=\\frac{\\pi}{2}+\\arccos\\frac{1}{\\beta}\\simeq138^\\circ\\simeq2{,}41\\,\\mathrm{rad}.\\]</div>",
+        "en": "<div>\\[\\phi=\\frac{\\pi}{2}+\\arccos\\frac{1}{\\beta}\\simeq138^\\circ\\simeq2.41\\,\\mathrm{rad}.\\]</div>"
+      }
+    }
+  ],
+  "markingSchemePdf": "/assets/practice/ipho-2005/IPhO_2005_M1_EN.pdf"
+}

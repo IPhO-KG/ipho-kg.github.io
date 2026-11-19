@@ -1,0 +1,35 @@
+<article class="exam-problem" id="T3" lang="en">
+<h2>Question T3 [10 points]. Physics of Live Systems</h2>
+<p>Normal atmospheric pressure is \(1.013\times10^5\,\mathrm{Pa}=760\,\mathrm{mmHg}\).</p>
+<section id="T3-A">
+<h3>T3-A [4.5 points]. The physics of blood flow</h3>
+<p>For steady laminar flow of an incompressible fluid through a rigid cylindrical tube, the pressure drop \(\Delta P\) and volume flow rate \(Q\) obey Poiseuille’s law. For length \(\ell\), radius \(r\) and viscosity \(\eta\),</p>
+<div>\[\Delta P=RQ,\qquad R=\frac{8\ell\eta}{\pi r^4}.\]</div>
+<p>The hydraulic resistance \(R\) plays the part of electrical resistance if current represents flow and voltage represents pressure drop. This model estimates blood flow while neglecting pulsation and wall elasticity.</p>
+<p>Consider a symmetric network of arterioles. Each vessel bifurcates into two identical vessels of the next level. Levels run from \(0\) to \(N-1\). The radii and lengths scale as \(r_{i+1}=2^{-1/3}r_i\) and \(\ell_{i+1}=2^{-1/3}\ell_i\).</p>
+<figure><img src="/assets/practice/ipho-2018/q3/tree.png" alt="Fig. 1. Arteriole network between the inlet and the capillary bed." style="width:min(100%,420px);height:auto" loading="lazy"><figcaption>Fig. 1. Arteriole network between the inlet and the capillary bed.</figcaption></figure>
+<div class="exam-question" id="T3-A1" data-points="1.3"><p><strong>T3-A1 [1.3 points].</strong> Express the flow \(Q_i\) through one level-\(i\) vessel using \(N,\eta,r_0,\ell_0\) and the difference \(\Delta P=P_0-P_{\mathrm{cap}}\) between the inlet pressure and the pressure of the capillary bed.</p></div>
+<div class="exam-question" id="T3-A2" data-points="0.5"><p><strong>T3-A2 [0.5 points].</strong> For a network with \(N=6\), \(r_0=6.0\times10^{-5}\,\mathrm m\), \(\ell_0=2.0\times10^{-3}\,\mathrm m\) and \(\eta=3.5\times10^{-3}\,\mathrm{kg\,m^{-1}s^{-1}}\), find \(Q_0\) in millilitres per hour. The inlet and outlet pressures are \(55\,\mathrm{mmHg}\) and \(30\,\mathrm{mmHg}\).</p></div>
+<p>Pressure pulses are appreciable in large vessels and much weaker in small ones. An expanding vessel stores fluid, modelled by a capacitance \(C\). The fluid’s inertia provides an inductance \(L\). For a vessel of wall thickness \(h\) and wall Young’s modulus \(E\),</p>
+<div>\[C=\frac{3\ell\pi r^3}{2Eh},\qquad L=\frac{9\ell\rho}{4\pi r^2}.\]</div>
+<p>Use blood density \(\rho=1.05\times10^3\,\mathrm{kg/m^3}\) and arteriole modulus \(E=0.06\,\mathrm{MPa}\). Figure 2 specifies the circuit.</p>
+<figure><img src="/assets/practice/ipho-2018/q3/circuit.png" alt="Fig. 2. Electrical model of a single vessel." style="width:min(100%,420px);height:auto" loading="lazy"><figcaption>Fig. 2. Electrical model of a single vessel.</figcaption></figure>
+<div class="exam-question" id="T3-A3" data-points="2"><p><strong>T3-A3 [2 points].</strong> For steady oscillations of angular frequency \(\omega\), express the outlet pressure amplitude \(P_{\mathrm{out}}\) using \(P_{\mathrm{in}},R,L,C\). Determine the condition on \(\eta,\rho,E,h,r,\ell\) for attenuation at low frequency.</p></div>
+<div class="exam-question" id="T3-A4" data-points="0.7"><p><strong>T3-A4 [0.7 points].</strong> Estimate the largest uniform wall thickness for which every vessel in the network of A2 satisfies the condition in A3.</p></div>
+</section>
+<section id="T3-B">
+<h3>T3-B [5.5 points]. Tumour growth</h3>
+<p>An inextensible membrane confines tissue to a sphere of fixed radius \(R\) and volume \(V\). Initially it is filled with normal tissue at atmospheric pressure. A spherical tumour of radius \(R_{\mathrm{T}}\) then grows at the centre, compressing the surrounding tissue.</p>
+<figure><img src="/assets/practice/ipho-2018/q3/tissue.png" alt="Fig. 3. Two concentric tissue regions in the model." style="width:min(100%,240px);height:auto" loading="lazy"><figcaption>Fig. 3. Two concentric tissue regions in the model.</figcaption></figure>
+<p>Let \(p\) be the common pressure above atmospheric pressure. The normal tissue and tumour share the same unstressed density \(\rho_0\). Their densities under compression are</p>
+<div>\[\rho_{\mathrm{N}}=\rho_0\left(1+\frac{p}{K_{\mathrm{N}}}\right),\qquad \rho_{\mathrm{T}}=\rho_0\left(1+\frac{p}{K_{\mathrm{T}}}\right),\]</div>
+<p>where \(K_{\mathrm{N}},K_{\mathrm{T}}\) are their respective bulk moduli.</p>
+<div class="exam-question" id="T3-B1" data-points="1"><p><strong>T3-B1 [1 point].</strong> The normal tissue mass \(M_{\mathrm{N}}\) remains fixed. Express the tumour volume fraction \(v=V_{\mathrm{T}}/V\) in terms of \(\mu=M_{\mathrm{T}}/M_{\mathrm{N}}\) and \(\kappa=K_{\mathrm{N}}/K_{\mathrm{T}}\).</p></div>
+<p>In the thermal model, near-infrared-absorbing nanotubes are uniformly distributed throughout the tumour. They release thermal power \(\mathcal P\) per unit volume, with no heat sources outside the tumour. Thermal conductivity \(k\) is constant and the same in all regions. The outward heat flux density is \(-k\,dT/dr\). Far away, the temperature is \(T_b=37\,^\circ\mathrm C\).</p>
+<div class="exam-question" id="T3-B2" data-points="1.7"><p><strong>T3-B2 [1.7 points].</strong> In the steady state, express the central tumour temperature in terms of \(\mathcal P,k,T_b\) and \(R_{\mathrm{T}}\).</p></div>
+<div class="exam-question" id="T3-B3" data-points="0.5"><p><strong>T3-B3 [0.5 points].</strong> The tumour radius is \(5.0\,\mathrm{cm}\) and \(k=0.60\,\mathrm{W\,m^{-1}K^{-1}}\). Find the minimum heating power per unit volume needed to bring the entire tumour above \(43.0\,^\circ\mathrm C\).</p></div>
+<p>The tumour is supplied by a network of the type in A1. For \(p&gt;P_{\mathrm{cap}}\) only the narrowest vessels, at level \(N-1\), undergo a positive radius reduction \(\delta r\). At the critical pressure \(p_c\) the reduction is \(\delta r_c\) and the vessels collapse. Use the model relation</p>
+<div>\[\frac{p}{P_{\mathrm{cap}}}-1=\left(\frac{p_c}{P_{\mathrm{cap}}}-1\right)\left(2-\frac{\delta r}{\delta r_c}\right)\frac{\delta r}{\delta r_c}.\]</div>
+<div class="exam-question" id="T3-B4" data-points="2.3"><p><strong>T3-B4 [2.3 points].</strong> To first order in \(p-P_{\mathrm{cap}}\) express the relative change in flow \(\delta Q_{N-1}/Q_{N-1}\) using \(v,K_{\mathrm{N}},N,p_c,\delta r_c,r_{N-1}\) and \(P_{\mathrm{cap}}\).</p></div>
+</section>
+</article>

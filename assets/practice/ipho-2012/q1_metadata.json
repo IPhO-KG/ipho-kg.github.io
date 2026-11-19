@@ -1,0 +1,85 @@
+{
+  "id": "T1",
+  "title": "Физика в эскизах",
+  "points": 13.0,
+  "sourceFile": "IPhO_2012_T1_EN.pdf",
+  "sourcePdf": "/assets/practice/ipho-2012/IPhO_2012_T1_EN.pdf",
+  "sections": [
+    {
+      "id": "T1-A",
+      "title": "Полёт мяча",
+      "points": 4.5
+    },
+    {
+      "id": "T1-B",
+      "title": "Обтекание крыла",
+      "points": 4.0
+    },
+    {
+      "id": "T1-C",
+      "title": "Магнитные трубки",
+      "points": 4.5
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T1-A1",
+      "label": "A-i",
+      "points": 0.8
+    },
+    {
+      "id": "T1-A2",
+      "label": "A-ii",
+      "points": 1.2
+    },
+    {
+      "id": "T1-A3",
+      "label": "A-iii",
+      "points": 2.5
+    },
+    {
+      "id": "T1-B1",
+      "label": "B-i",
+      "points": 0.8
+    },
+    {
+      "id": "T1-B2",
+      "label": "B-ii",
+      "points": 1.2
+    },
+    {
+      "id": "T1-B3",
+      "label": "B-iii",
+      "points": 2.0
+    },
+    {
+      "id": "T1-C1",
+      "label": "C-i",
+      "points": 0.8
+    },
+    {
+      "id": "T1-C2",
+      "label": "C-ii",
+      "points": 1.2
+    },
+    {
+      "id": "T1-C3",
+      "label": "C-iii",
+      "points": 2.5
+    }
+  ],
+  "figures": [
+    "/assets/practice/ipho-2012/figures/q1f2.png",
+    "/assets/practice/ipho-2012/figures/q1f1.jpg",
+    "/assets/practice/ipho-2012/figures/q1f3.png",
+    "/assets/practice/ipho-2012/figures/q1f4.png",
+    "/assets/practice/ipho-2012/figures/blank.png",
+    "/assets/practice/ipho-2012/figures/q1f5.png"
+  ],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "official-criteria-grouped",
+  "solutionData": "/assets/practice/ipho-2012/solutions/t1.json",
+  "solutionPdf": "/assets/practice/ipho-2012/IPhO_2012_S1_EN.pdf"
+}

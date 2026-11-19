@@ -1,0 +1,465 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Частицы и волны",
+    "en": "Particles and waves"
+  },
+  "max": 10,
+  "parts": [
+    {
+      "id": "T3-A1",
+      "title": {
+        "ru": "Основное состояние",
+        "en": "Ground state"
+      },
+      "max": 0.4,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.4,
+          "label": {
+            "ru": "Основное состояние",
+            "en": "Ground state"
+          },
+          "body": {
+            "ru": "<p>Самая длинная допустимая волна имеет одну полуволну между стенками, поэтому \\(\\lambda=2L\\). Подстановка \\(p=h/\\lambda\\) в кинетическую энергию даёт основной уровень.</p>",
+            "en": "<p>The longest permitted wave fits just half a wavelength between the walls, hence \\(\\lambda=2L\\). Use \\(p=h/\\lambda\\) in the kinetic-energy expression.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E_{\\min}=\\frac{h^2}{8mL^2}.\\]</div>",
+        "en": "<div>\\[E_{\\min}=\\frac{h^2}{8mL^2}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-A2",
+      "title": {
+        "ru": "Спектр энергий",
+        "en": "Energy spectrum"
+      },
+      "max": 0.6,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.6,
+          "label": {
+            "ru": "Спектр энергий",
+            "en": "Energy spectrum"
+          },
+          "body": {
+            "ru": "<p>При \\(n\\) полуволнах \\(\\lambda_n=2L/n\\) и \\(p_n=nh/(2L)\\). Масса частицы одинакова для всех мод, поэтому энергия растёт как \\(n^2\\).</p>",
+            "en": "<p>Fitting \\(n\\) half-waves gives \\(\\lambda_n=2L/n\\) and \\(p_n=nh/(2L)\\). The energy scales with the square of this momentum.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E_n=\\frac{n^2h^2}{8mL^2}.\\]</div>",
+        "en": "<div>\\[E_n=\\frac{n^2h^2}{8mL^2}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-A3",
+      "title": {
+        "ru": "Линия перехода",
+        "en": "Transition wavelength"
+      },
+      "max": 0.4,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.4,
+          "label": {
+            "ru": "Линия перехода",
+            "en": "Transition wavelength"
+          },
+          "body": {
+            "ru": "<p>Разность энергий \\(E_2-E_1=3E_1\\) целиком переходит в энергию фотона \\(hc/\\lambda_{21}\\).</p>",
+            "en": "<p>The energy released is \\(E_2-E_1=3E_1\\). Equating this to the photon energy \\(hc/\\lambda_{21}\\) fixes its wavelength.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\lambda_{21}=\\frac{8mcL^2}{3h}.\\]</div>",
+        "en": "<div>\\[\\lambda_{21}=\\frac{8mcL^2}{3h}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-B1",
+      "title": {
+        "ru": "Край поглощения Cy5",
+        "en": "Cy5 absorption edge"
+      },
+      "max": 0.8,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.8,
+          "label": {
+            "ru": "Край поглощения Cy5",
+            "en": "Cy5 absorption edge"
+          },
+          "body": {
+            "ru": "<p>Десять электронов заполняют уровни 1–5 попарно. Наименьшая допустимая энергия возбуждения соответствует переходу \\(5\\to6\\). По формуле A2 \\(hc/\\lambda=(36-25)h^2/(8m_eL^2)\\).</p>",
+            "en": "<p>Ten electrons fill orbitals 1 through 5 in pairs. The smallest allowed promotion is \\(5\\to6\\). A2 therefore gives \\(hc/\\lambda=(36-25)h^2/(8m_eL^2)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\lambda_{\\mathrm{Cy5}}=\\frac{882}{11}\\frac{m_ec\\,l^2}{h}\\simeq647\\,\\mathrm{nm}.\\]</div>",
+        "en": "<div>\\[\\lambda_{\\mathrm{Cy5}}=\\frac{882}{11}\\frac{m_ec\\,l^2}{h}\\simeq647\\,\\mathrm{nm}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-B2",
+      "title": {
+        "ru": "Сдвиг спектра Cy3",
+        "en": "Cy3 spectral shift"
+      },
+      "max": 0.4,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.4,
+          "label": {
+            "ru": "Сдвиг спектра Cy3",
+            "en": "Cy3 spectral shift"
+          },
+          "body": {
+            "ru": "<p>Восемь электронов заполняют четыре уровня ямы ширины \\(8{,}5l\\). Для перехода \\(4\\to5\\) получаем \\(\\lambda_{\\mathrm{Cy3}}=8m_ec(8{,}5l)^2/(9h)\\simeq518\\,\\mathrm{nm}\\). Увеличение промежутка между уровнями сдвигает поглощение в синюю сторону.</p>",
+            "en": "<p>Eight electrons fill four levels of a box of length \\(8.5l\\). The \\(4\\to5\\) transition gives \\(\\lambda_{\\mathrm{Cy3}}=8m_ec(8.5l)^2/(9h)\\simeq518\\,\\mathrm{nm}\\). The larger gap shifts absorption toward the blue.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\lambda_{\\mathrm{Cy5}}-\\lambda_{\\mathrm{Cy3}}\\simeq129\\,\\mathrm{nm}.\\]</div>",
+        "en": "<div>\\[\\lambda_{\\mathrm{Cy5}}-\\lambda_{\\mathrm{Cy3}}\\simeq129\\,\\mathrm{nm}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-B3",
+      "title": {
+        "ru": "Спонтанное излучение",
+        "en": "Spontaneous emission"
+      },
+      "max": 0.7,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.7,
+          "label": {
+            "ru": "Спонтанное излучение",
+            "en": "Spontaneous emission"
+          },
+          "body": {
+            "ru": "<p>Кулоновская комбинация \\(d^2/\\varepsilon_0\\) имеет размерность энергии, умноженной на объём. После деления на \\(h\\) остаётся объём в единицу времени. Деление на \\(\\lambda^3\\) даёт требуемую размерность скорости распада.</p>",
+            "en": "<p>The Coulomb combination \\(d^2/\\varepsilon_0\\) has units of energy times volume. Dividing by \\(h\\) leaves volume per time. The remaining factor \\(\\lambda^{-3}\\) produces a rate.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[K=\\frac{16\\pi^3d^2}{3\\varepsilon_0h\\lambda^3}.\\]</div>",
+        "en": "<div>\\[K=\\frac{16\\pi^3d^2}{3\\varepsilon_0h\\lambda^3}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-B4",
+      "title": {
+        "ru": "Время жизни",
+        "en": "Fluorescence lifetime"
+      },
+      "max": 0.2,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.2,
+          "label": {
+            "ru": "Время жизни",
+            "en": "Fluorescence lifetime"
+          },
+          "body": {
+            "ru": "<p>При постоянной вероятности перехода в единицу времени \\(N(t)=N(0)e^{-Kt}\\). Среднее время равно \\(1/K\\). Подставляем \\(\\lambda=647\\,\\mathrm{nm}\\) и \\(d=2{,}4e(140\\,\\mathrm{pm})\\).</p>",
+            "en": "<p>A constant decay rate gives \\(N(t)=N(0)e^{-Kt}\\) and mean lifetime \\(1/K\\). Insert \\(\\lambda=647\\,\\mathrm{nm}\\) and \\(d=2.4e(140\\,\\mathrm{pm})\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tau_{\\mathrm{Cy5}}=\\frac{3\\varepsilon_0h\\lambda^3}{16\\pi^3d^2}\\simeq3{,}3\\,\\mathrm{ns}.\\]</div>",
+        "en": "<div>\\[\\tau_{\\mathrm{Cy5}}=\\frac{3\\varepsilon_0h\\lambda^3}{16\\pi^3d^2}\\simeq3.3\\,\\mathrm{ns}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-C1",
+      "title": {
+        "ru": "Тепловая длина волны",
+        "en": "Thermal wavelength"
+      },
+      "max": 0.4,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.4,
+          "label": {
+            "ru": "Тепловая длина волны",
+            "en": "Thermal wavelength"
+          },
+          "body": {
+            "ru": "<p>Три поступательные степени свободы дают \\(m\\langle v^2\\rangle/2=3k_BT/2\\). Поэтому берём именно \\(p=m\\sqrt{\\langle v^2\\rangle}\\) и затем \\(\\lambda_{\\mathrm{dB}}=h/p\\).</p>",
+            "en": "<p>Three translational degrees of freedom give \\(m\\langle v^2\\rangle/2=3k_BT/2\\). Use the rms momentum \\(p=m\\sqrt{\\langle v^2\\rangle}\\) in the de Broglie relation.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p=\\sqrt{3mk_BT},\\qquad \\lambda_{\\mathrm{dB}}=\\frac{h}{\\sqrt{3mk_BT}}.\\]</div>",
+        "en": "<div>\\[p=\\sqrt{3mk_BT},\\qquad \\lambda_{\\mathrm{dB}}=\\frac{h}{\\sqrt{3mk_BT}}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-C2",
+      "title": {
+        "ru": "Порог конденсации",
+        "en": "Condensation threshold"
+      },
+      "max": 0.5,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Порог конденсации",
+            "en": "Condensation threshold"
+          },
+          "body": {
+            "ru": "<p>На один атом приходится объём \\(1/n\\), поэтому \\(\\ell\\simeq n^{-1/3}\\). Условие перекрытия волн имеет вид \\(h/\\sqrt{3mk_BT_c}=n^{-1/3}\\).</p>",
+            "en": "<p>One atom occupies volume \\(1/n\\), hence \\(\\ell\\simeq n^{-1/3}\\). Wave overlap begins when \\(h/\\sqrt{3mk_BT_c}=n^{-1/3}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\ell\\simeq n^{-1/3},\\qquad T_c\\simeq\\frac{h^2n^{2/3}}{3mk_B}.\\]</div>",
+        "en": "<div>\\[\\ell\\simeq n^{-1/3},\\qquad T_c\\simeq\\frac{h^2n^{2/3}}{3mk_B}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-C3",
+      "title": {
+        "ru": "Численная плотность газа",
+        "en": "Number density of the gas"
+      },
+      "max": 0.6,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.6,
+          "label": {
+            "ru": "Численная плотность газа",
+            "en": "Number density of the gas"
+          },
+          "body": {
+            "ru": "<p>Обратим зависимость из C2: \\(n_c=(3mk_BT_c)^{3/2}/h^3\\). Для обычного газа \\(p_0=n_0k_BT_0\\). Первая оценка использует квантовое условие, вторая — уравнение состояния.</p>",
+            "en": "<p>Invert C2 to get \\(n_c=(3mk_BT_c)^{3/2}/h^3\\). For the reference gas use \\(p_0=n_0k_BT_0\\). Both expressions give particle count per unit volume.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[n_c\\simeq1{,}59\\times10^{18}\\,\\mathrm{m^{-3}},\\quad n_0\\simeq2{,}41\\times10^{25}\\,\\mathrm{m^{-3}},\\quad n_0/n_c\\simeq1{,}5\\times10^7.\\]</div>",
+        "en": "<div>\\[n_c\\simeq1.59\\times10^{18}\\,\\mathrm{m^{-3}},\\quad n_0\\simeq2.41\\times10^{25}\\,\\mathrm{m^{-3}},\\quad n_0/n_c\\simeq1.5\\times10^7.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-D1",
+      "title": {
+        "ru": "Интерференционный потенциал",
+        "en": "Interference potential"
+      },
+      "max": 1.4,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.4,
+          "label": {
+            "ru": "Интерференционный потенциал",
+            "en": "Interference potential"
+          },
+          "body": {
+            "ru": "<p>У каждого луча \\(\\langle E_i^2\\rangle=E_0^2/2\\). Для каждой пары после усреднения по времени в \\(2E_iE_j\\) остаётся косинус разности пространственных фаз. Поэтому подходят три разностных вектора \\(\\mathbf k_2-\\mathbf k_3\\), \\(\\mathbf k_3-\\mathbf k_1\\), \\(\\mathbf k_1-\\mathbf k_2\\).</p>",
+            "en": "<p>Each diagonal contribution averages to \\(E_0^2/2\\). Each cross term \\(2E_iE_j\\) retains one cosine of the spatial phase difference. Choose \\(\\mathbf b_i\\) as \\(\\mathbf k_2-\\mathbf k_3\\), \\(\\mathbf k_3-\\mathbf k_1\\), \\(\\mathbf k_1-\\mathbf k_2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V(\\mathbf r)=-\\alpha E_0^2\\left[\\frac32+\\sum_{i=1}^3\\cos(\\mathbf b_i\\cdot\\mathbf r)\\right].\\]</div>",
+        "en": "<div>\\[V(\\mathbf r)=-\\alpha E_0^2\\left[\\frac32+\\sum_{i=1}^3\\cos(\\mathbf b_i\\cdot\\mathbf r)\\right].\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-D2",
+      "title": {
+        "ru": "Симметрия решётки",
+        "en": "Lattice symmetry"
+      },
+      "max": 0.5,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Симметрия решётки",
+            "en": "Lattice symmetry"
+          },
+          "body": {
+            "ru": "<p>Шесть направлений \\(\\pm\\mathbf b_i\\) образуют правильный шестиугольник. При повороте три косинуса лишь переставляются, поскольку замена \\(\\mathbf b_i\\) на \\(-\\mathbf b_i\\) сохраняет косинус.</p>",
+            "en": "<p>The six directions \\(\\pm\\mathbf b_i\\) form a regular hexagon. A rotation permutes the three cosine terms, with possible sign reversals of their arguments. Cosine is even.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V(\\mathcal R_{\\pi/3}\\mathbf r)=V(\\mathbf r).\\]</div>",
+        "en": "<div>\\[V(\\mathcal R_{\\pi/3}\\mathbf r)=V(\\mathbf r).\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-D3",
+      "title": {
+        "ru": "Экстремумы на осях",
+        "en": "Extrema along the axes"
+      },
+      "max": 1.2,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.2,
+          "label": {
+            "ru": "Экстремумы на осях",
+            "en": "Extrema along the axes"
+          },
+          "body": {
+            "ru": "<p>Положим \\(k=2\\pi/\\lambda_{\\mathrm{las}}\\), \\(U=\\alpha E_0^2\\), \\(u=3kx/2\\), \\(\\phi=\\sqrt3ky/2\\). Сложение фаз пар лучей на осях даёт</p><div>\\[V_X=-U(5/2+2\\cos u),\\qquad V_Y=-U(3/2+\\cos2\\phi+2\\cos\\phi).\\]</div><p>Для \\(V_Y\\) условие стационарности имеет вид \\(\\sin\\phi(2\\cos\\phi+1)=0\\). Подстановка в каждую функцию различает максимумы и минимумы. Все фазы ниже приводятся по модулю \\(2\\pi\\).</p>",
+            "en": "<p>Put \\(k=2\\pi/\\lambda_{\\mathrm{las}}\\), \\(U=\\alpha E_0^2\\), \\(u=3kx/2\\), \\(\\phi=\\sqrt3ky/2\\). Projecting the three beat phases onto each axis gives</p><div>\\[V_X=-U(5/2+2\\cos u),\\qquad V_Y=-U(3/2+\\cos2\\phi+2\\cos\\phi).\\]</div><p>For \\(V_Y\\) stationarity reduces to \\(\\sin\\phi(2\\cos\\phi+1)=0\\). Substitution classifies each point. All phases below are modulo \\(2\\pi\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>\\(V_X\\): минимум \\(u=0\\), максимум \\(u=\\pi\\). \\(V_Y\\): минимумы \\(\\phi=0,\\pi\\), максимумы \\(\\phi=2\\pi/3,4\\pi/3\\).</p>",
+        "en": "<p>\\(V_X\\): minimum at \\(u=0\\) and maximum at \\(u=\\pi\\). \\(V_Y\\): minima at \\(\\phi=0,\\pi\\) and maxima at \\(\\phi=2\\pi/3,4\\pi/3\\).</p>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-D4",
+      "title": {
+        "ru": "Ближайшие узлы",
+        "en": "Nearest sites"
+      },
+      "max": 0.8,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.8,
+          "label": {
+            "ru": "Ближайшие узлы",
+            "en": "Nearest sites"
+          },
+          "body": {
+            "ru": "<p>Абсолютный минимум достигается при совпадении фаз: каждый косинус в D1 равен единице. Если \\(\\phi=\\pi\\) на оси \\(y\\), два косинуса равны минус единице, и малое отклонение по \\(x\\) понижает потенциал. Это седло. Ближайшее совпадение фаз вдоль \\(+x\\) отвечает \\(u=2\\pi\\). Ещё пять равноправных точек получаются поворотами на \\(60^\\circ\\).</p>",
+            "en": "<p>All three cosines must equal one for a global minimum. At \\(\\phi=\\pi\\) on the \\(y\\) axis two are negative and displacement along \\(x\\) lowers the potential, identifying a saddle. Along \\(+x\\) the first new phase coincidence has \\(u=2\\pi\\). Rotating this nearest site in \\(60^\\circ\\) steps gives its five partners.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[a=\\frac{4\\pi}{3k}=\\frac{2\\lambda_{\\mathrm{las}}}3,\\qquad \\mathbf r_j=a\\big(\\cos(j\\pi/3),\\sin(j\\pi/3)\\big),\\quad j=0,\\ldots,5.\\]</div>",
+        "en": "<div>\\[a=\\frac{4\\pi}{3k}=\\frac{2\\lambda_{\\mathrm{las}}}3,\\qquad \\mathbf r_j=a\\big(\\cos(j\\pi/3),\\sin(j\\pi/3)\\big),\\quad j=0,\\ldots,5.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T3-D5",
+      "title": {
+        "ru": "Размер ридберговского атома",
+        "en": "Rydberg radius"
+      },
+      "max": 1.1,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.1,
+          "label": {
+            "ru": "Размер ридберговского атома",
+            "en": "Rydberg radius"
+          },
+          "body": {
+            "ru": "<p>За пределами атомного остова эффективный заряд равен \\(+e\\). Подставим \\(m_evr=n\\hbar\\) в уравнение круговой орбиты \\(m_ev^2/r=e^2/(4\\pi\\varepsilon_0r^2)\\). Получаем \\(r=a_0n^2\\), где \\(a_0=4\\pi\\varepsilon_0\\hbar^2/(m_e e^2)\\) — боровский радиус.</p>",
+            "en": "<p>At large radii the core has net charge \\(+e\\). Eliminate \\(v\\) between \\(m_evr=n\\hbar\\) and \\(m_ev^2/r=e^2/(4\\pi\\varepsilon_0r^2)\\). This yields \\(r=a_0n^2\\) with the Bohr radius \\(a_0=4\\pi\\varepsilon_0\\hbar^2/(m_ee^2)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[n=\\frac{e}{\\hbar}\\sqrt{\\frac{m_e\\lambda_{\\mathrm{las}}}{4\\pi\\varepsilon_0}}\\simeq85.\\]</div>",
+        "en": "<div>\\[n=\\frac{e}{\\hbar}\\sqrt{\\frac{m_e\\lambda_{\\mathrm{las}}}{4\\pi\\varepsilon_0}}\\simeq85.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    }
+  ],
+  "sourcePdf": "/assets/practice/ipho-2021/IPhO_2021_S3_EN.pdf",
+  "notes": {
+    "ru": [],
+    "en": []
+  }
+}

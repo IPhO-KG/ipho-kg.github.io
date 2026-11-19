@@ -1,0 +1,255 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Физика планет",
+    "en": "Planetary physics"
+  },
+  "max": 10,
+  "parts": [
+    {
+      "id": "T1-A1",
+      "title": {
+        "ru": "Сила на перегородку",
+        "en": "Force on the partition"
+      },
+      "max": 0.8,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.8,
+          "label": {
+            "ru": "Сила на перегородку",
+            "en": "Force on the partition"
+          },
+          "body": {
+            "ru": "<p>На уровне нижнего края давления равны, поэтому высота столба масла \\(H=\\rho_0h/\\rho_{\\mathrm{oil}}\\). Эпюра избыточного давления на каждой стороне треугольная. У обоих треугольников одна максимальная ордината \\(\\rho_0gh\\), но со стороны масла высота больше. Разность интегралов давления равна \\(w\\rho_0gh(H-h)/2\\) и направлена вправо.</p>",
+            "en": "<p>At the bottom edge hydrostatic balance fixes the oil height to \\(H=\\rho_0h/\\rho_{\\mathrm{oil}}\\). The two gauge-pressure diagrams are triangles with the same maximum pressure \\(\\rho_0gh\\). The oil triangle extends over a greater height. Its excess area times \\(w\\) gives a rightward force \\(w\\rho_0gh(H-h)/2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_x=+\\frac{\\rho_0gwh^2}{2}\\left(\\frac{\\rho_0}{\\rho_{\\mathrm{oil}}}-1\\right).\\]</div>",
+        "en": "<div>\\[F_x=+\\frac{\\rho_0gwh^2}{2}\\left(\\frac{\\rho_0}{\\rho_{\\mathrm{oil}}}-1\\right).\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T1-A2",
+      "title": {
+        "ru": "Температура и плотность",
+        "en": "Thermal density change"
+      },
+      "max": 0.6,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.6,
+          "label": {
+            "ru": "Температура и плотность",
+            "en": "Thermal density change"
+          },
+          "body": {
+            "ru": "<p>Обозначим относительное охлаждение через \\(u=(T_1-T)/(T_1-T_0)\\). Каждое ребро малого куба уменьшается в \\(1-k_lu\\) раз. Его масса постоянна, поэтому \\(\\rho/\\rho_1=(1-k_lu)^{-3}\\). Разложение обратного куба даёт множитель три.</p>",
+            "en": "<p>Put \\(u=(T_1-T)/(T_1-T_0)\\). Each edge of a small cube scales by \\(1-k_lu\\). Conservation of its mass gives \\(\\rho/\\rho_1=(1-k_lu)^{-3}\\). The inverse cube supplies the factor three.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\rho\\simeq\\rho_1\\left(1+3k_l\\frac{T_1-T}{T_1-T_0}\\right),\\qquad k=3k_l.\\]</div>",
+        "en": "<div>\\[\\rho\\simeq\\rho_1\\left(1+3k_l\\frac{T_1-T}{T_1-T_0}\\right),\\qquad k=3k_l.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T1-A3",
+      "title": {
+        "ru": "Толщина коры",
+        "en": "Far-field thickness"
+      },
+      "max": 1.1,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.1,
+          "label": {
+            "ru": "Толщина коры",
+            "en": "Far-field thickness"
+          },
+          "body": {
+            "ru": "<p>Сравним столбы между уровнями вершины и далёкой подошвы коры. Давления на концах у столбов одинаковы. На оси весь промежуток заполнен мантией. Вдали над корой лежит слой воды \\(h\\), а средняя плотность самой коры равна \\(\\rho_1(1+k/2)\\) в силу линейного температурного профиля. Поэтому \\(\\rho_1(h+D)=\\rho_0 h+\\rho_1(1+k/2)D\\).</p>",
+            "en": "<p>Compare columns from crest level to the distant crust base. Both endpoint pressures match. The column on the axis contains mantle only. Far away there is water of depth \\(h\\) over crust of mean density \\(\\rho_1(1+k/2)\\) by linearity of its temperature profile. Equating column masses per area gives \\(\\rho_1(h+D)=\\rho_0h+\\rho_1(1+k/2)D\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[D=\\frac{2h}{k}\\left(1-\\frac{\\rho_0}{\\rho_1}\\right).\\]</div>",
+        "en": "<div>\\[D=\\frac{2h}{k}\\left(1-\\frac{\\rho_0}{\\rho_1}\\right).\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T1-A4",
+      "title": {
+        "ru": "Сила на правую половину хребта",
+        "en": "Horizontal force on the right half"
+      },
+      "max": 1.6,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.6,
+          "label": {
+            "ru": "Сила на правую половину хребта",
+            "en": "Horizontal force on the right half"
+          },
+          "body": {
+            "ru": "<p>Спроецируем поверхности раздела на вертикальную плоскость. Мантия давит вправо в интервале глубин \\(0&lt;z&lt;h+D\\), вода — влево при \\(0&lt;z&lt;h\\). При давлении \\(p_*\\) на уровне вершины интегрирование даёт</p><div>\\[\\frac{F_x}{L}=p_*D+\\frac{g}{2}\\!\\left[\\rho_1(h+D)^2-\\rho_0h^2\\right].\\]</div><p>Так как \\(D\\propto k^{-1}\\), главный член равен \\(\\rho_1gLD^2/2\\). Сила отодвигает кору от оси хребта.</p>",
+            "en": "<p>Project the interfaces onto a vertical plane. Mantle pushes right over depths \\(0&lt;z&lt;h+D\\) and water pushes left over \\(0&lt;z&lt;h\\). Write \\(p_*\\) for the pressure at crest level. Integrating both linear pressure profiles gives</p><div>\\[\\frac{F_x}{L}=p_*D+\\frac{g}{2}\\!\\left[\\rho_1(h+D)^2-\\rho_0h^2\\right].\\]</div><p>Since \\(D\\) scales as \\(1/k\\), the dominant term is \\(\\rho_1gLD^2/2\\), directed away from the crest.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_x\\simeq\\frac{2gLh^2(\\rho_1-\\rho_0)^2}{k^2\\rho_1}.\\]</div>",
+        "en": "<div>\\[F_x\\simeq\\frac{2gLh^2(\\rho_1-\\rho_0)^2}{k^2\\rho_1}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T1-A5",
+      "title": {
+        "ru": "Выравнивание температуры",
+        "en": "Thermal relaxation"
+      },
+      "max": 0.9,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.9,
+          "label": {
+            "ru": "Выравнивание температуры",
+            "en": "Thermal relaxation"
+          },
+          "body": {
+            "ru": "<p>Для устранения разности температур \\(\\Delta T\\) между краями слоя толщины \\(D\\) необходимо перераспределить энергию порядка \\(\\rho_1cD\\Delta T\\) на единицу площади. Характерный поток тепла равен \\(\\kappa\\Delta T/D\\). Их отношение не зависит от величины начального перепада.</p>",
+            "en": "<p>Per unit area the heat that must move across a slab scales as \\(\\rho_1cD\\Delta T\\). Fourier&#x27;s law gives a heat current density of order \\(\\kappa\\Delta T/D\\). Dividing yields a timescale independent of the initial temperature contrast.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\tau\\sim\\frac{\\rho_1cD^2}{\\kappa}.\\]</div>",
+        "en": "<div>\\[\\tau\\sim\\frac{\\rho_1cD^2}{\\kappa}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T1-B1",
+      "title": {
+        "ru": "Возвращение на поверхность",
+        "en": "Return to the surface"
+      },
+      "max": 1.5,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.5,
+          "label": {
+            "ru": "Возвращение на поверхность",
+            "en": "Return to the surface"
+          },
+          "body": {
+            "ru": "<p>Закон преломления сохраняет \\(\\sin\\theta/v(z)\\). На глубине поворота \\(\\theta=\\pi/2\\), откуда \\(1+z_t/z_0=1/\\sin\\theta_0\\). У дуги радиуса \\(r\\) геометрически \\(z_t=r(1-\\sin\\theta_0)\\) и половина хорды равна \\(r\\cos\\theta_0\\). Итак, \\(r=z_0/\\sin\\theta_0\\).</p><figure><img loading=\"lazy\" src=\"/assets/practice/ipho-2021/figures/seismic.png\" alt=\"Радиус лучевой дуги и проекция хорды.\" style=\"max-width:min(100%,285px)\"><figcaption>Радиус лучевой дуги и проекция хорды.</figcaption></figure>",
+            "en": "<p>Refraction conserves \\(\\sin\\theta/v(z)\\). At the deepest point the ray is horizontal, giving \\(1+z_t/z_0=1/\\sin\\theta_0\\). For a circular arc of radius \\(r\\), the sagitta is \\(z_t=r(1-\\sin\\theta_0)\\) and the half-chord is \\(r\\cos\\theta_0\\). Hence \\(r=z_0/\\sin\\theta_0\\).</p><figure><img loading=\"lazy\" src=\"/assets/practice/ipho-2021/figures/seismic.png\" alt=\"Radius of the ray path and horizontal chord.\" style=\"max-width:min(100%,285px)\"><figcaption>Radius of the ray path and horizontal chord.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x_1=2z_0\\cot\\theta_0,\\qquad A=2z_0,\\quad b=1.\\]</div>",
+        "en": "<div>\\[x_1=2z_0\\cot\\theta_0,\\qquad A=2z_0,\\quad b=1.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T1-B2",
+      "title": {
+        "ru": "Распределение энергии",
+        "en": "Energy at the surface"
+      },
+      "max": 1.5,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.5,
+          "label": {
+            "ru": "Распределение энергии",
+            "en": "Energy at the surface"
+          },
+          "body": {
+            "ru": "<p>В интервал углов \\(d\\theta\\) попадает энергия \\(E\\,d\\theta/\\pi\\). У поверхности она распределяется по полосе ширины \\(|dx_1/d\\theta|d\\theta\\). Из выражения для хорды \\(|dx_1/d\\theta|=(4z_0^2+x^2)/(2z_0)\\). График симметричен, имеет максимум при \\(x=0\\) и спадает как \\(x^{-2}\\).</p><figure><img loading=\"lazy\" src=\"/assets/practice/ipho-2021/figures/energy.png\" alt=\"Плотность энергии на поверхности при x ≥ 0.\" style=\"max-width:min(100%,305px)\"><figcaption>Плотность энергии на поверхности при x ≥ 0.</figcaption></figure>",
+            "en": "<p>The angular interval \\(d\\theta\\) receives \\(E\\,d\\theta/\\pi\\) per unit source length. At the surface this occupies a strip of width \\(|dx_1/d\\theta|d\\theta\\). The chord law gives \\(|dx_1/d\\theta|=(4z_0^2+x^2)/(2z_0)\\). The profile is symmetric, peaks at the source and has inverse-square tails.</p><figure><img loading=\"lazy\" src=\"/assets/practice/ipho-2021/figures/energy.png\" alt=\"Surface energy density for x ≥ 0.\" style=\"max-width:min(100%,305px)\"><figcaption>Surface energy density for x ≥ 0.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\varepsilon(x)=\\frac{2Ez_0}{\\pi(4z_0^2+x^2)}.\\]</div>",
+        "en": "<div>\\[\\varepsilon(x)=\\frac{2Ez_0}{\\pi(4z_0^2+x^2)}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T1-B3",
+      "title": {
+        "ru": "Последний пропуск сигнала",
+        "en": "Last gap in coverage"
+      },
+      "max": 2.0,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 2.0,
+          "label": {
+            "ru": "Последний пропуск сигнала",
+            "en": "Last gap in coverage"
+          },
+          "body": {
+            "ru": "<p>Обозначим среднюю длину скачка через \\(s=x_1(\\theta_0)\\), разброс — через \\(\\delta s=|x_1&#x27;|\\delta\\theta_0\\). На \\(N\\)-м возвращении освещённая полоса имеет ширину \\(N\\delta s\\). Соседние полосы начинают перекрываться, когда эта ширина сравняется с расстоянием \\(s\\) между центрами. Последний зазор лежит около \\(Ns\\simeq s^2/\\delta s\\).</p>",
+            "en": "<p>Let \\(s=x_1(\\theta_0)\\) be the nominal hop length and \\(\\delta s=|x_1&#x27;|\\delta\\theta_0\\) its spread. The width of the illuminated interval at return \\(N\\) is \\(N\\delta s\\). Consecutive intervals begin to overlap once this reaches the centre spacing \\(s\\). The final gap therefore lies near \\(Ns\\simeq s^2/\\delta s\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x_{\\max}\\simeq\\frac{2z_0\\cos^2\\theta_0}{\\delta\\theta_0}.\\]</div>",
+        "en": "<div>\\[x_{\\max}\\simeq\\frac{2z_0\\cos^2\\theta_0}{\\delta\\theta_0}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    }
+  ],
+  "sourcePdf": "/assets/practice/ipho-2021/IPhO_2021_S1_EN.pdf",
+  "notes": {
+    "ru": [],
+    "en": []
+  }
+}

@@ -1,0 +1,719 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Водород и галактики",
+    "en": "Hydrogen and galaxies"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2025/IPhO_2025_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-A1",
+      "max": 0.2,
+      "title": {
+        "ru": "Скорость электрона",
+        "en": "Orbital speed"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.1,
+          "label": {
+            "ru": "Сила и ускорение",
+            "en": "Radial balance"
+          },
+          "body": {
+            "ru": "<p>Единственная сила направлена к протону. Её модуль равен произведению массы электрона на центростремительное ускорение.</p>\n<div>\\[\\frac{m_ev^2}{r}=\\frac{e^2}{4\\pi\\varepsilon_0r^2}.\\]</div>",
+            "en": "<p>The Coulomb force points towards the proton and supplies the centripetal acceleration.</p>\n<div>\\[\\frac{m_ev^2}{r}=\\frac{e^2}{4\\pi\\varepsilon_0r^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Зависимость от радиуса",
+            "en": "Speed as a function of radius"
+          },
+          "body": {
+            "ru": "<p>Выбираем положительный корень, поскольку ищем модуль скорости.</p>",
+            "en": "<p>Take the positive square root for the speed.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v=\\sqrt{\\frac{e^2}{4\\pi\\varepsilon_0m_er}}.\\]</div>",
+        "en": "<div>\\[v=\\sqrt{\\frac{e^2}{4\\pi\\varepsilon_0m_er}}.\\]</div>"
+      },
+      "sourcePages": [
+        1
+      ]
+    },
+    {
+      "id": "T1-A2",
+      "max": 0.5,
+      "title": {
+        "ru": "Боровский радиус",
+        "en": "Bohr radius"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Квантование орбиты",
+            "en": "Quantized radius"
+          },
+          "body": {
+            "ru": "<p>Умножим силовое равенство на \\(r_n^3m_e\\) и воспользуемся \\(m_ev_nr_n=n\\hbar\\).</p>\n<div>\\[r_n=\\frac{4\\pi\\varepsilon_0 n^2\\hbar^2}{m_e e^2}=n^2\\frac{\\hbar}{\\alpha m_ec}.\\]</div>",
+            "en": "<p>Multiply the force equation by \\(m_er_n^3\\) and use \\(m_ev_nr_n=n\\hbar\\).</p>\n<div>\\[r_n=\\frac{4\\pi\\varepsilon_0 n^2\\hbar^2}{m_e e^2}=n^2\\frac{\\hbar}{\\alpha m_ec}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Скорость на первой орбите",
+            "en": "Ground-state velocity"
+          },
+          "body": {
+            "ru": "<p>На первой орбите \\(v_1=\\hbar/(m_e r_1)\\). Подстановка найденного радиуса даёт простой результат.</p>",
+            "en": "<p>For \\(n=1\\) use \\(v_1=\\hbar/(m_e r_1)\\) and insert the radius just found.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r_1=\\frac{\\hbar}{\\alpha m_ec}\\simeq5.31\\times10^{-11}\\,\\mathrm m,\\qquad v_1=\\alpha c.\\]</div>",
+        "en": "<div>\\[r_1=\\frac{\\hbar}{\\alpha m_ec}\\simeq5.31\\times10^{-11}\\,\\mathrm m,\\qquad v_1=\\alpha c.\\]</div>"
+      },
+      "sourcePages": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "T1-A3",
+      "max": 0.5,
+      "title": {
+        "ru": "Энергия связи",
+        "en": "Binding energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Баланс энергий",
+            "en": "Total orbital energy"
+          },
+          "body": {
+            "ru": "<p>При нуле энергии на бесконечности \\(U=-e^2/(4\\pi\\varepsilon_0r_n)\\). Радиальное уравнение показывает, что \\(K=-U/2\\).</p>\n<div>\\[E_n=\\frac{U}{2}=-\\frac{e^2}{8\\pi\\varepsilon_0n^2r_1}.\\]</div>",
+            "en": "<p>With the zero at infinity, \\(U=-e^2/(4\\pi\\varepsilon_0r_n)\\). Radial balance gives \\(K=-U/2\\).</p>\n<div>\\[E_n=\\frac{U}{2}=-\\frac{e^2}{8\\pi\\varepsilon_0n^2r_1}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Основное состояние",
+            "en": "Ground state"
+          },
+          "body": {
+            "ru": "<p>Для \\(n=1\\) полная энергия равна \\(-m_ev_1^2/2\\). Деление энергии в джоулях на элементарный заряд даёт численное значение в эВ.</p>",
+            "en": "<p>For \\(n=1\\) the total energy equals \\(-m_ev_1^2/2\\). Divide the energy in joules by the elementary charge to obtain its value in eV.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E_1=-\\frac12m_e\\alpha^2c^2\\simeq-13.6\\,\\mathrm{eV}.\\]</div>",
+        "en": "<div>\\[E_1=-\\frac12m_e\\alpha^2c^2\\simeq-13.6\\,\\mathrm{eV}.\\]</div>"
+      },
+      "sourcePages": [
+        2
+      ]
+    },
+    {
+      "id": "T1-A4",
+      "max": 0.5,
+      "title": {
+        "ru": "Поле протона",
+        "en": "Proton’s magnetic field"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Эквивалентный ток",
+            "en": "Equivalent loop current"
+          },
+          "body": {
+            "ru": "<p>За период \\(T=2\\pi r_1/v_1\\) через выбранное сечение проходит заряд \\(e\\). Поэтому \\(I=e/T\\).</p>",
+            "en": "<p>One charge \\(e\\) passes a fixed cross-section every \\(T=2\\pi r_1/v_1\\), giving \\(I=e/T\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Поле в центре",
+            "en": "Field at the centre"
+          },
+          "body": {
+            "ru": "<p>Для кругового тока \\(B_1=\\mu_0 I/(2r_1)\\). Используем \\(v_1=\\alpha c\\).</p>",
+            "en": "<p>The field at the centre of a circular loop is \\(\\mu_0I/(2r_1)\\). Substitute \\(v_1=\\alpha c\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[B_1=\\frac{\\mu_0 e\\alpha c}{4\\pi r_1^2}.\\]</div>",
+        "en": "<div>\\[B_1=\\frac{\\mu_0 e\\alpha c}{4\\pi r_1^2}.\\]</div>"
+      },
+      "sourcePages": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "T1-A5",
+      "max": 0.5,
+      "title": {
+        "ru": "Линия сверхтонкого перехода",
+        "en": "Hyperfine emission line"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Расщепление уровней",
+            "en": "Energy splitting"
+          },
+          "body": {
+            "ru": "<p>Из \\(U=-\\boldsymbol{\\mathcal M}_s\\cdot\\mathbf B_1\\) два уровня отличаются на \\(2\\mathcal M_sB_1\\). Подстановка \\(r_1\\), \\(E_1\\) и \\(\\mu_0\\varepsilon_0c^2=1\\) даёт \\(\\Delta E_{\\rm F}=-4\\alpha^2E_1\\); энергия сверхтонкого перехода меньше в указанном в условии отношении.</p>",
+            "en": "<p>The two values of \\(U=-\\boldsymbol{\\mathcal M}_s\\cdot\\mathbf B_1\\) differ by \\(2\\mathcal M_sB_1\\). Substitute \\(r_1,E_1\\) and \\(\\mu_0\\varepsilon_0c^2=1\\) to obtain \\(\\Delta E_{\\rm F}=-4\\alpha^2 E_1\\). Apply the given ratio for the hyperfine splitting.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Энергия фотона",
+            "en": "Photon energy"
+          },
+          "body": {
+            "ru": "<p>Энергия излучённого фотона равна \\(2\\pi\\hbar c/\\lambda_{\\rm HF}\\).</p>",
+            "en": "<p>The emitted photon carries energy \\(2\\pi\\hbar c/\\lambda_{\\rm HF}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\lambda_{\\rm HF}=\\frac{2\\pi\\hbar c}{3.72(m_e/m_p)(-4\\alpha^2E_1)}\\simeq21\\,\\mathrm{cm}.\\]</div>",
+        "en": "<div>\\[\\lambda_{\\rm HF}=\\frac{2\\pi\\hbar c}{3.72(m_e/m_p)(-4\\alpha^2E_1)}\\simeq21\\,\\mathrm{cm}.\\]</div>"
+      },
+      "sourcePages": [
+        3
+      ]
+    },
+    {
+      "id": "T1-B1",
+      "max": 0.2,
+      "title": {
+        "ru": "Круговая скорость",
+        "en": "Circular speed"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Радиальная проекция",
+            "en": "Radial equation"
+          },
+          "body": {
+            "ru": "<p>Ускорение равно \\(-\\nabla\\varphi\\). Направленная внутрь радиальная компонента на круговой орбите равна \\(-v_c^2/r\\).</p>",
+            "en": "<p>The acceleration is \\(-\\nabla\\varphi\\). Its radial component on a circular orbit equals \\(-v_c^2/r\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_c(r)=\\sqrt{r\\frac{d\\varphi}{dr}}.\\]</div>",
+        "en": "<div>\\[v_c(r)=\\sqrt{r\\frac{d\\varphi}{dr}}.\\]</div>"
+      },
+      "sourcePages": [
+        4
+      ]
+    },
+    {
+      "id": "T1-B2",
+      "max": 0.5,
+      "title": {
+        "ru": "Масса центрального утолщения",
+        "en": "Bulge mass"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Поле вне балджа",
+            "en": "Field outside the bulge"
+          },
+          "body": {
+            "ru": "<p>Сферическая симметрия позволяет заменить внутреннюю массу точечной. За границей балджа \\(g=GM_b/r^2=v_c^2/r\\), откуда \\(M_b=rv_c^2/G\\).</p>",
+            "en": "<p>Spherical symmetry lets us replace the enclosed mass by a point mass. Outside the bulge \\(g=GM_b/r^2=v_c^2/r\\), so \\(M_b=rv_c^2/G\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Отсчёт по модели",
+            "en": "Reading the model curve"
+          },
+          "body": {
+            "ru": "<p>На расстоянии 10 кпк красная линия даёт примерно 20 км/с. В СИ это \\(M_b\\simeq1.85\\times10^{39}\\) кг.</p>",
+            "en": "<p>At 10 kpc the red curve gives about 20 km/s. This corresponds to \\(M_b\\simeq1.85\\times10^{39}\\) kg.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[M_b\\simeq9\\times10^8M_\\odot .\\]</div>",
+        "en": "<div>\\[M_b\\simeq9\\times10^8M_\\odot .\\]</div>"
+      },
+      "sourcePages": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "T1-B3",
+      "max": 1.8,
+      "title": {
+        "ru": "Протяжённое распределение массы",
+        "en": "Extended mass distribution"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Масса внутри сферы и скорость",
+            "en": "Enclosed mass and rotation speed"
+          },
+          "body": {
+            "ru": "<p>Проинтегрируем \\(4\\pi r^2\\rho_m\\) по радиусу. Равенство \\(v_{c,m}^2/r=GM_m(r)/r^2\\) затем даёт оба коэффициента.</p>\n<div>\\[M_m(r)=4\\pi C_m\\left[r-r_m\\arctan(r/r_m)\\right].\\]</div>\n<div>\\[k_1=4\\pi GC_m,\\qquad k_2=4\\pi GC_mr_m.\\]</div>",
+            "en": "<p>Integrate \\(4\\pi r^2\\rho_m\\) over radius. Then \\(v_{c,m}^2/r=GM_m(r)/r^2\\) determines both coefficients.</p>\n<div>\\[M_m(r)=4\\pi C_m\\left[r-r_m\\arctan(r/r_m)\\right].\\]</div>\n<div>\\[k_1=4\\pi GC_m,\\qquad k_2=4\\pi GC_mr_m.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Оба предела",
+            "en": "Two limiting regimes"
+          },
+          "body": {
+            "ru": "<p>В центре линейные члены в квадратной скобке сокращаются. На периферии арктангенс ограничен, поэтому в массе доминирует член, пропорциональный \\(r\\).</p>\n<div>\\[v_{c,m}\\simeq\\sqrt{\\frac{4\\pi GC_m}{3}}\\frac r{r_m}\\quad(r\\ll r_m),\\qquad v_{c,m}\\simeq\\sqrt{4\\pi GC_m}\\quad(r\\gg r_m).\\]</div>",
+            "en": "<p>Near the centre the linear terms inside the brackets cancel. At large radii the arctangent stays bounded, leaving a term proportional to \\(r\\) in the mass.</p>\n<div>\\[v_{c,m}\\simeq\\sqrt{\\frac{4\\pi GC_m}{3}}\\frac r{r_m}\\quad(r\\ll r_m),\\qquad v_{c,m}\\simeq\\sqrt{4\\pi GC_m}\\quad(r\\gg r_m).\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Оценка по наблюдаемой кривой",
+            "en": "Mass from the observed curve"
+          },
+          "body": {
+            "ru": "<p>Плато около 160 км/с даёт \\(C_m=v_\\infty^2/(4\\pi G)\\simeq3.1\\times10^{19}\\) кг/м. Радиус на снимке около 9 кпк; умножаем \\(4\\pi C_m\\) на этот радиус в метрах.</p>",
+            "en": "<p>The plateau near 160 km/s gives \\(C_m=v_\\infty^2/(4\\pi G)\\simeq3.1\\times10^{19}\\) kg/m. The pictured radius is about 9 kpc; multiply that radius in metres by \\(4\\pi C_m\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[M_m(r)\\simeq4\\pi C_mr,\\qquad M_{\\rm image}\\sim10^{41}\\,\\mathrm{kg}.\\]</div>",
+        "en": "<div>\\[M_m(r)\\simeq4\\pi C_mr,\\qquad M_{\\rm image}\\sim10^{41}\\,\\mathrm{kg}.\\]</div>"
+      },
+      "sourcePages": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "T1-C1",
+      "max": 0.5,
+      "title": {
+        "ru": "Вертикальные колебания",
+        "en": "Vertical oscillations"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Сила вдоль вертикали",
+            "en": "Vertical force"
+          },
+          "body": {
+            "ru": "<p>Дифференцируем потенциал по \\(z\\), удерживая \\(r\\) постоянным.</p>\n<div>\\[\\ddot z=-\\partial_z\\varphi_G=\\frac{2\\varphi_0z}{z_0^2}\\ln(r/r_0)e^{-(z/z_0)^2}.\\]</div>",
+            "en": "<p>Differentiate the potential with respect to \\(z\\) at fixed \\(r\\).</p>\n<div>\\[\\ddot z=-\\partial_z\\varphi_G=\\frac{2\\varphi_0z}{z_0^2}\\ln(r/r_0)e^{-(z/z_0)^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Линеаризация",
+            "en": "Linearization"
+          },
+          "body": {
+            "ru": "<p>При малом отклонении экспоненту заменяем единицей. Логарифм отрицателен, значит ускорение направлено к плоскости.</p>",
+            "en": "<p>At small displacement the exponential is one to leading order. The logarithm is negative, so acceleration points back towards the plane.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_0=\\frac{\\sqrt{2\\varphi_0\\ln(r_0/r)}}{z_0}.\\]</div>",
+        "en": "<div>\\[\\omega_0=\\frac{\\sqrt{2\\varphi_0\\ln(r_0/r)}}{z_0}.\\]</div>"
+      },
+      "sourcePages": [
+        7
+      ]
+    },
+    {
+      "id": "T1-C2",
+      "max": 0.6,
+      "title": {
+        "ru": "Логарифмический потенциал",
+        "en": "Logarithmic potential"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Потенциал на периферии",
+            "en": "Potential in the outer region"
+          },
+          "body": {
+            "ru": "<p>Для \\(r\\gg r_m\\) внутренняя масса пропорциональна \\(r\\), поэтому \\(\\varphi&#x27;=4\\pi GC_m/r\\). Интегрирование даёт \\(\\varphi=4\\pi GC_m\\ln(r/r_0)\\) при выборе удобного нуля.</p>",
+            "en": "<p>For \\(r\\gg r_m\\) the enclosed mass grows linearly, so \\(\\varphi&#x27;=4\\pi GC_m/r\\). Integrating and choosing the reference value gives \\(\\varphi=4\\pi GC_m\\ln(r/r_0)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Постоянная скорость",
+            "en": "Constant speed"
+          },
+          "body": {
+            "ru": "<p>По B1 квадрат круговой скорости равен \\(r\\varphi&#x27;(r)\\).</p>",
+            "en": "<p>From B1 the squared circular speed equals \\(r\\varphi&#x27;(r)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\varphi_0=4\\pi GC_m,\\qquad v_c=\\sqrt{\\varphi_0}.\\]</div>",
+        "en": "<div>\\[\\varphi_0=4\\pi GC_m,\\qquad v_c=\\sqrt{\\varphi_0}.\\]</div>"
+      },
+      "sourcePages": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "T1-C3",
+      "max": 0.7,
+      "title": {
+        "ru": "Проекция на луч зрения",
+        "en": "Line-of-sight projection"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Геометрические проекции",
+            "en": "Projected orbital velocities"
+          },
+          "body": {
+            "ru": "<p>Опустим из \\(C\\) перпендикуляр на луч зрения. Его длина \\(b=R_\\odot\\sin\\ell\\). Проекция касательной к окружности радиуса \\(R\\) на луч равна \\(v_\\odot b/R\\). Для Солнца та же формула даёт \\(v_\\odot\\sin\\ell\\).</p>",
+            "en": "<p>Drop a perpendicular from \\(C\\) to the sightline. Its length is \\(b=R_\\odot\\sin\\ell\\). For a tangent velocity on a circle of radius \\(R\\), the component along the sightline is \\(v_\\odot b/R\\). For the Sun this is \\(v_\\odot\\sin\\ell\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Дальность по относительной скорости",
+            "en": "Radius from the velocity difference"
+          },
+          "body": {
+            "ru": "<p>Вычтем проекцию скорости Солнца из проекции скорости облака и решим относительно \\(R\\).</p>",
+            "en": "<p>Subtract the solar component from the cloud component, then solve for \\(R\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_{r,E/S}=v_\\odot\\sin\\ell\\left(\\frac{R_\\odot}{R}-1\\right),\\qquad R=\\frac{R_\\odot}{1+v_{r,E/S}/(v_\\odot\\sin\\ell)}.\\]</div>",
+        "en": "<div>\\[v_{r,E/S}=v_\\odot\\sin\\ell\\left(\\frac{R_\\odot}{R}-1\\right),\\qquad R=\\frac{R_\\odot}{1+v_{r,E/S}/(v_\\odot\\sin\\ell)}.\\]</div>"
+      },
+      "sourcePages": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "T1-C4",
+      "max": 0.6,
+      "title": {
+        "ru": "Три источника водорода",
+        "en": "Three hydrogen sources"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Частоты пиков",
+            "en": "Peak frequencies"
+          },
+          "body": {
+            "ru": "<p>Сдвиги частот равны \\(0.03,\\ 0.15,\\ 0.26\\) МГц. При малой скорости применяем линейную формулу Доплера; в знаковом соглашении разбора положительным отсчётам отвечают положительные \\(v_r\\).</p>\n<div>\\[v_r=c\\frac{\\Delta f}{f_0}.\\]</div>",
+            "en": "<p>The frequency offsets are \\(0.03,\\ 0.15,\\ 0.26\\) MHz. Use the linear Doppler relation with the convention of the marking scheme, in which these offsets give positive \\(v_r\\).</p>\n<div>\\[v_r=c\\frac{\\Delta f}{f_0}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Скорости и радиусы",
+            "en": "Speeds and radii"
+          },
+          "body": {
+            "ru": "<p>Переведём частоты в одни единицы, затем воспользуемся C3 с \\(v_\\odot\\sin\\ell=110\\) км/с.</p>",
+            "en": "<p>Use matching frequency units before applying C3 with \\(v_\\odot\\sin\\ell=110\\) km/s.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_r=(6.33,\\ 31.7,\\ 54.9)\\,\\mathrm{km\\,s^{-1}},\\qquad R/R_\\odot=(0.95,\\ 0.78,\\ 0.67).\\]</div>",
+        "en": "<div>\\[v_r=(6.33,\\ 31.7,\\ 54.9)\\,\\mathrm{km\\,s^{-1}},\\qquad R/R_\\odot=(0.95,\\ 0.78,\\ 0.67).\\]</div>"
+      },
+      "sourcePages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "T1-C5",
+      "max": 0.6,
+      "title": {
+        "ru": "Карта Галактики",
+        "en": "Galactic map"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Пересечения луча с окружностями",
+            "en": "Sightline intersections"
+          },
+          "body": {
+            "ru": "<p>Проведите из Солнца луч под \\(30^\\circ\\) к центру. Для каждого радиуса из C4 проведите окружность вокруг \\(C\\). Поскольку все три радиуса больше \\(R_\\odot\\sin30^\\circ\\), у каждого источника есть ближнее и дальнее геометрические решения.</p>",
+            "en": "<p>Draw the ray from the Sun at \\(30^\\circ\\) to the centre and the three circles from C4 around \\(C\\). All three radii exceed \\(R_\\odot\\sin30^\\circ\\), giving near and far intersections for each cloud.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Интерпретация обзора",
+            "en": "Survey interpretation"
+          },
+          "body": {
+            "ru": "<p>Соседние направления позволяют прослеживать непрерывные скопления водорода по диску.</p><figure><img src=\"/assets/practice/ipho-2025/solutions/figures/source-radii.png\" alt=\"Пересечения луча зрения при долготе 30° с тремя галактоцентрическими окружностями.\" loading=\"lazy\"><figcaption>Пересечения луча зрения при долготе 30° с тремя галактоцентрическими окружностями.</figcaption></figure>",
+            "en": "<p>Adjacent sightlines trace continuous concentrations of hydrogen across the disk.</p><figure><img src=\"/assets/practice/ipho-2025/solutions/figures/source-radii.png\" alt=\"The sightline at longitude 30° crosses the three galactocentric circles.\" loading=\"lazy\"><figcaption>The sightline at longitude 30° crosses the three galactocentric circles.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Пересечения задают положения облаков с неоднозначностью по дальности. Обзор по долготе выявляет спиральные рукава.</p>",
+        "en": "<p>Intersections locate each cloud up to a near/far ambiguity. A longitude survey traces the spiral arms.</p>"
+      },
+      "sourcePages": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "T1-D1",
+      "max": 0.4,
+      "title": {
+        "ru": "Показатель степенного закона",
+        "en": "Power-law index"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Исключение плотности",
+            "en": "Eliminate the density scale"
+          },
+          "body": {
+            "ru": "<p>Из B3 имеем \\(M_{\\rm tot}\\simeq4\\pi C_mR\\) и \\(v_{c,\\infty}^2=4\\pi GC_m\\). Исключим \\(C_m\\).</p>",
+            "en": "<p>From B3, \\(M_{\\rm tot}\\simeq4\\pi C_mR\\) and \\(v_{c,\\infty}^2=4\\pi GC_m\\). Eliminate \\(C_m\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Наклон экспериментальной прямой",
+            "en": "Slope of the empirical line"
+          },
+          "body": {
+            "ru": "<p>В двойных логарифмических координатах показатель равен наклону: \\((12-9)/(2.6-1.8)\\simeq3.75\\).</p>",
+            "en": "<p>On the log–log graph the exponent is the slope, about \\((12-9)/(2.6-1.8)=3.75\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\eta=R/G,\\qquad\\gamma=2,\\qquad\\gamma_{\\rm TF}\\simeq3.75.\\]</div>",
+        "en": "<div>\\[\\eta=R/G,\\qquad\\gamma=2,\\qquad\\gamma_{\\rm TF}\\simeq3.75.\\]</div>"
+      },
+      "sourcePages": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "T1-D2",
+      "max": 0.2,
+      "title": {
+        "ru": "Ускорение на периферии",
+        "en": "Outer orbital acceleration"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Оценка по плато скорости",
+            "en": "Estimate from the plateau"
+          },
+          "body": {
+            "ru": "<p>Например, при \\(r=5\\) кпк и \\(v_c\\simeq160\\) км/с ускорение равно \\(v_c^2/r\\). На более далёких участках плато оно меньше.</p>",
+            "en": "<p>At \\(r=5\\) kpc and \\(v_c\\simeq160\\) km/s, the acceleration is \\(v_c^2/r\\). It decreases further along the plateau.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[a_m\\sim1.6\\times10^{-10}\\,\\mathrm{m\\,s^{-2}}.\\]</div>",
+        "en": "<div>\\[a_m\\sim1.6\\times10^{-10}\\,\\mathrm{m\\,s^{-2}}.\\]</div>"
+      },
+      "sourcePages": [
+        13
+      ]
+    },
+    {
+      "id": "T1-D3",
+      "max": 0.8,
+      "title": {
+        "ru": "Глубокий режим MOND",
+        "en": "Deep-MOND limit"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Слабое ускорение",
+            "en": "Low-acceleration law"
+          },
+          "body": {
+            "ru": "<p>Когда \\(\\mu\\simeq a/a_0\\), величина поля \\(GM/r^2=a^2/a_0\\). При \\(a=v_{c,\\infty}^2/r\\) зависимость от радиуса сокращается.</p>\n<div>\\[v_{c,\\infty}^4=GMa_0.\\]</div>",
+            "en": "<p>For \\(\\mu\\simeq a/a_0\\), the field satisfies \\(GM/r^2=a^2/a_0\\). Substituting \\(a=v_{c,\\infty}^2/r\\) removes the radius.</p>\n<div>\\[v_{c,\\infty}^4=GMa_0.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Масштаб ускорений",
+            "en": "Acceleration scale"
+          },
+          "body": {
+            "ru": "<p>Для \\(v_{c,\\infty}=160\\) км/с на графике \\(\\log_{10}(v_{c,\\infty}/\\mathrm{km\\,s^{-1}})\\simeq2.2\\) и \\(\\log_{10}(M/M_\\odot)\\simeq10.5\\). Полученная величина \\(a_0\\) близка к ускорениям на периферии.</p>",
+            "en": "<p>At 160 km/s the velocity coordinate is about 2.2 on the logarithmic plot and the mass coordinate \\(\\log_{10}(M/M_\\odot)\\) is about 10.5. The resulting \\(a_0\\) is comparable to outer-galaxy accelerations.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\gamma_{\\rm MOND}=4,\\qquad a_0=\\frac{v_{c,\\infty}^4}{GM}\\simeq1.6\\times10^{-10}\\,\\mathrm{m\\,s^{-2}}.\\]</div>",
+        "en": "<div>\\[\\gamma_{\\rm MOND}=4,\\qquad a_0=\\frac{v_{c,\\infty}^4}{GM}\\simeq1.6\\times10^{-10}\\,\\mathrm{m\\,s^{-2}}.\\]</div>"
+      },
+      "sourcePages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "T1-D4",
+      "max": 0.9,
+      "title": {
+        "ru": "Кривая вращения однородного шара",
+        "en": "Rotation curve of a uniform sphere"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Внутреннее и внешнее поля",
+            "en": "Inner and outer fields"
+          },
+          "body": {
+            "ru": "<p>Сферическая симметрия определяет ньютоновскую напряжённость \\(g_N=GM(r)/r^2\\). Внутри шара \\(M(r)=M(r/R_b)^3\\), вне его \\(M(r)=M\\). Изменяется соотношение между \\(g_N\\) и ускорением тела.</p>",
+            "en": "<p>Spherical symmetry gives the Newtonian field \\(g_N=GM(r)/r^2\\). The enclosed mass is \\(M(r/R_b)^3\\) inside and \\(M\\) outside. MOND changes the relation between field and acceleration.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Положительный корень",
+            "en": "Positive root"
+          },
+          "body": {
+            "ru": "<p>Из \\(a^2/(a_0+a)=g_N\\) следует \\(a^2-g_Na-g_Na_0=0\\). В обоих диапазонах берём положительный корень и используем \\(v_c^2=ra\\).</p>",
+            "en": "<p>The equation \\(a^2/(a_0+a)=g_N\\) gives \\(a^2-g_Na-g_Na_0=0\\). Take the positive root in both regions and use \\(v_c^2=ra\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Проверка границ",
+            "en": "Limiting behaviour"
+          },
+          "body": {
+            "ru": "<p>Далеко от шара \\(v_c\\to(GMa_0)^{1/4}\\). Возле центра \\(g_N\\propto r\\), поэтому \\(v_c\\propto r^{3/4}\\to0\\). Оба выражения согласованы при \\(r=R_b\\).</p>",
+            "en": "<p>Far away \\(v_c\\to(GMa_0)^{1/4}\\). Near the centre \\(g_N\\propto r\\), so \\(v_c\\propto r^{3/4}\\to0\\). Both expressions agree at \\(R_b\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_c(r)=\\sqrt{\\frac r2\\left(g_N+\\sqrt{g_N^2+4a_0g_N}\\right)},\\quad g_N=\\begin{cases}GMr/R_b^3,&amp;r\\le R_b,\\\\GM/r^2,&amp;r&gt;R_b.\\end{cases}\\]</div>",
+        "en": "<div>\\[v_c(r)=\\sqrt{\\frac r2\\left(g_N+\\sqrt{g_N^2+4a_0g_N}\\right)},\\quad g_N=\\begin{cases}GMr/R_b^3,&amp;r\\le R_b,\\\\GM/r^2,&amp;r&gt;R_b.\\end{cases}\\]</div>"
+      },
+      "sourcePages": [
+        14,
+        15
+      ]
+    }
+  ]
+}

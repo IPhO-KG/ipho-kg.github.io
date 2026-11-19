@@ -1,0 +1,553 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Свойства почвенных коллоидов",
+    "en": "Characterizing soil colloids"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2023/IPhO_2023_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-A1",
+      "max": 0.8,
+      "title": {
+        "ru": "Один удар",
+        "en": "A single impact"
+      },
+      "steps": [
+        {
+          "id": "a1-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Скачок скорости",
+            "en": "Velocity jump"
+          },
+          "body": {
+            "ru": "<p>За короткое время удара трение не успевает сообщить конечный импульс. Интеграл уравнения движения даёт \\(Mv_0=I_0\\).</p>",
+            "en": "<p>Over the instantaneous impact the finite drag contributes no impulse. Integrating the equation of motion gives \\(Mv_0=I_0\\).</p>"
+          }
+        },
+        {
+          "id": "a1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Время релаксации",
+            "en": "Relaxation time"
+          },
+          "body": {
+            "ru": "<p>После удара \\(M\\dot v=-\\gamma v\\). Относительная скорость убывания постоянна, \\(\\dot v/v=-\\gamma/M=-1/\\tau\\).</p>",
+            "en": "<p>After impact \\(M\\dot v=-\\gamma v\\), so the constant fractional decay rate is \\(\\dot v/v=-\\gamma/M=-1/\\tau\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_0=I_0/M,\\qquad \\tau=M/\\gamma.\\]</div>",
+        "en": "<div>\\[v_0=I_0/M,\\qquad \\tau=M/\\gamma.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A2",
+      "max": 0.8,
+      "title": {
+        "ru": "Последовательность столкновений",
+        "en": "A sequence of impacts"
+      },
+      "steps": [
+        {
+          "id": "a2-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Суперпозиция откликов",
+            "en": "Superposition of responses"
+          },
+          "body": {
+            "ru": "<p>Скорость после удара \\(i\\) возрастает на \\(I_i/M\\). К моменту наблюдения этот вклад затухает в \\(e^{-(t-t_i)/\\tau}\\) раз. Уравнение линейно, поэтому вклады складываются.</p>",
+            "en": "<p>Impact \\(i\\) changes the velocity by \\(I_i/M\\). Its contribution has decayed by \\(e^{-(t-t_i)/\\tau}\\) at observation. The dynamical equation is linear, so the responses add.</p>"
+          }
+        },
+        {
+          "id": "a2-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Границы суммы",
+            "en": "Range of the sum"
+          },
+          "body": {
+            "ru": "<p>Берём только столкновения после начального момента и до наблюдения. Запись с \\(t_i=t\\) относится к скорости непосредственно после удара.</p>",
+            "en": "<p>Only collisions since the initial instant and up to observation contribute. Including \\(t_i=t\\) gives the velocity just after that impact.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v(t)=\\frac1M\\sum_{0&lt;t_i\\le t}I_i\\,e^{-(t-t_i)/\\tau}.\\]</div>",
+        "en": "<div>\\[v(t)=\\frac1M\\sum_{0&lt;t_i\\le t}I_i\\,e^{-(t-t_i)/\\tau}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B1",
+      "max": 1.0,
+      "title": {
+        "ru": "Средние смещения",
+        "en": "Displacement moments"
+      },
+      "steps": [
+        {
+          "id": "b1-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Среднее смещение",
+            "en": "Mean displacement"
+          },
+          "body": {
+            "ru": "<p>Сумма перемещений на всех интервалах равна \\(\\Delta x=\\delta\\sum_{n=1}^{N}v_n\\). Среднее каждого слагаемого равно нулю.</p>",
+            "en": "<p>The displacement is \\(\\Delta x=\\delta\\sum_{n=1}^{N}v_n\\). Every term in the sum has zero mean.</p>"
+          }
+        },
+        {
+          "id": "b1-2",
+          "points": 0.5,
+          "label": {
+            "ru": "Второй момент",
+            "en": "Second moment"
+          },
+          "body": {
+            "ru": "<p>После возведения суммы в квадрат произведения с разными индексами исчезают при усреднении. Остаются \\(N\\) членов \\(C\\delta^2\\); используем \\(N=t/\\delta\\).</p>",
+            "en": "<p>Squaring gives mixed terms with unequal indices; their expectations vanish. The \\(N\\) diagonal terms contribute \\(C\\delta^2\\) each, with \\(N=t/\\delta\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle\\Delta x\\rangle=0,\\qquad \\langle(\\Delta x)^2\\rangle=C\\delta t.\\]</div>",
+        "en": "<div>\\[\\langle\\Delta x\\rangle=0,\\qquad \\langle(\\Delta x)^2\\rangle=C\\delta t.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B2",
+      "max": 0.8,
+      "title": {
+        "ru": "Законы масштабирования",
+        "en": "Scaling exponents"
+      },
+      "steps": [
+        {
+          "id": "b2-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Зависимость от шага времени",
+            "en": "Time-step dependence"
+          },
+          "body": {
+            "ru": "<p>При измельчении временного шага величина \\(C\\delta\\) в B1 должна сохраняться. Отсюда \\(C\\propto1/\\delta\\).</p>",
+            "en": "<p>Refining the time discretization must leave \\(C\\delta\\) in B1 unchanged. Thus \\(C\\) scales inversely with \\(\\delta\\).</p>"
+          }
+        },
+        {
+          "id": "b2-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Зависимость от времени наблюдения",
+            "en": "Observation-time dependence"
+          },
+          "body": {
+            "ru": "<p>При постоянном \\(C\\delta\\) второй момент прямо пропорционален \\(t\\).</p>",
+            "en": "<p>With \\(C\\delta\\) fixed, the second moment grows linearly with the observation time.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\alpha=-1,\\qquad \\beta=1.\\]</div>",
+        "en": "<div>\\[\\alpha=-1,\\qquad \\beta=1.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-C1",
+      "max": 0.5,
+      "title": {
+        "ru": "Поток вправо",
+        "en": "Rightward flux"
+      },
+      "steps": [
+        {
+          "id": "c1-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Число частиц в прилегающем слое",
+            "en": "Counting the upstream layer"
+          },
+          "body": {
+            "ru": "<p>Удельный поток равен \\(\\frac1{2\\delta}\\int_{x_0-v\\delta}^{x_0}n(x)\\,dx\\). Для линейной функции интеграл равен ширине слоя, умноженной на значение в середине: \\(n(x_0-v\\delta/2)\\simeq n(x_0)-v\\delta n&#x27;(x_0)/2\\).</p>",
+            "en": "<p>The flux is \\(\\frac1{2\\delta}\\int_{x_0-v\\delta}^{x_0}n(x)\\,dx\\). For a linear profile the layer average equals its midpoint value, \\(n(x_0-v\\delta/2)\\simeq n(x_0)-v\\delta n&#x27;(x_0)/2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[N_+(x_0)=\\tfrac12v n(x_0)-\\tfrac14v^2\\delta n&#x27;(x_0).\\]</div>",
+        "en": "<div>\\[N_+(x_0)=\\tfrac12v n(x_0)-\\tfrac14v^2\\delta n&#x27;(x_0).\\]</div>"
+      }
+    },
+    {
+      "id": "T1-C2",
+      "max": 0.7,
+      "title": {
+        "ru": "Диффузионный поток",
+        "en": "Diffusive flux"
+      },
+      "steps": [
+        {
+          "id": "c2-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Разность встречных потоков",
+            "en": "Subtracting the crossing rates"
+          },
+          "body": {
+            "ru": "<p>Для потока влево среднее берётся справа от \\(x_0\\): \\(N_-=\\tfrac12vn(x_0)+\\tfrac14v^2\\delta n&#x27;(x_0)\\). При вычитании исчезает вклад однородной концентрации, а усреднение заменяет \\(v^2\\) на \\(C\\).</p>",
+            "en": "<p>The particles moving left sample the layer to the right: \\(N_-=\\tfrac12vn(x_0)+\\tfrac14v^2\\delta n&#x27;(x_0)\\). Subtraction removes the uniform-density term, and averaging replaces \\(v^2\\) by \\(C\\).</p>"
+          }
+        },
+        {
+          "id": "c2-2",
+          "points": 0.1,
+          "label": {
+            "ru": "Коэффициент диффузии",
+            "en": "Diffusion coefficient"
+          },
+          "body": {
+            "ru": "<p>Коэффициент при \\(-n&#x27;(x_0)\\) равен \\(C\\delta/2\\).</p>",
+            "en": "<p>The multiplier of \\(-n&#x27;(x_0)\\) is \\(C\\delta/2\\).</p>"
+          }
+        },
+        {
+          "id": "c2-3",
+          "points": 0.2,
+          "label": {
+            "ru": "Средний квадрат смещения",
+            "en": "Mean square displacement"
+          },
+          "body": {
+            "ru": "<p>В выражении \\(C\\delta t\\) из B1 подставляем \\(C\\delta=2D\\).</p>",
+            "en": "<p>Substitute \\(C\\delta=2D\\) into the expression \\(C\\delta t\\) from B1.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[J_D=-\\tfrac12 C\\delta n&#x27;(x_0),\\qquad D=\\tfrac12 C\\delta,\\qquad \\langle(\\Delta x)^2\\rangle=2Dt.\\]</div>",
+        "en": "<div>\\[J_D=-\\tfrac12 C\\delta n&#x27;(x_0),\\qquad D=\\tfrac12 C\\delta,\\qquad \\langle(\\Delta x)^2\\rangle=2Dt.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-C3",
+      "max": 0.5,
+      "title": {
+        "ru": "Градиент концентрации",
+        "en": "Concentration gradient"
+      },
+      "steps": [
+        {
+          "id": "c3-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Баланс сил на слой",
+            "en": "Force balance on a slice"
+          },
+          "body": {
+            "ru": "<p>В слое \\(nA\\Delta x\\) частиц, а разность осмотических сил равна \\(-A\\Delta\\Pi\\). Равновесие требует \\(d\\Pi/dx=nQE\\). При постоянной температуре \\(d\\Pi/dx=kT\\,dn/dx\\).</p>",
+            "en": "<p>There are \\(nA\\Delta x\\) particles in the slice. The net pressure force is \\(-A\\Delta\\Pi\\), so equilibrium gives \\(d\\Pi/dx=nQE\\). At constant temperature \\(d\\Pi/dx=kT\\,dn/dx\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{dn}{dx}=\\frac{nQE}{kT}.\\]</div>",
+        "en": "<div>\\[\\frac{dn}{dx}=\\frac{nQE}{kT}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-C4",
+      "max": 0.5,
+      "title": {
+        "ru": "Установление дрейфа",
+        "en": "Approach to drift speed"
+      },
+      "steps": [
+        {
+          "id": "c4-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Средняя скорость",
+            "en": "Mean velocity"
+          },
+          "body": {
+            "ru": "<p>После усреднения \\(M\\,d\\langle v\\rangle/dt+\\gamma\\langle v\\rangle=QE\\). Разность \\(\\langle v\\rangle-QE/\\gamma\\) экспоненциально затухает с временем \\(\\tau=M/\\gamma\\) и начальным значением \\(-QE/\\gamma\\).</p>",
+            "en": "<p>Averaging gives \\(M\\,d\\langle v\\rangle/dt+\\gamma\\langle v\\rangle=QE\\). The difference \\(\\langle v\\rangle-QE/\\gamma\\) decays exponentially on time scale \\(\\tau=M/\\gamma\\) from its initial value \\(-QE/\\gamma\\).</p>"
+          }
+        },
+        {
+          "id": "c4-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Предельная скорость",
+            "en": "Terminal speed"
+          },
+          "body": {
+            "ru": "<p>В пределе экспонента исчезает, а электрическая сила уравновешивается вязким сопротивлением \\(\\gamma u=QE\\).</p>",
+            "en": "<p>The exponential disappears at long times. The electric force then balances viscous drag: \\(\\gamma u=QE\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle v(t)\\rangle=\\frac{QE}{\\gamma}(1-e^{-t/\\tau}),\\qquad u=\\frac{QE}{\\gamma}.\\]</div>",
+        "en": "<div>\\[\\langle v(t)\\rangle=\\frac{QE}{\\gamma}(1-e^{-t/\\tau}),\\qquad u=\\frac{QE}{\\gamma}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-C5",
+      "max": 0.5,
+      "title": {
+        "ru": "Связь диффузии с трением",
+        "en": "Diffusion and drag"
+      },
+      "steps": [
+        {
+          "id": "c5-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Нулевой суммарный поток",
+            "en": "Zero net flux"
+          },
+          "body": {
+            "ru": "<p>Подставляем градиент из C3 и дрейф из C4: \\(-DnQE/(kT)+nQE/\\gamma=0\\). Концентрация и напряжённость поля сокращаются.</p>",
+            "en": "<p>Insert the gradient from C3 and the drift speed from C4: \\(-DnQE/(kT)+nQE/\\gamma=0\\). Both density and field cancel.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[D=\\frac{kT}{\\gamma}.\\]</div>",
+        "en": "<div>\\[D=\\frac{kT}{\\gamma}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-D1",
+      "max": 1.0,
+      "title": {
+        "ru": "Оценка постоянной Авогадро",
+        "en": "Estimating Avogadro’s constant"
+      },
+      "steps": [
+        {
+          "id": "d1-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Связь с измеряемой величиной",
+            "en": "Observable in terms of the constant"
+          },
+          "body": {
+            "ru": "<p>Используя \\(2D\\Delta t\\) и \\(k=R/N_A\\), получаем</p><div>\\[\\langle\\Delta x^2\\rangle=\\frac{RT\\Delta t}{3\\pi a\\eta N_A}.\\]</div>",
+            "en": "<p>Insert \\(D=kT/(6\\pi a\\eta)\\) into \\(2D\\Delta t\\) and then use \\(k=R/N_A\\):</p><div>\\[\\langle\\Delta x^2\\rangle=\\frac{RT\\Delta t}{3\\pi a\\eta N_A}.\\]</div>"
+          }
+        },
+        {
+          "id": "d1-2",
+          "points": 0.3,
+          "label": {
+            "ru": "Второй момент гистограммы",
+            "en": "Second moment of the histogram"
+          },
+          "body": {
+            "ru": "<p>Каждый квадрат смещения взвешиваем числом наблюдений в столбце: \\(\\sum_i n_ix_i^2/\\sum_i n_i\\simeq6.34\\,\\mu\\mathrm m^2\\).</p>",
+            "en": "<p>Weight each squared displacement by its count: \\(\\sum_i n_ix_i^2/\\sum_i n_i\\simeq6.34\\,\\mu\\mathrm m^2\\).</p>"
+          }
+        },
+        {
+          "id": "d1-3",
+          "points": 0.2,
+          "label": {
+            "ru": "Подстановка в СИ",
+            "en": "Evaluation in SI units"
+          },
+          "body": {
+            "ru": "<p>Температура равна \\(298\\,\\mathrm K\\), квадрат смещения — \\(6.34\\times10^{-12}\\,\\mathrm m^2\\). Подстановка в выражение для \\(N_A\\) даёт указанную экспериментальную оценку.</p>",
+            "en": "<p>Use \\(298\\,\\mathrm K\\) and \\(6.34\\times10^{-12}\\,\\mathrm m^2\\) in the expression for \\(N_A\\) to obtain the experimental estimate.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[N_A\\simeq5.6\\times10^{23}\\,\\mathrm{mol^{-1}}.\\]</div>",
+        "en": "<div>\\[N_A\\simeq5.6\\times10^{23}\\,\\mathrm{mol^{-1}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-D2",
+      "max": 0.8,
+      "title": {
+        "ru": "Диффузия с постоянным дрейфом",
+        "en": "Diffusion with steady drift"
+      },
+      "steps": [
+        {
+          "id": "d2-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Сумма двух вкладов",
+            "en": "Two contributions"
+          },
+          "body": {
+            "ru": "<p>Запишем \\(\\Delta x=ut+\\xi\\). Для случайной части \\(\\langle\\xi\\rangle=0\\), \\(\\langle\\xi^2\\rangle=2Dt\\), поэтому перекрёстный член исчезает.</p>",
+            "en": "<p>Write \\(\\Delta x=ut+\\xi\\). With \\(\\langle\\xi\\rangle=0\\) and \\(\\langle\\xi^2\\rangle=2Dt\\), the mixed term vanishes.</p>"
+          }
+        },
+        {
+          "id": "d2-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Асимптотики",
+            "en": "Limiting laws"
+          },
+          "body": {
+            "ru": "<p>В начале преобладает \\(2Dt\\), при больших \\(t\\) — \\(u^2t^2\\).</p>",
+            "en": "<p>The linear term \\(2Dt\\) dominates first; the quadratic term \\(u^2t^2\\) dominates at long times.</p>"
+          }
+        },
+        {
+          "id": "d2-3",
+          "points": 0.2,
+          "label": {
+            "ru": "Время перехода",
+            "en": "Crossover time"
+          },
+          "body": {
+            "ru": "<p>Приравняв два положительных слагаемых и разделив на \\(t&gt;0\\), получаем \\(t_*=2D/u^2\\).</p>",
+            "en": "<p>Set the two positive terms equal and divide by \\(t&gt;0\\), giving \\(t_*=2D/u^2\\).</p>"
+          }
+        },
+        {
+          "id": "d2-4",
+          "points": 0.2,
+          "label": {
+            "ru": "Наклон графика",
+            "en": "Logarithmic slope"
+          },
+          "body": {
+            "ru": "<p>На логарифмических осях наклон плавно растёт от 1 до 2. Точку \\(t_*\\) отмечаем между асимптотами, на пересечении их продолжений.</p><figure><img src=\"/assets/practice/ipho-2023/figures/s1f1.png\" width=\"255\" height=\"218\" alt=\"Средний квадрат смещения и время перехода\"></figure>",
+            "en": "<p>The slope on log axes rises smoothly from 1 to 2. Mark \\(t_*\\) where the extrapolated asymptotes meet.</p><figure><img src=\"/assets/practice/ipho-2023/figures/s1f1.png\" width=\"255\" height=\"218\" alt=\"Logarithmic mean square displacement and crossover time\"></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle(\\Delta x)^2\\rangle=2Dt+u^2t^2,\\qquad t_*=\\frac{2D}{u^2}.\\]</div>",
+        "en": "<div>\\[\\langle(\\Delta x)^2\\rangle=2Dt+u^2t^2,\\qquad t_*=\\frac{2D}{u^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-D3",
+      "max": 0.6,
+      "title": {
+        "ru": "Броуновская частица с собственным движением",
+        "en": "A self-propelled Brownian particle"
+      },
+      "steps": [
+        {
+          "id": "d3-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Малое время",
+            "en": "Short times"
+          },
+          "body": {
+            "ru": "<p>Диффузионное слагаемое \\(2Dt\\) при малых временах больше баллистического \\(u_0^2t^2\\).</p>",
+            "en": "<p>At early times the diffusion term \\(2Dt\\) exceeds the ballistic contribution \\(u_0^2t^2\\).</p>"
+          }
+        },
+        {
+          "id": "d3-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Прямолинейное плавание",
+            "en": "Persistent swimming"
+          },
+          "body": {
+            "ru": "<p>До смены направления модуль собственного смещения равен \\(u_0t\\). Когда плавание опережает диффузию, квадрат смещения растёт как \\(u_0^2t^2\\).</p>",
+            "en": "<p>Before a turn, propulsion gives displacement of magnitude \\(u_0t\\). Once this exceeds the diffusive scale its squared contribution is \\(u_0^2t^2\\).</p>"
+          }
+        },
+        {
+          "id": "d3-3",
+          "points": 0.2,
+          "label": {
+            "ru": "Случайное блуждание из пробегов",
+            "en": "Random walk of runs"
+          },
+          "body": {
+            "ru": "<p>За время \\(t\\) укладывается примерно \\(t/\\delta_0\\) независимых пробегов длины \\(u_0\\delta_0\\). Их вклад \\(u_0^2\\delta_0t\\) преобладает над \\(2Dt\\), поскольку наблюдается промежуточный баллистический режим.</p>",
+            "en": "<p>There are approximately \\(t/\\delta_0\\) independent runs of length \\(u_0\\delta_0\\). Their variance is \\(u_0^2\\delta_0t\\). It dominates \\(2Dt\\) under the scale separation implied by the observed intermediate regime.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle(\\Delta x)^2\\rangle\\simeq\\begin{cases}2Dt,&amp;t\\ll2D/u_0^2,\\\\ u_0^2t^2,&amp;2D/u_0^2\\ll t\\ll\\delta_0,\\\\u_0^2\\delta_0 t,&amp;t\\gg\\delta_0.\\end{cases}\\]</div>",
+        "en": "<div>\\[\\langle(\\Delta x)^2\\rangle\\simeq\\begin{cases}2Dt,&amp;t\\ll2D/u_0^2,\\\\ u_0^2t^2,&amp;2D/u_0^2\\ll t\\ll\\delta_0,\\\\u_0^2\\delta_0 t,&amp;t\\gg\\delta_0.\\end{cases}\\]</div>"
+      }
+    },
+    {
+      "id": "T1-E1",
+      "max": 1.5,
+      "title": {
+        "ru": "Порог коагуляции",
+        "en": "Threshold for coagulation"
+      },
+      "steps": [
+        {
+          "id": "e1-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Исчезновение отталкивающего участка",
+            "en": "Loss of the repulsive interval"
+          },
+          "body": {
+            "ru": "<p>Для сближения нужна направленная внутрь сила \\(-U&#x27;(d)\\) на всём пути. На границе режимов минимальное значение \\(U&#x27;\\) равно нулю: два корня \\(U&#x27;=0\\) сливаются.</p>",
+            "en": "<p>Approach from large separation requires inward force \\(-U&#x27;(d)\\) all along the path. At the threshold the minimum of \\(U&#x27;\\) reaches zero: its two zeros coalesce.</p>"
+          }
+        },
+        {
+          "id": "e1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Условия касания",
+            "en": "Double-root equations"
+          },
+          "body": {
+            "ru": "<p>Введём \\(K=B\\epsilon(kT)^2/q^2\\). В точке касания одновременно</p><div>\\[\\frac{A}{d^2}=\\frac{K}{\\lambda}e^{-d/\\lambda},\\qquad \\frac{2A}{d^3}=\\frac{K}{\\lambda^2}e^{-d/\\lambda}.\\]</div>",
+            "en": "<p>Set \\(K=B\\epsilon(kT)^2/q^2\\). At the double root \\(U&#x27;=U&#x27;&#x27;=0\\) requires</p><div>\\[\\frac{A}{d^2}=\\frac{K}{\\lambda}e^{-d/\\lambda},\\qquad \\frac{2A}{d^3}=\\frac{K}{\\lambda^2}e^{-d/\\lambda}.\\]</div>"
+          }
+        },
+        {
+          "id": "e1-3",
+          "points": 0.5,
+          "label": {
+            "ru": "Критическая длина экранирования",
+            "en": "Critical screening length"
+          },
+          "body": {
+            "ru": "<p>Деление второго равенства на первое даёт \\(d=2\\lambda\\). Подставляя это в первое, получаем \\(\\lambda_*=Ae^2/(4K)\\).</p>",
+            "en": "<p>Divide the second condition by the first to get \\(d=2\\lambda\\). Substitution into the first then yields \\(\\lambda_*=Ae^2/(4K)\\).</p>"
+          }
+        },
+        {
+          "id": "e1-4",
+          "points": 0.1,
+          "label": {
+            "ru": "Концентрация соли",
+            "en": "Salt concentration"
+          },
+          "body": {
+            "ru": "<p>Поскольку \\(\\lambda\\) уменьшается с ростом \\(c\\), порог определяется \\(c_*=\\epsilon kT/(2N_Aq^2\\lambda_*^2)\\). Подстановка \\(K\\) завершает вычисление.</p>",
+            "en": "<p>Increasing the salt concentration decreases \\(\\lambda\\). Hence the critical concentration is \\(c_*=\\epsilon kT/(2N_Aq^2\\lambda_*^2)\\). Insert \\(\\lambda_*\\) and expand \\(K\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[c_*=\\frac{8B^2\\epsilon^3(kT)^5}{e^4N_A A^2 q^6}.\\]</div>",
+        "en": "<div>\\[c_*=\\frac{8B^2\\epsilon^3(kT)^5}{e^4N_A A^2 q^6}.\\]</div>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Водяная рисорушка",
+    "en": "A water-powered rice mortar"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2008/IPhO_2008_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-1.1",
+      "label": "1.1",
+      "max": 1.0,
+      "title": {
+        "ru": "Центр масс коромысла",
+        "en": "Centre of mass of the lever"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Центр масс коромысла",
+            "en": "Centre of mass of the lever"
+          },
+          "body": {
+            "ru": "<p>Длина плоского дна \\(d=L-\\sqrt3h=0{,}5322\\,\\mathrm m\\). Слой воды глубиной \\(c\\) состоит в сечении из прямоугольника и треугольника. Положив \\(V=m/\\rho=10^{-3}\\,\\mathrm{m^3}\\), получаем \\(V=b(dc+\\sqrt3\\,c^2/2)\\), откуда \\(c=0{,}01228\\,\\mathrm m\\).</p>\n<p>Ширина сечения на высоте \\(z\\) равна \\(d+\\sqrt3z\\). Его середина отстоит от вертикальной стенки на половину этой ширины. Усредняя с весом, пропорциональным ширине, находим плечо воды \\(TH\\simeq a+d/2+\\sqrt3c/4=0{,}4714\\,\\mathrm m\\). В момент отрыва песта \\(M g\\,TG=m g\\,TH\\).</p>\n<figure><img src=\"/assets/practice/ipho-2008/q1/sfig1.png\" alt=\"Плечо силы тяжести воды в горизонтальном ковше.\" style=\"width:min(100%,410px);height:auto\" loading=\"lazy\"><figcaption>Плечо силы тяжести воды в горизонтальном ковше.</figcaption></figure>",
+            "en": "<p>The flat bottom has length \\(d=L-\\sqrt3h=0.5322\\,\\mathrm m\\). A water layer of depth \\(c\\) has a rectangular and a triangular cross section. Its volume is \\(V=m/\\rho=10^{-3}\\,\\mathrm{m^3}\\), so \\(V=b(dc+\\sqrt3\\,c^2/2)\\) gives \\(c=0.01228\\,\\mathrm m\\).</p>\n<p>A slice at height \\(z\\) has width \\(d+\\sqrt3z\\). Its midpoint is half this width from the vertical wall. Weighting by the slice width gives the water's horizontal moment arm \\(TH\\simeq a+d/2+\\sqrt3c/4=0.4714\\,\\mathrm m\\). At lift-off \\(M g\\,TG=m g\\,TH\\).</p>\n<figure><img src=\"/assets/practice/ipho-2008/q1/sfig1.png\" alt=\"The water&#x27;s moment arm in the horizontal bucket.\" style=\"width:min(100%,410px);height:auto\" loading=\"lazy\"><figcaption>The water's moment arm in the horizontal bucket.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[TG=\\frac{m}{M}TH\\simeq 0{,}016\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[TG=\\frac{m}{M}TH\\simeq 0.016\\,\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.2",
+      "label": "1.2",
+      "max": 0.5,
+      "title": {
+        "ru": "Начало и конец перелива",
+        "en": "Start and end of overflow"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Начало и конец перелива",
+            "en": "Start and end of overflow"
+          },
+          "body": {
+            "ru": "<p>Когда поверхность впервые касается края, поперечник воды — треугольник. Его основание на дне \\(x=PQ=2V/(bh)=0{,}1111\\,\\mathrm m\\). Горизонтальной поверхности в координатах коромысла соответствует наклон \\(h/(x+\\sqrt3 h)\\). Последняя вода вытекает, когда наклонная стенка горизонтальна.</p>\n<figure><img src=\"/assets/practice/ipho-2008/q1/sfig2.png\" alt=\"Треугольное сечение воды при переливе.\" style=\"width:min(100%,505px);height:auto\" loading=\"lazy\"><figcaption>Треугольное сечение воды при переливе.</figcaption></figure>",
+            "en": "<p>At first overflow the water cross section is triangular. Its base on the bucket floor is \\(x=PQ=2V/(bh)=0.1111\\,\\mathrm m\\). In lever coordinates the free surface has slope of magnitude \\(h/(x+\\sqrt3 h)\\). The last water leaves when the sloping wall becomes horizontal.</p>\n<figure><img src=\"/assets/practice/ipho-2008/q1/sfig2.png\" alt=\"Triangular water cross section during overflow.\" style=\"width:min(100%,505px);height:auto\" loading=\"lazy\"><figcaption>Triangular water cross section during overflow.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\alpha_1=\\arctan\\frac{h}{x+\\sqrt3h}\\simeq20{,}6^\\circ,\\qquad \\alpha_2=30^\\circ.\\]</div>",
+        "en": "<div>\\[\\alpha_1=\\arctan\\frac{h}{x+\\sqrt3h}\\simeq20.6^\\circ,\\qquad \\alpha_2=30^\\circ.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.3",
+      "label": "1.3",
+      "max": 1.5,
+      "title": {
+        "ru": "Равновесие при переливе",
+        "en": "Balance during overflow"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.5,
+          "label": {
+            "ru": "Равновесие при переливе",
+            "en": "Balance during overflow"
+          },
+          "body": {
+            "ru": "<p>Теперь \\(x=PQ\\) переменно. Масса воды \\(m=\\rho bhx/2\\). Центр масс треугольного сечения делит медиану от края в отношении \\(2:1\\). На линии коромысла он отстоит от оси на \\(TN=L+a-\\tfrac23(\\sqrt3h+x/2)\\). В горизонтальные плечи обеих сил входит один и тот же множитель \\(\\cos\\beta\\).</p>\n<p>В метрах и килограммах уравнение \\(m\\,TN=M\\,TG\\) принимает вид \\(9x(0{,}8014-x/3)=0{,}4714\\). Геометрическому условию \\(0&lt;x&lt;d\\) отвечает корень \\(x=0{,}06723\\,\\mathrm m\\). Угол находим из той же геометрии поверхности, что и в предыдущем пункте.</p>",
+            "en": "<p>Now \\(x=PQ\\) varies and \\(m=\\rho bhx/2\\). The centroid of the triangular section lies two thirds of the way along the median from the rim. Its distance from the axle along the lever is \\(TN=L+a-\\tfrac23(\\sqrt3h+x/2)\\). Both horizontal moment arms contain the same factor \\(\\cos\\beta\\).</p>\n<p>In metres and kilograms, \\(m\\,TN=M\\,TG\\) becomes \\(9x(0.8014-x/3)=0.4714\\). Only \\(x=0.06723\\,\\mathrm m\\) lies between zero and \\(d\\). The free-surface slope again gives the tilt.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\beta=\\arctan\\frac{h}{x+\\sqrt3h}\\simeq23{,}6^\\circ,\\qquad m_1\\simeq0{,}61\\,\\mathrm{kg}.\\]</div>",
+        "en": "<div>\\[\\beta=\\arctan\\frac{h}{x+\\sqrt3h}\\simeq23.6^\\circ,\\qquad m_1\\simeq0.61\\,\\mathrm{kg}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-2.1",
+      "label": "2.1",
+      "max": 2.0,
+      "title": {
+        "ru": "Момент за полный цикл",
+        "en": "Torque over a complete cycle"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 2.0,
+          "label": {
+            "ru": "Момент за полный цикл",
+            "en": "Torque over a complete cycle"
+          },
+          "body": {
+            "ru": "<p>Положительный момент поднимает пест. При \\(\\alpha=0\\) наполнение увеличивает \\(\\mu\\) от \\(-Mg\\,TG\\) до нуля. С началом движения вода смещается дальше от оси. Перед переливом \\(TN=0{,}7644\\,\\mathrm m\\), поэтому \\(\\mu(\\alpha_1)=g(m\\,TN-M\\,TG)\\cos\\alpha_1\\).</p>\n<p>Затем вода вытекает. Момент проходит через нуль при \\(\\beta\\) и достигает \\(-Mg\\,TG\\cos\\alpha_2\\) при опустошении. На участке до \\(\\alpha_0\\) и на всём обратном ходе \\(\\mu=-Mg\\,TG\\cos\\alpha\\). При возвращении к горизонтали момент снова равен \\(-4{,}62\\,\\mathrm{N\\,m}\\).</p>\n<figure><img src=\"/assets/practice/ipho-2008/q1/sfig3.png\" alt=\"Момент сил в рабочем цикле.\" style=\"width:min(100%,425px);height:auto\" loading=\"lazy\"><figcaption>Момент сил в рабочем цикле.</figcaption></figure>",
+            "en": "<p>Take a torque lifting the pestle to be positive. As the horizontal bucket fills, \\(\\mu\\) rises from \\(-Mg\\,TG\\) to zero. As the lever moves, the water shifts farther from the axle. At first overflow \\(TN=0.7644\\,\\mathrm m\\), giving \\(\\mu(\\alpha_1)=g(m\\,TN-M\\,TG)\\cos\\alpha_1\\).</p>\n<p>As water drains, the torque crosses zero at \\(\\beta\\) and reaches \\(-Mg\\,TG\\cos\\alpha_2\\) on emptying. From there to \\(\\alpha_0\\) and throughout the return, \\(\\mu=-Mg\\,TG\\cos\\alpha\\). On reaching the horizontal it is again \\(-4.62\\,\\mathrm{N\\,m}\\).</p>\n<figure><img src=\"/assets/practice/ipho-2008/q1/sfig3.png\" alt=\"Torque during one working cycle.\" style=\"width:min(100%,425px);height:auto\" loading=\"lazy\"><figcaption>Torque during one working cycle.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mu(0):-4{,}62\\to0,\\qquad \\mu(\\alpha_1)\\simeq+2{,}7,\\qquad \\mu(\\alpha_2)\\simeq-4{,}0\\quad(\\mathrm{N\\,m}).\\]</div>",
+        "en": "<div>\\[\\mu(0):-4.62\\to0,\\qquad \\mu(\\alpha_1)\\simeq+2.7,\\qquad \\mu(\\alpha_2)\\simeq-4.0\\quad(\\mathrm{N\\,m}).\\]</div>"
+      }
+    },
+    {
+      "id": "T1-2.2",
+      "label": "2.2",
+      "max": 0.7,
+      "title": {
+        "ru": "Работа на графике",
+        "en": "Work on the torque diagram"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.35,
+          "label": {
+            "ru": "Площадь петли",
+            "en": "Area of the loop"
+          },
+          "body": {
+            "ru": "<p>Элементарная работа равна \\(\\mu\\,d\\alpha\\), где угол измеряется в радианах. Интеграл по замкнутому пути равен площади петли с учётом направления обхода.</p>\n<div>\\[W_{\\mathrm{total}}=\\oint\\mu\\,d\\alpha.\\]</div>",
+            "en": "<p>An angular displacement in radians transfers work \\(\\mu\\,d\\alpha\\). Integrating round the path gives the signed area enclosed by the loop.</p>\n<div>\\[W_{\\mathrm{total}}=\\oint\\mu\\,d\\alpha.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.35,
+          "label": {
+            "ru": "Работа удара",
+            "en": "Work delivered at impact"
+          },
+          "body": {
+            "ru": "<p>К обратному ходу ковш пуст. Кинетическая энергия перед ударом равна работе его момента от \\(\\alpha_0\\) до нуля. На графике это площадь между обратной ветвью и осью углов.</p>\n<div>\\[W_{\\mathrm{pounding}}=Mg\\,TG\\sin\\alpha_0.\\]</div>",
+            "en": "<p>The bucket is empty on the return. The kinetic energy just before impact equals the torque integral from \\(\\alpha_0\\) to zero, the area between the return branch and the horizontal axis.</p>\n<div>\\[W_{\\mathrm{pounding}}=Mg\\,TG\\sin\\alpha_0.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>\\(W_{\\mathrm{total}}\\) — площадь петли, \\(W_{\\mathrm{pounding}}=Mg\\,TG\\sin\\alpha_0\\) — площадь под обратной ветвью по модулю.</p>",
+        "en": "<p>\\(W_{\\mathrm{total}}\\) is the enclosed area. \\(W_{\\mathrm{pounding}}=Mg\\,TG\\sin\\alpha_0\\) is the unsigned area under the return branch.</p>"
+      }
+    },
+    {
+      "id": "T1-2.3",
+      "label": "2.3",
+      "max": 0.8,
+      "title": {
+        "ru": "Максимальный наклон и удар",
+        "en": "Largest tilt and impact work"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Точка разворота",
+            "en": "Turning point"
+          },
+          "body": {
+            "ru": "<p>Пест начинает и заканчивает подъём с нулевой скоростью. На восходящей ветви площади по обе стороны от оси равны. Заменив положительную часть треугольником, а отрицательную трапецией, можно считать углы в градусах, поскольку множитель пересчёта сократится.</p>\n<div>\\[2{,}7\\,\\beta\\simeq4{,}0\\big[(\\alpha_0-\\beta)+(\\alpha_0-\\alpha_2)\\big].\\]</div>",
+            "en": "<p>The pestle starts and ends its rise at rest. The positive and negative areas on the outward branch must be equal. Approximate them by a triangle and a trapezoid. The degree-to-radian factor cancels from this comparison.</p>\n<div>\\[2.7\\,\\beta\\simeq4.0\\big[(\\alpha_0-\\beta)+(\\alpha_0-\\alpha_2)\\big].\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Энергия песта",
+            "en": "Impact energy"
+          },
+          "body": {
+            "ru": "<p>Получаем \\(\\alpha_0\\simeq34{,}7^\\circ\\). За время обратного хода центр масс коромысла опускается на \\(TG\\sin\\alpha_0\\).</p>\n<div>\\[W_{\\mathrm{pounding}}=Mg\\,TG\\sin\\alpha_0\\simeq2{,}6\\,\\mathrm J.\\]</div>",
+            "en": "<p>This gives \\(\\alpha_0\\simeq34.7^\\circ\\). During the return the lever's centre of mass drops by \\(TG\\sin\\alpha_0\\).</p>\n<div>\\[W_{\\mathrm{pounding}}=Mg\\,TG\\sin\\alpha_0\\simeq2.6\\,\\mathrm J.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\alpha_0\\simeq34{,}7^\\circ,\\qquad W_{\\mathrm{pounding}}\\simeq2{,}6\\,\\mathrm J.\\]</div>",
+        "en": "<div>\\[\\alpha_0\\simeq34.7^\\circ,\\qquad W_{\\mathrm{pounding}}\\simeq2.6\\,\\mathrm J.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3.1.1",
+      "label": "3.1.1",
+      "max": 0.5,
+      "title": {
+        "ru": "Устойчивость",
+        "en": "Stability"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Устойчивость",
+            "en": "Stability"
+          },
+          "body": {
+            "ru": "<p>При большем угле ковш вмещает меньше воды и момент опускает пест. При меньшем угле воды становится больше и момент поднимает пест. В обоих направлениях движения вода у края, так что ветви графика совпадают.</p>\n<figure><img src=\"/assets/practice/ipho-2008/q1/sfig4.png\" alt=\"Восстанавливающий момент вблизи равновесия.\" style=\"width:min(100%,340px);height:auto\" loading=\"lazy\"><figcaption>Восстанавливающий момент вблизи равновесия.</figcaption></figure>",
+            "en": "<p>At larger tilt the full bucket holds less water and the torque lowers the pestle. At smaller tilt it holds more and the torque lifts the pestle. Since water stays at the rim in both directions, the same branch is traced on the return.</p>\n<figure><img src=\"/assets/practice/ipho-2008/q1/sfig4.png\" alt=\"Restoring torque near equilibrium.\" style=\"width:min(100%,340px);height:auto\" loading=\"lazy\"><figcaption>Restoring torque near equilibrium.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Равновесие устойчиво. График пересекает нуль при \\(\\alpha=\\beta\\) с отрицательным наклоном.</p>",
+        "en": "<p>The equilibrium is stable. The graph crosses zero at \\(\\alpha=\\beta\\) with negative slope.</p>"
+      }
+    },
+    {
+      "id": "T1-3.1.2",
+      "label": "3.1.2",
+      "max": 0.2,
+      "title": {
+        "ru": "Восстанавливающий момент",
+        "en": "Restoring torque"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.2,
+          "label": {
+            "ru": "Восстанавливающий момент",
+            "en": "Restoring torque"
+          },
+          "body": {
+            "ru": "<p>Из геометрии полного ковша \\(x=h(\\cot\\alpha-\\sqrt3)\\), поэтому \\(m=\\rho bh^2(\\cot\\alpha-\\sqrt3)/2\\). Малое изменение массы равно \\(\\Delta m=-\\rho bh^2\\Delta\\alpha/(2\\sin^2\\beta)\\). Для оценки принимаем плечо добавочной массы равным равновесному \\(TN\\cos\\beta\\), где \\(TN=M\\,TG/m_1=0{,}779\\,\\mathrm m\\).</p>\n<div>\\[\\mu\\simeq g\\,TN\\cos\\beta\\,\\Delta m.\\]</div>",
+            "en": "<p>The brimful-bucket geometry gives \\(x=h(\\cot\\alpha-\\sqrt3)\\) and hence \\(m=\\rho bh^2(\\cot\\alpha-\\sqrt3)/2\\). Thus \\(\\Delta m=-\\rho bh^2\\Delta\\alpha/(2\\sin^2\\beta)\\). To estimate the torque, use the equilibrium arm \\(TN\\cos\\beta\\) for this mass change, with \\(TN=M\\,TG/m_1=0.779\\,\\mathrm m\\).</p>\n<div>\\[\\mu\\simeq g\\,TN\\cos\\beta\\,\\Delta m.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mu\\simeq-k\\Delta\\alpha,\\qquad k\\simeq47\\,\\mathrm{N\\,m\\,rad^{-1}}.\\]</div>",
+        "en": "<div>\\[\\mu\\simeq-k\\Delta\\alpha,\\qquad k\\simeq47\\,\\mathrm{N\\,m\\,rad^{-1}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3.1.3",
+      "label": "3.1.3",
+      "max": 0.8,
+      "title": {
+        "ru": "Период колебаний",
+        "en": "Oscillation period"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Уравнение движения",
+            "en": "Equation of motion"
+          },
+          "body": {
+            "ru": "<p>В линейном приближении момент инерции берём при равновесии. Считая воду сосредоточенной в \\(N\\), получаем \\(I_{\\mathrm{eff}}\\simeq I+m_1(TN)^2=12{,}4\\,\\mathrm{kg\\,m^2}\\). При отклонении \\(A\\) решение с нулевой начальной скоростью имеет вид \\(\\Delta\\alpha=A\\cos(\\sqrt{k/I_{\\mathrm{eff}}}\\,t)\\).</p>\n<div>\\[I_{\\mathrm{eff}}\\,\\Delta\\ddot\\alpha+k\\Delta\\alpha=0.\\]</div>",
+            "en": "<p>To linear order use the equilibrium inertia. Concentrating the water at \\(N\\) gives \\(I_{\\mathrm{eff}}\\simeq I+m_1(TN)^2=12.4\\,\\mathrm{kg\\,m^2}\\). From initial displacement \\(A\\) and zero angular velocity the solution is \\(\\Delta\\alpha=A\\cos(\\sqrt{k/I_{\\mathrm{eff}}}\\,t)\\).</p>\n<div>\\[I_{\\mathrm{eff}}\\,\\Delta\\ddot\\alpha+k\\Delta\\alpha=0.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Период",
+            "en": "Period"
+          },
+          "body": {
+            "ru": "<p>Восстанавливающий момент пропорционален отклонению. Угловая частота малых колебаний равна \\(\\sqrt{k/I_{\\mathrm{eff}}}\\).</p>\n<div>\\[\\tau=2\\pi\\sqrt{\\frac{I_{\\mathrm{eff}}}{k}}\\simeq3{,}2\\,\\mathrm s.\\]</div>",
+            "en": "<p>The restoring torque is proportional to displacement, giving angular frequency \\(\\sqrt{k/I_{\\mathrm{eff}}}\\).</p>\n<div>\\[\\tau=2\\pi\\sqrt{\\frac{I_{\\mathrm{eff}}}{k}}\\simeq3.2\\,\\mathrm s.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I_{\\mathrm{eff}}\\,\\Delta\\ddot\\alpha+k\\Delta\\alpha=0,\\qquad \\tau\\simeq3{,}2\\,\\mathrm s.\\]</div>",
+        "en": "<div>\\[I_{\\mathrm{eff}}\\,\\Delta\\ddot\\alpha+k\\Delta\\alpha=0,\\qquad \\tau\\simeq3.2\\,\\mathrm s.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3.2",
+      "label": "3.2",
+      "max": 1.5,
+      "title": {
+        "ru": "Расход для колебаний",
+        "en": "Inflow needed for oscillation"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.5,
+          "label": {
+            "ru": "Расход для колебаний",
+            "en": "Inflow needed for oscillation"
+          },
+          "body": {
+            "ru": "<p>На обратном ходе требуемый приток равен скорости роста вместимости по массе. В линейном приближении \\(\\lvert dm/d\\alpha\\rvert=\\rho bh^2/(2\\sin^2\\beta)\\). Угловая скорость максимальна при прохождении равновесия и равна \\(2\\pi A/\\tau\\). Амплитуду \\(A=\\pi/180\\) берём в радианах.</p>",
+            "en": "<p>On the return, inflow must supply the increase in the bucket's mass capacity. To linear order \\(\\lvert dm/d\\alpha\\rvert=\\rho bh^2/(2\\sin^2\\beta)\\). The angular speed is greatest at equilibrium, where it is \\(2\\pi A/\\tau\\). Use the amplitude \\(A=\\pi/180\\) in radians.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Phi_1=\\frac{\\pi\\rho bh^2 A}{\\tau\\sin^2\\beta}\\simeq0{,}23\\,\\mathrm{kg\\,s^{-1}}.\\]</div>",
+        "en": "<div>\\[\\Phi_1=\\frac{\\pi\\rho bh^2 A}{\\tau\\sin^2\\beta}\\simeq0.23\\,\\mathrm{kg\\,s^{-1}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3.3",
+      "label": "3.3",
+      "max": 0.5,
+      "title": {
+        "ru": "Остановка рабочего цикла",
+        "en": "Loss of the working cycle"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Остановка рабочего цикла",
+            "en": "Loss of the working cycle"
+          },
+          "body": {
+            "ru": "<p>Если к углу \\(\\alpha_1\\) ковш вновь полон, в нём уже \\(1\\,\\mathrm{kg}\\) воды. Коромысло может остаться в поднятом режиме. Граничная амплитуда обратного хода \\(A=\\beta-\\alpha_1\\simeq3^\\circ\\). Минимальный расход пропорционален амплитуде.</p>",
+            "en": "<p>If the bucket is full again by \\(\\alpha_1\\), it already contains \\(1\\,\\mathrm{kg}\\) and the lever can remain in the raised mode. The limiting return amplitude is \\(A=\\beta-\\alpha_1\\simeq3^\\circ\\). The required inflow scales linearly with amplitude.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Phi_2\\simeq3\\Phi_1\\simeq0{,}7\\,\\mathrm{kg\\,s^{-1}}.\\]</div>",
+        "en": "<div>\\[\\Phi_2\\simeq3\\Phi_1\\simeq0.7\\,\\mathrm{kg\\,s^{-1}}.\\]</div>"
+      }
+    }
+  ]
+}

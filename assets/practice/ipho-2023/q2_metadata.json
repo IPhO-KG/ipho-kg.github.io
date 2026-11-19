@@ -1,0 +1,78 @@
+{
+  "id": "T2",
+  "title": "Нейтронные звёзды",
+  "points": 10,
+  "sourceFile": "IPhO_2023_Q2.pdf",
+  "sourcePdf": "/assets/practice/ipho-2023/IPhO_2023_T2_EN.pdf",
+  "solutionPdf": "/assets/practice/ipho-2023/IPhO_2023_S2_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2023/IPhO_2023_M2_EN.pdf",
+  "sections": [
+    {
+      "id": "T2-A",
+      "title": "Масса и устойчивость ядер",
+      "points": 2.5
+    },
+    {
+      "id": "T2-B",
+      "title": "Звезда как гигантское ядро",
+      "points": 1.5
+    },
+    {
+      "id": "T2-C",
+      "title": "Пульсар в двойной системе",
+      "points": 6.0
+    }
+  ],
+  "figures": [
+    "q2f1",
+    "q2f2",
+    "q2f3",
+    "q2f4",
+    "q2f5"
+  ],
+  "subtasks": [
+    {
+      "id": "T2-A1",
+      "points": 0.9
+    },
+    {
+      "id": "T2-A2",
+      "points": 0.9
+    },
+    {
+      "id": "T2-A3",
+      "points": 0.7
+    },
+    {
+      "id": "T2-B1",
+      "points": 1.5
+    },
+    {
+      "id": "T2-C1",
+      "points": 1.0
+    },
+    {
+      "id": "T2-C2",
+      "points": 1.8
+    },
+    {
+      "id": "T2-C3",
+      "points": 1.8
+    },
+    {
+      "id": "T2-C4",
+      "points": 0.8
+    },
+    {
+      "id": "T2-C5",
+      "points": 0.4
+    },
+    {
+      "id": "T2-C6",
+      "points": 0.2
+    }
+  ],
+  "solutionsAvailable": true,
+  "solutionData": "/assets/practice/ipho-2023/solutions/t2.json",
+  "stepScoring": "official-criteria"
+}

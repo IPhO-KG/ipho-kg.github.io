@@ -1,0 +1,363 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Метеорит Марибо",
+    "en": "The Maribo meteorite"
+  },
+  "max": 9,
+  "sourcePdf": "/assets/practice/ipho-2013/IPhO_2013_S1_EN.pdf",
+  "markingSchemePdf": "/assets/practice/ipho-2013/IPhO_2013_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-1.1",
+      "label": "1.1",
+      "max": 1.3,
+      "title": {
+        "ru": "Скорость по двум кадрам",
+        "en": "Speed from two frames"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.3,
+          "label": {
+            "ru": "Скорость по двум кадрам",
+            "en": "Speed from two frames"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(D,E\\) — проекции положений болида на землю. В треугольниках \\(CMD\\) и \\(CME\\) угол при \\(M\\) равен \\(55^\\circ\\). Углы при \\(C\\) равны \\(15^\\circ\\) и \\(9^\\circ\\). По теореме синусов \\(CD=195\\sin55^\\circ/\\sin110^\\circ=170{,}0\\,\\mathrm{km}\\) и \\(CE=195\\sin55^\\circ/\\sin116^\\circ=177{,}7\\,\\mathrm{km}\\).</p>\n<p>Горизонтальный путь по теореме косинусов при угле \\(6^\\circ\\) равен \\(19{,}77\\,\\mathrm{km}\\). Разность высот \\(CD\\tan19{,}2^\\circ-CE\\tan14{,}7^\\circ=12{,}57\\,\\mathrm{km}\\). Путь \\(23{,}43\\,\\mathrm{km}\\) болид прошёл за \\(0{,}82\\,\\mathrm s\\).</p>\n<figure><img src=\"/assets/practice/ipho-2013/q1/sfig1.png\" alt=\"Траектория в плане и по высоте\" style=\"max-width:min(100%,560px)\"></figure>",
+            "en": "<p>Let \\(D,E\\) be the ground projections. Triangles \\(CMD\\) and \\(CME\\) share a \\(55^\\circ\\) angle at \\(M\\). Their angles at \\(C\\) are \\(15^\\circ\\) and \\(9^\\circ\\). The sine rule gives \\(CD=195\\sin55^\\circ/\\sin110^\\circ=170.0\\,\\mathrm{km}\\) and \\(CE=195\\sin55^\\circ/\\sin116^\\circ=177.7\\,\\mathrm{km}\\).</p>\n<p>The cosine rule with included angle \\(6^\\circ\\) gives a ground displacement of \\(19.77\\,\\mathrm{km}\\). The height difference is \\(CD\\tan19.2^\\circ-CE\\tan14.7^\\circ=12.57\\,\\mathrm{km}\\). The spatial path is \\(23.43\\,\\mathrm{km}\\) in \\(0.82\\,\\mathrm s\\).</p>\n<figure><img src=\"/assets/practice/ipho-2013/q1/sfig1.png\" alt=\"Plan and elevation of trajectory\" style=\"max-width:min(100%,560px)\"></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\bar v\\simeq28{,}6\\,\\mathrm{km/s}.\\]</div>",
+        "en": "<div>\\[\\bar v\\simeq28.6\\,\\mathrm{km/s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.2a",
+      "label": "1.2a",
+      "max": 0.7,
+      "title": {
+        "ru": "Уменьшение скорости",
+        "en": "Ten per cent speed loss"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.7,
+          "label": {
+            "ru": "Уменьшение скорости",
+            "en": "Ten per cent speed loss"
+          },
+          "body": {
+            "ru": "<p>Площадь сечения равна \\(\\pi R^2\\). Из \\(m\\dot v=-k\\rho_a\\pi R^2v^2\\) следует \\(d(1/v)/dt=k\\rho_a\\pi R^2/m\\). Интегрируем между заданными скоростями.</p>\n<div>\\[t=\\frac{m}{k\\rho_a\\pi R^2v_0}\\left(\\frac1{0{,}90}-1\\right).\\]</div>",
+            "en": "<p>The cross-section is \\(\\pi R^2\\). The equation \\(m\\dot v=-k\\rho_a\\pi R^2v^2\\) gives \\(d(1/v)/dt=k\\rho_a\\pi R^2/m\\). Integrate between the two speeds.</p>\n<div>\\[t=\\frac{m}{k\\rho_a\\pi R^2v_0}\\left(\\frac1{0.90}-1\\right).\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[t\\simeq0{,}88\\,\\mathrm s.\\]</div>",
+        "en": "<div>\\[t\\simeq0.88\\,\\mathrm s.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.2b",
+      "label": "1.2b",
+      "max": 0.3,
+      "title": {
+        "ru": "Энергия плавления",
+        "en": "Energy needed to melt"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.3,
+          "label": {
+            "ru": "Энергия плавления",
+            "en": "Energy needed to melt"
+          },
+          "body": {
+            "ru": "<p>На единицу массы приходится \\(v_0^2/2\\) кинетической энергии. Камень сначала надо нагреть до \\(T_{\\mathrm{sm}}=1700\\,\\mathrm K\\), затем затратить скрытую теплоту плавления. Используем \\(c_{\\mathrm{sm}}=1200\\,\\mathrm{J/(kg\\,K)}\\) и \\(L_{\\mathrm{sm}}=2{,}6\\times10^5\\,\\mathrm{J/kg}\\).</p>",
+            "en": "<p>The kinetic energy per unit mass is \\(v_0^2/2\\). The stone must first reach \\(T_{\\mathrm{sm}}=1700\\,\\mathrm K\\), then absorb latent heat. Use \\(c_{\\mathrm{sm}}=1200\\,\\mathrm{J/(kg\\,K)}\\) and \\(L_{\\mathrm{sm}}=2.6\\times10^5\\,\\mathrm{J/kg}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{E_{\\mathrm{kin}}}{E_{\\mathrm{melt}}}=\\frac{v_0^2/2}{c_{\\mathrm{sm}}(T_{\\mathrm{sm}}-T_0)+L_{\\mathrm{sm}}}\\simeq2{,}1\\times10^2.\\]</div>",
+        "en": "<div>\\[\\frac{E_{\\mathrm{kin}}}{E_{\\mathrm{melt}}}=\\frac{v_0^2/2}{c_{\\mathrm{sm}}(T_{\\mathrm{sm}}-T_0)+L_{\\mathrm{sm}}}\\simeq2.1\\times10^2.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.3a",
+      "label": "1.3a",
+      "max": 0.6,
+      "title": {
+        "ru": "Глубина прогрева",
+        "en": "Thermal penetration depth"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.6,
+          "label": {
+            "ru": "Глубина прогрева",
+            "en": "Thermal penetration depth"
+          },
+          "body": {
+            "ru": "<p>Сравнение степеней массы, температуры, длины и времени даёт \\(\\beta+\\delta=0\\), \\(\\gamma+\\delta=0\\), \\(-3\\beta+2\\gamma+\\delta=1\\), \\(\\alpha-2\\gamma-3\\delta=0\\). Отсюда \\(x\\simeq\\sqrt{k_{\\mathrm{sm}}t/(\\rho_{\\mathrm{sm}}c_{\\mathrm{sm}})}\\).</p>",
+            "en": "<p>Equating exponents of mass, temperature, length and time gives \\(\\beta+\\delta=0\\), \\(\\gamma+\\delta=0\\), \\(-3\\beta+2\\gamma+\\delta=1\\), \\(\\alpha-2\\gamma-3\\delta=0\\). Hence \\(x\\simeq\\sqrt{k_{\\mathrm{sm}}t/(\\rho_{\\mathrm{sm}}c_{\\mathrm{sm}})}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[(\\alpha,\\beta,\\gamma,\\delta)=\\left(\\tfrac12,-\\tfrac12,-\\tfrac12,\\tfrac12\\right).\\]</div>",
+        "en": "<div>\\[(\\alpha,\\beta,\\gamma,\\delta)=\\left(\\tfrac12,-\\tfrac12,-\\tfrac12,\\tfrac12\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.3b",
+      "label": "1.3b",
+      "max": 0.4,
+      "title": {
+        "ru": "Нагретая оболочка",
+        "en": "Thickness after five seconds"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.4,
+          "label": {
+            "ru": "Нагретая оболочка",
+            "en": "Thickness after five seconds"
+          },
+          "body": {
+            "ru": "<p>Температуропроводность равна \\(k_{\\mathrm{sm}}/(\\rho_{\\mathrm{sm}}c_{\\mathrm{sm}})=5{,}05\\times10^{-7}\\,\\mathrm{m^2/s}\\). Умножаем её на время, извлекаем корень и сравниваем глубину с радиусом 130 мм.</p>",
+            "en": "<p>The thermal diffusivity is \\(k_{\\mathrm{sm}}/(\\rho_{\\mathrm{sm}}c_{\\mathrm{sm}})=5.05\\times10^{-7}\\,\\mathrm{m^2/s}\\). Multiply by the flight time, take the square root, and compare with the 130 mm radius.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x\\simeq1{,}6\\,\\mathrm{mm},\\qquad x/R\\simeq0{,}012.\\]</div>",
+        "en": "<div>\\[x\\simeq1.6\\,\\mathrm{mm},\\qquad x/R\\simeq0.012.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.4a",
+      "label": "1.4a",
+      "max": 0.3,
+      "title": {
+        "ru": "Схема распада",
+        "en": "Decay scheme"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.3,
+          "label": {
+            "ru": "Схема распада",
+            "en": "Decay scheme"
+          },
+          "body": {
+            "ru": "<p>Массовое число сохраняется, заряд ядра возрастает на единицу. Это \\(\\beta^-\\)-распад с испусканием электрона и электронного антинейтрино.</p>",
+            "en": "<p>The mass number stays fixed and nuclear charge increases by one. This is a \\(\\beta^-\\) decay with an emitted electron and electron antineutrino.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[{}^{87}_{37}\\mathrm{Rb}\\longrightarrow{}^{87}_{38}\\mathrm{Sr}+e^-+\\bar\\nu_e.\\]</div>",
+        "en": "<div>\\[{}^{87}_{37}\\mathrm{Rb}\\longrightarrow{}^{87}_{38}\\mathrm{Sr}+e^-+\\bar\\nu_e.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.4b",
+      "label": "1.4b",
+      "max": 0.7,
+      "title": {
+        "ru": "Изохрона",
+        "en": "The isochron"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.7,
+          "label": {
+            "ru": "Изохрона",
+            "en": "The isochron"
+          },
+          "body": {
+            "ru": "<p>Число распавшихся ядер равно \\(N_{\\mathrm{Rb}}(0)-N_{\\mathrm{Rb}}(t)=N_{\\mathrm{Rb}}(t)(e^{\\lambda t}-1)\\). Столько же ядер \\(^{87}\\mathrm{Sr}\\) добавилось. Делим равенство на неизменное \\(N_{86}\\). С обозначениями \\(x=N_{\\mathrm{Rb}}(t)/N_{86}\\), \\(y=N_{87\\mathrm{Sr}}(t)/N_{86}\\) начальное отношение \\(y_0\\) одинаково для всех минералов.</p>",
+            "en": "<p>The number of decays is \\(N_{\\mathrm{Rb}}(0)-N_{\\mathrm{Rb}}(t)=N_{\\mathrm{Rb}}(t)(e^{\\lambda t}-1)\\), equal to the gain in \\(^{87}\\mathrm{Sr}\\). Divide by the constant \\(N_{86}\\). Put \\(x=N_{\\mathrm{Rb}}(t)/N_{86}\\) and \\(y=N_{87\\mathrm{Sr}}(t)/N_{86}\\). The initial ratio \\(y_0\\) is common to the samples.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[y=y_0+(e^{\\lambda t}-1)x.\\]</div>",
+        "en": "<div>\\[y=y_0+(e^{\\lambda t}-1)x.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.4c",
+      "label": "1.4c",
+      "max": 0.4,
+      "title": {
+        "ru": "Возраст по наклону",
+        "en": "Age from the slope"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.4,
+          "label": {
+            "ru": "Возраст по наклону",
+            "en": "Age from the slope"
+          },
+          "body": {
+            "ru": "<p>При увеличении \\(x\\) примерно на \\(0{,}25\\) ордината возрастает приблизительно на \\(0{,}012\\). Значит, \\(a\\simeq0{,}05\\). Используем \\(\\lambda=\\ln2/T_{1/2}\\) и выражаем время по логарифму \\(1+a\\).</p>",
+            "en": "<p>Over an increase in \\(x\\) of about \\(0.25\\), the ordinate rises by about \\(0.012\\), giving \\(a\\simeq0.05\\). With \\(\\lambda=\\ln2/T_{1/2}\\) recover the time from \\(\\ln(1+a)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[t=\\frac{T_{1/2}\\ln(1+a)}{\\ln2}\\simeq3{,}4\\times10^9\\,\\mathrm{yr}.\\]</div>",
+        "en": "<div>\\[t=\\frac{T_{1/2}\\ln(1+a)}{\\ln2}\\simeq3.4\\times10^9\\,\\mathrm{yr}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.5",
+      "label": "1.5",
+      "max": 0.6,
+      "title": {
+        "ru": "Период кометы",
+        "en": "Orbital period"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.6,
+          "label": {
+            "ru": "Период кометы",
+            "en": "Orbital period"
+          },
+          "body": {
+            "ru": "<p>Большая полуось — полусумма расстояний в перигелии и афелии, \\(a=3{,}33\\times10^{11}\\,\\mathrm m\\). По третьему закону Кеплера \\(T/T_\\oplus=(a/a_\\oplus)^{3/2}\\); для Земли \\(a_\\oplus=1{,}50\\times10^{11}\\,\\mathrm m\\).</p>",
+            "en": "<p>The semimajor axis is the mean of perihelion and aphelion distances, \\(a=3.33\\times10^{11}\\,\\mathrm m\\). Kepler’s third law gives \\(T/T_\\oplus=(a/a_\\oplus)^{3/2}\\) with \\(a_\\oplus=1.50\\times10^{11}\\,\\mathrm m\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T\\simeq3{,}30\\,\\mathrm{yr}\\simeq1{,}04\\times10^8\\,\\mathrm s.\\]</div>",
+        "en": "<div>\\[T\\simeq3.30\\,\\mathrm{yr}\\simeq1.04\\times10^8\\,\\mathrm s.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.6a",
+      "label": "1.6a",
+      "max": 0.7,
+      "title": {
+        "ru": "Наклон оси вращения",
+        "en": "Tilt of the rotation axis"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.7,
+          "label": {
+            "ru": "Наклон оси вращения",
+            "en": "Tilt of the rotation axis"
+          },
+          "body": {
+            "ru": "<p>Масса астероида \\(m_a=4\\pi\\rho_a R_a^3/3=1{,}57\\times10^{15}\\,\\mathrm{kg}\\). При касательном ударе его момент импульса \\(J=m_av_aR_\\oplus\\) максимален и перпендикулярен земному \\(I\\omega_\\oplus\\). При \\(I=8{,}07\\times10^{37}\\,\\mathrm{kg\\,m^2}\\) и \\(\\omega_\\oplus=2\\pi/(24\\,\\mathrm h)\\) векторная сумма повёрнута на \\(\\arctan[J/(I\\omega_\\oplus)]\\).</p>",
+            "en": "<p>The asteroid mass is \\(m_a=4\\pi\\rho_a R_a^3/3=1.57\\times10^{15}\\,\\mathrm{kg}\\). A tangential impact maximises its angular momentum \\(J=m_av_aR_\\oplus\\), perpendicular to Earth’s \\(I\\omega_\\oplus\\). With \\(I=8.07\\times10^{37}\\,\\mathrm{kg\\,m^2}\\) and \\(\\omega_\\oplus=2\\pi/(24\\,\\mathrm h)\\) the sum tilts by \\(\\arctan[J/(I\\omega_\\oplus)]\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta\\theta_{\\max}\\simeq4{,}27\\times10^{-8}\\,\\mathrm{rad}.\\]</div>",
+        "en": "<div>\\[\\Delta\\theta_{\\max}\\simeq4.27\\times10^{-8}\\,\\mathrm{rad}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.6b",
+      "label": "1.6b",
+      "max": 0.7,
+      "title": {
+        "ru": "Радиальный удар",
+        "en": "Radial impact"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.7,
+          "label": {
+            "ru": "Радиальный удар",
+            "en": "Radial impact"
+          },
+          "body": {
+            "ru": "<p>Радиальный удар не добавляет момента импульса относительно центра Земли. Однако добавка к моменту инерции равна \\(\\Delta I=m_aR_\\oplus^2\\). Из сохранения \\(I\\omega\\) следует \\(T'/T=(I+\\Delta I)/I\\).</p>",
+            "en": "<p>The radial approach adds no angular momentum about Earth’s centre, but adds inertia \\(\\Delta I=m_aR_\\oplus^2\\). Conservation of \\(I\\omega\\) gives \\(T'/T=(I+\\Delta I)/I\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta T_{\\mathrm{rad}}=T\\frac{m_aR_\\oplus^2}{I}\\simeq+6{,}84\\times10^{-5}\\,\\mathrm s.\\]</div>",
+        "en": "<div>\\[\\Delta T_{\\mathrm{rad}}=T\\frac{m_aR_\\oplus^2}{I}\\simeq+6.84\\times10^{-5}\\,\\mathrm s.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.6c",
+      "label": "1.6c",
+      "max": 0.7,
+      "title": {
+        "ru": "Касательный удар",
+        "en": "Tangential impact"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.7,
+          "label": {
+            "ru": "Касательный удар",
+            "en": "Tangential impact"
+          },
+          "body": {
+            "ru": "<p>Пусть астероид движется по направлению вращения, как в решении жюри. После удара \\(I'=I+m_aR_\\oplus^2\\) и \\(J'=I\\omega_\\oplus+m_av_aR_\\oplus\\). Тогда \\(T'=2\\pi I'/J'\\). При встречном движении знак \\(m_av_aR_\\oplus\\) меняется, и сутки удлиняются примерно на \\(3{,}76\\times10^{-3}\\,\\mathrm s\\).</p>",
+            "en": "<p>Take the prograde direction used by the jury. After impact \\(I'=I+m_aR_\\oplus^2\\) and \\(J'=I\\omega_\\oplus+m_av_aR_\\oplus\\), giving \\(T'=2\\pi I'/J'\\). A retrograde impact reverses the sign of \\(m_av_aR_\\oplus\\) and lengthens the day by about \\(3.76\\times10^{-3}\\,\\mathrm s\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta T_{\\mathrm{pro}}\\simeq-3{,}62\\times10^{-3}\\,\\mathrm s.\\]</div>",
+        "en": "<div>\\[\\Delta T_{\\mathrm{pro}}\\simeq-3.62\\times10^{-3}\\,\\mathrm s.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.7",
+      "label": "1.7",
+      "max": 1.6,
+      "title": {
+        "ru": "Максимальная скорость удара",
+        "en": "Maximum impact speed"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.6,
+          "label": {
+            "ru": "Максимальная скорость удара",
+            "en": "Maximum impact speed"
+          },
+          "body": {
+            "ru": "<p>На расстоянии земной орбиты верхняя граница гелиоцентрической скорости равна местной скорости убегания \\(u=\\sqrt{2GM_\\odot/a_\\oplus}=42{,}1\\,\\mathrm{km/s}\\). При встречном движении скорость относительно Земли максимальна и близка к \\(u+v_\\oplus\\), где \\(v_\\oplus=29{,}8\\,\\mathrm{km/s}\\).</p>\n<p>На пути от области слабого земного притяжения к поверхности к квадрату скорости добавляется \\(2GM_\\oplus/R_\\oplus\\) по закону сохранения энергии.</p>",
+            "en": "<p>At Earth’s orbital radius the heliocentric speed of a bound object approaches the local escape speed \\(u=\\sqrt{2GM_\\odot/a_\\oplus}=42.1\\,\\mathrm{km/s}\\). A head-on encounter maximises its geocentric approach speed at \\(u+v_\\oplus\\), where \\(v_\\oplus=29.8\\,\\mathrm{km/s}\\).</p>\n<p>Conservation of energy during the final fall adds \\(2GM_\\oplus/R_\\oplus\\) to the squared approach speed.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_{\\mathrm{imp}}^{\\max}=\\sqrt{(u+v_\\oplus)^2+\\frac{2GM_\\oplus}{R_\\oplus}}\\simeq72{,}8\\,\\mathrm{km/s}.\\]</div>",
+        "en": "<div>\\[v_{\\mathrm{imp}}^{\\max}=\\sqrt{(u+v_\\oplus)^2+\\frac{2GM_\\oplus}{R_\\oplus}}\\simeq72.8\\,\\mathrm{km/s}.\\]</div>"
+      }
+    }
+  ]
+}

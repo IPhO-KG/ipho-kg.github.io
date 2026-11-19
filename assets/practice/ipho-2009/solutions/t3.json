@@ -1,0 +1,452 @@
+{
+  "id": "T3",
+  "max": 10,
+  "title": {
+    "ru": "Почему звёзды такие большие?",
+    "en": "Why are stars so large?"
+  },
+  "sourcePdf": "/assets/practice/ipho-2009/IPhO_2009_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-1a",
+      "max": 1.5,
+      "title": {
+        "ru": "Температура при классическом сближении",
+        "en": "Temperature for classical approach"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.75,
+          "label": {
+            "ru": "Энергия пары протонов",
+            "en": "Energy of the proton pair"
+          },
+          "body": {
+            "ru": "<p>Центр масс покоится. В точке разворота оба протона мгновенно неподвижны, поэтому потенциальная энергия равна сумме их начальных кинетических энергий.</p>\n<div>\\[m_pv_{\\rm rms}^2=\\frac{q^2}{4\\pi\\varepsilon_0d_c}.\\]</div>",
+            "en": "<p>The centre of mass is stationary. Both protons stop at the turning point, so the electrostatic potential energy equals the sum of both initial kinetic energies.</p>\n<div>\\[m_pv_{\\rm rms}^2=\\frac{q^2}{4\\pi\\varepsilon_0d_c}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.75,
+          "label": {
+            "ru": "Связь с температурой",
+            "en": "Link to temperature"
+          },
+          "body": {
+            "ru": "<p>Для трёхмерного газа \\(m_pv_{\\rm rms}^2=3kT_c\\), даже если выбранное столкновение лобовое. Подстановка даёт температуру порядка нескольких миллиардов кельвинов. В опубликованном разборе приведено близкое округление \\(5{,}5\\cdot10^9\\,\\mathrm K\\).</p>",
+            "en": "<p>A three-dimensional gas obeys \\(m_pv_{\\rm rms}^2=3kT_c\\) even though this particular collision is head-on. Substitution requires a temperature of several billion kelvin. The published solution quotes the nearby rounded value \\(5.5\\cdot10^9\\,\\mathrm K\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_c=\\frac{q^2}{12\\pi\\varepsilon_0 k d_c}\\simeq5{,}4\\cdot10^9\\,\\mathrm K.\\]</div>",
+        "en": "<div>\\[T_c=\\frac{q^2}{12\\pi\\varepsilon_0 k d_c}\\simeq5.4\\cdot10^9\\,\\mathrm K.\\]</div>"
+      },
+      "label": "1a"
+    },
+    {
+      "id": "T3-2a",
+      "max": 0.5,
+      "title": {
+        "ru": "Температура звезды массы M и радиуса R",
+        "en": "Temperature for a given mass and radius"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Кто создаёт давление",
+            "en": "Counting particles contributing to pressure"
+          },
+          "body": {
+            "ru": "<p>Гидростатика даёт \\(P_c\\simeq GM\\rho_c/R\\). Протоны несут почти всю массу, а давление создают и электроны, и протоны в равных количествах. Поэтому \\(P_c\\simeq 2\\rho_c kT_c/m_p\\). Приравнивая давления, сокращаем плотность.</p>",
+            "en": "<p>Hydrostatics gives \\(P_c\\simeq GM\\rho_c/R\\). Protons carry almost all the mass, while equal populations of protons and electrons both exert pressure. Thus \\(P_c\\simeq2\\rho_c kT_c/m_p\\). Equating the pressures eliminates density.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_c\\simeq\\frac{GMm_p}{2kR}.\\]</div>",
+        "en": "<div>\\[T_c\\simeq\\frac{GMm_p}{2kR}.\\]</div>"
+      },
+      "label": "2a"
+    },
+    {
+      "id": "T3-2b",
+      "max": 0.5,
+      "title": {
+        "ru": "Отношение массы к радиусу",
+        "en": "Mass-to-radius ratio"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Обращение гидростатической оценки",
+            "en": "Inverting the hydrostatic estimate"
+          },
+          "body": {
+            "ru": "<p>Формула 2a линейна по \\(M/R\\). При заданной центральной температуре она задаёт одно определённое значение отношения.</p>",
+            "en": "<p>Equation 2a is linear in \\(M/R\\). For a specified central temperature it selects a single value of that ratio.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{M}{R}\\simeq\\frac{2kT_c}{Gm_p}.\\]</div>",
+        "en": "<div>\\[\\frac{M}{R}\\simeq\\frac{2kT_c}{Gm_p}.\\]</div>"
+      },
+      "label": "2b"
+    },
+    {
+      "id": "T3-2c",
+      "max": 0.5,
+      "title": {
+        "ru": "Классический прогноз",
+        "en": "Classical prediction"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Подстановка температуры",
+            "en": "Inserting the temperature"
+          },
+          "body": {
+            "ru": "<p>Если подставлять постоянные без промежуточного округления, получится \\(1{,}34\\cdot10^{24}\\,\\mathrm{kg/m}\\). При использовании округлённого в разборе жюри \\(T_c=5{,}5\\cdot10^9\\,\\mathrm K\\) выходит \\(1{,}4\\cdot10^{24}\\,\\mathrm{kg/m}\\).</p>",
+            "en": "<p>Using the constants before intermediate rounding gives \\(1.34\\cdot10^{24}\\,\\mathrm{kg/m}\\). Using the jury&#x27;s rounded \\(T_c=5.5\\cdot10^9\\,\\mathrm K\\) gives \\(1.4\\cdot10^{24}\\,\\mathrm{kg/m}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\left(\\frac{M}{R}\\right)_{\\!\\rm cl}\\simeq1{,}3\\cdot10^{24}\\,\\mathrm{kg/m}.\\]</div>",
+        "en": "<div>\\[\\left(\\frac{M}{R}\\right)_{\\!\\rm cl}\\simeq1.3\\cdot10^{24}\\,\\mathrm{kg/m}.\\]</div>"
+      },
+      "label": "2c"
+    },
+    {
+      "id": "T3-2d",
+      "max": 0.5,
+      "title": {
+        "ru": "Сравнение с Солнцем",
+        "en": "Comparison with the Sun"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Проверка масштаба",
+            "en": "Checking the scale"
+          },
+          "body": {
+            "ru": "<p>Делим массу Солнца на его радиус. По сравнению с результатом 2c получаем величину примерно в \\(470\\) раз меньше. Классическая оценка температуры требует слишком большого \\(M/R\\).</p>",
+            "en": "<p>Dividing the solar mass by the solar radius gives a ratio about \\(470\\) times smaller than 2c. The classical temperature would require too large a mass-to-radius ratio.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{M_{\\odot}}{R_{\\odot}}\\simeq2{,}9\\cdot10^{21}\\,\\mathrm{kg/m}.\\]</div>",
+        "en": "<div>\\[\\frac{M_{\\odot}}{R_{\\odot}}\\simeq2.9\\cdot10^{21}\\,\\mathrm{kg/m}.\\]</div>"
+      },
+      "label": "2d"
+    },
+    {
+      "id": "T3-3a",
+      "max": 1.0,
+      "title": {
+        "ru": "Условие перекрытия",
+        "en": "Overlap criterion"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Кулоновский разворот и длина волны",
+            "en": "Coulomb turning point and wavelength"
+          },
+          "body": {
+            "ru": "<p>Обозначим \\(C=q^2/(4\\pi\\varepsilon_0)\\) и \\(v=v_{\\rm rms}\\). Тогда \\(m_pv^2=C/d_c\\), а условие перекрытия даёт \\(d_c=h/(\\sqrt2 m_pv)\\). Исключаем из этих формул \\(d_c\\) и сокращаем \\(m_pv\\).</p>\n<div>\\[v=\\frac{\\sqrt2 C}{h}.\\]</div>",
+            "en": "<p>Define \\(C=q^2/(4\\pi\\varepsilon_0)\\) and \\(v=v_{\\rm rms}\\). The turning point obeys \\(m_pv^2=C/d_c\\), while overlap requires \\(d_c=h/(\\sqrt2 m_pv)\\). Eliminate \\(d_c\\) and cancel \\(m_pv\\).</p>\n<div>\\[v=\\frac{\\sqrt2 C}{h}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Средняя кинетическая энергия",
+            "en": "Mean kinetic energy"
+          },
+          "body": {
+            "ru": "<p>Вставляем найденную скорость в \\(T_c=m_pv^2/(3k)\\). Радиус ядер в окончательный ответ больше не входит.</p>",
+            "en": "<p>Insert this speed into \\(T_c=m_pv^2/(3k)\\). The nuclear radius no longer appears.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_c=\\frac{q^4m_p}{24\\pi^2\\varepsilon_0^2kh^2}.\\]</div>",
+        "en": "<div>\\[T_c=\\frac{q^4m_p}{24\\pi^2\\varepsilon_0^2kh^2}.\\]</div>"
+      },
+      "label": "3a"
+    },
+    {
+      "id": "T3-3b",
+      "max": 0.5,
+      "title": {
+        "ru": "Численная температура",
+        "en": "Numerical temperature"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Скорость протона",
+            "en": "Proton speed"
+          },
+          "body": {
+            "ru": "<p>Из 3a получаем \\(v\\simeq4{,}9\\cdot10^5\\,\\mathrm{m/s}\\). Соответствующая тепловая энергия намного ниже классической оценки.</p>",
+            "en": "<p>Part 3a gives \\(v\\simeq4.9\\cdot10^5\\,\\mathrm{m/s}\\). The corresponding thermal energy is far below the classical estimate.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_c\\simeq9{,}7\\cdot10^6\\,\\mathrm K.\\]</div>",
+        "en": "<div>\\[T_c\\simeq9.7\\cdot10^6\\,\\mathrm K.\\]</div>"
+      },
+      "label": "3b"
+    },
+    {
+      "id": "T3-3c",
+      "max": 0.5,
+      "title": {
+        "ru": "Проверка квантовой оценки",
+        "en": "Checking the quantum estimate"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Сопоставление с наблюдением",
+            "en": "Comparison with observation"
+          },
+          "body": {
+            "ru": "<p>Отношение \\(M/R\\) пропорционально \\(T_c\\). При новой температуре получается примерно \\(84\\) процента от наблюдаемого солнечного значения, что для этой грубой модели близко.</p>",
+            "en": "<p>The mass-to-radius ratio scales with \\(T_c\\). The new temperature gives about \\(84\\) percent of the observed solar ratio, close for this simple model.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{M}{R}\\simeq 2{,}4\\cdot10^{21}\\,\\mathrm{kg/m}\\simeq0{,}84\\,\\frac{M_{\\odot}}{R_{\\odot}}.\\]</div>",
+        "en": "<div>\\[\\frac{M}{R}\\simeq 2.4\\cdot10^{21}\\,\\mathrm{kg/m}\\simeq0.84\\,\\frac{M_{\\odot}}{R_{\\odot}}.\\]</div>"
+      },
+      "label": "3c"
+    },
+    {
+      "id": "T3-4a",
+      "max": 0.5,
+      "title": {
+        "ru": "Универсальное отношение в модели",
+        "en": "A common ratio in the model"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Исключение температуры",
+            "en": "Eliminating the temperature"
+          },
+          "body": {
+            "ru": "<p>Подставим 3a в 2b. Масса протона и постоянная Больцмана сокращаются. Обозначим получившуюся константу модели через \\(\\mu\\).</p>",
+            "en": "<p>Substitute 3a into 2b. The proton mass and Boltzmann constant cancel. Denote the resulting model constant by \\(\\mu\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mu\\equiv\\frac{M}{R}\\simeq\\frac{q^4}{12\\pi^2\\varepsilon_0^2Gh^2}.\\]</div>",
+        "en": "<div>\\[\\mu\\equiv\\frac{M}{R}\\simeq\\frac{q^4}{12\\pi^2\\varepsilon_0^2Gh^2}.\\]</div>"
+      },
+      "label": "4a"
+    },
+    {
+      "id": "T3-5a",
+      "max": 0.5,
+      "title": {
+        "ru": "Концентрация электронов",
+        "en": "Electron number density"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Число электронов и объём",
+            "en": "Electron count and volume"
+          },
+          "body": {
+            "ru": "<p>Число протонов примерно равно \\(M/m_p\\). Электронейтральность требует столько же электронов. Разделим это число на объём шара.</p>",
+            "en": "<p>There are about \\(M/m_p\\) protons. Neutrality requires equally many electrons. Divide this count by the volume of the sphere.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[n_e\\simeq\\frac{3M}{4\\pi R^3m_p}.\\]</div>",
+        "en": "<div>\\[n_e\\simeq\\frac{3M}{4\\pi R^3m_p}.\\]</div>"
+      },
+      "label": "5a"
+    },
+    {
+      "id": "T3-5b",
+      "max": 0.5,
+      "title": {
+        "ru": "Расстояние между электронами",
+        "en": "Electron spacing"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Объём на одну частицу",
+            "en": "Volume per particle"
+          },
+          "body": {
+            "ru": "<p>На электрон приходится объём \\(1/n_e\\). Кубический корень задаёт характерный линейный размер этой области.</p>",
+            "en": "<p>Each electron occupies a typical volume \\(1/n_e\\). Its cube root is the characteristic length.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[d_e\\simeq n_e^{-1/3}=\\left(\\frac{4\\pi R^3m_p}{3M}\\right)^{1/3}.\\]</div>",
+        "en": "<div>\\[d_e\\simeq n_e^{-1/3}=\\left(\\frac{4\\pi R^3m_p}{3M}\\right)^{1/3}.\\]</div>"
+      },
+      "label": "5b"
+    },
+    {
+      "id": "T3-5c",
+      "max": 1.5,
+      "title": {
+        "ru": "Нижняя граница радиуса",
+        "en": "Lower radius bound"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.75,
+          "label": {
+            "ru": "Граница вырождения",
+            "en": "Onset of degeneracy"
+          },
+          "body": {
+            "ru": "<p>Тепловой импульс электрона равен \\(\\sqrt{3m_ekT_c}\\), поэтому \\(\\lambda_e=h/\\sqrt{3m_ekT_c}\\). При \\(M=\\mu R\\) расстояние между электронами убывает вместе с радиусом. На нижней границе неравенство превращается в равенство.</p>\n<div>\\[\\left(\\frac{4\\pi m_pR_{\\min}^2}{3\\mu}\\right)^{1/3}=\\frac{h}{\\sqrt{6m_ekT_c}}.\\]</div>",
+            "en": "<p>The thermal electron momentum is \\(\\sqrt{3m_ekT_c}\\), hence \\(\\lambda_e=h/\\sqrt{3m_ekT_c}\\). With \\(M=\\mu R\\) the spacing decreases as the radius decreases. At the lower bound the inequality is saturated.</p>\n<div>\\[\\left(\\frac{4\\pi m_pR_{\\min}^2}{3\\mu}\\right)^{1/3}=\\frac{h}{\\sqrt{6m_ekT_c}}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.75,
+          "label": {
+            "ru": "Исключение параметров звезды",
+            "en": "Eliminating stellar parameters"
+          },
+          "body": {
+            "ru": "<p>Возводим равенство в куб, затем извлекаем квадратный корень. Подстановка \\(\\mu\\) из 4a и \\(T_c\\) из 3a выражает границу только через константы.</p>\n<div>\\[R_{\\min}=\\left(\\frac{3\\mu}{4\\pi m_p}\\right)^{1/2}\\left(\\frac{h}{\\sqrt{6m_ekT_c}}\\right)^{3/2}.\\]</div>",
+            "en": "<p>Cube both sides and take the square root. Substituting \\(\\mu\\) from 4a and \\(T_c\\) from 3a leaves only fundamental constants.</p>\n<div>\\[R_{\\min}=\\left(\\frac{3\\mu}{4\\pi m_p}\\right)^{1/2}\\left(\\frac{h}{\\sqrt{6m_ekT_c}}\\right)^{3/2}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[R\\ge R_{\\min}=\\frac{\\sqrt{\\varepsilon_0}\\,h^2}{4^{1/4}q\\,m_e^{3/4}m_p^{5/4}\\sqrt G}.\\]</div>",
+        "en": "<div>\\[R\\ge R_{\\min}=\\frac{\\sqrt{\\varepsilon_0}\\,h^2}{4^{1/4}q\\,m_e^{3/4}m_p^{5/4}\\sqrt G}.\\]</div>"
+      },
+      "label": "5c"
+    },
+    {
+      "id": "T3-5d",
+      "max": 0.5,
+      "title": {
+        "ru": "Минимальный радиус",
+        "en": "Minimum radius"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Переход к солнечным радиусам",
+            "en": "Conversion to solar radii"
+          },
+          "body": {
+            "ru": "<p>Подстановка констант в 5c даёт около \\(69\\) тысяч километров. Делим результат на \\(7{,}0\\cdot10^8\\,\\mathrm m\\), чтобы перейти к солнечным радиусам.</p>",
+            "en": "<p>Substituting in 5c gives about \\(69\\) thousand kilometres. Divide by \\(7.0\\cdot10^8\\,\\mathrm m\\) for solar radii.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[R_{\\min}\\simeq6{,}9\\cdot10^7\\,\\mathrm m\\simeq0{,}099\\,R_{\\odot}.\\]</div>",
+        "en": "<div>\\[R_{\\min}\\simeq6.9\\cdot10^7\\,\\mathrm m\\simeq0.099\\,R_{\\odot}.\\]</div>"
+      },
+      "label": "5d"
+    },
+    {
+      "id": "T3-5e",
+      "max": 0.5,
+      "title": {
+        "ru": "Минимальная масса",
+        "en": "Minimum mass"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Масса на нижней границе",
+            "en": "Mass at the lower bound"
+          },
+          "body": {
+            "ru": "<p>Умножаем радиус из 5c на \\(\\mu\\) и делим на \\(M_{\\odot}\\) для перевода единиц. Без промежуточного округления получается \\(0{,}083\\,M_{\\odot}\\), в опубликованном решении округлено до \\(0{,}09\\,M_{\\odot}\\).</p>",
+            "en": "<p>Multiply the radius from 5c by \\(\\mu\\) and divide by \\(M_{\\odot}\\) to convert units. Keeping intermediate digits gives \\(0.083\\,M_{\\odot}\\), while the published solution rounds to \\(0.09\\,M_{\\odot}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[M_{\\min}=\\mu R_{\\min}\\simeq1{,}7\\cdot10^{29}\\,\\mathrm{kg}\\simeq0{,}083\\,M_{\\odot}.\\]</div>",
+        "en": "<div>\\[M_{\\min}=\\mu R_{\\min}\\simeq1.7\\cdot10^{29}\\,\\mathrm{kg}\\simeq0.083\\,M_{\\odot}.\\]</div>"
+      },
+      "label": "5e"
+    },
+    {
+      "id": "T3-6a",
+      "max": 0.5,
+      "title": {
+        "ru": "Скорость и температура для гелия",
+        "en": "Helium speed and ignition temperature"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Кулоновская энергия и тепловая скорость",
+            "en": "Coulomb energy and thermal speed"
+          },
+          "body": {
+            "ru": "<p>В 3a заменим \\(q\\) на \\(2q\\), а \\(m_p\\) на \\(m_{\\rm He}\\). При \\(d_c=h/(\\sqrt2m_{\\rm He}v_{\\rm He})\\) баланс энергий даёт скорость, в четыре раза большую протонной. Температура \\(m_{\\rm He}v_{\\rm He}^2/(3k)\\) возрастает в \\(64\\) раза. Если сначала округлить скорость до \\(2{,}0\\cdot10^6\\,\\mathrm{m/s}\\), получится значение из решения жюри \\(6{,}5\\cdot10^8\\,\\mathrm K\\).</p>",
+            "en": "<p>In 3a replace \\(q\\) by \\(2q\\) and \\(m_p\\) by \\(m_{\\rm He}\\). At \\(d_c=h/(\\sqrt2m_{\\rm He}v_{\\rm He})\\) energy balance makes helium&#x27;s speed four times the proton speed. The temperature \\(m_{\\rm He}v_{\\rm He}^2/(3k)\\) increases by a factor of \\(64\\). Rounding the speed first to \\(2.0\\cdot10^6\\,\\mathrm{m/s}\\) gives the jury&#x27;s \\(6.5\\cdot10^8\\,\\mathrm K\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[d_c=\\frac{\\lambda_{\\rm He}}{\\sqrt2},\\qquad v_{\\rm He}=\\frac{\\sqrt2\\,q^2}{\\pi\\varepsilon_0h}\\simeq2{,}0\\cdot10^6\\,\\mathrm{m/s}.\\]</div>\n<div>\\[T_{\\rm He}=64T_c\\simeq6{,}2\\cdot10^8\\,\\mathrm K.\\]</div>",
+        "en": "<div>\\[d_c=\\frac{\\lambda_{\\rm He}}{\\sqrt2},\\qquad v_{\\rm He}=\\frac{\\sqrt2\\,q^2}{\\pi\\varepsilon_0h}\\simeq2.0\\cdot10^6\\,\\mathrm{m/s}.\\]</div>\n<div>\\[T_{\\rm He}=64T_c\\simeq6.2\\cdot10^8\\,\\mathrm K.\\]</div>"
+      },
+      "label": "6a"
+    }
+  ]
+}

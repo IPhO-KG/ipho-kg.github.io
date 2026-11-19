@@ -1,0 +1,55 @@
+{
+  "id": "T3",
+  "title": "Рассеяние иона на нейтральном атоме",
+  "points": 10,
+  "sourceFile": "IPhO_2011_T3_EN.pdf",
+  "sourcePages": [
+    1,
+    2
+  ],
+  "sections": [
+    {
+      "id": "T3",
+      "title": "Рассеяние иона на нейтральном атоме",
+      "points": 10
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T3-3.1",
+      "label": "3.1",
+      "points": 1.2
+    },
+    {
+      "id": "T3-3.2",
+      "label": "3.2",
+      "points": 3
+    },
+    {
+      "id": "T3-3.3",
+      "label": "3.3",
+      "points": 0.9
+    },
+    {
+      "id": "T3-3.4",
+      "label": "3.4",
+      "points": 2.4
+    },
+    {
+      "id": "T3-3.5",
+      "label": "3.5",
+      "points": 2.5
+    }
+  ],
+  "figures": [
+    "t3-f1.png",
+    "t3-f2.png"
+  ],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "published-subpart-maxima-and-grouped-official-criteria",
+  "solutionData": "/assets/practice/ipho-2011/solutions/t3.json",
+  "solutionPdf": "/assets/practice/ipho-2011/IPhO_2011_S3_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2011/IPhO_2011_M3_EN.pdf"
+}

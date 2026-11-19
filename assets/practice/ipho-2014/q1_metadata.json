@@ -1,0 +1,52 @@
+{
+  "id": "T1",
+  "title": "Три независимые задачи",
+  "points": 9,
+  "sourceFile": "IPhO_2014_T1_EN.pdf",
+  "sourcePages": [
+    1
+  ],
+  "sections": [
+    {
+      "id": "T1-A",
+      "points": 3.0,
+      "title": "Шайба в катящемся цилиндре"
+    },
+    {
+      "id": "T1-B",
+      "points": 3.0,
+      "title": "Газ в мыльном пузыре"
+    },
+    {
+      "id": "T1-C",
+      "points": 3.0,
+      "title": "Ток в ключе"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T1-A1",
+      "points": 3.0,
+      "label": "A"
+    },
+    {
+      "id": "T1-B1",
+      "points": 3.0,
+      "label": "B"
+    },
+    {
+      "id": "T1-C1",
+      "points": 3.0,
+      "label": "C"
+    }
+  ],
+  "figures": [
+    "t1-f1",
+    "t1-f2"
+  ],
+  "solutionData": "/assets/practice/ipho-2014/solutions/t1.json",
+  "solutionPdf": "/assets/practice/ipho-2014/IPhO_2014_S1_EN.pdf",
+  "solutionsAvailable": true,
+  "stepScoring": "official-part-maxima-editorial-step-weights",
+  "translationStatus": "editorial-adaptation"
+}

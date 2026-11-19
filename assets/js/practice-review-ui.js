@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const esc = value => String(value == null ? '' : value).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
-  const rich = value => /<(?:p|ul|ol|li|div|table|details|strong|em|span|br)\b/i.test(String(value || '')) ? String(value || '') : '<p>' + esc(value) + '</p>';
+  const rich = value => /<(?:p|ul|ol|li|div|table|details|strong|em|span|br|figure|img)\b/i.test(String(value || '')) ? String(value || '') : '<p>' + esc(value) + '</p>';
   const localized = (value, lang) => value && typeof value === 'object' ? value[lang] ?? value.en ?? value.ru ?? '' : value || '';
   function create(options) {
     const M = window.NPHO_REVIEW_MODEL, holder = options.holder, t = options.t;
@@ -27,7 +27,7 @@
         if (input) {
           input.value = score(record.parts[action.partId].score);
           input.setAttribute('aria-invalid', 'false');
-          input.setAttribute('aria-label', action.partId + ': ' + t('reviewMyScore'));
+          input.setAttribute('aria-label', (input.dataset.reviewLabel || action.partId) + ': ' + t('reviewMyScore'));
         }
         const error = holder.querySelector('[data-score-error="' + action.partId + '"]');
         if (error) error.hidden = true;
@@ -48,7 +48,7 @@
         button.querySelector('.score-divider').hidden = !assessed;
         button.classList.toggle('assessed', assessed);
         const earned = assessed ? t('reviewEarnedHeading') + ' ' + value : t('reviewUnscored');
-        button.setAttribute('aria-label', id + ', ' + earned + ', ' + t('reviewMaximum', { n: score(spec.max) }));
+        button.setAttribute('aria-label', (spec.label || id) + ', ' + earned + ', ' + t('reviewMaximum', { n: score(spec.max) }));
         if (id === selectedParts.get(context.task) && id.startsWith(context.task + '-')) button.setAttribute('aria-current', 'location');
         else button.removeAttribute('aria-current');
       }));
@@ -70,7 +70,7 @@
         if (previous && previous !== nav) previous.replaceChildren();
         if (!nav) { mountedNavigations.delete(documentData.id); return; }
         mountedNavigations.set(documentData.id, nav);
-        nav.innerHTML = documentData.parts.map(part => '<button type="button" class="review-subpart-button" data-review-jump="' + esc(part.id) + '" aria-controls="review-panel"><span class="review-subpart-label">' + esc(part.id.replace(/^T[123]-/, '')) + '</span><span class="review-subpart-score"></span><span class="score-divider" aria-hidden="true" hidden>/</span><span class="score-limit">' + esc(score(part.max)) + '</span><span class="score-unit">' + esc(t('reviewPointUnit')) + '</span></button>').join('');
+        nav.innerHTML = documentData.parts.map(part => '<button type="button" class="review-subpart-button" data-review-jump="' + esc(part.id) + '" aria-controls="review-panel"><span class="review-subpart-label">' + esc(part.label || part.id.replace(/^T[123]-/, '')) + '</span><span class="review-subpart-score"></span><span class="score-divider" aria-hidden="true" hidden>/</span><span class="score-limit">' + esc(score(part.max)) + '</span><span class="score-unit">' + esc(t('reviewPointUnit')) + '</span></button>').join('');
         nav.querySelectorAll('[data-review-jump]').forEach(button => button.addEventListener('click', async () => {
           const before = options.getContext();
           if (!before.allowed) { lock(t('reviewLocked')); return; }
@@ -96,7 +96,7 @@
       const error = holder.querySelector('[data-score-error="' + part.id + '"]'); if (error) { error.hidden = valid; error.textContent = t('reviewScoreRange', { max: score(part.max) }); }
       if (!valid) return;
       update({ type: 'score', partId: part.id, value });
-      input.setAttribute('aria-label', part.id + ': ' + t('reviewMyScore') + (value === null ? ', ' + t('reviewUnscored') : ''));
+      input.setAttribute('aria-label', (part.label || part.id) + ': ' + t('reviewMyScore') + (value === null ? ', ' + t('reviewUnscored') : ''));
       if (commit && value !== null) input.value = score(value);
     }
     function partMarkup(part, lang) {
@@ -107,20 +107,24 @@
         const checkId = 'check-' + esc(part.id) + '-' + esc(step.id);
         const title = esc(localized(step.label, lang));
         const isAnswer = step.type === 'answer' && index === part.steps.length - 1;
-        const checkLabel = isAnswer ? answerTitle + ' · ' + title : title;
+        const wholePart = part.steps.length === 1 && localized(step.label, lang) === localized(part.title, lang);
+        const weight = Number.isFinite(step.points) && part.steps.length > 1
+          ? ' <small class="review-step-points" title="' + esc(t('reviewStepWeight')) + '">' + esc(score(step.points)) + ' ' + esc(t('reviewPointUnit')) + '</small>' : '';
+        const checkLabel = isAnswer || wholePart ? answerTitle + ' · ' + title : title;
         const checkbox = '<input id="' + checkId + '" type="checkbox" data-review-check="' + esc(part.id) + '" data-step-id="' + esc(step.id) + '" aria-label="' + esc(t('reviewCheckStep')) + ': ' + checkLabel + '"' + (saved.checked.includes(step.id) ? ' checked' : '') + '>';
-        if (isAnswer) {
-          answerControl = '<label class="review-answer-check">' + checkbox + answerTitle + '</label>';
+        if (isAnswer || wholePart) {
+          answerControl = '<label class="review-answer-check">' + checkbox + answerTitle + weight + '</label>';
+          if (wholePart && !isAnswer) return '<div class="review-step-body">' + rich(localized(step.body, lang)) + '</div>';
           return '';
         }
         return '<div class="review-step"><label class="review-step-toggle">' + checkbox + '</label>' +
-          '<h4 class="review-step-title"><label for="' + checkId + '">' + title + '</label></h4>' +
+          '<h4 class="review-step-title"><label for="' + checkId + '">' + title + weight + '</label></h4>' +
           '<div class="review-step-body">' + rich(localized(step.body, lang)) + '</div></div>';
       }).join('');
-      return '<section class="review-part" id="review-' + esc(part.id) + '" tabindex="-1" aria-labelledby="review-heading-' + esc(part.id) + '"><header class="review-part-head"><div class="review-part-heading"><h3 id="review-heading-' + esc(part.id) + '"><span class="review-part-id">' + esc(part.id) + '</span><span class="review-part-title">' + esc(localized(part.title, lang) || part.id) + '</span></h3></div>' +
+      return '<section class="review-part" id="review-' + esc(part.id) + '" tabindex="-1" aria-labelledby="review-heading-' + esc(part.id) + '"><header class="review-part-head"><div class="review-part-heading"><h3 id="review-heading-' + esc(part.id) + '"><span class="review-part-id">' + esc(part.label || part.id) + '</span><span class="review-part-title">' + esc(localized(part.title, lang) || part.id) + '</span></h3></div>' +
         '<div class="review-score-row"><label class="review-score-control" for="score-' + esc(part.id) + '" title="' + esc(t('reviewScoreHint')) + '">' +
           '<span class="review-score-label">' + esc(t('reviewMyScore')) + '</span><span class="review-score-field">' +
-          '<input id="score-' + esc(part.id) + '" class="review-score-input" data-review-score="' + esc(part.id) + '" type="text" inputmode="decimal" autocomplete="off" maxlength="12" aria-describedby="score-error-' + esc(part.id) + '" aria-label="' + esc(part.id + ': ' + t('reviewMyScore') + (saved.score === null ? ', ' + t('reviewUnscored') : '')) + '" placeholder=" " value="' + (saved.score === null ? '' : esc(score(saved.score))) + '">' +
+          '<input id="score-' + esc(part.id) + '" class="review-score-input" data-review-score="' + esc(part.id) + '" data-review-label="' + esc(part.label || part.id) + '" type="text" inputmode="decimal" autocomplete="off" maxlength="12" aria-describedby="score-error-' + esc(part.id) + '" aria-label="' + esc((part.label || part.id) + ': ' + t('reviewMyScore') + (saved.score === null ? ', ' + t('reviewUnscored') : '')) + '" placeholder=" " value="' + (saved.score === null ? '' : esc(score(saved.score))) + '">' +
           '<span class="score-divider" aria-hidden="true">/</span><span class="review-score-of score-limit">' + esc(score(part.max)) + '</span><span class="score-unit">' + esc(t('reviewPointUnit')) + '</span>' +
           '<svg class="score-edit-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m3 10.7-.6 2.9 2.9-.6 7.4-7.4a1.6 1.6 0 0 0-2.3-2.3zM9.4 4.3l2.3 2.3"/></svg>' +
           '</span></label></div></header>' +
@@ -147,7 +151,20 @@
       flush(); clearNavigation(); const token = ++generation;
       holder.innerHTML = '<p class="review-loading" role="status">' + esc(t('reviewLoading')) + '</p>';
       try {
-        if (!loading && !documents) loading = Promise.all(['t1', 't2', 't3'].map(async id => { const response = await fetch('/assets/practice/ipho-2026/solutions/' + id + '.json', { cache: 'no-cache' }); if (!response.ok) throw new Error('Missing solution'); return JSON.parse(await response.text()); })).then(data => { documents = data; specs = documents.flatMap(doc => doc.parts.map(part => ({ id: part.id, max: part.max, stepIds: part.steps.map(step => step.id) }))); }).catch(error => { loading = null; throw error; });
+        if (!loading && !documents) {
+          loading = Promise.all(['t1', 't2', 't3'].map(async id => {
+            const response = await fetch(options.assetRoot + '/solutions/' + id + '.json', { cache: 'no-cache' });
+            if (!response.ok) throw new Error('Missing solution');
+            return JSON.parse(await response.text());
+          })).then(data => {
+            specs = data.flatMap(doc => doc.parts.map(part => ({
+              id: part.id, label: part.label, max: part.max,
+              stepIds: part.steps.map(step => step.id),
+              stepPoints: part.steps.some(step => step.points !== undefined) ? part.steps.map(step => step.points) : undefined
+            })));
+            documents = data;
+          }).catch(error => { loading = null; throw error; });
+        }
         if (loading) await loading;
         const latest = options.getContext(); if (token !== generation || !latest.allowed || contextKey(latest) !== contextKey(context)) return;
         if (recordKey !== context.recordKey || !record) { let raw; try { raw = JSON.parse(options.read(context.recordKey)); } catch {} record = M.normalize(raw, specs); recordKey = context.recordKey; }

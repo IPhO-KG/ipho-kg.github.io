@@ -1,0 +1,113 @@
+{
+  "id": "T1",
+  "title": "Чёрные дыры",
+  "points": 10.0,
+  "sourceFile": "IPhO_2007_T1_EN.pdf",
+  "sourcePdf": "/assets/practice/ipho-2007/IPhO_2007_T1_EN.pdf",
+  "sections": [
+    {
+      "id": "T1-1",
+      "title": "Фундаментальные постоянные",
+      "points": 2.3
+    },
+    {
+      "id": "T1-2",
+      "title": "Горизонт и энтропия",
+      "points": 2.1
+    },
+    {
+      "id": "T1-3",
+      "title": "Излучение Хокинга",
+      "points": 3.2
+    },
+    {
+      "id": "T1-4",
+      "title": "Равновесие с фоновым излучением",
+      "points": 2.4
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T1-1.1",
+      "label": "1.1",
+      "points": 0.8
+    },
+    {
+      "id": "T1-1.2",
+      "label": "1.2",
+      "points": 0.5
+    },
+    {
+      "id": "T1-1.3",
+      "label": "1.3",
+      "points": 1.0
+    },
+    {
+      "id": "T1-2.1",
+      "label": "2.1",
+      "points": 0.8
+    },
+    {
+      "id": "T1-2.2",
+      "label": "2.2",
+      "points": 0.2
+    },
+    {
+      "id": "T1-2.3",
+      "label": "2.3",
+      "points": 1.1
+    },
+    {
+      "id": "T1-3.1",
+      "label": "3.1",
+      "points": 0.8
+    },
+    {
+      "id": "T1-3.2",
+      "label": "3.2",
+      "points": 0.7
+    },
+    {
+      "id": "T1-3.3",
+      "label": "3.3",
+      "points": 1.1
+    },
+    {
+      "id": "T1-3.4",
+      "label": "3.4",
+      "points": 0.6
+    },
+    {
+      "id": "T1-4.1",
+      "label": "4.1",
+      "points": 0.8
+    },
+    {
+      "id": "T1-4.2",
+      "label": "4.2",
+      "points": 0.4
+    },
+    {
+      "id": "T1-4.3",
+      "label": "4.3",
+      "points": 0.2
+    },
+    {
+      "id": "T1-4.4",
+      "label": "4.4",
+      "points": 0.4
+    },
+    {
+      "id": "T1-4.5",
+      "label": "4.5",
+      "points": 0.6
+    }
+  ],
+  "figures": [],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "official-criteria-grouped",
+  "solutionData": "/assets/practice/ipho-2007/solutions/t1.json",
+  "solutionPdf": "/assets/practice/ipho-2007/IPhO_2007_S1_EN.pdf"
+}

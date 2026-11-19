@@ -1,0 +1,356 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Физика дымовой трубы",
+    "en": "Chimney physics"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2010/IPhO_2010_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-1a",
+      "label": "1(a)",
+      "max": 3.5,
+      "title": {
+        "ru": "Минимальная высота",
+        "en": "Minimum height"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.2,
+          "label": {
+            "ru": "Баланс давлений",
+            "en": "Pressure balance"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(p_0\\) — атмосферное давление на уровне печи, а \\(\\rho_{\\mathrm{a}},\\rho_{\\mathrm{s}}\\) — плотности наружного воздуха и дыма. На выходе минимально достаточной трубы давления внутри и снаружи равны, \\(p(h)=p_0-\\rho_{\\mathrm{a}}gh\\). В печи давление близко к \\(p_0\\), скорость близка к нулю. Запишем уравнение Бернулли от печи до устья.</p>\n<div>\\[p_0=p(h)+\\rho_{\\mathrm{s}}gh+\\tfrac12\\rho_{\\mathrm{s}}v^2 .\\]</div>",
+            "en": "<p>Let \\(p_0\\) be atmospheric pressure at furnace level and \\(\\rho_{\\mathrm{a}},\\rho_{\\mathrm{s}}\\) denote the outside-air and smoke densities. At the outlet of the limiting chimney the pressures on the two sides match, \\(p(h)=p_0-\\rho_{\\mathrm{a}}gh\\). In the furnace the pressure is nearly \\(p_0\\) and the speed negligible. Apply Bernoulli from there to the outlet.</p>\n<div>\\[p_0=p(h)+\\rho_{\\mathrm{s}}gh+\\tfrac12\\rho_{\\mathrm{s}}v^2 .\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 1.2,
+          "label": {
+            "ru": "Температурная зависимость тяги",
+            "en": "Temperature dependence of the draught"
+          },
+          "body": {
+            "ru": "<p>После подстановки наружного давления остаётся разность весов двух столбов одинаковой высоты. Отношение плотностей при одинаковом давлении у основания равно обратному отношению абсолютных температур. Отсюда</p>\n<div>\\[\\frac{v^2}{2}=gh\\left(\\frac{\\rho_{\\mathrm{a}}}{\\rho_{\\mathrm{s}}}-1\\right)=gh\\,\\frac{\\Delta T}{T_{\\mathrm{a}}} .\\]</div>",
+            "en": "<p>Substitution of the ambient pressure leaves the difference between the weights of two columns of equal height. At the same base pressure the density ratio is the inverse ratio of absolute temperatures. Thus</p>\n<div>\\[\\frac{v^2}{2}=gh\\left(\\frac{\\rho_{\\mathrm{a}}}{\\rho_{\\mathrm{s}}}-1\\right)=gh\\,\\frac{\\Delta T}{T_{\\mathrm{a}}} .\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 1.1,
+          "label": {
+            "ru": "Предельный объёмный расход",
+            "en": "Limiting volume flow"
+          },
+          "body": {
+            "ru": "<p>Для удаления всего дыма требуется \\(Av\\ge B\\). При минимальной высоте выполняется равенство. Подставим \\(v=B/A\\) в баланс напора.</p>",
+            "en": "<p>The chimney must carry a volume rate \\(Av\\ge B\\). Equality gives the minimum height. Substitute \\(v=B/A\\) into the pressure balance.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[h_{\\min}=\\frac{B^2}{2gA^2}\\,\\frac{T_{\\mathrm{a}}}{\\Delta T}.\\]</div>",
+        "en": "<div>\\[h_{\\min}=\\frac{B^2}{2gA^2}\\,\\frac{T_{\\mathrm{a}}}{\\Delta T}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-1b",
+      "label": "1(b)",
+      "max": 0.5,
+      "title": {
+        "ru": "Две климатические зоны",
+        "en": "Two climates"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Сравнение климатических условий",
+            "en": "Comparing ambient temperatures"
+          },
+          "body": {
+            "ru": "<p>При одинаковых \\(B\\) и \\(A\\) высота пропорциональна \\(T_{\\mathrm{a}}/\\Delta T\\). Разности температур составляют \\(430\\,\\mathrm K\\) в холодном климате и \\(370\\,\\mathrm K\\) в тёплом. Для температуры в числителе нужны кельвины.</p>",
+            "en": "<p>At equal \\(B\\) and \\(A\\), height is proportional to \\(T_{\\mathrm{a}}/\\Delta T\\). The gaps are \\(430\\,\\mathrm K\\) in the cold climate and \\(370\\,\\mathrm K\\) in the warm one. Use absolute temperatures in the numerator.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[h_{\\mathrm{warm}}=100\\,\\mathrm m\\,\\frac{303{,}15}{243{,}15}\\frac{430}{370}\\simeq145\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[h_{\\mathrm{warm}}=100\\,\\mathrm m\\,\\frac{303.15}{243.15}\\frac{430}{370}\\simeq145\\,\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-1c",
+      "label": "1(c)",
+      "max": 0.6,
+      "title": {
+        "ru": "Скорость вдоль трубы",
+        "en": "Speed profile"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Непрерывность потока",
+            "en": "Continuity of the flow"
+          },
+          "body": {
+            "ru": "<p>Поток массы \\(\\rho_{\\mathrm{s}}Av\\) постоянен. В трубе и площадь, и плотность постоянны, поэтому \\(v=B/A\\) вплоть до выхода. Скачок на графике изображает ускорение от почти нулевой скорости в широкой печи до скорости в узкой трубе. Вход принят за \\(z=0\\).</p>",
+            "en": "<p>The mass flow \\(\\rho_{\\mathrm{s}}Av\\) is constant. Inside the flue both area and density are fixed, so \\(v=B/A\\) all the way to the outlet. The step on the sketch represents acceleration from nearly zero speed in the broad furnace to the flue speed. The inlet is at \\(z=0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<figure><img src=\"/assets/practice/ipho-2010/q2/speed.png\" alt=\"Скорость в печи и в трубе постоянного сечения.\" loading=\"lazy\" style=\"width:min(100%,385px);height:auto\"><figcaption>Скорость в печи и в трубе постоянного сечения.</figcaption></figure>",
+        "en": "<figure><img src=\"/assets/practice/ipho-2010/q2/speed.png\" alt=\"Gas speed in the furnace and in the constant-area flue.\" loading=\"lazy\" style=\"width:min(100%,385px);height:auto\"><figcaption>Gas speed in the furnace and in the constant-area flue.</figcaption></figure>"
+      }
+    },
+    {
+      "id": "T2-1d",
+      "label": "1(d)",
+      "max": 0.5,
+      "title": {
+        "ru": "Давление вдоль трубы",
+        "en": "Pressure profile"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Давление от устья до входа",
+            "en": "Pressure from outlet to inlet"
+          },
+          "body": {
+            "ru": "<p>Внутри трубы скорость постоянна, так что уравнение Бернулли даёт \\(dp_{\\mathrm{s}}/dz=-\\rho_{\\mathrm{s}}g\\). На выходе давление совпадает с наружным. Восстанавливая давление на любой высоте от этого верхнего значения, получаем линейный профиль. При входе оно падает на \\(\\rho_{\\mathrm{s}}v^2/2\\) относительно печи.</p>",
+            "en": "<p>The speed is constant in the chimney, so Bernoulli gives \\(dp_{\\mathrm{s}}/dz=-\\rho_{\\mathrm{s}}g\\). The outlet pressure equals the outside pressure there. Integrating back from the outlet gives a linear profile. At the inlet the static pressure falls by \\(\\rho_{\\mathrm{s}}v^2/2\\) relative to the furnace.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p_{\\mathrm{s}}(z)=p_0-(\\rho_{\\mathrm{a}}-\\rho_{\\mathrm{s}})gh-\\rho_{\\mathrm{s}}gz,\\qquad 0&lt;z&lt;h .\\]</div>",
+        "en": "<div>\\[p_{\\mathrm{s}}(z)=p_0-(\\rho_{\\mathrm{a}}-\\rho_{\\mathrm{s}})gh-\\rho_{\\mathrm{s}}gz,\\qquad 0&lt;z&lt;h .\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2a",
+      "label": "2(a)",
+      "max": 2.0,
+      "title": {
+        "ru": "КПД по кинетической мощности",
+        "en": "Efficiency based on kinetic power"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Кинетическая мощность потока",
+            "en": "Kinetic power of the flow"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(\\dot m\\) — массовый расход. Каждый килограмм воздуха несёт кинетическую энергию \\(v^2/2=gh\\Delta T/T_{\\mathrm{a}}\\) из 1(a). Для мощности умножаем её на \\(\\dot m\\).</p>\n<div>\\[P_{\\mathrm{k}}=\\dot m\\,gh\\frac{\\Delta T}{T_{\\mathrm{a}}} .\\]</div>",
+            "en": "<p>Let \\(\\dot m\\) be the mass flow rate. By 1(a), each kilogram carries kinetic energy \\(v^2/2=gh\\Delta T/T_{\\mathrm{a}}\\). Multiply by \\(\\dot m\\) for kinetic power.</p>\n<div>\\[P_{\\mathrm{k}}=\\dot m\\,gh\\frac{\\Delta T}{T_{\\mathrm{a}}} .\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 1.0,
+          "label": {
+            "ru": "Мощность, затраченная на нагрев",
+            "en": "Heat input per second"
+          },
+          "body": {
+            "ru": "<p>На нагрев того же потока уходит \\(P_\\odot=GS=\\dot m c\\Delta T\\). При делении мощностей сокращаются и расход, и повышение температуры.</p>",
+            "en": "<p>Heating the same flow requires \\(P_\\odot=GS=\\dot m c\\Delta T\\). Division cancels both the mass flow rate and the temperature rise.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\eta=\\frac{P_{\\mathrm{k}}}{P_\\odot}=\\frac{gh}{cT_{\\mathrm{a}}} .\\]</div>",
+        "en": "<div>\\[\\eta=\\frac{P_{\\mathrm{k}}}{P_\\odot}=\\frac{gh}{cT_{\\mathrm{a}}} .\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2b",
+      "label": "2(b)",
+      "max": 0.4,
+      "title": {
+        "ru": "Зависимость КПД от высоты",
+        "en": "Efficiency versus height"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Наклон графика",
+            "en": "Slope of the graph"
+          },
+          "body": {
+            "ru": "<p>При неизменных \\(c\\) и \\(T_{\\mathrm{a}}\\) равные прибавки высоты дают равные прибавки КПД. В рамках модели график — прямая через начало координат с наклоном \\(g/(cT_{\\mathrm{a}})\\).</p>",
+            "en": "<p>At fixed \\(c\\) and \\(T_{\\mathrm{a}}\\) equal increments of height give equal increments of efficiency. Within the model the graph is a straight line through the origin with slope \\(g/(cT_{\\mathrm{a}})\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<figure><img src=\"/assets/practice/ipho-2010/q2/efficiency.png\" alt=\"КПД в зависимости от высоты трубы.\" loading=\"lazy\" style=\"width:min(100%,365px);height:auto\"><figcaption>КПД в зависимости от высоты трубы.</figcaption></figure>",
+        "en": "<figure><img src=\"/assets/practice/ipho-2010/q2/efficiency.png\" alt=\"Efficiency versus chimney height.\" loading=\"lazy\" style=\"width:min(100%,365px);height:auto\"><figcaption>Efficiency versus chimney height.</figcaption></figure>"
+      }
+    },
+    {
+      "id": "T2-3a",
+      "label": "3(a)",
+      "max": 0.3,
+      "title": {
+        "ru": "КПД установки",
+        "en": "Prototype efficiency"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Подстановка параметров установки",
+            "en": "Inserting the prototype parameters"
+          },
+          "body": {
+            "ru": "<p>Для станции \\(gh\\simeq1{,}91\\times10^3\\,\\mathrm{J/kg}\\), а \\(cT_{\\mathrm{a}}\\simeq2{,}99\\times10^5\\,\\mathrm{J/kg}\\). Их отношение определяет долю солнечной мощности, доступную в виде кинетической энергии.</p>",
+            "en": "<p>For the prototype \\(gh\\simeq1.91\\times10^3\\,\\mathrm{J/kg}\\) and \\(cT_{\\mathrm{a}}\\simeq2.99\\times10^5\\,\\mathrm{J/kg}\\). Their ratio gives the fraction of incident solar power available as kinetic energy.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\eta\\simeq0{,}00641\\simeq0{,}64\\%.\\]</div>",
+        "en": "<div>\\[\\eta\\simeq0.00641\\simeq0.64\\%.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-3b",
+      "label": "3(b)",
+      "max": 0.4,
+      "title": {
+        "ru": "Доступная мощность",
+        "en": "Available power"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Площадь коллектора",
+            "en": "Collector area"
+          },
+          "body": {
+            "ru": "<p>Радиус коллектора \\(122\\,\\mathrm m\\), поэтому полная солнечная мощность \\(GS\\) близка к \\(7{,}01\\,\\mathrm{MW}\\). Поток воздуха получает в виде кинетической мощности долю \\(\\eta\\) от этого значения.</p>",
+            "en": "<p>The collector radius is \\(122\\,\\mathrm m\\), so its solar input \\(GS\\) is about \\(7.01\\,\\mathrm{MW}\\). A fraction \\(\\eta\\) of that input is available as kinetic power in the airflow.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P=\\eta G\\pi(122\\,\\mathrm m)^2\\simeq45\\,\\mathrm{kW}.\\]</div>",
+        "en": "<div>\\[P=\\eta G\\pi(122\\,\\mathrm m)^2\\simeq45\\,\\mathrm{kW}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-3c",
+      "label": "3(c)",
+      "max": 0.3,
+      "title": {
+        "ru": "Выработка за день",
+        "en": "Daily output"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Энергия за световой день",
+            "en": "Energy over the sunny period"
+          },
+          "body": {
+            "ru": "<p>Длительность освещения не задана. Для оценки примем восемь часов с указанной интенсивностью, как в решении жюри. При другом числе солнечных часов результат меняется пропорционально времени.</p>",
+            "en": "<p>The duration of sunshine is unspecified. Use eight hours at the stated irradiance, as in the jury’s estimate. The result scales directly with the assumed duration.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E=P\\,t\\simeq45\\,\\mathrm{kW}\\times8\\,\\mathrm h=360\\,\\mathrm{kWh}.\\]</div>",
+        "en": "<div>\\[E=P\\,t\\simeq45\\,\\mathrm{kW}\\times8\\,\\mathrm h=360\\,\\mathrm{kWh}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-4a",
+      "label": "4(a)",
+      "max": 1.0,
+      "title": {
+        "ru": "Нагрев под коллектором",
+        "en": "Collector temperature rise"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Связь расхода с нагревом и скоростью",
+            "en": "Connecting flow, heating and speed"
+          },
+          "body": {
+            "ru": "<p>Тепловой баланс даёт \\(\\dot m=GS/(c\\Delta T)\\). Та же масса проходит через сечение трубы \\(A\\), поэтому \\(\\dot m=\\rho_{\\mathrm{h}}A\\sqrt{2gh\\Delta T/T_{\\mathrm{a}}}\\). Приравняем правые части.</p>",
+            "en": "<p>The heat balance gives \\(\\dot m=GS/(c\\Delta T)\\). The same mass crosses the chimney area \\(A\\), so \\(\\dot m=\\rho_{\\mathrm{h}}A\\sqrt{2gh\\Delta T/T_{\\mathrm{a}}}\\). Equate the two rates.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Разность температур",
+            "en": "Temperature rise"
+          },
+          "body": {
+            "ru": "<p>После возведения в квадрат получается уравнение для \\((\\Delta T)^3\\). Подставляем площади коллектора \\(S=\\pi(122\\,\\mathrm m)^2\\) и трубы \\(A=\\pi(5\\,\\mathrm m)^2\\).</p>",
+            "en": "<p>Squaring gives an equation for \\((\\Delta T)^3\\). Insert the collector area \\(S=\\pi(122\\,\\mathrm m)^2\\) and the chimney area \\(A=\\pi(5\\,\\mathrm m)^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta T=\\left[\\frac{T_{\\mathrm{a}}}{2gh}\\left(\\frac{GS}{c\\rho_{\\mathrm{h}}A}\\right)^2\\right]^{1/3}\\simeq9{,}1\\,\\mathrm K .\\]</div>",
+        "en": "<div>\\[\\Delta T=\\left[\\frac{T_{\\mathrm{a}}}{2gh}\\left(\\frac{GS}{c\\rho_{\\mathrm{h}}A}\\right)^2\\right]^{1/3}\\simeq9.1\\,\\mathrm K .\\]</div>"
+      }
+    },
+    {
+      "id": "T2-4b",
+      "label": "4(b)",
+      "max": 0.5,
+      "title": {
+        "ru": "Массовый расход",
+        "en": "Mass flow rate"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Расход из теплового баланса",
+            "en": "Mass flow from the heat balance"
+          },
+          "body": {
+            "ru": "<p>Делим поглощаемую мощность \\(GS\\) на энергию \\(c\\Delta T\\), нужную для нагрева одного килограмма воздуха. При найденном повышении температуры это даёт</p>",
+            "en": "<p>Divide the absorbed power \\(GS\\) by the energy \\(c\\Delta T\\) required to heat one kilogram of air. At the calculated temperature rise this gives</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\dot m=\\frac{GS}{c\\Delta T}\\simeq7{,}6\\times10^2\\,\\mathrm{kg/s}.\\]</div>",
+        "en": "<div>\\[\\dot m=\\frac{GS}{c\\Delta T}\\simeq7.6\\times10^2\\,\\mathrm{kg/s}.\\]</div>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<article class="exam-problem" id="T1" lang="en">
+<h2>Question T1 [10 points]. The greenhouse effect</h2>
+<p>Model the Sun as a blackbody of radius \(R_S\) and temperature \(T_S\) at a distance \(d\) from an isothermal Earth. Write \(u(\lambda,T)\) for emitted power per unit area per unit wavelength. Planck’s distribution and its integral are</p>
+<div>\[u(\lambda,T)=\frac{2\pi hc^2}{\lambda^5}\frac{1}{e^{hc/(\lambda k_BT)}-1},\qquad \int_0^\infty u\,d\lambda=\sigma T^4.\]</div>
+<div>\[hc=1.24\times10^3\,\mathrm{eV\,nm},\quad k_B=8.62\times10^{-5}\,\mathrm{eV/K},\quad \sigma=5.67\times10^{-8}\,\mathrm{W\,m^{-2}K^{-4}}.\]</div>
+<div>\[T_S=5.77\times10^3\,\mathrm K,\qquad R_S=6.96\times10^8\,\mathrm m,\qquad d=1.50\times10^{11}\,\mathrm m.\]</div>
+<p>At Earth, \(\widetilde u_S(\lambda)\) is the spectrum on a plane normal to the sunlight; its integral is the solar constant \(S_0\). At a fixed wavelength the emissivity equals the absorptivity in thermal equilibrium. Give symbolic results and, where the data allow, numerical results to three significant figures.</p>
+<section id="T1-A">
+<h3>T1-A [3 points]. An airless Earth</h3>
+<p>Treat the Earth’s surface as a perfect absorber and emitter.</p>
+<div class="exam-question" id="T1-A1" data-points="0.6"><p><strong>T1-A1 [0.6 points].</strong> Determine \(S_0\).</p></div>
+<div class="exam-question" id="T1-A2" data-points="0.6"><p><strong>T1-A2 [0.6 points].</strong> Calculate the equilibrium temperature \(T_E\).</p></div>
+<p>Write Wien’s law as \(\lambda_{\max}T=b\) with \(b=hc/(x_mk_B)\). Here \(x_m\) is a positive root of \(f(x)=0\).</p>
+<div class="exam-question" id="T1-A3" data-points="0.4"><p><strong>T1-A3 [0.4 points].</strong> Derive the equation determining \(x_m\) and give \(f(x)\).</p></div>
+<div class="exam-question" id="T1-A4" data-points="0.4"><p><strong>T1-A4 [0.4 points].</strong> Find \(x_m\) numerically, then evaluate \(b\).</p></div>
+<div class="exam-question" id="T1-A5" data-points="0.2"><p><strong>T1-A5 [0.2 points].</strong> At what wavelengths do the solar and terrestrial spectra peak?</p></div>
+<figure><img src="/assets/practice/ipho-2024/q1/spectra.png" alt="Solar and terrestrial spectra scaled to equal peak height." loading="lazy" style="width:min(100%,490px);height:auto"><figcaption>Solar and terrestrial spectra scaled to equal peak height.</figcaption></figure>
+<div class="exam-question" id="T1-A6" data-points="0.8"><p><strong>T1-A6 [0.8 points].</strong> Choose \(\gamma\) so that \(\gamma\widetilde u_S(\lambda)\) and \(u(\lambda,T_E)\) have equal peak values.</p></div>
+</section>
+<section id="T1-B">
+<h3>T1-B [7 points]. Radiation balance with an atmosphere</h3>
+<p>Model the atmosphere as a thin shell with both faces of practically the same area as Earth. For short waves its reflectance is \(r_A=0.255\) from either side and its absorptance is zero. In the infrared its absorptance is \(\varepsilon\) and its reflectance is zero. The surface reflects a short-wave fraction \(r_E\) and absorbs all infrared radiation. Treat sunlight and thermal radiation as concentrated near their respective peaks.</p>
+<figure><img src="/assets/practice/ipho-2024/q1/layer.png" alt="Short-wave and thermal fluxes in the single-layer model." loading="lazy" style="width:min(100%,490px);height:auto"><figcaption>Short-wave and thermal fluxes in the single-layer model.</figcaption></figure>
+<div class="exam-question" id="T1-B1" data-points="1.0"><p><strong>T1-B1 [1 point].</strong> For \(\varepsilon=1\) and \(r_E=0\), find the surface and atmospheric temperatures.</p></div>
+<div class="exam-question" id="T1-B2" data-points="1.6"><p><strong>T1-B2 [1.6 points].</strong> Express the net solar reflectance \(\alpha\) of surface and atmosphere in terms of \(r_A,r_E\), and evaluate it for \(r_E=0.102\).</p></div>
+<div class="exam-question" id="T1-B3" data-points="1.0"><p><strong>T1-B3 [1 point].</strong> Express \(T_E\) in terms of \(\sigma,\alpha,S_0,\varepsilon\). What \(\varepsilon\) gives \(T_E=288\,\mathrm K\)?</p></div>
+<div class="exam-question" id="T1-B4" data-points="0.8"><p><strong>T1-B4 [0.8 points].</strong> Find \(dT_E/d\varepsilon\) and the temperature change produced by increasing \(\varepsilon\) by 1% of its value.</p></div>
+<p>For the remainder take \(T_A=245\,\mathrm K\) and \(T_E=288\,\mathrm K\). Add a nonradiative heat flux \(J_{\rm NR}=k(T_E-T_A)\) from the ground to the air, with constant transfer coefficient \(k\).</p>
+<div class="exam-question" id="T1-B5" data-points="1.6"><p><strong>T1-B5 [1.6 points].</strong> Find \(\varepsilon\) and \(k\) symbolically in terms of \(T_E,T_A,\sigma,\alpha,S_0\) and numerically.</p></div>
+<div class="exam-question" id="T1-B6" data-points="1.0"><p><strong>T1-B6 [1 point].</strong> At fixed \(k\), differentiate both heat balances and write the linear equations for the temperature derivatives. Compute the rise in \(T_E\) when \(\varepsilon\) increases by 1% relative to its initial value.</p></div>
+</section>
+</article>

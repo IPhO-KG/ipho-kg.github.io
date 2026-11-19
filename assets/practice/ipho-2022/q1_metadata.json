@@ -1,0 +1,69 @@
+{
+  "id": "T1",
+  "title": "Постоянные магниты",
+  "points": 10.0,
+  "sourceFile": "IPhO_2022_T1_EN.pdf",
+  "sections": [
+    {
+      "id": "T1-A",
+      "title": "Взаимодействие магнитов",
+      "points": 4.5
+    },
+    {
+      "id": "T1-B",
+      "title": "Магниты и ферромагнетики",
+      "points": 3.5
+    },
+    {
+      "id": "T1-C",
+      "title": "Магнитное упорядочение",
+      "points": 2.0
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T1-A1",
+      "points": 0.6
+    },
+    {
+      "id": "T1-A2",
+      "points": 0.4
+    },
+    {
+      "id": "T1-A3",
+      "points": 1.0
+    },
+    {
+      "id": "T1-A4",
+      "points": 1.0
+    },
+    {
+      "id": "T1-A5",
+      "points": 1.5
+    },
+    {
+      "id": "T1-B1",
+      "points": 1.0
+    },
+    {
+      "id": "T1-B2",
+      "points": 1.0
+    },
+    {
+      "id": "T1-B3",
+      "points": 1.5
+    },
+    {
+      "id": "T1-C1",
+      "points": 0.8
+    },
+    {
+      "id": "T1-C2",
+      "points": 1.2
+    }
+  ],
+  "solutionsAvailable": true,
+  "solutionData": "/assets/practice/ipho-2022/solutions/t1.json",
+  "solutionPdf": "/assets/practice/ipho-2022/IPhO_2022_S1_EN.pdf",
+  "stepScoring": "published-subpart-maxima-and-weighted-criteria"
+}

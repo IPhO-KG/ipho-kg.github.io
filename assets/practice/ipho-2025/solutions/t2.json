@@ -1,0 +1,510 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Часы Кокса",
+    "en": "Cox’s timepiece"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2025/IPhO_2025_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-A1",
+      "max": 0.2,
+      "title": {
+        "ru": "Давление и сила подъёма",
+        "en": "Pressure and lifting force"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.1,
+          "label": {
+            "ru": "Гидростатический напор",
+            "en": "Hydrostatic head"
+          },
+          "body": {
+            "ru": "<p>Вода под крышкой соединена с ванной, поэтому её давление на высоте \\(h\\) меньше атмосферного на \\(\\rho gh\\).</p>",
+            "en": "<p>Water beneath the cap is connected to the bath. At height \\(h\\) the pressure has fallen by \\(\\rho gh\\) from the surface value.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Равновесие крышки",
+            "en": "Vertical equilibrium"
+          },
+          "body": {
+            "ru": "<p>Боковое давление горизонтально. Вниз действуют вес трубки и избыток давления воздуха на крышку, \\((P_0-P_w)S\\).</p>",
+            "en": "<p>Side-wall forces are horizontal. The tube’s weight and the excess air-pressure force on the cap, \\((P_0-P_w)S\\), both act downward.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_w=P_0-\\rho gh,\\qquad \\mathbf F=(m+\\rho Sh)g\\,\\mathbf u_z.\\]</div>",
+        "en": "<div>\\[P_w=P_0-\\rho gh,\\qquad \\mathbf F=(m+\\rho Sh)g\\,\\mathbf u_z.\\]</div>"
+      },
+      "sourcePages": [
+        2
+      ]
+    },
+    {
+      "id": "T2-A2",
+      "max": 0.8,
+      "title": {
+        "ru": "Появление паровой полости",
+        "en": "Vapour cavity"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Условие появления пара",
+            "en": "Onset of vaporization"
+          },
+          "body": {
+            "ru": "<p>Пар появляется, когда \\(P_0-\\rho gh^\\star=P_{\\rm sat}\\). Высоты, рассчитанные для первых двух опытов, превышают 1 м; для третьего переход происходит уже при 2.1 см.</p>",
+            "en": "<p>Vapour appears when \\(P_0-\\rho gh^\\star=P_{\\rm sat}\\). The first two threshold heights exceed 1 m; the third is only 2.1 cm.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Первые два опыта",
+            "en": "First two trials"
+          },
+          "body": {
+            "ru": "<p>В обоих случаях A предел достигается при \\(h=H\\). Подстановка плотностей в \\(F_{\\max}=mg+\\rho gSH\\) даёт 14.7 и 14.4 Н.</p>",
+            "en": "<p>Both are type A, reaching their maximum at \\(h=H\\). Insert the respective density into \\(F_{\\max}=mg+\\rho gSH\\) to get 14.7 and 14.4 N.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Опыт при 99 °C",
+            "en": "Trial at 99 °C"
+          },
+          "body": {
+            "ru": "<p>В режиме B давление под крышкой остаётся равным \\(P_{\\rm sat}\\). Поэтому дальнейший подъём не меняет силу.</p>",
+            "en": "<p>In regime B the pressure below the cap stays at \\(P_{\\rm sat}\\), leaving the force constant as the tube is raised further.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[h^\\star=\\frac{P_0-P_{\\rm sat}}{\\rho g}=2.1\\,\\mathrm{cm},\\qquad F_{\\max}=mg+(P_0-P_{\\rm sat})S=5.1\\,\\mathrm N.\\]</div>",
+        "en": "<div>\\[h^\\star=\\frac{P_0-P_{\\rm sat}}{\\rho g}=2.1\\,\\mathrm{cm},\\qquad F_{\\max}=mg+(P_0-P_{\\rm sat})S=5.1\\,\\mathrm N.\\]</div>"
+      },
+      "sourcePages": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "T2-A3",
+      "max": 0.3,
+      "title": {
+        "ru": "Вклад давления паров ртути",
+        "en": "Mercury vapour correction"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Разность сил",
+            "en": "Absolute force error"
+          },
+          "body": {
+            "ru": "<p>Приближение увеличивает рассчитанную силу на \\(SP_{\\rm sat}\\). По сравнению с \\(mg+P_0 S\\) это поправка первого порядка по давлению пара.</p>",
+            "en": "<p>Dropping the vapour pressure increases the predicted force by \\(SP_{\\rm sat}\\). Relative to \\(mg+P_0S\\), this gives the leading correction.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Численная оценка",
+            "en": "Numerical estimate"
+          },
+          "body": {
+            "ru": "<p>Переводим \\(S\\) в квадратные метры и сравниваем давления \\(P_{\\rm sat}\\) и \\(P_0+mg/S\\).</p>",
+            "en": "<p>Convert \\(S\\) to square metres and compare \\(P_{\\rm sat}\\) with \\(P_0+mg/S\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\varepsilon\\simeq\\frac{P_{\\rm sat}}{P_0+mg/S}\\simeq1.6\\times10^{-6}.\\]</div>",
+        "en": "<div>\\[\\varepsilon\\simeq\\frac{P_{\\rm sat}}{P_0+mg/S}\\simeq1.6\\times10^{-6}.\\]</div>"
+      },
+      "sourcePages": [
+        4
+      ]
+    },
+    {
+      "id": "T2-B1",
+      "max": 0.3,
+      "title": {
+        "ru": "Добавочная масса",
+        "en": "Added mass"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Выбор объёма",
+            "en": "Identify the volume"
+          },
+          "body": {
+            "ru": "<p>Мысленно отсечём содержащуюся внутри ртуть горизонтальной плоскостью поверхности ванны. Давления на уровне отсечения уравновешивают внешнее атмосферное давление. Подвес удерживает вес всей ртути внутри, лежащей выше внешней свободной поверхности.</p><figure><img src=\"/assets/practice/ipho-2025/solutions/figures/added-mass.png\" alt=\"Розовым отмечена ртуть, добавляющая нагрузку на трубку.\" loading=\"lazy\"><figcaption>Розовым отмечена ртуть, добавляющая нагрузку на трубку.</figcaption></figure>",
+            "en": "<p>Imagine cutting the internal mercury at the level of the external free surface. The pressure there balances the atmosphere. The support carries the weight of the internal mercury lying above that horizontal plane.</p><figure><img src=\"/assets/practice/ipho-2025/solutions/figures/added-mass.png\" alt=\"The highlighted mercury increases the load on the tube.\" loading=\"lazy\"><figcaption>The highlighted mercury increases the load on the tube.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Закрашивается внутренняя ртуть от уровня ванны до мениска, включая узкую и широкую части.</p>",
+        "en": "<p>Shade the internal mercury from bath level to the meniscus, including both the narrow and wide portions.</p>"
+      },
+      "sourcePages": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "T2-B2",
+      "max": 1.4,
+      "title": {
+        "ru": "График добавочной массы",
+        "en": "Added mass versus junction height"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Заполненная колба",
+            "en": "Completely filled bulb"
+          },
+          "body": {
+            "ru": "<p>Обозначим \\(z_*=P_0/(\\rho g)\\). До \\(h_t=0\\) над ванной выступает лишь часть колбы. Затем колба по-прежнему полна, а над ванной растёт длина тонкой трубки. Наклоны соответственно \\(\\rho S_b\\) и \\(\\rho S_t\\).</p>",
+            "en": "<p>Write \\(z_*=P_0/(\\rho g)\\). Up to \\(h_t=0\\) only the bulb emerges. Thereafter the bulb stays full while more narrow tube emerges. The successive slopes are \\(\\rho S_b\\) and \\(\\rho S_t\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Частично заполненная колба и пустая колба",
+            "en": "Partially filled and empty bulb"
+          },
+          "body": {
+            "ru": "<p>Как только верх колбы проходит \\(z_*\\), уровень внутренней ртути перестаёт расти. При дальнейшем подъёме широкое сечение в заполненной части замещается узким: наклон \\(-\\rho(S_b-S_t)\\). Когда \\(h_t\\ge z_*\\), столб целиком в трубке, масса постоянна.</p>",
+            "en": "<p>Once the bulb top crosses \\(z_*\\) the internal level stays fixed. As the device rises, narrow tube replaces filled bulb, giving slope \\(-\\rho(S_b-S_t)\\). For \\(h_t\\ge z_*\\) the whole column is in the narrow tube and its mass is constant.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.3,
+          "label": {
+            "ru": "Абсциссы изломов",
+            "en": "Kink positions"
+          },
+          "body": {
+            "ru": "<p>Изломы находятся при \\(0,z_*-H_b,z_*\\), то есть примерно при 0, 56 и 76 см. График начинается в точке \\((-H_b,0)\\) и непрерывен.</p><figure><img src=\"/assets/practice/ipho-2025/solutions/figures/added-mass-graph.png\" alt=\"Изломы отвечают прохождению поверхности ванны и мениска через границы двух сечений трубки.\" loading=\"lazy\"><figcaption>Изломы отвечают прохождению поверхности ванны и мениска через границы двух сечений трубки.</figcaption></figure>",
+            "en": "<p>The kinks occur at \\(0,z_*-H_b,z_*\\), approximately 0, 56 and 76 cm. The graph starts at \\((-H_b,0)\\) and stays continuous.</p><figure><img src=\"/assets/practice/ipho-2025/solutions/figures/added-mass-graph.png\" alt=\"The kinks mark crossings of the bath level and the meniscus at the changes of cross-section.\" loading=\"lazy\"><figcaption>The kinks mark crossings of the bath level and the meniscus at the changes of cross-section.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{m_{\\rm add}}\\rho=\\begin{cases}S_b(h_t+H_b),&amp;-H_b\\le h_t&lt;0,\\\\ S_b H_b+S_t h_t,&amp;0\\le h_t&lt;z_*-H_b,\\\\ S_b(z_*-h_t)+S_t h_t,&amp;z_*-H_b\\le h_t&lt;z_*,\\\\ S_tz_*,&amp;z_*\\le h_t\\le H_t.\\end{cases}\\]</div>",
+        "en": "<div>\\[\\frac{m_{\\rm add}}\\rho=\\begin{cases}S_b(h_t+H_b),&amp;-H_b\\le h_t&lt;0,\\\\ S_b H_b+S_t h_t,&amp;0\\le h_t&lt;z_*-H_b,\\\\ S_b(z_*-h_t)+S_t h_t,&amp;z_*-H_b\\le h_t&lt;z_*,\\\\ S_tz_*,&amp;z_*\\le h_t\\le H_t.\\end{cases}\\]</div>"
+      },
+      "sourcePages": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "T2-B3",
+      "max": 0.3,
+      "title": {
+        "ru": "Колебания массы",
+        "en": "Amplitude of mass variations"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Барометрический отклик",
+            "en": "Barometric response"
+          },
+          "body": {
+            "ru": "<p>Уровень меняется на \\(\\delta z_\\ell=P_1/(\\rho g)\\). Изменяется только объём жидкости в широкой колбе, \\(\\delta m_{\\rm add}=\\rho S_b\\delta z_\\ell\\).</p>",
+            "en": "<p>The level changes by \\(\\delta z_\\ell=P_1/(\\rho g)\\). Only the filled volume of the bulb changes, so \\(\\delta m_{\\rm add}=\\rho S_b\\delta z_\\ell\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Амплитуда",
+            "en": "Amplitude"
+          },
+          "body": {
+            "ru": "<p>Подставим \\(S_b=0.0200\\) м² и амплитуду давления.</p>",
+            "en": "<p>Use \\(S_b=0.0200\\) m² and the peak pressure excursion.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta m_{\\rm add}=\\frac{S_bA}{g}\\simeq1.02\\,\\mathrm{kg}.\\]</div>",
+        "en": "<div>\\[\\Delta m_{\\rm add}=\\frac{S_bA}{g}\\simeq1.02\\,\\mathrm{kg}.\\]</div>"
+      },
+      "sourcePages": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "T2-C1",
+      "max": 1.0,
+      "title": {
+        "ru": "Порог начала движения",
+        "en": "Threshold for motion"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Уровни в неподвижных сосудах",
+            "en": "Levels in the fixed vessels"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(\\delta_b,\\delta_c\\) — вертикальные смещения свободных поверхностей колбы и сосуда в лабораторной системе. Разность определяется барометрическим напором. Для неподвижных сосудов из сохранения объёма следует</p>\n<div>\\[\\delta_b-\\delta_c=P_1/(\\rho g),\\qquad S_b\\delta_b+(S_c-S_t)\\delta_c=0.\\]</div>",
+            "en": "<p>Let \\(\\delta_b,\\delta_c\\) be the vertical shifts of the bulb and cistern surfaces in the laboratory frame. Their difference is fixed by hydrostatics, while conservation of volume in the stationary vessels gives</p>\n<div>\\[\\delta_b-\\delta_c=P_1/(\\rho g),\\qquad S_b\\delta_b+(S_c-S_t)\\delta_c=0.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Разность натяжений и трение",
+            "en": "Tension difference versus friction"
+          },
+          "body": {
+            "ru": "<p>Изменение нагрузки на подвес сосуда равно \\(\\rho gS_c\\delta_c\\), а на подвес трубки приходится противоположное изменение. Поэтому \\(T=-2\\rho gS_c\\delta_c=2S_{\\rm eff}P_1\\), где \\(S_{\\rm eff}=S_b S_c/(S_b+S_c-S_t)\\). Для покоя требуется \\(2S_{\\rm eff}A\\le F_s\\).</p>",
+            "en": "<p>The cistern load changes by \\(\\rho gS_c\\delta_c\\), and the tube load changes oppositely. Thus \\(T=-2\\rho gS_c\\delta_c=2S_{\\rm eff}P_1\\), where \\(S_{\\rm eff}=S_b S_c/(S_b+S_c-S_t)\\). Static friction can hold provided \\(2S_{\\rm eff}A\\le F_s\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\xi^\\star=2.\\]</div>",
+        "en": "<div>\\[\\xi^\\star=2.\\]</div>"
+      },
+      "sourcePages": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "T2-C2",
+      "max": 1.0,
+      "title": {
+        "ru": "Натяжение у правого упора",
+        "en": "Resultant force at the right stop"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Перетекание при смещении",
+            "en": "Transfer during displacement"
+          },
+          "body": {
+            "ru": "<p>Перепад давления тот же, поэтому \\(\\delta_b=\\delta_c=\\delta\\). Сосуд поднялся на \\(X\\), трубка опустилась на \\(X\\). С учётом вытеснения трубкой объёмный баланс даёт \\((S_b+S_c-S_t)\\delta=(S_c-S_b+S_t)X\\).</p>",
+            "en": "<p>The pressure head is unchanged, so \\(\\delta_b=\\delta_c=\\delta\\). The cistern rises by \\(X\\) while the tube descends by \\(X\\). Accounting for displacement of the tube, volume conservation gives \\((S_b+S_c-S_t)\\delta=(S_c-S_b+S_t)X\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Сумма сил двух тросов",
+            "en": "Net cable force"
+          },
+          "body": {
+            "ru": "<p>Нагрузка сосуда изменилась на \\(\\rho gS_c(\\delta-X)\\), а трубки — на противоположную величину. Суммарная сила направлена к правому упору.</p>",
+            "en": "<p>The cistern load changes by \\(\\rho gS_c(\\delta-X)\\), and the tube load by its negative. The resultant force points towards the right stop.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathbf T=\\frac{4S_c(S_b-S_t)}{S_b+S_c-S_t}\\rho gX\\,\\mathbf u_x\\simeq4S_{\\rm eff}\\rho gX\\,\\mathbf u_x.\\]</div>",
+        "en": "<div>\\[\\mathbf T=\\frac{4S_c(S_b-S_t)}{S_b+S_c-S_t}\\rho gX\\,\\mathbf u_x\\simeq4S_{\\rm eff}\\rho gX\\,\\mathbf u_x.\\]</div>"
+      },
+      "sourcePages": [
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "id": "T2-C3",
+      "max": 2.0,
+      "title": {
+        "ru": "Залипание и периодическое переключение",
+        "en": "Latching and periodic switching"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Порог срыва с упора",
+            "en": "Release from the stop"
+          },
+          "body": {
+            "ru": "<p>В произвольном положении \\(T/(S_{\\rm eff}A)=2(P_1/A+\\lambda x/X)\\). Первый срыв из центра происходит на нарастающем фронте при \\(P_1/A=\\xi/2\\). В точке \\(+X\\) срыв влево возможен лишь при \\(P_1/A&lt;-\\lambda-\\xi/2\\).</p>",
+            "en": "<p>At arbitrary \\(x\\), \\(T/(S_{\\rm eff}A)=2(P_1/A+\\lambda x/X)\\). The first motion from the centre is triggered on the rising ramp at \\(P_1/A=\\xi/2\\). At \\(+X\\) a switch to the left requires \\(P_1/A&lt;-\\lambda-\\xi/2\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.8,
+          "label": {
+            "ru": "График без обратного хода",
+            "en": "One-way motion"
+          },
+          "body": {
+            "ru": "<p>Если \\(\\xi+2\\lambda&gt;2\\), порог обратного хода лежит ниже минимума давления. Начните график с нуля, отметьте быстрый скачок в \\(+1\\) в первую четверть периода и продолжите горизонтально на все три периода.</p><figure><img src=\"/assets/practice/ipho-2025/solutions/figures/latched.png\" alt=\"После первого скачка груз остаётся на правом упоре.\" loading=\"lazy\"><figcaption>После первого скачка груз остаётся на правом упоре.</figcaption></figure>",
+            "en": "<p>If \\(\\xi+2\\lambda&gt;2\\) the negative threshold lies below the minimum pressure. Start the graph at zero, jump to \\(+1\\) during the first quarter-period, and continue horizontally for all three periods.</p><figure><img src=\"/assets/practice/ipho-2025/solutions/figures/latched.png\" alt=\"After the first jump the mass stays at the right stop.\" loading=\"lazy\"><figcaption>After the first jump the mass stays at the right stop.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.7,
+          "label": {
+            "ru": "Периодические скачки",
+            "en": "Periodic switches"
+          },
+          "body": {
+            "ru": "<p>При \\(\\xi+2\\lambda&lt;2\\) оба порога достижимы. После первого скачка груз переходит в \\(-X\\) на убывающем фронте при \\(P_1/A=-(\\lambda+\\xi/2)\\) и возвращается в \\(+X\\) на возрастающем фронте при противоположном значении. Получается прямоугольная волна с равными полупериодами; первое пребывание справа дольше следующих.</p><figure><img src=\"/assets/practice/ipho-2025/solutions/figures/periodic.png\" alt=\"После переходного участка груз переключается между упорами дважды за период.\" loading=\"lazy\"><figcaption>После переходного участка груз переключается между упорами дважды за период.</figcaption></figure>",
+            "en": "<p>For \\(\\xi+2\\lambda&lt;2\\) both thresholds are reached. Following the initial jump, switch to \\(-X\\) on the falling ramp at \\(P_1/A=-(\\lambda+\\xi/2)\\), then to \\(+X\\) on the rising ramp at its positive counterpart. The steady response is a square wave of equal half-periods; the first positive plateau is longer.</p><figure><img src=\"/assets/practice/ipho-2025/solutions/figures/periodic.png\" alt=\"After the initial transient the mass switches between the stops twice per cycle.\" loading=\"lazy\"><figcaption>After the initial transient the mass switches between the stops twice per cycle.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>При \\(\\xi+2\\lambda&gt;2\\) груз остаётся справа. При \\(\\xi+2\\lambda&lt;2\\) он проходит от упора до упора дважды за период. Равенство задаёт границу режимов.</p>",
+        "en": "<p>For \\(\\xi+2\\lambda&gt;2\\) the mass latches at the right stop. For \\(\\xi+2\\lambda&lt;2\\) it traverses the track twice per period. Equality marks the limiting case.</p>"
+      },
+      "sourcePages": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "T2-C4",
+      "max": 1.0,
+      "title": {
+        "ru": "Наибольшая работа за неделю",
+        "en": "Maximum work per period"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Допустимый диапазон",
+            "en": "Feasible domain"
+          },
+          "body": {
+            "ru": "<p>За цикл груз проходит \\(4X\\), значит \\(W=4F_sX\\). При выбранном \\(X\\) наибольшее допустимое трение лежит на границе \\(\\xi+2\\lambda=2\\). Здесь \\(F_s=S_c(A-2\\rho gX)\\).</p>",
+            "en": "<p>The mass travels \\(4X\\) per cycle, hence \\(W=4F_sX\\). At fixed \\(X\\) the largest permissible friction is on \\(\\xi+2\\lambda=2\\), giving \\(F_s=S_c(A-2\\rho gX)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Максимум параболы",
+            "en": "Parabolic maximum"
+          },
+          "body": {
+            "ru": "<p>Вершина \\(W(X)=4S_c(AX-2\\rho gX^2)\\) соответствует \\(X^\\star=A/(4\\rho g)\\). Подставим оптимальное трение и площадь \\(0.021\\) м².</p>",
+            "en": "<p>The maximum of \\(W(X)=4S_c(AX-2\\rho gX^2)\\) occurs at \\(X^\\star=A/(4\\rho g)\\). Insert the resulting friction and the area of \\(0.021\\) m².</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[X^\\star=\\frac A{4\\rho g},\\qquad F_s^\\star=\\frac{AS_c}{2},\\qquad W^\\star=\\frac{S_cA^2}{2\\rho g}\\simeq 20\\,\\mathrm{mJ}.\\]</div>",
+        "en": "<div>\\[X^\\star=\\frac A{4\\rho g},\\qquad F_s^\\star=\\frac{AS_c}{2},\\qquad W^\\star=\\frac{S_cA^2}{2\\rho g}\\simeq 20\\,\\mathrm{mJ}.\\]</div>"
+      },
+      "sourcePages": [
+        17
+      ]
+    },
+    {
+      "id": "T2-C5",
+      "max": 1.7,
+      "title": {
+        "ru": "Работа атмосферы",
+        "en": "Work done by the atmosphere"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Последовательность состояний",
+            "en": "Sequence of states"
+          },
+          "body": {
+            "ru": "<p>В предельном оптимальном режиме груз переключается при \\(P_1=\\pm A\\). Между скачками координата постоянна, а при скачке давление практически неизменно. Обходим состояния \\((P_1,x)\\) в порядке \\((A,X),(-A,X),(-A,-X),(A,-X)\\).</p>",
+            "en": "<p>In the limiting optimum the switches occur at \\(P_1=\\pm A\\). Position is fixed on each pressure ramp and pressure is almost constant during a switch. The sequence of \\((P_1,x)\\) is \\((A,X),(-A,X),(-A,-X),(A,-X)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Объём системы",
+            "en": "System volume"
+          },
+          "body": {
+            "ru": "<p>Внешний объём меняется на объём ртути, перешедшей в сосуд. При равных площадях \\(V_1=-S_c[x+P_1/(2\\rho g)]\\). Для указанных состояний значения \\(V_1/(S_cX^\\star)\\) равны \\(-3,1,3,-1\\).</p>",
+            "en": "<p>The outer volume changes by the mercury volume transferred to the cistern. For equal areas \\(V_1=-S_c[x+P_1/(2\\rho g)]\\). At the four corners \\(V_1/(S_cX^\\star)\\) takes the values \\(-3,1,3,-1\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.7,
+          "label": {
+            "ru": "Площадь цикла",
+            "en": "Area of the cycle"
+          },
+          "body": {
+            "ru": "<p>Работа, полученная системой, равна \\(-\\oint P_a\\,dV\\). Постоянная часть давления вклада не даёт. Полученный параллелограмм имеет высоту \\(2A\\) и основание \\(2S_cX^\\star\\).</p><figure><img src=\"/assets/practice/ipho-2025/solutions/figures/pv-cycle.png\" alt=\"Один цикл в координатах добавочного объёма и давления.\" loading=\"lazy\"><figcaption>Один цикл в координатах добавочного объёма и давления.</figcaption></figure>",
+            "en": "<p>Work received by the system is \\(-\\oint P_a\\,dV\\). The constant pressure part integrates to zero. The parallelogram has height \\(2A\\) and base \\(2S_cX^\\star\\).</p><figure><img src=\"/assets/practice/ipho-2025/solutions/figures/pv-cycle.png\" alt=\"One cycle in perturbation volume and pressure.\" loading=\"lazy\"><figcaption>One cycle in perturbation volume and pressure.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[W_{\\rm pr}^\\star=4AS_cX^\\star=\\frac{S_cA^2}{\\rho g},\\qquad \\frac{W^\\star}{W_{\\rm pr}^\\star}=\\frac12.\\]</div>",
+        "en": "<div>\\[W_{\\rm pr}^\\star=4AS_cX^\\star=\\frac{S_cA^2}{\\rho g},\\qquad \\frac{W^\\star}{W_{\\rm pr}^\\star}=\\frac12.\\]</div>"
+      },
+      "sourcePages": [
+        17,
+        18,
+        19
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "T3",
+  "title": "Простейшая модель газового разряда",
+  "points": 10,
+  "sourceFile": "IPhO_2014_T3_EN.pdf",
+  "sourcePages": [
+    1,
+    2
+  ],
+  "sections": [
+    {
+      "id": "T3-A",
+      "points": 4.8,
+      "title": "Несамостоятельный газовый разряд"
+    },
+    {
+      "id": "T3-B",
+      "points": 5.2,
+      "title": "Самостоятельный газовый разряд"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T3-A1",
+      "points": 1.8
+    },
+    {
+      "id": "T3-A2",
+      "points": 0.6
+    },
+    {
+      "id": "T3-A3",
+      "points": 1.7
+    },
+    {
+      "id": "T3-A4",
+      "points": 0.7
+    },
+    {
+      "id": "T3-B1",
+      "points": 2.0
+    },
+    {
+      "id": "T3-B2",
+      "points": 0.6
+    },
+    {
+      "id": "T3-B3",
+      "points": 0.3
+    },
+    {
+      "id": "T3-B4",
+      "points": 0.6
+    },
+    {
+      "id": "T3-B5",
+      "points": 1.2
+    },
+    {
+      "id": "T3-B6",
+      "points": 0.5
+    }
+  ],
+  "figures": [
+    "t3-f1"
+  ],
+  "solutionData": "/assets/practice/ipho-2014/solutions/t3.json",
+  "solutionPdf": "/assets/practice/ipho-2014/IPhO_2014_S3_EN.pdf",
+  "solutionsAvailable": true,
+  "stepScoring": "official-part-maxima-editorial-step-weights",
+  "translationStatus": "editorial-adaptation"
+}

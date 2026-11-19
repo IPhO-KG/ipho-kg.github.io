@@ -1,0 +1,605 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Космический телескоп «Джеймс Уэбб»",
+    "en": "James Webb Space Telescope"
+  },
+  "max": 12.0,
+  "sourcePdf": "/assets/practice/ipho-2022/IPhO_2022_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-A1",
+      "max": 0.4,
+      "title": {
+        "ru": "Размер геометрического изображения",
+        "en": "Geometrical image size"
+      },
+      "steps": [
+        {
+          "id": "angular",
+          "points": 0.4,
+          "label": {
+            "ru": "Угловой размер звезды",
+            "en": "Angular diameter of the star"
+          },
+          "body": {
+            "ru": "<p>С Земли звезда видна под малым углом \\(d_o/D_o\\). Лучи от противоположных краёв звезды фокусируются в точках, разделённых в фокальной плоскости расстоянием \\(f d_o/D_o\\). Переведём 89 световых лет в метры перед подстановкой.</p>",
+            "en": "<p>The star subtends the small angle \\(d_o/D_o\\). Rays from its opposite limbs land at focal-plane positions separated by \\(f d_o/D_o\\). Convert 89 light years to metres before substituting.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[d_i=\\frac{fd_o}{D_o}\\approx26\\,\\mathrm{мкм}.\\]</div>",
+        "en": "<div>\\[d_i=\\frac{fd_o}{D_o}\\approx26\\,\\mathrm{\\mu m}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A2",
+      "max": 0.4,
+      "title": {
+        "ru": "Дифракционное пятно",
+        "en": "Diffraction spot"
+      },
+      "steps": [
+        {
+          "id": "aperture",
+          "points": 0.2,
+          "label": {
+            "ru": "Эквивалентная апертура",
+            "en": "Equivalent aperture"
+          },
+          "body": {
+            "ru": "<p>Круглое зеркало той же площади имеет диаметр \\(D=2\\sqrt{A/\\pi}\\approx5{,}64\\,\\mathrm{м}\\). Для него первый минимум находится на угловом расстоянии \\(1{,}22\\lambda/D\\) от центра.</p>",
+            "en": "<p>The circular aperture of the same area has diameter \\(D=2\\sqrt{A/\\pi}\\approx5.64\\,\\mathrm m\\). Its first minimum is at an angle \\(1.22\\lambda/D\\) from the centre.</p>"
+          }
+        },
+        {
+          "id": "diameter",
+          "points": 0.2,
+          "label": {
+            "ru": "Диаметр на матрице",
+            "en": "Diameter in the focal plane"
+          },
+          "body": {
+            "ru": "<p>Умножаем угловой радиус на фокусное расстояние и удваиваем результат, поскольку требуется диаметр.</p>",
+            "en": "<p>Multiply the angular radius by the focal length and then double it to obtain the diameter.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[d_d\\simeq\\frac{2{,}44\\lambda f}{D}\\approx45\\,\\mathrm{мкм}.\\]</div>",
+        "en": "<div>\\[d_d\\simeq\\frac{2.44\\lambda f}{D}\\approx45\\,\\mathrm{\\mu m}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A3",
+      "max": 1.0,
+      "title": {
+        "ru": "Нагрев детектора светом звезды",
+        "en": "Heating of the detector"
+      },
+      "steps": [
+        {
+          "id": "irradiance",
+          "points": 0.4,
+          "label": {
+            "ru": "Поток света на зеркале",
+            "en": "Irradiance at the mirror"
+          },
+          "body": {
+            "ru": "<p>Звезда радиуса \\(R_o=d_o/2\\) излучает мощность \\(4\\pi R_o^2\\sigma T_\\star^4\\). На расстоянии \\(D_o\\) она распределена по сфере площади \\(4\\pi D_o^2\\). Зеркало перехватывает мощность \\(P=A(R_o/D_o)^2\\sigma T_\\star^4\\).</p>",
+            "en": "<p>A star of radius \\(R_o=d_o/2\\) has luminosity \\(4\\pi R_o^2\\sigma T_\\star^4\\). At distance \\(D_o\\) this is spread over \\(4\\pi D_o^2\\). The mirror collects \\(P=A(R_o/D_o)^2\\sigma T_\\star^4\\).</p>"
+          }
+        },
+        {
+          "id": "balance",
+          "points": 0.6,
+          "label": {
+            "ru": "Площадь пятна и тепловой баланс",
+            "en": "Spot area and thermal balance"
+          },
+          "body": {
+            "ru": "<p>Если свет занимает геометрическое изображение, баланс \\(P=(\\pi d_i^2/4)\\sigma T_0^4\\) даёт \\(T_0=T_\\star[A/(\\pi f^2)]^{1/4}\\approx530\\,\\mathrm{К}\\). Дифракция расширяет пятно. Оценим его диаметр как \\(d_i+d_d\\). При прежней мощности температура уменьшается как обратный квадратный корень из диаметра.</p>",
+            "en": "<p>For the geometrical image the balance \\(P=(\\pi d_i^2/4)\\sigma T_0^4\\) gives \\(T_0=T_\\star[A/(\\pi f^2)]^{1/4}\\approx530\\,\\mathrm K\\). Diffraction spreads the power over a wider spot, whose diameter we estimate as \\(d_i+d_d\\). At fixed power the equilibrium temperature varies inversely with the square root of the spot diameter.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_p\\simeq T_\\star\\left(\\frac{A}{\\pi f^2}\\right)^{1/4}\\sqrt{\\frac{d_i}{d_i+d_d}}\\approx320\\,\\mathrm{К}.\\]</div>",
+        "en": "<div>\\[T_p\\simeq T_\\star\\left(\\frac{A}{\\pi f^2}\\right)^{1/4}\\sqrt{\\frac{d_i}{d_i+d_d}}\\approx320\\,\\mathrm K.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B1",
+      "max": 0.4,
+      "title": {
+        "ru": "Пороговая энергия и температура источника",
+        "en": "Threshold energy and source temperature"
+      },
+      "steps": [
+        {
+          "id": "slope",
+          "points": 0.2,
+          "label": {
+            "ru": "Наклон графика",
+            "en": "Graph slope"
+          },
+          "body": {
+            "ru": "<p>Между \\(1/T=0{,}111\\) и \\(0{,}151\\,\\mathrm{К^{-1}}\\) десятичный логарифм тока уменьшается примерно на четыре. Наклон графика \\(s\\approx-100\\,\\mathrm{К}\\).</p>",
+            "en": "<p>Between \\(1/T=0.111\\) and \\(0.151\\,\\mathrm{K^{-1}}\\) the base-ten logarithm of the current falls by about four. The slope is \\(s\\approx-100\\,\\mathrm K\\).</p>"
+          }
+        },
+        {
+          "id": "source",
+          "points": 0.2,
+          "label": {
+            "ru": "Температурный масштаб",
+            "en": "Temperature scale"
+          },
+          "body": {
+            "ru": "<p>Из закона для тока следует \\(\\Delta E_g/(6k_B)=-s\\ln 10\\approx230\\,\\mathrm{К}\\). Энергия фотона теплового источника имеет порядок \\(k_BT\\). Приравниваем её к \\(\\Delta E_g\\).</p>",
+            "en": "<p>The current law gives \\(\\Delta E_g/(6k_B)=-s\\ln 10\\approx230\\,\\mathrm K\\). Thermal photons have characteristic energy of order \\(k_BT\\). Taking this to be the threshold energy gives the source temperature scale.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_{\\rm source}\\sim\\frac{\\Delta E_g}{k_B}\\approx1{,}4\\cdot10^3\\,\\mathrm{К}.\\]</div>",
+        "en": "<div>\\[T_{\\rm source}\\sim\\frac{\\Delta E_g}{k_B}\\approx1.4\\times10^3\\,\\mathrm K.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B2",
+      "max": 0.4,
+      "title": {
+        "ru": "Неопределённость числа отсчётов",
+        "en": "Uncertainty of the photon count"
+      },
+      "steps": [
+        {
+          "id": "counts",
+          "points": 0.2,
+          "label": {
+            "ru": "Флуктуации числа электронов",
+            "en": "Fluctuating counts"
+          },
+          "body": {
+            "ru": "<p>Темновые электроны и электроны от фотонов дают независимые пуассоновские отсчёты. Их дисперсии за время \\(\\tau\\) равны \\(i_d\\tau\\) и \\(p\\tau\\). Вычитание известного среднего темнового сигнала сохраняет его дисперсию.</p>",
+            "en": "<p>Dark electrons and photon-generated electrons give independent Poisson counts with variances \\(i_d\\tau\\) and \\(p\\tau\\). Subtracting the known mean dark signal leaves its variance unchanged.</p>"
+          }
+        },
+        {
+          "id": "quadrature",
+          "points": 0.2,
+          "label": {
+            "ru": "Сумма дисперсий",
+            "en": "Sum of variances"
+          },
+          "body": {
+            "ru": "<p>Шум считывания независим и добавляет \\(\\sigma_r^2\\) к полной дисперсии. Стандартная неопределённость равна квадратному корню из этой суммы.</p>",
+            "en": "<p>Readout noise independently adds \\(\\sigma_r^2\\) to the variance. Take the square root to obtain the standard uncertainty.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\sigma_t=\\sqrt{\\sigma_r^2+i_d\\tau+p\\tau}.\\]</div>",
+        "en": "<div>\\[\\sigma_t=\\sqrt{\\sigma_r^2+i_d\\tau+p\\tau}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B3",
+      "max": 0.5,
+      "title": {
+        "ru": "Поток для десятикратного отношения сигнала к шуму",
+        "en": "Photon rate for a ten-to-one signal"
+      },
+      "steps": [
+        {
+          "id": "dark",
+          "points": 0.2,
+          "label": {
+            "ru": "Темновой ток при рабочей температуре",
+            "en": "Dark current at the operating temperature"
+          },
+          "body": {
+            "ru": "<p>При \\(7{,}5\\,\\mathrm{К}\\) абсцисса на графике равна примерно \\(0{,}133\\,\\mathrm{К^{-1}}\\). Отсюда \\(i_d\\approx5\\) электронов в секунду и \\(i_d\\tau\\approx5\\cdot10^4\\).</p>",
+            "en": "<p>At \\(7.5\\,\\mathrm K\\) the horizontal coordinate is about \\(0.133\\,\\mathrm{K^{-1}}\\). The graph gives \\(i_d\\approx5\\) electrons per second, or \\(i_d\\tau\\approx5\\times10^4\\) counts.</p>"
+          }
+        },
+        {
+          "id": "signal",
+          "points": 0.3,
+          "label": {
+            "ru": "Полезные отсчёты",
+            "en": "Signal counts"
+          },
+          "body": {
+            "ru": "<p>Обозначим число фотонов через \\(N=p\\tau\\). На пороге \\(N=10\\sigma_t\\), поэтому \\(N^2=100(14^2+5\\cdot10^4+N)\\). Положительный корень даёт около 2290 фотонов за экспозицию.</p>",
+            "en": "<p>Write \\(N=p\\tau\\) for the photon count. At threshold \\(N=10\\sigma_t\\), so \\(N^2=100(14^2+5\\times10^4+N)\\). The positive root is about 2290 photons per exposure.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p_{\\min}=\\frac{N}{\\tau}\\approx0{,}229\\,\\mathrm{с^{-1}}.\\]</div>",
+        "en": "<div>\\[p_{\\min}=\\frac{N}{\\tau}\\approx0.229\\,\\mathrm{s^{-1}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B4",
+      "max": 0.5,
+      "title": {
+        "ru": "Интенсивность излучения на зеркале",
+        "en": "Irradiance at the telescope"
+      },
+      "steps": [
+        {
+          "id": "energy",
+          "points": 0.3,
+          "label": {
+            "ru": "Энергия фотона",
+            "en": "Photon energy"
+          },
+          "body": {
+            "ru": "<p>Из B1 пороговый фотон имеет энергию \\(E_\\gamma=\\Delta E_g\\approx k_B(1361\\,\\mathrm{К})\\approx1{,}9\\cdot10^{-20}\\,\\mathrm{Дж}\\).</p>",
+            "en": "<p>From B1 each threshold photon has energy \\(E_\\gamma=\\Delta E_g\\approx k_B(1361\\,\\mathrm K)\\approx1.9\\times10^{-20}\\,\\mathrm J\\).</p>"
+          }
+        },
+        {
+          "id": "power",
+          "points": 0.2,
+          "label": {
+            "ru": "Мощность на единицу площади",
+            "en": "Power per unit area"
+          },
+          "body": {
+            "ru": "<p>Зеркало собирает за секунду энергию \\(pE_\\gamma\\). Делим её на площадь \\(25\\,\\mathrm{м^2}\\).</p>",
+            "en": "<p>The mirror collects energy \\(pE_\\gamma\\) per second. Divide by its area of \\(25\\,\\mathrm{m^2}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I=\\frac{pE_\\gamma}{A}\\approx1{,}8\\cdot10^{-22}\\,\\mathrm{Вт/м^2}.\\]</div>",
+        "en": "<div>\\[I=\\frac{pE_\\gamma}{A}\\approx1.8\\times10^{-22}\\,\\mathrm{W/m^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C1",
+      "max": 2.4,
+      "title": {
+        "ru": "Баланс пятислойного экрана",
+        "en": "Energy balance of the five-layer shield"
+      },
+      "steps": [
+        {
+          "id": "flows",
+          "points": 0.6,
+          "label": {
+            "ru": "Мощности излучения",
+            "en": "Radiated powers"
+          },
+          "body": {
+            "ru": "<p>Пусть одна поверхность \\(i\\)-го листа излучает \\(E_i=\\epsilon A_s\\sigma T_i^4\\). Для соседей введём \\(D_i=E_i-E_{i+1}\\). С солнечной стороны в первый лист поступает результирующая мощность \\(q=\\epsilon A_sI_0-E_1\\). Через внешнюю поверхность пятого уходит \\(E_5\\).</p>",
+            "en": "<p>Let \\(E_i=\\epsilon A_s\\sigma T_i^4\\) be the power radiated by one face of sheet \\(i\\), and \\(D_i=E_i-E_{i+1}\\) for adjacent sheets. The net input on the Sun side is \\(q=\\epsilon A_s I_0-E_1\\). The far face of the last sheet loses \\(E_5\\).</p>"
+          }
+        },
+        {
+          "id": "recursion",
+          "points": 0.8,
+          "label": {
+            "ru": "Баланс соседних зазоров",
+            "en": "Balance across successive gaps"
+          },
+          "body": {
+            "ru": "<p>Первый зазор отводит \\((\\alpha+\\beta)D_1=q\\). Средний лист получает \\(\\alpha D_{i-1}\\) и отдаёт \\((\\alpha+\\beta)D_i\\). Последний лист удовлетворяет \\(E_5=\\alpha D_4\\). Обозначив \\(r=\\alpha/(\\alpha+\\beta)\\), находим</p><div>\\[D_i=\\frac{q\\,r^{i-1}}{\\alpha+\\beta},\\qquad E_5=q r^4.\\]</div>",
+            "en": "<p>The first gap removes \\((\\alpha+\\beta)D_1=q\\). An interior sheet receives \\(\\alpha D_{i-1}\\) and loses \\((\\alpha+\\beta)D_i\\). The last sheet satisfies \\(E_5=\\alpha D_4\\). With \\(r=\\alpha/(\\alpha+\\beta)\\) this gives</p><div>\\[D_i=\\frac{q\\,r^{i-1}}{\\alpha+\\beta},\\qquad E_5=q r^4.\\]</div>"
+          }
+        },
+        {
+          "id": "temperatures",
+          "points": 1.0,
+          "label": {
+            "ru": "Температуры крайних листов",
+            "en": "Temperatures of the outer sheets"
+          },
+          "body": {
+            "ru": "<p>Разности мощностей складываются в \\(E_1-E_5=\\sum_{i=1}^{4}D_i\\). Подставляя их и \\(E_1=\\epsilon A_s I_0-q\\), получаем \\(q=\\epsilon A_s I_0/K\\), где</p><div>\\[K=1+r^4+\\frac{1+r+r^2+r^3}{\\alpha+\\beta}.\\]</div><p>Температуры следуют из найденных \\(E_1\\) и \\(E_5\\).</p>",
+            "en": "<p>The differences telescope to \\(E_1-E_5=\\sum_{i=1}^{4}D_i\\). Substitution together with \\(E_1=\\epsilon A_s I_0-q\\) gives \\(q=\\epsilon A_s I_0/K\\), where</p><div>\\[K=1+r^4+\\frac{1+r+r^2+r^3}{\\alpha+\\beta}.\\]</div><p>Read the temperatures from \\(E_1\\) and \\(E_5\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_1=\\left[\\frac{I_0}{\\sigma}\\left(1-\\frac{1}{K}\\right)\\right]^{1/4},\\qquad T_5=r\\left(\\frac{I_0}{K\\sigma}\\right)^{1/4}.\\]</div>",
+        "en": "<div>\\[T_1=\\left[\\frac{I_0}{\\sigma}\\left(1-\\frac{1}{K}\\right)\\right]^{1/4},\\qquad T_5=r\\left(\\frac{I_0}{K\\sigma}\\right)^{1/4}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C2",
+      "max": 1.6,
+      "title": {
+        "ru": "Поглощение и потери через края",
+        "en": "Absorption and edge losses"
+      },
+      "steps": [
+        {
+          "id": "areas",
+          "points": 1.4,
+          "label": {
+            "ru": "Оценка по эффективным площадям",
+            "en": "Effective-area estimate"
+          },
+          "body": {
+            "ru": "<p>Площадь открытого края \\(G=4h\\sqrt{A_s}\\). Из-за диффузных переотражений вероятность поглощения пропорциональна эффективной площади. У двух листов она равна по \\(\\epsilon A_s\\), у открытой щели равна \\(G\\). Вероятности попасть на соседний лист и выйти наружу составляют</p><div>\\[\\alpha\\simeq\\frac{\\epsilon A_s}{2\\epsilon A_s+G}\\approx0{,}29,\\qquad \\beta' \\simeq \\frac{G}{2\\epsilon A_s+G}\\approx0{,}41.\\]</div>",
+            "en": "<p>The open rim has area \\(G=4h\\sqrt{A_s}\\). After diffuse reflections, absorption probabilities are estimated from effective areas. Each sheet contributes \\(\\epsilon A_s\\) and the open rim contributes \\(G\\). The probability of absorption at the other sheet and the escape probability are</p><div>\\[\\alpha\\simeq\\frac{\\epsilon A_s}{2\\epsilon A_s+G}\\approx0.29,\\qquad \\beta' \\simeq \\frac{G}{2\\epsilon A_s+G}\\approx0.41.\\]</div>"
+          }
+        },
+        {
+          "id": "correction",
+          "points": 0.2,
+          "label": {
+            "ru": "Уточнение коэффициента потерь",
+            "en": "Refining the loss coefficient"
+          },
+          "body": {
+            "ru": "<p>Вероятность выхода \\(\\beta'\\) относится к сумме излучений обеих поверхностей. По условию \\(\\beta\\) умножает их разность. Если \\(T_{i+1}/T_i=\\gamma\\), то \\(\\beta=\\beta'(1+\\gamma^4)/(1-\\gamma^4)\\). При примерно равных отношениях температур в четырёх зазорах и \\(T_5/T_1\\sim1/4\\) получаем \\(\\gamma^4\\sim1/4\\) и \\(\\beta\\sim0{,}7\\).</p>",
+            "en": "<p>The escape probability \\(\\beta'\\) acts on the sum of emissions from both faces. The model defines \\(\\beta\\) relative to their difference. With \\(\\gamma=T_{i+1}/T_i\\), this gives \\(\\beta=\\beta'(1+\\gamma^4)/(1-\\gamma^4)\\). Similar temperature ratios in the four gaps and \\(T_5/T_1\\sim1/4\\) give \\(\\gamma^4\\sim1/4\\) and \\(\\beta\\sim0.7\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>\\(\\alpha\\simeq0{,}3\\). Геометрическая оценка потерь даёт \\(\\beta\\simeq0{,}4\\) в первом приближении и около \\(0{,}7\\) с учётом встречного излучения.</p>",
+        "en": "<p>\\(\\alpha\\simeq0.3\\). The first geometrical estimate gives \\(\\beta\\simeq0.4\\). Allowing for emission in both directions gives about \\(0.7\\).</p>"
+      }
+    },
+    {
+      "id": "T2-C3",
+      "max": 0.4,
+      "title": {
+        "ru": "Температуры солнечного экрана",
+        "en": "Shield temperatures"
+      },
+      "steps": [
+        {
+          "id": "hot",
+          "points": 0.2,
+          "label": {
+            "ru": "Температура освещённого листа",
+            "en": "Temperature of the sunlit sheet"
+          },
+          "body": {
+            "ru": "<p>Возьмём простую оценку из C2, \\(\\alpha=0{,}3\\) и \\(\\beta=0{,}4\\). Тогда \\(r=3/7\\), \\(K\\approx3{,}45\\). Подстановка в выражение для \\(T_1\\) даёт около 361 К.</p>",
+            "en": "<p>Use the first estimate in C2, \\(\\alpha=0.3\\) and \\(\\beta=0.4\\). Then \\(r=3/7\\) and \\(K\\approx3.45\\). The expression for \\(T_1\\) gives about 361 K.</p>"
+          }
+        },
+        {
+          "id": "cold",
+          "points": 0.2,
+          "label": {
+            "ru": "Температура крайнего теневого листа",
+            "en": "Temperature of the outermost shaded sheet"
+          },
+          "body": {
+            "ru": "<p>Для последнего листа подставляем те же \\(r\\) и \\(K\\) в \\(T_5=r[I_0/(K\\sigma)]^{1/4}\\). Выбор уточнённого \\(\\beta\\) из C2 также допустим при последовательном использовании этого значения. В таблице официального разбора для тех же коэффициентов приведены 380 и 102 К. Прямая подстановка в формулы C1 даёт значения ниже.</p>",
+            "en": "<p>For the last sheet use the same \\(r\\) and \\(K\\) in \\(T_5=r[I_0/(K\\sigma)]^{1/4}\\). The refined \\(\\beta\\) from C2 may also be used consistently. The published table lists 380 and 102 K for this coefficient pair. Direct substitution in the C1 expressions gives the values below.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_1\\approx361\\,\\mathrm{К},\\qquad T_5\\approx124\\,\\mathrm{К}\\quad(\\alpha=0{,}3,\\ \\beta=0{,}4).\\]</div>",
+        "en": "<div>\\[T_1\\approx361\\,\\mathrm K,\\qquad T_5\\approx124\\,\\mathrm K\\quad(\\alpha=0.3,\\ \\beta=0.4).\\]</div>"
+      }
+    },
+    {
+      "id": "T2-D1",
+      "max": 1.0,
+      "title": {
+        "ru": "Состояния до и после пробки",
+        "en": "States across the plug"
+      },
+      "steps": [
+        {
+          "id": "flow",
+          "points": 0.4,
+          "label": {
+            "ru": "Давление и объём",
+            "en": "Pressure and volume"
+          },
+          "body": {
+            "ru": "<p>Перепад давлений поддерживает поток через пористую пробку. При одинаковом массовом расходе и площади выходная скорость выше, значит плотность ниже и молярный объём больше.</p>",
+            "en": "<p>The pressure drop drives the flow through the porous plug. At equal mass flow and tube area the higher outlet speed means lower density and larger molar volume.</p>"
+          }
+        },
+        {
+          "id": "dissipation",
+          "points": 0.4,
+          "label": {
+            "ru": "Энергия и энтропия",
+            "en": "Energy and entropy"
+          },
+          "body": {
+            "ru": "<p>В модели задачи механическая работа рассеивается внутри пробки, и внутренняя энергия газа растёт. Адиабатическое протекание с трением необратимо, поэтому энтропия также растёт.</p>",
+            "en": "<p>In the model used here mechanical work is dissipated within the plug and the gas gains internal energy. Adiabatic flow with friction is irreversible, so entropy increases.</p>"
+          }
+        },
+        {
+          "id": "temperature",
+          "points": 0.2,
+          "label": {
+            "ru": "Сравнение температур",
+            "en": "Temperature comparison"
+          },
+          "body": {
+            "ru": "<p>Для реального гелия \\(U\\) зависит и от температуры, и от объёма. Направление изменения температуры из предыдущих сравнений не следует.</p>",
+            "en": "<p>For real helium \\(U\\) depends on both temperature and volume. The preceding comparisons do not determine which temperature is larger.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[U_1&lt;U_2,\\qquad S_1&lt;S_2,\\qquad P_1&gt;P_2,\\qquad V_1&lt;V_2.\\]</div><p>Связь между \\(T_1\\) и \\(T_2\\) без дополнительных данных неизвестна.</p>",
+        "en": "<div>\\[U_1&lt;U_2,\\qquad S_1&lt;S_2,\\qquad P_1&gt;P_2,\\qquad V_1&lt;V_2.\\]</div><p>The relative magnitudes of \\(T_1\\) and \\(T_2\\) require additional data.</p>"
+      }
+    },
+    {
+      "id": "T2-D2",
+      "max": 0.6,
+      "title": {
+        "ru": "Сохраняющаяся энтальпия",
+        "en": "Conservation of enthalpy"
+      },
+      "steps": [
+        {
+          "id": "work",
+          "points": 0.2,
+          "label": {
+            "ru": "Работа на входе и выходе",
+            "en": "Inlet and outlet work"
+          },
+          "body": {
+            "ru": "<p>Проследим за одним молем газа. Входное давление совершает над ним работу \\(P_1V_1\\). Для выхода молю приходится совершить работу \\(P_2V_2\\) против газа за пробкой.</p>",
+            "en": "<p>Follow one mole through the plug. Inlet pressure does work \\(P_1V_1\\) on it. To leave the plug it must do work \\(P_2V_2\\) against the downstream gas.</p>"
+          }
+        },
+        {
+          "id": "balance",
+          "points": 0.4,
+          "label": {
+            "ru": "Первое начало",
+            "en": "First law"
+          },
+          "body": {
+            "ru": "<p>Теплообмена нет, а изменением кинетической энергии потока пренебрегаем. Тогда \\(U_2-U_1=P_1V_1-P_2V_2\\). Переносим величины каждого состояния на одну сторону.</p>",
+            "en": "<p>Heat transfer and the change in bulk kinetic energy are negligible. Thus \\(U_2-U_1=P_1V_1-P_2V_2\\). Collecting terms for each state gives the invariant.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[H_1=H_2,\\qquad H=U+PV.\\]</div>",
+        "en": "<div>\\[H_1=H_2,\\qquad H=U+PV.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-D3",
+      "max": 1.4,
+      "title": {
+        "ru": "Энтальпия по термодинамической диаграмме",
+        "en": "Enthalpy from the thermodynamic diagram"
+      },
+      "steps": [
+        {
+          "id": "isentropic-slope",
+          "points": 0.6,
+          "label": {
+            "ru": "Наклон изэнтропы и пересечение с осью",
+            "en": "Isentropic slope and axis intercept"
+          },
+          "body": {
+            "ru": "<p>Для одного килограмма \\(du=T\\,ds-P\\,dv\\). На изэнтропе наклон равен \\(-P\\). Поэтому касательная через выходное состояние имеет вид \\(u=h_2-P_2v\\) и пересекает вертикальную ось в точке \\(h_2\\).</p>",
+            "en": "<p>For one kilogram \\(du=T\\,ds-P\\,dv\\). The isentropic slope is \\(-P\\). The tangent through the downstream state therefore has equation \\(u=h_2-P_2v\\) and intercept \\(h_2\\) on the vertical axis.</p>"
+          }
+        },
+        {
+          "id": "first-estimate",
+          "points": 0.2,
+          "label": {
+            "ru": "Первое построение",
+            "en": "First estimate"
+          },
+          "body": {
+            "ru": "<p>На изотерме \\(7{,}5\\,\\mathrm{К}\\) отмечаем точку \\(v_2=0{,}100\\,\\mathrm{м^3/кг}\\). Продлевая приближённую касательную до оси, получаем около \\(40\\,\\mathrm{кДж/кг}\\).</p><figure><img style=\"width:min(100%,36rem)\" src=\"/assets/practice/ipho-2022/figures/IPhO_2022_S2_fig4.png\" alt=\"Касательная к изэнтропе для выходного состояния\" loading=\"lazy\"></figure>",
+            "en": "<p>Mark \\(v_2=0.100\\,\\mathrm{m^3/kg}\\) on the \\(7.5\\,\\mathrm K\\) isotherm. Extending a first tangent to the vertical axis gives about \\(40\\,\\mathrm{kJ/kg}\\).</p><figure><img style=\"width:min(100%,36rem)\" src=\"/assets/practice/ipho-2022/figures/IPhO_2022_S2_fig4.png\" alt=\"Isentropic tangent construction at the outlet\" loading=\"lazy\"></figure>"
+          }
+        },
+        {
+          "id": "bounds",
+          "points": 0.4,
+          "label": {
+            "ru": "Нижняя и верхняя границы",
+            "en": "Lower and upper bounds"
+          },
+          "body": {
+            "ru": "<p>Строим касательные к двум ближайшим нанесённым изэнтропам по разные стороны от отмеченной точки. Их пересечения с осью ограничивают искомую энтальпию снизу и сверху значениями около 39 и \\(41\\,\\mathrm{кДж/кг}\\).</p>",
+            "en": "<p>Draw tangents to the two nearest plotted isentropes, one on each side of the marked point. Their axis intercepts bracket the enthalpy between about 39 and \\(41\\,\\mathrm{kJ/kg}\\).</p>"
+          }
+        },
+        {
+          "id": "interpolation",
+          "points": 0.2,
+          "label": {
+            "ru": "Интерполяция между касательными",
+            "en": "Interpolation between tangents"
+          },
+          "body": {
+            "ru": "<p>Отмеченная точка ближе к верхней граничной касательной. Интерполируя по её положению, уточняем пересечение с осью.</p><figure><img style=\"width:min(100%,36rem)\" src=\"/assets/practice/ipho-2022/figures/IPhO_2022_S2_fig5.png\" alt=\"Интерполяция энтальпии между соседними касательными\" loading=\"lazy\"></figure>",
+            "en": "<p>The marked point lies closer to the tangent with the higher intercept. Interpolate between the two tangents to refine the axis intercept.</p><figure><img style=\"width:min(100%,36rem)\" src=\"/assets/practice/ipho-2022/figures/IPhO_2022_S2_fig5.png\" alt=\"Enthalpy interpolation between adjacent tangents\" loading=\"lazy\"></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[h_2\\approx40{,}7\\,\\mathrm{кДж/кг}.\\]</div>",
+        "en": "<div>\\[h_2\\approx40.7\\,\\mathrm{kJ/kg}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-D4",
+      "max": 0.8,
+      "title": {
+        "ru": "Наибольшая температура на входе",
+        "en": "Highest inlet temperature"
+      },
+      "steps": [
+        {
+          "id": "family",
+          "points": 0.4,
+          "label": {
+            "ru": "Семейство касательных",
+            "en": "Family of tangents"
+          },
+          "body": {
+            "ru": "<p>Все состояния с найденной энтальпией имеют одну и ту же точку пересечения касательной с осью \\(u\\). Проведём из \\((0,h_2)\\) касательные к нескольким изэнтропам и отметим их точки касания.</p>",
+            "en": "<p>Every state of the required enthalpy has the same tangent intercept on the \\(u\\) axis. Draw tangents from \\((0,h_2)\\) to several isentropes and mark their contact points.</p>"
+          }
+        },
+        {
+          "id": "maximum",
+          "points": 0.4,
+          "label": {
+            "ru": "Самая горячая доступная изотерма",
+            "en": "Highest accessible isotherm"
+          },
+          "body": {
+            "ru": "<p>Точки касания образуют линию \\(h=h_2\\). Вдоль неё ищем изотерму с наибольшей температурой. По диаграмме она соответствует примерно \\(11\\,\\mathrm{К}\\).</p><figure><img style=\"width:min(100%,36rem)\" src=\"/assets/practice/ipho-2022/figures/IPhO_2022_S2_fig6.png\" alt=\"Касательные из одной точки оси энергии\" loading=\"lazy\"></figure>",
+            "en": "<p>The contact points trace the curve \\(h=h_2\\). Find the highest-temperature isotherm reached by this curve. Its label is approximately \\(11\\,\\mathrm K\\).</p><figure><img style=\"width:min(100%,36rem)\" src=\"/assets/practice/ipho-2022/figures/IPhO_2022_S2_fig6.png\" alt=\"Tangents from a common energy-axis intercept\" loading=\"lazy\"></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_{1,\\max}\\approx11\\,\\mathrm{К}.\\]</div>",
+        "en": "<div>\\[T_{1,\\max}\\approx11\\,\\mathrm K.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-D5",
+      "max": 0.2,
+      "title": {
+        "ru": "Давление на входе",
+        "en": "Inlet pressure"
+      },
+      "steps": [
+        {
+          "id": "slope",
+          "points": 0.2,
+          "label": {
+            "ru": "Наклон выбранной касательной",
+            "en": "Slope of the selected tangent"
+          },
+          "body": {
+            "ru": "<p>В состоянии максимальной температуры по диаграмме \\(v_1\\approx0{,}017\\,\\mathrm{м^3/кг}\\), \\(u_1\\approx10\\,\\mathrm{кДж/кг}\\). Модуль наклона касательной равен \\(P_1=(h_2-u_1)/v_1\\).</p>",
+            "en": "<p>At the maximum-temperature state read \\(v_1\\approx0.017\\,\\mathrm{m^3/kg}\\) and \\(u_1\\approx10\\,\\mathrm{kJ/kg}\\). The magnitude of the tangent slope is \\(P_1=(h_2-u_1)/v_1\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P_1\\approx1{,}8\\,\\mathrm{МПа}.\\]</div>",
+        "en": "<div>\\[P_1\\approx1.8\\,\\mathrm{MPa}.\\]</div>"
+      }
+    }
+  ]
+}

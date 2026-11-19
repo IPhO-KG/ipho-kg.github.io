@@ -163,6 +163,15 @@ test('invalid attempt settings fail clearly', () => {
   ]) assert.throws(() => E.create(...args));
 });
 
+test('reopening a historical attempt preserves its edition', () => {
+  for (const pack of ['ipho-2021', 'ipho-2022', 'ipho-2025']) {
+    const state = E.create('same-id', 'exam', 5 * HOUR, START, pack);
+    assert.equal(state.pack, pack);
+    assert.equal(E.normalize(JSON.parse(JSON.stringify(state)), START + HOUR).pack, pack);
+  }
+  assert.equal(E.create('legacy', 'exam', 5 * HOUR, START).pack, 'ipho-2026');
+});
+
 test('timer formatting rounds upward until actual expiry', () => {
   assert.equal(E.formatTime(5 * HOUR), '05:00:00');
   assert.equal(E.formatTime(1), '00:00:01');

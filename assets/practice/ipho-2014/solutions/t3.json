@@ -1,0 +1,379 @@
+{
+  "id": "T3",
+  "max": 10,
+  "title": {
+    "ru": "Простейшая модель газового разряда",
+    "en": "Simplest model of gas discharge"
+  },
+  "sourcePdf": "/assets/practice/ipho-2014/IPhO_2014_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-A1",
+      "max": 1.8,
+      "title": {
+        "ru": "Установление концентрации",
+        "en": "Buildup of charge carriers"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Баланс пар",
+            "en": "Pair balance"
+          },
+          "body": {
+            "ru": "<p>Заряды рождаются и исчезают попарно. Пока электроды не собирают заряды, \\(n_e=n_i=n\\) во все моменты. Баланс ионизации и рекомбинации даёт</p>\n<div>\\[\\frac{\\mathrm dn}{\\mathrm dt}=Z_{\\rm ext}-rn^2.\\]</div>",
+            "en": "<p>Charges are created and destroyed in pairs. Before collection at electrodes is introduced, \\(n_e=n_i=n\\) at all times. Pair production and recombination give</p>\n<div>\\[\\frac{\\mathrm dn}{\\mathrm dt}=Z_{\\rm ext}-rn^2.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Начальное и предельное значения",
+            "en": "Initial and limiting values"
+          },
+          "body": {
+            "ru": "<p>Так как \\(\\tanh 0=0\\), начальное условие требует \\(n_0=0\\). При больших \\(t\\) концентрация стремится к \\(a\\) и производная обращается в нуль. Следовательно, \\(ra^2=Z_{\\rm ext}\\).</p>",
+            "en": "<p>Since \\(\\tanh 0=0\\), the initial condition gives \\(n_0=0\\). At long times the density approaches \\(a\\) and its derivative vanishes. Thus \\(ra^2=Z_{\\rm ext}\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Скорость роста вначале",
+            "en": "Initial growth rate"
+          },
+          "body": {
+            "ru": "<p>В первый момент рекомбинировать ещё некому, поэтому \\(\\dot n(0)=Z_{\\rm ext}\\). Производная заданного закона при \\(t=0\\) равна \\(ab\\).</p>",
+            "en": "<p>At the instant of switch-on there are no pairs to recombine, so \\(\\dot n(0)=Z_{\\rm ext}\\). The given function has initial slope \\(ab\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[n_0=0,\\qquad a=\\sqrt{\\frac{Z_{\\rm ext}}r},\\qquad b=\\sqrt{rZ_{\\rm ext}}.\\]</div>",
+        "en": "<div>\\[n_0=0,\\qquad a=\\sqrt{\\frac{Z_{\\rm ext}}r},\\qquad b=\\sqrt{rZ_{\\rm ext}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A2",
+      "max": 0.6,
+      "title": {
+        "ru": "Два ионизатора",
+        "en": "Two ionizers"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Сложение мощностей источников",
+            "en": "Adding source rates"
+          },
+          "body": {
+            "ru": "<p>Складываются скорости рождения пар. По A1 каждая из них равна \\(r n_{ej}^2\\). Поэтому \\(r n_e^2=r n_{e1}^2+r n_{e2}^2\\).</p>",
+            "en": "<p>Pair production rates add. By A1 the separate rates are \\(r n_{ej}^2\\). Thus \\(r n_e^2=r n_{e1}^2+r n_{e2}^2\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Численная концентрация",
+            "en": "Numerical density"
+          },
+          "body": {
+            "ru": "<p>После извлечения корня коэффициент определяется тройкой \\(12,16,20\\).</p>",
+            "en": "<p>Taking the square root gives the \\(12,16,20\\) right-triangle triple.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[n_e=\\sqrt{n_{e1}^2+n_{e2}^2}=2{,}0\\cdot10^{11}\\,\\mathrm{cm^{-3}}.\\]</div>",
+        "en": "<div>\\[n_e=\\sqrt{n_{e1}^2+n_{e2}^2}=2.0\\cdot10^{11}\\,\\mathrm{cm^{-3}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A3",
+      "max": 1.7,
+      "title": {
+        "ru": "Ток между электродами",
+        "en": "Current between electrodes"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Сбор и рекомбинация",
+            "en": "Collection and recombination"
+          },
+          "body": {
+            "ru": "<p>Баланс всей трубки для электронов имеет вид \\(Z_{\\rm ext}SL=r n_e n_i SL+I_e/e\\). Для ионов правая часть отличается только заменой \\(I_e\\) на \\(I_i\\), поэтому \\(I_e=I_i=I/2\\). Равная подвижность и однородное поле тогда дают \\(n_e=n_i=n\\).</p>",
+            "en": "<p>For electrons the whole-tube balance is \\(Z_{\\rm ext}SL=r n_en_i SL+I_e/e\\). For ions the identical source and recombination rates replace \\(I_e\\) by \\(I_i\\), so \\(I_e=I_i=I/2\\). Equal mobility in a uniform field then gives \\(n_e=n_i=n\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Концентрация в поле",
+            "en": "Density in the applied field"
+          },
+          "body": {
+            "ru": "<p>Положим \\(v=\\beta U/L\\). Для каждого знака носителей \\(I/2=enSv\\), откуда уравнение баланса принимает вид \\(Z_{\\rm ext}=rn^2+nv/L\\). Его положительный корень равен</p>\n<div>\\[n=\\frac{1}{2r}\\left[\\sqrt{(v/L)^2+4r Z_{\\rm ext}}-v/L\\right].\\]</div>",
+            "en": "<p>Put \\(v=\\beta U/L\\). Each species carries \\(I/2=enSv\\), giving \\(Z_{\\rm ext}=rn^2+nv/L\\). The positive root is</p>\n<div>\\[n=\\frac{1}{2r}\\left[\\sqrt{(v/L)^2+4r Z_{\\rm ext}}-v/L\\right].\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.5,
+          "label": {
+            "ru": "Вольт-амперная характеристика",
+            "en": "Current–voltage relation"
+          },
+          "body": {
+            "ru": "<p>Подставляем концентрацию в \\(I=2enSv\\) и выносим \\(v/L\\) за пределы корня. Выражение относится к \\(U&gt;0\\) и даёт модуль тока.</p>",
+            "en": "<p>Insert the density into \\(I=2enSv\\) and factor \\(v/L\\) out of the square root. For \\(U&gt;0\\) the result is the current magnitude.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I=\\frac{e\\beta^2 U^2 S}{rL^3}\\left[\\sqrt{1+\\frac{4rZ_{\\rm ext}L^4}{\\beta^2U^2}}-1\\right].\\]</div>",
+        "en": "<div>\\[I=\\frac{e\\beta^2 U^2 S}{rL^3}\\left[\\sqrt{1+\\frac{4rZ_{\\rm ext}L^4}{\\beta^2U^2}}-1\\right].\\]</div>"
+      }
+    },
+    {
+      "id": "T3-A4",
+      "max": 0.7,
+      "title": {
+        "ru": "Удельное сопротивление газа",
+        "en": "Gas resistivity"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Концентрация в слабом поле",
+            "en": "Weak-field density"
+          },
+          "body": {
+            "ru": "<p>При \\(U\\to0\\) сбор электродами даёт малую поправку к равновесной концентрации A1. Тогда \\(n\\simeq\\sqrt{Z_{\\rm ext}/r}\\) и ток в первом порядке равен \\(I\\simeq2e\\beta n S U/L\\).</p>",
+            "en": "<p>As \\(U\\to0\\), electrode collection makes a small correction to the A1 equilibrium density. Then \\(n\\simeq\\sqrt{Z_{\\rm ext}/r}\\) and the linear current is \\(I\\simeq2e\\beta n S U/L\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Переход к удельному сопротивлению",
+            "en": "Converting to resistivity"
+          },
+          "body": {
+            "ru": "<p>Сравниваем с \\(I=SU/(\\rho_{\\rm gas} L)\\). Геометрия трубки исключается.</p>",
+            "en": "<p>Compare with \\(I=SU/(\\rho_{\\rm gas} L)\\). The tube geometry cancels.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\rho_{\\rm gas}=\\frac{1}{2e\\beta}\\sqrt{\\frac{r}{Z_{\\rm ext}}}.\\]</div>",
+        "en": "<div>\\[\\rho_{\\rm gas}=\\frac{1}{2e\\beta}\\sqrt{\\frac{r}{Z_{\\rm ext}}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B1",
+      "max": 2.0,
+      "title": {
+        "ru": "Рост электронного тока",
+        "en": "Growth of electron current"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.7,
+          "label": {
+            "ru": "Внешний источник в слое",
+            "en": "External source in a slice"
+          },
+          "body": {
+            "ru": "<p>В слое \\(\\mathrm dx\\) рождается \\(Z_{\\rm ext}S\\,\\mathrm dx\\) внешних пар в секунду. Каждый новый электрон увеличивает поток, выходящий из слоя к аноду.</p>",
+            "en": "<p>The external source creates \\(Z_{\\rm ext}S\\,\\mathrm dx\\) pairs per second in a slice \\(\\mathrm dx\\). Each new electron increases the flux exiting the slice towards the anode.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.7,
+          "label": {
+            "ru": "Лавинное умножение",
+            "en": "Avalanche multiplication"
+          },
+          "body": {
+            "ru": "<p>Через слой входят \\(I_e/e\\) электронов в секунду. Они порождают ещё \\(\\alpha(I_e/e)\\,\\mathrm dx\\) электронов в секунду. Суммируя два источника, получаем</p>\n<div>\\[\\frac{\\mathrm dI_e}{\\mathrm dx}=e Z_{\\rm ext}S+\\alpha I_e.\\]</div>",
+            "en": "<p>The incoming electron rate is \\(I_e/e\\). Impact ionization produces another \\(\\alpha(I_e/e)\\,\\mathrm dx\\) electrons per second. Combining the sources gives</p>\n<div>\\[\\frac{\\mathrm dI_e}{\\mathrm dx}=e Z_{\\rm ext}S+\\alpha I_e.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Коэффициенты решения",
+            "en": "Coefficients of the solution"
+          },
+          "body": {
+            "ru": "<p>Показатель экспоненты определяется однородным уравнением. Постоянное частное решение обнуляет правую часть.</p>",
+            "en": "<p>The homogeneous equation fixes the exponent. A constant particular solution makes the right-hand side vanish.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[A_1=\\alpha,\\qquad A_2=-\\frac{eZ_{\\rm ext}S}{\\alpha}.\\]</div>",
+        "en": "<div>\\[A_1=\\alpha,\\qquad A_2=-\\frac{eZ_{\\rm ext}S}{\\alpha}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B2",
+      "max": 0.6,
+      "title": {
+        "ru": "Ионный ток",
+        "en": "Ion current"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Постоянство полного тока",
+            "en": "Constant total current"
+          },
+          "body": {
+            "ru": "<p>Каждый процесс создаёт пару. Электрон уходит вправо, ион — влево. Поэтому увеличение электронного тока при движении по оси равно уменьшению ионного. В сумме \\(I_e+I_i\\) экспоненты должны сократиться при любом \\(x\\).</p>",
+            "en": "<p>Every creation event produces a pair. Its electron goes right and its ion left. Along the axis the electron current therefore grows by exactly the decrease of the ion current. Their exponential terms cancel in \\(I_e+I_i\\) for all \\(x\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[B_1=-C_1,\\qquad B_2=\\alpha.\\]</div>",
+        "en": "<div>\\[B_1=-C_1,\\qquad B_2=\\alpha.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B3",
+      "max": 0.3,
+      "title": {
+        "ru": "Граница у анода",
+        "en": "Anode boundary"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Поток ионов из анода",
+            "en": "Ion supply at the anode"
+          },
+          "body": {
+            "ru": "<p>Анод собирает электроны. Положительные ионы образуются в газе и движутся к катоду. Поток ионов, исходящий из самого анода, равен нулю.</p>",
+            "en": "<p>The anode collects electrons. Positive ions are produced inside the gas and move towards the cathode. No ion flux originates at the anode itself.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I_i(L)=0.\\]</div>",
+        "en": "<div>\\[I_i(L)=0.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B4",
+      "max": 0.6,
+      "title": {
+        "ru": "Граница у катода",
+        "en": "Cathode boundary"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Вторичная эмиссия",
+            "en": "Secondary emission"
+          },
+          "body": {
+            "ru": "<p>На каждую порцию \\(I_i(0)/e\\) падающих в секунду ионов катод испускает \\(\\gamma I_i(0)/e\\) электронов в секунду. Умножаем это число на элементарный заряд.</p>",
+            "en": "<p>For an incident ion rate \\(I_i(0)/e\\) the cathode emits \\(\\gamma I_i(0)/e\\) electrons per second. Multiply this rate by the elementary charge.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I_e(0)=\\gamma I_i(0).\\]</div>",
+        "en": "<div>\\[I_e(0)=\\gamma I_i(0).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B5",
+      "max": 1.2,
+      "title": {
+        "ru": "Полный ток",
+        "en": "Total current"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Постоянные интегрирования",
+            "en": "Integration constants"
+          },
+          "body": {
+            "ru": "<p>Введём \\(J=e Z_{\\rm ext}S/\\alpha\\) и \\(G=e^{\\alpha L}\\). Из B3 следует \\(C_2=C_1 G\\). На катоде условие B4 теперь принимает вид \\(C_1-J=\\gamma C_1(G-1)\\).</p>",
+            "en": "<p>Define \\(J=eZ_{\\rm ext}S/\\alpha\\) and \\(G=e^{\\alpha L}\\). B3 gives \\(C_2=C_1 G\\). The cathode condition B4 then reads \\(C_1-J=\\gamma C_1(G-1)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Сумма токов",
+            "en": "Sum of carrier currents"
+          },
+          "body": {
+            "ru": "<p>Имеем \\(C_1=J/[1-\\gamma(G-1)]\\). Полный ток проще взять у анода, где он целиком электронный, \\(I=C_1G-J\\). Собирая числитель, получаем</p>",
+            "en": "<p>This gives \\(C_1=J/[1-\\gamma(G-1)]\\). Evaluate the current at the anode, where it is entirely electronic, \\(I=C_1G-J\\). Collecting the numerator gives</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I=\\frac{eZ_{\\rm ext}S}{\\alpha}\\,\\frac{(1+\\gamma)(e^{\\alpha L}-1)}{1-\\gamma(e^{\\alpha L}-1)}.\\]</div>",
+        "en": "<div>\\[I=\\frac{eZ_{\\rm ext}S}{\\alpha}\\,\\frac{(1+\\gamma)(e^{\\alpha L}-1)}{1-\\gamma(e^{\\alpha L}-1)}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B6",
+      "max": 0.5,
+      "title": {
+        "ru": "Критическая длина",
+        "en": "Critical gap length"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Условие самоподдержания",
+            "en": "Self-sustaining condition"
+          },
+          "body": {
+            "ru": "<p>Один электрон с катода производит в лавине \\(e^{\\alpha L}-1\\) ионов. Они возвращают на катод в среднем \\(\\gamma(e^{\\alpha L}-1)\\) новых электронов. На пороге это число равно единице, что соответствует обращению в нуль знаменателя B5.</p>",
+            "en": "<p>An electron leaving the cathode produces \\(e^{\\alpha L}-1\\) ions in its avalanche. Their return releases an average of \\(\\gamma(e^{\\alpha L}-1)\\) new cathode electrons. At threshold this equals one, the same condition as a vanishing denominator in B5.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[L_{\\rm cr}=\\frac{1}{\\alpha}\\ln\\left(1+\\frac1\\gamma\\right).\\]</div>",
+        "en": "<div>\\[L_{\\rm cr}=\\frac{1}{\\alpha}\\ln\\left(1+\\frac1\\gamma\\right).\\]</div>"
+      }
+    }
+  ]
+}

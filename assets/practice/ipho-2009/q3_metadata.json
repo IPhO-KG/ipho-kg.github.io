@@ -1,0 +1,132 @@
+{
+  "id": "T3",
+  "title": "Почему звёзды такие большие?",
+  "points": 10,
+  "sourceFile": "IPhO_2009_T3_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "sections": [
+    {
+      "id": "T3-1",
+      "points": 1.5,
+      "title": "Классическая оценка температуры"
+    },
+    {
+      "id": "T3-2",
+      "points": 2.0,
+      "title": "Проверка по гидростатическому равновесию"
+    },
+    {
+      "id": "T3-3",
+      "points": 2.0,
+      "title": "Квантовая оценка температуры"
+    },
+    {
+      "id": "T3-4",
+      "points": 0.5,
+      "title": "Отношение массы к радиусу звезды"
+    },
+    {
+      "id": "T3-5",
+      "points": 3.5,
+      "title": "Наименьшая водородная звезда"
+    },
+    {
+      "id": "T3-6",
+      "points": 0.5,
+      "title": "Горение гелия"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T3-1a",
+      "points": 1.5,
+      "label": "1a"
+    },
+    {
+      "id": "T3-2a",
+      "points": 0.5,
+      "label": "2a"
+    },
+    {
+      "id": "T3-2b",
+      "points": 0.5,
+      "label": "2b"
+    },
+    {
+      "id": "T3-2c",
+      "points": 0.5,
+      "label": "2c"
+    },
+    {
+      "id": "T3-2d",
+      "points": 0.5,
+      "label": "2d"
+    },
+    {
+      "id": "T3-3a",
+      "points": 1.0,
+      "label": "3a"
+    },
+    {
+      "id": "T3-3b",
+      "points": 0.5,
+      "label": "3b"
+    },
+    {
+      "id": "T3-3c",
+      "points": 0.5,
+      "label": "3c"
+    },
+    {
+      "id": "T3-4a",
+      "points": 0.5,
+      "label": "4a"
+    },
+    {
+      "id": "T3-5a",
+      "points": 0.5,
+      "label": "5a"
+    },
+    {
+      "id": "T3-5b",
+      "points": 0.5,
+      "label": "5b"
+    },
+    {
+      "id": "T3-5c",
+      "points": 1.5,
+      "label": "5c"
+    },
+    {
+      "id": "T3-5d",
+      "points": 0.5,
+      "label": "5d"
+    },
+    {
+      "id": "T3-5e",
+      "points": 0.5,
+      "label": "5e"
+    },
+    {
+      "id": "T3-6a",
+      "points": 0.5,
+      "label": "6a"
+    }
+  ],
+  "figures": [
+    "t3-f1",
+    "t3-f2"
+  ],
+  "solutionData": "/assets/practice/ipho-2009/solutions/t3.json",
+  "solutionPdf": "/assets/practice/ipho-2009/IPhO_2009_S3_EN.pdf",
+  "solutionsAvailable": true,
+  "stepScoring": "official-subpart-maxima-editorial-step-weights",
+  "translationStatus": "editorial-adaptation"
+}

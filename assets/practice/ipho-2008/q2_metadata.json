@@ -1,0 +1,119 @@
+{
+  "id": "T2",
+  "title": "Черенковское излучение и кольцевой детектор",
+  "points": 10,
+  "sourceFile": "/assets/practice/ipho-2008/IPhO_2008_T2_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3
+  ],
+  "translationStatus": "editorial-adaptation",
+  "sections": [
+    {
+      "id": "T2-I",
+      "title": "Волновой фронт",
+      "points": 1.0
+    },
+    {
+      "id": "T2-II",
+      "title": "Изображение в зеркале",
+      "points": 1.5
+    },
+    {
+      "id": "T2-III",
+      "title": "Давление и порог излучения",
+      "points": 2.5
+    },
+    {
+      "id": "T2-IV",
+      "title": "Разрешение по импульсу",
+      "points": 2.0
+    },
+    {
+      "id": "T2-V",
+      "title": "Излучение в воде",
+      "points": 1.75
+    },
+    {
+      "id": "T2-VI",
+      "title": "Дисперсия и цвет кольца",
+      "points": 1.25
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-1.1",
+      "label": "1.1",
+      "points": 0.5
+    },
+    {
+      "id": "T2-1.2",
+      "label": "1.2",
+      "points": 0.5
+    },
+    {
+      "id": "T2-2",
+      "label": "2",
+      "points": 1.5
+    },
+    {
+      "id": "T2-3.1",
+      "label": "3.1",
+      "points": 1.25
+    },
+    {
+      "id": "T2-3.2",
+      "label": "3.2",
+      "points": 1.25
+    },
+    {
+      "id": "T2-4.1",
+      "label": "4.1",
+      "points": 1.0
+    },
+    {
+      "id": "T2-4.2",
+      "label": "4.2",
+      "points": 1.0
+    },
+    {
+      "id": "T2-5.1",
+      "label": "5.1",
+      "points": 1.0
+    },
+    {
+      "id": "T2-5.2",
+      "label": "5.2",
+      "points": 0.75
+    },
+    {
+      "id": "T2-6.1",
+      "label": "6.1",
+      "points": 0.5
+    },
+    {
+      "id": "T2-6.2.1",
+      "label": "6.2.1",
+      "points": 0.5
+    },
+    {
+      "id": "T2-6.2.2",
+      "label": "6.2.2",
+      "points": 0.25
+    }
+  ],
+  "figures": [
+    "qfig1",
+    "qfig2"
+  ],
+  "solutionsAvailable": true,
+  "stepScoring": "official-subtask-maxima",
+  "solutionData": "/assets/practice/ipho-2008/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2008/IPhO_2008_S2_EN.pdf",
+  "sourceLinks": {
+    "problem": "https://olimpicos.net/files/ipho/IPhO_2008_Q2.pdf",
+    "solution": "https://olimpicos.net/files/ipho/IPhO_2008_S2.pdf",
+    "marking": "https://www.jpho.jp/international/media-download/247/f3354c043de901ff/PDF/"
+  }
+}

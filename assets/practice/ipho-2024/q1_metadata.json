@@ -1,0 +1,82 @@
+{
+  "id": "T1",
+  "title": "Парниковый эффект",
+  "points": 10,
+  "sourceFile": "/assets/practice/ipho-2024/IPhO_2024_T1_EN.pdf",
+  "sections": [
+    {
+      "id": "T1-A",
+      "title": "Земля без атмосферы",
+      "points": 3.0
+    },
+    {
+      "id": "T1-B",
+      "title": "Атмосфера и тепловой баланс",
+      "points": 7.0
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T1-A1",
+      "points": 0.6
+    },
+    {
+      "id": "T1-A2",
+      "points": 0.6
+    },
+    {
+      "id": "T1-A3",
+      "points": 0.4
+    },
+    {
+      "id": "T1-A4",
+      "points": 0.4
+    },
+    {
+      "id": "T1-A5",
+      "points": 0.2
+    },
+    {
+      "id": "T1-A6",
+      "points": 0.8
+    },
+    {
+      "id": "T1-B1",
+      "points": 1.0
+    },
+    {
+      "id": "T1-B2",
+      "points": 1.6
+    },
+    {
+      "id": "T1-B3",
+      "points": 1.0
+    },
+    {
+      "id": "T1-B4",
+      "points": 0.8
+    },
+    {
+      "id": "T1-B5",
+      "points": 1.6
+    },
+    {
+      "id": "T1-B6",
+      "points": 1.0
+    }
+  ],
+  "figures": [
+    "spectra",
+    "layer"
+  ],
+  "solutionPdf": "/assets/practice/ipho-2024/IPhO_2024_S1_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2024/IPhO_2024_M1_EN.pdf",
+  "solutionsAvailable": true,
+  "stepScoring": "published-additive-criteria",
+  "solutionData": "/assets/practice/ipho-2024/solutions/t1.json",
+  "sourceLinks": {
+    "problem": "https://olimpicos.net/files/ipho/IPhO_2024_Q1.pdf",
+    "solution": "https://olimpicos.net/files/ipho/IPhO_2024_S1.pdf",
+    "marking": "https://olimpicos.net/files/ipho/IPhO_2024_M1.pdf"
+  }
+}

@@ -1,0 +1,536 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Чёрные дыры",
+    "en": "Black holes"
+  },
+  "max": 10.0,
+  "sourcePdf": "/assets/practice/ipho-2007/IPhO_2007_S1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-1.1",
+      "max": 0.8,
+      "label": "1.1",
+      "title": {
+        "ru": "Размерности четырёх постоянных",
+        "en": "Dimensions of the four constants"
+      },
+      "steps": [
+        {
+          "id": "1.1-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Квант действия и скорость",
+            "en": "Quantum of action and speed"
+          },
+          "body": {
+            "ru": "<p>Из \\(E=h\\nu\\) следует \\([h]=[E]T\\), поскольку частота имеет размерность \\(T^{-1}\\). Скорость света измеряется длиной пути, пройденного за единицу времени.</p>",
+            "en": "<p>From \\(E=h\\nu\\), the dimension of \\(h\\) is \\([E]T\\), since frequency has units \\(T^{-1}\\). The speed of light has dimensions of distance per time.</p>"
+          }
+        },
+        {
+          "id": "1.1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Тяготение и тепловая энергия",
+            "en": "Gravity and thermal energy"
+          },
+          "body": {
+            "ru": "<p>Закон Ньютона даёт \\([G]=[F]L^2/M^2\\). Произведение \\(k_B\\theta\\) имеет размерность энергии, поэтому \\([k_B]=[E]/K\\).</p>",
+            "en": "<p>Newton's law gives \\([G]=[F]L^2/M^2\\). The product \\(k_B\\theta\\) is an energy, so \\([k_B]=[E]/K\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[[h]=ML^2T^{-1},\\qquad[c]=LT^{-1}.\\]</div><div>\\[[G]=M^{-1}L^3T^{-2},\\qquad[k_B]=ML^2T^{-2}K^{-1}.\\]</div>",
+        "en": "<div>\\[[h]=ML^2T^{-1},\\qquad[c]=LT^{-1}.\\]</div><div>\\[[G]=M^{-1}L^3T^{-2},\\qquad[k_B]=ML^2T^{-2}K^{-1}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.2",
+      "max": 0.5,
+      "label": "1.2",
+      "title": {
+        "ru": "Размерность постоянной излучения",
+        "en": "Dimension of the radiation constant"
+      },
+      "steps": [
+        {
+          "id": "1.2-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Мощность с единицы площади",
+            "en": "Radiated power per area"
+          },
+          "body": {
+            "ru": "<p>Поток энергии с поверхности равен \\(\\sigma\\theta^4\\). Его размерность — энергия, делённая на площадь и время, то есть \\(MT^{-3}\\).</p>",
+            "en": "<p>The surface energy flux is \\(\\sigma\\theta^4\\). Dividing energy by area and time gives this flux the dimensions \\(MT^{-3}\\).</p>"
+          }
+        },
+        {
+          "id": "1.2-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Температурный множитель",
+            "en": "Temperature factor"
+          },
+          "body": {
+            "ru": "<p>Делим размерность потока на четвёртую степень размерности температуры.</p>",
+            "en": "<p>Divide the flux dimension by the fourth power of the temperature dimension.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[[\\sigma]=MT^{-3}K^{-4}.\\]</div>",
+        "en": "<div>\\[[\\sigma]=MT^{-3}K^{-4}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.3",
+      "max": 1.0,
+      "label": "1.3",
+      "title": {
+        "ru": "Показатели для постоянной Стефана — Больцмана",
+        "en": "Exponents for the Stefan–Boltzmann constant"
+      },
+      "steps": [
+        {
+          "id": "1.3-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Сопоставление размерностей",
+            "en": "Match dimensional powers"
+          },
+          "body": {
+            "ru": "<p>Подставим размерности четырёх постоянных. Для массы и длины получаем \\(\\alpha-\\gamma+\\delta=1\\) и \\(2\\alpha+\\beta+3\\gamma+2\\delta=0\\). Для времени и температуры — \\(-\\alpha-\\beta-2\\gamma-2\\delta=-3\\) и \\(-\\delta=-4\\).</p>",
+            "en": "<p>Insert the dimensions of the four constants. Mass and length give \\(\\alpha-\\gamma+\\delta=1\\) and \\(2\\alpha+\\beta+3\\gamma+2\\delta=0\\). Time and temperature give \\(-\\alpha-\\beta-2\\gamma-2\\delta=-3\\) and \\(-\\delta=-4\\).</p>"
+          }
+        },
+        {
+          "id": "1.3-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Определение степеней",
+            "en": "Solve for the powers"
+          },
+          "body": {
+            "ru": "<p>Из температурной размерности \\(\\delta=4\\). Первое уравнение тогда даёт \\(\\alpha=\\gamma-3\\). Подстановка в остальные два уравнения даёт \\(\\gamma=0\\), \\(\\alpha=-3\\), \\(\\beta=-2\\).</p>",
+            "en": "<p>The temperature dimension fixes \\(\\delta=4\\). The mass equation then gives \\(\\alpha=\\gamma-3\\). The remaining equations yield \\(\\gamma=0\\), \\(\\alpha=-3\\) and \\(\\beta=-2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[(\\alpha,\\beta,\\gamma,\\delta)=(-3,-2,0,4),\\qquad \\sigma=\\frac{k_B^4}{h^3c^2}.\\]</div>",
+        "en": "<div>\\[(\\alpha,\\beta,\\gamma,\\delta)=(-3,-2,0,4),\\qquad \\sigma=\\frac{k_B^4}{h^3c^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-2.1",
+      "max": 0.8,
+      "label": "2.1",
+      "title": {
+        "ru": "Площадь горизонта",
+        "en": "Horizon area"
+      },
+      "steps": [
+        {
+          "id": "2.1-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Размерность площади",
+            "en": "Dimensions of area"
+          },
+          "body": {
+            "ru": "<p>Из \\(L^2=[G]^\\alpha[c]^\\beta M^\\gamma\\) следуют уравнения \\(-\\alpha+\\gamma=0\\), \\(3\\alpha+\\beta=2\\) и \\(-2\\alpha-\\beta=0\\).</p>",
+            "en": "<p>From \\(L^2=[G]^\\alpha[c]^\\beta M^\\gamma\\), obtain \\(-\\alpha+\\gamma=0\\), \\(3\\alpha+\\beta=2\\) and \\(-2\\alpha-\\beta=0\\).</p>"
+          }
+        },
+        {
+          "id": "2.1-2",
+          "points": 0.3,
+          "label": {
+            "ru": "Гравитационный масштаб длины",
+            "en": "Gravitational length scale"
+          },
+          "body": {
+            "ru": "<p>Третье уравнение даёт \\(\\beta=-2\\alpha\\), второе — \\(\\alpha=2\\). Значит, \\(\\gamma=2\\) и площадь равна квадрату масштаба длины \\(Gm/c^2\\) в принятой нормировке.</p>",
+            "en": "<p>The third equation gives \\(\\beta=-2\\alpha\\). The second yields \\(\\alpha=2\\), hence \\(\\gamma=2\\). In the stipulated normalization the area is the square of the gravitational length \\(Gm/c^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[(\\alpha,\\beta,\\gamma)=(2,-4,2),\\qquad A=\\frac{G^2m^2}{c^4}.\\]</div>",
+        "en": "<div>\\[(\\alpha,\\beta,\\gamma)=(2,-4,2),\\qquad A=\\frac{G^2m^2}{c^4}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-2.2",
+      "max": 0.2,
+      "label": "2.2",
+      "title": {
+        "ru": "Размерность энтропии",
+        "en": "Dimensions of entropy"
+      },
+      "steps": [
+        {
+          "id": "2.2-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Обратимый теплообмен",
+            "en": "Reversible heat transfer"
+          },
+          "body": {
+            "ru": "<p>В \\(dS=\\delta Q/\\theta\\) числитель имеет размерность энергии. Деление на температуру даёт ту же размерность, что у постоянной Больцмана.</p>",
+            "en": "<p>In \\(dS=\\delta Q/\\theta\\), the numerator has dimensions of energy. Dividing by temperature gives the same dimension as Boltzmann's constant.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[[S]=ML^2T^{-2}K^{-1}.\\]</div>",
+        "en": "<div>\\[[S]=ML^2T^{-2}K^{-1}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-2.3",
+      "max": 1.1,
+      "label": "2.3",
+      "title": {
+        "ru": "Энтропия на единицу площади",
+        "en": "Entropy per unit area"
+      },
+      "steps": [
+        {
+          "id": "2.3-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Размерностная система",
+            "en": "Dimensional equations"
+          },
+          "body": {
+            "ru": "<p>Для \\(\\eta=S/A\\) имеем \\([\\eta]=MT^{-2}K^{-1}\\). Запишем \\(\\eta=h^a c^b G^d k_B^e\\). Приравнивание степеней \\(M,L,T,K\\) даёт </p><div>\\[a-d+e=1,\\quad 2a+b+3d+2e=0,\\]</div><div>\\[-a-b-2d-2e=-2,\\quad -e=-1.\\]</div>",
+            "en": "<p>The quotient \\(\\eta=S/A\\) has dimensions \\(MT^{-2}K^{-1}\\). Set \\(\\eta=h^a c^b G^d k_B^e\\). Matching \\(M,L,T,K\\) gives </p><div>\\[a-d+e=1,\\quad 2a+b+3d+2e=0,\\]</div><div>\\[-a-b-2d-2e=-2,\\quad -e=-1.\\]</div>"
+          }
+        },
+        {
+          "id": "2.3-2",
+          "points": 0.5,
+          "label": {
+            "ru": "Площадь в единицах фундаментальных констант",
+            "en": "Natural unit of area"
+          },
+          "body": {
+            "ru": "<p>Из температурной степени \\(e=1\\), а из массовой \\(a=d\\). Два оставшихся уравнения дают \\(a=d=-1\\) и \\(b=3\\). Площадь \\(Gh/c^3\\) соответствует в этой модели энтропии \\(k_B\\).</p>",
+            "en": "<p>Temperature gives \\(e=1\\), then mass gives \\(a=d\\). The remaining equations give \\(a=d=-1\\) and \\(b=3\\). In this model the area \\(Gh/c^3\\) carries one unit \\(k_B\\) of entropy.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\eta=\\frac{c^3k_B}{Gh}.\\]</div>",
+        "en": "<div>\\[\\eta=\\frac{c^3k_B}{Gh}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3.1",
+      "max": 0.8,
+      "label": "3.1",
+      "title": {
+        "ru": "Температура Хокинга",
+        "en": "Hawking temperature"
+      },
+      "steps": [
+        {
+          "id": "3.1-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Энтропия и первое начало",
+            "en": "Entropy and the first law"
+          },
+          "body": {
+            "ru": "<p>Перемножим \\(A\\) и \\(\\eta\\): \\(S=(Gk_B/ch)m^2\\). Поскольку механическая работа отсутствует, обратимое изменение состояния удовлетворяет \\(dE=\\theta_H\\,dS\\).</p>",
+            "en": "<p>Multiplying \\(A\\) by \\(\\eta\\) gives \\(S=(Gk_B/ch)m^2\\). With no mechanical work, a reversible change satisfies \\(dE=\\theta_H\\,dS\\).</p>"
+          }
+        },
+        {
+          "id": "3.1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Производная по массе",
+            "en": "Differentiate with respect to mass"
+          },
+          "body": {
+            "ru": "<p>Из \\(E=mc^2\\) и квадратичной зависимости энтропии от массы получаем \\(\\theta_H=(dE/dm)/(dS/dm)\\). Множитель 2 в знаменателе возникает при дифференцировании \\(m^2\\).</p>",
+            "en": "<p>Use \\(E=mc^2\\) and the quadratic entropy in \\(\\theta_H=(dE/dm)/(dS/dm)\\). Differentiating \\(m^2\\) supplies the factor of two in the denominator.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\theta_H=\\frac{hc^3}{2Gk_Bm}.\\]</div>",
+        "en": "<div>\\[\\theta_H=\\frac{hc^3}{2Gk_Bm}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3.2",
+      "max": 0.7,
+      "label": "3.2",
+      "title": {
+        "ru": "Потеря массы при излучении",
+        "en": "Radiative mass loss"
+      },
+      "steps": [
+        {
+          "id": "3.2-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Баланс излучаемой мощности",
+            "en": "Radiated power balance"
+          },
+          "body": {
+            "ru": "<p>Горизонт площадью \\(A\\) отдаёт мощность \\(\\sigma A\\theta_H^4\\). Следовательно, \\(c^2\\dot m=-\\sigma A\\theta_H^4\\). Подставляем \\(A=G^2m^2/c^4\\) и температуру из 3.1.</p>",
+            "en": "<p>The horizon of area \\(A\\) emits power \\(\\sigma A\\theta_H^4\\). Thus \\(c^2\\dot m=-\\sigma A\\theta_H^4\\). Substitute \\(A=G^2m^2/c^4\\) and the temperature from 3.1.</p>"
+          }
+        },
+        {
+          "id": "3.2-2",
+          "points": 0.3,
+          "label": {
+            "ru": "Знак и зависимость от массы",
+            "en": "Sign and mass dependence"
+          },
+          "body": {
+            "ru": "<p>Четвёртая степень температуры даёт \\(m^{-4}\\), а площадь — \\(m^2\\). С учётом \\(\\sigma=k_B^4/(h^3c^2)\\) остаётся отрицательная скорость изменения, пропорциональная \\(m^{-2}\\).</p>",
+            "en": "<p>The fourth temperature power contributes \\(m^{-4}\\) and the area \\(m^2\\). Using \\(\\sigma=k_B^4/(h^3c^2)\\) gives a negative rate proportional to \\(m^{-2}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{dm}{dt}=-\\frac{hc^4}{16G^2m^2}.\\]</div>",
+        "en": "<div>\\[\\frac{dm}{dt}=-\\frac{hc^4}{16G^2m^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3.3",
+      "max": 1.1,
+      "label": "3.3",
+      "title": {
+        "ru": "Время испарения",
+        "en": "Evaporation time"
+      },
+      "steps": [
+        {
+          "id": "3.3-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Разделение переменных",
+            "en": "Separate variables"
+          },
+          "body": {
+            "ru": "<p>Введём \\(K_0=hc^4/(16G^2)\\). Тогда \\(m^2dm=-K_0dt\\), и изменение массы ускоряется по мере испарения.</p>",
+            "en": "<p>Let \\(K_0=hc^4/(16G^2)\\). Then \\(m^2dm=-K_0dt\\), so evaporation accelerates as the mass falls.</p>"
+          }
+        },
+        {
+          "id": "3.3-2",
+          "points": 0.8,
+          "label": {
+            "ru": "Интегрирование до нулевой массы",
+            "en": "Integrate down to zero mass"
+          },
+          "body": {
+            "ru": "<p>При начальной массе \\(m\\) решение имеет вид \\(m(t)^3=m^3-3K_0t\\). В момент \\(t^*\\) левая часть обращается в нуль.</p>",
+            "en": "<p>With initial mass \\(m\\), integration gives \\(m(t)^3=m^3-3K_0t\\). Its left side vanishes at the evaporation time.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[t^*=\\frac{16G^2m^3}{3hc^4}.\\]</div>",
+        "en": "<div>\\[t^*=\\frac{16G^2m^3}{3hc^4}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-3.4",
+      "max": 0.6,
+      "label": "3.4",
+      "title": {
+        "ru": "Теплоёмкость чёрной дыры",
+        "en": "Black-hole heat capacity"
+      },
+      "steps": [
+        {
+          "id": "3.4-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Производная энергии по температуре",
+            "en": "Energy derivative with temperature"
+          },
+          "body": {
+            "ru": "<p>Работа не совершается, поэтому \\(C=dE/d\\theta_H=c^2/(d\\theta_H/dm)\\). Обратная зависимость \\(\\theta_H\\propto m^{-1}\\) даёт \\(d\\theta_H/dm=-\\theta_H/m\\).</p>",
+            "en": "<p>Since there is no work, \\(C=dE/d\\theta_H=c^2/(d\\theta_H/dm)\\). The inverse law \\(\\theta_H\\propto m^{-1}\\) yields \\(d\\theta_H/dm=-\\theta_H/m\\).</p>"
+          }
+        },
+        {
+          "id": "3.4-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Знак теплоёмкости",
+            "en": "Heat-capacity sign"
+          },
+          "body": {
+            "ru": "<p>Подставляем \\(\\theta_H\\) из 3.1. При потере энергии масса убывает, а температура возрастает, что и даёт отрицательный знак.</p>",
+            "en": "<p>Substitute the temperature from 3.1. As energy is lost the mass falls but the temperature rises, giving the negative sign.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[C=-\\frac{2Gk_Bm^2}{hc}.\\]</div>",
+        "en": "<div>\\[C=-\\frac{2Gk_Bm^2}{hc}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-4.1",
+      "max": 0.8,
+      "label": "4.1",
+      "title": {
+        "ru": "Обмен энергией с фоном",
+        "en": "Energy exchange with the background"
+      },
+      "steps": [
+        {
+          "id": "4.1-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Два потока мощности",
+            "en": "Two power fluxes"
+          },
+          "body": {
+            "ru": "<p>Дыра поглощает \\(\\sigma A\\theta_B^4\\) от фона и теряет \\(\\sigma A\\theta_H^4\\) за счёт собственного излучения. Изменение энергии покоя равно разности этих мощностей.</p>",
+            "en": "<p>The hole absorbs \\(\\sigma A\\theta_B^4\\) from the background and emits \\(\\sigma A\\theta_H^4\\). The rate of change of its rest energy is the difference.</p>"
+          }
+        },
+        {
+          "id": "4.1-2",
+          "points": 0.3,
+          "label": {
+            "ru": "Выражение через константы",
+            "en": "Substitute the constants"
+          },
+          "body": {
+            "ru": "<p>Делим на \\(c^2\\). Для излучения используем 3.2, а для поглощения подставляем площадь горизонта и выражение для \\(\\sigma\\).</p>",
+            "en": "<p>Divide by \\(c^2\\). Use 3.2 for emission, and insert the horizon area and \\(\\sigma\\) for absorption.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\dot m=\\frac{G^2m^2(k_B\\theta_B)^4}{h^3c^8}-\\frac{hc^4}{16G^2m^2}.\\]</div>",
+        "en": "<div>\\[\\dot m=\\frac{G^2m^2(k_B\\theta_B)^4}{h^3c^8}-\\frac{hc^4}{16G^2m^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-4.2",
+      "max": 0.4,
+      "label": "4.2",
+      "title": {
+        "ru": "Равновесная масса",
+        "en": "Equilibrium mass"
+      },
+      "steps": [
+        {
+          "id": "4.2-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Равенство потоков",
+            "en": "Equal fluxes"
+          },
+          "body": {
+            "ru": "<p>При \\(\\dot m=0\\) мощности поглощения и излучения равны. Общий множитель \\(\\sigma A\\) сокращается, откуда \\(\\theta_H(m^*)=\\theta_B\\). Используем результат 3.1 и выразим массу.</p>",
+            "en": "<p>For \\(\\dot m=0\\), emission and absorption match. Cancelling their shared factor \\(\\sigma A\\) gives \\(\\theta_H(m^*)=\\theta_B\\). Solving 3.1 for the mass yields the equilibrium value.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[m^*=\\frac{hc^3}{2Gk_B\\theta_B}.\\]</div>",
+        "en": "<div>\\[m^*=\\frac{hc^3}{2Gk_B\\theta_B}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-4.3",
+      "max": 0.2,
+      "label": "4.3",
+      "title": {
+        "ru": "Темп обмена через равновесную массу",
+        "en": "Mass change in terms of the equilibrium value"
+      },
+      "steps": [
+        {
+          "id": "4.3-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Исключение температуры фона",
+            "en": "Eliminate background temperature"
+          },
+          "body": {
+            "ru": "<p>Из 4.2 подставим \\(k_B\\theta_B=hc^3/(2Gm^*)\\) в поглощаемую мощность. После вынесения общего множителя знак скорости определяется отношением \\(m/m^*\\).</p>",
+            "en": "<p>Substitute \\(k_B\\theta_B=hc^3/(2Gm^*)\\) from 4.2 in the absorption term. Factoring the common multiplier makes the sign depend only on \\(m/m^*\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\dot m=\\frac{hc^4}{16G^2m^2}\\left[\\left(\\frac{m}{m^*}\\right)^4-1\\right].\\]</div>",
+        "en": "<div>\\[\\dot m=\\frac{hc^4}{16G^2m^2}\\left[\\left(\\frac{m}{m^*}\\right)^4-1\\right].\\]</div>"
+      }
+    },
+    {
+      "id": "T1-4.4",
+      "max": 0.4,
+      "label": "4.4",
+      "title": {
+        "ru": "Температура в равновесии",
+        "en": "Equilibrium temperature"
+      },
+      "steps": [
+        {
+          "id": "4.4-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Температура равновесной массы",
+            "en": "Evaluate at the equilibrium mass"
+          },
+          "body": {
+            "ru": "<p>Подставим найденную массу \\(m^*\\) в выражение для \\(\\theta_H\\). Та же связь следует из равенства четвёртых степеней абсолютных температур в балансе излучения.</p>",
+            "en": "<p>Substitute \\(m^*\\) into the Hawking temperature. The same relation follows by equating the fourth powers of the absolute temperatures in the power balance.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\theta_H(m^*)=\\theta_B.\\]</div>",
+        "en": "<div>\\[\\theta_H(m^*)=\\theta_B.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-4.5",
+      "max": 0.6,
+      "label": "4.5",
+      "title": {
+        "ru": "Устойчивость равновесия",
+        "en": "Stability of thermal equilibrium"
+      },
+      "steps": [
+        {
+          "id": "4.5-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Знак отклика на возмущение",
+            "en": "Response to a mass perturbation"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(m=m^*+\\delta m\\) и отклонение мало. Из 4.3, в первом порядке, </p><div>\\[\\frac{d\\,\\delta m}{dt}=\\frac{hc^4}{4G^2(m^*)^3}\\,\\delta m.\\]</div><p>Коэффициент положителен: лишняя масса нарастает, а недостаток массы усугубляется дальнейшим испарением.</p>",
+            "en": "<p>Let \\(m=m^*+\\delta m\\) with small deviation. Linearizing 4.3 gives </p><div>\\[\\frac{d\\,\\delta m}{dt}=\\frac{hc^4}{4G^2(m^*)^3}\\,\\delta m.\\]</div><p>The positive coefficient amplifies either sign of perturbation. A heavier hole gains mass and a lighter one evaporates further.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Равновесие неустойчиво.</p>",
+        "en": "<p>The equilibrium is unstable.</p>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Электростатическая линза",
+    "en": "Electrostatic lens"
+  },
+  "max": 10,
+  "parts": [
+    {
+      "id": "T2-A1",
+      "title": {
+        "ru": "Осевой потенциал",
+        "en": "Axial potential"
+      },
+      "max": 0.3,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.3,
+          "label": {
+            "ru": "Осевой потенциал",
+            "en": "Axial potential"
+          },
+          "body": {
+            "ru": "<p>Все элементы кольца равноудалены от точки наблюдения. В интеграле Кулона знаменатель равен \\(\\sqrt{R^2+z^2}\\) и выносится за знак интеграла. Остаётся суммарный заряд \\(q\\).</p>",
+            "en": "<p>All source elements lie on a sphere of radius \\(\\sqrt{R^2+z^2}\\) about the axial point. That common distance factors out of the Coulomb integral, leaving the total charge \\(q\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Phi(z)=\\frac{q}{4\\pi\\varepsilon_0\\sqrt{R^2+z^2}}.\\]</div>",
+        "en": "<div>\\[\\Phi(z)=\\frac{q}{4\\pi\\varepsilon_0\\sqrt{R^2+z^2}}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T2-A2",
+      "title": {
+        "ru": "Разложение около центра",
+        "en": "Expansion near the centre"
+      },
+      "max": 0.4,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.4,
+          "label": {
+            "ru": "Разложение около центра",
+            "en": "Expansion near the centre"
+          },
+          "body": {
+            "ru": "<p>Вынесем \\(R\\) из корня. Малая величина равна \\(z^2/R^2\\), поэтому достаточно первого порядка в разложении \\((1+u)^{-1/2}\\). Линейного по \\(z\\) члена нет из-за симметрии кольца.</p>",
+            "en": "<p>Factor \\(R\\) out of the square root. The expansion parameter is already quadratic in \\(z\\), so the first derivative of \\((1+u)^{-1/2}\\) suffices. Reflection symmetry forbids an odd term.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Phi(z)\\simeq\\frac{q}{4\\pi\\varepsilon_0R}\\left(1-\\frac{z^2}{2R^2}\\right).\\]</div>",
+        "en": "<div>\\[\\Phi(z)\\simeq\\frac{q}{4\\pi\\varepsilon_0R}\\left(1-\\frac{z^2}{2R^2}\\right).\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T2-A3",
+      "title": {
+        "ru": "Возвращающая сила",
+        "en": "Restoring force"
+      },
+      "max": 0.2,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.2,
+          "label": {
+            "ru": "Возвращающая сила",
+            "en": "Restoring force"
+          },
+          "body": {
+            "ru": "<p>Потенциальная энергия электрона \\(U=-e\\Phi\\), так что \\(F_z=e\\,\\partial_z\\Phi\\). Для возвращения из положительного \\(z\\) сила должна быть отрицательной.</p>",
+            "en": "<p>The electron&#x27;s potential energy is \\(-e\\Phi\\), hence \\(F_z=e\\,\\partial_z\\Phi\\). A positive displacement must give a negative force for stability.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_z=-\\frac{eq}{4\\pi\\varepsilon_0R^3}z,\\qquad q&gt;0.\\]</div>",
+        "en": "<div>\\[F_z=-\\frac{eq}{4\\pi\\varepsilon_0R^3}z,\\qquad q&gt;0.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T2-A4",
+      "title": {
+        "ru": "Частота колебаний",
+        "en": "Oscillation frequency"
+      },
+      "max": 0.1,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.1,
+          "label": {
+            "ru": "Частота колебаний",
+            "en": "Oscillation frequency"
+          },
+          "body": {
+            "ru": "<p>Сопоставим уравнение \\(m\\ddot z=F_z\\) с уравнением гармонического осциллятора. Коэффициент при \\(-z\\) в силе равен \\(m\\omega^2\\).</p>",
+            "en": "<p>Compare \\(m\\ddot z=F_z\\) to the harmonic-oscillator equation. The coefficient multiplying \\(-z\\) is \\(m\\omega^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega=\\sqrt{\\frac{eq}{4\\pi\\varepsilon_0mR^3}}.\\]</div>",
+        "en": "<div>\\[\\omega=\\sqrt{\\frac{eq}{4\\pi\\varepsilon_0mR^3}}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T2-B1",
+      "title": {
+        "ru": "Кривизна потенциала",
+        "en": "Potential curvature"
+      },
+      "max": 1.5,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.5,
+          "label": {
+            "ru": "Кривизна потенциала",
+            "en": "Potential curvature"
+          },
+          "body": {
+            "ru": "<p>Вблизи центра нет заряда. По осевой симметрии квадратичная часть полного потенциала имеет вид \\(q[\\beta(x^2+y^2)+Az^2]\\), где из A2 \\(A=-1/(8\\pi\\varepsilon_0R^3)\\). Из уравнения Лапласа получаем \\(4\\beta+2A=0\\). Коэффициенты поперечной и продольной кривизны имеют разные знаки.</p>",
+            "en": "<p>The centre lies in empty space. Rotational symmetry makes the quadratic part \\(q[\\beta(x^2+y^2)+Az^2]\\), with \\(A=-1/(8\\pi\\varepsilon_0R^3)\\) from A2. Its Laplacian must vanish, so \\(4\\beta+2A=0\\). The radial and axial curvatures have opposite signs.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\beta=\\frac{1}{16\\pi\\varepsilon_0R^3}.\\]</div>",
+        "en": "<div>\\[\\beta=\\frac{1}{16\\pi\\varepsilon_0R^3}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T2-B2",
+      "title": {
+        "ru": "Поперечная устойчивость",
+        "en": "Transverse stability"
+      },
+      "max": 0.2,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.2,
+          "label": {
+            "ru": "Поперечная устойчивость",
+            "en": "Transverse stability"
+          },
+          "body": {
+            "ru": "<p>Радиальная производная даёт \\(F_r=e\\,\\partial_r\\Phi=2eq\\beta r\\). Поскольку \\(\\beta&gt;0\\), только отрицательный заряд кольца направляет силу к центру.</p>",
+            "en": "<p>The radial derivative gives \\(F_r=e\\,\\partial_r\\Phi=2eq\\beta r\\). Since \\(\\beta&gt;0\\), inward acceleration requires a negatively charged ring.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathbf F=2eq\\beta\\,\\mathbf r_{\\perp},\\qquad q&lt;0.\\]</div>",
+        "en": "<div>\\[\\mathbf F=2eq\\beta\\,\\mathbf r_{\\perp},\\qquad q&lt;0.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T2-C1",
+      "title": {
+        "ru": "Фокус параллельного пучка",
+        "en": "Focusing a parallel beam"
+      },
+      "max": 1.3,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.3,
+          "label": {
+            "ru": "Фокус параллельного пучка",
+            "en": "Focusing a parallel beam"
+          },
+          "body": {
+            "ru": "<p>За время \\(d/v\\) радиальная координата практически постоянна. Кольцо сообщает электрону поперечную скорость \\(\\Delta v_r=(2eq\\beta r/m)(d/v)\\). После выхода электрон летит по прямой и пересекает ось при \\(r+(\\Delta v_r/v)f=0\\).</p>",
+            "en": "<p>During the transit \\(d/v\\) the beam radius barely changes. The radial impulse per unit mass is \\(\\Delta v_r=(2eq\\beta r/m)(d/v)\\). A straight trajectory then takes the electron to the axis where \\(r+(\\Delta v_r/v)f=0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f=-\\frac{E}{eq\\beta d}\\quad(q&lt;0).\\]</div>",
+        "en": "<div>\\[f=-\\frac{E}{eq\\beta d}\\quad(q&lt;0).\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T2-C2",
+      "title": {
+        "ru": "Изображение точечного источника",
+        "en": "Image of a point source"
+      },
+      "max": 0.8,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.8,
+          "label": {
+            "ru": "Изображение точечного источника",
+            "en": "Image of a point source"
+          },
+          "body": {
+            "ru": "<p>У кольца высота луча равна \\(r=b\\gamma\\). Начальный наклон \\(\\gamma\\) уменьшается на \\(r/f\\) при прохождении линзы. За кольцом \\(0=r+c(\\gamma-r/f)\\), что определяет \\(c\\) независимо от \\(\\gamma\\).</p>",
+            "en": "<p>The height at the ring is \\(r=b\\gamma\\). The angular kick is \\(-r/f\\), so the outgoing slope is \\(\\gamma-r/f\\). Setting the downstream height \\(r+c(\\gamma-r/f)\\) to zero removes \\(\\gamma\\) and gives a common image point.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[c=\\frac{bf}{b-f}=-\\frac{bE}{E+beq\\beta d}.\\]</div>",
+        "en": "<div>\\[c=\\frac{bf}{b-f}=-\\frac{bE}{E+beq\\beta d}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T2-C3",
+      "title": {
+        "ru": "Формула тонкой линзы",
+        "en": "Thin-lens relation"
+      },
+      "max": 0.2,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.2,
+          "label": {
+            "ru": "Формула тонкой линзы",
+            "en": "Thin-lens relation"
+          },
+          "body": {
+            "ru": "<p>Из C2 обратное расстояние до изображения равно \\((b-f)/(bf)\\). При сложении с \\(1/b\\) исчезает зависимость от положения источника.</p>",
+            "en": "<p>Taking the reciprocal of C2 gives \\((b-f)/(bf)\\). Adding \\(1/b\\) cancels the source-position term and leaves precisely the optical power.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac1b+\\frac1c=\\frac1f=-\\frac{eq\\beta d}{E}.\\]</div>",
+        "en": "<div>\\[\\frac1b+\\frac1c=\\frac1f=-\\frac{eq\\beta d}{E}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T2-D1",
+      "title": {
+        "ru": "Собственная ёмкость",
+        "en": "Self-capacitance"
+      },
+      "max": 2.0,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 2.0,
+          "label": {
+            "ru": "Собственная ёмкость",
+            "en": "Self-capacitance"
+          },
+          "body": {
+            "ru": "<p>Найдём потенциал в центре поперечного сечения полого провода. Разделим кольцо в обе стороны от точки наблюдения на близкую дугу длины \\(2R\\delta\\) и остальную часть, где \\(a/R\\ll\\delta\\ll1\\). Близкую дугу можно выпрямить. При \\(\\lambda=q/(2\\pi R)\\) её вклад от колец радиуса \\(a\\) равен</p><div>\\[\\Phi_{\\mathrm{near}}=\\frac{\\lambda}{2\\pi\\varepsilon_0}\\int_0^{R\\delta}\\frac{ds}{\\sqrt{s^2+a^2}}\\simeq\\frac{\\lambda}{2\\pi\\varepsilon_0}\\ln\\frac{2R\\delta}{a}.\\]</div><p>В дальней зоне расстояние до элемента — хорда \\(2R\\sin(\\varphi/2)\\). Интегрирование даёт \\(\\Phi_{\\mathrm{far}}\\simeq[\\lambda/(2\\pi\\varepsilon_0)]\\ln(4/\\delta)\\). Произвольная граница сокращается в сумме потенциалов, после чего \\(C=q/\\Phi\\).</p>",
+            "en": "<p>Evaluate the potential inside the hollow wire. Split the ring into a nearby arc of length \\(2R\\delta\\) and its complement, with \\(a/R\\ll\\delta\\ll1\\). Treat the nearby arc as a straight tube. With \\(\\lambda=q/(2\\pi R)\\), its circular slices contribute</p><div>\\[\\Phi_{\\mathrm{near}}=\\frac{\\lambda}{2\\pi\\varepsilon_0}\\int_0^{R\\delta}\\frac{ds}{\\sqrt{s^2+a^2}}\\simeq\\frac{\\lambda}{2\\pi\\varepsilon_0}\\ln\\frac{2R\\delta}{a}.\\]</div><p>For the far arc use the chord \\(2R\\sin(\\varphi/2)\\) as the distance. Integration gives \\(\\Phi_{\\mathrm{far}}\\simeq[\\lambda/(2\\pi\\varepsilon_0)]\\ln(4/\\delta)\\). The arbitrary cutoff cancels in the sum. Divide \\(q\\) by that potential.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[C\\simeq\\frac{4\\pi^2\\varepsilon_0 R}{\\ln(8R/a)}.\\]</div>",
+        "en": "<div>\\[C\\simeq\\frac{4\\pi^2\\varepsilon_0 R}{\\ln(8R/a)}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T2-D2",
+      "title": {
+        "ru": "Импульс заряда",
+        "en": "Charge waveform"
+      },
+      "max": 1.0,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Импульс заряда",
+            "en": "Charge waveform"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(T=d/(2v)\\), \\(\\tau=R_0C\\), \\(Q=CV_0&lt;0\\). До \\(-T\\) заряд нулевой. При включении выполняется \\(\\tau\\dot q+q=Q\\) с нулевым начальным значением. После \\(T\\) правая часть обращается в нуль, а заряд непрерывен. Его модуль максимален при переключении.</p><figure><img loading=\"lazy\" src=\"/assets/practice/ipho-2021/figures/charge.png\" alt=\"Изменение заряда отрицательно заряженной линзы.\" style=\"max-width:min(100%,420px)\"><figcaption>Изменение заряда отрицательно заряженной линзы.</figcaption></figure>",
+            "en": "<p>Set \\(T=d/(2v)\\), \\(\\tau=R_0C\\) and \\(Q=CV_0&lt;0\\). Charge is zero before \\(-T\\). During charging it obeys \\(\\tau\\dot q+q=Q\\) with zero initial charge. At \\(T\\) the driving term vanishes while \\(q\\) stays continuous. Its magnitude peaks at the switch.</p><figure><img loading=\"lazy\" src=\"/assets/practice/ipho-2021/figures/charge.png\" alt=\"Charge pulse for a focusing, negatively charged lens.\" style=\"max-width:min(100%,420px)\"><figcaption>Charge pulse for a focusing, negatively charged lens.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[q(t)=\\begin{cases}0&amp;t&lt;-T,\\\\Q[1-e^{-(t+T)/\\tau}]&amp;-T\\le t\\le T,\\\\q_0e^{-(t-T)/\\tau}&amp;t&gt;T,\\end{cases}\\qquad q_0=Q(1-e^{-2T/\\tau}).\\]</div>",
+        "en": "<div>\\[q(t)=\\begin{cases}0&amp;t&lt;-T,\\\\Q[1-e^{-(t+T)/\\tau}]&amp;-T\\le t\\le T,\\\\q_0e^{-(t-T)/\\tau}&amp;t&gt;T,\\end{cases}\\qquad q_0=Q(1-e^{-2T/\\tau}).\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T2-E1",
+      "title": {
+        "ru": "Суммарный импульс",
+        "en": "Integrated impulse"
+      },
+      "max": 1.7,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.7,
+          "label": {
+            "ru": "Суммарный импульс",
+            "en": "Integrated impulse"
+          },
+          "body": {
+            "ru": "<p>За всё время действия поля \\(r\\) практически не меняется. Поперечный импульс пропорционален \\(\\int q\\,dt\\). Интегрируя \\(\\tau\\dot q+q=CV_{\\mathrm{source}}(t)\\) за весь процесс, получаем \\(\\int q\\,dt=CV_0d/v\\): заряд в начале и конце равен нулю, а импульс напряжения имеет длительность \\(d/v\\). Подставим эту площадь в \\(m\\Delta v_r=2e\\beta r\\int q\\,dt\\) и используем \\(f=-rv/\\Delta v_r\\).</p>",
+            "en": "<p>The radius hardly changes during the pulse. The kick depends on the area under \\(q(t)\\). Integrating \\(\\tau\\dot q+q=CV_{\\mathrm{source}}(t)\\) over the whole event gives \\(\\int q\\,dt=CV_0d/v\\): initial and final charges vanish and the input pulse lasts \\(d/v\\). Substitute this area into \\(m\\Delta v_r=2e\\beta r\\int q\\,dt\\) and use \\(f=-rv/\\Delta v_r\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f=-\\frac{E}{e\\beta d\\,CV_0}.\\]</div>",
+        "en": "<div>\\[f=-\\frac{E}{e\\beta d\\,CV_0}.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    },
+    {
+      "id": "T2-E2",
+      "title": {
+        "ru": "Эффективный заряд",
+        "en": "Effective charge"
+      },
+      "max": 0.3,
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.3,
+          "label": {
+            "ru": "Эффективный заряд",
+            "en": "Effective charge"
+          },
+          "body": {
+            "ru": "<p>Приравняем площади импульса заряда для модели C и реальной цепи: \\(q_{\\mathrm{eff}}d/v=CV_0d/v\\). Это заряд, которого кольцо достигло бы при длительном подключении источника.</p>",
+            "en": "<p>Match the time-integrated charges of the ideal and real lens: \\(q_{\\mathrm{eff}}d/v=CV_0d/v\\). It equals the charge reached under a long application of the supply voltage.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[q_{\\mathrm{eff}}=CV_0.\\]</div>",
+        "en": "<div>\\[q_{\\mathrm{eff}}=CV_0.\\]</div>"
+      },
+      "pitfalls": {
+        "ru": [],
+        "en": []
+      }
+    }
+  ],
+  "sourcePdf": "/assets/practice/ipho-2021/IPhO_2021_S2_EN.pdf",
+  "notes": {
+    "ru": [],
+    "en": []
+  }
+}

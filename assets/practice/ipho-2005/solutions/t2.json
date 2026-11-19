@@ -1,0 +1,213 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Абсолютные измерения электрических величин",
+    "en": "Absolute measurements of electrical quantities"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2005/IPhO_2005_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-1",
+      "label": "1",
+      "max": 1.5,
+      "title": {
+        "ru": "Индукция и средняя мощность",
+        "en": "Induction and mean power"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "ЭДС вращающейся катушки",
+            "en": "Emf of the rotating coil"
+          },
+          "body": {
+            "ru": "<p>Выберем начало отсчёта времени в момент, когда положительная нормаль к катушке направлена вдоль поля. Тогда потокосцепление катушки равно \\(\\Phi=N\\pi a^2B_0\\cos(\\omega t)\\). По закону Фарадея</p>\n<div>\\[\\mathcal E(t)=-\\frac{d\\Phi}{dt}=N\\pi a^2B_0\\omega\\sin(\\omega t).\\]</div>",
+            "en": "<p>Choose the time origin when the coil’s positive normal points along the field. Its flux linkage is then \\(\\Phi=N\\pi a^2B_0\\cos(\\omega t)\\). Faraday’s law gives</p>\n<div>\\[\\mathcal E(t)=-\\frac{d\\Phi}{dt}=N\\pi a^2B_0\\omega\\sin(\\omega t).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 1.0,
+          "label": {
+            "ru": "Механическая мощность за оборот",
+            "en": "Mechanical power over one revolution"
+          },
+          "body": {
+            "ru": "<p>При постоянной скорости за целый оборот двигатель восполняет джоулевы потери в катушке. Поскольку самоиндукцией пренебрегают, \\(I=\\mathcal E/R\\) и \\(P=I^2R\\). Среднее квадрата синуса за оборот равно \\(1/2\\).</p>",
+            "en": "<p>At constant speed, the mechanical work over a revolution supplies the Joule heat in the coil. With self-inductance neglected, \\(I=\\mathcal E/R\\) and \\(P=I^2R\\). The mean square of the sine over one revolution is \\(1/2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathcal E(t)=N\\pi a^2B_0\\omega\\sin(\\omega t),\\qquad \\langle P\\rangle=\\frac{(N\\pi a^2 B_0\\omega)^2}{2R}.\\]</div>",
+        "en": "<div>\\[\\mathcal E(t)=N\\pi a^2B_0\\omega\\sin(\\omega t),\\qquad \\langle P\\rangle=\\frac{(N\\pi a^2 B_0\\omega)^2}{2R}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2",
+      "label": "2",
+      "max": 2.0,
+      "title": {
+        "ru": "Сопротивление по отклонению стрелки",
+        "en": "Resistance from needle deflection"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 2.0,
+          "label": {
+            "ru": "Поле, определяющее положение стрелки",
+            "en": "Mean magnetic field at the needle"
+          },
+          "body": {
+            "ru": "<p>Обозначим фазу вращения через \\(u=\\omega t\\). Нормаль к катушке имеет компоненты \\((\\cos u,\\sin u,0)\\), а ток в ней равен \\(I=N\\pi a^2B_0\\omega\\sin u/R\\). Поле в центре направлено по нормали, причём его знак меняется вместе с током.</p>\n<div>\\[\\mathbf B_i=\\frac{\\mu_0NI}{2a}(\\cos u,\\sin u,0).\\]</div>\n<p>Продольная компонента пропорциональна \\(\\sin u\\cos u\\) и за оборот усредняется до нуля. Поперечная компонента пропорциональна \\(\\sin^2 u\\), поэтому её среднее положительно.</p>\n<div>\\[\\langle B_{ix}\\rangle=0,\\qquad \\langle B_{iy}\\rangle=\\frac{\\mu_0N^2\\pi aB_0\\omega}{4R}.\\]</div>\n<p>Стрелка почти неподвижна за время одного оборота. Средний момент сил равен нулю, когда она ориентирована вдоль суммы постоянного поля и среднего поля катушки. Отсюда \\(\\tan\\theta=\\langle B_{iy}\\rangle/B_0\\).</p>",
+            "en": "<p>Write \\(u=\\omega t\\). The coil’s normal has components \\((\\cos u,\\sin u,0)\\), and its current is \\(I=N\\pi a^2B_0\\omega\\sin u/R\\). The coil field at the centre lies along its normal and reverses when the current changes sign.</p>\n<div>\\[\\mathbf B_i=\\frac{\\mu_0NI}{2a}(\\cos u,\\sin u,0).\\]</div>\n<p>The longitudinal component varies as \\(\\sin u\\cos u\\) and averages to zero. The transverse component varies as \\(\\sin^2 u\\) and retains a positive mean.</p>\n<div>\\[\\langle B_{ix}\\rangle=0,\\qquad \\langle B_{iy}\\rangle=\\frac{\\mu_0N^2\\pi aB_0\\omega}{4R}.\\]</div>\n<p>The needle hardly moves during one revolution. Its mean torque vanishes when it points along the sum of the applied field and the coil’s mean field. Hence \\(\\tan\\theta=\\langle B_{iy}\\rangle/B_0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[R=\\frac{\\mu_0N^2\\pi a\\omega}{4\\tan\\theta}.\\]</div>",
+        "en": "<div>\\[R=\\frac{\\mu_0N^2\\pi a\\omega}{4\\tan\\theta}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-3",
+      "label": "3",
+      "max": 2.0,
+      "title": {
+        "ru": "ЭДС между ободами",
+        "en": "Emf between the rims"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 2.0,
+          "label": {
+            "ru": "Суммарная ЭДС двух дисков",
+            "en": "Combined motional emf of the discs"
+          },
+          "body": {
+            "ru": "<p>На каждом диске модуль поля равен \\(B=\\mu_0NI/(2a)\\). На расстоянии \\(r\\) от оси заряд движется со скоростью \\(\\omega r\\). Магнитная сила на единичный положительный заряд радиальна и имеет модуль \\(\\omega rB\\).</p>\n<div>\\[\\mathcal E_D=\\int_0^b \\omega r B\\,dr=\\frac12B\\omega b^2 .\\]</div>\n<p>При обходе от одного обода до другого первый диск проходим к оси, второй — от оси. Поля двух катушек противоположны, так что оба диска вносят одинаковый по знаку вклад.</p>",
+            "en": "<p>Each disc is in a field of magnitude \\(B=\\mu_0NI/(2a)\\). A charge a distance \\(r\\) from the shaft moves at speed \\(\\omega r\\). The magnetic force per unit positive charge is radial and has magnitude \\(\\omega rB\\).</p>\n<div>\\[\\mathcal E_D=\\int_0^b \\omega r B\\,dr=\\frac12B\\omega b^2 .\\]</div>\n<p>On a path from one rim to the other, one disc is crossed inwards and the other outwards. The two coil fields point oppositely, so the disc emfs have the same sign along this path.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathcal E_{14}=2\\mathcal E_D=\\frac{\\mu_0 N b^2\\omega I}{2a}.\\]</div>",
+        "en": "<div>\\[\\mathcal E_{14}=2\\mathcal E_D=\\frac{\\mu_0 N b^2\\omega I}{2a}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-4",
+      "label": "4",
+      "max": 0.5,
+      "title": {
+        "ru": "Нулевой метод",
+        "en": "Null measurement"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Равенство напряжений при нулевом токе",
+            "en": "Voltage balance at zero galvanometer current"
+          },
+          "body": {
+            "ru": "<p>В момент нулевого показания гальванометра ток через измерительную ветвь не течёт. ЭДС дисков в точности уравновешивает напряжение \\(IR\\) на измеряемом сопротивлении. Обе величины пропорциональны току катушек, поэтому он сокращается.</p>",
+            "en": "<p>When the galvanometer reads zero, its branch carries no current. The disc emf exactly balances the voltage \\(IR\\) across the measured resistance. Both quantities are proportional to the coil current, which cancels.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[R=\\frac{\\mathcal E_{14}}{I}=\\frac{\\mu_0Nb^2\\omega}{2a}.\\]</div>",
+        "en": "<div>\\[R=\\frac{\\mathcal E_{14}}{I}=\\frac{\\mu_0Nb^2\\omega}{2a}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-5",
+      "label": "5",
+      "max": 1.0,
+      "title": {
+        "ru": "Взаимодействие соседних колец",
+        "en": "Force between neighbouring rings"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Взаимодействие соседних участков провода",
+            "en": "Interaction of adjacent wire elements"
+          },
+          "body": {
+            "ru": "<p>Зазор \\(h\\) мал по сравнению с радиусом кольца. В каждом участке поле соседнего проводника можно приблизить полем прямого провода \\(B=\\mu_0I/(2\\pi h)\\). Магнитная сила на единицу длины равна \\(IB\\) и всюду направлена вдоль общей оси колец.</p>\n<p>Умножаем силу на единицу длины на длину окружности \\(2\\pi a\\).</p>",
+            "en": "<p>The gap \\(h\\) is small compared with the ring radius. At each point, the adjacent wire produces the approximate straight-wire field \\(B=\\mu_0I/(2\\pi h)\\). The force per unit length is \\(IB\\) and points along the common ring axis all around the circumference.</p>\n<p>Multiply the force per unit length by the circumference \\(2\\pi a\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F=\\frac{\\mu_0a I^2}{h}.\\]</div>",
+        "en": "<div>\\[F=\\frac{\\mu_0a I^2}{h}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-6",
+      "label": "6",
+      "max": 1.0,
+      "title": {
+        "ru": "Ток из равновесия моментов",
+        "en": "Current from torque balance"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Равновесие моментов на двух плечах",
+            "en": "Torque balance on both arms"
+          },
+          "body": {
+            "ru": "<p>На каждое подвижное кольцо действуют два неподвижных. У одного соседа ток притягивает подвижное кольцо, у другого отталкивает, так что силы складываются. На левом и правом подвесах силы \\(2F\\) противоположны и создают моменты одного знака.</p>\n<div>\\[mgx=4Fd=\\frac{4\\mu_0ad I^2}{h}.\\]</div>",
+            "en": "<p>Each moving ring has two fixed neighbours. One attracts it and the other repels it, so the forces add. The two moving rings experience opposite forces of magnitude \\(2F\\), whose torques act in the same sense on the balance.</p>\n<div>\\[mgx=4Fd=\\frac{4\\mu_0ad I^2}{h}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I=\\sqrt{\\frac{mghx}{4\\mu_0ad}}.\\]</div>",
+        "en": "<div>\\[I=\\sqrt{\\frac{mghx}{4\\mu_0ad}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-7",
+      "label": "7",
+      "max": 2.0,
+      "title": {
+        "ru": "Предел устойчивости",
+        "en": "Limit of stability"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 2.0,
+          "label": {
+            "ru": "Возвращающий момент после малого наклона",
+            "en": "Restoring torque after a small tilt"
+          },
+          "body": {
+            "ru": "<p>Пусть весы повернулись на угол \\(\\varphi\\), так что \\(\\delta z=d\\sin\\varphi\\). Теперь зазоры между соседними кольцами равны \\(h-\\delta z\\) и \\(h+\\delta z\\). На двух плечах длины \\(d\\cos\\varphi\\) магнитные силы создают суммарный момент</p>\n<div>\\[\\tau_{\\mathrm m}=2\\mu_0aI^2d\\cos\\varphi\\left(\\frac1{h-\\delta z}+\\frac1{h+\\delta z}\\right).\\]</div>\n<figure><img src=\"/assets/practice/ipho-2005/q2/tilt.png\" alt=\"Плечи сил при малом наклоне весов.\" loading=\"lazy\" style=\"width:min(100%,425px);height:auto\"><figcaption>Плечи сил при малом наклоне весов.</figcaption></figure>\n<p>Противоположный момент сил тяжести равен \\(Mgl\\sin\\varphi+mgx\\cos\\varphi\\). Он должен превосходить магнитный момент. В сумме обратных зазоров линейные по \\(\\delta z\\) члены сокращаются. С точностью до второго порядка сумма равна \\((2/h)[1+(\\delta z/h)^2]\\).</p>\n<p>Из равновесия ненаклонённых весов \\(4\\mu_0aI^2d/h=mgx\\). После сокращения постоянных членов условие возвращения принимает вид</p>\n<div>\\[Mgl\\tan\\varphi&gt;mgx\\left(\\frac{\\delta z}{h}\\right)^2 .\\]</div>\n<p>Для малого положительного смещения \\(\\tan\\varphi\\simeq\\delta z/d\\). Устойчивость сохраняется при \\(\\delta z&lt;\\delta z_{\\max}\\).</p>",
+            "en": "<p>Let the balance tilt through \\(\\varphi\\), so \\(\\delta z=d\\sin\\varphi\\). The two neighbour gaps become \\(h-\\delta z\\) and \\(h+\\delta z\\). On the two horizontal lever arms \\(d\\cos\\varphi\\) the magnetic forces produce a total torque</p>\n<div>\\[\\tau_{\\mathrm m}=2\\mu_0aI^2d\\cos\\varphi\\left(\\frac1{h-\\delta z}+\\frac1{h+\\delta z}\\right).\\]</div>\n<figure><img src=\"/assets/practice/ipho-2005/q2/tilt.png\" alt=\"Moment arms on the tilted current balance.\" loading=\"lazy\" style=\"width:min(100%,425px);height:auto\"><figcaption>Moment arms on the tilted current balance.</figcaption></figure>\n<p>The opposing gravitational torque is \\(Mgl\\sin\\varphi+mgx\\cos\\varphi\\). It must exceed the magnetic torque. In the sum of the inverse gaps the terms linear in \\(\\delta z\\) cancel. Through second order the sum is \\((2/h)[1+(\\delta z/h)^2]\\).</p>\n<p>At zero tilt, \\(4\\mu_0aI^2d/h=mgx\\). Cancelling the equilibrium terms leaves the return condition</p>\n<div>\\[Mgl\\tan\\varphi&gt;mgx\\left(\\frac{\\delta z}{h}\\right)^2 .\\]</div>\n<p>For a small positive displacement \\(\\tan\\varphi\\simeq\\delta z/d\\). The balance moves back when \\(\\delta z&lt;\\delta z_{\\max}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\delta z_{\\max}=\\frac{Mlh^2}{mxd}.\\]</div>",
+        "en": "<div>\\[\\delta z_{\\max}=\\frac{Mlh^2}{mxd}.\\]</div>"
+      }
+    }
+  ],
+  "markingSchemePdf": "/assets/practice/ipho-2005/IPhO_2005_M2_EN.pdf"
+}

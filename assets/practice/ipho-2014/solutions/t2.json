@@ -1,0 +1,495 @@
+{
+  "id": "T2",
+  "max": 11,
+  "title": {
+    "ru": "Уравнение состояния Ван-дер-Ваальса",
+    "en": "Van der Waals equation of state"
+  },
+  "sourcePdf": "/assets/practice/ipho-2014/IPhO_2014_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-A1",
+      "max": 0.3,
+      "title": {
+        "ru": "Исключённый объём",
+        "en": "Excluded volume"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Объём на одну молекулу",
+            "en": "Volume per molecule"
+          },
+          "body": {
+            "ru": "<p>При плотной упаковке на одну молекулу приходится объём порядка \\(d^3\\). Для одного моля умножаем его на число Авогадро. Численный коэффициент порядка единицы в этой оценке не определяется.</p>",
+            "en": "<p>Close packing assigns a volume of order \\(d^3\\) to each molecule. Multiply by Avogadro&#x27;s number for one mole. This estimate does not fix the order-one packing factor.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[b\\sim N_A d^3.\\]</div>",
+        "en": "<div>\\[b\\sim N_A d^3.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A2",
+      "max": 1.3,
+      "title": {
+        "ru": "Критические параметры",
+        "en": "Critical parameters"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.7,
+          "label": {
+            "ru": "Тройной корень",
+            "en": "Triple root"
+          },
+          "body": {
+            "ru": "<p>Три пересечения изотермы с горизонталью сливаются в одно в критической точке. Умножаем уравнение состояния на \\(V^2\\). При критических параметрах полученный кубический многочлен должен совпасть с \\(P_c(V-V_c)^3\\).</p>\n<div>\\[P_cV^3-(RT_c+bP_c)V^2+aV-ab=P_c(V-V_c)^3.\\]</div>",
+            "en": "<p>Three intersections of the isotherm with the horizontal line coalesce at the critical point. Multiply the equation of state by \\(V^2\\). The cubic at criticality must coincide with \\(P_c(V-V_c)^3\\).</p>\n<div>\\[P_cV^3-(RT_c+bP_c)V^2+aV-ab=P_c(V-V_c)^3.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Сопоставление коэффициентов",
+            "en": "Comparing coefficients"
+          },
+          "body": {
+            "ru": "<p>Из линейного и свободного членов \\(a=3P_c V_c^2\\) и \\(ab=P_c V_c^3\\), то есть \\(V_c=3b\\). Приравнивая коэффициенты при \\(V^2\\), получаем \\(3P_c V_c=RT_c+bP_c\\).</p>",
+            "en": "<p>The linear and constant coefficients give \\(a=3P_cV_c^2\\) and \\(ab=P_cV_c^3\\), hence \\(V_c=3b\\). The quadratic coefficient requires \\(3P_cV_c=RT_c+bP_c\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[b=\\frac{RT_c}{8P_c},\\qquad a=\\frac{27R^2T_c^2}{64P_c}.\\]</div>",
+        "en": "<div>\\[b=\\frac{RT_c}{8P_c},\\qquad a=\\frac{27R^2T_c^2}{64P_c}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A3",
+      "max": 0.2,
+      "title": {
+        "ru": "Константы для воды",
+        "en": "Constants for water"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Подстановка критических величин",
+            "en": "Inserting the critical data"
+          },
+          "body": {
+            "ru": "<p>В формулах A2 используем критическое давление в паскалях. Размерность \\(b\\) — объём на моль, размерность \\(a\\) — давление, умноженное на квадрат молярного объёма.</p>",
+            "en": "<p>Use pascals for the critical pressure in A2. The units of \\(b\\) are molar volume and those of \\(a\\) are pressure times squared molar volume.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[a_w\\simeq0{,}56\\,\\mathrm{Pa\\,m^6/mol^2},\\qquad b_w\\simeq3{,}1\\cdot10^{-5}\\,\\mathrm{m^3/mol}.\\]</div>",
+        "en": "<div>\\[a_w\\simeq0.56\\,\\mathrm{Pa\\,m^6/mol^2},\\qquad b_w\\simeq3.1\\cdot10^{-5}\\,\\mathrm{m^3/mol}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A4",
+      "max": 0.2,
+      "title": {
+        "ru": "Размер молекулы воды",
+        "en": "Water molecule size"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Линейный масштаб",
+            "en": "Length scale"
+          },
+          "body": {
+            "ru": "<p>Деление молярного объёма \\(b_w\\) на \\(N_A\\) даёт объём порядка \\(5{,}1\\cdot10^{-29}\\,\\mathrm{m^3}\\) на молекулу. Извлекаем кубический корень.</p>",
+            "en": "<p>Dividing \\(b_w\\) by \\(N_A\\) gives about \\(5.1\\cdot10^{-29}\\,\\mathrm{m^3}\\) per molecule. Take the cube root.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[d_w\\sim(b_w/N_A)^{1/3}\\simeq3{,}7\\cdot10^{-10}\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[d_w\\sim(b_w/N_A)^{1/3}\\simeq3.7\\cdot10^{-10}\\,\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B1",
+      "max": 0.8,
+      "title": {
+        "ru": "Молярный объём пара",
+        "en": "Molar volume of the vapour"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Уравнение газовой ветви",
+            "en": "Equation on the gas branch"
+          },
+          "body": {
+            "ru": "<p>Пренебрегаем \\(b\\) по сравнению с \\(V_G\\), сохраняя поправку на притяжение. Тогда \\((p_0+a/V_G^2)V_G=RT\\), что даёт квадратное уравнение \\(p_0 V_G^2-RTV_G+a=0\\).</p>",
+            "en": "<p>Neglect \\(b\\) beside \\(V_G\\) while retaining attraction. Then \\((p_0+a/V_G^2)V_G=RT\\), or \\(p_0V_G^2-RTV_G+a=0\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Выбор корня",
+            "en": "Selecting the root"
+          },
+          "body": {
+            "ru": "<p>При \\(a\\to0\\) газовая ветвь должна переходить в \\(V_{G0}=RT/p_0\\). Это определяет положительный знак перед корнем.</p>",
+            "en": "<p>As \\(a\\to0\\) the gas branch must approach \\(V_{G0}=RT/p_0\\). This selects the positive sign in front of the square root.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V_G=\\frac{RT}{2p_0}\\left(1+\\sqrt{1-\\frac{4ap_0}{R^2T^2}}\\right).\\]</div>",
+        "en": "<div>\\[V_G=\\frac{RT}{2p_0}\\left(1+\\sqrt{1-\\frac{4ap_0}{R^2T^2}}\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B2",
+      "max": 0.3,
+      "title": {
+        "ru": "Поправка к объёму газа",
+        "en": "Fractional gas volume correction"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Первый порядок по притяжению",
+            "en": "First-order attraction correction"
+          },
+          "body": {
+            "ru": "<p>Обозначим \\(\\varepsilon=ap_0/(RT)^2\\). При \\(T\\simeq373\\,\\mathrm K\\) величина \\(\\varepsilon\\) мала. Разложение корня в B1 даёт \\(V_G\\simeq V_{G0}(1-\\varepsilon)\\).</p>",
+            "en": "<p>Put \\(\\varepsilon=ap_0/(RT)^2\\). At \\(T\\simeq373\\,\\mathrm K\\) this is small. Expanding B1 gives \\(V_G\\simeq V_{G0}(1-\\varepsilon)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{V_{G0}-V_G}{V_{G0}}\\simeq\\frac{ap_0}{R^2T^2}\\simeq0{,}58\\%.\\]</div>",
+        "en": "<div>\\[\\frac{V_{G0}-V_G}{V_{G0}}\\simeq\\frac{ap_0}{R^2T^2}\\simeq0.58\\%.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B3",
+      "max": 0.7,
+      "title": {
+        "ru": "Граница метастабильности",
+        "en": "Limit of metastability"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Предел устойчивой ветви",
+            "en": "Endpoint of the stable branch"
+          },
+          "body": {
+            "ru": "<p>Изотерма имеет вид \\(P\\simeq RT/V-a/V^2\\). В предельной точке её производная по объёму обращается в нуль.</p>\n<div>\\[-\\frac{RT}{V^2}+\\frac{2a}{V^3}=0,\\qquad V_{G\\min}\\simeq\\frac{2a}{RT}.\\]</div>",
+            "en": "<p>The gas-branch isotherm is \\(P\\simeq RT/V-a/V^2\\). The limiting volume is found where its slope first vanishes.</p>\n<div>\\[-\\frac{RT}{V^2}+\\frac{2a}{V^3}=0,\\qquad V_{G\\min}\\simeq\\frac{2a}{RT}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Степень сжатия",
+            "en": "Compression ratio"
+          },
+          "body": {
+            "ru": "<p>Для начального объёма достаточно основного члена \\(V_G\\simeq RT/p_0\\) из B1.</p>",
+            "en": "<p>For the initial volume the leading B1 value \\(V_G\\simeq RT/p_0\\) suffices.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{V_G}{V_{G\\min}}\\simeq\\frac{R^2T^2}{2ap_0}\\simeq86.\\]</div>",
+        "en": "<div>\\[\\frac{V_G}{V_{G\\min}}\\simeq\\frac{R^2T^2}{2ap_0}\\simeq86.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B4",
+      "max": 1.0,
+      "title": {
+        "ru": "Молярный объём жидкости",
+        "en": "Molar volume of the liquid"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Уравнение жидкой ветви",
+            "en": "Equation on the liquid branch"
+          },
+          "body": {
+            "ru": "<p>Теперь в множителе \\(P+a/V_L^2\\) доминирует притяжение, а величину \\(b\\) в разности объёмов сохраняем. Получаем \\(RTV_L^2-aV_L+ab=0\\).</p>",
+            "en": "<p>Attraction dominates \\(P+a/V_L^2\\), while \\(b\\) must be kept in the volume difference. The equation becomes \\(RTV_L^2-aV_L+ab=0\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Плотная фаза",
+            "en": "Dense-phase root"
+          },
+          "body": {
+            "ru": "<p>При низкой температуре конечный корень стремится к объёму плотной упаковки \\(b\\). Выбираем меньший корень.</p>",
+            "en": "<p>At low temperature the finite root must approach the close-packed volume \\(b\\). Select the smaller root.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V_L=\\frac a{2RT}\\left(1-\\sqrt{1-\\frac{4bRT}{a}}\\right).\\]</div>",
+        "en": "<div>\\[V_L=\\frac a{2RT}\\left(1-\\sqrt{1-\\frac{4bRT}{a}}\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B5",
+      "max": 0.3,
+      "title": {
+        "ru": "Плотность жидкости",
+        "en": "Liquid density"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Объём в ведущем порядке",
+            "en": "Leading-order volume"
+          },
+          "body": {
+            "ru": "<p>Разложение B4 даёт \\(V_L=b[1+bRT/a+\\cdots]\\). В главном порядке молярный объём равен \\(b\\), а масса одного моля равна \\(\\mu\\).</p>",
+            "en": "<p>Expanding B4 gives \\(V_L=b[1+bRT/a+\\cdots]\\). To leading order the molar volume is \\(b\\) and one mole has mass \\(\\mu\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\rho_L\\simeq\\frac{\\mu}{b}\\simeq5{,}8\\cdot10^2\\,\\mathrm{kg/m^3}.\\]</div>",
+        "en": "<div>\\[\\rho_L\\simeq\\frac{\\mu}{b}\\simeq5.8\\cdot10^2\\,\\mathrm{kg/m^3}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B6",
+      "max": 0.6,
+      "title": {
+        "ru": "Тепловое расширение",
+        "en": "Thermal expansion"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Температурная поправка",
+            "en": "Temperature-dependent correction"
+          },
+          "body": {
+            "ru": "<p>В производную вносит вклад первый температурный член, \\(V_L\\simeq b+b^2RT/a\\). Поэтому \\(\\mathrm dV_L/\\mathrm dT\\simeq b^2R/a\\).</p>",
+            "en": "<p>Keep the first temperature-dependent term, \\(V_L\\simeq b+b^2RT/a\\). Thus \\(\\mathrm dV_L/\\mathrm dT\\simeq b^2R/a\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Нормировка на объём",
+            "en": "Normalization by volume"
+          },
+          "body": {
+            "ru": "<p>В знаменателе достаточно положить \\(V_L\\simeq b\\).</p>",
+            "en": "<p>The denominator may be evaluated as \\(V_L\\simeq b\\) to this order.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\alpha\\simeq\\frac{bR}{a}\\simeq4{,}6\\cdot10^{-4}\\,\\mathrm{K^{-1}}.\\]</div>",
+        "en": "<div>\\[\\alpha\\simeq\\frac{bR}{a}\\simeq4.6\\cdot10^{-4}\\,\\mathrm{K^{-1}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B7",
+      "max": 1.1,
+      "title": {
+        "ru": "Теплота парообразования",
+        "en": "Latent heat of vaporization"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.7,
+          "label": {
+            "ru": "Работа против сил притяжения",
+            "en": "Work against attraction"
+          },
+          "body": {
+            "ru": "<p>Молекулярному притяжению соответствует давление \\(-a/V^2\\). Чтобы разделить молекулы одного моля, нужно затратить энергию порядка интеграла от \\(a/V^2\\) между объёмами фаз. Работа внешнего давления порядка \\(RT\\) мала по сравнению с главным вкладом \\(a/b\\) при заданном приближении.</p>\n<div>\\[\\mu L\\simeq\\int_{V_L}^{V_G}\\frac{a}{V^2}\\,\\mathrm dV=a\\left(\\frac1{V_L}-\\frac1{V_G}\\right).\\]</div>",
+            "en": "<p>Attraction contributes a pressure \\(-a/V^2\\). Separating one mole requires the integral of \\(a/V^2\\) between the phase volumes. External pressure work of order \\(RT\\) is small beside the leading \\(a/b\\) under the stated approximation.</p>\n<div>\\[\\mu L\\simeq\\int_{V_L}^{V_G}\\frac{a}{V^2}\\,\\mathrm dV=a\\left(\\frac1{V_L}-\\frac1{V_G}\\right).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Удельная величина",
+            "en": "Per-unit-mass result"
+          },
+          "body": {
+            "ru": "<p>Поскольку \\(V_G\\gg V_L\\simeq b\\), основной вклад даёт нижний предел. Делим энергию на массу моля.</p>",
+            "en": "<p>Since \\(V_G\\gg V_L\\simeq b\\), the lower limit dominates. Divide the molar energy by the molar mass.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[L\\simeq\\frac a{\\mu b}\\simeq1{,}0\\cdot10^6\\,\\mathrm{J/kg}.\\]</div>",
+        "en": "<div>\\[L\\simeq\\frac a{\\mu b}\\simeq1.0\\cdot10^6\\,\\mathrm{J/kg}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B8",
+      "max": 1.2,
+      "title": {
+        "ru": "Поверхностное натяжение",
+        "en": "Surface tension"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Две поверхности слоя",
+            "en": "Two faces of a monolayer"
+          },
+          "body": {
+            "ru": "<p>У слоя площади \\(S\\) и толщины \\(d_w\\) масса порядка \\(\\rho_L S d_w\\). Для образования двух поверхностей нужна энергия \\(2\\sigma S\\). Оценим её как энергию разделения молекул слоя, порядка \\(L\\rho_L S d_w\\).</p>",
+            "en": "<p>A layer of area \\(S\\) and thickness \\(d_w\\) has mass of order \\(\\rho_L S d_w\\). Its two surfaces cost \\(2\\sigma S\\). Estimate this by the energy to separate the molecules of that layer, of order \\(L\\rho_L S d_w\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Численная оценка",
+            "en": "Numerical estimate"
+          },
+          "body": {
+            "ru": "<p>Подставляем оценки A4, B5 и B7. При \\(a=0{,}56\\), \\(b=3{,}1\\cdot10^{-5}\\) и \\(d_w=3{,}7\\cdot10^{-10}\\) в СИ получается около \\(0{,}11\\,\\mathrm{N/m}\\). В численном ответе официального PDF у этой формулы стоит лишний множитель \\(10^{-2}\\).</p>",
+            "en": "<p>Insert A4, B5 and B7. Using \\(a=0.56\\), \\(b=3.1\\cdot10^{-5}\\) and \\(d_w=3.7\\cdot10^{-10}\\) in SI gives about \\(0.11\\,\\mathrm{N/m}\\). The numerical value following this formula in the official PDF contains an extra factor \\(10^{-2}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\sigma\\sim\\frac{L\\rho_L d_w}{2}\\simeq\\frac{a d_w}{2b^2}\\simeq0{,}11\\,\\mathrm{N/m}.\\]</div>",
+        "en": "<div>\\[\\sigma\\sim\\frac{L\\rho_L d_w}{2}\\simeq\\frac{a d_w}{2b^2}\\simeq0.11\\,\\mathrm{N/m}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C1",
+      "max": 1.3,
+      "title": {
+        "ru": "Давление над мениском",
+        "en": "Vapour pressure over the meniscus"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.7,
+          "label": {
+            "ru": "Гидростатическое равновесие",
+            "en": "Hydrostatic balance"
+          },
+          "body": {
+            "ru": "<p>Пусть мениск находится на \\(h\\) ниже плоской поверхности. На этой глубине давление жидкости вне капилляра равно \\(p_0+\\rho_Lgh\\), а давление пара внутри него \\(p_0+\\rho_sgh\\). Их разность у мениска равна лапласовскому скачку.</p>\n<div>\\[(\\rho_L-\\rho_s)gh=\\frac{2\\sigma}{r}.\\]</div>",
+            "en": "<p>Let the meniscus be a distance \\(h\\) below the flat surface. At that depth the outside liquid has pressure \\(p_0+\\rho_Lgh\\) and the vapour in the capillary has pressure \\(p_0+\\rho_sgh\\). Their difference at the meniscus is the Laplace jump.</p>\n<div>\\[(\\rho_L-\\rho_s)gh=\\frac{2\\sigma}{r}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Поправка для пара",
+            "en": "Correction on the vapour side"
+          },
+          "body": {
+            "ru": "<p>Искомая добавка — изменение давления именно в паре, \\(\\rho_sgh\\). Она положительна над выпуклой поверхностью.</p>",
+            "en": "<p>The required change is the pressure gain in the vapour column, \\(\\rho_sgh\\). It is positive over a convex interface.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Delta p_T=\\frac{2\\sigma}{r}\\frac{\\rho_s}{\\rho_L-\\rho_s}\\simeq\\frac{2\\sigma\\rho_s}{r\\rho_L}.\\]</div>",
+        "en": "<div>\\[\\Delta p_T=\\frac{2\\sigma}{r}\\frac{\\rho_s}{\\rho_L-\\rho_s}\\simeq\\frac{2\\sigma\\rho_s}{r\\rho_L}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-C2",
+      "max": 1.7,
+      "title": {
+        "ru": "Наименьшая растущая капля",
+        "en": "Smallest growing droplet"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Пересыщение после охлаждения",
+            "en": "Supersaturation on cooling"
+          },
+          "body": {
+            "ru": "<p>Обозначим вечернее давление через \\(p_e\\). По заданному температурному закону снижение давления насыщения над плоской поверхностью при малом охлаждении составляет</p>\n<div>\\[\\Delta p_{\\rm cool}\\simeq p_e\\,\\frac{a\\,\\Delta T}{bR T_e^2}.\\]</div>",
+            "en": "<p>Let \\(p_e\\) be the evening pressure. The given temperature law gives the decrease in flat-surface saturation pressure on slight cooling as</p>\n<div>\\[\\Delta p_{\\rm cool}\\simeq p_e\\,\\frac{a\\,\\Delta T}{bR T_e^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.7,
+          "label": {
+            "ru": "Условие роста",
+            "en": "Growth threshold"
+          },
+          "body": {
+            "ru": "<p>На пороге роста повышение давления из-за кривизны в точности компенсирует это снижение. При оценке плотности пара достаточно \\(\\rho_s\\simeq\\mu p_e/(RT_e)\\), а для жидкости из B5 имеем \\(\\rho_L\\simeq\\mu/b\\).</p>\n<div>\\[\\frac{2\\sigma}{r_{\\min}}\\frac{\\mu p_e}{RT_e}\\frac{b}{\\mu}=p_e\\,\\frac{a\\,\\Delta T}{bRT_e^2}.\\]</div>",
+            "en": "<p>At threshold the curvature-induced pressure increase exactly offsets this decrease. The dilute vapour gives \\(\\rho_s\\simeq\\mu p_e/(RT_e)\\), and B5 gives \\(\\rho_L\\simeq\\mu/b\\).</p>\n<div>\\[\\frac{2\\sigma}{r_{\\min}}\\frac{\\mu p_e}{RT_e}\\frac{b}{\\mu}=p_e\\,\\frac{a\\,\\Delta T}{bRT_e^2}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Минимальный радиус",
+            "en": "Minimum radius"
+          },
+          "body": {
+            "ru": "<p>Сокращаем давление и подставляем \\(T_e\\simeq293\\,\\mathrm K\\), \\(\\Delta T=5{,}0\\,\\mathrm K\\). Более крупной капле соответствует меньшая поправка кривизны, поэтому она может расти.</p>",
+            "en": "<p>Cancel the pressure and insert \\(T_e\\simeq293\\,\\mathrm K\\), \\(\\Delta T=5.0\\,\\mathrm K\\). A larger droplet has a smaller curvature correction and can grow.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r_{\\min}\\simeq\\frac{2\\sigma b^2T_e}{a\\Delta T}\\simeq1{,}5\\cdot10^{-8}\\,\\mathrm m.\\]</div>",
+        "en": "<div>\\[r_{\\min}\\simeq\\frac{2\\sigma b^2T_e}{a\\Delta T}\\simeq1.5\\cdot10^{-8}\\,\\mathrm m.\\]</div>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "T3",
+  "title": "Законы подобия",
+  "points": 8.0,
+  "sourceFile": "IPhO_2022_T3_EN.pdf",
+  "sections": [
+    {
+      "id": "T3-A",
+      "title": "Спагетти",
+      "points": 2.0
+    },
+    {
+      "id": "T3-B",
+      "title": "Песочный замок",
+      "points": 2.0
+    },
+    {
+      "id": "T3-C",
+      "title": "Межзвёздный полёт",
+      "points": 2.0
+    },
+    {
+      "id": "T3-D",
+      "title": "Затухающие колебания",
+      "points": 2.0
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T3-A1",
+      "points": 2.0
+    },
+    {
+      "id": "T3-B1",
+      "points": 2.0
+    },
+    {
+      "id": "T3-C1",
+      "points": 2.0
+    },
+    {
+      "id": "T3-D1",
+      "points": 2.0
+    }
+  ],
+  "solutionsAvailable": true,
+  "solutionData": "/assets/practice/ipho-2022/solutions/t3.json",
+  "solutionPdf": "/assets/practice/ipho-2022/IPhO_2022_S3_EN.pdf",
+  "stepScoring": "published-subpart-maxima-and-weighted-criteria"
+}

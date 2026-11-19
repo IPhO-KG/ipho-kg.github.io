@@ -1,0 +1,74 @@
+{
+  "id": "T3",
+  "title": "Вода и твёрдые тела",
+  "points": 10,
+  "sourceFile": "IPhO_2023_Q3.pdf",
+  "sourcePdf": "/assets/practice/ipho-2023/IPhO_2023_T3_EN.pdf",
+  "solutionPdf": "/assets/practice/ipho-2023/IPhO_2023_S3_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2023/IPhO_2023_M3_EN.pdf",
+  "sections": [
+    {
+      "id": "T3-A",
+      "title": "Слияние капель",
+      "points": 2.0
+    },
+    {
+      "id": "T3-B",
+      "title": "Мениск у вертикальной пластины",
+      "points": 4.5
+    },
+    {
+      "id": "T3-C",
+      "title": "Взаимодействие плавающих стержней",
+      "points": 3.5
+    }
+  ],
+  "figures": [
+    "q3f1",
+    "q3f2",
+    "q3f3",
+    "q3f4",
+    "q3f5"
+  ],
+  "subtasks": [
+    {
+      "id": "T3-A1",
+      "points": 2.0
+    },
+    {
+      "id": "T3-B1",
+      "points": 0.6
+    },
+    {
+      "id": "T3-B2",
+      "points": 0.8
+    },
+    {
+      "id": "T3-B3",
+      "points": 0.8
+    },
+    {
+      "id": "T3-B4",
+      "points": 0.8
+    },
+    {
+      "id": "T3-B5",
+      "points": 1.5
+    },
+    {
+      "id": "T3-C1",
+      "points": 1.0
+    },
+    {
+      "id": "T3-C2",
+      "points": 1.5
+    },
+    {
+      "id": "T3-C3",
+      "points": 1.0
+    }
+  ],
+  "solutionsAvailable": true,
+  "solutionData": "/assets/practice/ipho-2023/solutions/t3.json",
+  "stepScoring": "official-criteria"
+}

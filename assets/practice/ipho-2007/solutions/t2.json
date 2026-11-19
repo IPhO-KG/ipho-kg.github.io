@@ -1,0 +1,578 @@
+{
+  "id": "T2",
+  "title": {
+    "ru": "Акселерометр для подушки безопасности",
+    "en": "An accelerometer for an airbag"
+  },
+  "max": 10.0,
+  "sourcePdf": "/assets/practice/ipho-2007/IPhO_2007_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-1.1",
+      "max": 0.8,
+      "label": "1.1",
+      "title": {
+        "ru": "Сила между обкладками",
+        "en": "Force between plates"
+      },
+      "steps": [
+        {
+          "id": "1.1-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Поле конденсатора",
+            "en": "Field in the capacitor"
+          },
+          "body": {
+            "ru": "<p>При пренебрежении краевыми эффектами плотность заряда на внутренней поверхности равна \\(s=Q/A\\). Поле между противоположно заряженными пластинами равно \\(E=s/\\epsilon_0\\).</p>",
+            "en": "<p>Neglecting edge effects, the facing surfaces have charge density of magnitude \\(s=Q/A\\). The field between them is \\(E=s/\\epsilon_0\\).</p>"
+          }
+        },
+        {
+          "id": "1.1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Поле другой пластины",
+            "en": "Field from the other plate"
+          },
+          "body": {
+            "ru": "<p>Половина поля в зазоре создаётся каждой обкладкой. На заряд одной пластины действует только поле другой, поэтому сила притяжения равна \\(Q E/2\\).</p>",
+            "en": "<p>Each plate supplies half the gap field. Only the other plate's contribution acts on the selected plate, so the magnitude of attraction is \\(QE/2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_E=\\frac{Q^2}{2\\epsilon_0 A}.\\]</div>",
+        "en": "<div>\\[F_E=\\frac{Q^2}{2\\epsilon_0 A}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-1.2",
+      "max": 0.6,
+      "label": "1.2",
+      "title": {
+        "ru": "Смещение в равновесии",
+        "en": "Equilibrium displacement"
+      },
+      "steps": [
+        {
+          "id": "1.2-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Механическое равновесие",
+            "en": "Mechanical balance"
+          },
+          "body": {
+            "ru": "<p>Отсчитываем \\(x\\) по направлению к закреплённой пластине. В равновесии противоположная сила пружины \\(kx\\) уравновешивает притяжение из 1.1.</p>",
+            "en": "<p>Take \\(x\\) towards the fixed plate. At equilibrium the opposing spring force of magnitude \\(kx\\) balances the attraction found in 1.1.</p>"
+          }
+        },
+        {
+          "id": "1.2-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Решение относительно смещения",
+            "en": "Solve for the displacement"
+          },
+          "body": {
+            "ru": "<p>При заданном заряде электрическая сила в плоском приближении не зависит от ширины зазора. Делим её на \\(k\\).</p>",
+            "en": "<p>At fixed charge the electrical force is independent of gap width in the parallel-plate approximation. Divide it by \\(k\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x=\\frac{Q^2}{2\\epsilon_0Ak}.\\]</div>",
+        "en": "<div>\\[x=\\frac{Q^2}{2\\epsilon_0Ak}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-1.3",
+      "max": 0.4,
+      "label": "1.3",
+      "title": {
+        "ru": "Разность потенциалов",
+        "en": "Equilibrium voltage"
+      },
+      "steps": [
+        {
+          "id": "1.3-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Напряжение на новом зазоре",
+            "en": "Voltage across the new gap"
+          },
+          "body": {
+            "ru": "<p>Поле \\(E=Q/(\\epsilon_0A)\\) однородно. После смещения зазор равен \\(d-x\\), поэтому \\(V=E(d-x)\\). Подставляем равновесное \\(x\\) из 1.2.</p>",
+            "en": "<p>The uniform field is \\(E=Q/(\\epsilon_0 A)\\). The gap after motion is \\(d-x\\), so \\(V=E(d-x)\\). Substitute the equilibrium displacement from 1.2.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V=\\frac{Qd}{\\epsilon_0 A}\\left(1-\\frac{Q^2}{2\\epsilon_0 Akd}\\right).\\]</div>",
+        "en": "<div>\\[V=\\frac{Qd}{\\epsilon_0 A}\\left(1-\\frac{Q^2}{2\\epsilon_0 Akd}\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T2-1.4",
+      "max": 0.3,
+      "label": "1.4",
+      "title": {
+        "ru": "Изменение ёмкости",
+        "en": "Capacitance increase"
+      },
+      "steps": [
+        {
+          "id": "1.4-1",
+          "points": 0.3,
+          "label": {
+            "ru": "Отношение зазоров",
+            "en": "Ratio of gap widths"
+          },
+          "body": {
+            "ru": "<p>Из определения \\(C=Q/V\\) получаем \\(C=\\epsilon_0 A/(d-x)\\). При неизменной площади отношение ёмкостей равно \\(d/(d-x)\\), что больше единицы.</p>",
+            "en": "<p>The definition \\(C=Q/V\\) gives \\(C=\\epsilon_0 A/(d-x)\\). With fixed area the capacitance ratio is \\(d/(d-x)\\), greater than unity.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{C}{C_0}=\\left(1-\\frac{Q^2}{2\\epsilon_0 Akd}\\right)^{-1}.\\]</div>",
+        "en": "<div>\\[\\frac{C}{C_0}=\\left(1-\\frac{Q^2}{2\\epsilon_0 Akd}\\right)^{-1}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-1.5",
+      "max": 0.6,
+      "label": "1.5",
+      "title": {
+        "ru": "Запасённая энергия",
+        "en": "Stored energy"
+      },
+      "steps": [
+        {
+          "id": "1.5-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Пружина и электрическое поле",
+            "en": "Spring and electric field"
+          },
+          "body": {
+            "ru": "<p>Механическая энергия равна \\(kx^2/2\\), электрическая — \\(Q^2/(2C)\\). С учётом зазора получаем </p><div>\\[U=\\frac{kx^2}{2}+\\frac{Q^2(d-x)}{2\\epsilon_0 A}.\\]</div>",
+            "en": "<p>The mechanical energy is \\(kx^2/2\\) and the electric energy is \\(Q^2/(2C)\\). Inserting the new gap gives </p><div>\\[U=\\frac{kx^2}{2}+\\frac{Q^2(d-x)}{2\\epsilon_0 A}.\\]</div>"
+          }
+        },
+        {
+          "id": "1.5-2",
+          "points": 0.2,
+          "label": {
+            "ru": "Подстановка равновесного смещения",
+            "en": "Insert the equilibrium displacement"
+          },
+          "body": {
+            "ru": "<p>Подставим \\(x=Q^2/(2\\epsilon_0Ak)\\). Уменьшение энергии поля вдвое больше энергии, накопленной пружиной.</p>",
+            "en": "<p>Set \\(x=Q^2/(2\\epsilon_0Ak)\\). The electric energy falls by twice the energy now stored in the spring.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[U=\\frac{Q^2d}{2\\epsilon_0 A}\\left(1-\\frac{Q^2}{4\\epsilon_0 Akd}\\right).\\]</div>",
+        "en": "<div>\\[U=\\frac{Q^2d}{2\\epsilon_0 A}\\left(1-\\frac{Q^2}{4\\epsilon_0 Akd}\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.1",
+      "max": 0.4,
+      "label": "2.1",
+      "title": {
+        "ru": "Заряды при заземлении",
+        "en": "Charges with the middle plate grounded"
+      },
+      "steps": [
+        {
+          "id": "2.1-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Ёмкости двух зазоров",
+            "en": "Capacitances of the two gaps"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(x&gt;0\\) соответствует смещению к пластине \\(+V\\). Тогда зазоры со стороны \\(+V\\) и \\(-V\\) равны \\(d-x\\) и \\(d+x\\). Модуль напряжения для каждого зазора равен \\(V\\), так как средняя пластина заземлена. Умножаем ёмкости на \\(V\\).</p>",
+            "en": "<p>Take positive \\(x\\) towards the plate at \\(+V\\). The two gaps adjacent to \\(+V\\) and \\(-V\\) are \\(d-x\\) and \\(d+x\\). Both voltage magnitudes are \\(V\\) because the middle plate is grounded. Multiply each capacitance by \\(V\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[Q_1=\\frac{\\epsilon_0AV}{d-x},\\qquad Q_2=\\frac{\\epsilon_0AV}{d+x}.\\]</div>",
+        "en": "<div>\\[Q_1=\\frac{\\epsilon_0AV}{d-x},\\qquad Q_2=\\frac{\\epsilon_0AV}{d+x}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.2",
+      "max": 0.4,
+      "label": "2.2",
+      "title": {
+        "ru": "Результирующая электрическая сила",
+        "en": "Net electric force"
+      },
+      "steps": [
+        {
+          "id": "2.2-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Разность сил притяжения",
+            "en": "Difference of the attractions"
+          },
+          "body": {
+            "ru": "<p>Каждая внешняя пластина притягивает среднюю. Силы направлены в противоположные стороны. В направлении положительного \\(x\\) проекция равна \\((Q_1^2-Q_2^2)/(2\\epsilon_0A)\\). Подставляем заряды из 2.1.</p>",
+            "en": "<p>Both outer plates attract the middle plate, but in opposite directions. The force component along positive \\(x\\) is \\((Q_1^2-Q_2^2)/(2\\epsilon_0A)\\). Insert the charges from 2.1.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_E=\\frac{\\epsilon_0 AV^2}{2}\\left[\\frac1{(d-x)^2}-\\frac1{(d+x)^2}\\right].\\]</div>",
+        "en": "<div>\\[F_E=\\frac{\\epsilon_0 AV^2}{2}\\left[\\frac1{(d-x)^2}-\\frac1{(d+x)^2}\\right].\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.3",
+      "max": 0.2,
+      "label": "2.3",
+      "title": {
+        "ru": "Линейная электрическая сила",
+        "en": "Linear electrical force"
+      },
+      "steps": [
+        {
+          "id": "2.3-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Разложение при малом смещении",
+            "en": "Small-displacement expansion"
+          },
+          "body": {
+            "ru": "<p>В первом порядке \\((d\\mp x)^{-2}\\simeq d^{-2}(1\\pm2x/d)\\). Постоянные члены в разности сокращаются, а линейные складываются. Электрическая сила направлена в сторону смещения.</p>",
+            "en": "<p>To first order \\((d\\mp x)^{-2}\\simeq d^{-2}(1\\pm2x/d)\\). The constant terms cancel in the difference and the linear terms add. The electrical force reinforces the displacement.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_E\\simeq\\frac{2\\epsilon_0AV^2}{d^3}\\,x.\\]</div>",
+        "en": "<div>\\[F_E\\simeq\\frac{2\\epsilon_0AV^2}{d^3}\\,x.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.4",
+      "max": 0.7,
+      "label": "2.4",
+      "title": {
+        "ru": "Эффективная жёсткость",
+        "en": "Effective stiffness"
+      },
+      "steps": [
+        {
+          "id": "2.4-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Действие двух пружин",
+            "en": "Action of both springs"
+          },
+          "body": {
+            "ru": "<p>При смещении пластины одна пружина растягивается, другая сжимается на ту же величину. Обе возвращают пластину к центру, давая \\(F_s=-2kx\\).</p>",
+            "en": "<p>A displacement extends one spring and compresses the other by the same amount. Both push the mass back to the centre, giving \\(F_s=-2kx\\).</p>"
+          }
+        },
+        {
+          "id": "2.4-2",
+          "points": 0.5,
+          "label": {
+            "ru": "Полный возвращающий коэффициент",
+            "en": "Net restoring coefficient"
+          },
+          "body": {
+            "ru": "<p>Электрическая сила имеет обратный знак по отношению к восстанавливающей. Складываем её с \\(F_s\\) и выносим \\(-x\\).</p>",
+            "en": "<p>The electrical force opposes the restoring action. Add it to \\(F_s\\) and factor out \\(-x\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F=-k_{\\rm eff}x,\\qquad k_{\\rm eff}=2\\left(k-\\frac{\\epsilon_0AV^2}{d^3}\\right).\\]</div>",
+        "en": "<div>\\[F=-k_{\\rm eff}x,\\qquad k_{\\rm eff}=2\\left(k-\\frac{\\epsilon_0AV^2}{d^3}\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T2-2.5",
+      "max": 0.4,
+      "label": "2.5",
+      "title": {
+        "ru": "Ускорение по смещению",
+        "en": "Acceleration from displacement"
+      },
+      "steps": [
+        {
+          "id": "2.5-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Второй закон Ньютона",
+            "en": "Newton's second law"
+          },
+          "body": {
+            "ru": "<p>Пластина покоится относительно автомобиля, поэтому её ускорение в лабораторной системе совпадает с ускорением автомобиля. Для проекций на ось \\(x\\) имеем \\(Ma=F=-k_{\\rm eff}x\\).</p>",
+            "en": "<p>At rest relative to the car, the plate has the same laboratory acceleration as the car. Projecting on the chosen \\(x\\) axis gives \\(Ma=F=-k_{\\rm eff}x\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[a=-\\frac{2x}{M}\\left(k-\\frac{\\epsilon_0AV^2}{d^3}\\right).\\]</div>",
+        "en": "<div>\\[a=-\\frac{2x}{M}\\left(k-\\frac{\\epsilon_0AV^2}{d^3}\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T2-3.1",
+      "max": 1.5,
+      "label": "3.1",
+      "title": {
+        "ru": "Напряжение изолированного узла",
+        "en": "Voltage of the floating node"
+      },
+      "steps": [
+        {
+          "id": "3.1-1",
+          "points": 0.9,
+          "label": {
+            "ru": "Баланс заряда средней пластины",
+            "en": "Charge balance on the floating node"
+          },
+          "body": {
+            "ru": "<p>Средняя пластина вместе с присоединённой обкладкой \\(C_S\\) образует изолированный узел нулевого суммарного заряда. Пусть его потенциал \\(V_S\\), а \\(C_1=\\epsilon_0 A/(d-x)\\) и \\(C_2=\\epsilon_0 A/(d+x)\\). Заряды на трёх поверхностях узла удовлетворяют </p><div>\\[C_1(V_S-V)+C_2(V_S+V)+C_SV_S=0.\\]</div>",
+            "en": "<p>The middle plate and its attached plate of \\(C_S\\) form an isolated node with zero net charge. Let its potential be \\(V_S\\), and set \\(C_1=\\epsilon_0 A/(d-x)\\) and \\(C_2=\\epsilon_0 A/(d+x)\\). Its three surface charges satisfy </p><div>\\[C_1(V_S-V)+C_2(V_S+V)+C_SV_S=0.\\]</div>"
+          }
+        },
+        {
+          "id": "3.1-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Потенциал узла",
+            "en": "Solve for the node potential"
+          },
+          "body": {
+            "ru": "<p>Выражаем \\(V_S=V(C_1-C_2)/(C_S+C_1+C_2)\\). Умножение числителя и знаменателя на \\(d^2-x^2\\) даёт явную зависимость от смещения.</p>",
+            "en": "<p>Solving gives \\(V_S=V(C_1-C_2)/(C_S+C_1+C_2)\\). Multiply top and bottom by \\(d^2-x^2\\) to obtain the displacement dependence.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V_S=\\frac{2\\epsilon_0AVx}{C_S(d^2-x^2)+2\\epsilon_0Ad}.\\]</div>",
+        "en": "<div>\\[V_S=\\frac{2\\epsilon_0AVx}{C_S(d^2-x^2)+2\\epsilon_0Ad}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-3.2",
+      "max": 0.2,
+      "label": "3.2",
+      "title": {
+        "ru": "Линейный отклик напряжения",
+        "en": "Linear voltage response"
+      },
+      "steps": [
+        {
+          "id": "3.2-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Малое изменение ёмкостей",
+            "en": "Small capacitance imbalance"
+          },
+          "body": {
+            "ru": "<p>Числитель уже пропорционален \\(x\\). В знаменателе достаточно взять значение при \\(x=0\\), так как первая поправка к нему квадратична.</p>",
+            "en": "<p>The numerator is already linear in \\(x\\). The denominator may be evaluated at zero displacement because its first correction is quadratic.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V_S\\simeq\\frac{2\\epsilon_0AV}{C_Sd^2+2\\epsilon_0Ad}\\,x.\\]</div>",
+        "en": "<div>\\[V_S\\simeq\\frac{2\\epsilon_0AV}{C_Sd^2+2\\epsilon_0Ad}\\,x.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-4.1",
+      "max": 0.6,
+      "label": "4.1",
+      "title": {
+        "ru": "Сравнение электрической и упругой сил",
+        "en": "Electrical versus elastic force"
+      },
+      "steps": [
+        {
+          "id": "4.1-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Отношение коэффициентов при смещении",
+            "en": "Ratio of force coefficients"
+          },
+          "body": {
+            "ru": "<p>Делим модуль линейного члена из 2.3 на \\(2k\\lvert x\\rvert\\). Смещение сокращается. Для \\(d=0{,}010\\) м подстановка даёт силу поля примерно в сто миллионов раз меньше упругой.</p>",
+            "en": "<p>Divide the magnitude from 2.3 by \\(2k\\lvert x\\rvert\\). Displacement cancels. Substituting \\(d=0.010\\) m gives an electrical force about a hundred million times smaller than the spring force.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{\\lvert F_E\\rvert}{\\lvert F_s\\rvert}=\\frac{\\epsilon_0AV^2}{kd^3}\\simeq7.6\\times10^{-9}.\\]</div>",
+        "en": "<div>\\[\\frac{\\lvert F_E\\rvert}{\\lvert F_s\\rvert}=\\frac{\\epsilon_0AV^2}{kd^3}\\simeq7.6\\times10^{-9}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-4.2",
+      "max": 0.6,
+      "label": "4.2",
+      "title": {
+        "ru": "Первое максимальное отклонение",
+        "en": "First maximum deflection"
+      },
+      "steps": [
+        {
+          "id": "4.2-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Сдвиг положения равновесия",
+            "en": "Shifted equilibrium"
+          },
+          "body": {
+            "ru": "<p>В системе тормозящего автомобиля появляется постоянная по модулю сила инерции \\(Ma\\). Новое равновесие находится на расстоянии \\(x_e=Ma/(2k)\\) от центра.</p>",
+            "en": "<p>In the braking car frame the inertial force has constant magnitude \\(Ma\\). The new equilibrium is displaced by \\(x_e=Ma/(2k)\\) from the centre.</p>"
+          }
+        },
+        {
+          "id": "4.2-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Амплитуда после резкого торможения",
+            "en": "Amplitude after abrupt braking"
+          },
+          "body": {
+            "ru": "<p>В начале пластина покоится в старом положении, на расстоянии \\(x_e\\) от нового равновесия. Поэтому амплитуда вокруг нового равновесия равна \\(x_e\\). До крайнего положения пластина проходит \\(2x_e\\).</p>",
+            "en": "<p>Initially the plate is at rest at the old centre, one \\(x_e\\) away from the new equilibrium. Its oscillation about the latter has amplitude \\(x_e\\). The first turning point is \\(2x_e\\) from the original centre.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x_{\\max}=\\frac{Ma}{k}.\\]</div>",
+        "en": "<div>\\[x_{\\max}=\\frac{Ma}{k}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-4.3",
+      "max": 0.6,
+      "label": "4.3",
+      "title": {
+        "ru": "Ёмкость, задающая порог",
+        "en": "Capacitance setting the threshold"
+      },
+      "steps": [
+        {
+          "id": "4.3-1",
+          "points": 0.2,
+          "label": {
+            "ru": "Пороговое смещение",
+            "en": "Threshold displacement"
+          },
+          "body": {
+            "ru": "<p>При \\(a=g\\) максимальное отклонение равно \\(x_g=Mg/k=3{,}5\\cdot10^{-4}\\) м. Это мало по сравнению с исходным зазором, поэтому применимо 3.2.</p>",
+            "en": "<p>At \\(a=g\\) the maximum displacement is \\(x_g=Mg/k=3.5\\times10^{-4}\\) m. This is small relative to the original gap, so 3.2 applies.</p>"
+          }
+        },
+        {
+          "id": "4.3-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Восстановление ёмкости из напряжения",
+            "en": "Capacitance from trigger voltage"
+          },
+          "body": {
+            "ru": "<p>Подставляем \\(x_g\\) и порог \\(V_{\\rm th}=0{,}15\\) В в линейное выражение для \\(V_S\\), затем решаем относительно \\(C_S\\).</p>",
+            "en": "<p>Set \\(x=x_g\\) and \\(V_S=V_{\\rm th}=0.15\\) V in the linear response and solve for \\(C_S\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[C_S=\\frac{2\\epsilon_0A}{d}\\left(\\frac{Vx_g}{V_{\\rm th}d}-1\\right)\\simeq8.0\\times10^{-11}\\ \\mathrm F.\\]</div>",
+        "en": "<div>\\[C_S=\\frac{2\\epsilon_0A}{d}\\left(\\frac{Vx_g}{V_{\\rm th}d}-1\\right)\\simeq8.0\\times10^{-11}\\ \\mathrm F.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-4.4",
+      "max": 0.8,
+      "label": "4.4",
+      "title": {
+        "ru": "Время до встречи с рулём",
+        "en": "Time for the head to reach the wheel"
+      },
+      "steps": [
+        {
+          "id": "4.4-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Относительное движение",
+            "en": "Relative motion"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(\\ell\\) — исходный зазор между головой и рулём. Для оценки возьмём \\(\\ell=0{,}5\\) м. Начальная относительная скорость нулевая, а относительное ускорение в модели имеет модуль \\(g\\).</p>",
+            "en": "<p>Let \\(\\ell\\) be the initial head-to-wheel gap and take \\(\\ell=0.5\\) m as a representative estimate. The initial relative velocity is zero and the relative acceleration has magnitude \\(g\\) in the model.</p>"
+          }
+        },
+        {
+          "id": "4.4-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Время прохождения зазора",
+            "en": "Time to close the gap"
+          },
+          "body": {
+            "ru": "<p>Из \\(\\ell=gt_1^2/2\\) следует \\(t_1=\\sqrt{2\\ell/g}\\). Оценки зазора от 0,4 до 1 м дают время от 0,29 до 0,45 с.</p>",
+            "en": "<p>The condition \\(\\ell=gt_1^2/2\\) gives \\(t_1=\\sqrt{2\\ell/g}\\). Gaps between 0.4 and 1 m correspond to times between 0.29 and 0.45 s.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>При \\(\\ell=0{,}5\\) м получаем \\(t_1\\simeq0{,}32\\) с.</p>",
+        "en": "<p>For \\(\\ell=0.5\\) m, \\(t_1\\simeq0.32\\) s.</p>"
+      }
+    },
+    {
+      "id": "T2-4.5",
+      "max": 0.9,
+      "label": "4.5",
+      "title": {
+        "ru": "Время появления сигнала",
+        "en": "Trigger delay"
+      },
+      "steps": [
+        {
+          "id": "4.5-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Полупериод колебания",
+            "en": "Half an oscillation period"
+          },
+          "body": {
+            "ru": "<p>При ускорении, равном порогу, нужное напряжение впервые достигается в крайнем положении. От одного крайнего положения до другого проходит полпериода. Угловая частота равна \\(\\sqrt{2k/M}\\).</p>",
+            "en": "<p>At the threshold acceleration the required voltage is first reached at the far turning point. From one turning point to the next takes half a period. The angular frequency is \\(\\sqrt{2k/M}\\).</p>"
+          }
+        },
+        {
+          "id": "4.5-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Сравнение времён",
+            "en": "Compare the times"
+          },
+          "body": {
+            "ru": "<p>Подстановка массы и жёсткости даёт около 13 мс. Это значительно меньше \\(t_1\\) из предыдущего пункта. При мгновенном раскрытии подушка в данной модели успевает сработать.</p>",
+            "en": "<p>The specified mass and stiffness give about 13 ms, well below \\(t_1\\) from the preceding part. With instantaneous inflation the airbag triggers in time in this model.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[t_2=\\pi\\sqrt{\\frac{M}{2k}}\\simeq0.013\\ \\mathrm s&lt;t_1.\\]</div>",
+        "en": "<div>\\[t_2=\\pi\\sqrt{\\frac{M}{2k}}\\simeq0.013\\ \\mathrm s&lt;t_1.\\]</div>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,504 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Парниковый эффект",
+    "en": "The greenhouse effect"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2024/IPhO_2024_S1_EN.pdf",
+  "markingSchemePdf": "/assets/practice/ipho-2024/IPhO_2024_M1_EN.pdf",
+  "parts": [
+    {
+      "id": "T1-A1",
+      "max": 0.6,
+      "title": {
+        "ru": "Солнечная постоянная",
+        "en": "Solar irradiance"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Поток через сферу",
+            "en": "Flux through a sphere"
+          },
+          "body": {
+            "ru": "<p>Светимость Солнца равна \\(4\\pi R_S^2\\sigma T_S^4\\). На сфере радиуса \\(d\\) та же мощность распределена по площади \\(4\\pi d^2\\).</p>\n<div>\\[S_0=\\sigma T_S^4(R_S/d)^2.\\]</div>",
+            "en": "<p>The solar luminosity is \\(4\\pi R_S^2\\sigma T_S^4\\). Divide it by the area of the sphere of radius \\(d\\).</p>\n<div>\\[S_0=\\sigma T_S^4(R_S/d)^2.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Численное значение",
+            "en": "Numerical flux"
+          },
+          "body": {
+            "ru": "<p>Площадь пересечения лучей здесь не усредняется по поверхности Земли.</p>\n<div>\\[S_0\\simeq1{,}35\\times10^3\\,\\mathrm{W\\,m^{-2}}.\\]</div>",
+            "en": "<p>This value is for a surface facing the Sun.</p>\n<div>\\[S_0\\simeq1.35\\times10^3\\,\\mathrm{W\\,m^{-2}}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[S_0=\\sigma T_S^4(R_S/d)^2\\simeq1{,}35\\,\\mathrm{kW\\,m^{-2}}.\\]</div>",
+        "en": "<div>\\[S_0=\\sigma T_S^4(R_S/d)^2\\simeq1.35\\,\\mathrm{kW\\,m^{-2}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A2",
+      "max": 0.6,
+      "title": {
+        "ru": "Температура Земли",
+        "en": "Earth’s temperature"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Площади поглощения и излучения",
+            "en": "Absorbing and emitting areas"
+          },
+          "body": {
+            "ru": "<p>Солнечный свет перехватывается диском площади \\(\\pi R_E^2\\), а излучает вся сфера площади \\(4\\pi R_E^2\\).</p>\n<div>\\[\\pi R_E^2S_0=4\\pi R_E^2\\sigma T_E^4.\\]</div>",
+            "en": "<p>The planet intercepts sunlight over its disc but emits over its entire surface.</p>\n<div>\\[\\pi R_E^2S_0=4\\pi R_E^2\\sigma T_E^4.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Температура в кельвинах",
+            "en": "Temperature in kelvins"
+          },
+          "body": {
+            "ru": "<p>Извлекаем четвёртый корень, подставляя поток из A1.</p>\n<div>\\[T_E=(S_0/4\\sigma)^{1/4}\\simeq278\\,\\mathrm K.\\]</div>",
+            "en": "<p>Take the fourth root and insert the irradiance from A1.</p>\n<div>\\[T_E=(S_0/4\\sigma)^{1/4}\\simeq278\\,\\mathrm K.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_E=T_S\\sqrt{\\frac{R_S}{2d}}\\simeq278\\,\\mathrm K.\\]</div>",
+        "en": "<div>\\[T_E=T_S\\sqrt{\\frac{R_S}{2d}}\\simeq278\\,\\mathrm K.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A3",
+      "max": 0.4,
+      "title": {
+        "ru": "Условие максимума",
+        "en": "Peak condition"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Максимум закона Планка",
+            "en": "Extremum of the Planck spectrum"
+          },
+          "body": {
+            "ru": "<p>При фиксированном \\(T\\) переход к \\(x=hc/(\\lambda k_BT)\\) превращает спектр в величину, пропорциональную \\(x^5/(e^x-1)\\). Приравниваем к нулю её логарифмическую производную.</p>\n<div>\\[\\frac5x-\\frac{1}{1-e^{-x}}=0.\\]</div>",
+            "en": "<p>At fixed \\(T\\), set \\(x=hc/(\\lambda k_BT)\\). Maximising the spectrum now amounts to maximising \\(x^5/(e^x-1)\\). Its logarithmic derivative vanishes at the peak.</p>\n<div>\\[\\frac5x-\\frac{1}{1-e^{-x}}=0.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f(x)=5(1-e^{-x})-x.\\]</div>",
+        "en": "<div>\\[f(x)=5(1-e^{-x})-x.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A4",
+      "max": 0.4,
+      "title": {
+        "ru": "Постоянная Вина",
+        "en": "Wien’s constant"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Ненулевой корень",
+            "en": "Nonzero root"
+          },
+          "body": {
+            "ru": "<p>Начнём с \\(x=5\\) и повторим замену \\(x\\mapsto5(1-e^{-x})\\). Уже после двух итераций \\(x\\) близок к \\(4{,}965\\).</p>",
+            "en": "<p>Starting at \\(x=5\\), iterate \\(x\\mapsto5(1-e^{-x})\\). After two iterations the value is close to \\(4.965\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Масштаб длины волны",
+            "en": "Wavelength scale"
+          },
+          "body": {
+            "ru": "<p>В отношении \\(hc/k_B\\) электронвольты сокращаются, остаются единицы длины, умноженные на температуру.</p>\n<div>\\[b=\\frac{hc}{k_Bx_m}\\simeq2{,}90\\times10^{-3}\\,\\mathrm{m\\,K}.\\]</div>",
+            "en": "<p>The energy units in \\(hc/k_B\\) cancel, leaving a length times a temperature.</p>\n<div>\\[b=\\frac{hc}{k_Bx_m}\\simeq2.90\\times10^{-3}\\,\\mathrm{m\\,K}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[x_m\\simeq4{,}97,\\qquad b\\simeq2{,}90\\times10^{-3}\\,\\mathrm{m\\,K}.\\]</div>",
+        "en": "<div>\\[x_m\\simeq4.97,\\qquad b\\simeq2.90\\times10^{-3}\\,\\mathrm{m\\,K}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A5",
+      "max": 0.2,
+      "title": {
+        "ru": "Максимумы двух спектров",
+        "en": "Positions of the two peaks"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.1,
+          "label": {
+            "ru": "Солнце",
+            "en": "Sun"
+          },
+          "body": {
+            "ru": "<p>Применим \\(\\lambda_{\\max}=b/T\\) к фотосфере.</p>\n<div>\\[\\lambda_S=b/T_S\\simeq0{,}502\\,\\mu\\mathrm m.\\]</div>",
+            "en": "<p>Apply \\(\\lambda_{\\max}=b/T\\) at the solar temperature.</p>\n<div>\\[\\lambda_S=b/T_S\\simeq0.502\\,\\mu\\mathrm m.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Земля",
+            "en": "Earth"
+          },
+          "body": {
+            "ru": "<p>Для Земли подставляем температуру из A2.</p>\n<div>\\[\\lambda_E=b/T_E\\simeq10{,}4\\,\\mu\\mathrm m.\\]</div>",
+            "en": "<p>For Earth use the temperature found in A2.</p>\n<div>\\[\\lambda_E=b/T_E\\simeq10.4\\,\\mu\\mathrm m.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\lambda_S\\simeq0{,}502\\,\\mu\\mathrm m,\\qquad\\lambda_E\\simeq10{,}4\\,\\mu\\mathrm m.\\]</div>",
+        "en": "<div>\\[\\lambda_S\\simeq0.502\\,\\mu\\mathrm m,\\qquad\\lambda_E\\simeq10.4\\,\\mu\\mathrm m.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-A6",
+      "max": 0.8,
+      "title": {
+        "ru": "Нормировка солнечного спектра",
+        "en": "Rescaling the solar spectrum"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Зависимость высоты пика",
+            "en": "Peak-height scaling"
+          },
+          "body": {
+            "ru": "<p>В максимуме показатель экспоненты равен одному и тому же \\(x_m\\) для обеих температур. Поэтому \\(u_{\\max}\\propto\\lambda_{\\max}^{-5}\\propto T^5\\). При переходе от поверхности Солнца к Земле добавляется геометрический фактор \\((R_S/d)^2\\).</p>\n<div>\\[\\gamma(R_S/d)^2T_S^5=T_E^5.\\]</div>",
+            "en": "<p>At both peaks the exponential has the same argument \\(x_m\\), so \\(u_{\\max}\\propto\\lambda_{\\max}^{-5}\\propto T^5\\). The solar spectrum also undergoes geometric dilution by \\((R_S/d)^2\\).</p>\n<div>\\[\\gamma(R_S/d)^2T_S^5=T_E^5.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Численный коэффициент",
+            "en": "Scale factor"
+          },
+          "body": {
+            "ru": "<p>Подставим найденную температуру Земли. Коэффициент безразмерен.</p>\n<div>\\[\\gamma\\simeq1{,}20\\times10^{-2}.\\]</div>",
+            "en": "<p>Insert the terrestrial temperature from A2. The ratio is dimensionless.</p>\n<div>\\[\\gamma\\simeq1.20\\times10^{-2}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\gamma=(d/R_S)^2(T_E/T_S)^5\\simeq1{,}20\\times10^{-2}.\\]</div>",
+        "en": "<div>\\[\\gamma=(d/R_S)^2(T_E/T_S)^5\\simeq1.20\\times10^{-2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B1",
+      "max": 1.0,
+      "title": {
+        "ru": "Непрозрачная для ИК атмосфера",
+        "en": "An infrared-opaque layer"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Баланс двух поверхностей",
+            "en": "Energy balance for both surfaces"
+          },
+          "body": {
+            "ru": "<p>Обозначим падающий в среднем на единицу площади поток через \\(F=(1-r_A)S_0/4\\). Атмосфера поглощает излучение поверхности и излучает в обоих направлениях. Только верхняя её сторона отдаёт энергию в космос.</p>\n<div>\\[\\sigma T_E^4=2\\sigma T_A^4,\\qquad \\sigma T_A^4=F.\\]</div>",
+            "en": "<p>Let \\(F=(1-r_A)S_0/4\\) be the mean absorbed solar flux. The atmosphere absorbs thermal radiation from the ground and emits through two faces. Only its outer face radiates into space.</p>\n<div>\\[\\sigma T_E^4=2\\sigma T_A^4,\\qquad \\sigma T_A^4=F.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Температура атмосферы",
+            "en": "Atmospheric temperature"
+          },
+          "body": {
+            "ru": "<p>Из баланса с космосом получаем температуру верхней стороны.</p>\n<div>\\[T_A=(F/\\sigma)^{1/4}\\simeq258\\,\\mathrm K.\\]</div>",
+            "en": "<p>The balance with space sets the shell temperature.</p>\n<div>\\[T_A=(F/\\sigma)^{1/4}\\simeq258\\,\\mathrm K.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.1,
+          "label": {
+            "ru": "Температура поверхности",
+            "en": "Surface temperature"
+          },
+          "body": {
+            "ru": "<p>Подстановка в баланс слоя даёт температуру поверхности.</p>\n<div>\\[T_E=2^{1/4}T_A\\simeq307\\,\\mathrm K.\\]</div>",
+            "en": "<p>Substitute into the shell balance for the surface temperature.</p>\n<div>\\[T_E=2^{1/4}T_A\\simeq307\\,\\mathrm K.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_A\\simeq258\\,\\mathrm K,\\qquad T_E\\simeq307\\,\\mathrm K.\\]</div>",
+        "en": "<div>\\[T_A\\simeq258\\,\\mathrm K,\\qquad T_E\\simeq307\\,\\mathrm K.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B2",
+      "max": 1.6,
+      "title": {
+        "ru": "Альбедо с многократным отражением",
+        "en": "Albedo with repeated reflections"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.4,
+          "label": {
+            "ru": "Сумма отражённых потоков",
+            "en": "Sum of reflected rays"
+          },
+          "body": {
+            "ru": "<p>Первое отражение от слоя даёт \\(r_A\\). Луч, однократно отражённый поверхностью, дважды проходит слой и добавляет \\((1-r_A)^2r_E\\). Каждый дополнительный цикл умножает вышедшую долю на \\(r_A r_E\\).</p>\n<div>\\[\\alpha=r_A+(1-r_A)^2r_E\\sum_{n=0}^\\infty(r_A r_E)^n.\\]</div>",
+            "en": "<p>The shell promptly reflects \\(r_A\\). A ray reflected once by the surface crosses the shell twice and contributes \\((1-r_A)^2r_E\\). Each extra round trip multiplies the emerging fraction by \\(r_A r_E\\).</p>\n<div>\\[\\alpha=r_A+(1-r_A)^2r_E\\sum_{n=0}^\\infty(r_A r_E)^n.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Численное альбедо",
+            "en": "Numerical albedo"
+          },
+          "body": {
+            "ru": "<p>Складываем геометрическую прогрессию и подставляем две отражательные способности.</p>\n<div>\\[\\alpha=r_A+\\frac{(1-r_A)^2r_E}{1-r_A r_E}\\simeq0{,}313.\\]</div>",
+            "en": "<p>Sum the geometric series and insert both reflectances.</p>\n<div>\\[\\alpha=r_A+\\frac{(1-r_A)^2r_E}{1-r_A r_E}\\simeq0.313.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\alpha=r_A+\\frac{(1-r_A)^2r_E}{1-r_A r_E}\\simeq0{,}313.\\]</div>",
+        "en": "<div>\\[\\alpha=r_A+\\frac{(1-r_A)^2r_E}{1-r_A r_E}\\simeq0.313.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B3",
+      "max": 1.0,
+      "title": {
+        "ru": "Поглощение инфракрасного излучения",
+        "en": "Infrared absorptivity"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Баланс с частичным пропусканием",
+            "en": "Balance with partial transmission"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(F=(1-\\alpha)S_0/4\\). Поглощённый атмосферой поток \\(\\varepsilon\\sigma T_E^4\\) уходит через две стороны, поэтому \\(T_A^4=T_E^4/2\\). Поверхность получает \\(F+\\varepsilon\\sigma T_A^4\\).</p>\n<div>\\[T_E=\\left[\\frac{(1-\\alpha)S_0}{2\\sigma(2-\\varepsilon)}\\right]^{1/4}.\\]</div>",
+            "en": "<p>Put \\(F=(1-\\alpha)S_0/4\\). The shell emits the absorbed flux \\(\\varepsilon\\sigma T_E^4\\) through two faces, hence \\(T_A^4=T_E^4/2\\). The ground receives \\(F+\\varepsilon\\sigma T_A^4\\).</p>\n<div>\\[T_E=\\left[\\frac{(1-\\alpha)S_0}{2\\sigma(2-\\varepsilon)}\\right]^{1/4}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Поглощательная способность",
+            "en": "Required absorptivity"
+          },
+          "body": {
+            "ru": "<p>Решим баланс относительно \\(\\varepsilon\\) при заданной температуре поверхности.</p>\n<div>\\[\\varepsilon=2-\\frac{(1-\\alpha)S_0}{2\\sigma T_E^4}\\simeq0{,}809.\\]</div>",
+            "en": "<p>Invert the temperature relation at the prescribed surface temperature.</p>\n<div>\\[\\varepsilon=2-\\frac{(1-\\alpha)S_0}{2\\sigma T_E^4}\\simeq0.809.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_E=\\left[\\frac{(1-\\alpha)S_0}{2\\sigma(2-\\varepsilon)}\\right]^{1/4},\\qquad\\varepsilon\\simeq0{,}809.\\]</div>",
+        "en": "<div>\\[T_E=\\left[\\frac{(1-\\alpha)S_0}{2\\sigma(2-\\varepsilon)}\\right]^{1/4},\\qquad\\varepsilon\\simeq0.809.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B4",
+      "max": 0.8,
+      "title": {
+        "ru": "Чувствительность температуры",
+        "en": "Surface temperature sensitivity"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Производная",
+            "en": "Temperature derivative"
+          },
+          "body": {
+            "ru": "<p>При постоянном солнечном потоке \\(T_E\\propto(2-\\varepsilon)^{-1/4}\\). Логарифмическая производная положительна.</p>\n<div>\\[\\frac{dT_E}{d\\varepsilon}=\\frac{T_E}{4(2-\\varepsilon)}.\\]</div>",
+            "en": "<p>At constant solar input \\(T_E\\propto(2-\\varepsilon)^{-1/4}\\). Its logarithmic derivative is positive.</p>\n<div>\\[\\frac{dT_E}{d\\varepsilon}=\\frac{T_E}{4(2-\\varepsilon)}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Относительное изменение",
+            "en": "Relative change"
+          },
+          "body": {
+            "ru": "<p>Подставим \\(\\delta\\varepsilon=0{,}01\\varepsilon\\) в линейное приращение.</p>\n<div>\\[\\delta T_E\\simeq0{,}489\\,\\mathrm K.\\]</div>",
+            "en": "<p>Use \\(\\delta\\varepsilon=0.01\\varepsilon\\) in the linear response.</p>\n<div>\\[\\delta T_E\\simeq0.489\\,\\mathrm K.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{dT_E}{d\\varepsilon}=\\frac{T_E}{4(2-\\varepsilon)},\\qquad\\delta T_E\\simeq+0{,}489\\,\\mathrm K.\\]</div>",
+        "en": "<div>\\[\\frac{dT_E}{d\\varepsilon}=\\frac{T_E}{4(2-\\varepsilon)},\\qquad\\delta T_E\\simeq+0.489\\,\\mathrm K.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B5",
+      "max": 1.6,
+      "title": {
+        "ru": "Теплоперенос без излучения",
+        "en": "Nonradiative heat transfer"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Уходящий поток",
+            "en": "Outgoing power"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(E=\\sigma T_E^4\\), \\(A=\\sigma T_A^4\\), \\(F=(1-\\alpha)S_0/4\\). В космос уходит часть излучения поверхности и излучение внешней стороны слоя. Поэтому \\(F=(1-\\varepsilon)E+\\varepsilon A\\).</p>\n<div>\\[\\varepsilon=\\frac{E-F}{E-A}.\\]</div>",
+            "en": "<p>Write \\(E=\\sigma T_E^4\\), \\(A=\\sigma T_A^4\\), \\(F=(1-\\alpha)S_0/4\\). Space receives the transmitted terrestrial flux and the radiation from the shell’s outer face, giving \\(F=(1-\\varepsilon)E+\\varepsilon A\\).</p>\n<div>\\[\\varepsilon=\\frac{E-F}{E-A}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Баланс слоя",
+            "en": "Shell balance"
+          },
+          "body": {
+            "ru": "<p>Излучение двух сторон \\(2\\varepsilon A\\) восполняется потоком \\(\\varepsilon E\\) и переносом \\(k(T_E-T_A)\\).</p>\n<div>\\[k=\\frac{\\varepsilon(2A-E)}{T_E-T_A}.\\]</div>",
+            "en": "<p>Emission \\(2\\varepsilon A\\) is supplied by absorbed radiation \\(\\varepsilon E\\) and nonradiative transport \\(k(T_E-T_A)\\).</p>\n<div>\\[k=\\frac{\\varepsilon(2A-E)}{T_E-T_A}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Численное поглощение",
+            "en": "Numerical absorptivity"
+          },
+          "body": {
+            "ru": "<p>Подставляем наблюдаемые температуры в потоковый баланс.</p>\n<div>\\[\\varepsilon\\simeq0{,}849.\\]</div>",
+            "en": "<p>Use the measured temperatures in the escaping-flux balance.</p>\n<div>\\[\\varepsilon\\simeq0.849.\\]</div>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.2,
+          "label": {
+            "ru": "Коэффициент переноса",
+            "en": "Numerical transfer coefficient"
+          },
+          "body": {
+            "ru": "<p>Знак \\(k\\) положителен, поскольку поверхность теплее слоя.</p>\n<div>\\[k\\simeq0{,}365\\,\\mathrm{W\\,m^{-2}K^{-1}}.\\]</div>",
+            "en": "<p>The positive sign corresponds to heat transport from the warmer surface.</p>\n<div>\\[k\\simeq0.365\\,\\mathrm{W\\,m^{-2}K^{-1}}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\varepsilon\\simeq0{,}849,\\qquad k\\simeq0{,}365\\,\\mathrm{W\\,m^{-2}K^{-1}}.\\]</div>",
+        "en": "<div>\\[\\varepsilon\\simeq0.849,\\qquad k\\simeq0.365\\,\\mathrm{W\\,m^{-2}K^{-1}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-B6",
+      "max": 1.0,
+      "title": {
+        "ru": "Отклик связанной системы",
+        "en": "Coupled temperature response"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Дифференцирование внешнего баланса",
+            "en": "Differentiate the escaping flux"
+          },
+          "body": {
+            "ru": "<p>Обозначим \\(D_E=4\\sigma T_E^3\\), \\(D_A=4\\sigma T_A^3\\), а штрихом — производную по \\(\\varepsilon\\). В равенстве \\(F=(1-\\varepsilon)E+\\varepsilon A\\) величина \\(F\\) постоянна.</p>\n<div>\\[(1-\\varepsilon)D_E T_E^\\prime+\\varepsilon D_A T_A^\\prime=E-A.\\]</div>",
+            "en": "<p>Let \\(D_E=4\\sigma T_E^3\\), \\(D_A=4\\sigma T_A^3\\) and use primes for differentiation with respect to \\(\\varepsilon\\). In \\(F=(1-\\varepsilon)E+\\varepsilon A\\) the incident flux \\(F\\) stays fixed.</p>\n<div>\\[(1-\\varepsilon)D_E T_E^\\prime+\\varepsilon D_A T_A^\\prime=E-A.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Дифференцирование баланса атмосферы",
+            "en": "Differentiate the shell balance"
+          },
+          "body": {
+            "ru": "<p>Во втором балансе \\(k(T_E-T_A)=\\varepsilon(2A-E)\\) меняются одновременно температуры и оптические свойства слоя.</p>\n<div>\\[(k+\\varepsilon D_E)T_E^\\prime-(k+2\\varepsilon D_A)T_A^\\prime=2A-E.\\]</div>",
+            "en": "<p>In \\(k(T_E-T_A)=\\varepsilon(2A-E)\\) the changing temperatures and changing absorptivity both contribute.</p>\n<div>\\[(k+\\varepsilon D_E)T_E^\\prime-(k+2\\varepsilon D_A)T_A^\\prime=2A-E.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Изменение температуры",
+            "en": "Surface warming"
+          },
+          "body": {
+            "ru": "<p>Решаем линейную систему при температурах из B5 и умножаем \\(T_E^\\prime\\) на \\(0{,}01\\varepsilon\\).</p>\n<div>\\[\\delta T_E\\simeq+0{,}525\\,\\mathrm K.\\]</div>",
+            "en": "<p>Solve the two linear equations using the B5 temperatures, then multiply \\(T_E^\\prime\\) by \\(0.01\\varepsilon\\).</p>\n<div>\\[\\delta T_E\\simeq+0.525\\,\\mathrm K.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\delta T_E\\simeq+0{,}525\\,\\mathrm K.\\]</div>",
+        "en": "<div>\\[\\delta T_E\\simeq+0.525\\,\\mathrm K.\\]</div>"
+      }
+    }
+  ]
+}

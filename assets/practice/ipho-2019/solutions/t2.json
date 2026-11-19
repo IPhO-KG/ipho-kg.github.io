@@ -1,0 +1,515 @@
+{
+  "id": "T2",
+  "max": 10,
+  "title": {
+    "ru": "Физика микроволновой печи",
+    "en": "The Physics of a Microwave Oven"
+  },
+  "sourcePdf": "/assets/practice/ipho-2019/IPhO_2019_S2_EN.pdf",
+  "parts": [
+    {
+      "id": "T2-A1",
+      "max": 0.4,
+      "title": {
+        "ru": "Частота резонатора",
+        "en": "Resonator frequency"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Поток магнитного поля и частота LC-контура",
+            "en": "Magnetic flux and LC resonance"
+          },
+          "body": {
+            "ru": "<p>Поток через круглую полость равен \\(LI\\). Ток \\(I\\) распределён по высоте \\(h\\), поэтому внутри полости \\(B=0{,}6\\mu_0I/h\\). Частота связана с индуктивностью и ёмкостью соотношением \\(2\\pi f=1/\\sqrt{LC}\\).</p>\n<div>\\[L=0{,}6\\mu_0\\pi R^2/h,\\qquad C=\\varepsilon_0lh/d.\\]</div>",
+            "en": "<p>The cavity encloses a flux \\(LI\\). Spreading current \\(I\\) over height \\(h\\) gives \\(B=0.6\\mu_0I/h\\). The LC angular frequency is \\(2\\pi f=1/\\sqrt{LC}\\).</p>\n<div>\\[L=0.6\\mu_0\\pi R^2/h,\\qquad C=\\varepsilon_0lh/d.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.1,
+          "label": {
+            "ru": "Численная оценка",
+            "en": "Numerical estimate"
+          },
+          "body": {
+            "ru": "<p>Высота сокращается. Из геометрии следуют \\(R=7\\,\\mathrm{mm}\\) и \\(l/d=6\\).</p>",
+            "en": "<p>The height cancels. The geometry gives \\(R=7\\,\\mathrm{mm}\\) and \\(l/d=6\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f_{\\mathrm{est}}=\\frac{c}{2\\pi R}\\sqrt{\\frac{d}{0{,}6\\pi l}}\\simeq2{,}0\\,\\mathrm{GHz}.\\]</div>",
+        "en": "<div>\\[f_{\\mathrm{est}}=\\frac{c}{2\\pi R}\\sqrt{\\frac{d}{0.6\\pi l}}\\simeq2.0\\,\\mathrm{GHz}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A2",
+      "max": 1.5,
+      "title": {
+        "ru": "Траектории в скрещённых полях",
+        "en": "Orbits in crossed fields"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Дрейф и круговое движение",
+            "en": "Drift and circular motion"
+          },
+          "body": {
+            "ru": "<p>В системе, движущейся со скоростью \\(\\mathbf u_D=\\mathbf E\\times\\mathbf B/B_0^2\\), электрическая сила компенсируется магнитной силой дрейфа. Остаётся вращение против часовой стрелки с частотой \\(\\Omega=eB_0/m\\) и радиусом \\(r=|u&#x27;_0|/\\Omega\\). Обозначим \\(D=E_0/B_0\\).</p>",
+            "en": "<p>The drift velocity \\(\\mathbf u_D=\\mathbf E\\times\\mathbf B/B_0^2\\) makes the constant electric and magnetic forces cancel. In that frame the electron circles counterclockwise with \\(\\Omega=eB_0/m\\) and radius \\(r=|u&#x27;_0|/\\Omega\\). Write \\(D=E_0/B_0\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Начальные скорости и радиусы",
+            "en": "Initial velocities and radii"
+          },
+          "body": {
+            "ru": "<p>Вычитаем скорость дрейфа \\(-D\\hat{\\mathbf x}\\) из каждой начальной скорости. Получаем \\(u&#x27;_0=4D\\) и \\(u&#x27;_0=-2D\\) соответственно. Радиусы равны \\(4D/\\Omega\\) и \\(2D/\\Omega\\).</p>",
+            "en": "<p>Subtracting the drift \\(-D\\hat{\\mathbf x}\\) gives signed initial velocities \\(u&#x27;_0=4D\\) and \\(u&#x27;_0=-2D\\). The radii are \\(4D/\\Omega\\) and \\(2D/\\Omega\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Траектория при начальном движении вправо",
+            "en": "Orbit initially moving to the right"
+          },
+          "body": {
+            "ru": "<p>Складываем равномерный дрейф и вращение. При \\(u&#x27;_0=4D\\) траектория лежит над начальной точкой, до \\(y=8D/\\Omega\\). За каждый оборот центр уходит влево на \\(2\\pi D/\\Omega\\).</p>\n<div>\\[x(t)=-Dt+\\frac{u&#x27;_0}{\\Omega}\\sin\\Omega t,\\qquad y(t)=\\frac{u&#x27;_0}{\\Omega}(1-\\cos\\Omega t).\\]</div>",
+            "en": "<p>Add uniform drift to circular motion. With \\(u&#x27;_0=4D\\) the curve reaches \\(y=8D/\\Omega\\) above its starting point. The centre moves left by \\(2\\pi D/\\Omega\\) each turn.</p>\n<div>\\[x(t)=-Dt+\\frac{u&#x27;_0}{\\Omega}\\sin\\Omega t,\\qquad y(t)=\\frac{u&#x27;_0}{\\Omega}(1-\\cos\\Omega t).\\]</div>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.4,
+          "label": {
+            "ru": "Траектория при начальном движении влево",
+            "en": "Orbit initially moving to the left"
+          },
+          "body": {
+            "ru": "<p>При \\(u&#x27;_0=-2D\\) петли лежат ниже начальной точки и доходят до \\(y=-4D/\\Omega\\). За указанное время обе траектории совершают по два оборота.</p>\n<figure><img src=\"/assets/practice/ipho-2019/figures/t2-s1.png\" loading=\"lazy\" alt=\"Траектории первого (зелёная) и второго (красная) электронов.\" style=\"max-width:min(100%,590px)\"><figcaption>Траектории первого (зелёная) и второго (красная) электронов.</figcaption></figure>",
+            "en": "<p>For \\(u&#x27;_0=-2D\\) the loops extend below the origin to \\(y=-4D/\\Omega\\). Each orbit completes two revolutions in the specified interval.</p>\n<figure><img src=\"/assets/practice/ipho-2019/figures/t2-s1.png\" loading=\"lazy\" alt=\"First trajectory in green and second trajectory in red.\" style=\"max-width:min(100%,590px)\"><figcaption>First trajectory in green and second trajectory in red.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\mathbf u_D=-\\frac{E_0}{B_0}\\hat{\\mathbf x}\\quad (1,2).\\]</div>\n<p>Для траекторий на рисунке \\(u&#x27;_0=4D\\) в первом случае и \\(u&#x27;_0=-2D\\) во втором, где \\(D=E_0/B_0\\).</p>\n<div>\\[x=-Dt+\\frac{u&#x27;_0}{\\Omega}\\sin\\Omega t,\\qquad y=\\frac{u&#x27;_0}{\\Omega}(1-\\cos\\Omega t).\\]</div>",
+        "en": "<div>\\[\\mathbf u_D=-\\frac{E_0}{B_0}\\hat{\\mathbf x}\\quad (1,2).\\]</div>\n<p>For the plotted orbits, \\(u&#x27;_0=4D\\) in the first case and \\(u&#x27;_0=-2D\\) in the second, with \\(D=E_0/B_0\\).</p>\n<div>\\[x=-Dt+\\frac{u&#x27;_0}{\\Omega}\\sin\\Omega t,\\qquad y=\\frac{u&#x27;_0}{\\Omega}(1-\\cos\\Omega t).\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A3",
+      "max": 0.4,
+      "title": {
+        "ru": "Масштаб движения электрона",
+        "en": "Electron orbit size"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Верхняя граница радиуса",
+            "en": "Bounding the radius"
+          },
+          "body": {
+            "ru": "<p>За один оборот скорость вращения и скорость дрейфа хотя бы раз сонаправлены. Поэтому \\(u&#x27;\\le v_{\\max}\\) и \\(r\\le mv_{\\max}/(eB_0)\\).</p>",
+            "en": "<p>Once per rotation the drift and orbital velocities point in the same direction. Hence \\(u&#x27;\\le v_{\\max}\\) and \\(r\\le mv_{\\max}/(eB_0)\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Предел по энергии",
+            "en": "Energy bound"
+          },
+          "body": {
+            "ru": "<p>Из \\(mv_{\\max}^2/2=K_{\\max}\\) получаем радиус, малый по сравнению с зазором.</p>",
+            "en": "<p>Use \\(mv_{\\max}^2/2=K_{\\max}\\). The resulting orbit is small compared with the gap.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[r\\lesssim\\frac{\\sqrt{2mK_{\\max}}}{eB_0}\\simeq0{,}32\\,\\mathrm{mm}.\\]</div>",
+        "en": "<div>\\[r\\lesssim\\frac{\\sqrt{2mK_{\\max}}}{eB_0}\\simeq0.32\\,\\mathrm{mm}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A4",
+      "max": 1.2,
+      "title": {
+        "ru": "Радиальный дрейф",
+        "en": "Radial drift"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Направления дрейфа",
+            "en": "Drift directions"
+          },
+          "body": {
+            "ru": "<p>Радиальный дрейф задаёт азимутальная составляющая поля. Поворачиваем её на прямой угол по часовой стрелке в соответствии с \\(\\mathbf E\\times\\mathbf B\\). Четыре верных ответа или полное обращение всех стрелок дают половину баллов.</p>",
+            "en": "<p>Only the tangential electric field contributes to radial drift. Rotate it clockwise by a right angle as required by \\(\\mathbf E\\times\\mathbf B\\). Four correct directions or all five reversed earn half credit.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Все пять направлений",
+            "en": "All five directions"
+          },
+          "body": {
+            "ru": "<p>В A и B азимутальная составляющая поля направлена по часовой стрелке. Дрейф идёт внутрь. В C, D и E направление поля противоположно, и дрейф идёт наружу.</p>\n<figure><img src=\"/assets/practice/ipho-2019/figures/t2-s2.png\" loading=\"lazy\" alt=\"Пунктир показывает направление дрейфа, созданного переменным полем.\" style=\"max-width:min(100%,405px)\"><figcaption>Пунктир показывает направление дрейфа, созданного переменным полем.</figcaption></figure>",
+            "en": "<p>The azimuthal component is clockwise at A and B, giving inward drift. At C, D and E it points the other way, giving outward drift.</p>\n<figure><img src=\"/assets/practice/ipho-2019/figures/t2-s2.png\" loading=\"lazy\" alt=\"Dashed arrows show drift due to the alternating field.\" style=\"max-width:min(100%,405px)\"><figcaption>Dashed arrows show drift due to the alternating field.</figcaption></figure>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>A, B — к катоду. C, D, E — к аноду.</p>",
+        "en": "<p>A and B move towards the cathode. C, D and E move towards the anode.</p>"
+      }
+    },
+    {
+      "id": "T2-A5",
+      "max": 1.2,
+      "title": {
+        "ru": "Фокусировка пучка",
+        "en": "Angular focusing"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Относительное движение",
+            "en": "Relative motion"
+          },
+          "body": {
+            "ru": "<p>Постоянное поле сообщает всем электронам одинаковую угловую скорость. Различие даёт радиальная проекция переменного поля. Направленная внутрь проекция ускоряет дрейф против часовой стрелки, направленная наружу замедляет его. Пять верных ответов или обращение всех шести знаков дают половину баллов.</p>",
+            "en": "<p>The static field gives all six electrons the same angular speed. Differences come from the radial alternating field. Its inward component advances counterclockwise drift, and an outward component retards it. Five correct entries or six reversed entries earn half credit.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Все шесть пар",
+            "en": "All six pairs"
+          },
+          "body": {
+            "ru": "<p>По направлению поля на рис. 3 электроны первой тройки сходятся к B, а электроны второй расходятся от E. Внутри каждой тройки все три пары ведут себя одинаково.</p>",
+            "en": "<p>In Fig. 3 the first group closes in on B, while the second group spreads out from E. The same trend applies to each of the three pairs within a group.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>AB, AC, BC — угол убывает. DE, DF, EF — угол растёт.</p>",
+        "en": "<p>AB, AC and BC close. DE, DF and EF separate.</p>"
+      }
+    },
+    {
+      "id": "T2-A6",
+      "max": 0.8,
+      "title": {
+        "ru": "Вращение спиц",
+        "en": "Rotating spokes"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Положение и направление вращения",
+            "en": "Positions and rotation direction"
+          },
+          "body": {
+            "ru": "<p>Из восьми промежутков фокусирует каждый второй. Получаем четыре спицы через \\(90^\\circ\\). Радиальное постоянное поле направлено к катоду, поэтому дрейф и вращение направлены против часовой стрелки.</p>\n<figure><img src=\"/assets/practice/ipho-2019/figures/t2-s3.png\" loading=\"lazy\" alt=\"Расположение четырёх спиц и направление их вращения.\" style=\"max-width:min(100%,340px)\"><figcaption>Расположение четырёх спиц и направление их вращения.</figcaption></figure>",
+            "en": "<p>Alternate gaps focus electrons, giving four spokes a quarter turn apart. The inward static field produces counterclockwise drift and rotation.</p>\n<figure><img src=\"/assets/practice/ipho-2019/figures/t2-s3.png\" loading=\"lazy\" alt=\"Four spokes and their sense of rotation.\" style=\"max-width:min(100%,340px)\"><figcaption>Four spokes and their sense of rotation.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Условие синхронизма",
+            "en": "Synchronism"
+          },
+          "body": {
+            "ru": "<p>За полпериода поле меняет знак и зона фокусировки занимает место соседнего резонатора. Спица поворачивается на \\(\\pi/4\\) за \\(1/(2f)\\).</p>",
+            "en": "<p>In half a field period the polarity reverses and the focusing region advances by one cavity. Each spoke travels through \\(\\pi/4\\) in \\(1/(2f)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Четыре спицы, расположенные через \\(90^\\circ\\), вращаются против часовой стрелки.</p>\n<div>\\[\\omega_s=\\frac{\\pi f}{2}\\simeq3{,}85\\cdot10^9\\,\\mathrm{rad/s}.\\]</div>",
+        "en": "<p>Four spokes spaced by \\(90^\\circ\\) rotate counterclockwise.</p>\n<div>\\[\\omega_s=\\frac{\\pi f}{2}\\simeq3.85\\cdot10^9\\,\\mathrm{rad/s}.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-A7",
+      "max": 1.1,
+      "title": {
+        "ru": "Рабочее напряжение",
+        "en": "Operating voltage"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Скорость через напряжение",
+            "en": "Drift from the voltage"
+          },
+          "body": {
+            "ru": "<p>При среднем поле \\(E=V_0/(b-a)\\) скорость дрейфа равна \\(u_D=V_0/[B_0(b-a)]\\).</p>",
+            "en": "<p>The mean field is \\(E=V_0/(b-a)\\), so \\(u_D=V_0/[B_0(b-a)]\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.8,
+          "label": {
+            "ru": "Согласование с вращением спицы",
+            "en": "Matching the rotating spoke"
+          },
+          "body": {
+            "ru": "<p>На среднем радиусе \\(r=(a+b)/2\\) требуется \\(u_D=\\omega_s r\\). Подставляем угловую скорость из A6.</p>",
+            "en": "<p>At the mean radius \\(r=(a+b)/2\\) the electron must travel at \\(u_D=\\omega_s r\\). Insert the angular speed from A6.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[V_0=\\frac{\\pi f B_0}{4}(b^2-a^2).\\]</div>",
+        "en": "<div>\\[V_0=\\frac{\\pi f B_0}{4}(b^2-a^2).\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B1",
+      "max": 0.5,
+      "title": {
+        "ru": "Мощность, передаваемая диполю",
+        "en": "Power transferred to a dipole"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Момент сил",
+            "en": "Torque"
+          },
+          "body": {
+            "ru": "<p>Силы на зарядах диполя образуют пару. Её плечо равно \\(d|\\sin\\theta|\\).</p>",
+            "en": "<p>The forces on the charges form a couple with arm \\(d|\\sin\\theta|\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Работа при повороте",
+            "en": "Rotational work"
+          },
+          "body": {
+            "ru": "<p>Момент, положительный в сторону роста \\(\\theta\\), равен \\(-p_0E\\sin\\theta\\). Умножение на угловую скорость даёт мощность.</p>",
+            "en": "<p>Taking increasing \\(\\theta\\) as positive, the signed torque is \\(-p_0E\\sin\\theta\\). Its product with angular velocity gives the power.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[|\\tau|=p_0|E\\sin\\theta|,\\qquad H_i=-p_0 E\\sin\\theta\\,\\dot\\theta=E\\dot p_x.\\]</div>",
+        "en": "<div>\\[|\\tau|=p_0|E\\sin\\theta|,\\qquad H_i=-p_0 E\\sin\\theta\\,\\dot\\theta=E\\dot p_x.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B2",
+      "max": 0.5,
+      "title": {
+        "ru": "Средняя мощность нагрева",
+        "en": "Mean heating power"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.2,
+          "label": {
+            "ru": "Работа поля над поляризацией",
+            "en": "Work on the polarization"
+          },
+          "body": {
+            "ru": "<p>Суммируем мощности диполей из B1 в единице объёма. Остаётся \\(H=E_x\\dot P_x\\), поскольку поле направлено вдоль \\(x\\).</p>",
+            "en": "<p>Add the dipole powers from B1 per unit volume. Only the component parallel to the field contributes, giving \\(H=E_x\\dot P_x\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.3,
+          "label": {
+            "ru": "Среднее за период",
+            "en": "Cycle average"
+          },
+          "body": {
+            "ru": "<p>Среднее \\(\\sin\\omega t\\cos(\\omega t-\\delta)\\) равно \\(\\tfrac12\\sin\\delta\\) — слагаемое удвоенной частоты исчезает.</p>",
+            "en": "<p>The mean of \\(\\sin\\omega t\\cos(\\omega t-\\delta)\\) is \\(\\tfrac12\\sin\\delta\\) because the double-frequency term averages to zero.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\langle H\\rangle=\\tfrac12\\beta\\varepsilon_0\\omega E_0^2\\sin\\delta.\\]</div>",
+        "en": "<div>\\[\\langle H\\rangle=\\tfrac12\\beta\\varepsilon_0\\omega E_0^2\\sin\\delta.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B3",
+      "max": 1.1,
+      "title": {
+        "ru": "Затухание потока энергии",
+        "en": "Attenuation of energy flux"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Поток и плотность энергии",
+            "en": "Flux and energy density"
+          },
+          "body": {
+            "ru": "<p>Средняя суммарная плотность равна \\(\\varepsilon_r\\varepsilon_0 E_0^2(z)/2\\). Энергия переносится со скоростью \\(c/n\\).</p>\n<div>\\[I(z)=\\tfrac12 c\\varepsilon_0\\sqrt{\\varepsilon_r}\\,E_0^2(z).\\]</div>",
+            "en": "<p>Total mean energy density is \\(\\varepsilon_r\\varepsilon_0 E_0^2(z)/2\\) and travels at \\(c/n\\).</p>\n<div>\\[I(z)=\\tfrac12 c\\varepsilon_0\\sqrt{\\varepsilon_r}\\,E_0^2(z).\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Баланс в тонком слое",
+            "en": "Balance in a thin layer"
+          },
+          "body": {
+            "ru": "<p>Слой толщины \\(\\mathrm dz\\) поглощает \\(\\langle H\\rangle\\,\\mathrm dz\\) на единицу площади в единицу времени. На столько же уменьшается поток.</p>",
+            "en": "<p>Per unit area the slab of thickness \\(\\mathrm dz\\) absorbs \\(\\langle H\\rangle\\,\\mathrm dz\\) per unit time. The flux falls by that amount.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Закон затухания",
+            "en": "Attenuation law"
+          },
+          "body": {
+            "ru": "<p>Подстановка B2 даёт \\(\\mathrm dI/\\mathrm dz=-\\alpha I\\) с постоянным \\(\\alpha=\\beta\\omega\\sin\\delta/(c\\sqrt{\\varepsilon_r})\\). Интегрируем от поверхности до глубины \\(z\\).</p>",
+            "en": "<p>Substitution from B2 gives \\(\\mathrm dI/\\mathrm dz=-\\alpha I\\) with constant \\(\\alpha=\\beta\\omega\\sin\\delta/(c\\sqrt{\\varepsilon_r})\\). Integrate from the surface to \\(z\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[I(z)=I(0)\\exp\\!\\left[-\\frac{\\beta\\omega\\sin\\delta}{c\\sqrt{\\varepsilon_r}}\\,z\\right].\\]</div>",
+        "en": "<div>\\[I(z)=I(0)\\exp\\!\\left[-\\frac{\\beta\\omega\\sin\\delta}{c\\sqrt{\\varepsilon_r}}\\,z\\right].\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B4",
+      "max": 0.6,
+      "title": {
+        "ru": "Коэффициент поляризации",
+        "en": "Polarization coefficient"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Затухание энергии и потока",
+            "en": "Attenuation of energy and flux"
+          },
+          "body": {
+            "ru": "<p>И плотность энергии, и поток пропорциональны квадрату амплитуды. Поэтому коэффициент затухания потока равен \\(nk_0\\tan\\delta\\).</p>",
+            "en": "<p>Both mean energy density and flux scale as the square of amplitude. The flux attenuation coefficient is therefore \\(nk_0\\tan\\delta\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Сравнение коэффициентов",
+            "en": "Matching the coefficients"
+          },
+          "body": {
+            "ru": "<p>Приравниваем его коэффициенту из B3. После сокращения одинаковых множителей остаётся \\(\\beta\\simeq n^2\\).</p>",
+            "en": "<p>Equate this to the coefficient in B3 and cancel common factors to get \\(\\beta\\simeq n^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\beta\\simeq\\varepsilon_r.\\]</div>",
+        "en": "<div>\\[\\beta\\simeq\\varepsilon_r.\\]</div>"
+      }
+    },
+    {
+      "id": "T2-B5",
+      "max": 0.7,
+      "title": {
+        "ru": "Глубина прогрева",
+        "en": "Heating depth"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Глубина половинной мощности",
+            "en": "Half-power depth"
+          },
+          "body": {
+            "ru": "<p>Плотность поглощённой мощности убывает с тем же показателем, что и поток. При половинной мощности \\(\\alpha z=\\ln 2\\). По графику при 20 °C читаем \\(\\varepsilon_r\\simeq78\\), \\(\\varepsilon_\\ell\\simeq10\\).</p>\n<div>\\[z_{1/2}=\\frac{c\\sqrt{\\varepsilon_r}\\ln 2}{\\omega\\varepsilon_\\ell}\\simeq12\\,\\mathrm{mm}.\\]</div>",
+            "en": "<p>Absorbed power density decays with the same exponent as flux. At half power \\(\\alpha z=\\ln 2\\). The 20 °C curves give \\(\\varepsilon_r\\simeq78\\) and \\(\\varepsilon_\\ell\\simeq10\\).</p>\n<div>\\[z_{1/2}=\\frac{c\\sqrt{\\varepsilon_r}\\ln 2}{\\omega\\varepsilon_\\ell}\\simeq12\\,\\mathrm{mm}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.2,
+          "label": {
+            "ru": "Температурная зависимость для воды",
+            "en": "Temperature trend for water"
+          },
+          "body": {
+            "ru": "<p>У чистой воды знаменатель \\(\\varepsilon_\\ell\\) с температурой падает быстрее, чем числитель \\(\\sqrt{\\varepsilon_r}\\). Половинная глубина растёт.</p>",
+            "en": "<p>In pure water the denominator \\(\\varepsilon_\\ell\\) falls faster than the numerator \\(\\sqrt{\\varepsilon_r}\\) as temperature rises. Penetration deepens.</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.2,
+          "label": {
+            "ru": "Температурная зависимость для раствора",
+            "en": "Temperature trend for salt solution"
+          },
+          "body": {
+            "ru": "<p>У раствора \\(\\varepsilon_\\ell\\) растёт, а \\(\\sqrt{\\varepsilon_r}\\) уменьшается. Поэтому отношение и глубина падают.</p>",
+            "en": "<p>For the solution \\(\\varepsilon_\\ell\\) rises while \\(\\sqrt{\\varepsilon_r}\\) falls. Their ratio and the penetration depth decrease.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>При 20 °C — около 12 мм. При нагревании глубина возрастает для чистой воды и уменьшается для солевого раствора.</p>",
+        "en": "<p>About 12 mm at 20 °C. Warming increases the depth in pure water and decreases it in salt solution.</p>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Вода и твёрдые тела",
+    "en": "Water and Objects"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2023/IPhO_2023_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-A1",
+      "max": 2.0,
+      "title": {
+        "ru": "Скорость отрыва",
+        "en": "Take-off speed"
+      },
+      "steps": [
+        {
+          "id": "a1-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Энергия исходной капли",
+            "en": "Initial energy of one drop"
+          },
+          "body": {
+            "ru": "<p>Сферическая поверхность имеет площадь \\(4\\pi a^2\\), поэтому энергия одной капли равна \\(4\\pi\\gamma a^2\\).</p>",
+            "en": "<p>Multiplying the surface area of one sphere by \\(\\gamma\\) gives its surface energy \\(4\\pi\\gamma a^2\\).</p>"
+          }
+        },
+        {
+          "id": "a1-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Уменьшение площади",
+            "en": "Loss of surface area"
+          },
+          "body": {
+            "ru": "<p>При удвоении объёма радиус возрастает до \\(2^{1/3}a\\). Разность поверхностных энергий равна</p><div>\\[\\Delta E=4\\pi\\gamma a^2(2-2^{2/3}).\\]</div>",
+            "en": "<p>Doubling the volume gives a final radius \\(2^{1/3}a\\). The initial pair therefore releases</p><div>\\[\\Delta E=4\\pi\\gamma a^2(2-2^{2/3}).\\]</div>"
+          }
+        },
+        {
+          "id": "a1-3",
+          "points": 0.4,
+          "label": {
+            "ru": "Энергия поступательного движения",
+            "en": "Translational kinetic energy"
+          },
+          "body": {
+            "ru": "<p>Масса слившейся капли \\(M=8\\pi\\rho a^3/3\\). По условию \\(Mv^2/2=k\\Delta E\\).</p>",
+            "en": "<p>The combined mass is \\(M=8\\pi\\rho a^3/3\\). Its kinetic energy is \\(Mv^2/2=k\\Delta E\\).</p>"
+          }
+        },
+        {
+          "id": "a1-4",
+          "points": 0.6,
+          "label": {
+            "ru": "Численная оценка",
+            "en": "Numerical evaluation"
+          },
+          "body": {
+            "ru": "<p>Подстановка \\(a=10^{-4}\\,\\mathrm m\\) даёт \\(v^2\\simeq 5.40\\times10^{-2}\\,\\mathrm{m^2/s^2}\\).</p>",
+            "en": "<p>With \\(a=10^{-4}\\,\\mathrm m\\) the squared speed is \\(5.40\\times10^{-2}\\,\\mathrm{m^2/s^2}\\); take its positive square root.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v=\\sqrt{\\frac{3k\\gamma}{\\rho a}(2-2^{2/3})}\\simeq0.23\\ \\mathrm{m\\,s^{-1}}.\\]</div>",
+        "en": "<div>\\[v=\\sqrt{\\frac{3k\\gamma}{\\rho a}(2-2^{2/3})}\\simeq0.23\\ \\mathrm{m\\,s^{-1}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B1",
+      "max": 0.6,
+      "title": {
+        "ru": "Давление в мениске",
+        "en": "Pressure in the meniscus"
+      },
+      "steps": [
+        {
+          "id": "b1-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Гидростатика",
+            "en": "Hydrostatic equilibrium"
+          },
+          "body": {
+            "ru": "<p>Равновесие слоя воды требует \\(dP/dz=-\\rho g\\). Отсчитывая высоту от невозмущённой поверхности, получаем отрицательное избыточное давление при \\(z&gt;0\\).</p>",
+            "en": "<p>Balancing the vertical weight and pressure forces in a thin fluid slice gives \\(dP/dz=-\\rho g\\). Its integral from the undisturbed surface is negative for positive \\(z\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[P(z)=P_0-\\rho gz.\\]</div>",
+        "en": "<div>\\[P(z)=P_0-\\rho gz.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B2",
+      "max": 0.8,
+      "title": {
+        "ru": "Сила давления",
+        "en": "Pressure force"
+      },
+      "steps": [
+        {
+          "id": "b2-1",
+          "points": 0.8,
+          "label": {
+            "ru": "Интеграл избыточного давления",
+            "en": "Integral of the gauge pressure"
+          },
+          "body": {
+            "ru": "<p>Слева вода давит вправо, справа — влево. Общие участки вертикальных граней дают равные противоположные силы. Остаётся</p><div>\\[f_x=\\int_{z_2}^{z_1}(-\\rho gz)\\,dz.\\]</div>",
+            "en": "<p>Opposite faces have opposite normals. Below their common level the horizontal contributions cancel, leaving the signed integral</p><div>\\[f_x=\\int_{z_2}^{z_1}(-\\rho gz)\\,dz.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f_x=\\frac{\\rho g}{2}(z_2^2-z_1^2).\\]</div>",
+        "en": "<div>\\[f_x=\\frac{\\rho g}{2}(z_2^2-z_1^2).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B3",
+      "max": 0.8,
+      "title": {
+        "ru": "Силы натяжения",
+        "en": "Tensions at the boundaries"
+      },
+      "steps": [
+        {
+          "id": "b3-1",
+          "points": 0.8,
+          "label": {
+            "ru": "Горизонтальные проекции",
+            "en": "Horizontal components"
+          },
+          "body": {
+            "ru": "<p>Силы натяжения на выделенный участок направлены наружу вдоль касательных. Их сумма равна \\(\\gamma(\\cos\\theta_2-\\cos\\theta_1)\\) на единицу длины и компенсирует силу давления.</p>",
+            "en": "<p>Tension pulls the slice outward at each end. The horizontal tension is \\(\\gamma(\\cos\\theta_2-\\cos\\theta_1)\\) per unit span; pressure supplies its opposite.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f_x=\\gamma(\\cos\\theta_1-\\cos\\theta_2).\\]</div>",
+        "en": "<div>\\[f_x=\\gamma(\\cos\\theta_1-\\cos\\theta_2).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B4",
+      "max": 0.8,
+      "title": {
+        "ru": "Капиллярная длина",
+        "en": "Capillary length"
+      },
+      "steps": [
+        {
+          "id": "b4-1",
+          "points": 0.4,
+          "label": {
+            "ru": "Инвариант вдоль поверхности",
+            "en": "An invariant along the interface"
+          },
+          "body": {
+            "ru": "<p>Приравнивая две формулы для \\(f_x\\), получаем, что величина \\(\\rho g z^2/2+\\gamma\\cos\\theta\\) одинакова в обеих точках. Высота входит квадратично.</p>",
+            "en": "<p>Equating the two force expressions shows that \\(\\rho gz^2/2+\\gamma\\cos\\theta\\) takes the same value at both boundaries. The height enters quadratically.</p>"
+          }
+        },
+        {
+          "id": "b4-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Масштаб длины",
+            "en": "Length scale"
+          },
+          "body": {
+            "ru": "<p>После деления на \\(\\gamma\\) коэффициент при \\(z^2/2\\) равен \\(\\rho g/\\gamma=\\ell^{-2}\\).</p>",
+            "en": "<p>Divide by \\(\\gamma\\) and identify the coefficient of \\(z^2/2\\) as \\(\\rho g/\\gamma=\\ell^{-2}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[a=2,\\qquad \\ell=\\sqrt{\\frac{\\gamma}{\\rho g}}.\\]</div>",
+        "en": "<div>\\[a=2,\\qquad \\ell=\\sqrt{\\frac{\\gamma}{\\rho g}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-B5",
+      "max": 1.5,
+      "title": {
+        "ru": "Форма поверхности",
+        "en": "Surface profile"
+      },
+      "steps": [
+        {
+          "id": "b5-1",
+          "points": 0.5,
+          "label": {
+            "ru": "Разложение по наклону",
+            "en": "Small-slope expansion"
+          },
+          "body": {
+            "ru": "<p>Из \\(z&#x27;=\\tan\\theta\\) следует \\(\\cos\\theta=(1+z&#x27;^2)^{-1/2}\\simeq1-z&#x27;^2/2\\). По B4 величина \\(z^2/\\ell^2-z&#x27;^2\\) постоянна.</p>",
+            "en": "<p>Since \\(z&#x27;=\\tan\\theta\\), one has \\(\\cos\\theta=(1+z&#x27;^2)^{-1/2}\\simeq1-z&#x27;^2/2\\). Substitution in B4 makes \\(z^2/\\ell^2-z&#x27;^2\\) constant.</p>"
+          }
+        },
+        {
+          "id": "b5-2",
+          "points": 0.5,
+          "label": {
+            "ru": "Дифференциальное уравнение",
+            "en": "Differential equation"
+          },
+          "body": {
+            "ru": "<p>Дифференцирование даёт \\(2zz&#x27;/\\ell^2-2z&#x27;z&#x27;&#x27;=0\\). На наклонном участке \\(z&#x27;&#x27;=z/\\ell^2\\); в точках с горизонтальной касательной соотношение продолжается по непрерывности.</p>",
+            "en": "<p>Differentiation gives \\(2zz&#x27;/\\ell^2-2z&#x27;z&#x27;&#x27;=0\\). Thus \\(z&#x27;&#x27;=z/\\ell^2\\) wherever the surface slopes, and by continuity at a horizontal tangent as well.</p>"
+          }
+        },
+        {
+          "id": "b5-3",
+          "points": 0.5,
+          "label": {
+            "ru": "Граничные условия",
+            "en": "Boundary conditions"
+          },
+          "body": {
+            "ru": "<p>Решение \\(Ae^{x/\\ell}+Be^{-x/\\ell}\\) должно затухать вдали от пластины, поэтому \\(A=0\\). У стенки \\(-B/\\ell=\\tan\\theta_0\\), что задаёт также знак подъёма воды.</p>",
+            "en": "<p>The growing term in \\(Ae^{x/\\ell}+Be^{-x/\\ell}\\) is excluded by the far boundary. At the wall \\(z&#x27;(0)=-B/\\ell=\\tan\\theta_0\\), fixing the amplitude and its sign.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[z(x)=-\\ell\\tan\\theta_0\\,e^{-x/\\ell}.\\]</div>",
+        "en": "<div>\\[z(x)=-\\ell\\tan\\theta_0\\,e^{-x/\\ell}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-C1",
+      "max": 1.0,
+      "title": {
+        "ru": "Горизонтальная сила на стержень",
+        "en": "Net force on one rod"
+      },
+      "steps": [
+        {
+          "id": "c1-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Давление на смоченную часть",
+            "en": "Pressure on the wetted surface"
+          },
+          "body": {
+            "ru": "<p>Горизонтальная проекция элементарной силы давления на криволинейной границе равна давлению, умноженному на вертикальную проекцию элемента. По B2 сумма по контуру даёт \\(\\rho g(z_b^2-z_a^2)/2\\).</p>",
+            "en": "<p>On a curved boundary the horizontal pressure force uses the vertical projection of the surface element. Integrating the gauge pressure around the wetted contour gives \\(\\rho g(z_b^2-z_a^2)/2\\), as in B2.</p>"
+          }
+        },
+        {
+          "id": "c1-2",
+          "points": 0.4,
+          "label": {
+            "ru": "Натяжение с двух сторон",
+            "en": "Tension on both sides"
+          },
+          "body": {
+            "ru": "<p>Внутренняя поверхность тянет B влево, наружная — вправо. Их горизонтальные проекции добавляют \\(\\gamma(\\cos\\theta_b-\\cos\\theta_a)\\) к силе давления.</p>",
+            "en": "<p>The inner meniscus pulls to the left and the outer meniscus to the right. Their projections add \\(\\gamma(\\cos\\theta_b-\\cos\\theta_a)\\) to the pressure force.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_x=\\tfrac12\\rho g(z_b^2-z_a^2)+\\gamma(\\cos\\theta_b-\\cos\\theta_a).\\]</div>",
+        "en": "<div>\\[F_x=\\tfrac12\\rho g(z_b^2-z_a^2)+\\gamma(\\cos\\theta_b-\\cos\\theta_a).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-C2",
+      "max": 1.5,
+      "title": {
+        "ru": "Сила притяжения",
+        "en": "Attraction between the rods"
+      },
+      "steps": [
+        {
+          "id": "c2-1",
+          "points": 0.6,
+          "label": {
+            "ru": "Поверхность между стержнями",
+            "en": "Inner free surface"
+          },
+          "body": {
+            "ru": "<p>Обозначим \\(H(z,\\theta)=\\rho g z^2/2+\\gamma\\cos\\theta\\). В силу симметрии средняя точка имеет нулевой наклон, откуда \\(H(z_a,\\theta_a)=\\rho g z_0^2/2+\\gamma\\).</p>",
+            "en": "<p>Write \\(H(z,\\theta)=\\rho gz^2/2+\\gamma\\cos\\theta\\). Symmetry gives zero slope at the midpoint, so \\(H(z_a,\\theta_a)=\\rho gz_0^2/2+\\gamma\\).</p>"
+          }
+        },
+        {
+          "id": "c2-2",
+          "points": 0.6,
+          "label": {
+            "ru": "Поверхность снаружи",
+            "en": "Outer free surface"
+          },
+          "body": {
+            "ru": "<p>У бесконечно удалённой точки \\(z=0\\) и \\(\\theta=0\\). На внешнем мениске \\(H(z_b,\\theta_b)=\\gamma\\).</p>",
+            "en": "<p>The far field has \\(z=0\\) and \\(\\theta=0\\). The outer meniscus therefore satisfies \\(H(z_b,\\theta_b)=\\gamma\\).</p>"
+          }
+        },
+        {
+          "id": "c2-3",
+          "points": 0.3,
+          "label": {
+            "ru": "Разность двух инвариантов",
+            "en": "Difference of the two invariants"
+          },
+          "body": {
+            "ru": "<p>Сила из C1 равна \\(H(z_b,\\theta_b)-H(z_a,\\theta_a)\\). Её знак отрицателен при любом ненулевом \\(z_0\\): правый стержень тянет к левому.</p>",
+            "en": "<p>C1 gives \\(F_x=H(z_b,\\theta_b)-H(z_a,\\theta_a)\\). The negative sign means the right rod is pulled toward the left rod for either sign of \\(z_0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[F_x=-\\tfrac12\\rho g z_0^2.\\]</div>",
+        "en": "<div>\\[F_x=-\\tfrac12\\rho g z_0^2.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-C3",
+      "max": 1.0,
+      "title": {
+        "ru": "Высота в середине зазора",
+        "en": "Height at the midpoint"
+      },
+      "steps": [
+        {
+          "id": "c3-1",
+          "points": 1.0,
+          "label": {
+            "ru": "Симметричное решение",
+            "en": "Even solution"
+          },
+          "body": {
+            "ru": "<p>Между стержнями справедливо \\(z&#x27;&#x27;=z/\\ell^2\\). Условие \\(z&#x27;(0)=0\\) исключает нечётную часть решения, поэтому \\(z(x)=z_0\\cosh(x/\\ell)\\). Остаётся подставить \\(z(x_a)=z_a\\).</p>",
+            "en": "<p>Between the rods \\(z&#x27;&#x27;=z/\\ell^2\\). Zero slope at the origin excludes the odd solution, giving \\(z(x)=z_0\\cosh(x/\\ell)\\). Evaluate this at the inner contact line.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[z_0=\\frac{z_a}{\\cosh(x_a/\\ell)}.\\]</div>",
+        "en": "<div>\\[z_0=\\frac{z_a}{\\cosh(x_a/\\ell)}.\\]</div>"
+      }
+    }
+  ]
+}

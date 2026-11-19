@@ -1,0 +1,287 @@
+{
+  "id": "T1",
+  "title": {
+    "ru": "Задача трёх тел и космический интерферометр LISA",
+    "en": "A three-body problem and LISA"
+  },
+  "sourcePdf": "/assets/practice/ipho-2011/IPhO_2011_S1_EN.pdf",
+  "max": 10,
+  "parts": [
+    {
+      "id": "T1-1.1",
+      "max": 1.5,
+      "label": "1.1",
+      "title": {
+        "ru": "Вращение двойной системы",
+        "en": "Rotation of the binary system"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1,
+          "label": {
+            "ru": "Взаимное притяжение и ускорения",
+            "en": "Mutual attraction and accelerations"
+          },
+          "body": {
+            "ru": "<p>Расстояние между телами равно \\(D=R+r\\). Каждое тело движется с одной и той же угловой скоростью, поэтому</p><div>\\[M\\omega_0^2R=\\frac{GMm}{D^2},\\qquad m\\omega_0^2r=\\frac{GMm}{D^2}.\\]</div><p>Эти равенства также дают условие центра масс \\(MR=mr\\).</p>",
+            "en": "<p>The separation is \\(D=R+r\\). Both bodies turn with the same angular velocity, so</p><div>\\[M\\omega_0^2R=\\frac{GMm}{D^2},\\qquad m\\omega_0^2r=\\frac{GMm}{D^2}.\\]</div><p>These equations also give the centre-of-mass relation \\(MR=mr\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Угловая скорость прямой",
+            "en": "Angular speed of the joining line"
+          },
+          "body": {
+            "ru": "<p>Разделим каждое уравнение на массу соответствующего тела и сложим ускорения. Получаем \\(\\omega_0^2(R+r)=G(M+m)/D^2\\).</p>",
+            "en": "<p>Divide each equation by the mass of the body it describes and add the accelerations. This gives \\(\\omega_0^2(R+r)=G(M+m)/D^2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega_0=\\sqrt{\\frac{G(M+m)}{(R+r)^3}}.\\]</div>",
+        "en": "<div>\\[\\omega_0=\\sqrt{\\frac{G(M+m)}{(R+r)^3}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.2",
+      "max": 3.5,
+      "label": "1.2",
+      "title": {
+        "ru": "Положение третьего тела",
+        "en": "Position of the third body"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1,
+          "label": {
+            "ru": "Условие кругового движения",
+            "en": "Condition for circular motion"
+          },
+          "body": {
+            "ru": "<p>Пусть \\(M\\) находится в \\((-R,0)\\), \\(m\\) в \\((r,0)\\), а третье тело в \\((x,y)\\), где \\(y\\ne0\\). Обозначим расстояния до \\(M\\) и \\(m\\) через \\(s_1\\) и \\(s_2\\). Проекция ускорения на вертикальную ось равна \\(-\\omega_0^2y\\). Сократив \\(y\\) в уравнении движения, получаем</p><div>\\[\\omega_0^2=\\frac{GM}{s_1^3}+\\frac{Gm}{s_2^3}.\\]</div>",
+            "en": "<p>Place \\(M\\) at \\((-R,0)\\), \\(m\\) at \\((r,0)\\), and the test body at \\((x,y)\\) with \\(y\\ne0\\). Let \\(s_1,s_2\\) be its distances to \\(M,m\\). Its vertical acceleration is \\(-\\omega_0^2y\\). Cancelling \\(y\\) from the vertical force equation gives</p><div>\\[\\omega_0^2=\\frac{GM}{s_1^3}+\\frac{Gm}{s_2^3}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Вторая проекция силы",
+            "en": "Second force component"
+          },
+          "body": {
+            "ru": "<p>По оси линии центров \\(\\omega_0^2x=GM(x+R)/s_1^3+Gm(x-r)/s_2^3\\). Вычитаем из этого уравнения предыдущее, умноженное на \\(x\\). Остаётся \\(MR/s_1^3=mr/s_2^3\\).</p>",
+            "en": "<p>Along the line of centres, \\(\\omega_0^2x=GM(x+R)/s_1^3+Gm(x-r)/s_2^3\\). Subtract \\(x\\) times the preceding equation. The remaining condition is \\(MR/s_1^3=mr/s_2^3\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 1,
+          "label": {
+            "ru": "1.2.1 и 1.2.2. Стороны треугольника",
+            "en": "1.2.1 and 1.2.2. Triangle sides"
+          },
+          "body": {
+            "ru": "<p>Поскольку \\(MR=mr\\), расстояния совпадают. Тогда \\(\\omega_0^2=G(M+m)/s_1^3\\). Сравнение с 1.1 даёт \\(s_1=s_2=D\\): три тела образуют равносторонний треугольник.</p><figure><img src=\"/assets/practice/ipho-2011/figures/s1-f1.png\" alt=\"Положение третьего тела и отрезки до центра масс.\" loading=\"lazy\" style=\"max-width:min(100%,340px)\"><figcaption>Положение третьего тела и отрезки до центра масс.</figcaption></figure>",
+            "en": "<p>Because \\(MR=mr\\), the two distances are equal. Thus \\(\\omega_0^2=G(M+m)/s_1^3\\). Comparing with 1.1 gives \\(s_1=s_2=D\\), so the bodies form an equilateral triangle.</p><figure><img src=\"/assets/practice/ipho-2011/figures/s1-f1.png\" alt=\"The third body, the two separations and the centre of mass.\" loading=\"lazy\" style=\"max-width:min(100%,340px)\"><figcaption>The third body, the two separations and the centre of mass.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.4,
+          "label": {
+            "ru": "1.2.3. Расстояние до центра масс",
+            "en": "1.2.3. Distance to the centre of mass"
+          },
+          "body": {
+            "ru": "<p>Координаты вершины равностороннего треугольника равны \\(x=(r-R)/2\\) и \\(y=\\pm\\sqrt3(R+r)/2\\). Радиус орбиты находится по \\(\\rho^2=x^2+y^2\\).</p>",
+            "en": "<p>The equilateral vertex has coordinates \\(x=(r-R)/2\\) and \\(y=\\pm\\sqrt3(R+r)/2\\). Its orbital radius follows from \\(\\rho^2=x^2+y^2\\).</p>"
+          }
+        },
+        {
+          "id": "s5",
+          "points": 0.6,
+          "label": {
+            "ru": "Три искомых расстояния",
+            "en": "The three separations"
+          },
+          "body": {
+            "ru": "<p>Сумма квадратов координат сокращается до \\(R^2+Rr+r^2\\). Выбор вершины выше или ниже линии центров не меняет ни одного расстояния.</p>",
+            "en": "<p>The sum of the squared coordinates simplifies to \\(R^2+Rr+r^2\\). Both vertices, above and below the line of centres, give the same three distances.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[s_1=R+r,\\qquad s_2=R+r,\\qquad \\rho=\\sqrt{R^2+Rr+r^2}.\\]</div>",
+        "en": "<div>\\[s_1=R+r,\\qquad s_2=R+r,\\qquad \\rho=\\sqrt{R^2+Rr+r^2}.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.3",
+      "max": 3.2,
+      "label": "1.3",
+      "title": {
+        "ru": "Малые радиальные колебания",
+        "en": "Small radial oscillations"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.8,
+          "label": {
+            "ru": "Энергия и момент импульса",
+            "en": "Energy and angular momentum"
+          },
+          "body": {
+            "ru": "<p>При равных массах обозначим расстояние от пробного тела до каждого большого тела через \\(s\\), а до центра через \\(\\rho\\). По условию сохраняется удельный момент импульса \\(h=\\rho_0^2\\omega_0\\). Радиальная и поперечная скорости дают удельную энергию</p><div>\\[\\mathcal E=\\frac{\\dot\\rho^2}{2}+\\frac{h^2}{2\\rho^2}-\\frac{2GM}{s}.\\]</div>",
+            "en": "<p>For equal masses let \\(s\\) denote the distance from the test body to either primary and \\(\\rho\\) its distance to the centre. The prescribed angular-momentum constraint gives constant specific angular momentum \\(h=\\rho_0^2\\omega_0\\). The radial and tangential speeds give the specific energy</p><div>\\[\\mathcal E=\\frac{\\dot\\rho^2}{2}+\\frac{h^2}{2\\rho^2}-\\frac{2GM}{s}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Радиальное уравнение",
+            "en": "Radial equation"
+          },
+          "body": {
+            "ru": "<p>Запишем эффективную потенциальную энергию на единицу массы как \\(V(\\rho)=h^2/(2\\rho^2)-2GM/s(\\rho)\\). При сохранении \\(\\mathcal E\\) радиальное ускорение равно \\(\\ddot\\rho=-V^{\\prime}(\\rho)\\).</p>",
+            "en": "<p>Write the effective potential per unit mass as \\(V(\\rho)=h^2/(2\\rho^2)-2GM/s(\\rho)\\). Conservation of \\(\\mathcal E\\) gives the radial equation \\(\\ddot\\rho=-V^{\\prime}(\\rho)\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.4,
+          "label": {
+            "ru": "Геометрия равностороннего треугольника",
+            "en": "Equilateral geometry"
+          },
+          "body": {
+            "ru": "<p>В рассматриваемом радиальном движении \\(s^2=R^2+\\rho^2\\). В исходной конфигурации \\(s_0=2R\\), \\(\\rho_0=\\sqrt3R\\), так что \\(\\rho_0^2/s_0^2=3/4\\).</p><figure><img src=\"/assets/practice/ipho-2011/figures/s1-f2.png\" alt=\"Радиальная координата при равных массах.\" loading=\"lazy\" style=\"max-width:min(100%,245px)\"><figcaption>Радиальная координата при равных массах.</figcaption></figure>",
+            "en": "<p>Along the radial displacement \\(s^2=R^2+\\rho^2\\). Initially \\(s_0=2R\\) and \\(\\rho_0=\\sqrt3R\\), giving \\(\\rho_0^2/s_0^2=3/4\\).</p><figure><img src=\"/assets/practice/ipho-2011/figures/s1-f2.png\" alt=\"Radial coordinate for equal masses.\" loading=\"lazy\" style=\"max-width:min(100%,245px)\"><figcaption>Radial coordinate for equal masses.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.4,
+          "label": {
+            "ru": "Возвращающее ускорение",
+            "en": "Restoring acceleration"
+          },
+          "body": {
+            "ru": "<p>Поскольку \\(ds/d\\rho=\\rho/s\\), правая часть радиального уравнения равна</p><div>\\[f(\\rho)=\\frac{h^2}{\\rho^3}-\\frac{2GM\\rho}{s^3}.\\]</div><p>На круговой орбите \\(f(\\rho_0)=0\\) и \\(2GM/s_0^3=\\omega_0^2\\).</p>",
+            "en": "<p>Since \\(ds/d\\rho=\\rho/s\\), the radial acceleration becomes</p><div>\\[f(\\rho)=\\frac{h^2}{\\rho^3}-\\frac{2GM\\rho}{s^3}.\\]</div><p>On the circular orbit \\(f(\\rho_0)=0\\) and \\(2GM/s_0^3=\\omega_0^2\\).</p>"
+          }
+        },
+        {
+          "id": "s5",
+          "points": 0.3,
+          "label": {
+            "ru": "Малое смещение",
+            "en": "Small displacement"
+          },
+          "body": {
+            "ru": "<p>Положим \\(\\rho=\\rho_0+\\xi\\). Постоянный член ускорения исчезает в равновесии, поэтому до первого порядка \\(\\ddot\\xi=f^{\\prime}(\\rho_0)\\xi\\).</p>",
+            "en": "<p>Put \\(\\rho=\\rho_0+\\xi\\). The constant acceleration vanishes at equilibrium, leaving \\(\\ddot\\xi=f^{\\prime}(\\rho_0)\\xi\\) to first order.</p>"
+          }
+        },
+        {
+          "id": "s6",
+          "points": 0.5,
+          "label": {
+            "ru": "Частота гармонического движения",
+            "en": "Frequency of harmonic motion"
+          },
+          "body": {
+            "ru": "<p>Дифференцирование \\(h^2/\\rho^3\\) даёт \\(-3\\omega_0^2\\) в равновесии. Гравитационное слагаемое добавляет \\(-\\omega_0^2(1-3\\rho_0^2/s_0^2)\\). Отсюда</p><div>\\[\\ddot\\xi=-\\omega_0^2\\left(4-\\frac{3\\rho_0^2}{s_0^2}\\right)\\xi.\\]</div>",
+            "en": "<p>Differentiating \\(h^2/\\rho^3\\) gives \\(-3\\omega_0^2\\) at equilibrium. Gravity adds \\(-\\omega_0^2(1-3\\rho_0^2/s_0^2)\\). Consequently</p><div>\\[\\ddot\\xi=-\\omega_0^2\\left(4-\\frac{3\\rho_0^2}{s_0^2}\\right)\\xi.\\]</div>"
+          }
+        },
+        {
+          "id": "s7",
+          "points": 0.3,
+          "label": {
+            "ru": "Коэффициент при смещении",
+            "en": "Coefficient of the displacement"
+          },
+          "body": {
+            "ru": "<p>Подставляем геометрическое отношение \\(3/4\\). Коэффициент в уравнении \\(\\ddot\\xi+\\omega^2\\xi=0\\) равен \\(7\\omega_0^2/4\\).</p>",
+            "en": "<p>Insert the geometric ratio \\(3/4\\). The coefficient in \\(\\ddot\\xi+\\omega^2\\xi=0\\) is then \\(7\\omega_0^2/4\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\omega=\\frac{\\sqrt7}{2}\\,\\omega_0.\\]</div>",
+        "en": "<div>\\[\\omega=\\frac{\\sqrt7}{2}\\,\\omega_0.\\]</div>"
+      }
+    },
+    {
+      "id": "T1-1.4",
+      "max": 1.8,
+      "label": "1.4",
+      "title": {
+        "ru": "Относительная скорость аппаратов LISA",
+        "en": "Relative speed of the LISA spacecraft"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Угловая скорость группы",
+            "en": "Angular speed of the formation"
+          },
+          "body": {
+            "ru": "<p>В плоскости треугольника группа совершает оборот за \\(T=365\\cdot24\\cdot3600\\,\\mathrm s\\). Её угловая скорость \\(\\Omega=2\\pi/T\\).</p>",
+            "en": "<p>In the plane of the triangle the formation makes one turn in \\(T=365\\cdot24\\cdot3600\\,\\mathrm s\\), so \\(\\Omega=2\\pi/T\\).</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Скорость относительно центра",
+            "en": "Speed about the centre"
+          },
+          "body": {
+            "ru": "<p>Вершина равностороннего треугольника со стороной \\(L\\) удалена от центра на \\(L/\\sqrt3\\). Следовательно, скорости трёх вершин относительно центра имеют одинаковый модуль \\(v=\\Omega L/\\sqrt3\\).</p>",
+            "en": "<p>Each vertex of an equilateral triangle of side \\(L\\) lies at radius \\(L/\\sqrt3\\). Hence all three speeds about the centre have magnitude \\(v=\\Omega L/\\sqrt3\\).</p>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.6,
+          "label": {
+            "ru": "Разность векторов скоростей",
+            "en": "Vector difference of velocities"
+          },
+          "body": {
+            "ru": "<p>Скорости двух аппаратов направлены по касательным под углом \\(120^\\circ\\). Длина их разности равна \\(2v\\sin60^\\circ=\\sqrt3v=\\Omega L\\). Общее движение центра вокруг Солнца сокращается.</p><figure><img src=\"/assets/practice/ipho-2011/figures/s1-f3.png\" alt=\"Скорости аппаратов и их попарные разности.\" loading=\"lazy\" style=\"max-width:min(100%,380px)\"><figcaption>Скорости аппаратов и их попарные разности.</figcaption></figure>",
+            "en": "<p>The tangential velocities of two spacecraft enclose \\(120^\\circ\\). Their difference has magnitude \\(2v\\sin60^\\circ=\\sqrt3v=\\Omega L\\). The common motion of the centre around the Sun cancels.</p><figure><img src=\"/assets/practice/ipho-2011/figures/s1-f3.png\" alt=\"The three velocities and their pairwise differences.\" loading=\"lazy\" style=\"max-width:min(100%,380px)\"><figcaption>The three velocities and their pairwise differences.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s4",
+          "points": 0.3,
+          "label": {
+            "ru": "Подстановка длины плеча",
+            "en": "Arm length in SI units"
+          },
+          "body": {
+            "ru": "<p>Длина стороны \\(5{,}0\\) млн км равна \\(5{,}0\\times10^9\\,\\mathrm m\\). Подставляем её в \\(2\\pi L/T\\).</p>",
+            "en": "<p>The arm length of \\(5.0\\) million km is \\(5.0\\times10^9\\,\\mathrm m\\). Insert this length into \\(2\\pi L/T\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[v_{\\rm rel}=\\frac{2\\pi L}{T}\\simeq996\\,\\mathrm{m/s}.\\]</div>",
+        "en": "<div>\\[v_{\\rm rel}=\\frac{2\\pi L}{T}\\simeq996\\,\\mathrm{m/s}.\\]</div>"
+      }
+    }
+  ]
+}

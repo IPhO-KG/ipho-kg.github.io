@@ -9,8 +9,8 @@
     if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
   } catch {}
 </script>
-<script src="/assets/js/i18n.js?v=20261119-izho"></script>
-<script src="/assets/js/i18n-fallback.js?v=20261119-izho"></script>
+<script src="/assets/js/i18n.js?v=20261120-practice"></script>
+<script src="/assets/js/i18n-fallback.js?v=20261120-practice"></script>
 <script src="/assets/js/npho-data.js?v=20261117-controls"></script>
 <script>
   window.MathJax = {
@@ -420,7 +420,7 @@ html[data-theme="dark"] nav::before{opacity:.078;filter:brightness(1.28) saturat
 .content-note:empty{display:none}
 @media(max-width:640px){.lang-select{padding:6px 22px 6px 7px;font-size:11px;background-position:right 7px center}.official-badge{border-radius:var(--r);font-size:11px;padding:6px 10px}}
 </style>
-<link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-controls"><script defer src="/assets/js/site-ui.js?v=20261117-controls"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-controls"><link rel="stylesheet" href="/assets/css/about-flow.css?v=20261119-izho"></head>
+<link rel="stylesheet" href="/assets/css/site-ui.css?v=20261117-controls"><script defer src="/assets/js/site-ui.js?v=20261117-controls"></script><link rel="preload" href="/assets/fonts/npho-ui-regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css?v=20261117-controls"><link rel="stylesheet" href="/assets/css/about-flow.css?v=20261120-teams"></head>
 <body>
 
 <nav>
@@ -717,15 +717,15 @@ const DEFAULT_SITE_CONTENT = {
       "name": "Международная научная физическая олимпиада",
       "text": "",
       "participants": "До 5 школьников",
-      "format": "Онлайн: теория и эксперимент на симуляторе",
-      "tasks": "3 теоретические, одна с компьютерным моделированием"
+      "format": "Онлайн: теория и эксперимент с моделированием",
+      "tasks": "3 теоретические и экспериментальная с моделированием"
     },
     {
       "code": "IZhO",
       "name": "Международная Жаутыковская олимпиада",
       "text": "",
       "participants": "2 школьника по физике в команде школы",
-      "format": "Теория — 4,5 часа, эксперимент — 3 часа",
+      "format": "Теория — 4 часа, эксперимент — 3 часа",
       "tasks": "3 теоретические задачи и эксперимент"
     }
   ],
@@ -842,17 +842,17 @@ const DEFAULT_SITE_CONTENT = {
   "teamRules": [
     {
       "code": "IPhO",
-      "count": "5 участников",
+      "count": "Первые 5",
       "text": "В команду входят участники, занявшие первые пять мест."
     },
     {
       "code": "APhO",
-      "count": "8 участников",
+      "count": "Первые 8",
       "text": "В команду входят участники, занявшие первые восемь мест."
     },
     {
-      "code": "EuPhO, BPO, ISPhO",
-      "count": "По решению организаторов",
+      "code": "EuPhO, BPO, ISPhO, IZhO",
+      "count": "Решает комитет",
       "text": "Команды формируются отдельно с учётом результатов отбора, регламентов и доступных квот."
     }
   ]

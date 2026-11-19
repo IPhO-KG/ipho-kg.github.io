@@ -1,0 +1,338 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Простая модель атомного ядра",
+    "en": "A simple model of the atomic nucleus"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2010/IPhO_2010_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-1a",
+      "label": "1(a)",
+      "max": 0.3,
+      "title": {
+        "ru": "Коэффициент упаковки",
+        "en": "Packing fraction"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Объём элементарной ячейки",
+            "en": "Volume of a unit cell"
+          },
+          "body": {
+            "ru": "<p>У ячейки восемь вершин, и каждый нуклон в вершине разделён между восемью ячейками. На ячейку приходится один нуклон. Касание вдоль ребра даёт длину ребра \\(2r_N\\), поэтому</p>",
+            "en": "<p>A cubic cell has eight corners, each shared by eight cells, so it contains one nucleon in total. Contact along an edge gives the edge length \\(2r_N\\), hence</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[f=\\frac{4\\pi r_N^3/3}{(2r_N)^3}=\\frac{\\pi}{6}\\simeq0{,}524 .\\]</div>",
+        "en": "<div>\\[f=\\frac{4\\pi r_N^3/3}{(2r_N)^3}=\\frac{\\pi}{6}\\simeq0.524 .\\]</div>"
+      }
+    },
+    {
+      "id": "T3-1b",
+      "label": "1(b)",
+      "max": 1.0,
+      "title": {
+        "ru": "Размер и плотность ядра",
+        "en": "Nuclear size and densities"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Масса и заряд на единицу объёма",
+            "en": "Mass and charge per unit volume"
+          },
+          "body": {
+            "ru": "<p>Число нуклонов в единице объёма равно \\(f/V_N\\). Каждый нуклон имеет среднюю массу \\(m_N\\), а средний заряд равен \\(e/2\\), поскольку заряжена лишь половина нуклонов.</p>\n<div>\\[\\rho_m=\\frac{fm_N}{V_N}\\simeq3{,}40\\times10^{17}\\,\\mathrm{kg/m^3},\\qquad \\rho_c=\\frac{fe}{2V_N}\\simeq1{,}63\\times10^{25}\\,\\mathrm{C/m^3}.\\]</div>",
+            "en": "<p>The nucleon number density is \\(f/V_N\\). Each contributes mean mass \\(m_N\\) and mean charge \\(e/2\\), since approximately half the nucleons carry charge.</p>\n<div>\\[\\rho_m=\\frac{fm_N}{V_N}\\simeq3.40\\times10^{17}\\,\\mathrm{kg/m^3},\\qquad \\rho_c=\\frac{fe}{2V_N}\\simeq1.63\\times10^{25}\\,\\mathrm{C/m^3}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Радиус из заполненного объёма",
+            "en": "Radius from occupied volume"
+          },
+          "body": {
+            "ru": "<p>Из \\(4\\pi R^3/3=AV_N/f\\) получаем закон роста радиуса. Постоянную длину \\(r_0=r_N/f^{1/3}\\) удобно использовать в следующих частях.</p>",
+            "en": "<p>Use \\(4\\pi R^3/3=AV_N/f\\) to find the radius scaling. The constant length \\(r_0=r_N/f^{1/3}\\) will also be useful below.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[R=r_N(A/f)^{1/3}=r_0A^{1/3},\\qquad r_0\\simeq1{,}06\\,\\mathrm{fm}.\\]</div>",
+        "en": "<div>\\[R=r_N(A/f)^{1/3}=r_0A^{1/3},\\qquad r_0\\simeq1.06\\,\\mathrm{fm}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-2",
+      "label": "2",
+      "max": 1.9,
+      "title": {
+        "ru": "Поправка на поверхность",
+        "en": "Surface correction"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 1.0,
+          "label": {
+            "ru": "Число нуклонов во внешнем слое",
+            "en": "Nucleons in the outer shell"
+          },
+          "body": {
+            "ru": "<p>Один слой имеет толщину в диаметр нуклона, \\(2r_N\\). Его объём равен разности объёмов сфер радиусов \\(R\\) и \\(R-2r_N\\). Умножим её на концентрацию \\(f/V_N\\). Если \\(x=(A/f)^{1/3}=R/r_N\\), получим</p>\n<div>\\[N_s=f\\bigl[x^3-(x-2)^3\\bigr]=6f^{1/3}A^{2/3}-12f^{2/3}A^{1/3}+8f.\\]</div>",
+            "en": "<p>A single layer is one nucleon diameter thick, \\(2r_N\\). Its volume is the difference between spheres of radii \\(R\\) and \\(R-2r_N\\). Multiply by the number density \\(f/V_N\\). With \\(x=(A/f)^{1/3}=R/r_N\\) this gives</p>\n<div>\\[N_s=f\\bigl[x^3-(x-2)^3\\bigr]=6f^{1/3}A^{2/3}-12f^{2/3}A^{1/3}+8f.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.9,
+          "label": {
+            "ru": "Сумма поверхностного и внутреннего вкладов",
+            "en": "Adding surface and interior contributions"
+          },
+          "body": {
+            "ru": "<p>Если бы все \\(A\\) нуклонов были внутренними, энергия равнялась бы \\(Aa_V\\). Для каждого из \\(N_s\\) поверхностных нуклонов вычитаем половину этого индивидуального вклада. Обозначим полученную энергию ядерного притяжения через \\(B_N\\).</p>",
+            "en": "<p>If all \\(A\\) nucleons were in the interior the energy would be \\(Aa_V\\). Subtract half of a bulk contribution for each of the \\(N_s\\) surface nucleons. Call the resulting nuclear-attraction term \\(B_N\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[B_N(A)=a_V\\bigl[A-3f^{1/3}A^{2/3}+6f^{2/3}A^{1/3}-4f\\bigr].\\]</div>",
+        "en": "<div>\\[B_N(A)=a_V\\bigl[A-3f^{1/3}A^{2/3}+6f^{2/3}A^{1/3}-4f\\bigr].\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3a",
+      "label": "3(a)",
+      "max": 0.4,
+      "title": {
+        "ru": "Энергия протонного заряда",
+        "en": "Energy of the proton charge distribution"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.4,
+          "label": {
+            "ru": "Исключение самодействия протонов",
+            "en": "Removing proton self-interaction"
+          },
+          "body": {
+            "ru": "<p>Подставляем \\(Q_0=Ze\\) в энергию заряженного шара. В \\(Z^2\\) каждый протон сосчитан также в паре с самим собой. После исключения этих \\(Z\\) членов остаётся \\(Z(Z-1)\\).</p>",
+            "en": "<p>Insert \\(Q_0=Ze\\) into the sphere formula. In \\(Z^2\\), each proton is counted paired with itself. Removing those \\(Z\\) terms leaves \\(Z(Z-1)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[U_c=\\frac{3e^2Z(Z-1)}{20\\pi\\varepsilon_0 R}.\\]</div>",
+        "en": "<div>\\[U_c=\\frac{3e^2Z(Z-1)}{20\\pi\\varepsilon_0 R}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3b",
+      "label": "3(b)",
+      "max": 0.3,
+      "title": {
+        "ru": "Полная энергия связи",
+        "en": "Total binding energy"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.3,
+          "label": {
+            "ru": "Знак кулоновской энергии",
+            "en": "Sign of the Coulomb term"
+          },
+          "body": {
+            "ru": "<p>Для разделения отталкивающихся протонов требуется меньше внешней работы. Поэтому кулоновская энергия вычитается из \\(B_N\\). Введём \\(a_c=3e^2/(20\\pi\\varepsilon_0 r_0)\\) и учтём \\(Z\\simeq A/2\\).</p>",
+            "en": "<p>Proton repulsion reduces the external work required to separate the nucleus, so its energy is subtracted from \\(B_N\\). Set \\(a_c=3e^2/(20\\pi\\varepsilon_0 r_0)\\) and use \\(Z\\simeq A/2\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E_b(A)=B_N(A)-a_c\\left(\\frac{A^{5/3}}4-\\frac{A^{2/3}}2\\right).\\]</div>",
+        "en": "<div>\\[E_b(A)=B_N(A)-a_c\\left(\\frac{A^{5/3}}4-\\frac{A^{2/3}}2\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-4a",
+      "label": "4(a)",
+      "max": 1.3,
+      "title": {
+        "ru": "Энергия осколков на заданном расстоянии",
+        "en": "Fragment kinetic energy at a given separation"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.7,
+          "label": {
+            "ru": "Энергия связи до и после деления",
+            "en": "Binding-energy difference"
+          },
+          "body": {
+            "ru": "<p>Связанные ядра имеют энергию \\(-E_b\\) относительно свободных нуклонов. В финале внутренняя энергия двух осколков равна \\(-2E_b(A/2)\\), а начальная энергия покоя относительно того же уровня равна \\(-E_b(A)\\). Разность \\(2E_b(A/2)-E_b(A)\\) распределяется между движением и взаимным отталкиванием осколков.</p>",
+            "en": "<p>Bound nuclei have energy \\(-E_b\\) relative to free nucleons. The fragments have total internal energy \\(-2E_b(A/2)\\), while the initial stationary nucleus has energy \\(-E_b(A)\\) on the same scale. The difference \\(2E_b(A/2)-E_b(A)\\) goes into motion and mutual repulsion.</p>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.6,
+          "label": {
+            "ru": "Взаимодействие двух осколков",
+            "en": "Interaction of the two fragments"
+          },
+          "body": {
+            "ru": "<p>Каждый осколок несёт заряд \\(Ae/4\\). Сферы не перекрываются, поэтому для их взаимной энергии применим закон Кулона с расстоянием между центрами \\(d\\). Вычитаем эту ещё не перешедшую в движение энергию.</p>",
+            "en": "<p>Each fragment has charge \\(Ae/4\\). The spheres do not overlap, so their mutual energy is the Coulomb energy at centre separation \\(d\\). Subtract this energy, which has yet to become kinetic.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E_k(d)=2E_b(A/2)-E_b(A)-\\frac{1}{4\\pi\\varepsilon_0 d}\\left(\\frac{Ae}{4}\\right)^2.\\]</div>",
+        "en": "<div>\\[E_k(d)=2E_b(A/2)-E_b(A)-\\frac{1}{4\\pi\\varepsilon_0 d}\\left(\\frac{Ae}{4}\\right)^2.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-4b",
+      "label": "4(b)",
+      "max": 1.0,
+      "title": {
+        "ru": "Условие энергетической допустимости",
+        "en": "Energetic threshold"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Энергии в момент касания",
+            "en": "Energies at contact"
+          },
+          "body": {
+            "ru": "<p>В выражение 4(a) подставим \\(d=2r_0(A/2)^{1/3}\\) и одну и ту же функцию \\(E_b\\) из 3(b) для всех трёх ядер. Объёмные члены сокращаются. При \\(f=\\pi/6\\), \\(e=1{,}60\\times10^{-19}\\,\\mathrm C\\) прямая подстановка даёт следующие значения в МэВ, в порядке возрастания \\(A\\).</p>\n<div>\\[\\begin{array}{crrrr} A&amp;100&amp;150&amp;200&amp;250\\\\ \\hline E_k/\\mathrm{MeV}&amp;-29{,}5&amp;-25{,}1&amp;-7{,}2&amp;23{,}0\\end{array}\\]</div>",
+            "en": "<p>In 4(a) put \\(d=2r_0(A/2)^{1/3}\\) and use the same function \\(E_b\\) from 3(b) for all three nuclei. The volume terms cancel. Direct substitution with \\(f=\\pi/6\\) and \\(e=1.60\\times10^{-19}\\,\\mathrm C\\) gives the following values in MeV, ordered by increasing \\(A\\).</p>\n<div>\\[\\begin{array}{crrrr} A&amp;100&amp;150&amp;200&amp;250\\\\ \\hline E_k/\\mathrm{MeV}&amp;-29.5&amp;-25.1&amp;-7.2&amp;23.0\\end{array}\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.4,
+          "label": {
+            "ru": "Порог и расхождение с ключом",
+            "en": "Threshold and the discrepancy in the published key"
+          },
+          "body": {
+            "ru": "<p>Переход от отрицательной энергии к положительной лежит между 200 и 250. Для тяжёлых ядер решение \\(E_k=0\\) с указанными константами даёт \\(A\\simeq214\\). В формуле (17) официального решения слагаемое от исключения самодействия протонов записано с противоположным знаком. В самом деле, вклад \\(+(a_c/2)A^{2/3}\\) в \\(E_b\\) при переходе к \\(2E_b(A/2)-E_b(A)\\) даёт \\(+(a_c/2)(2^{1/3}-1)A^{2/3}\\).</p>",
+            "en": "<p>The sign changes between 200 and 250. In the heavy-nucleus range the zero of \\(E_k\\) with the stated constants is near \\(A=214\\). Equation (17) in the published solution reverses the sign of the proton self-interaction correction. Indeed the \\(+(a_c/2)A^{2/3}\\) term of \\(E_b\\) contributes \\(+(a_c/2)(2^{1/3}-1)A^{2/3}\\) to \\(2E_b(A/2)-E_b(A)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>Из формулы 4(a) следует \\(A\\gtrsim214\\). В опубликованном ключе приведены \\(-33{,}95\\), \\(-30{,}93\\), \\(-14{,}10\\), \\(+15{,}06\\) МэВ и порог \\(A\\simeq227\\).</p>",
+        "en": "<p>The formula in 4(a) gives \\(A\\gtrsim214\\). The published key gives \\(-33.95\\), \\(-30.93\\), \\(-14.10\\), \\(+15.06\\) MeV and a threshold near \\(227\\).</p>"
+      }
+    },
+    {
+      "id": "T3-5a",
+      "label": "5(a)",
+      "max": 2.2,
+      "title": {
+        "ru": "Возбуждение никеля",
+        "en": "Nickel excitation"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.6,
+          "label": {
+            "ru": "Разность масс основных состояний",
+            "en": "Ground-state mass balance"
+          },
+          "body": {
+            "ru": "<p>Обозначим массы символами химических элементов. Энергетический выход реакции в основные состояния есть разность начальной и конечной сумм масс, умноженная на \\(c^2\\). Конечные массы больше на \\(0{,}00082\\,\\mathrm u\\).</p>\n<div>\\[Q=(m_{\\mathrm{O}}+m_{\\mathrm{Fe}}-m_{\\mathrm{C}}-m_{\\mathrm{Ni}})c^2\\simeq-0{,}76\\,\\mathrm{MeV}.\\]</div>",
+            "en": "<p>Write the masses with element subscripts. The ground-state reaction energy is the initial mass sum minus the final mass sum, multiplied by \\(c^2\\). The final sum exceeds the initial one by \\(0.00082\\,\\mathrm u\\).</p>\n<div>\\[Q=(m_{\\mathrm{O}}+m_{\\mathrm{Fe}}-m_{\\mathrm{C}}-m_{\\mathrm{Ni}})c^2\\simeq-0.76\\,\\mathrm{MeV}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.8,
+          "label": {
+            "ru": "Отдача остаточного ядра",
+            "en": "Kinematics of the residual nucleus"
+          },
+          "body": {
+            "ru": "<p>Углерод уносит скорость кислорода \\(v\\). Сохранение импульса оставляет никелю импульс \\((m_{\\mathrm{O}}-m_{\\mathrm{C}})v\\). При \\(K_{\\mathrm{O}}=m_{\\mathrm{O}}v^2/2\\) получаем две конечные кинетические энергии.</p>\n<div>\\[K_{\\mathrm{C}}=\\frac{m_{\\mathrm{C}}}{m_{\\mathrm{O}}}K_{\\mathrm{O}},\\qquad K_{\\mathrm{Ni}}=\\frac{(m_{\\mathrm{O}}-m_{\\mathrm{C}})^2}{m_{\\mathrm{O}}m_{\\mathrm{Ni}}}K_{\\mathrm{O}}.\\]</div>",
+            "en": "<p>Carbon emerges with the oxygen velocity \\(v\\). Momentum conservation leaves nickel with momentum \\((m_{\\mathrm{O}}-m_{\\mathrm{C}})v\\). Using \\(K_{\\mathrm{O}}=m_{\\mathrm{O}}v^2/2\\) gives the two final kinetic energies.</p>\n<div>\\[K_{\\mathrm{C}}=\\frac{m_{\\mathrm{C}}}{m_{\\mathrm{O}}}K_{\\mathrm{O}},\\qquad K_{\\mathrm{Ni}}=\\frac{(m_{\\mathrm{O}}-m_{\\mathrm{C}})^2}{m_{\\mathrm{O}}m_{\\mathrm{Ni}}}K_{\\mathrm{O}}.\\]</div>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.8,
+          "label": {
+            "ru": "Остаток энергии идёт на возбуждение",
+            "en": "Energy available for excitation"
+          },
+          "body": {
+            "ru": "<p>Начальные \\(50\\,\\mathrm{MeV}\\) вместе с \\(Q\\) распределяются между двумя кинетическими энергиями и возбуждением. Углерод уносит около \\(37{,}51\\,\\mathrm{MeV}\\), никель — около \\(0{,}86\\,\\mathrm{MeV}\\).</p>",
+            "en": "<p>The initial \\(50\\,\\mathrm{MeV}\\) plus \\(Q\\) supplies the two kinetic energies and the excitation. Carbon carries about \\(37.51\\,\\mathrm{MeV}\\) of kinetic energy and nickel about \\(0.86\\,\\mathrm{MeV}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E_*=K_{\\mathrm{O}}+Q-K_{\\mathrm{C}}-K_{\\mathrm{Ni}}\\simeq10{,}86\\,\\mathrm{MeV}.\\]</div>",
+        "en": "<div>\\[E_*=K_{\\mathrm{O}}+Q-K_{\\mathrm{C}}-K_{\\mathrm{Ni}}\\simeq10.86\\,\\mathrm{MeV}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-5b",
+      "label": "5(b)",
+      "max": 1.6,
+      "title": {
+        "ru": "Отдача и гамма-квант",
+        "en": "Recoil and gamma ray"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.9,
+          "label": {
+            "ru": "Отдача в системе покоя источника",
+            "en": "Recoil in the source frame"
+          },
+          "body": {
+            "ru": "<p>В начальной системе покоя никеля фотон и ядро после распада имеют противоположные импульсы модуля \\(p=E'_\\gamma/c\\). При малой энергии отдачи \\(K_r\\simeq p^2/(2m_{\\mathrm{Ni}})\\), а сумма \\(E'_\\gamma+K_r=E_*\\). В первом приближении в малом члене можно заменить \\(E'_\\gamma\\) на \\(E_*\\).</p>\n<div>\\[K_r\\simeq\\frac{E_*^2}{2m_{\\mathrm{Ni}}c^2}\\simeq1{,}1\\,\\mathrm{keV},\\qquad E'_\\gamma=E_*-K_r\\simeq10{,}86\\,\\mathrm{MeV}.\\]</div>",
+            "en": "<p>In the initial nickel rest frame the photon and recoiling nucleus have opposite momenta of magnitude \\(p=E'_\\gamma/c\\). The small nuclear recoil is \\(K_r\\simeq p^2/(2m_{\\mathrm{Ni}})\\), and \\(E'_\\gamma+K_r=E_*\\). To leading order, use \\(E_*\\) for \\(E'_\\gamma\\) in the small recoil term.</p>\n<div>\\[K_r\\simeq\\frac{E_*^2}{2m_{\\mathrm{Ni}}c^2}\\simeq1.1\\,\\mathrm{keV},\\qquad E'_\\gamma=E_*-K_r\\simeq10.86\\,\\mathrm{MeV}.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.7,
+          "label": {
+            "ru": "Продольный эффект Доплера",
+            "en": "Forward Doppler shift"
+          },
+          "body": {
+            "ru": "<p>Из сохранения импульса в 5(a) скорость источника \\(v_{\\mathrm{Ni}}=(m_{\\mathrm{O}}-m_{\\mathrm{C}})v/m_{\\mathrm{Ni}}\\), откуда \\(\\beta=v_{\\mathrm{Ni}}/c\\simeq0{,}00565\\). Для излучения вперёд продольный эффект Доплера повышает энергию.</p>",
+            "en": "<p>The momentum balance in 5(a) gives the source speed \\(v_{\\mathrm{Ni}}=(m_{\\mathrm{O}}-m_{\\mathrm{C}})v/m_{\\mathrm{Ni}}\\), so \\(\\beta=v_{\\mathrm{Ni}}/c\\simeq0.00565\\). The forward Doppler shift raises the photon energy.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[E_{\\gamma,\\mathrm{lab}}=E'_\\gamma\\sqrt{\\frac{1+\\beta}{1-\\beta}}\\simeq10{,}92\\,\\mathrm{MeV}.\\]</div>",
+        "en": "<div>\\[E_{\\gamma,\\mathrm{lab}}=E'_\\gamma\\sqrt{\\frac{1+\\beta}{1-\\beta}}\\simeq10.92\\,\\mathrm{MeV}.\\]</div>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,491 @@
+{
+  "id": "T3",
+  "title": {
+    "ru": "Температура, устойчивость атмосферы и загрязнение воздуха",
+    "en": "Air temperature, atmospheric stability and pollution"
+  },
+  "max": 10,
+  "sourcePdf": "/assets/practice/ipho-2008/IPhO_2008_S3_EN.pdf",
+  "parts": [
+    {
+      "id": "T3-1.1",
+      "label": "1.1",
+      "max": 0.5,
+      "title": {
+        "ru": "Изотермическая атмосфера",
+        "en": "Isothermal atmosphere"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Изотермическая атмосфера",
+            "en": "Isothermal atmosphere"
+          },
+          "body": {
+            "ru": "<p>Из равновесия тонкого горизонтального слоя \\(dp=-\\rho g\\,dz\\). По уравнению идеального газа \\(\\rho=\\mu p/(RT_0)\\). Интегрируем \\(dp/p=-\\mu g\\,dz/(RT_0)\\) от земли до высоты \\(z\\).</p>",
+            "en": "<p>Vertical force balance on a thin layer gives \\(dp=-\\rho g\\,dz\\). The ideal gas law gives \\(\\rho=\\mu p/(RT_0)\\). Integrate \\(dp/p=-\\mu g\\,dz/(RT_0)\\) from the ground to height \\(z\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p(z)=p_0\\exp\\left(-\\frac{\\mu gz}{RT_0}\\right).\\]</div>",
+        "en": "<div>\\[p(z)=p_0\\exp\\left(-\\frac{\\mu gz}{RT_0}\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-1.2.1",
+      "label": "1.2.1",
+      "max": 0.5,
+      "title": {
+        "ru": "Давление при линейном профиле",
+        "en": "Pressure in a linear temperature profile"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Давление при линейном профиле",
+            "en": "Pressure in a linear temperature profile"
+          },
+          "body": {
+            "ru": "<p>В уравнении гидростатики теперь \\(dp/p=-\\mu g\\,dz/[R(T_0-\\Lambda z)]\\). Интеграл даёт \\(\\ln(p/p_0)=[\\mu g/(R\\Lambda)]\\ln[(T_0-\\Lambda z)/T_0]\\). Температуры в отношениях выражены в кельвинах.</p>",
+            "en": "<p>Hydrostatic equilibrium now gives \\(dp/p=-\\mu g\\,dz/[R(T_0-\\Lambda z)]\\). Integration yields \\(\\ln(p/p_0)=[\\mu g/(R\\Lambda)]\\ln[(T_0-\\Lambda z)/T_0]\\). All temperature ratios use kelvins.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[p(z)=p_0\\left(1-\\frac{\\Lambda z}{T_0}\\right)^{\\mu g/(R\\Lambda)}.\\]</div>",
+        "en": "<div>\\[p(z)=p_0\\left(1-\\frac{\\Lambda z}{T_0}\\right)^{\\mu g/(R\\Lambda)}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-1.2.2",
+      "label": "1.2.2",
+      "max": 0.5,
+      "title": {
+        "ru": "Рост плотности с высотой",
+        "en": "Density increasing with height"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Рост плотности с высотой",
+            "en": "Density increasing with height"
+          },
+          "body": {
+            "ru": "<p>Из \\(\\rho=\\mu p/(RT)\\) имеем \\(d\\ln\\rho/dz=d\\ln p/dz-d\\ln T/dz\\). Подстановка гидростатического градиента и \\(dT/dz=-\\Lambda\\) даёт \\((\\Lambda-\\mu g/R)/T\\). Знак градиента плотности задаёт числитель.</p>",
+            "en": "<p>From \\(\\rho=\\mu p/(RT)\\), take \\(d\\ln\\rho/dz=d\\ln p/dz-d\\ln T/dz\\). The hydrostatic pressure gradient and \\(dT/dz=-\\Lambda\\) give \\((\\Lambda-\\mu g/R)/T\\). Its numerator sets the sign of the density gradient.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Lambda&gt;\\frac{\\mu g}{R}\\simeq0{,}034\\,\\mathrm{K\\,m^{-1}}.\\]</div>",
+        "en": "<div>\\[\\Lambda&gt;\\frac{\\mu g}{R}\\simeq0.034\\,\\mathrm{K\\,m^{-1}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-2.1",
+      "label": "2.1",
+      "max": 1.0,
+      "title": {
+        "ru": "Темп охлаждения частицы",
+        "en": "Cooling rate of the parcel"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Темп охлаждения частицы",
+            "en": "Cooling rate of the parcel"
+          },
+          "body": {
+            "ru": "<p>Исключив объём из уравнения состояния и уравнения адиабаты, получаем \\(T_p\\propto p^{(\\gamma-1)/\\gamma}\\). Поэтому \\(d\\ln T_p=(\\gamma-1)d\\ln p/\\gamma\\). Пространственное изменение давления задаётся окружающим воздухом, для которого \\(d\\ln p/dz=-\\mu g/(RT)\\). Используем \\((\\gamma-1)/(\\gamma R)=1/c_p\\).</p>",
+            "en": "<p>Eliminate volume between the gas law and the adiabatic law to obtain \\(T_p\\propto p^{(\\gamma-1)/\\gamma}\\). Hence \\(d\\ln T_p=(\\gamma-1)d\\ln p/\\gamma\\). The ambient air sets the spatial pressure gradient \\(d\\ln p/dz=-\\mu g/(RT)\\). Use \\((\\gamma-1)/(\\gamma R)=1/c_p\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[G(T,T_p)=\\frac{\\mu g}{c_p}\\frac{T_p}{T}.\\]</div>",
+        "en": "<div>\\[G(T,T_p)=\\frac{\\mu g}{c_p}\\frac{T_p}{T}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-2.2.1",
+      "label": "2.2.1",
+      "max": 0.5,
+      "title": {
+        "ru": "Сухоадиабатический градиент",
+        "en": "Dry adiabatic lapse rate"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Сухоадиабатический градиент",
+            "en": "Dry adiabatic lapse rate"
+          },
+          "body": {
+            "ru": "<p>В общем выражении для \\(G\\) отношение температур равно единице. Остаётся постоянная, определяемая тяжестью и молярной теплоёмкостью воздуха.</p>",
+            "en": "<p>In the expression for \\(G\\) the temperature ratio is unity. The remaining constant depends on gravity and the molar heat capacity of air.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Gamma=\\frac{\\mu g}{c_p}=\\frac{\\gamma-1}{\\gamma}\\frac{\\mu g}{R}.\\]</div>",
+        "en": "<div>\\[\\Gamma=\\frac{\\mu g}{c_p}=\\frac{\\gamma-1}{\\gamma}\\frac{\\mu g}{R}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-2.2.2",
+      "label": "2.2.2",
+      "max": 0.25,
+      "title": {
+        "ru": "Численное значение градиента",
+        "en": "Numerical lapse rate"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.25,
+          "label": {
+            "ru": "Численное значение градиента",
+            "en": "Numerical lapse rate"
+          },
+          "body": {
+            "ru": "<p>Переводим молярную массу в кг/моль и подставляем \\(c_p=7R/2\\).</p>\n<div>\\[\\Gamma=\\frac{0{,}029\\times9{,}81}{3{,}5\\times8{,}31}\\,\\mathrm{K\\,m^{-1}}.\\]</div>",
+            "en": "<p>Convert the molar mass to kg/mol and insert \\(c_p=7R/2\\).</p>\n<div>\\[\\Gamma=\\frac{0.029\\times9.81}{3.5\\times8.31}\\,\\mathrm{K\\,m^{-1}}.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\Gamma\\simeq0{,}00978\\,\\mathrm{K\\,m^{-1}}\\simeq9{,}8\\,\\mathrm{K\\,km^{-1}}.\\]</div>",
+        "en": "<div>\\[\\Gamma\\simeq0.00978\\,\\mathrm{K\\,m^{-1}}\\simeq9.8\\,\\mathrm{K\\,km^{-1}}.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-2.2.3",
+      "label": "2.2.3",
+      "max": 0.25,
+      "title": {
+        "ru": "Адиабатический профиль",
+        "en": "Adiabatic profile"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.25,
+          "label": {
+            "ru": "Адиабатический профиль",
+            "en": "Adiabatic profile"
+          },
+          "body": {
+            "ru": "<p>Температуры частицы и среды совпадают на всём пути, поэтому \\(dT/dz=-\\Gamma\\). Интегрируем с начальным значением \\(T_0\\).</p>",
+            "en": "<p>The parcel and the environment have the same temperature throughout the path, so \\(dT/dz=-\\Gamma\\). Integrate from the ground value \\(T_0\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T(z)=T_0-\\Gamma z.\\]</div>",
+        "en": "<div>\\[T(z)=T_0-\\Gamma z.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-2.3",
+      "label": "2.3",
+      "max": 1.0,
+      "title": {
+        "ru": "Температура частицы",
+        "en": "Parcel temperature"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Температура частицы",
+            "en": "Parcel temperature"
+          },
+          "body": {
+            "ru": "<p>Разделяя переменные в уравнении пункта 2.1, получаем \\(dT_p/T_p=-\\Gamma\\,dz/(T_0-\\Lambda z)\\). Для \\(\\Lambda\\ne0\\) интеграл пропорционален логарифму \\(T(z)/T_0\\). При \\(\\Lambda=0\\) знаменатель постоянен.</p>",
+            "en": "<p>Separate variables in the parcel equation to obtain \\(dT_p/T_p=-\\Gamma\\,dz/(T_0-\\Lambda z)\\). For \\(\\Lambda\\ne0\\) the integral is proportional to the logarithm of \\(T(z)/T_0\\). At \\(\\Lambda=0\\) the denominator is constant.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_p(z)=\\begin{cases}T_{p0}(1-\\Lambda z/T_0)^{\\Gamma/\\Lambda},&amp;\\Lambda\\ne0,\\\\[4pt] T_{p0}\\exp(-\\Gamma z/T_0),&amp;\\Lambda=0.\\end{cases}\\]</div>",
+        "en": "<div>\\[T_p(z)=\\begin{cases}T_{p0}(1-\\Lambda z/T_0)^{\\Gamma/\\Lambda},&amp;\\Lambda\\ne0,\\\\[4pt] T_{p0}\\exp(-\\Gamma z/T_0),&amp;\\Lambda=0.\\end{cases}\\]</div>"
+      }
+    },
+    {
+      "id": "T3-2.4",
+      "label": "2.4",
+      "max": 0.25,
+      "title": {
+        "ru": "Небольшое изменение высоты",
+        "en": "Small change in altitude"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.25,
+          "label": {
+            "ru": "Небольшое изменение высоты",
+            "en": "Small change in altitude"
+          },
+          "body": {
+            "ru": "<p>В разложении по \\(z\\) первый член после постоянного равен \\(-T_{p0}\\Gamma z/T_0\\). В рамках той же точности отношение начальных температур принимаем за единицу.</p>",
+            "en": "<p>In the expansion about the ground the linear term is \\(-T_{p0}\\Gamma z/T_0\\). To the stated accuracy the ratio of the two initial temperatures is unity.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_p(z)\\simeq T_{p0}-\\Gamma z.\\]</div>",
+        "en": "<div>\\[T_p(z)\\simeq T_{p0}-\\Gamma z.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-3.1",
+      "label": "3.1",
+      "max": 1.25,
+      "title": {
+        "ru": "Три вида равновесия",
+        "en": "Three equilibrium regimes"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.5,
+          "label": {
+            "ru": "Устойчивое равновесие",
+            "en": "Stable equilibrium"
+          },
+          "body": {
+            "ru": "<p>После смещения на \\(\\delta z\\) температура частицы относительно среды меняется на \\((\\Lambda-\\Gamma)\\delta z\\). Если \\(\\Lambda&lt;\\Gamma\\), поднятая частица холоднее и плотнее среды, а опущенная — теплее и легче. В обоих случаях сила направлена к \\(z_0\\).</p>\n<figure><img src=\"/assets/practice/ipho-2008/q3/sfig2.png\" alt=\"Возвращающая сила при устойчивом равновесии.\" style=\"width:min(100%,410px);height:auto\" loading=\"lazy\"><figcaption>Возвращающая сила при устойчивом равновесии.</figcaption></figure>",
+            "en": "<p>After a displacement \\(\\delta z\\), the parcel-to-environment temperature difference is \\((\\Lambda-\\Gamma)\\delta z\\). If \\(\\Lambda&lt;\\Gamma\\), a raised parcel is colder and denser, while a lowered parcel is warmer and lighter. The force points back towards \\(z_0\\).</p>\n<figure><img src=\"/assets/practice/ipho-2008/q3/sfig2.png\" alt=\"Restoring force in stable equilibrium.\" style=\"width:min(100%,410px);height:auto\" loading=\"lazy\"><figcaption>Restoring force in stable equilibrium.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Неустойчивое равновесие",
+            "en": "Unstable equilibrium"
+          },
+          "body": {
+            "ru": "<p>При \\(\\Lambda&gt;\\Gamma\\) поднятая частица теплее среды и продолжает подниматься. У опущенной частицы температура ниже окружающей, поэтому она продолжает опускаться.</p>\n<figure><img src=\"/assets/practice/ipho-2008/q3/sfig1.png\" alt=\"Сила при неустойчивом равновесии.\" style=\"width:min(100%,410px);height:auto\" loading=\"lazy\"><figcaption>Сила при неустойчивом равновесии.</figcaption></figure>",
+            "en": "<p>If \\(\\Lambda&gt;\\Gamma\\), a lifted parcel is warmer than its surroundings and continues to rise. A lowered parcel is colder and continues to sink.</p>\n<figure><img src=\"/assets/practice/ipho-2008/q3/sfig1.png\" alt=\"Force in unstable equilibrium.\" style=\"width:min(100%,410px);height:auto\" loading=\"lazy\"><figcaption>Force in unstable equilibrium.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s3",
+          "points": 0.25,
+          "label": {
+            "ru": "Безразличное равновесие",
+            "en": "Neutral equilibrium"
+          },
+          "body": {
+            "ru": "<p>При \\(\\Lambda=\\Gamma\\) профили температур совпадают. Давление и плотность частицы равны окружающим и на новой высоте.</p>",
+            "en": "<p>If \\(\\Lambda=\\Gamma\\), the temperature profiles coincide. The parcel has the same pressure and density as its surroundings at the new height.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<p>\\(\\Lambda&lt;\\Gamma\\) — устойчивое, \\(\\Lambda&gt;\\Gamma\\) — неустойчивое, \\(\\Lambda=\\Gamma\\) — безразличное равновесие.</p>",
+        "en": "<p>Stable for \\(\\Lambda&lt;\\Gamma\\), unstable for \\(\\Lambda&gt;\\Gamma\\) and neutral for \\(\\Lambda=\\Gamma\\).</p>"
+      }
+    },
+    {
+      "id": "T3-3.2",
+      "label": "3.2",
+      "max": 1.0,
+      "title": {
+        "ru": "Высота подъёма тёплой частицы",
+        "en": "Height reached by a warm parcel"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 1.0,
+          "label": {
+            "ru": "Высота подъёма тёплой частицы",
+            "en": "Height reached by a warm parcel"
+          },
+          "body": {
+            "ru": "<p>На предельной высоте в этой модели плотности и температуры частицы и среды совпадают. Обозначим \\(y=1-\\Lambda h/T_0\\). Из \\(T_{p0}y^{\\Gamma/\\Lambda}=T_0y\\) следует \\(y=(T_{p0}/T_0)^{\\Lambda/(\\Lambda-\\Gamma)}\\). В изотермическом пределе равенство \\(T_{p0}e^{-\\Gamma h/T_0}=T_0\\) даёт \\(h=(T_0/\\Gamma)\\ln(T_{p0}/T_0)\\).</p>",
+            "en": "<p>At the limiting height in this model the parcel and its surroundings have the same density and temperature. Put \\(y=1-\\Lambda h/T_0\\). Then \\(T_{p0}y^{\\Gamma/\\Lambda}=T_0y\\) gives \\(y=(T_{p0}/T_0)^{\\Lambda/(\\Lambda-\\Gamma)}\\). In the isothermal limit \\(T_{p0}e^{-\\Gamma h/T_0}=T_0\\) gives \\(h=(T_0/\\Gamma)\\ln(T_{p0}/T_0)\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[h=\\frac{T_0}{\\Lambda}\\left[1-\\left(\\frac{T_{p0}}{T_0}\\right)^{\\Lambda/(\\Lambda-\\Gamma)}\\right]\\quad(\\Lambda\\ne0).\\]</div>",
+        "en": "<div>\\[h=\\frac{T_0}{\\Lambda}\\left[1-\\left(\\frac{T_{p0}}{T_0}\\right)^{\\Lambda/(\\Lambda-\\Gamma)}\\right]\\quad(\\Lambda\\ne0).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-4.1",
+      "label": "4.1",
+      "max": 0.75,
+      "title": {
+        "ru": "Температура на границах слоёв",
+        "en": "Temperatures at layer boundaries"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.25,
+          "label": {
+            "ru": "Граница 96 м",
+            "en": "The 96 m boundary"
+          },
+          "body": {
+            "ru": "<p>Между 5 и 96 м температура среды падает на \\(1{,}4\\,\\mathrm K\\). Значит, \\(\\Lambda_1\\simeq0{,}0154\\,\\mathrm{K/m}\\). Для округлённой оценки, принятой в решении, используем \\(\\Gamma\\simeq0{,}010\\,\\mathrm{K/m}\\). На небольшом перепаде высот охлаждение частицы составляет около \\(0{,}96\\,\\mathrm K\\).</p>\n<div>\\[T_p(96\\,\\mathrm m)\\simeq21{,}0\\,^\\circ\\mathrm C.\\]</div>",
+            "en": "<p>Between 5 and 96 m the environment cools by \\(1.4\\,\\mathrm K\\), giving \\(\\Lambda_1\\simeq0.0154\\,\\mathrm{K/m}\\). For the rounded estimate use \\(\\Gamma\\simeq0.010\\,\\mathrm{K/m}\\). Over this short rise the parcel cools by about \\(0.96\\,\\mathrm K\\).</p>\n<div>\\[T_p(96\\,\\mathrm m)\\simeq21.0\\,^\\circ\\mathrm C.\\]</div>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.5,
+          "label": {
+            "ru": "Граница 119 м",
+            "en": "The 119 m boundary"
+          },
+          "body": {
+            "ru": "<p>Между 96 и 119 м среда изотермична при \\(20{,}1\\,^\\circ\\mathrm C\\). Применим изотермический результат из 2.3 на интервале \\(\\Delta z=23\\,\\mathrm m\\). В формулу подставляем абсолютные температуры среды и частицы. Результат переводим в градусы Цельсия. Частица охлаждается ещё примерно на \\(0{,}23\\,\\mathrm K\\).</p>\n<div>\\[T_p(119\\,\\mathrm m)=T_p(96\\,\\mathrm m)\\exp(-\\Gamma\\Delta z/T_{\\mathrm{amb}})\\simeq20{,}8\\,^\\circ\\mathrm C.\\]</div>",
+            "en": "<p>Between 96 and 119 m the ambient temperature stays at \\(20.1\\,^\\circ\\mathrm C\\). Apply the isothermal result from 2.3 over \\(\\Delta z=23\\,\\mathrm m\\), using kelvins for both temperatures and converting the result back to Celsius. The parcel cools by about another \\(0.23\\,\\mathrm K\\).</p>\n<div>\\[T_p(119\\,\\mathrm m)=T_p(96\\,\\mathrm m)\\exp(-\\Gamma\\Delta z/T_{\\mathrm{amb}})\\simeq20.8\\,^\\circ\\mathrm C.\\]</div>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[T_p(96\\,\\mathrm m)\\simeq21{,}0\\,^\\circ\\mathrm C,\\qquad T_p(119\\,\\mathrm m)\\simeq20{,}8\\,^\\circ\\mathrm C.\\]</div>",
+        "en": "<div>\\[T_p(96\\,\\mathrm m)\\simeq21.0\\,^\\circ\\mathrm C,\\qquad T_p(119\\,\\mathrm m)\\simeq20.8\\,^\\circ\\mathrm C.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-4.2",
+      "label": "4.2",
+      "max": 1.0,
+      "title": {
+        "ru": "Высота и температура перемешивания",
+        "en": "Mixing height and temperature"
+      },
+      "steps": [
+        {
+          "id": "s1",
+          "points": 0.75,
+          "label": {
+            "ru": "Высота пересечения профилей",
+            "en": "Profile-intersection height"
+          },
+          "body": {
+            "ru": "<p>На высоте 119 м частица теплее среды примерно на \\(0{,}7\\,\\mathrm K\\). Выше начинается инверсия. Температура среды возрастает на \\(1{,}9\\,\\mathrm K\\) за 96 м, то есть \\(\\Lambda_3\\simeq-0{,}020\\,\\mathrm{K/m}\\). Разность температур сокращается со скоростью \\(\\Gamma-\\Lambda_3\\simeq0{,}030\\,\\mathrm{K/m}\\).</p>\n<div>\\[H\\simeq119\\,\\mathrm m+\\frac{0{,}7\\,\\mathrm K}{0{,}030\\,\\mathrm{K/m}}\\simeq142\\,\\mathrm m.\\]</div>\n<figure><img src=\"/assets/practice/ipho-2008/q3/sfig3.png\" alt=\"Профиль радиозонда и температура поднимающейся частицы.\" style=\"width:min(100%,485px);height:auto\" loading=\"lazy\"><figcaption>Профиль радиозонда и температура поднимающейся частицы.</figcaption></figure>",
+            "en": "<p>At 119 m the parcel is about \\(0.7\\,\\mathrm K\\) warmer than the environment. In the inversion above, the environment warms by \\(1.9\\,\\mathrm K\\) over 96 m, so \\(\\Lambda_3\\simeq-0.020\\,\\mathrm{K/m}\\). The temperature gap closes at \\(\\Gamma-\\Lambda_3\\simeq0.030\\,\\mathrm{K/m}\\).</p>\n<div>\\[H\\simeq119\\,\\mathrm m+\\frac{0.7\\,\\mathrm K}{0.030\\,\\mathrm{K/m}}\\simeq142\\,\\mathrm m.\\]</div>\n<figure><img src=\"/assets/practice/ipho-2008/q3/sfig3.png\" alt=\"Radiosonde profile and the rising parcel&#x27;s temperature.\" style=\"width:min(100%,485px);height:auto\" loading=\"lazy\"><figcaption>Radiosonde profile and the rising parcel's temperature.</figcaption></figure>"
+          }
+        },
+        {
+          "id": "s2",
+          "points": 0.25,
+          "label": {
+            "ru": "Общая температура",
+            "en": "Common temperature"
+          },
+          "body": {
+            "ru": "<p>На 23 м выше начала инверсии температура среды вырастает примерно на \\(0{,}46\\,\\mathrm K\\). В точке пересечения это и температура частицы.</p>",
+            "en": "<p>About 23 m above the start of the inversion, the ambient air is about \\(0.46\\,\\mathrm K\\) warmer. At the intersection this is also the parcel temperature.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[H\\simeq142\\,\\mathrm m,\\qquad T_p(H)\\simeq20{,}6\\,^\\circ\\mathrm C.\\]</div>",
+        "en": "<div>\\[H\\simeq142\\,\\mathrm m,\\qquad T_p(H)\\simeq20.6\\,^\\circ\\mathrm C.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-5.1",
+      "label": "5.1",
+      "max": 0.5,
+      "title": {
+        "ru": "Баланс массы",
+        "en": "Mass balance"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Баланс массы",
+            "en": "Mass balance"
+          },
+          "body": {
+            "ru": "<p>Полная масса CO в слое равна \\(LWH\\,C\\). Двигатели добавляют за секунду массу \\(M\\), а ветер выносит через выходную грань объём \\(uLH\\) с концентрацией \\(C\\). Входящий поток чист.</p>",
+            "en": "<p>The layer contains CO mass \\(LWH\\,C\\). Engines supply mass at rate \\(M\\), and the wind takes a volume \\(uLH\\) per second through the outgoing face with concentration \\(C\\). The incoming air is clean.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[\\frac{dC}{dt}+\\frac{u}{W}C=\\frac{M}{LWH},\\qquad C(0)=0.\\]</div>",
+        "en": "<div>\\[\\frac{dC}{dt}+\\frac{u}{W}C=\\frac{M}{LWH},\\qquad C(0)=0.\\]</div>"
+      }
+    },
+    {
+      "id": "T3-5.2",
+      "label": "5.2",
+      "max": 0.5,
+      "title": {
+        "ru": "Концентрация во времени",
+        "en": "Concentration over time"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.5,
+          "label": {
+            "ru": "Концентрация во времени",
+            "en": "Concentration over time"
+          },
+          "body": {
+            "ru": "<p>В стационарном состоянии \\(C_\\infty=M/(uLH)\\). Отклонение от стационарного значения удовлетворяет однородному уравнению и убывает как \\(\\exp(-ut/W)\\). Начальное условие \\(C(0)=0\\) определяет множитель.</p>",
+            "en": "<p>The steady value is \\(C_\\infty=M/(uLH)\\). The departure from it satisfies the homogeneous equation and decays as \\(\\exp(-ut/W)\\). The initial condition \\(C(0)=0\\) fixes its amplitude.</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[C(t)=\\frac{M}{uLH}\\left(1-e^{-ut/W}\\right).\\]</div>",
+        "en": "<div>\\[C(t)=\\frac{M}{uLH}\\left(1-e^{-ut/W}\\right).\\]</div>"
+      }
+    },
+    {
+      "id": "T3-5.3",
+      "label": "5.3",
+      "max": 0.25,
+      "title": {
+        "ru": "Концентрация в восемь утра",
+        "en": "Concentration at 8 am"
+      },
+      "steps": [
+        {
+          "id": "derive",
+          "points": 0.25,
+          "label": {
+            "ru": "Концентрация в восемь утра",
+            "en": "Concentration at 8 am"
+          },
+          "body": {
+            "ru": "<p>За час мотоциклы выделяют \\((8\\times10^5)\\times5\\times12=4{,}8\\times10^7\\,\\mathrm g\\) CO. Следовательно, \\(M\\simeq13{,}3\\,\\mathrm{kg/s}\\). Для \\(t=3600\\,\\mathrm s\\) показатель \\(ut/W=0{,}45\\). При высоте слоя 142 м величина \\(M/(uLH)\\) составляет около \\(6{,}26\\,\\mathrm{mg/m^3}\\).</p>",
+            "en": "<p>During the hour the motorcycles emit \\((8\\times10^5)\\times5\\times12=4.8\\times10^7\\,\\mathrm g\\) of CO, so \\(M\\simeq13.3\\,\\mathrm{kg/s}\\). At \\(t=3600\\,\\mathrm s\\), the exponent is \\(ut/W=0.45\\). With mixing height 142 m, \\(M/(uLH)\\) is about \\(6.26\\,\\mathrm{mg/m^3}\\).</p>"
+          }
+        }
+      ],
+      "answer": {
+        "ru": "<div>\\[C(3600\\,\\mathrm s)\\simeq2{,}3\\,\\mathrm{mg\\,m^{-3}}.\\]</div>",
+        "en": "<div>\\[C(3600\\,\\mathrm s)\\simeq2.3\\,\\mathrm{mg\\,m^{-3}}.\\]</div>"
+      }
+    }
+  ]
+}

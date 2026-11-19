@@ -1,0 +1,98 @@
+{
+  "id": "T2",
+  "title": "Фотография движущегося стержня",
+  "points": 10,
+  "sourceFile": "IPhO_2006_T2_EN.pdf",
+  "sourcePages": [
+    1,
+    2
+  ],
+  "sections": [
+    {
+      "id": "T2-relations",
+      "points": 1.5,
+      "title": "Координаты на снимке и в лаборатории"
+    },
+    {
+      "id": "T2-length",
+      "points": 3,
+      "title": "Видимая длина"
+    },
+    {
+      "id": "T2-symmetry",
+      "points": 3,
+      "title": "Симметричный снимок"
+    },
+    {
+      "id": "T2-distant",
+      "points": 2.5,
+      "title": "Снимки издалека"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T2-2.1",
+      "label": "2.1",
+      "points": 0.6
+    },
+    {
+      "id": "T2-2.2",
+      "label": "2.2",
+      "points": 0.9
+    },
+    {
+      "id": "T2-2.3",
+      "label": "2.3",
+      "points": 1.5
+    },
+    {
+      "id": "T2-2.4",
+      "label": "2.4",
+      "points": 1.5
+    },
+    {
+      "id": "T2-2.5",
+      "label": "2.5",
+      "points": 0.8
+    },
+    {
+      "id": "T2-2.6",
+      "label": "2.6",
+      "points": 1
+    },
+    {
+      "id": "T2-2.7",
+      "label": "2.7",
+      "points": 1.2
+    },
+    {
+      "id": "T2-2.8",
+      "label": "2.8",
+      "points": 0.5
+    },
+    {
+      "id": "T2-2.9",
+      "label": "2.9",
+      "points": 1
+    },
+    {
+      "id": "T2-2.10",
+      "label": "2.10",
+      "points": 0.6
+    },
+    {
+      "id": "T2-2.11",
+      "label": "2.11",
+      "points": 0.4
+    }
+  ],
+  "figures": [
+    "t2-f1.png"
+  ],
+  "solutionsAvailable": true,
+  "sourceHintsIncluded": true,
+  "translationStatus": "editorial-adaptation",
+  "stepScoring": "official-answer-script-weights",
+  "solutionData": "/assets/practice/ipho-2006/solutions/t2.json",
+  "solutionPdf": "/assets/practice/ipho-2006/IPhO_2006_S2_EN.pdf"
+}

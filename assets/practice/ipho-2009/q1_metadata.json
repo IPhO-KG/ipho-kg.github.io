@@ -1,0 +1,170 @@
+{
+  "id": "T1",
+  "title": "Эволюция системы Земля — Луна",
+  "points": 10,
+  "sourceFile": "IPhO_2009_T1_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "sections": [
+    {
+      "id": "T1-1",
+      "points": 0.7,
+      "title": "Сохранение момента импульса"
+    },
+    {
+      "id": "T1-2",
+      "points": 2.9,
+      "title": "Конечная орбита Луны"
+    },
+    {
+      "id": "T1-3",
+      "points": 5.1,
+      "title": "Скорость удаления Луны"
+    },
+    {
+      "id": "T1-4",
+      "points": 1.3,
+      "title": "Диссипация энергии"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T1-1a",
+      "points": 0.2,
+      "label": "1a"
+    },
+    {
+      "id": "T1-1b",
+      "points": 0.2,
+      "label": "1b"
+    },
+    {
+      "id": "T1-1c",
+      "points": 0.3,
+      "label": "1c"
+    },
+    {
+      "id": "T1-2a",
+      "points": 0.2,
+      "label": "2a"
+    },
+    {
+      "id": "T1-2b",
+      "points": 0.5,
+      "label": "2b"
+    },
+    {
+      "id": "T1-2c",
+      "points": 0.5,
+      "label": "2c"
+    },
+    {
+      "id": "T1-2d",
+      "points": 0.5,
+      "label": "2d"
+    },
+    {
+      "id": "T1-2e",
+      "points": 0.2,
+      "label": "2e"
+    },
+    {
+      "id": "T1-2f",
+      "points": 0.2,
+      "label": "2f"
+    },
+    {
+      "id": "T1-2g",
+      "points": 0.3,
+      "label": "2g"
+    },
+    {
+      "id": "T1-2h",
+      "points": 0.3,
+      "label": "2h"
+    },
+    {
+      "id": "T1-2i",
+      "points": 0.2,
+      "label": "2i"
+    },
+    {
+      "id": "T1-3a",
+      "points": 0.4,
+      "label": "3a"
+    },
+    {
+      "id": "T1-3b",
+      "points": 0.4,
+      "label": "3b"
+    },
+    {
+      "id": "T1-3c",
+      "points": 0.4,
+      "label": "3c"
+    },
+    {
+      "id": "T1-3d",
+      "points": 0.4,
+      "label": "3d"
+    },
+    {
+      "id": "T1-3e",
+      "points": 1.0,
+      "label": "3e"
+    },
+    {
+      "id": "T1-3f",
+      "points": 0.5,
+      "label": "3f"
+    },
+    {
+      "id": "T1-3g",
+      "points": 1.0,
+      "label": "3g"
+    },
+    {
+      "id": "T1-3h",
+      "points": 1.0,
+      "label": "3h"
+    },
+    {
+      "id": "T1-4a",
+      "points": 0.4,
+      "label": "4a"
+    },
+    {
+      "id": "T1-4b",
+      "points": 0.4,
+      "label": "4b"
+    },
+    {
+      "id": "T1-4c",
+      "points": 0.2,
+      "label": "4c"
+    },
+    {
+      "id": "T1-4d",
+      "points": 0.3,
+      "label": "4d"
+    }
+  ],
+  "figures": [
+    "t1-f1",
+    "t1-f2",
+    "t1-f3",
+    "t1-f4"
+  ],
+  "solutionData": "/assets/practice/ipho-2009/solutions/t1.json",
+  "solutionPdf": "/assets/practice/ipho-2009/IPhO_2009_S1_EN.pdf",
+  "solutionsAvailable": true,
+  "stepScoring": "official-subpart-maxima-editorial-step-weights",
+  "translationStatus": "editorial-adaptation"
+}

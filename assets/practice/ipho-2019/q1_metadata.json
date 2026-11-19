@@ -1,0 +1,68 @@
+{
+  "id": "T1",
+  "title": "Пружины с нулевой эффективной длиной и слинки",
+  "points": 10,
+  "sourceFile": "IPhO_2019_T1_EN.pdf",
+  "sourcePages": [
+    1,
+    2,
+    3
+  ],
+  "sections": [
+    {
+      "id": "T1-A",
+      "points": 3.0,
+      "title": "Статика"
+    },
+    {
+      "id": "T1-B",
+      "points": 5.5,
+      "title": "Динамика"
+    },
+    {
+      "id": "T1-C",
+      "points": 1.5,
+      "title": "Энергия"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "T1-A1",
+      "points": 0.5
+    },
+    {
+      "id": "T1-A2",
+      "points": 0.5
+    },
+    {
+      "id": "T1-A3",
+      "points": 2.0
+    },
+    {
+      "id": "T1-B1",
+      "points": 2.5
+    },
+    {
+      "id": "T1-B2",
+      "points": 2.5
+    },
+    {
+      "id": "T1-B3",
+      "points": 0.5
+    },
+    {
+      "id": "T1-C1",
+      "points": 1.5
+    }
+  ],
+  "figures": [
+    "t1-f1",
+    "t1-f2"
+  ],
+  "solutionData": "/assets/practice/ipho-2019/solutions/t1.json",
+  "solutionPdf": "/assets/practice/ipho-2019/IPhO_2019_S1_EN.pdf",
+  "markingPdf": "/assets/practice/ipho-2019/IPhO_2019_M1_EN.pdf",
+  "solutionsAvailable": true,
+  "stepScoring": "grouped-official-criteria",
+  "translationStatus": "editorial-adaptation"
+}
